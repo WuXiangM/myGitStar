@@ -21,7 +21,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           STARRED_GITHUB_TOKEN: ${{ secrets.STARRED_GITHUB_TOKEN }}
         run: |
-          starred --username WuXiangM --token $STARRED_GITHUB_TOKEN --sort --output README.md
+          starred --username WuXiangM --token $STARRED_GITHUB_TOKEN --sort > README.md
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions[bot]"
