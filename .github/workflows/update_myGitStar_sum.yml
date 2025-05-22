@@ -2,7 +2,7 @@ name: Update myGitStar Summaries
 
 on:
   schedule:
-    - cron: '0 4 * * *'    # 每天北京时间12:00
+    - cron: '0 4 * * *'
   workflow_dispatch:
 
 jobs:
@@ -16,13 +16,15 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install requests
-        run: pip install requests
+      - name: Install dependencies
+        run: |
+          pip install requests
+          pip install openai
 
       - name: Summarize starred repos with DeepSeek
         env:
           STARRED_GITHUB_TOKEN: ${{ secrets.STARRED_GITHUB_TOKEN }}
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: python scripts/summarize_stars.py
 
       - name: Commit and push changes
