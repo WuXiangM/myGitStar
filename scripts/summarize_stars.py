@@ -5,7 +5,7 @@ import requests
 
 GITHUB_USERNAME = "WuXiangM"
 GITHUB_TOKEN = os.environ.get("STARRED_GITHUB_TOKEN")
-OPENAI_API_KEY = os.environ.get("DEEPSEEK_API_KEY")
+OPENAI_API_KEY = os.environ.get("DEEPSEEK_API_TOKEN")
 
 # 可选：你的站点信息，可为空字符串
 YOUR_SITE_URL = ""  # 如 "https://github.com/WuXiangM/myGitStar"
