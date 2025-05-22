@@ -1,13 +1,13 @@
 import requests
 import os
 import time
+import json
 
 GITHUB_USERNAME = "WuXiangM"
 GITHUB_TOKEN = os.environ.get("STARRED_GITHUB_TOKEN")
-DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY")
-DEEPSEEK_API_URL = "https://api.deepseek.com/v1/chat/completions"  # 假定API为Chat格式，需根据你的实际API文档调整
+OPENROUTER_API_KEY = os.environ.get("DEEPSEEK_API_KEY")
+OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
-# 1. 获取所有 Star 的仓库
 def get_starred_repos():
     print("Fetching starred repositories...")
     repos = []
@@ -26,8 +26,7 @@ def get_starred_repos():
     print(f"Total starred repos: {len(repos)}")
     return repos
 
-# 2. 用 DeepSeek 生成介绍、创新、用法、总结
-def deepseek_summarize(repo):
+def openrouter_summarize(repo):
     repo_name = repo["full_name"]
     desc = repo.get("description") or ""
     url = repo["html_url"]
@@ -42,31 +41,29 @@ def deepseek_summarize(repo):
         f"仓库描述：{desc}\n"
         f"仓库地址：{url}\n"
     )
-    # DeepSeek API: 假设为OpenAI兼容
+    headers = {
+        "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+        "Content-Type": "application/json",
+        # 可选参数
+        #"HTTP-Referer": "<YOUR_SITE_URL>",
+        #"X-Title": "<YOUR_SITE_NAME>",
+    }
     payload = {
-        "model": "deepseek-chat",
+        "model": "deepseek/deepseek-chat-v3-0324:free",
         "messages": [
-            {"role": "system", "content": "你是一位优秀的GitHub项目总结助手。"},
             {"role": "user", "content": prompt}
         ],
-        "max_tokens": 500,
-        "temperature": 0.7
-    }
-    headers = {
-        "Authorization": f"Bearer {DEEPSEEK_API_KEY}",
-        "Content-Type": "application/json"
     }
     try:
-        resp = requests.post(DEEPSEEK_API_URL, json=payload, headers=headers)
+        resp = requests.post(OPENROUTER_API_URL, headers=headers, data=json.dumps(payload))
         resp.raise_for_status()
         result = resp.json()
         summary = result["choices"][0]["message"]["content"].strip()
         return summary
     except Exception as e:
-        print(f"DeepSeek API 调用失败: {e}")
+        print(f"OpenRouter API 调用失败: {e}")
         return "API生成失败"
     
-# 3. 按主语言分类
 def classify_by_language(repos):
     classified = {}
     for repo in repos:
@@ -77,16 +74,17 @@ def classify_by_language(repos):
 def main():
     starred = get_starred_repos()
     classified = classify_by_language(starred)
-    lines = ["# 我的 GitHub Star 项目AI总结\n"]
+    lines = ["# 我的 GitHub Star 项目AI总结（由 DeepSeek API 自动生成）\n"]
     for lang, repos in sorted(classified.items(), key=lambda x: -len(x[1])):
         lines.append(f"\n## {lang}（共{len(repos)}个）\n")
         for repo in repos:
             url = repo["html_url"]
-            summary = deepseek_summarize(repo)
+            summary = openrouter_summarize(repo)
             lines.append(f"### [{repo['full_name']}]({url})\n")
             lines.append(summary)
             lines.append("\n")
-            time.sleep(2)  # 防止API速率限制
+            # OpenRouter 免费接口有限制，建议适当等待，防止被限流
+            time.sleep(3)
     with open("README.md", "w", encoding="utf-8") as f:
         f.write('\n'.join(lines))
     print("README.md 已生成。")
