@@ -5,7 +5,7 @@ import requests
 
 GITHUB_USERNAME = "WuXiangM"
 GITHUB_TOKEN = os.environ.get("STARRED_GITHUB_TOKEN")
-OPENROUTER_API_KEY = os.environ.get("DEEPSEEK_API_KEY")
+OPENAI_API_KEY = os.environ.get("DEEPSEEK_API_KEY")
 
 # 可选：你的站点信息，可为空字符串
 YOUR_SITE_URL = ""  # 如 "https://github.com/WuXiangM/myGitStar"
@@ -13,7 +13,7 @@ YOUR_SITE_NAME = "myGitStar"
 
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
-    api_key=OPENROUTER_API_KEY,
+    api_key=OPENAI_API_KEY,
 )
 
 def get_starred_repos():
