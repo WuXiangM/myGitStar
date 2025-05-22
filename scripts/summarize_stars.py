@@ -1,12 +1,20 @@
-import requests
 import os
 import time
-import json
+from openai import OpenAI
+import requests
 
 GITHUB_USERNAME = "WuXiangM"
 GITHUB_TOKEN = os.environ.get("STARRED_GITHUB_TOKEN")
 OPENROUTER_API_KEY = os.environ.get("DEEPSEEK_API_KEY")
-OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions"
+
+# 可选：你的站点信息，可为空字符串
+YOUR_SITE_URL = ""  # 如 "https://github.com/WuXiangM/myGitStar"
+YOUR_SITE_NAME = "myGitStar"
+
+client = OpenAI(
+    base_url="https://openrouter.ai/api/v1",
+    api_key=OPENROUTER_API_KEY,
+)
 
 def get_starred_repos():
     print("Fetching starred repositories...")
@@ -41,29 +49,26 @@ def openrouter_summarize(repo):
         f"仓库描述：{desc}\n"
         f"仓库地址：{url}\n"
     )
-    headers = {
-        "Authorization": f"Bearer {OPENROUTER_API_KEY}",
-        "Content-Type": "application/json",
-        # 可选参数
-        #"HTTP-Referer": "<YOUR_SITE_URL>",
-        #"X-Title": "<YOUR_SITE_NAME>",
-    }
-    payload = {
-        "model": "deepseek/deepseek-chat-v3-0324:free",
-        "messages": [
-            {"role": "user", "content": prompt}
-        ],
-    }
     try:
-        resp = requests.post(OPENROUTER_API_URL, headers=headers, data=json.dumps(payload))
-        resp.raise_for_status()
-        result = resp.json()
-        summary = result["choices"][0]["message"]["content"].strip()
-        return summary
+        completion = client.chat.completions.create(
+            extra_headers={
+                "HTTP-Referer": YOUR_SITE_URL,
+                "X-Title": YOUR_SITE_NAME,
+            },
+            extra_body={},
+            model="deepseek/deepseek-chat-v3-0324:free",
+            messages=[
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ]
+        )
+        return completion.choices[0].message.content.strip()
     except Exception as e:
         print(f"OpenRouter API 调用失败: {e}")
-        return "API生成失败"
-    
+        return "API生成失败："+f"OpenRouter API 调用失败: {e}"
+
 def classify_by_language(repos):
     classified = {}
     for repo in repos:
@@ -83,8 +88,7 @@ def main():
             lines.append(f"### [{repo['full_name']}]({url})\n")
             lines.append(summary)
             lines.append("\n")
-            # OpenRouter 免费接口有限制，建议适当等待，防止被限流
-            time.sleep(3)
+            time.sleep(3)  # 防止速率限制
     with open("README.md", "w", encoding="utf-8") as f:
         f.write('\n'.join(lines))
     print("README.md 已生成。")
