@@ -1,4 +1,4 @@
-name: Update myGitStarlist
+name: Update myGitStarlist # 当前获取不了用户StarList API
 
 on:
   schedule:
