@@ -5,6 +5,7 @@
 
 ## Contents
 
+- [computer-science](#computer-science)
 - [api](#api)
 - [development](#development)
 - [software](#software)
@@ -50,6 +51,10 @@
 - [hacktoberfest](#hacktoberfest)
 - [stable-diffusion](#stable-diffusion)
 - [web](#web)
+
+## computer-science 
+
+- [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap) - Interactive roadmaps, guides and other educational content to help developers grow in their careers.
 
 ## api 
 
