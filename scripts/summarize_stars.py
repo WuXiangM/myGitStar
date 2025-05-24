@@ -133,18 +133,25 @@ def main():
     classified = classify_by_language(starred)
     old_summaries = load_old_summaries()
     lines = ["# 我的 GitHub Star 项目AI总结（由 DeepSeek API 自动生成）\n"]
+    printed_repos = set()
+    printed_langs = set()  # 记录已输出的语言
     for lang, repos in sorted(classified.items(), key=lambda x: -len(x[1])):
+        if lang in printed_langs:
+            continue  # 跳过已输出的语言标题
+        printed_langs.add(lang)
         lines.append(f"\n## {lang}（共{len(repos)}个）\n")
         for i in range(0, len(repos), 10):
             this_batch = repos[i:i+10]
             summaries = summarize_batch(this_batch, old_summaries)
             for repo, summary in zip(this_batch, summaries):
+                if repo['full_name'] in printed_repos:
+                    continue  # 跳过已输出的仓库
+                printed_repos.add(repo['full_name'])
                 url = repo["html_url"]
                 lines.append(f"### [{repo['full_name']}]({url})\n")
                 lines.append(summary)
                 lines.append("\n")
-            # 加一点总的间隔，防止每批过快
-            time.sleep(5)
+        time.sleep(5)
     with open(README_SUM_PATH, "w", encoding="utf-8") as f:
         f.write('\n'.join(lines))
     print(f"{README_SUM_PATH} 已生成。")
