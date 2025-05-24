@@ -36,4 +36,7 @@ jobs:
           git add README-sum.md
           git commit -m "update AI summarized stars [bot]" || echo "No changes to commit"
           git remote set-url origin https://x-access-token:${STARRED_GITHUB_TOKEN}@github.com/${{ github.repository }}.git
+          git pull --rebase origin main || echo "No remote changes to pull"
           git push origin HEAD:main
+
+  
