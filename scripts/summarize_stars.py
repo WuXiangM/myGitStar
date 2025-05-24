@@ -6,6 +6,7 @@ import json
 GITHUB_USERNAME = "WuXiangM"
 GITHUB_TOKEN = os.environ.get("STARRED_GITHUB_TOKEN")
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
+print(OPENROUTER_API_KEY[:8])
 
 # 可选：你的站点信息
 YOUR_SITE_URL = "http://localhost:8088"  # 可改为你的站点
