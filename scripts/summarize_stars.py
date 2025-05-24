@@ -1,28 +1,24 @@
 import os
 import time
-from openai import OpenAI
 import requests
+import json
 
 GITHUB_USERNAME = "WuXiangM"
 GITHUB_TOKEN = os.environ.get("STARRED_GITHUB_TOKEN")
-OPENAI_API_KEY = os.environ.get("DEEPSEEK_API_TOKEN")
-print(len(OPENAI_API_KEY))
+OPENROUTER_API_KEY = os.environ.get("DEEPSEEK_API_TOKEN")
 
-# 可选：你的站点信息，可为空字符串
-YOUR_SITE_URL = ""  # 如 "https://github.com/WuXiangM/myGitStar"
+# 可选：你的站点信息
+YOUR_SITE_URL = "http://localhost:8088"  # 可改为你的站点
 YOUR_SITE_NAME = "myGitStar"
-
-client = OpenAI(
-    base_url="https://openrouter.ai/api/v1",
-    api_key=OPENAI_API_KEY,
-)
 
 def get_starred_repos():
     print("Fetching starred repositories...")
     repos = []
     page = 1
     per_page = 100
-    headers = {"Authorization": f"token {GITHUB_TOKEN}"}
+    headers = {
+        "Authorization": f"Bearer {GITHUB_TOKEN}"
+    }
     while True:
         url = f"https://api.github.com/users/{GITHUB_USERNAME}/starred?per_page={per_page}&page={page}"
         resp = requests.get(url, headers=headers)
@@ -50,25 +46,35 @@ def openrouter_summarize(repo):
         f"仓库描述：{desc}\n"
         f"仓库地址：{url}\n"
     )
+
+    headers = {
+        "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+        "HTTP-Referer": YOUR_SITE_URL,
+        "X-Title": YOUR_SITE_NAME,
+        "Content-Type": "application/json"
+    }
+    data = {
+        "model": "deepseek/deepseek-chat-v3-0324:free",
+        "messages": [
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ]
+    }
+
     try:
-        completion = client.chat.completions.create(
-            extra_headers={
-                "HTTP-Referer": YOUR_SITE_URL,
-                "X-Title": YOUR_SITE_NAME,
-            },
-            extra_body={},
-            model="deepseek/deepseek-chat-v3-0324:free",
-            messages=[
-                {
-                    "role": "user",
-                    "content": prompt
-                }
-            ]
+        response = requests.post(
+            url="https://openrouter.ai/api/v1/chat/completions",
+            headers=headers,
+            data=json.dumps(data)
         )
-        return completion.choices[0].message.content.strip()
+        response.raise_for_status()
+        content = response.json()['choices'][0]['message']['content'].strip()
+        return content
     except Exception as e:
         print(f"OpenRouter API 调用失败: {e}")
-        return "API生成失败："+f"OpenRouter API 调用失败: {e}"
+        return "API生成失败：" + str(e)
 
 def classify_by_language(repos):
     classified = {}
