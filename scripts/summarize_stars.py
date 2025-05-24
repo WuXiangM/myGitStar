@@ -94,9 +94,9 @@ def main():
             lines.append(summary)
             lines.append("\n")
             time.sleep(3)  # 防止速率限制
-    with open("README.md", "w", encoding="utf-8") as f:
+    with open("README-sum.md", "w", encoding="utf-8") as f:
         f.write('\n'.join(lines))
-    print("README.md 已生成。")
+    print("README-sum.md 已生成。")
 
 if __name__ == "__main__":
     main()
