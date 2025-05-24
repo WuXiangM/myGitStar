@@ -99,6 +99,10 @@ API调用失败：429 Client Error: Too Many Requests for url: https://openroute
 
 ## Jupyter Notebook（共6个）
 
+
+
+## Jupyter Notebook（共6个）
+
 ### [microsoft/AI-For-Beginners](https://github.com/microsoft/AI-For-Beginners)
 
 API调用失败：429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions
@@ -127,6 +131,10 @@ API调用失败：429 Client Error: Too Many Requests for url: https://openroute
 ### [google/automl](https://github.com/google/automl)
 
 API调用失败：429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions
+
+
+
+## TypeScript（共5个）
 
 
 
@@ -168,6 +176,10 @@ API调用失败：429 Client Error: Too Many Requests for url: https://openroute
 
 ## Other（共5个）
 
+
+
+## Other（共5个）
+
 ### [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers)
 
 API调用失败：429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions
@@ -200,6 +212,10 @@ API调用失败：429 Client Error: Too Many Requests for url: https://openroute
 
 ## JavaScript（共2个）
 
+
+
+## JavaScript（共2个）
+
 ### [yitong2333/Bionic-Reading](https://github.com/yitong2333/Bionic-Reading)
 
 API调用失败：429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions
@@ -208,6 +224,10 @@ API调用失败：429 Client Error: Too Many Requests for url: https://openroute
 ### [poloclub/transformer-explainer](https://github.com/poloclub/transformer-explainer)
 
 API调用失败：429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions
+
+
+
+## C#（共2个）
 
 
 
@@ -234,9 +254,17 @@ API调用失败：429 Client Error: Too Many Requests for url: https://openroute
 
 ## Go（共1个）
 
+
+
+## Go（共1个）
+
 ### [fatedier/frp](https://github.com/fatedier/frp)
 
 API调用失败：429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions
+
+
+
+## Haskell（共1个）
 
 
 
@@ -258,9 +286,17 @@ API调用失败：429 Client Error: Too Many Requests for url: https://openroute
 
 ## Shell（共1个）
 
+
+
+## Shell（共1个）
+
 ### [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds)
 
 API调用失败：429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions
+
+
+
+## Less（共1个）
 
 
 
@@ -282,6 +318,10 @@ API调用失败：429 Client Error: Too Many Requests for url: https://openroute
 
 ## C++（共1个）
 
+
+
+## C++（共1个）
+
 ### [hluk/CopyQ](https://github.com/hluk/CopyQ)
 
 API调用失败：429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions
@@ -294,9 +334,17 @@ API调用失败：429 Client Error: Too Many Requests for url: https://openroute
 
 ## Java（共1个）
 
+
+
+## Java（共1个）
+
 ### [ZCShou/GoGoGo](https://github.com/ZCShou/GoGoGo)
 
 API调用失败：429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions
+
+
+
+## Clojure（共1个）
 
 
 
