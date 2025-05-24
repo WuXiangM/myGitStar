@@ -22,7 +22,7 @@ def get_starred_repos():
     while True:
         url = f"https://api.github.com/users/{GITHUB_USERNAME}/starred?per_page={per_page}&page={page}"
         resp = requests.get(url, headers=headers)
-        resp.raise_for_status()
+        # resp.raise_for_status()
         data = resp.json()
         if not data:
             break
