@@ -17,7 +17,7 @@ def get_starred_repos():
     page = 1
     per_page = 100
     headers = {
-        "Authorization": f"Bearer {GITHUB_TOKEN}"
+        "Authorization": f"Bearer {GITHUB_TOKEN}",
     }
     while True:
         url = f"https://api.github.com/users/{GITHUB_USERNAME}/starred?per_page={per_page}&page={page}"
@@ -49,12 +49,10 @@ def openrouter_summarize(repo):
 
     headers = {
         "Authorization": f"Bearer {OPENROUTER_API_KEY}",
-        "HTTP-Referer": YOUR_SITE_URL,
-        "X-Title": YOUR_SITE_NAME,
         "Content-Type": "application/json"
     }
     data = {
-        "model": "deepseek/deepseek-chat-v3-0324:free",
+        "model": "deepseek/deepseek-prover-v2:free",
         "messages": [
             {
                 "role": "user",
@@ -74,7 +72,7 @@ def openrouter_summarize(repo):
         return content
     except Exception as e:
         print(f"OpenRouter API 调用失败: {e}")
-        return "API生成失败：" + str(e)
+        return "API调用失败：" + str(e)
 
 def classify_by_language(repos):
     classified = {}
