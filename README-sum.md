@@ -1,272 +1,306 @@
 # 我的 GitHub Star 项目AI总结（由 DeepSeek API 自动生成）
 
 
-## Python（共18个）
+## Python（共21个）
+
+### [RockChinQ/LangBot](https://github.com/RockChinQ/LangBot)
+
+仓库地址：未提供
+```markdown
+1. **仓库名称**：RockChinQ/LangBot
+2. **简要介绍**：LangBot 是一个面向大模型时代的即时通信机器人平台，支持多种主流 IM 平台，并集成了多种大型语言模型（LLM）和 Agent。
+3. **创新点**：LangBot 通过插件系统支持多种模型和自定义逻辑，使得开发者能够根据需求灵活使用不同的大模型和框架。
+4. **简单用法**：通过配置消息规则和模型参数，可以快速搭建基于不同 IM 平台的智能聊天机器人。
+5. **总结**：LangBot 作为一个多功能的机器人开发平台，极大地简化了在各种即时通信平台集成大模型和自定义 Agent 的过程，为开发者和企业提供了便捷高效的解决方案。
+```
+
+
+### [xming521/WeClone](https://github.com/xming521/WeClone)
+
+1. 仓库名称：xming521/WeClone
+2. 简要介绍：WeClone是一个一站式解决方案，用于根据用户聊天记录创建数字分身。它能够微调LLMs，生成聊天记录的风格，并将数字分身绑定到聊天机器人上。
+3. 创新点：WeClone的创新点在于将用户的聊天记录与LLMs模型相结合，生成独一无二的聊天风格和回应方式，实现个性化的数字分身。
+4. 简单用法：首先，将聊天记录导出为原始数据，并上传至WeClone进行微调，生成LLMs模型。然后，将生成的AI角色绑定到聊天机器人上，即可开始交互。
+5. 总结：WeClone是一个能够从聊天记录中创建数字分身的一站式解决方案，适用于快速构建个性化的AI聊天机器人。
+
+
+### [happycola233/tchMaterial-parser](https://github.com/happycola233/tchMaterial-parser)
+
+1. 仓库名称：happycola233/tchMaterial-parser
+2. 简要介绍：一个用于从国家中小学智慧教育平台下载电子课本PDF文件网址的工具，方便用户离线阅读和存储。
+3. 创新点：将平台内部的加密URL转成可直接下载的PDF网址，将智慧教育平台作为云盘使用。
+4. 简单用法：运行代码后，根据提示输入密码并选择需要下载的课本，即可获取下载链接。
+5. 总结：tchMaterial-parser是一款专为从智慧教育平台下载电子课本而设计的工具，简化了下免费获取电子课本的流程。
+
 
 ### [0xsline/GeminiImageApp](https://github.com/0xsline/GeminiImageApp)
 
 1. 仓库名称：0xsline/GeminiImageApp
-2. 简要介绍：基于Google Gemini AI，提供图像处理、caption生成、翻译等功能的全功能应用。
-3. 创新点：集成了Google Gemini API，实现了从上传图像到生成描述/翻译的多功能图像处理流程。
+
+2. 简要介绍：一个基于Google Gemini AI的图像处理应用，能够实时进行图像描述、图像姿态识别和分析、令牌计数和管理、Dall-E 3发布、Yolo v8脸部检测及OCR图像文本提取。
+
+3. 创新点：
+   - 集成了Google Gemini AI的先进功能，提供多方面图像处理能力。
+   - 结合了Dall-E 3发布和Yolo v8脸部检测，扩展了图像处理的范围。
+   - 集成了OCR技术，实现图像文本的提取。
+
 4. 简单用法：
-```python
-gemini = GeminiImageProcessor('API_KEY')
-annotate_result = gemini.annotate(image_path)
-print(annotate_result)
-```
-5. 总结：一个使用Google AI技术处理图像并提取信息的强大工具。
+   - 用户安装应用后，可以选择图片，并选择不同的处理功能，如描述、姿态识别、文本提取等。
+   - 例如，使用图像描述功能：`app.process_image('path/to/image.jpg', 'describe')`。
+
+5. 总结：GeminiImageApp通过集成多个先进技术，为用户提供了一个全面的图像处理和分析平台，能够满足从基础描述到复杂识别、提取等高级需求。
 
 
 ### [public-apis/public-apis](https://github.com/public-apis/public-apis)
 
-1. 仓库名称：public-apis/public-apis
-2. 简要介绍："public-apis/public-apis" 是一个收集了众多免费API的公共仓库，旨在为开发者和用户提供一个高质量的免费API列表，方便使用和集成。
-3. 创新点：该仓库通过收集和分类众多免费API，为开发者和用户提供了一个方便的查找和集成API的平台，降低了API使用门槛，提升了开发效率。
-4. 简单用法：在该仓库的GitHub页面上，您可以找到不同分类的API列表，如动漫、音乐、新闻等。您可以通过点击链接直接访问API的文档和使用方法。
-5. 总结："public-apis/public-apis" 是一个实用的免费API收集仓库，旨在为开发者和用户提供便捷的API集成解决方案。
+1. **仓库名称**：public-apis/public-apis
+2. **简要介绍**：该仓库收集了互联网上可用的免费API列表，涵盖了多个领域如动物、天气、货币等，方便开发者使用。
+3. **创新点**：汇集了多个领域的免费API资源，为开发者提供了一个方便的查询和使用这些API的仓库。
+4. **简单用法**：在仓库中，开发者可以查看各个API的链接、描述以及认证方式，并可以直接访问对应的API文档进行使用。
+5. **总结**：public-apis仓库为开发者提供了一个寻找和使用免费API的便利平台，节省了开发者查找API的时间和精力。
 
 
 ### [SamuelSchmidgall/AgentLaboratory](https://github.com/SamuelSchmidgall/AgentLaboratory)
 
-### 仓库内容总结
+### 1. 仓库名称：SamuelSchmidgall/AgentLaboratory
 
-1. **仓库名称**：SamuelSchmidgall/AgentLaboratory
+### 2. 简要介绍：
+Agent Laboratory 是一个端到端的自主研究工作流，旨在帮助研究人员实现其研究想法，集成了 GPT-4、Groq、Mixtral、Claude 等多种模型。
 
-2. **简要介绍**：Agent Laboratory 是一个端到端的自主研究流程工具，旨在帮助研究人员实现研究想法。
+### 3. 创新点：
+该仓库结合了多模态多任务系统，能够自动化跨多个模型的推理和工具使用，还包含重新排序模式以提升生成的流畅性及事实准确性。
 
-3. **创新点**：
-   - 提供了针对大型语言模型（LLMs）的代码分析功能，以自动生成和运行实验。
-   - 集成了执行的实验日志系统，便于快速重现实验。
-   - 支持详细分析和统计摘要的生成，帮助研究人员评估实验结果。
+### 4. 简单用法：
+使用仓库前需安装依赖并设置环境变量，然后可以运行 `chat.py` 或 `stream_chat.py` 进行交互式使用。例如：
+```python
+python main.py --file_name research_template.json --iterations 100 --chat_gpt --groq --claude --mixtral
+```
 
-4. **简单用法**：
-   - 通过 `test_lab.py` 和 `test_lab_model.py` 运行自动化测试，检查不同实验场景。
-   - 使用 `lab_runner.py` 运行单一实验的详细分析。
-   - 使用 `tester.py` 进行批量测试和生成统计摘要。
-
-5. **总结**：Agent Laboratory 作为一个自动化研究工具，优化了实验流程，加速了实验迭代和结果分析。
+### 5. 总结：
+Agent Laboratory 提供了一种高效的自动化研究方法，能够集成不同模型，适用于需要多模型协作的复杂研究任务。
 
 
 ### [VisionXLab/CrossEarth](https://github.com/VisionXLab/CrossEarth)
 
-1. 仓库名称：VisionXLab/CrossEarth
+### 1. 仓库名称：
+VisionXLab/CrossEarth
 
-2. 简要介绍：
-CrossEarth是一个开源的基础视觉模型库，专注于地理空间遥感图像的跨域语义分割，旨在提高模型在未见过的遥感场景中的泛化能力。
+### 2. 简要介绍：
+CrossEarth 是一个用于遥感图像语义分割的地理空间视觉基础模型，专注于跨领域泛化。
 
-3. 创新点：
-- 提供了一种新的解决方案，通过构建一个基于遥感图像的基础模型，实现跨域语义分割的泛化能力。
-- 提出的方法在标准测试集上达到最先进水平，并在未见过的遥感图像数据上展现出良好的泛化性能。
-- 推动遥感图像处理在农业、灾害响应和土地利用规划等多个领域的应用。
+### 3. 创新点：
+- **跨领域泛化**：通过开发一种新的方法，增强模型在不同地理区域和传感器类型之间的泛化能力。
+- **多模态集成**：利用合成数据和真实数据相结合的方式，提高模型在未见过的场景下的性能。
 
-4. 简单用法：
+### 4. 简单用法：
 ```python
-# 假设我们有预训练好的CrossEarth模型
-from cross_earth_model import CrossEarthModel
+from model import YourCustomModel
 
-model = CrossEarthModel(pretrained=True)
-image = load_image('path_to_your_image')
-segmentation_map = model.predict(image)
+# 初始化模型
+model = YourCustomModel()
+
+# 训练模型
+model.train(training_data)
+
+# 测试模型
+predictions = model.predict(test_data)
 ```
 
-5. 总结：
-CrossEarth是一个强大的遥感图像语义分割框架，通过其独特的跨域泛化能力，使得在未见过的新遥感数据上也能取得优秀的语义分割结果，从而推动了遥感技术在多个领域的实际应用。
+### 5. 总结：
+CrossEarth 提供了一个强大的基础模型，专注于解决遥感图像语义分割中的跨领域泛化问题，使模型在现实世界的不同场景中更具鲁棒性和适应性。
 
 
 ### [microsoft/markitdown](https://github.com/microsoft/markitdown)
 
-1. 仓库名称：microsoft/markitdown
-2. 简要介绍：Markdown转换工具，用于将文件和办公文档如Word、PPT、Excel、图片等转换为Markdown格式。
-3. 创新点：支持将包含图表的Word、Excel、PPT等办公文档转换为Markdown格式，且支持将markdown文本转图片、Markdown转PDF等功能。
-4. 简单用法：```bash
-md convert -i "test.docx" -o "test.md"
+### 1. 仓库名称：microsoft/markitdown
+
+### 2. 简要介绍：
+`Markitdown` 是微软开发的一个 Python 工具，用于将文件和 Office 文档（如 `.docx`, `.pptx`）转换为 Markdown 格式。
+
+### 3. 创新点：
+可以将多种常见的 Office 文档格式高效地转换为 Markdown 格式，同时支持嵌入图片和表格，并尽可能地保留原始格式的结构和布局。
+
+### 4. 简单用法：
+```bash
+python mkit.py -i input.docx -o output.md
 ```
-5. 总结：该工具极大地简化了将办公文档和文件转换为Markdown格式的过程，提高了文档处理的灵活性。
+
+### 5. 总结：
+`Markitdown` 是一个快速且方便的 Office 文档转 Markdown 工具，特别适合需要在多种格式间进行文档转换和协作的用户。
 
 
 ### [subframe7536/maple-font](https://github.com/subframe7536/maple-font)
 
-```md
+```markdown
 1. 仓库名称：subframe7536/maple-font
-2. 简要介绍：Maple Mono 是一款开源等宽字体，具有圆角、连字和 Nerd Font 图标，适用于 IDE 和终端，提供细粒度的自定义选项。
-3. 创新点：提供连字和控制台图标、圆角等特色，特别设计中英文宽度比例为2:1，支持多种细粒度自定义配置。
+2. 简要介绍：Maple Mono 是一款开源圆角等宽字体，带有连字和控制台图标（Nerd-Font），适用于 IDE 和终端，具备细粒度的自定义选项。
+3. 创新点：中英文宽度完美 2:1，支持连字设计，与 Nerd-Font 实用结合，提供细粒度自定义选项。
 4. 简单用法：
-   ```bash
-   # 自动安装（需要 root 权限）
-   ./install.sh
-   ```
-5. 总结：Maple Mono 是一款结合美观与功能性的编程字体，通过细致的自定义选项和丰富的图标支持，提升开发体验。
+   - 下载字体文件并安装：`MapleMono.zip`
+   - 或使用 OTF 文件进行安装：`MapleMono-*.otf`
+5. 总结：Maple Mono 是为开发者和终端用户量身定制的等宽字体，结合了连字和图标支持的实用功能。
 ```
 
 
 ### [nvbn/thefuck](https://github.com/nvbn/thefuck)
 
-### 1. 仓库名称：nvbn/thefuck
-### 2. 简要介绍：
-thefuck 是一个用于修正终端中错误命令的命令行工具，它能够智能地分析并自动纠正之前的拼写错误或提供修正建议。
-### 3. 创新点：
-通过分析错误输出和运行环境上下文，thefuck 能够智能猜测并修复错误，用户只需轻松确认即可执行正确的命令。
-### 4. 简单用法：
-```bash
-$ git push
-fatal: The current branch master has no upstream branch.
-To push the current branch and set the remote as upstream, use
-    git push --set-upstream origin master
-$ fuck
-git push --set-upstream origin master [enter/↑/↓/ctrl+c]
-Counting objects: 9, done.
-```
-### 5. 总结：
-thefuck 能够智能识别并修正用户的终端命令错误，极大提高了命令行操作的友好性和效率。
+1. 仓库名称：nvbn/thefuck
+2. 简要介绍：The Fuck是一个能够纠正您之前错误控制台命令的实用程序。
+3. 创新点：能够智能地识别错误命令并提供纠正建议。
+4. 简单用法：在终端中输入错误命令后，运行`fuck`命令即可获取正确的命令建议。
+5. 总结：The Fuck可帮助用户快速纠正和执行之前的错误命令，提高命令行操作效率。
 
 
 ### [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps)
 
-**仓库名称：Shubhamsaboo/awesome-llm-apps**
+### 1. 仓库名称
+Shubhamsaboo/awesome-llm-apps
 
-**简要介绍：** 这是一个收集了使用AI Agents和RAG（Retrieval-Augmented Generation）技术构建的LLM应用的库，支持OpenAI、Anthropic、Gemini等模型。
+### 2. 简要介绍
+这是一个收集了大量基于大型语言模型（LLM）的应用案例的仓库，包括使用AI代理和RAG（Retrieval-Augmented Generation）技术，涉及OpenAI、Anthropic、Gemini等API和开源的LLM模型。
 
-**创新点：** 集中展示了如何将大型语言模型（LLM）与AI智能体和检索增强生成（RAG）技术相结合，以创建功能强大且实用的AI应用，包括聊天机器人、文档分析和自动化等。
+### 3. 创新点
+该仓库最创新的地方在于整合了众多行业和专业领域的LLM应用案例，覆盖从简单的自动文本生成到复杂的检索增强生成（RAG）和AI代理。每一类示例都以Jupyter Notebook形式呈现，方便用户实践和探索。
 
-**简单用法：** 进入[聊天机器人](https://github.com/Shubhamsaboo/awesome-llm-apps#chatbots)部分，选择一个具体的聊天机器人项目，按照其提供的安装和配置指南进行设置并运行。
+### 4. 简单用法
+```python
+# 安装wingman-ai包（以发布日期区分不同版本）
+pip install wingman-ai
+# 或直接安装最新版（可能不稳定）
+pip install git+https://github.com/e-johnstonn/wingman-ai
+```
 
-**总结：** 该仓库为开发者提供了丰富的资源，帮助他们快速构建和部署基于LLM的AI应用。
+### 5. 总结
+这个仓库提供了一个全面的LLM应用参考库，用户可以在这里找到各种应用场景的实现案例，并快速将其应用于自己的项目中。
 
 
 ### [aws/aws-cli](https://github.com/aws/aws-cli)
 
 1. 仓库名称：aws/aws-cli
-2. 简要介绍：AWS CLI 是亚马逊网络服务的通用命令行界面，允许用户访问和管理 AWS 服务。
-3. 创新点：提供统一、便捷的命令行方式来操作多种 AWS 服务，支持自动完成和帮助文档。
-4. 简单用法：
-   - 安装：`pip install awscli`
-   - 配置：`aws configure`（设置访问密钥和默认区域）
-   - 示例命令：`aws s3 ls`（列出 S3 存储桶）
-5. 总结：AWS CLI 简化了用户与 AWS 服务的交互，通过命令行提供了强大的自动化和管理能力。
+2. 简要介绍：AWS CLI 是亚马逊网络服务（AWS）的通用命令行工具，用于管理 AWS 服务。
+3. 创新点：提供统一的命令行界面，支持 Amazon EC2、Amazon S3 等 AWS 服务的高级命令。
+4. 简单用法：例如，列出所有 S3 存储桶：`aws s3 ls`。
+5. 总结：AWS CLI 是用 Python 编写的命令行工具，为管理 AWS 服务提供了简便、快速和统一的界面。
 
 
 ### [jonathanwilton/PUExtraTrees](https://github.com/jonathanwilton/PUExtraTrees)
 
 1. 仓库名称：jonathanwilton/PUExtraTrees
-2. 简要介绍：该仓库实现了一个基于Extra Trees分类器的PU学习算法。
-3. 创新点：结合了Extra Trees（极端随机树）分类器与PU（正例-无标签）学习方法，可以在只有正例和无标签样本的情况下进行有效的学习。
-4. 简单用法：训练数据包含一个特征数组`X`，正例样本索引`idx_lab`和无标签样本索引`idx_unlab`，通过`rbf_kernel_pu`函数进行模型训练，并通过`predict_proba_rbf`函数进行概率预测。
-5. 总结：结合极端随机树与PU学习，有效地处理了只有正例和无标签样本的分类问题。
+2. 简要介绍：PUExtraTrees 是一个用于 单类分类 (One-Class Classification) 中应用 Positive Unlabeled Learning (PU Learning) 算法的仓库，包括 nnPU、uPU 和 PN 学习，采用 Extra Trees（极端随机树）作为分类器。
+3. 创新点：PUExtraTrees 创新地将 Extra Trees 分类器应用于 PU Learning，为单类分类问题提供了新颖且高效的解决方案。相较于传统的决策树和随机森林，Extra Trees 分类器具有更高的训练效率和更好的鲁棒性。
+4. 简单用法：使用 PUExtraTrees 很容易训练一个 PU Learning 模型，只需传入正样本和未标记样本来构建训练数据集。随后，使用训练好的模型进行预测。
+5. 总结：PUExtraTrees 通过结合 Extra Trees 和 PU Learning 算法，为用户提供了一个高效、稳定的单类分类工具，尤其适用于具有较多未标记数据的场景。
 
 
 ### [bilibili/Index-1.9B](https://github.com/bilibili/Index-1.9B)
 
 1. 仓库名称：bilibili/Index-1.9B
-2. 简要介绍：一款先进的轻量级多语言大语言模型，专注于解决多语言问题。
-3. 创新点：- 多语言支持：在多语言基准测试中表现优秀，超过部分70亿参数量的开源模型。- 推理效率高：可运行在RTX 3090、RTX 4090等图形卡上，且推理时间与13B模型接近。- 显存占用低：训练和推理时占用较少显存。- 开源训练过程：包含预训练、监督微调等多个阶段的开源解决方案。
-4. 简单用法：
-   ```python
-   from transformers import AutoModelForCausalLM, AutoTokenizer
-   
-   model_id = 'bilibili/Index-1.9B'
-   
-   tokenizer = AutoTokenizer.from_pretrained(model_id)
-   model = AutoModelForCausalLM.from_pretrained(model_id)
-   
-   messages = [
-       {'role': 'user', 'content': 'Explain self-attention.'},
-   ]
-   
-   input_ids = tokenizer.apply_chat_template(
-       messages, add_generation_prompt=True, return_tensors='pt'
-   ).to(model.device)
-   
-   outputs = model.generate(
-       input_ids, max_new_tokens=512, do_sample=False
-   )
-   response = tokenizer.decode(outputs[0][input_ids.shape[1]:], skip_special_tokens=True)
-   
-   print(response)
-   ```
-5. 总结：bilibili/Index-1.9B是一款先进、轻量且高性能的多语言大语言模型，特别适用于资源受限环境下的多语言任务。
+
+2. 简要介绍：Index-1.9B是一个在国际多语言基准测试中取得最佳成绩的轻量级大型语言模型，具备处理多种语言的能力和低资源需求。
+
+3. 创新点：在1.9B参数规模下，通过增加词汇量和扩展训练数据集，显著提升了多语言能力；使用代码混合数据提高模型理解多语言混合文本的能力；使用Grouped Query Attention技术优化推理内存使用。
+
+4. 简单用法：在 huggingface 上下载模型后，可以按照hugging face 的文档，导入 AutoModelForCausalLM 和 AutoTokenizer 来使用。
+
+5. 总结：Index-1.9B是一个轻量级且高效的多语言大型语言模型，适用于各种自然语言处理任务。
 
 
 ### [huggingface/transformers](https://github.com/huggingface/transformers)
 
----
 1. 仓库名称：huggingface/transformers
-2. 简要介绍：Transformers 是一个先进的开源库，提供预训练的机器学习模型用于自然语言处理（NLP）和计算机视觉等多领域。
-3. 创新点：提供多种最先进的预训练模型（如 BERT、GPT、T5等），以及用于模型训练、评估和推理的易用工具和接口。
+
+2. 简要介绍：
+🤗 Transformers 是一个集成了先进的预训练模型（如BERT、GPT-2、RoBERTa等）的机器学习库，支持PyTorch、TensorFlow和JAX框架。
+
+3. 创新点：
+- 集成性：提供大量预训练模型的统一接口，方便用户调用和微调。
+- 跨框架支持：支持多个主流深度学习框架，代码迁移成本低。
+- 易于使用：简洁的API设计，降低上手门槛。
+
 4. 简单用法：
 ```python
 from transformers import pipeline
-
-# 创建一个文本生成Pipeline
-generator = pipeline('text-generation', model='gpt2')
-
-# 使用Pipeline生成文本
-output = generator("Hello, I'm a language model,", max_length=30, num_return_sequences=3)
-
-print(output)
+classifier = pipeline("sentiment-analysis")
+result = classifier("I love this movie!")
+print(result)
+# Output: [{'label': 'POSITIVE', 'score': 0.9998}]
 ```
-5. 总结：Transformers 库极大地简化了 NLP 任务的模型开发和使用，推动研究和应用中的技术创新与实践。
+
+5. 总结：
+🤗 Transformers 是一个功能强大且易用的机器学习库，为自然语言处理任务提供大量预训练模型和便捷接口，加速开发和部署。
 
 
 ### [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
 
 1. 仓库名称：AUTOMATIC1111/stable-diffusion-webui
-2. 简要介绍：A browser interface based on Gradio library for Stable Diffusion.
-3. 创新点：提供了对Stable Diffusion功能的全面支持，包括文本生成图像、图像生成图像、放大图像等，并具有广泛的模型与扩展支持。
-4. 简单用法：安装依赖并运行`webui.sh`（Linux/macOS）或`webui-user.bat`（Windows）启动Web UI，通过浏览器进行图像生成操作。
-5. 总结：本仓库为Stable Diffusion提供了一个功能丰富且易于使用的Web界面，通过图形界面操作可以便捷地进行文本到图像生成以及其他相关任务。
+
+2. 简要介绍：Stable Diffusion 的 Web UI，可以在浏览器中使用 Stable Diffusion 模型进行图像生成。
+
+3. 创新点：为 Stable Diffusion 模型提供了一个简单易用的 Web 界面，使得用户无需掌握专业知识即可使用 Stable Diffusion 生成图像。
+
+4. 简单用法：
+   - 安装依赖：
+     ```
+     pip install -r requirements.txt
+     ```
+   - 运行 Web UI：
+     ```
+     python webui.py
+     ```
+   - 在浏览器中访问 `http://localhost:7860`，选择模型、输入文本提示和参数，点击生成即可。
+
+5. 总结：提供了一个基于 Web 的直观界面，让普通用户也能轻松使用 Stable Diffusion 生成图像。
 
 
 ### [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT)
 
 1. 仓库名称：Significant-Gravitas/AutoGPT
-2. 简要介绍：AutoGPT 是一个使构建和使用 AI 对每个人来说都更易于访问和操作的愿景。
-3. 创新点：AutoGPT 提供了一个易于使用的 AI 工具，使开发者能够专注于解决重要问题，而无需花费大量精力在 AI 技术的细节上。
-4. 简单用法：暂无简短的调用示例。
-5. 总结：AutoGPT 提供了一套工具，使得构建和使用 AI 变得更加容易，使开发者能够专注于重要的事情，推动了人工智能的普及和应用。
+2. 简要介绍：AutoGPT 是一个旨在为每个人提供易于使用和构建的可访问AI的愿景和工具，让用户专注于重要的任务。
+3. 创新点：实现了AI辅助自动化，减少了人们重复性的工作负担。
+4. 简单用法：以下是一个简单的调用示例：  
+    ```python
+    from autogpt.agent.agent import Agent
+    agent = Agent()
+    agent.run("Find and summarize the latest AI research papers.")
+    ```  
+5. 总结：AutoGPT 提供了一个易用的AI集成框架，可以帮助用户自动化处理各种任务，让他们更专注于工作内容。
 
 
 ### [EvanLi/Github-Ranking](https://github.com/EvanLi/Github-Ranking)
 
 1. 仓库名称：EvanLi/Github-Ranking
-2. 简要介绍：这是一个自动化生成的GitHub仓库排名榜，包括按Stars和Forks数的排名，以及各种编程语言仓库的Top100 Star排名，每日自动更新。
-3. 创新点：自动化生成并提供每日更新的GitHub仓库排名榜，按Stars和Forks数排名，还包括各编程语言仓库的Top100 Star排名。
-4. 简单用法：用户可以在 https://github-ranking.com/ 网站上查看排名榜。
-5. 总结：这个仓库提供了有价值的GitHub仓库排名信息，供开发者查找热门的开源项目和有用的代码库。
+2. 简要介绍：这是一个自动更新每日Github上各类语言分类的星标数与fork数的排名项目。
+3. 创新点：自动更新每日排名，提供多种语言分类，并以JSON格式存储数据，方便开发者使用。
+4. 简单用法：通过调用提供的JSON数据API，可以获取最新的Github仓库排名信息，用于数据分析或展示。
+5. 总结：该仓库为开发者提供了实时的Github仓库排名数据，帮助了解开源趋势和项目热度。
 
 
 ### [Lydorn/Polygonization-by-Frame-Field-Learning](https://github.com/Lydorn/Polygonization-by-Frame-Field-Learning)
 
+---
+
 1. 仓库名称：Lydorn/Polygonization-by-Frame-Field-Learning
-
-2. 简要介绍：该仓库用于从空中图像中快速提取多边形建筑物轮廓，使用框架场进行多边形化构建。
-
-3. 创新点：通过深度学习结合传统多边形化算法，利用框架场进行建筑物的快速多边形化提取，实现了高效准确的建筑物轮廓提取。
-
-4. 简单用法：
-```python
-# 克隆仓库
-git clone https://github.com/Lydorn/Polygonization-by-Frame-Field-Learning.git
-cd Polygonization-by-Frame-Field-Learning
-# 安装依赖并运行示例代码
-# 更多详细信息请查阅 README.md
-```
-
-5. 总结：该仓库提供了一个强大的工具，通过结合深度学习与传统多边形化技术，实现了从空中图像中快速、准确地提取建筑物轮廓，有望在城市规划、遥感图像分析等领域发挥重要作用。
+2. 简要介绍：这个仓库实现了一种基于张量场学习的高效多边形建筑物提取流程，可以从航空图像中快速准确地提取建筑物的多边形轮廓。
+3. 创新点：该仓库通过引入了可学习的张量场框架，优化了传统图像分割方法的边界不规则性，从而生成更为规则且精确的多边形建筑物轮廓。
+4. 简单用法：在 NVIDIA TITAN Xp GPU 上，该代码通常只需要 5 分钟左右就能处理完一张图片的全部流程。
+5. 总结：该仓库提供了一种快速且准确的方法，能够从航空图像中提取建筑物的规则多边形轮廓，对于地理信息系统和城市模型构建具有重要价值。
 
 
 ### [bubbliiiing/unet-keras](https://github.com/bubbliiiing/unet-keras)
 
-1. 仓库名称：bubbliiiing/unet-keras
-2. 简要介绍：这是一个基于Keras框架实现的Unet模型，用于图像分割任务。
-3. 创新点：使用Keras框架轻量化实现Unet模型，便于用户快速上手和部署。
-4. 简单用法：
-```python
-from unet import Unet
-model = Unet(input_shape=(512,512,3), num_classes=2)
-# 训练模型
-model.train(epochs=10, batch_size=4, train_data_path='./data/train', valid_data_path='./data/valid')
+```markdown
+1. **仓库名称**: bubbliiiing/unet-keras
+2. **简要介绍**: 用Keras实现的UNet模型，适用于图像分割任务，支持自定义数据训练。
+3. **创新点**: 结合Keras的高效实现，便于快速上手和自定义数据集。提供了完整的训练和预测脚本，并包含详细的注释。
+4. **简单用法**: 配置训练参数后，使用`python unet.py`启动训练。预测时使用`unet.py`中的`predict`函数传入图片路径。
+   ```python
+   from unet import Unet
+   unet = Unet()
+   img = unet.detect_image("img.jpg")
+   img.show()
+   ```
+5. **总结**: 提供一个简洁高效的UNet实现，适合初学者快速复现及进行图像分割研究。
 ```
-5. 总结：该仓库提供了一个简单易用的Unet模型实现，方便用户进行图像分割任务。
 
 
 ### [zorzi-s/PolyWorldPretrainedNetwork](https://github.com/zorzi-s/PolyWorldPretrainedNetwork)
@@ -308,6 +342,10 @@ polygons = model(image, CONF_THRESH)
 
 ### 5. 总结：
 该仓库提供了 PolyWorld 模型的预训练权重和 DEMO 代码，可用于从卫星图像中自动提取建筑物多边形，适用于地图制图、城市规划等领域。
+
+
+
+## TypeScript（共6个）
 
 
 
@@ -396,6 +434,10 @@ API调用失败：429 Client Error: Too Many Requests for url: https://openroute
 
 ## Other（共6个）
 
+
+
+## Other（共6个）
+
 ### [holyshell/AppsForMac](https://github.com/holyshell/AppsForMac)
 
 1. 仓库名称：holyshell/AppsForMac
@@ -429,10 +471,14 @@ punkpeye/awesome-mcp-servers
 ### [kkeenee/TG-Twilight-AWAvenue-Ads-Rule](https://github.com/kkeenee/TG-Twilight-AWAvenue-Ads-Rule)
 
 1. 仓库名称：kkeenee/TG-Twilight-AWAvenue-Ads-Rule
-2. 简要介绍：这是一个用于网络层面拦截 Android 应用中各种广告 SDK 的开源广告过滤器列表，使用 Adblock 语法进行匹配和过滤。
-3. 创新点：该仓库通过结合优秀的规则和匹配策略，实现了在应用网络层面高效拦截和过滤广告 SDK，提供了一定程度上对广告、隐私和流量的节省。
-4. 简单用法：在支持 Adblock 语法的广告拦截工具或网络代理工具中，将仓库中提供的规则添加到过滤列表中，即可实现对广告的拦截和过滤。
-5. 总结：这个仓库是一个专注于在 Android 应用的网络层面拦截广告 SDK 的开源项目，通过使用 Adblock 语法提供了一套优秀的规则和匹配策略，可以帮助用户减少广告干扰、保护隐私和节省流量。
+
+2. 简要介绍：一个针对安卓应用中各种广告SDK的广告过滤规则集合，可在网络层面上进行拦截、节省流量和保护隐私。
+
+3. 创新点：提供最先进的AdBlock语法规则，可在网络层上拦截广告、跟踪和恶意软件，支持跨平台使用。
+
+4. 简单用法：将规则添加到支持AdBlock语法的广告拦截工具或代理工具中（如Clash、Shadowsocks等）。
+
+5. 总结：一个强大的广告过滤规则集，能有效拦截安卓应用内的广告SDK，提升用户体验并节省流量。
 
 
 ### [datawhalechina/so-large-lm](https://github.com/datawhalechina/so-large-lm)
@@ -469,157 +515,123 @@ punkpeye/awesome-mcp-servers
 
 ## Jupyter Notebook（共6个）
 
+
+
+## Jupyter Notebook（共6个）
+
 ### [microsoft/AI-For-Beginners](https://github.com/microsoft/AI-For-Beginners)
 
 1. 仓库名称：microsoft/AI-For-Beginners
-2. 简要介绍：为期12周的24节人工智能入门课程，涵盖从神经网络到自然语言处理和计算机视觉等主题。
-3. 创新点：以项目为基础的实践课程，注重实际应用和代码示例。
-4. 简单用法：该课程提供详细的课程计划和Jupyter Notebook形式的代码示例，适合初学者逐步学习和实践。
-5. 总结：一个全面的AI入门资源，旨在让每个人都能理解和应用人工智能。
+
+2. 简要介绍：微软推出的 AI 初学者课程，包含 12 周共 24 节课程，旨在帮助初学者了解人工智能的基础知识。
+
+3. 创新点：采用 Jupyter Notebook 和 Python 代码示例结合的教学方式，使学习更加直观和实践性强。
+
+4. 简单用法：可以通过访问 GitHub 仓库直接查看课程材料和代码，也可以将仓库克隆到本地使用 Jupyter Notebook 运行。
+
+5. 总结：本仓库为初学者提供了易于上手的 AI 入门教育资源，帮助人们快速掌握人工智能的基础概念和技能。
 
 
 ### [microsoft/generative-ai-for-beginners](https://github.com/microsoft/generative-ai-for-beginners)
 
 1. 仓库名称：microsoft/generative-ai-for-beginners
-2. 简要介绍：这是一个由微软推出的面向初学者的生成式AI入门课程，包含21节课。
-3. 创新点：课程设计循序渐进，从LLM和提示工程基础开始，扩展到复杂任务的处理方法，结合微软云服务和开源工具进行实践。
-4. 简单用法：通过网页（https://microsoft.github.io/generative-ai-for-beginners/）访问课程，按照课程的安排进行学习。
-5. 总结：这个仓库提供了一个系统而全面的生成式AI入门教程，结合理论与实践，旨在帮助初学者快速上手和构建基于生成式AI的应用。
+2. 简要介绍：这是一份微软出品的面向初学者的生成式AI教程，包含21节课，帮助入门者开始构建生成式AI应用。
+3. 创新点：结构化课程设计，从基础知识逐步深入，整合理论与实践。
+4. 简单用法：通过 Jupyter Notebook 学习，每节课包含理论讲解和代码实践。
+5. 总结：这份教程以浅显易懂的方式带领初学者掌握生成式AI的关键概念和应用开发。
 
 
 ### [QwenLM/Qwen2.5-VL](https://github.com/QwenLM/Qwen2.5-VL)
 
-### 1. 仓库名称
-QwenLM/Qwen2.5-VL
+### 1. 仓库名称：
+`QwenLM/Qwen2.5-VL`
 
-### 2. 简要介绍
-Qwen2.5-VL是由阿里云Qwen团队开发的多模态大语言模型系列，支持多种输入方式和工具使用，并在多个基准测试中取得了最佳表现。
+### 2. 简要介绍：
+Qwen2.5-VL是阿里巴巴云Qwen团队开发的多模态大语言模型系列，旨在处理视觉和语言任务。
 
-### 3. 创新点
-- 提供多种输入方式：如ChatML prompt格式和用户自定义消息词典。
-- 支持模型并行处理和内置工具使用（如计算器、代码解释器、图片编辑等）。
-- 在多项多模态与语言基准测试中达到SOTA性能。
+### 3. 创新点：
+- 结合了先进的视觉理解能力和自然语言处理技术，实现多模态理解与生成。
+- 支持多种图像和语言任务的无缝切换，如图像描述、视觉问答等。
 
-### 4. 简单用法
+### 4. 简单用法：
 ```python
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from PIL import Image
 
-model_id = "Qwen/Qwen2.5-VL"
-
-tokenizer = AutoTokenizer.from_pretrained(model_id)
-model = AutoModelForCausalLM.from_pretrained(
-    model_id,
-    device_map="auto",
-    use_flash_attention_2=True,
-).eval()
-
-# 使用ChatML格式进行多轮对话
-messages = [
-    {"role": "user", "content": "你好"},
-    {"role": "assistant", "content": "你好，我是Qwen2.5-VL大语言模型。"},
-    {"role": "user", "content": "你好，很高兴认识你，你是谁？"}
-]
-text = tokenizer.apply_chat_template(
-    messages=messages,
-    tokenize=False,
-    add_generation_prompt=True
-)
-
-model_inputs = tokenizer([text], return_tensors="pt").to(model.device)
-generated_ids = model.generate(
-    model_inputs.input_ids,
-    max_length=1024
-)
-generated_ids = [
-    output_ids[len(input_ids):] for input_ids, output_ids in zip(model_inputs.input_ids, generated_ids)
-]
-response = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
+model_id = "Qwen/Qwen-VL-Chat"
+tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
+model = AutoModelForCausalLM.from_pretrained(model_id, device_map="auto", trust_remote_code=True)
+query = [{"image": "path/to/your/image.jpg"}, {"text": "描述这张图片"}]
+response, _ = model.chat(tokenizer, query=query, history=None)
 print(response)
 ```
 
-### 5. 总结
-Qwen2.5-VL是一个功能强大的多模态大语言模型，适用于复杂多轮对话和多种工具使用场景，并且在性能上处于领先地位。
+### 5. 总结：
+Qwen2.5-VL是一个强大的多模态大语言模型，适用于处理视觉与语言结合的复杂任务。
 
 
 ### [roywright/pu_learning](https://github.com/roywright/pu_learning)
 
-### 1. 仓库名称：
-roywright/pu_learning
-
-### 2. 简要介绍：
-该仓库是进行正例未标记学习（PU Learning）实验的代码库，包含了多种PU学习策略的实现和比较。
-
-### 3. 创新点：
-该仓库的亮点在于实现了多种PU学习策略，并通过实验实际比较了不同方法在正例未标记数据集上的性能。特别是引入了非传统的一致性和协同训练的方法，并将其与经典的PU学习策略进行对比。
-
-### 4. 简单用法：
-```python
-from sklearn.tree import DecisionTreeClassifier
-from pulearn import ElkanotoPuClassifier
-from pulearn import WeightedElkanotoPuClassifier
-
-# 加载数据：特征X，正例和未标记标签y
-X = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16]]
-y = [1, 1, 0, 0, 0, 0, 0, 0]
-
-# 初始化分类器
-pu_estimator = WeightedElkanotoPuClassifier(
-    estimator=DecisionTreeClassifier(),
-    hold_out_ratio=0.2,
-)
-
-# 训练
-pu_estimator.fit(X, y)
-
-# 预测
-print(pu_estimator.predict(X))
-```
-
-### 5. 总结： 
-本仓库通过实际实现和比较多种PU学习策略，为处理正例未标记数据的分类问题提供了有效的参考。
+1. 仓库名称：roywright/pu_learning
+2. 简要介绍：正例-无标记学习（positive-unlabeled learning）实验代码库，用于研究仅已知正例样本时利用大量未标记数据构建分类模型的问题。
+3. 创新点：在正例稀缺且无负例的情况下，采用非传统监督学习方法，通过探索不同的正例-无标记学习算法来提高分类准确率。
+4. 简单用法：无具体用法或调用示例，主要提供各种实验脚本和Jupyter笔记本供参考。
+5. 总结：技术派研究代码库，针对正例-无标记学习问题提供实践与理论实验平台。
 
 
 ### [phuijse/bagging_pu](https://github.com/phuijse/bagging_pu)
 
-1. 仓库名称：phuijse/bagging_pu
-2. 简要介绍：基于sklearn的Python实现，使用基于bagging的集成方法进行正类和无标记（PU）分类。
-3. 创新点：提供了一种简单有效的PU分类算法实现，特别适用于只有正类和无标记数据的情况。
-4. 简单用法：
-```python
-from baggingPU import BaggingClassifierPU
-from sklearn.tree import DecisionTreeClassifier
-classifier = BaggingClassifierPU(DecisionTreeClassifier(), n_estimators=100)
-classifier.fit(X_train, y_train)
+```markdown
+1. **仓库名称**：phuijse/bagging_pu
+2. **简要介绍**：这是一个基于 sklearn 的 Python 实现，用于正例-未标记 (PU) 分类，采用基于 Bagging 的集成学习。
+3. **创新点**：基于 PU 学习，特别适用于标记数据主要是正例和大量未标记数据的场景。而传统分类器通常需要正例和反例的样本。
+4. **简单用法**：
+   ```python
+   from sklearn.ensemble import BaggingClassifier, RandomForestClassifier
+   from sklearn.tree import DecisionTreeClassifier
+   from pu_bagging import BaggingClassifierPU, max_pu_score
+   
+   # 定义数据
+   X_train = [[1, 1], [2, 2], [3, 3]]
+   y_train = [1, 0, 0]  # 1: positive, 0: unlabeled
+   X_test = [[4, 4], [5, 5]]
+   
+   # 使用 BaggingClassifier
+   base_clf = DecisionTreeClassifier()
+   clf = BaggingClassifierPU(base_estimator=base_clf, n_estimators=1000, n_jobs=-1)
+   clf.fit(X_train, y_train)
+   
+   # 预测
+   y_pred = clf.predict(X_test)
+   print(y_pred)  # [0 0]
+   ```
+5. **总结**：提供了一种基于 Bagging 的 PU 分类器实现，适用于解决只有正例和未标记数据的分类问题。
 ```
-5. 总结：该仓库提供了一种便捷的PU分类算法实现，适用于需要在只有正类和无标记数据的情况下进行分类的场景。
 
 
 ### [google/automl](https://github.com/google/automl)
 
-### 仓库总结
+1. 仓库名称：google/automl  
 
-1. **仓库名称**：google/automl
-2. **简要介绍**：
-   - 该仓库包含了几种AutoML（自动机器学习）算法的实现，例如EfficientNet、EfficientDet、MNasNet和MobileNetV3等，它们在计算机视觉任务，特别是图像分类、目标检测和语义分割等方面有着广泛的应用。
-3. **创新点**：
-   - 提供了AutoML算法的高质量实现，能够帮助研究人员和开发者快速应用先进的模型。此外，EfficientDet和EfficientNetV2在准确性和效率上都取得了显著的进步。
-4. **简单用法**：
-   - 使用TensorFlow的`tf.keras` API，可以直接加载预训练的EfficientNet模型：
-     ```python
-     import tensorflow as tf
-     model = tf.keras.applications.EfficientNetB0(weights='imagenet')
-     ```
-5. **总结**：
-   - 这个仓库是AutoML领域的重要资源，提供了高性能的深度学习模型和训练脚本，适用于多种视觉任务，可帮助开发者轻松实现先进的机器学习模型。
+2. 简要介绍：  
+该仓库是Google Brain开发的AutoML项目，专注于自动化神经网络架构搜索（NAS）和高效模型训练，提供多种优化技术，极大地简化了深度学习模型的构建过程。  
 
+3. 创新点：  
+该仓库的亮点在于提供的多个高效的NAS算法（如EfficientNet、EfficientDet等），通过复合缩放（Compound Scaling）和预训练模型优化，实现在保持计算资源高效利用的同时大幅提升模型性能。  
 
+4. 简单用法：  
 
-## TypeScript（共5个）
+```python
+# 以EfficientNet-B0为例，加载预训练模型并进行预测
+import tensorflow as tf
+from official.vision.image_classification import efficientnet_model
 
+model = efficientnet_model.EfficientNetModel("efficientnet-b0")
+logits = model(inputs, training=False) # inputs为预处理后的图像张量
+predictions = tf.nn.softmax(logits)
+```
 
-
-## TypeScript（共5个）
+5. 总结：  
+该仓库提供了一系列先进的AutoML算法和模型，极大提升了模型开发的效率和性能，尤其适用于需要高效利用计算资源的深度学习任务。
 
 
 
@@ -627,49 +639,104 @@ classifier.fit(X_train, y_train)
 
 ### [randyrants/sharpkeys](https://github.com/randyrants/sharpkeys)
 
-API生成失败或429
+### 1. 仓库名称：
+randyrants/sharpkeys
+
+### 2. 简要介绍：
+SharpKeys 是一个实用工具，用于管理 Windows 的注册表键，允许重新映射一个键到另一个键。
+
+### 3. 创新点：
+SharpKeys 提供了一种简单的方式，通过修改注册表来实现键盘按键的重新映射，无需复杂的脚本或第三方软件。
+
+### 4. 简单用法：
+1. 打开 SharpKeys 应用程序。
+2. 点击“Add”按钮，选择要重新映射的源键和目标键。
+3. 点击“Write to Registry”将映射写入注册表。
+4. 重启计算机或重新登录使更改生效。
+
+### 5. 总结：
+SharpKeys 是一款方便实用的工具，可以帮助用户轻松修改 Windows 键盘的按键映射，满足个性化需求。
 
 
 ### [microsoft/PowerToys](https://github.com/microsoft/PowerToys)
 
-1. 仓库名称：microsoft/PowerToys
-2. 简要介绍：PowerToys 是一组用于 Windows 系统的实用程序，旨在提升生产力和系统定制能力。
-3. 创新点：PowerToys 通过集成各种实用工具，允许用户轻松访问高级功能，如窗口管理、文件管理、键盘快捷键自定义等，大幅提升了 Windows 用户的操作体验。
-4. 简单用法：启动 PowerToys 后，可以通过设置界面配置各种工具，如使用 FancyZones 定义窗口布局，或使用 PowerToys Run 快速启动应用程序。
-5. 总结：PowerToys 是一个强大的 Windows 系统增强工具集，为高级用户提供了一系列提高生产力和改善用户体验的功能。
+1. **仓库名称**: microsoft/PowerToys
+
+2. **简要介绍**: 一个为高级用户准备的Windows系统工具集，用于优化和增强生产力。
+
+3. **创新点**: 提供的多个工具都针对Windows的高级用户需求，如窗口管理、搜索增强、颜色选择等，且易于使用。
+
+4. **简单用法**: 下载并安装PowerToys，启动后可通过设置界面启用并配置各个工具，如使用“FancyZones”进行窗口布局管理。
+
+5. **总结**: PowerToys 提供了一系列实用工具，帮助Windows高级用户更高效地使用操作系统，并增加工作生产力。
 
 
 ### [zetaloop/OFGB](https://github.com/zetaloop/OFGB)
 
 1. 仓库名称：zetaloop/OFGB
-
-2. 简要介绍：OFGB中文版，用于删除Win11系统中的广告，是一个轻量级的广告删除工具。
-
-3. 创新点：专为Win11系统设计，提供中文界面和本地化支持的广告删除工具，让用户摆脱系统内置广告的困扰。
-
-4. 简单用法：下载并运行OFGB，在界面上选择需要禁用的广告项目，点击“应用”即可。
-
-5. 总结：OFGB为用户提供了一种简单有效的方式来禁用Windows 11系统中的广告，提升了用户体验和系统清洁度。
+2. 简要介绍：一个用于删除Windows 11中各种广告的小工具。
+3. 创新点：提供了一个专门针对Windows 11的广告删除工具，帮助用户去除系统中的各种广告。
+4. 简单用法：（1）下载OFGB项目；（2）运行OFGB.exe；（3）选择需要禁用的广告选项并应用更改。
+5. 总结：OFGB是一个简单实用的工具，可以帮助Windows 11用户去除系统中的广告，提升用户体验。
 
 
 
-## Go（共1个）
+## C（共2个）
+
+### [ventoy/Ventoy](https://github.com/ventoy/Ventoy)
+
+1. 仓库名称：ventoy/Ventoy
+
+2. 简要介绍：一个开源的创举式可启动U盘解决方案，可以在不需要格式化U盘的情况下启动多个ISO文件。
+
+3. 创新点：Ventoy的主要创新在于它允许用户将多个操作系统的ISO镜像直接复制到U盘上，并在启动时选择要安装或运行的系统，而不需要每次重新格式化或创建启动盘。
+
+4. 简单用法：
+   - 下载Ventoy的安装包（例如Ventoy-x.x.xx-windows.zip）并解压。
+   - 运行Ventoy2Disk.exe，选择你的U盘进行安装。
+   - 将多个ISO文件复制到U盘的根目录。
+   - 重启并从U盘启动，可以选择要启动的ISO镜像。
+
+5. 总结：Ventoy是一款强大的工具，它简化了创建多系统启动U盘的过程，极大地提升了系统维护、安装的灵活性和效率。
+
+
+### [RamonUnch/AltSnap](https://github.com/RamonUnch/AltSnap)
+
+### GitHub 仓库总结
+
+1. **仓库名称**: RamonUnch/AltSnap
+   
+2. **简要介绍**: AltSnap 是 AltDrag 的维护分支，AltDrag 是一个允许用户通过Alt键拖动窗口的工具。
+
+3. **创新点**: AltSnap 扩展了基础 AltDrag 功能，包括对高 DPI 显示器的更好支持、改进的窗口选择逻辑以及额外的配置选项。
+
+4. **简单用法**:
+   - 下载并安装 AltSnap。
+   - 按住 `Alt` 键，然后用鼠标左键单击窗口的任何位置进行拖动。
+   - 可在设置中自定义热键和选项。
+
+5. **总结**: AltSnap 为用户提供了一种更便捷的方式来移动和调整窗口大小，适合多显示器或大屏幕环境。
 
 
 
-## Go（共1个）
+## C++（共2个）
+
+### [microsoft/WSL](https://github.com/microsoft/WSL)
+
+1. 仓库名称：microsoft/WSL
+2. 简要介绍：Windows Subsystem for Linux (WSL) 是一款可以在 Windows 系统上运行 Linux 发行版的兼容层。
+3. 创新点：在 Windows 系统上无缝集成 Linux 环境，让 Linux 终端和命令行工具在 Windows 上高效运行，切换方便，提供极佳的用户体验。
+4. 简单用法：在 Windows 10 或 Windows 11 上开启 WSL 功能，通过 Microsoft Store 安装 Linux 发行版，然后在 Windows 终端或 Linux 终端中直接运行 Linux 命令和程序。
+5. 总结：WSL 可以让开发者和 Linux 用户在 Windows 上享受原生的 Linux 环境，实现跨平台开发和测试，提高工作效率。
 
 
+### [hluk/CopyQ](https://github.com/hluk/CopyQ)
 
-## Go（共1个）
-
-
-
-## Go（共1个）
-
-
-
-## Go（共1个）
+1. 仓库名称：hluk/CopyQ
+2. 简要介绍：具有高级功能的剪贴板管理工具，支持多个剪贴板、图像、标签、复制项中搜索等功能。
+3. 创新点：功能强大的跨平台剪贴板管理工具，支持自定义命令、脚本、插件，实现剪贴板历史记录的精细控制。
+4. 简单用法：安装后运行即可使用，支持全局快捷键唤出，可以在历史记录中选择复制项并粘贴到任意位置。
+5. 总结：CopyQ提供了面向专业用户的强大剪贴板管理功能，提高了复制粘贴操作的效率和灵活性。
 
 
 
@@ -677,74 +744,69 @@ API生成失败或429
 
 ### [yitong2333/Bionic-Reading](https://github.com/yitong2333/Bionic-Reading)
 
-### 仓库内容总结
+### 1. 仓库名称：yitong2333/Bionic-Reading
+### 2. 简要介绍：
+这是一个实现仿生阅读（Bionic Reading）的油猴脚本，通过强调文本中的关键字和部分内容来增强阅读体验。
 
-1. **仓库名称**：yitong2333/Bionic-Reading
+### 3. 创新点：
+- 利用仿生阅读技术，通过强调文本中的关键字和部分内容，提高阅读速度和理解能力。
 
-2. **简要介绍**：  
-   该仓库包含一个油猴脚本，实现仿生阅读（Bionic Reading）功能，通过强调文本关键词和部分内容，增强在线阅读体验，提高阅读速度和理解能力。
+### 4. 简单用法：
+```javascript
+// 示例：在油猴脚本中使用Bionic-Reading
+GM_addStyle(`
+    .br-bold {
+        font-weight: bold;
+    }
+    .br-gradient {
+        font-weight: bold;
+        background: linear-gradient(to right, #333, #666);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+`);
 
-3. **创新点**：  
-   - 该脚本能够动态改变网页文本显示，将部分字母加粗，模拟人眼快速阅读时的焦点。  
-   - 适用于支持油猴脚本的任何浏览器，可自定义加粗字母的百分比、颜色和字体加粗程度。
+function applyBionicReading(text) {
+    return text.replace(/\b(\w)/g, '<span class="br-bold">$1</span>');
+}
 
-4. **简单用法**：  
-   1. 安装脚本后，在任何网页上按 `Shift+B` 激活或停用脚本。  
-   2. 根据文档设置自定义快捷键、加粗位置和其他样式。  
-   3. 结合JSON配置文件调整不同网站的加粗效果。  
+// Usage
+const text = "这是一个示例文本。";
+const bionicText = applyBionicReading(text);
+document.body.innerHTML = bionicText;
+```
 
-5. **总结**：  
-   该油猴脚本通过改变文本视觉呈现方式，帮助用户更高效地进行在线阅读。
+### 5. 总结：
+提供一种通过强调文本中的关键字和部分内容来增强阅读体验的方法。
 
 
 ### [poloclub/transformer-explainer](https://github.com/poloclub/transformer-explainer)
 
 1. 仓库名称：poloclub/transformer-explainer
-2. 简要介绍：poloclub/transformer-explainer仓库是一个解释 Transformer 模型原理的交互式可视化工具，旨在帮助人们更好地理解大型语言模型的内部工作原理。
-3. 创新点：该仓库提供了一个多模块的交互式界面，以动态和直观的方式分解 Transformer 模型的各个组件，并允许用户通过实际操作和调整参数来理解模型不同部分的作用和它们之间的联系。
-4. 简单用法：在仓库中，可以通过浏览器打开提供的 HTML 文件或使用提供的 Colab 笔记本运行和修改 Transformer 模型的可视化界面，以探索模型的编码器和解码器结构以及注意力机制等关键部分。
-5. 总结：poloclub/transformer-explainer 仓库提供了一种创新的方式来探索和解释大型语言模型的工作原理，有助于加深对 Transformer 模型的理解。
+2. 简要介绍：利用交互式视觉化来解释Transformer模型的工作原理，以帮助理解大型语言模型（LLM）中的Transformer结构。
+3. 创新点：提供了一个交互式的可视化解剖工具，让用户能够直观地探索和了解Transformer模型各个环节的内部机制。
+4. 简单用法：访问仓库中的在线Demo链接，通过交互界面选择不同模块进行探索。
+5. 总结：通过交互式视觉化，深入浅出地帮助用户理解Transformer在LLM中的运行机制。
 
 
 
-## C#（共2个）
+## Roff（共1个）
 
+### [TapXWorld/ChinaTextbook](https://github.com/TapXWorld/ChinaTextbook)
 
-
-## C#（共2个）
-
-
-
-## C#（共2个）
-
-
-
-## C#（共2个）
-
-
-
-## C#（共2个）
-
-
-
-## C（共1个）
-
-### [RamonUnch/AltSnap](https://github.com/RamonUnch/AltSnap)
-
-### 1. 仓库名称：RamonUnch/AltSnap
+### 1. 仓库名称：TapXWorld/ChinaTextbook
 
 ### 2. 简要介绍：
-Maintained continuation of Stefan Sundin's AltDrag, 是一款可以在 Windows 系统中通过 Alt 键移动、调整窗口尺寸、控制窗口置顶等的实用工具。
+这是一个包含中国小学、初中、高中和大学PDF版本教材的集合资源库。
 
 ### 3. 创新点：
-- 基于 Stefan Sundin 的 AltDrag 项目进行维护和拓展。
-- 支持多种自定义配置选项和增强功能。
+该仓库整理了来自中国教育阶段的各类教材PDF文件，并公开分享，方便学生和教育工作者获取。
 
 ### 4. 简单用法：
-下载并安装程序后，按下`Alt`键并点击、拖动窗口即可实现窗口移动、调整大小等操作。
+由于是静态PDF文件集合，无需编程调用，直接下载或在线查看即可。
 
 ### 5. 总结：
-AltSnap 是 Windows 的增强工具，让用户通过简单的快捷键操作来更高效地管理窗口。
+TapXWorld/ChinaTextbook是一个针对中国教育阶段教材的PDF资源库，便于各类用户获取和查阅教材内容。
 
 
 
@@ -754,21 +816,19 @@ AltSnap 是 Windows 的增强工具，让用户通过简单的快捷键操作来
 
 ### 1. 仓库名称：tw93/Pake
 ### 2. 简要介绍：
-Pake是一个使用Rust编写的工具，可以将任何网页转换为轻量级的桌面应用程序。
+Pake 是一个使用 Rust 编写的工具，能够将任何网页快速打包为轻量级、多平台的桌面应用，支持 Mac、Windows 和 Linux 系统。
+
 ### 3. 创新点：
-Pake允许用户将网页应用快速打包为跨平台的桌面应用，提供了与系统类似的体验，适用于需要使用Web应用但希望拥有更好性能和原生体验的场景。
+利用 Rust 的高性能与轻量级特性，Pake 将网页打包为桌面应用，相比 Electron 等传统方案，Pake 打包的应用尺寸更小（通常只有 5M 左右），且内存占用更低。
 
 ### 4. 简单用法：
 ```bash
-# 使用命令行打包一个网页
-npx pake https://weekly.tw93.fun --name Weekly
-
-# 或者克隆仓库后使用CLI工具打包
-# 详细用法见https://github.com/tw93/Pake#command-line-packaging
+使用以下命令快速创建桌面应用：
+`pake https://google.com`
 ```
 
 ### 5. 总结：
-Pake通过Rust和Web技术栈提供了简便的方法，让开发者能够快速将网页应用封装为轻量级、跨平台的桌面应用，提高了用户体验和应用性能。
+Pake 为开发者和用户提供极其简单快捷的方法，将网页转为高性能的跨平台桌面应用，极大降低了开发成本和资源消耗。
 
 
 
@@ -803,6 +863,10 @@ Pake通过Rust和Web技术栈提供了简便的方法，让开发者能够快速
 
 ## Haskell（共1个）
 
+
+
+## Haskell（共1个）
+
 ### [jgm/pandoc](https://github.com/jgm/pandoc)
 
 ```markdown
@@ -824,6 +888,10 @@ Pake通过Rust和Web技术栈提供了简便的方法，让开发者能够快速
 
 ## Shell（共1个）
 
+
+
+## Shell（共1个）
+
 ### [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds)
 
 ### 仓库信息
@@ -835,6 +903,10 @@ Pake通过Rust和Web技术栈提供了简便的方法，让开发者能够快速
 
 ### 详细总结
 该仓库的核心价值在于它提供了FFmpeg的预编译二进制文件，适用于Windows、Linux和macOS。开发者无需从头手动编译复杂的FFmpeg库，只需从Release页面下载符合需求的版本，解压后即可在命令行中使用。仓库还提供了多种许可证版本的构建：GPL和LGPL，以满足不同的使用场景和合规性要求。这个仓库极大地方便了想要快速使用FFmpeg的开发者。
+
+
+
+## Less（共1个）
 
 
 
@@ -863,18 +935,6 @@ VLOOK 是一个功能强大且极具美感的 Typora/Markdown 主题包和增强
 
 ## C++（共1个）
 
-### [hluk/CopyQ](https://github.com/hluk/CopyQ)
-
-1. 仓库名称：hluk/CopyQ
-
-2. 简要介绍：CopyQ 是一款具有高级功能的剪贴板管理器，可以帮助用户跟踪剪贴板历史记录、编辑和管理剪贴板项目、执行各种自定义操作。
-
-3. 创新点：CopyQ 的创新点在于其强大的剪贴板管理功能，允许用户对剪贴板历史记录进行分类、搜索和编辑，并支持自定义脚本和快捷键，提高工作效率。
-
-4. 简单用法：用户可以安装 CopyQ 后，在系统托盘中找到其图标，然后通过复制/剪切操作将内容保存到剪贴板中，根据需要查看和编辑剪贴板项目。
-
-5. 总结：CopyQ 是一款强大的剪贴板管理器，为用户提供了丰富的剪贴板管理功能，帮助用户更高效地处理剪贴板内容。
-
 
 
 ## Java（共1个）
@@ -886,6 +946,10 @@ VLOOK 是一个功能强大且极具美感的 Typora/Markdown 主题包和增强
 3. 创新点：结合了 Android 调试 API 和百度地图，实现了在移动设备上模拟定位的功能，同时加入了自由移动的摇杆设计，提升了用户体验。
 4. 简单用法：根据仓库中的 README 文件配置环境，安装必要的依赖库，然后按照指南操作以实现虚拟定位。
 5. 总结：提供了一个便捷地在 Android 设备上进行虚拟定位的工具，适用于需要在特定位置进行测试或模拟的应用场景。
+
+
+
+## Clojure（共1个）
 
 
 
