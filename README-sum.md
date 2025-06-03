@@ -115,22 +115,34 @@ services:
 
 ### [0xsline/GeminiImageApp](https://github.com/0xsline/GeminiImageApp)
 
-1. 仓库名称：0xsline/GeminiImageApp
-2. 简要介绍：这是一个基于谷歌 Gemini AI 的图像处理应用程序，旨在为用户提供全面的图像增强和生成功能。
-3. 创新点：
-   - 利用 Gemini AI 的强大能力，实现高级的图像处理和增强功能。
-   - 用户可以上传图像进行增强，或输入文本描述以生成新图像。
-4. 简单用法：
-   ```bash
-   # 克隆仓库
-   git clone https://github.com/0xsline/GeminiImageApp.git
-   # 安装依赖
-   cd GeminiImageApp
-   npm install
-   # 运行应用
-   npm start
-   ```
-5. 总结：GeminiImageApp 是一个功能强大的图像处理工具，利用 Gemini AI 技术实现图像增强和生成，为用户提供高品质的图像处理体验。
+### 1. 仓库名称：
+0xsline/GeminiImageApp
+
+### 2. 简要介绍：
+基于 Google Gemini AI 的全功能图像处理应用，包含图像生成、编辑、识别、修复等多种功能，还支持与 Gemini 的对话交互。
+
+### 3. 创新点：
+- **多功能的图像处理**：集成了图像生成、编辑、识别和修复等多个图像处理功能。
+- **Gemini AI 集成**：利用 Gemini 强大的生成和理解能力进行图像处理和对话交互。
+- **对话式交互**：用户可以通过自然语言与 Gemini 进行交互，实现更直观的操作体验。
+
+### 4. 简单用法：
+```python
+from app import GeminiImage
+gm = GeminiImage()
+# 图像生成
+generated_image = gm.generate(prompt='生成一张描绘未来城市的图片')
+# 图像修复
+repaired_image = gm.inpaint(
+    image_path='path/to/image.jpg', 
+    mask_path='path/to/mask.jpg', 
+    prompt='将图片中的动物换成一只猫')
+# 与 Gemini 的对话交互
+response = gm.chat(text='描述这张图片的内容', image='path/to/image.jpg')
+```
+
+### 5. 总结：
+GeminiImageApp 是一个功能丰富的图像处理应用，通过集成 Google Gemini AI，能够实现多样化的图像处理和自然语言交互，提升用户体验。
 
 
 ### [public-apis/public-apis](https://github.com/public-apis/public-apis)
@@ -170,23 +182,18 @@ services:
 ### [VisionXLab/CrossEarth](https://github.com/VisionXLab/CrossEarth)
 
 1. 仓库名称：VisionXLab/CrossEarth
-2. 简要介绍：CrossEarth 是一个地理空间视觉基础模型，专注于提升遥感语义分割任务中的跨域泛化能力。
-3. 创新点：CrossEarth 提出了一个跨地球预训练策略（CrossEarthPT），它利用大规模遥感图像预训练，学习到具有普适性的地理空间表示，使得模型在面对未见过的地理区域或遥感任务时，能够表现出强大的泛化能力。此外，还引入了参数无关的冻结 Vision Transformer 和跨模态提示调优技术，进一步增强了模型的适应性和准确性。
-4. 简单用法：使用经过预训练的 CrossEarth 模型，加载模型权重并对新的遥感图像进行语义分割：
-```python
-from ViT_Encoder import ViT_Encoder
-from CrossEarth import CrossEarth
+2. 简要介绍：CrossEarth是一个跨域泛化的遥感语义分割地理空间视觉基础模型，旨在提高各种遥感任务中的跨域泛化能力。
+3. 创新点：通过构建名为CrossEarth的地理空间视觉基础模型（GSVFM），该模型能够从多样的观测数据中学习通用的表示，并识别复杂景观中的共同模式。
+4. 简单用法：可以通过预训练的跨域基础模型应用于各种地理空间任务，以提升跨域性能。
+5. 总结：CrossEarth通过地理空间视觉基础模型的跨域泛化能力，显著提升了遥感语义分割任务中的跨域泛化能力。
 
-# 加载预训练的 ViT 编码器
-vit_encoder = ViT_Encoder(pretrained=True, auto_unload=False)
-
-# 初始化 CrossEarth 模型
-cross_earth_model = CrossEarth(vit_encoder)
-
-# 对新图像进行推理
-output = cross_earth_model(new_image)
+```markdown
+1. 仓库名称：VisionXLab/CrossEarth
+2. 简要介绍：一个遥感语义分割的地理空间视觉基础模型，增强跨域泛化能力。
+3. 创新点：构建了能够学习通用表示并识别复杂景观模式的GSVFM模型。
+4. 简单用法：使用预训练的模型在地理空间任务中进行跨域应用。
+5. 总结：通过地理空间视觉基础模型显著提升遥感语义分割的跨域泛化能力。
 ```
-5. 总结：CrossEarth 通过预训练策略和跨模态调优技术，显著提升了遥感图像语义分割的跨域泛化能力，适用于未见过地理区域的遥感影像分析。
 
 
 ### [microsoft/markitdown](https://github.com/microsoft/markitdown)
@@ -203,29 +210,33 @@ python markitdown.py --input-file my_doc.docx --output-folder .
 
 ### [subframe7536/maple-font](https://github.com/subframe7536/maple-font)
 
-1. 仓库名称：subframe7536/maple-font
-2. 简要介绍：Maple Mono 是一款开源的圆角等宽字体，带有连字、Nerd-Font 图标，适用于 IDE 和终端，并提供细粒度自定义选项。
-3. 创新点：Maple Mono 具有完美的 2:1 中英文宽度比例，提供多种自定义选项，如圆角、斜体、连字、无连字、图像字符替换等。
-4. 简单用法：
-    ```css
-    /* basic */
-    @font-face {
-      font-family: 'Maple Mono';
-      src: url('MapleMono-Regular.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-    }
-    
-    /* italic */
-    @font-face {
-      font-family: 'Maple Mono';
-      src: url('MapleMono-Italic.ttf') format('truetype');
-      font-weight: normal;
-      font-style: italic;
-    }
-    ```
-    可通过定义不同的 `@font-face`，启用或禁用斜体字形、连字和图像字符替换等特性。
-5. 总结：Maple Mono 是一款专为开发者和终端用户设计的圆角等宽字体，具有多种自定义选项和 Nerd-Font 图标支持，提供了更好的代码可读性和美观性。
+### 1. 仓库名称
+subframe7536/maple-font
+
+### 2. 简要介绍
+这是一个名为 Maple Mono 的开源等宽字体，具备圆角、连字以及 Nerd-Font 支持，适用于 IDE 和终端，并提供细粒度的字体定制选项。
+
+### 3. 创新点
+- 提供了细粒度的字体定制选项，允许用户自定义风格（Round 或 Classic Corner）和连字选项（纯等宽、半等宽、随机宽度等）。
+- 中英文字符宽度完美 2:1，支持在 IDE 和终端中获得更一致、美观的显示效果。
+- 提供原汁原味的纯等宽字体选择，避免连字导致的对齐问题。
+
+### 4. 简单用法
+以 macOS 为例，下载字体文件并安装：
+1. 访问 [GitHub releases 页面](https://github.com/subframe7536/maple-font/releases) 下载所需的字体文件。
+2. 双击 ttf 文件，点击 "Install Font" 安装。
+
+在 VSCode 中设置字体为 "Maple Mono" 并启用连字：
+
+在 `settings.json` 中添加以下内容：
+
+```json
+"editor.fontFamily": "Maple Mono",
+"editor.fontLigatures": true
+```
+
+### 5. 总结
+Maple Mono 为开发者提供了一个美观、可定制的等宽字体，并特别注重中英文宽度比例及连字功能，优化了 IDE 和终端的使用体验。
 
 
 ### [nvbn/thefuck](https://github.com/nvbn/thefuck)
@@ -310,57 +321,40 @@ Shubhamsaboo/awesome-llm-apps
 ### [bilibili/Index-1.9B](https://github.com/bilibili/Index-1.9B)
 
 1. 仓库名称：bilibili/Index-1.9B
-2. 简要介绍：Index是一个轻量级的多语言大语言模型，针对检索任务的文本表征进行了预训练和微调。
-3. 创新点：
-   - 专门针对检索任务进行模型架构和训练的优化。
-   - 模型体积小，参数仅1.9B，适合实战部署和高效推断。
-   - 结合对比学习、蒸馏和混合精度训练技术，以提升效果和训练效率。
-4. 简单用法：
-   ```python
-   model = AutoModel.from_pretrained("IndexTeam/Index-1.9B")
-   tokenizer = AutoTokenizer.from_pretrained("IndexTeam/Index-1.9B")
-   input_texts = [
-       "how much protein should a female eat",
-       "summit定义",
-   ]
-   inputs = tokenizer(input_texts, padding=True, return_tensors="pt")
-   model.eval()
-   with torch.no_grad():
-       embeddings = model(**inputs.to(model.device))
-   print(embeddings.last_hidden_state.size())  # (batch_size, seq_len, hidden_size)
-   ```
-5. 总结：Index-1.9B是一个专注于检索任务、轻量级且高效的多语言大语言模型，特别适合需要快速、高质量的文本检索应用场景。
+2. 简要介绍：Index-1.9B 是一个由 bilibili 研发的轻量级多语言大语言模型，基础能力达到了 SOTA 水平。
+3. 创新点：Index-1.9B 在 1.9B 参数量级的模型中取得了 SOTA 结果，模型使用 RWKV 架构，支持多语言，并在 nlp 基础能力测试中超过了大多数 7B 模型。
+4. 简单用法：在 Python 中使用 `transformers` 库调用模型，如下所示：
+```python
+import torch
+from transformers import pipeline
+
+pipe = pipeline('text-generation', model='IndexTeam/Index-1.9B-sft', torch_dtype=torch.bfloat16, device_map='auto')
+example = ["请给我讲一个卖核弹的小女孩的故事\n"]
+response = pipe(example)
+print(response)
+```
+5. 总结：Index-1.9B 是一个高性能的轻量级多语言大语言模型，适用于多种自然语言处理任务，尤其适合在资源有限的环境中部署和使用。
 
 
 ### [huggingface/transformers](https://github.com/huggingface/transformers)
 
-### 1. 仓库名称：huggingface/transformers
+1. 仓库名称：huggingface/transformers
+   
+2. 简要介绍：Hugging Face Transformers 是一个提供最先进的自然语言处理（NLP）预训练模型的库，支持 PyTorch、TensorFlow 和 JAX 等框架。
 
-### 2. 简要介绍：
-Transformers 是由 Hugging Face 团队开发和维护的一个开源库，它提供了在 PyTorch、TensorFlow 和 JAX 框架中使用最先进的预训练模型进行自然语言处理（NLP）任务的工具。
+3. 创新点：支持多种深度学习框架，提供数千个预训练模型，涵盖多项 NLP 任务，具有广泛的应用场景和灵活性。
 
-### 3. 创新点：
-- **跨框架支持**：Transformers 支持多种深度学习框架，包括 PyTorch、TensorFlow 和 JAX。
-- **广泛的模型覆盖**：集成了众多预训练模型，如 BERT、GPT-2、T5 等，覆盖了 NLP 的多个领域。
-- **易于使用的 API**：提供了简单易用的 API，使得加载和使用这些模型变得非常容易。
-- **社区活跃**：拥有一个活跃的社区，不断更新和新添模型和功能。
-
-### 4. 简单用法：
-下面是一个使用 Transformers 进行文本预测的简单示例（基于 PyTorch）：
-
+4. 简单用法：
 ```python
 from transformers import pipeline
 
-# 加载文本生成管道
-generator = pipeline('text-generation', model='gpt2')
-
-# 使用模型生成文本
-generated_text = generator("Hello, I'm a language model,", max_length=50, num_return_sequences=1)
-print(generated_text)
+# 使用Pipeline进行文本分类
+classifier = pipeline('sentiment-analysis')
+result = classifier('I love this product!')
+print(result)  # 输出 [{'label': 'POSITIVE', 'score': 0.9998}]
 ```
 
-### 5. 总结：
-Transformers 库极大地简化了在 NLP 任务中使用先进预训练模型的过程，并促进了多框架支持下的灵活性和互操作性。
+5. 总结：Hugging Face Transformers 是自然语言处理领域的利器，提供了大量预训练模型和便捷的 API，让研究人员和开发者能够快速构建先进的 NLP 应用。
 
 
 ### [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
@@ -407,38 +401,26 @@ AutoGPT 提倡为每个人提供易于访问和使用的人工智能，帮助用
 
 ### [EvanLi/Github-Ranking](https://github.com/EvanLi/Github-Ranking)
 
-### 1. 仓库名称：EvanLi/Github-Ranking
-
-### 2. 简要介绍：
-一个自动更新GitHub项目排名和流行度（按星数和Fork数）的仓库，涵盖多种编程语言的项目。
-
-### 3. 创新点：
-该项目能够每日自动更新并提供不同编程语言中GitHub仓库的排名，方便开发者追踪最受欢迎的项目和趋势。
-
-### 4. 简单用法：
-开发者可以访问仓库地址或在本地运行项目，查看自动生成的排名数据。例如，访问 https://github.com/EvanLi/Github-Ranking/blob/master/Top100/Python.md 查看Python语言的前100名仓库。
-
-### 5. 总结：
-该项目的价值在于通过自动化排名，为开发者提供了一个了解GitHub上最受欢迎项目的实时窗口，促进技术趋势的发现和学习。
+1. 仓库名称：EvanLi/Github-Ranking
+2. 简要介绍：这是一个每天自动更新GitHub仓库排名的项目，根据star和fork数对Github仓库进行排名，支持按语言分类展示Top100。
+3. 创新点：自动化更新排名数据，提供详细的分类（如语言、国家/地区等）以及历史数据可视化。
+4. 简单用法：直接访问项目网页 https://evanli.github.io/Github-Ranking/ ，查看不同语言的仓库排行榜。
+5. 总结：该项目为开发者提供了一个实时了解Github热门及优质开源项目的途径。
 
 
 ### [Lydorn/Polygonization-by-Frame-Field-Learning](https://github.com/Lydorn/Polygonization-by-Frame-Field-Learning)
 
 1. 仓库名称：Lydorn/Polygonization-by-Frame-Field-Learning
-
-2. 简要介绍：
-该仓库提供了一个快速的从航拍图像中提取多边形建筑物的流程，包括预处理、深度学习模型和后处理步骤。
-
-3. 创新点：
-采用帧场学习的方法进行多边形化，结合了图像分割和图割算法，以提高建筑物轮廓的准确性和效率。
-
+2. 简要介绍：该仓库实现了一种从航空图像中快速提取多边形建筑的高效流程。
+3. 创新点：该仓库的创新之处在于使用帧场学习的方法对建筑进行多边形化处理，相较于传统方法具有更高的速度和准确性。
 4. 简单用法：
 ```python
-# 示例代码无
+from frame_field_learning import train, infer, eval
+train.train(...)  # 训练模型
+infer.infer(...)  # 测试模型
+eval.eval(...)  # 评估模型性能
 ```
-
-5. 总结：
-这个仓库提供了一个端到端的解决方案，能够从航拍图像中高效准确地提取建筑物轮廓。
+5. 总结：该仓库提供了一种高效且准确的方法，用于从航空图像中提取建筑多边形，适用于需要快速处理大量地理信息数据的场景。
 
 
 ### [bubbliiiing/unet-keras](https://github.com/bubbliiiing/unet-keras)
@@ -460,19 +442,27 @@ unet.detect_image()  # 预测并显示图像
 ### [zorzi-s/PolyWorldPretrainedNetwork](https://github.com/zorzi-s/PolyWorldPretrainedNetwork)
 
 1. 仓库名称：zorzi-s/PolyWorldPretrainedNetwork
-2. 简要介绍：该仓库提供了一个预训练网络，用于从卫星图像中提取多边形建筑物，使用了图神经网络 (GNN)。
-3. 创新点：利用图神经网络 (GNN) 从卫星图像中直接预测多边形的顶点和边，实现建筑物的多边形分割。
-4. 简单用法：调用预训练模型进行多边形建筑物预测。
-```python
-model = PolyWorld()
-img = load_image('your_image.jpg')  # Load your image here
-building_polygon = model.predict(img)
+2. 简要介绍：使用图神经网络在卫星图像中提取多边形建筑的预训练网络模型。
+3. 创新点：结合图神经网络和深度学习模型，直接从卫星图像中提取建筑物的多边形轮廓。
+4. 简单用法：
+   - 克隆仓库：`git clone https://github.com/zorzi-s/PolyWorldPretrainedNetwork.git`
+   - 安装依赖：`pip install -r requirements.txt`
+   - 运行演示脚本：`python demo.py --image <your_image_path> --checkpoint <path_to_checkpoint> --output <output_path>`
+5. 总结：为卫星图像处理提供了一种高效准确的建筑物多边形提取解决方案。```markdown
+1. 仓库名称：zorzi-s/PolyWorldPretrainedNetwork
+2. 简要介绍：使用Graph Neural Networks（GNN）从卫星图像中提取建筑多边形的预训练模型。
+3. 创新点：结合GNN和图论算法，直接从图像中精确提取建筑的多边形轮廓。
+4. 简单用法：
+   ```python
+   # 克隆仓库并安装依赖
+   git clone https://github.com/zorzi-s/PolyWorldPretrainedNetwork.git
+   pip install -r requirements.txt
+   
+   # 运行示例代码
+   python demo.py --image <your_image_path> --checkpoint <path_to_checkpoint> --output <output_path>
+   ```
+5. 总结：提供了一个端到端的解决方案，通过GNN和图处理算法高效地从卫星图像中提取建筑多边形，支持城市规划和地理信息系统的应用。
 ```
-5. 总结：该仓库提供了一个高效且先进的解决方案，可以从卫星图像中精确提取多边形建筑物，适用于地理信息系统 (GIS) 和城市规划等领域。
-
-
-
-## TypeScript（共6个）
 
 
 
@@ -480,26 +470,11 @@ building_polygon = model.predict(img)
 
 ### [ayangweb/BongoCat](https://github.com/ayangweb/BongoCat)
 
-### 1. 仓库名称
-`ayangweb/BongoCat`
-
-### 2. 简要介绍
-跨平台的桌面宠物软件，能够显示一个可爱的猫猫形象，它会跟随鼠标移动并进行相应动作，为桌面增添乐趣。
-
-### 3. 创新点
-- **跨平台支持**: 支持Windows、MacOS和Ubuntu，使用Qt框架开发，具有良好的兼容性。
-- **动态互动**: 猫猫会跟随鼠标移动，并根据鼠标动作做出相应反应，增强了互动性。
-- **自定义配置**: 提供了配置文件，允许用户自定义猫猫的大小、位置、物品图片等属性。
-- **透明背景**: 采用无边框设计，能够完美融入桌面背景。
-
-### 4. 简单用法
-1. 下载对应平台的发行版本。
-2. 编辑`config.ini`文件设置猫猫的尺寸、速度等参数。
-3. 将自定义物品的图片添加到`img/items/`目录中，并在`config.ini`中指定文件名。
-4. 运行可执行文件即可在桌面显示猫猫宠物。
-
-### 5. 总结
-**用途/价值**: 通过提供一个可爱的桌面宠物，增加用户使用电脑的乐趣，可作为桌面装饰和轻量级的娱乐工具。
+1. 仓库名称：ayangweb/BongoCat
+2. 简要介绍：BongoCat 是一个跨平台桌面宠物，它可以跟随鼠标点击敲击鼓或键盘，为你的桌面增添一抹趣味。
+3. 创新点：BongoCat 使用 Tauri 开发，支持 Windows、macOS 和 Linux 平台，利用 Web 技术实现动态交互效果，能够为用户提供有趣的桌面体验。
+4. 简单用法：下载对应平台的二进制文件或通过 cargo 构建运行，BongoCat 会出现在桌面上，根据用户的操作敲打鼓面或键盘。
+5. 总结：BongoCat 通过技术模拟宠物互动，为用户营造轻松愉悦的桌面环境，是开发生态中的一个小而美的亮点。
 
 
 ### [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)
@@ -522,49 +497,41 @@ building_polygon = model.predict(img)
 
 ### [ahmedkhaleel2004/gitdiagram](https://github.com/ahmedkhaleel2004/gitdiagram)
 
-1. 仓库名称：ahmedkhaleel2004/gitdiagram
-2. 简要介绍：GitDiagram是一个免费、简单、快速的工具，可为任何GitHub仓库生成互动式图谱。
-3. 创新点：可以快速构建出GitHub仓库的依赖图、类图等互动式图谱，无需编写复杂的代码。
-4. 简单用法：打开GitDiagram编辑器 -> 输入GitHub库地址 -> 选择图形类型 -> 导出或分享图谱。
-5. 总结：GitDiagram为用户提供了一种直观方式来理解和管理复杂项目的结构和依赖关系。
+### 1. 仓库名称
+ahmedkhaleel2004/gitdiagram
+
+### 2. 简要介绍
+该仓库提供了一个免费、简单、快速的工具，用于生成任何 GitHub 仓库的交互式图表。
+
+### 3. 创新点
+能够为任何 GitHub 仓库自动创建交互式图表，让用户直观地查看仓库的目录结构和文件关系。
+
+### 4. 简单用法
+用户在网站上只需输入 GitHub 仓库的 URL，即可生成并查看该仓库的交互式图表。
+
+### 5. 总结
+该工具极大地方便了开发者和用户对 GitHub 仓库结构的理解和探索。
 
 
 ### [kevmo314/magic-copy](https://github.com/kevmo314/magic-copy)
 
-### 1. 仓库名称：kevmo314/magic-copy
-
-### 2. 简要介绍：
-Magic Copy 是一个 Chrome 浏览器扩展，利用 Meta 的 Segment Anything Model (SAM) 从图像中提取前景对象并复制到剪贴板。
-
-### 3. 创新点：
-- 使用 Meta 的 Segment Anything Model (SAM) 进行图像分割，精确提取前景对象。
-- 直接将提取的 PNG 图像复制到剪贴板，方便进一步粘贴使用。
-
-### 4. 简单用法：
-1. 安装扩展后，右键点击网页上的图像选择“Magic Copy”。
-2. 点击图像上感兴趣的对象，魔术棒将高亮该对象区域。
-3. 在加载完成后，前景对象将被复制到剪贴板，可以粘贴（Ctrl+V）到其他应用程序中。
-
-### 5. 总结：
-Magic Copy 提供了一种快速、精确的方式从网页图像中提取前景对象，并直接复制到剪贴板，简化了图像处理工作流程。
+1. 仓库名称：kevmo314/magic-copy
+2. 简要介绍：Magic Copy 是一个 Chrome 扩展程序，利用 Meta 的 Segment Anything 模型从图像中提取前景对象并将其复制到剪贴板。
+3. 创新点：使用先进的图像分割技术（Meta's Segment Anything Model）实现一键提取图像中的前景对象，并方便地复制到剪贴板，提高用户在图像处理方面的效率。
+4. 简单用法：安装 Chrome 扩展程序后，在浏览网页时右键点击图片，选择“Magic Copy”选项，即可提取前景对象并复制到剪贴板。接着可以将复制的内容粘贴到其他应用中进行进一步处理。
+5. 总结：Magic Copy 提供了一个便捷且高效的方式来处理网页上的图像，使用户能够轻松地提取和复制图像中的主要对象。
 
 
 ### [teableio/teable](https://github.com/teableio/teable)
 
-### 4. 简单用法：
-
-本仓库不提供简单的用法说明,需要参考项目文档进行安装配置。
-但是,根据项目描述,它是一个类似于Airtable的无代码数据库,用户应该可以在图形界面上进行数据库表的设计和数据操作。
-
-
 1. 仓库名称：teableio/teable
-2. 简要介绍：Teable 是一个开源的无代码数据库,类似于 Airtable,但是基于 Postgres,具有实时协作功能。
-3. 创新点：Teable 是一个结合了无代码数据库和全功能 Postgres 数据库的现代化平台,开发者可以利用它进行强大的数据库操作,而无需编写任何代码。
-5. 总结：Teable 是一个面向开发者设计的现代化无代码数据库平台,让数据库的操作更加直观和易于扩展。
-
-
-
-## Other（共6个）
+2. 简要介绍：Teable 是一个开源的项目，设计为 Airtable 的替代品，提供了一种无代码的方式操作 PostgreSQL 数据库。
+3. 创新点：Teable 的主要创新在于它将可定制的电子表格界面与强大的 PostgreSQL 数据库相结合，同时支持生成 API 和 SQL 操作，这为非编程用户提供了极大的灵活性。
+4. 简单用法：
+    - 安装 Docker 和 Docker Compose
+    - Clone 仓库到本地并进入目录
+    - 运行`docker-compose -f docker-compose.dev.yml up -d`以启动项目
+5. 总结：Teable 通过将 Airtable 的易用性与 PostgreSQL 的数据库能力相结合，为非编程用户提供了一个易于使用的数据库操作平台。
 
 
 
@@ -573,10 +540,10 @@ Magic Copy 提供了一种快速、精确的方式从网页图像中提取前景
 ### [holyshell/AppsForMac](https://github.com/holyshell/AppsForMac)
 
 1. 仓库名称：holyshell/AppsForMac
-2. 简要介绍：该仓库整理了一些适用于 macOS 的优秀软件和工具。
-3. 创新点：没有特定的创新点，但汇总了 macOS 上实用且高质量的应用程序和工具。
-4. 简单用法：可直接浏览仓库中的文档，了解各个软件的基本介绍及下载链接。
-5. 总结：为 macOS 用户提供了一份精选的应用程序和工具列表，方便用户寻找和下载所需软件。
+2. 简要介绍：这是一个收集和整理macOS上优秀应用程序的仓库。
+3. 创新点：该仓库的特色在于它提供了针对macOS系统的应用程序集合，帮助用户发现和选择适合他们需求的软件。
+4. 简单用法：用户可以访问该仓库的GitHub页面，浏览各个应用程序的分类和描述，然后根据自己的需求选择并下载安装相应的应用程序。
+5. 总结：该仓库为macOS用户提供了一个方便的资源，帮助他们找到并安装适合自己的优秀应用程序。
 
 
 ### [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers)
@@ -603,20 +570,11 @@ Magic Copy 提供了一种快速、精确的方式从网页图像中提取前景
 
 ### [datawhalechina/so-large-lm](https://github.com/datawhalechina/so-large-lm)
 
-### 1. 仓库名称
-datawhalechina/so-large-lm
-
-### 2. 简要介绍
-这是一个关于大模型基础知识的科普仓库，旨在介绍大模型的基本概念和相关技术。
-
-### 3. 创新点
-本仓库的创新点在于由浅入深地介绍了大模型的发展历程，并提供了不同阶段涉及到的具体算法拆解，帮助读者全面了解大模型的基础知识。
-
-### 4. 简单用法
-本仓库主要是一个学习文档，没有直接的使用方法，但读者可以跟随文档中的内容逐步学习和掌握大模型的相关知识。
-
-### 5. 总结
-该仓库通过逐步深入的讲解，对于想了解大模型基础知识的读者来说非常有价值，能够帮助人们系统地掌握大模型的相关概念和技术。
+1. 仓库名称：datawhalechina/so-large-lm  
+2. 简要介绍：该仓库是大模型基础知识介绍，涵盖了从参数规模到发展历程等内容。  
+3. 创新点：着重介绍了思维方式的重要性，强调不是所有问题都要依赖于大模型，对于小问题，小模型已经足够。  
+4. 简单用法： /  
+5. 总结：本仓库通过对大模型基础知识的介绍，提供了对大模型规模、发展和应用场景的全面了解，并引导读者思考大模型的适用性与实际应用。
 
 
 ### [ruanyf/weekly](https://github.com/ruanyf/weekly)
@@ -630,27 +588,13 @@ datawhalechina/so-large-lm
 
 ### [henry-gu/prompt-engineering-for-developers](https://github.com/henry-gu/prompt-engineering-for-developers)
 
-### 仓库内容总结
-
-1. **仓库名称**：henry-gu/prompt-engineering-for-developers
-
-2. **简要介绍**：吴恩达《面向开发者的 ChatGPT 提示工程》课程的中文版，包含课程视频与中英文字幕。
-
-3. **创新点**：提供了大语言模型（LLM）的开发者视角，包括提示工程最佳实践和两个关键原则，以及如何系统地编写有效的提示。
-
-4. **简单用法**：
-   ```markdown
-   - [中文课程：面向开发者的 Prompt Engineering](https://www.bilibili.com/video/BV1Bo4y1A7FU?p=1)
-   - 英文课程参考链接
-   - 中文讲义位于 `handout` 文件夹
-   - 作者讲义的 Jupyter 笔记本位于 `notebook` 文件夹
-   ```
-
-5. **总结**：这个仓库是中英双语的资源，旨在帮助开发者通过更好的提示工程来提高与 LLM 的互动效率。
-
-
-
-## Jupyter Notebook（共6个）
+```markdown
+1. 仓库名称：henry-gu/prompt-engineering-for-developers
+2. 简要介绍：吴恩达《ChatGPT Prompt Engineering for Developers》课程的中文版，主要面向开发者讲解如何有效地使用prompt工程来提升大型语言模型（LLM）的性能。
+3. 创新点：将原英文课程本地化，方便中文用户学习，内容涵盖LLM的基础、Prompt工程原则、迭代优化、文本总结与推理、文本转换和扩展等多个实用主题。
+4. 简单用法：用户可以通过阅读每个章节的Jupyter Notebook文件来学习课程内容，比如了解如何编写清晰的指令、给模型足够的时间思考等。
+5. 总结：本项目是吴恩达教授关于Prompt Engineering for Developers的中文版本，是开发者学习和提高使用LLM技能的宝贵资源。
+```
 
 
 
@@ -659,18 +603,10 @@ datawhalechina/so-large-lm
 ### [microsoft/AI-For-Beginners](https://github.com/microsoft/AI-For-Beginners)
 
 1. 仓库名称：microsoft/AI-For-Beginners  
-2. 简要介绍：微软推出的一门为期12周的课程，包含24节课，专为想学习人工智能的初学者设计。课程从简单的直觉示例开始，逐步过渡到实际代码。  
-3. 创新点：  
-   - 专为零基础的初学者设计，提供全面、简明的AI课程。
-   - 结合了斯坦福大学经典的“CS229课程”风格，但没有冗长的解释和数学公式。
-   - 使用Jupyter Notebooks，结合代码和文本信息，便于理解。
-   - 包含实践作业，利用微软Azure云资源和工具，如Azure Notebooks或常规Jupyter Notebooks。
-4. 简单用法：  
-   - 课程分为不同章节，如“神经网络基础”、“神经网络架构”等，每章包含多个课程。
-   - 每课都有理论、实践和作业。
-   - 可以使用Azure Notebooks或Jupyter Notebooks完成课程中的实训。
-5. 总结：  
-   这个仓库适合对AI零基础的初学者，通过12周的课程学习，可以快速掌握AI的基本知识和技能，为日后深入研究打下基础。
+2. 简要介绍：这是一个面向初学者的AI课程，涵盖神经网络、机器学习和深度学习等，为期12周，共24节课。  
+3. 创新点：全面涵盖AI基础，结合实践与理论，提供Jupyter笔记本和代码示例。  
+4. 简单用法：克隆仓库，按照课程安排学习每周内容，运行Jupyter笔记本练习。  
+5. 总结：提供从零开始的AI学习路径，适合初学者快速掌握AI基础知识及实践。
 
 
 ### [microsoft/generative-ai-for-beginners](https://github.com/microsoft/generative-ai-for-beginners)
@@ -805,6 +741,10 @@ pu_lr.predict(X_test)  # 预测
 
 ## C#（共3个）
 
+
+
+## C#（共3个）
+
 ### [randyrants/sharpkeys](https://github.com/randyrants/sharpkeys)
 
 ### 仓库内容总结
@@ -836,6 +776,10 @@ pu_lr.predict(X_test)  # 预测
 3. 创新点：提供了一个专门针对Windows 11的广告删除工具，帮助用户去除系统中的各种广告。
 4. 简单用法：（1）下载OFGB项目；（2）运行OFGB.exe；（3）选择需要禁用的广告选项并应用更改。
 5. 总结：OFGB是一个简单实用的工具，可以帮助Windows 11用户去除系统中的广告，提升用户体验。
+
+
+
+## C（共2个）
 
 
 
@@ -895,6 +839,10 @@ pu_lr.predict(X_test)  # 预测
 
 ## C++（共2个）
 
+
+
+## C++（共2个）
+
 ### [microsoft/WSL](https://github.com/microsoft/WSL)
 
 1. 仓库名称：microsoft/WSL
@@ -907,18 +855,12 @@ pu_lr.predict(X_test)  # 预测
 ### [hluk/CopyQ](https://github.com/hluk/CopyQ)
 
 1. 仓库名称：hluk/CopyQ
-2. 简要介绍：具有高级功能的剪贴板管理工具，支持多个剪贴板、图像、标签、复制项中搜索等功能。
-3. 创新点：功能强大的跨平台剪贴板管理工具，支持自定义命令、脚本、插件，实现剪贴板历史记录的精细控制。
-4. 简单用法：安装后运行即可使用，支持全局快捷键唤出，可以在历史记录中选择复制项并粘贴到任意位置。
-5. 总结：CopyQ提供了面向专业用户的强大剪贴板管理功能，提高了复制粘贴操作的效率和灵活性。
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
+2. 简要介绍：Clipboard manager with advanced features，具有高级功能的剪贴板管理器。
+3. 创新点：支持保存剪贴板历史、编辑粘贴内容、运行命令行脚本和自定义动作的高级剪贴板管理工具。
+4. 简单用法：
+   - 复制文本：Ctrl+C，Ctrl+V
+   - 查看剪贴板历史：全局热键 Ctrl+Shift+V
+5. 总结：提供了强大的剪贴板管理功能，适用于经常需要复制粘贴的专业用户。
 
 
 
@@ -982,6 +924,10 @@ document.body.innerHTML = bionicText;
 
 ## Roff（共1个）
 
+
+
+## Roff（共1个）
+
 ### [TapXWorld/ChinaTextbook](https://github.com/TapXWorld/ChinaTextbook)
 
 ```markdown
@@ -991,6 +937,10 @@ document.body.innerHTML = bionicText;
 4. 简单用法：可以通过访问【https://github.com/TapXWorld/ChinaTextbook】浏览或下载所需教材。
 5. 总结：提供了一个方便的资源平台，有助于学生和教师获取和使用教材。
 ```
+
+
+
+## Rust（共1个）
 
 
 
@@ -1010,6 +960,10 @@ npm install -g pake-cli
 pake https://weekly.tw93.fun --name Weekly
 ```
 5. 总结：Pake 提供了一种快速、简便的方法，让开发者或普通用户能将喜欢的网页快速地转化为桌面应用，同时具备高效的性能和跨平台特性。
+
+
+
+## Go（共1个）
 
 
 
@@ -1039,6 +993,10 @@ pake https://weekly.tw93.fun --name Weekly
      bind_port = 7000
      ```
 5. 总结：fatedier/frp 是一款功能强大、配置简单的反向代理工具，适用于将内部服务安全地暴露到互联网上。
+
+
+
+## Haskell（共1个）
 
 
 
@@ -1089,6 +1047,10 @@ pake https://weekly.tw93.fun --name Weekly
 
 ## Shell（共1个）
 
+
+
+## Shell（共1个）
+
 ### [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds)
 
 ### 仓库信息
@@ -1100,6 +1062,10 @@ pake https://weekly.tw93.fun --name Weekly
 
 ### 详细总结
 该仓库的核心价值在于它提供了FFmpeg的预编译二进制文件，适用于Windows、Linux和macOS。开发者无需从头手动编译复杂的FFmpeg库，只需从Release页面下载符合需求的版本，解压后即可在命令行中使用。仓库还提供了多种许可证版本的构建：GPL和LGPL，以满足不同的使用场景和合规性要求。这个仓库极大地方便了想要快速使用FFmpeg的开发者。
+
+
+
+## Less（共1个）
 
 
 
@@ -1152,6 +1118,10 @@ VLOOK 是一个功能强大且极具美感的 Typora/Markdown 主题包和增强
 
 ## Java（共1个）
 
+
+
+## Java（共1个）
+
 ### [ZCShou/GoGoGo](https://github.com/ZCShou/GoGoGo)
 
 1. 仓库名称：ZCShou/GoGoGo
@@ -1159,6 +1129,10 @@ VLOOK 是一个功能强大且极具美感的 Typora/Markdown 主题包和增强
 3. 创新点：结合了 Android 调试 API 和百度地图，实现了在移动设备上模拟定位的功能，同时加入了自由移动的摇杆设计，提升了用户体验。
 4. 简单用法：根据仓库中的 README 文件配置环境，安装必要的依赖库，然后按照指南操作以实现虚拟定位。
 5. 总结：提供了一个便捷地在 Android 设备上进行虚拟定位的工具，适用于需要在特定位置进行测试或模拟的应用场景。
+
+
+
+## Clojure（共1个）
 
 
 
