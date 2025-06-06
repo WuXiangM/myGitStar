@@ -1,370 +1,340 @@
 # 我的 GitHub Star 项目AI总结（由 DeepSeek API 自动生成）
 
 
-## Python（共23个）
+## Python（共24个）
+
+### [robert-mcdermott/ai-knowledge-graph](https://github.com/robert-mcdermott/ai-knowledge-graph)
+
+1. 仓库名称：robert-mcdermott/ai-knowledge-graph  
+2. 简要介绍：这是一个基于人工智能的知识图谱生成器，使用Python编写，利用OpenAI的GPT模型从文本创建知识图谱。  
+3. 创新点：将OpenAI的GPT模型与知识图谱生成相结合，自动化地从文本中提取实体和关系以构建知识图谱。  
+4. 简单用法：  
+```python
+from ai_knowledge_graph.graph_creation import KnowledgeGraph
+kg = KnowledgeGraph()
+kg.add_entity("SampleEntity", "SampleType")
+kg.add_relationship("SampleEntity", "relation", "AnotherEntity")
+kg.save()
+```  
+5. 总结：该仓库通过AI技术简化了知识图谱的构建，使其更加高效和自动化。
+
 
 ### [harry0703/MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo)
 
-1. 仓库名称：harry0703/MoneyPrinterTurbo
-2. 简要介绍：基于AI大模型，用户只需输入主题即可一键生成高清短视频。
-3. 创新点：整合了文本到图像和视频，利用大模型自动创作短视频。
-4. 简单用法：运行MoneyPrinterTurbo时，通过命令行指定主题 `p`。
-   ```bash
-   python main.py --use_v2 --enable_long_video --loglevel=INFO -pproduce --p "用什么手机拍短视频更火"
-   ```
-5. 总结：该工具简化了短视频的制作流程，极大地提高了内容创作的效率和便捷性。
+### 1. 仓库名称：
+harry0703/MoneyPrinterTurbo
+
+### 2. 简要介绍：
+利用AI大模型（如ChatGPT、Llama等）一键生成高清短视频，简化视频创作流程。
+
+### 3. 创新点：
+- **高度集成**：集成了多个AI模型（如大语言模型、TTS、图像生成等），使其能一键生成视频。
+- **快速配置**：可通过简单配置调整视频主题、素材等，无需编码。
+- **社区驱动**：支持中文社区，并在逐步更新迭代中。
+
+### 4. 简单用法：
+```shell
+docker run -it --rm -p 8080:8080 -e MONEYPRINTER_API_KEY=moneyprinter_key harry0703/moneyprinterturbo
+```
+然后访问 `http://localhost:8080` 使用Web界面配置视频生成。
+
+### 5. 总结：
+一个简化视频创作流程的工具，通过AI技术帮助用户快速生成短视频内容。
 
 
 ### [kijai/ComfyUI-FramePackWrapper](https://github.com/kijai/ComfyUI-FramePackWrapper)
 
 1. 仓库名称：kijai/ComfyUI-FramePackWrapper
-2. 简要介绍：这是一个通过在已有工作流周围添加少量包装节点，使用统一的 JSON 格式加载和连接其输入/输出的 ComfyUI 包装器。
-3. 创新点：最大的特色在于它使得保存和加载复杂的 ComfyUI 工作流更加简便，无需管理庞大的 JSON 文件，而是通过将自定义模块工作流程以 JSON 格式保存，并在其他工作流程中作为可重用的子流程调用。
-4. 简单用法：
-   - 在 ComfyUI 中准备好你的子流程。
-   - 添加`Pack`节点到子流程的输入和输出周围。
-   - 使用`Pack`节点以 JSON 格式保存子流程。
-   - 在其他工作流程中使用`Unpack (Smart)`节点加载并连接子流程。
-5. 总结：ComfyUI-FramePackWrapper 提供了一个简单而强大的方法来管理和重复使用 ComfyUI 的工作流程片段，极大地简化了复杂工作流程的构建和管理。
+
+2. 简要介绍：ComfyUI-FramePackWrapper 是一个 ComfyUI 框架支持库，用于处理图形界面界面的布局和样式。
+
+3. 创新点：该库提供了灵活的布局系统，支持Frame布局组件和事件响应机制的扩展。
+
+4. 简单用法：该库目前没有提供具体的API使用示例，但若要使用其功能，需要按照库内的组件和事件系统进行布局设计。
+
+5. 总结：ComfyUI-FramePackWrapper 提供了一种方便的方法来实现基于Frame的高效且动态的用户界面布局。
 
 
 ### [RockChinQ/LangBot](https://github.com/RockChinQ/LangBot)
 
-### 仓库内容总结
-
-1. **仓库名称**: RockChinQ/LangBot
-2. **简要介绍**: LangBot 是一个简单易用的大模型即时通信机器人平台，支持多种通信软件和接入多种大语言模型。
-3. **创新点**: 支持多种通信软件（如QQ、微信、飞书等）与多种大语言模型（如ChatGPT、Claude、Gemini等）的无缝集成。
-4. **简单用法**: 用户只需配置好机器人服务和通信账号，即可在聊天软件中通过 LangBot 使用大语言模型进行交互。
-5. **总结**: LangBot 为开发者提供了一个高度可配置的跨平台即时通信机器人框架，能够轻松接入多款大语言模型，实现智能对话和自动化任务。
+1. 仓库名称：RockChinQ/LangBot
+2. 简要介绍：LangBot是一个简单易用的大模型即时通信机器人平台，可与多种消息平台集成，支持多种大语言模型。
+3. 创新点：一个 GitHub 仓库中集成了对大语言模型的支持，实现了大语言模型在多种消息平台中的应用。
+4. 简单用法：
+   ```python
+   from langbot.bot_setup import BotSession
+   session = BotSession()
+   session.run()
+   ```
+5. 总结：平衡了易用性和功能丰富性，为开发者提供了基于大语言模型的跨平台消息机器人解决方案。
 
 
 ### [xming521/WeClone](https://github.com/xming521/WeClone)
 
-**1. 仓库名称：xming521/WeClone**
+### 仓库内容总结
 
-**2. 简要介绍：**  
-WeClone 是一个从聊天记录创造数字分身的一站式解决方案，它能根据聊天记录微调大型语言模型（LLM），绑定到聊天机器人，让数字分身栩栩如生。
+1. **仓库名称**：xming521/WeClone
 
-**3. 创新点：**  
-从一个专门设计的聊天记录数据集中微调 LLM，并应对包含长上下文的复杂数据处理，以及绑定到一个可自定义的聊天机器人。
+2. **简要介绍**：
+   WeClone 是一个从聊天记录中创建数字分身的一站式解决方案，通过使用大语言模型（LLM）对聊天日志进行微调，捕捉用户的独特风格，并将其绑定到聊天机器人上，让用户的数字自我栩栩如生。
 
-**4. 简单用法：**  
-```python
-from wechat_analysis import WeChatMessageHandler
+3. **创新点**：
+   - 一站式解决数字分身（克隆）的创建和部署。
+   - 使用大语言模型（LLM）微调来捕获用户的独特风格。
+   - 将微调模型绑定到聊天机器人，使其能实时响应用户输入。
 
-handler = WeChatMessageHandler("path/to/db")
-process_all_user_messages_and_save(user, handler)
-```
+4. **简单用法**：
+   - 用户准备聊天日志数据。
+   - 使用`train.py`脚本对聊天日志进行微调。
+   - 使用`infer.py`脚本部署聊天机器人，进行实时交互。
 
-**5. 总结：**  
-WeClone 可让用户轻松建立个性化的数字分身，用于构建具有个人特色的聊天机器人服务。
+   示例命令：
+   ```bash
+   # 训练模型
+   python train.py --data_path path/to/your/chat_log.json --model_name_or_path your_model
+   
+   # 运行模型进行推理
+   python infer.py --model_path path/to/your/fine_tuned_model
+   ```
+
+5. **总结**：
+   WeClone 提供了一套完整的工具，可以帮助用户从自己的聊天记录中提取风格特点并生成个性化的聊天机器人，实现了数字分身的创建和交互。
 
 
 ### [happycola233/tchMaterial-parser](https://github.com/happycola233/tchMaterial-parser)
 
 1. 仓库名称：happycola233/tchMaterial-parser
-2. 简要介绍：这是一个帮助用户从国家中小学智慧教育平台下载电子课本PDF文件的工具。
-3. 创新点：该工具能够自动化地从智慧教育平台提取PDF文件地址，并简化了下载流程，让获取电子课本更加便捷。
+2. 简要介绍：国家中小学智慧教育平台电子课本下载工具，自动获取并下载课本PDF文件。
+3. 创新点：针对智慧教育平台的电子课本提供了自动化下载工具，简化了获取PDF文件的流程。
 4. 简单用法：
-    ```bash
-    # 安装依赖
-    pip install -r requirements.txt
-    # 运行程序并指定下载目录和保存名称
-    python3 tchMaterial-parser.py --path 目录 --save 保存名称
-    # 示例：
-    python3 tchMaterial-parser.py --path "C:\目录" --save 六年级
-    ```
-5. 总结：该工具简化了从国家中小学智慧教育平台获取电子课本PDF文件的过程，提高了获取效率。
+   - 安装依赖：`pip install requests beautifulsoup4`
+   - 运行脚本：`python main.py`
+5. 总结：简化从国家中小学智慧教育平台获取电子课本PDF文件的流程，提高效率。
 
 
 ### [0xsline/GeminiImageApp](https://github.com/0xsline/GeminiImageApp)
 
-### 仓库概述
-
-1. **仓库名称**: 0xsline/GeminiImageApp
-2. **简要介绍**: 基于 Google Gemini AI 的全功能图像处理应用，实现图像内容理解和生成能力。
-3. **创新点**: 利用 Gemini AI 进行图像理解和生成，包括识别、描述和合成图像内容。
-4. **简单用法**:  
-   - 通过 `POST` 请求 `/image_generate` 端点，传递 JSON 数据 `{"images": ["base64_image"], "prompt": "用户输入"}` 生成图像或得到描述。
-5. **总结**: 提供了一种基于 AI 的图像内容理解和生成的解决方案。
-
-### 详细内容
-
-`0xsline/GeminiImageApp` 仓库是使用 Google 的 Gemini AI 技术构建的图像处理应用。这个应用通过将图像处理和自然语言处理相结合，实现了对图像内容的理解和生成功能。
-
-**主要特性**：
-
-1. 图像内容理解：能够解析并描述图像中的内容和情境。
-2. 图像内容生成：根据用户的提示和其他输入内容，使用 Gemini 模型生成新的图像或修改现有图像。
-3. 为图像生成合适的标题、文字描述或故事等。
-
-**创新点**：将 Google Gemini AI 模型集成到一个统一的应用中，以便开发者能够轻松地实现对图像的理解和生成功能。这种方法提供了一个端到端的解决方案，使用户无需深入了解模型细节即可快速实现 AI 图像处理。
-
-**使用示例**：
-```json
-POST /image_generate
-{
-  "images": ["base64_encoded_image_data"],
-  "prompt": "请描述图像包含的水果"
-}
-```
-该请求会调用 Gemini 模型对提供的图像进行描述，并返回描述文本，如：“图像包含一个苹果和一个香蕉。” 或者“图像中展示了一片沙滩风景。”
-
-**架构简介**:
-项目使用 Python 的 Flask 框架构建 API 服务，主要包括以下文件：
-
-- `app.py`: 主应用文件，处理 HTTP 请求并调用 Gemini 模型。
-- `ImageProcessor.py`: 封装了与 Gemini API 通信的逻辑，包括图像上传、数据处理和响应生成。
-- `config.py`: 存储配置信息（例如 API 密钥）。
-
-**注意事项**：该应用依赖于 Google Gemini API，因此需要使用有效的 API 密钥才能运行。部署时需注意遵循 Google 的使用政策和限制。
-
-### 总结：
-
-这个仓库通过结合 Gemini AI 强大的图像处理能力，为开发者提供了一个简单、高效的图像理解和生成工具，使其能够在多种应用场景中快速集成 AI 能力。
+1. 仓库名称：0xsline/GeminiImageApp
+2. 简要介绍：基于 Google Gemini AI 的全功能图像处理应用。
+3. 创新点：
+   - 利用 Google Gemini AI 强大的图像理解和生成能力，提供了一系列前沿的 AI 图像处理功能。
+   - 用户无需了解复杂的 AI 技术，即可通过简易界面直接使用这些高级功能。
+4. 简单用法：
+   - 克隆仓库：`git clone https://github.com/0xsline/GeminiImageApp.git`
+   - 安装依赖：`pip install -r requirements.txt`
+   - 运行应用：`python app.py`
+   - 在浏览器中访问  `localhost:5000` 并使用提供的 UI 界面。
+5. 总结：
+   - GeminiImageApp 让普通用户也能轻松使用先进的 AI 图像处理功能，无需专业技能。
 
 
 ### [public-apis/public-apis](https://github.com/public-apis/public-apis)
 
-### 1. 仓库名称：public-apis/public-apis
-
-### 2. 简要介绍：
-`public-apis/public-apis` 是一个收集了各类免费公开 API 的列表，涵盖多个领域如天气、音乐、新闻等。
-
-### 3. 创新点：
-该仓库创新地将多种类别的免费公开 API 汇总在一起，提供了一个方便开发者查找和集成 API 的资源库。
-
-### 4. 简单用法：
-开发者可以直接浏览仓库的 README 文件，根据所需类别查找 API，然后按照提供的信息进行接口调用。
-
-### 5. 总结：
-该仓库为开发者提供了一个便捷的平台，帮助他们轻松找到并集成各类免费公开的 API。
+1. 仓库名称：public-apis/public-apis
+2. 简要介绍：一个免费的公共API集合，包含各种类型的API，如天气、新闻、音乐等。
+3. 创新点：该仓库提供了一个全面的免费公共API列表，方便开发者在自己的应用程序中使用各种类型的数据和服务，而且所有API都是免费提供的。
+4. 简单用法：在[public-apis](https://github.com/public-apis/public-apis)仓库中，可以找到各种类型的API，包括天气、新闻、音乐等。开发者可以根据需要选择相应的API，并根据API文档进行调用。
+5. 总结：public-apis/public-apis 是一个非常有价值的资源，可以帮助开发者快速获取各种类型的数据和服务，加速应用程序的开发过程。
 
 
 ### [SamuelSchmidgall/AgentLaboratory](https://github.com/SamuelSchmidgall/AgentLaboratory)
 
-1. 仓库名称：SamuelSchmidgall/AgentLaboratory
-2. 简要介绍：一个端到端的自主研究流程，旨在协助人类研究人员实现其研究想法。
-3. 创新点：采用多智能体协同的方式，利用大语言模型作为中枢指挥系统，统筹具有特定功能的智能体来协助研发人员完成研究任务。
-4. 简单用法：克隆仓库到本地，安装依赖，并输入自己的 OpenAI API 密钥和相关环境变量即可运行。
-5. 总结：Agent Laboratory 利用多种智能体和语言模型，为研究人员提供了一个高效的、自动化的实验和研究平台。
+1. **仓库名称**：SamuelSchmidgall/AgentLaboratory
+2. **简要介绍**：Agent Laboratory是一种端到端的自主研究工作流程，旨在帮助人类研究人员执行他们的研究构想。
+3. **创新点**：通过提供一个复杂的工具集和工作流程配置，允许研究者灵活进行代码生成、验证、执行、迭代和错误处理等任务。
+4. **简单用法**：在 `main.py` 脚本中，可以配置工作流程并将其存储在 `GLOBAL_WORKFLOW` 字典中。例如：
+   ```
+   GLOBAL_WORKFLOW = {
+       "name": "hello-world",
+       "stages": [
+           {"type": "ENVIRONMENT"},
+           {"type": "CURRENT-TASK"}
+       ],
+       "experiment-name": "hello",
+       "prompt": "write me a simple hello world application"
+   }
+   ```
+5. **总结**：能够辅助用户实现其研究构想，并在不同方法（如 `CODER` 或执行代理）之间切换测试。
 
 
 ### [VisionXLab/CrossEarth](https://github.com/VisionXLab/CrossEarth)
 
 1. 仓库名称：VisionXLab/CrossEarth
-
-2. 简要介绍：
-CrossEarth是一个地理空间视觉基础模型，专注于提升遥感图像语义分割在不同域间的泛化能力。
-
-3. 创新点：
-提出了一种名为CrossEarth的地理空间视觉基础模型，通过预训练和微调策略，有效提高了遥感图像语义分割在跨域场景下的性能。
-
+2. 简要介绍：CrossEarth是一个地理空间视觉基础模型，专注于提高遥感图像语义分割的跨域泛化能力。
+3. 创新点：提出了一个跨域适应的基础模型，通过多源跨域数据训练，显著提升了遥感语义分割模型在新领域或新数据分布下的泛化性能。
 4. 简单用法：
 ```python
-from cross_earth_net_dataset import CrossEarthNetDataset
-# 读取数据集
-dataset = CrossEarthNetDataset(root_dir='path_to_dataset', city_name='Berlin')
-# 获取样本
-sample = dataset[0]
-image = sample['image']
-mask = sample['mask']
-```
+# 设置
+config_file = './iouu_src_deeplabv3_r50-d8_512x512_40k_DFC22.py'
+checkpoint_file = './ioaua_rs_baseline_deeplabv3_r50-d8/iter_40000.pth'
 
-5. 总结：
-CrossEarth利用预训练的基础模型和精心设计的微调策略，在不同遥感数据集上实现了卓越的语义分割跨域泛化性能，为遥感图像处理领域提供了强大的工具。
+# 测试对于新表单、负面情况等的跨域泛化能力
+checkpoint = work_dir + '/iter_40000.pth'
+python tools/test.py $CONFIG_FILE $checkpoint --eval mIoU
+```
+5. 总结：CrossEarth通过有效的跨域泛化策略，显著提升了遥感图像语义分割模型在实际应用中的适应性和鲁棒性。
 
 
 ### [microsoft/markitdown](https://github.com/microsoft/markitdown)
 
-### 1. 仓库名称：microsoft/markitdown
-
-### 2. 简要介绍：
-Markitdown 是一个 Python 工具，用于将 Word、PowerPoint 文档及 HTML 文件转换为 Markdown 格式。
-
-### 3. 创新点：
-利用 Markitdown，用户可以直接从 Office 文档和 HTML 中提取内容，并将其转换成易于阅读和编辑的 Markdown 格式。
-
-### 4. 简单用法：
-```bash
-markitdown <path to .docx, .pptx, or .html file> -o <output .md file>
-```
-
-### 5. 总结：
-Markitdown 提供了一个简单有效的转换工具，使得从 Office 文档或 HTML 迁移到 Markdown 变得更加便捷。
+1. 仓库名称：microsoft/markitdown
+2. 简要介绍：Python工具，用于将文件和办公文档转换为Markdown格式。
+3. 创新点：这是一个开发中的工具，旨在将不同格式的文件和文档转换为Markdown格式，方便用户在统一的环境下查看和编辑。
+4. 简单用法：
+   - 安装依赖：`pip install pypandoc asyncmd`
+   - 示例代码：`python markitdown.py --docx documents.docx --outdir output`。此命令将`documents.docx`转换为Markdown并保存在`output`目录中。
+5. 总结：Markitdown是一个实用的工具，可以帮助用户将各种格式的文档转换为Markdown格式，以提高文档的可读性和编辑效率。
 
 
 ### [subframe7536/maple-font](https://github.com/subframe7536/maple-font)
 
-1. 仓库名称：subframe7536/maple-font  
-2. 简要介绍：这是一个名为 Maple Mono 的开源圆角等宽字体，包含连字和控制台图标，支持细粒度的自定义选项。中英文字符宽度比为完美的2:1，适合用于开发环境和终端。  
-3. 创新点：Maple Mono 字体提供了圆角设计，支持连字和 Nerd-Font 图标，通过细粒度的自定义选项可以进行个性化设置，且特别注重中英文字符的宽度对齐，确保显示效果统一。  
-4. 简单用法：  
-   - 安装字体：下载字体文件并将其安装到操作系统字体目录中。  
-   - 配置 IDE 或终端：将编辑器或终端的字体设置为 Maple Mono，并启用相应的连字和图标支持功能。  
-   - 自定义配置：使用配置文件调整字体的粗细、字形等细节。  
-5. 总结：Maple Mono 是一款专为开发者定制的等宽字体，具有美观的圆角设计和众多自定义选项，尤其适合用于编程环境和终端。
+1. 仓库名称：subframe7536/maple-font
+
+2. 简要介绍：
+   这是一个开源的等宽字体Maple Mono，具有圆角、连字和Nerd Font图标，适用于IDE和终端，并提供细粒度的定制选项，中英文宽度完美2:1。
+
+3. 创新点：
+   Maple Mono字体将圆角设计引入等宽字体，并集成了Nerd Font图标，支持连字，为开发者和终端用户提供了美观且实用的字体选择。特别是其细粒度的定制选项，允许用户根据自己的需求调整字体的各个特性，这是其他类似字体所不具备的。
+
+4. 简单用法：
+   - 安装字体：
+     - 下载字体文件。
+     - 在操作系统或应用程序中安装字体。
+   - 在编辑器中使用：
+     - 打开编辑器的设置或首选项。
+     - 选择Maple Mono作为首选字体。
+   - 在终端中使用：
+     - 配置终端的字体设置为Maple Mono。
+
+5. 总结：
+   Maple Mono是一款美观且实用的等宽字体，特别适合开发者和终端用户，提供了良好的定制性和可读性。
 
 
 ### [nvbn/thefuck](https://github.com/nvbn/thefuck)
 
 1. 仓库名称：nvbn/thefuck
-2. 简要介绍：thefuck 是一个命令行工具，能够自动纠正用户输入的错误命令，并提供正确的命令建议。
-3. 创新点：thefuck 能够智能识别用户的输入错误，通过分析错误原因并给出正确的命令，极大地提高了命令行操作的效率和准确性。
-4. 简单用法：
-   - 安装 thefuck：`pip3 install thefuck`
-   - 确认命令错误后，输入 `fuck` ，thefuck 将自动纠正命令，按方向键可切换不同的建议。
-5. 总结：thefuck 是一个非常实用的命令行工具，能够快速纠正错误命令，提高命令行操作的效率和用户体验。
+2. 简要介绍：thefuck是一个用于纠正您上一次控制台命令的实用工具。
+3. 创新点：它能够自动检测并修正您输入的错误命令，让您可以快速准确地重新执行正确的命令。
+4. 简单用法：在安装并配置好后，只需在命令行中输入"fuck"命令即可自动修正上一次的命令。
+5. 总结：thefuck是一个强大而实用的工具，它可以帮助您轻松快速地纠正控制台命令中的错误。
 
 
 ### [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps)
 
-```markdown
-1. **仓库名称**：Shubhamsaboo/awesome-llm-apps
-2. **简要介绍**：该仓库汇集了使用 AI Agents 和 RAG 的 LLM 应用实例，涉及 OpenAI、Anthropic、Gemini 和开源模型。
-3. **创新点**：展示了如何将大型语言模型与检索增强生成（RAG）和 AI Agents 结合，实现去中心化决策制定和特定主题深入处理。
-4. **简单用法**：
-   - 使用 MLflow AI Gateway 部署第三方大语言模型，如：
-        ```python
-        from mlflow.gateway import query, set_gateway_uri
-        set_gateway_uri(gateway_uri="http://localhost:5000")
-        response = query(
-            route="completions",
-            data={"prompt": "Hello", "max_tokens": 500, "use_chat": False},
-        )
-        print(response)
-        ```
-   - 使用平安健康的智能保单知识库大纲梳理：https://github.com/Shubhamsaboo/knowledge_based_questions_Baichuan
-5. **总结**：提供多种 LLM 应用案例，帮助开发者快速构建基于大型语言模型的智能应用。
-```
+1. 仓库名称：Shubhamsaboo/awesome-llm-apps  
+2. 简要介绍：该仓库收集了使用AI Agents和RAG技术的LLM应用，支持OpenAI、Anthropic、Gemini及开源模型。  
+3. 创新点：展示如何通过AI Agents和RAG技术增强LLM应用的功能和用户体验。  
+4. 简单用法：从仓库中挑选所需的项目代码或示例，根据文档配置相应环境和参数即可运行。  
+5. 总结：该仓库为利用不同语言模型构建强大的AI应用程序提供了参考和指导。
 
 
 ### [aws/aws-cli](https://github.com/aws/aws-cli)
 
-```markdown
 1. 仓库名称：aws/aws-cli
-2. 简要介绍：AWS CLI是一个开源工具，用于在命令行界面或脚本中直接管理AWS服务。
-3. 创新点：它提供了访问和管理几乎所有AWS服务的统一接口，支持最新的AWS功能。
-4. 简单用法：
-   - 安装：`pip install awscli`
-   - 查看S3中的文件列表：`aws s3 ls`
-   - 创建EC2实例：`aws ec2 run-instances --image-id ami-xxxxxxxx --count 1 --instance-type t2.micro`
-5. 总结：AWS CLI通过命令行简化了AWS资源的管理和自动化操作。
-```
+2. 简要介绍：AWS CLI 是一个统一的命令行工具，用于管理 Amazon Web Services 服务。
+3. 创新点：统一 AWS 服务命令行为单一工具，并提供跨平台支持和丰富的自动化功能。
+4. 简单用法：以下是一些常用命令示例：
+   - 配置 AWS CLI：`aws configure`
+   - 列出 S3 存储桶：`aws s3 ls`
+   - 创建 EC2 实例：`aws ec2 run-instances --image-id ami-xxxxxxxx --count 1 --instance-type t2.micro`
+5. 总结：AWS CLI 提供了一个高效的方式来管理和自动化 AWS 服务，适用于开发者和系统管理员。
 
 
 ### [jonathanwilton/PUExtraTrees](https://github.com/jonathanwilton/PUExtraTrees)
 
-1. 仓库名称：jonathanwilton/PUExtraTrees
-2. 简要介绍：该仓库提供了无标记正例学习（PU learning）和额外树分类器（Extra Trees classifier）的实现，支持uPU、nnPU和PN学习。
-3. 创新点：采用更健壮性的PU学习方法，结合高性能的额外树分类器，以适应不同的PU学习场景。
-4. 简单用法：
-```python
-# 使用Pipeline结合UPL和ExtraTrees
-from sklearn.pipeline import Pipeline
-from sklearn.model_selection import GridSearchCV
+### 1. 仓库名称：jonathanwilton/PUExtraTrees
 
-pipeline = Pipeline([
-    ('upl', UPL()),
-    ('extra_trees', ExtraTreesClassifier(n_estimators=100, 
-                                         max_features=0.6, 
-                                         min_samples_leaf=1, 
-                                         random_state=0))
-])
-param_grid = [{
-    'upl__pu_method': ['pub'],  # uPU method
-    'upl__prior': [0.6],
-    'upl__hold_out_ratio': [0.1],
-    'extra_trees__max_features': [0.4, 0.6],  # ExtraTrees max features
-}]
-grid_search = GridSearchCV(pipeline, param_grid, cv=5)
-grid_search.fit(X, y)
-print("Best parameters: {}".format(grid_search.best_params_))
+### 2. 简要介绍：
+该仓库实现了基于Extremely Randomized Trees（简称"Extra Trees"，极随机树）分类器的正类y78未标记学习（PU learning），即使用标记的正样本和未标记的样本来训练分类器。
+
+### 3. 创新点：
+- 支持 `uPU`（Positive and Unlabeled learning with Unbiased risk estimator）和 `nnPU`（non-negative PU learning）两种PU学习算法。
+- 创新性地将Extra Trees分类器与PU学习结合，扩展了PU学习的应用范围。
+- 引入了 `Prior Estimation`（先验估计）和 `PN learning`（正负学习）功能，可以估计正样本的先验概率，并在某些情况下利用负样本进行学习。
+
+### 4. 简单用法：
+```python
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import roc_auc_score
+from PUExtraTrees import PUExtraTrees
+
+# 假设 X, y 是训练数据，其中 y ∈ {0,1}，1 表示正样本，0 表示未标记样本
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+# 初始化 PUExtraTrees 分类器，使用 'nnPU' 算法
+pu_forest = PUExtraTrees(algorithm='nnPU')
+
+# 训练模型
+pu_forest.fit(X_train, y_train)
+
+# 预测测试样本属于正类的概率
+y_pred_proba = pu_forest.predict_proba(X_test)[:, 1]
+
+# 计算 AUROC 评分（需确保 y_test 包含真实的标签）
+auroc = roc_auc_score(y_test, y_pred_proba)
 ```
-5. 总结：该仓库为处理部分标签数据提供了有效的工具，特别是在正负样本分布不明确的情况下，通过PU学习和基于树的集成方法提高了分类性能。
+
+### 5. 总结：
+`PUExtraTrees` 提供了一种高效的、基于极随机树的半监督学习方法，特别适用于只有正样本和未标记样本的学习场景，能够有效地从弱监督数据中学习分类模型。
 
 
 ### [bilibili/Index-1.9B](https://github.com/bilibili/Index-1.9B)
 
-### 1. 仓库名称
+1. 仓库名称：bilibili/Index-1.9B
 
-bilibili/Index-1.9B
+2. 简要介绍：bilibili的Index-1.9B是一个轻量级多语言大语言模型，具有19亿参数，支持英文、中文、日文、韩文等多种语言。
 
-### 2. 简要介绍
+3. 创新点：Index-1.9B设计为索引模型，具有较少的专家模型（MoE）路由层，层级参数共享以及动态词汇表等特色，适用于多语言任务，并能处理极长的上下文（如32K tokens）。
 
-Index-1.9B是由Bilibili开发的一个轻量级的、多语言的、大规模语言模型（LLM），具有19亿参数。
-
-### 3. 创新点
-
-Index-1.9B最大的特色在于其紧凑的模型结构和卓越的多语言处理能力。它通过结构优化实现了较低的模型大小，同时其多语言支持和强大的推理学习能力使其成为轻量级LLM领域的创新之作。
-
-### 4. 简单用法
+4. 简单用法：使用Hugging Face的`transformers`库可以轻松加载`Index-1.9B-Chat`模型进行对话式交互。例如：
 
 ```python
-from transformers import AutoModelForCausalLM, AutoTokenizer
-
-tokenizer = AutoTokenizer.from_pretrained("IndexTeam/Index1.9B")
-model = AutoModelForCausalLM.from_pretrained("IndexTeam/Index1.9B")
-
-input_text = "今天天气不错，"
-input_ids = tokenizer.encode(input_text, return_tensors="pt")
-output_ids = model.generate(input_ids, max_length=50)
-output_text = tokenizer.decode(output_ids[0], skip_special_tokens=True)
-print(output_text)
+from transformers import AutoTokenizer, AutoModelForCausalLM
+tokenizer = AutoTokenizer.from_pretrained("bilibili/Index-1.9B-Chat")
+model = AutoModelForCausalLM.from_pretrained("bilibili/Index-1.9B-Chat")
+input_text = "###Human:你好世界。\n###Assistant:"
+inputs = tokenizer.encode(input_text, return_tensors="pt")
+outputs = model.generate(inputs, max_length=64)
+print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 ```
 
-### 5. 总结
-
-Index-1.9B是一个轻量级、高效的多语言LLM，适用于在资源受限的环境中实现高级语言理解和生成。
+5. 总结：Index-1.9B 为多语言任务提供了高效的推理性能，尤其适合在资源有限的环境中使用。
 
 
 ### [huggingface/transformers](https://github.com/huggingface/transformers)
 
-1. 仓库名称：huggingface/transformers
-
-2. 简要介绍：Transformers是一款先进的机器学习库，提供预训练模型用于NLP任务，支持PyTorch、TensorFlow和JAX三大框架。
-
-3. 创新点：
-- 提供多种预训练模型，支持多种NLP任务。
-- 支持多种深度学习框架，方便迁移和部署。
-- 社区活跃，模型和资源丰富。
-
-4. 简单用法：
-```python
-from transformers import pipeline
-
-classifier = pipeline('sentiment-analysis')
-result = classifier('We are very happy to show you the 🤗 Transformers library.')
-print(result)  # 输出: [{'label': 'POSITIVE', 'score': 0.9998}]
-```
-
-5. 总结：Transformers库提供强大的预训练模型和工具，助力开发人员快速构建和部署NLP应用。
+1. **仓库名称：huggingface/transformers**
+2. **简要介绍：** Transformers 是一个提供预训练和微调的深度学习模型库，支持 PyTorch，TensorFlow 和 JAX，并包含数千个预训练模型。
+3. **创新点：** 该库提供了大量跨领域的预训练模型，集成了包括自然语言处理、计算机视觉以及语音处理在内的前沿模型，方便研究和应用快速使用和迭代。
+4. **简单用法：** 使用该库可以轻松进行文本分类、生成或翻译等任务。例如，下载预训练模型并进行文本分类：
+   ```python
+   from transformers import pipeline
+   classifier = pipeline("sentiment-analysis")
+   result = classifier("I love using Hugging Face's transformers!")
+   print(result)  # 输出分类结果
+   ```
+5. **总结：** Transformers 为机器学习从业者提供了一整套现代化工具和预训练模型，大大简化了研究和生产中复杂模型的部署与应用。
 
 
 ### [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
 
 1. 仓库名称：AUTOMATIC1111/stable-diffusion-webui
-
-2. 简要介绍：Stable Diffusion web UI 是一个基于 Gradio 库的 Stable Diffusion 浏览器界面，允许用户通过简单的 Web 界面轻松使用深度学习模型 Stable Diffusion 进行图像生成。
-
-3. 创新点：将 Stable Diffusion 模型的强大功能与直观的 Web 界面结合，使非专业用户也能方便地进行图像生成和编辑，并支持多种自定义设置和超参数调整。
-
-4. 简单用法：运行 `python launch.py` 启动 Web 服务器，在浏览器中访问网址即可使用界面提供的各种功能进行图像生成。
-
-5. 总结：Stable Diffusion web UI 极大地降低了使用 Stable Diffusion 模型的门槛，通过直观的 Web 界面使图像生成技术更加普及和易用。
+2. 简要介绍：Stable Diffusion web UI 是一个基于Gradio库的浏览器界面，用于运行 Stable Diffusion 模型。
+3. 创新点：该仓库提供了一个图形化的Web界面，让用户无需编写代码即可轻松使用Stable Diffusion模型进行图像生成。
+4. 简单用法：
+   - 从 [here](https://github.com/CompVis/stable-diffusion) 克隆仓库
+   - 运行 `python webui.py` 启动Web界面
+   - 在浏览器中打开 `http://localhost:7860` 使用
+5. 总结：AUTOMATIC1111/stable-diffusion-webui 项目通过提供一个易用的Web界面，大大降低了使用Stable Diffusion的技术门槛，使得更多人可以轻松使用这个强大的深度学习模型进行图像生成。
 
 
 ### [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT)
 
 1. 仓库名称：Significant-Gravitas/AutoGPT
-2. 简要介绍：最先进的完全自主人工智能工具，帮助用户完成多种复杂任务。
-3. 创新点：采用基于大型语言模型(GPT-4)的代理架构，可以进行计划、批判和协作完成任务。
-4. 简单用法：按照README中的Quick Start说明，安装、配置并运行AutoGPT即可。
-5. 总结：AutoGPT提供了一个强大的AI工具，让用户能够借助先进的语言模型自主完成复杂任务。
-
-补充说明：
-AutoGPT建立在GPT-4等大型语言模型基础上，采用代理架构使其能够自行规划和推理。AutoGPT还可以执行多种任务，比如编写和执行代码、进行网页搜索等。此外，AutoGPT支持多种扩展工具，以增加其功能和应用场景。
+2. 简要介绍：AutoGPT 是一个 AI 驱动的任务自动化工具，可自主完成用户指定的目标，通过将大型语言模型与实际应用程序相结合，实现自动化任务执行。
+3. 创新点：将大型语言模型（如 GPT-4）与实际应用程序相结合，使 AI 能够自主执行任务，并通过迭代改进实现目标。
+4. 简单用法：安装 AutoGPT，设置 API 密钥，然后运行 `autogpt` 命令启动。用户可以通过命令行界面与 AI 互动，指定目标并观察其自主执行。
+5. 总结：AutoGPT 通过将大型语言模型与实际应用程序相结合，为用户提供了一个强大的 AI 驱动的任务自动化工具，使其能够专注于更重要的任务。
 
 
 ### [EvanLi/Github-Ranking](https://github.com/EvanLi/Github-Ranking)
@@ -422,6 +392,10 @@ predict_image(model_path, image_path)
 
 ### 5. 总结
 PolyWorld提供了一种高效、精确的方法来从卫星图像中提取建筑物的多边形表示，对于地理信息系统和城市测绘领域具有重要应用价值。
+
+
+
+## TypeScript（共6个）
 
 
 
@@ -516,6 +490,10 @@ BongoCat 是一款功能丰富且可高度自定义的跨平台桌面宠物，�
 
 ## Other（共6个）
 
+
+
+## Other（共6个）
+
 ### [holyshell/AppsForMac](https://github.com/holyshell/AppsForMac)
 
 1. 仓库名称：holyshell/AppsForMac
@@ -578,6 +556,10 @@ BongoCat 是一款功能丰富且可高度自定义的跨平台桌面宠物，�
 4. 简单用法：用户可以通过阅读每个章节的Jupyter Notebook文件来学习课程内容，比如了解如何编写清晰的指令、给模型足够的时间思考等。
 5. 总结：本项目是吴恩达教授关于Prompt Engineering for Developers的中文版本，是开发者学习和提高使用LLM技能的宝贵资源。
 ```
+
+
+
+## Jupyter Notebook（共6个）
 
 
 
@@ -744,6 +726,10 @@ pu_lr.predict(X_test)  # 预测
 
 ## C#（共3个）
 
+
+
+## C#（共3个）
+
 ### [randyrants/sharpkeys](https://github.com/randyrants/sharpkeys)
 
 ### 仓库内容总结
@@ -775,6 +761,10 @@ pu_lr.predict(X_test)  # 预测
 3. 创新点：提供了一个专门针对Windows 11的广告删除工具，帮助用户去除系统中的各种广告。
 4. 简单用法：（1）下载OFGB项目；（2）运行OFGB.exe；（3）选择需要禁用的广告选项并应用更改。
 5. 总结：OFGB是一个简单实用的工具，可以帮助Windows 11用户去除系统中的广告，提升用户体验。
+
+
+
+## C（共2个）
 
 
 
@@ -858,6 +848,10 @@ pu_lr.predict(X_test)  # 预测
 
 ## C++（共2个）
 
+
+
+## C++（共2个）
+
 ### [microsoft/WSL](https://github.com/microsoft/WSL)
 
 1. 仓库名称：microsoft/WSL
@@ -889,6 +883,10 @@ pu_lr.predict(X_test)  # 预测
 
 ## JavaScript（共2个）
 
+
+
+## JavaScript（共2个）
+
 ### [yitong2333/Bionic-Reading](https://github.com/yitong2333/Bionic-Reading)
 
 1. 仓库名称：yitong2333/Bionic-Reading
@@ -907,11 +905,28 @@ pu_lr.predict(X_test)  # 预测
 
 ### [poloclub/transformer-explainer](https://github.com/poloclub/transformer-explainer)
 
-1. 仓库名称：poloclub/transformer-explainer
-2. 简要介绍：Transformer Explained Visually 是一个用于学习和理解 Transformer 模型如何工作的交互式可视化工具。
-3. 创新点：该仓库通过交互式的可视化方式，直观地展示了 Transformer 模型的工作原理，帮助用户更深入地理解模型的内部结构和运作机制。
-4. 简单用法：访问仓库中的网页版本（https://poloclub.github.io/transformer-explainer/），直接与其中的可视化工具进行交互。
-5. 总结：这个仓库提供了一个易于使用的交互式平台，旨在帮助用户直观地理解 Transformer 模型的工作原理，特别是对于语言理解任务。
+### 1. 仓库名称：poloclub/transformer-explainer
+
+### 2. 简要介绍：
+这是一个基于Jupyter Notebook的交互式可视化工具，用于解释Transformer模型的工作原理，特别关注大型语言模型（LLM）。
+
+### 3. 创新点：
+- 提供了交互式的可视化界面，使用户能够直观地理解Transformer的结构和工作方式。
+- 结合了理论解释和实际代码示例，帮助学习者深入理解模型细节。
+- 支持自定义模型和图表的交互操作，增强了学习的互动性和趣味性。
+
+### 4. 简单用法：
+在Jupyter Notebook环境中，通过以下URL加载并运行交互式Transformer模型解释器：
+
+```python
+# 在Jupyter Notebook中运行
+import urllib.request
+url = 'https://raw.githubusercontent.com/poloclub/transformer-explainer/main/transformer-explainable.ipynb'
+urllib.request.urlretrieve(url, 'transformer-explainable.ipynb')
+```
+
+### 5. 总结：
+该仓库通过交互式可视化工具帮助用户深入理解Transformer模型的内部机制，特别适合希望直观掌握大型语言模型工作原理的学习者和研究人员。
 
 
 
@@ -924,6 +939,10 @@ pu_lr.predict(X_test)  # 预测
 3. 创新点：集中整理了各类教材的PDF版本，方便学生和教师获取和使用。
 4. 简单用法：用户可以直接在仓库中下载所需的教材PDF文件。
 5. 总结：该仓库为需要中国教育相关教材的用户提供便捷的资源下载服务。
+
+
+
+## Rust（共1个）
 
 
 
@@ -947,6 +966,10 @@ npm install -g pake-cli
 pake https://weekly.tw93.fun --name Weekly
 ```
 5. 总结：Pake 提供了一种快速、简便的方法，让开发者或普通用户能将喜欢的网页快速地转化为桌面应用，同时具备高效的性能和跨平台特性。
+
+
+
+## Go（共1个）
 
 
 
@@ -988,6 +1011,10 @@ pake https://weekly.tw93.fun --name Weekly
      bind_port = 7000
      ```
 5. 总结：fatedier/frp 是一款功能强大、配置简单的反向代理工具，适用于将内部服务安全地暴露到互联网上。
+
+
+
+## Haskell（共1个）
 
 
 
@@ -1062,6 +1089,10 @@ pake https://weekly.tw93.fun --name Weekly
 
 ## Shell（共1个）
 
+
+
+## Shell（共1个）
+
 ### [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds)
 
 ### 仓库信息
@@ -1073,6 +1104,10 @@ pake https://weekly.tw93.fun --name Weekly
 
 ### 详细总结
 该仓库的核心价值在于它提供了FFmpeg的预编译二进制文件，适用于Windows、Linux和macOS。开发者无需从头手动编译复杂的FFmpeg库，只需从Release页面下载符合需求的版本，解压后即可在命令行中使用。仓库还提供了多种许可证版本的构建：GPL和LGPL，以满足不同的使用场景和合规性要求。这个仓库极大地方便了想要快速使用FFmpeg的开发者。
+
+
+
+## Less（共1个）
 
 
 
@@ -1149,6 +1184,10 @@ VLOOK 是一个功能强大且极具美感的 Typora/Markdown 主题包和增强
 
 ## Java（共1个）
 
+
+
+## Java（共1个）
+
 ### [ZCShou/GoGoGo](https://github.com/ZCShou/GoGoGo)
 
 1. 仓库名称：ZCShou/GoGoGo
@@ -1156,6 +1195,10 @@ VLOOK 是一个功能强大且极具美感的 Typora/Markdown 主题包和增强
 3. 创新点：结合了 Android 调试 API 和百度地图，实现了在移动设备上模拟定位的功能，同时加入了自由移动的摇杆设计，提升了用户体验。
 4. 简单用法：根据仓库中的 README 文件配置环境，安装必要的依赖库，然后按照指南操作以实现虚拟定位。
 5. 总结：提供了一个便捷地在 Android 设备上进行虚拟定位的工具，适用于需要在特定位置进行测试或模拟的应用场景。
+
+
+
+## Clojure（共1个）
 
 
 
