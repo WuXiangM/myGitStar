@@ -3,13 +3,9 @@
 
 ## Python（共30个）
 
-### [Zie619/n8n-workflows](https://github.com/Zie619/n8n-workflows)
+### [opendatalab/MinerU](https://github.com/opendatalab/MinerU)
 
 API生成失败或429
-
-
-
-## Roff（共1个）
 
 
 ### [hpcaitech/Open-Sora](https://github.com/hpcaitech/Open-Sora)
@@ -664,6 +660,15 @@ out_polys = model(image)  # 输入为卫星图像，输出为预测的多边形
 
 ## TypeScript（共11个）
 
+
+
+## TypeScript（共12个）
+
+### [btjawa/BiliTools](https://github.com/btjawa/BiliTools)
+
+API生成失败或429
+
+
 ### [antvis/mcp-server-chart](https://github.com/antvis/mcp-server-chart)
 
 API生成失败或429
@@ -839,6 +844,10 @@ Teable是一个基于PostgreSQL的无代码数据库管理工具，为开发者�
 
 ## Other（共9个）
 
+
+
+## Other（共9个）
+
 ### [x-cmd/x-cmd](https://github.com/x-cmd/x-cmd)
 
 API生成失败或429
@@ -922,6 +931,10 @@ model = BertModel.from_pretrained('bert-base-chinese')
 3. 创新点：将英文原版课程翻译成中文，使中文开发者能够更容易地学习和理解ChatGPT提示工程。  
 4. 简单用法：可以直接阅读仓库中的中文版课程文档，或者通过Vercel生成的可分享在线阅读页面进行学习。  
 5. 总结：这个仓库为中文开发者提供了便利，使他们可以更轻松地学习和应用ChatGPT提示工程。
+
+
+
+## Jupyter Notebook（共6个）
 
 
 
@@ -1179,6 +1192,176 @@ Google AutoML 是一套强大的自动机器学习工具包，通过自动化流
 
 ## C#（共3个）
 
+
+
+## JavaScript（共3个）
+
+### [SheepChef/Abracadabra](https://github.com/SheepChef/Abracadabra)
+
+API生成失败或429
+
+
+### [yitong2333/Bionic-Reading](https://github.com/yitong2333/Bionic-Reading)
+
+1. 仓库名称：yitong2333/Bionic-Reading
+
+2. 简要介绍：这个仓库为油猴（Tampermonkey）提供了一个脚本，实现仿生阅读功能，通过加粗文本部分以提升阅读速度和理解力。适用于所有网页文本。
+
+3. 创新点：自动识别并加粗网页文本的关键部分，帮助读者迅速捕捉重要信息，无需调整原网页结构。
+
+4. 简单用法：
+   - 安装油猴扩展；
+   - 添加此仓库中的Bionic-Reading.user.js脚本；
+   - 浏览任意网页，文本将自动加粗处理。
+
+5. 总结：通过格式化网页文本的显示方式，Bionic-Reading提供了一种高效、便捷的阅读体验，增强了在线阅读的效率和理解能力。
+
+
+### [poloclub/transformer-explainer](https://github.com/poloclub/transformer-explainer)
+
+### 1. 仓库名称：poloclub/transformer-explainer
+
+### 2. 简要介绍：
+这是一个基于Jupyter Notebook的交互式可视化工具，用于解释Transformer模型的工作原理，特别关注大型语言模型（LLM）。
+
+### 3. 创新点：
+- 提供了交互式的可视化界面，使用户能够直观地理解Transformer的结构和工作方式。
+- 结合了理论解释和实际代码示例，帮助学习者深入理解模型细节。
+- 支持自定义模型和图表的交互操作，增强了学习的互动性和趣味性。
+
+### 4. 简单用法：
+在Jupyter Notebook环境中，通过以下URL加载并运行交互式Transformer模型解释器：
+
+```python
+# 在Jupyter Notebook中运行
+import urllib.request
+url = 'https://raw.githubusercontent.com/poloclub/transformer-explainer/main/transformer-explainable.ipynb'
+urllib.request.urlretrieve(url, 'transformer-explainable.ipynb')
+```
+
+### 5. 总结：
+该仓库通过交互式可视化工具帮助用户深入理解Transformer模型的内部机制，特别适合希望直观掌握大型语言模型工作原理的学习者和研究人员。
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## HTML（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## C#（共3个）
+
 ### [randyrants/sharpkeys](https://github.com/randyrants/sharpkeys)
 
 1. 仓库名称：randyrants/sharpkeys
@@ -1232,6 +1415,10 @@ Google AutoML 是一套强大的自动机器学习工具包，通过自动化流
 
 
 ## C（共2个）
+
+
+
+## Go（共2个）
 
 
 
@@ -1483,6 +1670,10 @@ API生成失败或429
 
 ## C（共2个）
 
+
+
+## C（共2个）
+
 ### [ventoy/Ventoy](https://github.com/ventoy/Ventoy)
 
 ### 仓库内容总结
@@ -1517,6 +1708,10 @@ API生成失败或429
    ```
 
 5. **总结**: AltSnap 通过简单的键盘和鼠标组合键操作，极大提升了 Windows 窗口管理的便利性和效率。
+
+
+
+## C++（共2个）
 
 
 
@@ -1775,154 +1970,21 @@ API生成失败或429
 
 ## JavaScript（共2个）
 
-### [yitong2333/Bionic-Reading](https://github.com/yitong2333/Bionic-Reading)
-
-1. 仓库名称：yitong2333/Bionic-Reading
-
-2. 简要介绍：这个仓库为油猴（Tampermonkey）提供了一个脚本，实现仿生阅读功能，通过加粗文本部分以提升阅读速度和理解力。适用于所有网页文本。
-
-3. 创新点：自动识别并加粗网页文本的关键部分，帮助读者迅速捕捉重要信息，无需调整原网页结构。
-
-4. 简单用法：
-   - 安装油猴扩展；
-   - 添加此仓库中的Bionic-Reading.user.js脚本；
-   - 浏览任意网页，文本将自动加粗处理。
-
-5. 总结：通过格式化网页文本的显示方式，Bionic-Reading提供了一种高效、便捷的阅读体验，增强了在线阅读的效率和理解能力。
 
 
-### [poloclub/transformer-explainer](https://github.com/poloclub/transformer-explainer)
+## Vue（共1个）
 
-### 1. 仓库名称：poloclub/transformer-explainer
+### [Sjj1024/PakePlus](https://github.com/Sjj1024/PakePlus)
 
-### 2. 简要介绍：
-这是一个基于Jupyter Notebook的交互式可视化工具，用于解释Transformer模型的工作原理，特别关注大型语言模型（LLM）。
-
-### 3. 创新点：
-- 提供了交互式的可视化界面，使用户能够直观地理解Transformer的结构和工作方式。
-- 结合了理论解释和实际代码示例，帮助学习者深入理解模型细节。
-- 支持自定义模型和图表的交互操作，增强了学习的互动性和趣味性。
-
-### 4. 简单用法：
-在Jupyter Notebook环境中，通过以下URL加载并运行交互式Transformer模型解释器：
-
-```python
-# 在Jupyter Notebook中运行
-import urllib.request
-url = 'https://raw.githubusercontent.com/poloclub/transformer-explainer/main/transformer-explainable.ipynb'
-urllib.request.urlretrieve(url, 'transformer-explainable.ipynb')
-```
-
-### 5. 总结：
-该仓库通过交互式可视化工具帮助用户深入理解Transformer模型的内部机制，特别适合希望直观掌握大型语言模型工作原理的学习者和研究人员。
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
+API生成失败或429
 
 
 
 ## HTML（共1个）
 
+### [Zie619/n8n-workflows](https://github.com/Zie619/n8n-workflows)
 
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
+API生成失败或429
 
 
 
@@ -1939,6 +2001,10 @@ urllib.request.urlretrieve(url, 'transformer-explainable.ipynb')
 3. 创新点：集中整理了各类教材的PDF版本，方便学生和教师获取和使用。
 4. 简单用法：用户可以直接在仓库中下载所需的教材PDF文件。
 5. 总结：该仓库为需要中国教育相关教材的用户提供便捷的资源下载服务。
+
+
+
+## Rust（共1个）
 
 
 
@@ -2211,6 +2277,10 @@ pake https://weekly.tw93.fun --name Weekly
 
 ## Haskell（共1个）
 
+
+
+## Haskell（共1个）
+
 ### [jgm/pandoc](https://github.com/jgm/pandoc)
 
 ```markdown
@@ -2372,6 +2442,10 @@ pake https://weekly.tw93.fun --name Weekly
 
 ## Shell（共1个）
 
+
+
+## Shell（共1个）
+
 ### [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds)
 
 ### 仓库信息
@@ -2383,6 +2457,10 @@ pake https://weekly.tw93.fun --name Weekly
 
 ### 详细总结
 该仓库的核心价值在于它提供了FFmpeg的预编译二进制文件，适用于Windows、Linux和macOS。开发者无需从头手动编译复杂的FFmpeg库，只需从Release页面下载符合需求的版本，解压后即可在命令行中使用。仓库还提供了多种许可证版本的构建：GPL和LGPL，以满足不同的使用场景和合规性要求。这个仓库极大地方便了想要快速使用FFmpeg的开发者。
+
+
+
+## Less（共1个）
 
 
 
@@ -2691,6 +2769,10 @@ VLOOK 是一个功能强大且极具美感的 Typora/Markdown 主题包和增强
 
 ## Java（共1个）
 
+
+
+## Java（共1个）
+
 ### [ZCShou/GoGoGo](https://github.com/ZCShou/GoGoGo)
 
 1. 仓库名称：ZCShou/GoGoGo
@@ -2698,6 +2780,10 @@ VLOOK 是一个功能强大且极具美感的 Typora/Markdown 主题包和增强
 3. 创新点：结合了 Android 调试 API 和百度地图，实现了在移动设备上模拟定位的功能，同时加入了自由移动的摇杆设计，提升了用户体验。
 4. 简单用法：根据仓库中的 README 文件配置环境，安装必要的依赖库，然后按照指南操作以实现虚拟定位。
 5. 总结：提供了一个便捷地在 Android 设备上进行虚拟定位的工具，适用于需要在特定位置进行测试或模拟的应用场景。
+
+
+
+## Clojure（共1个）
 
 
 
