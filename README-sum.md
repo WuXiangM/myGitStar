@@ -722,6 +722,15 @@ out_polys = model(image)  # 输入为卫星图像，输出为预测的多边形
 
 ## TypeScript（共13个）
 
+
+
+## TypeScript（共14个）
+
+### [google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli)
+
+API生成失败或429
+
+
 ### [RSSNext/Folo](https://github.com/RSSNext/Folo)
 
 API生成失败或429
@@ -902,6 +911,10 @@ Teable是一个基于PostgreSQL的无代码数据库管理工具，为开发者�
 
 
 ## Other（共8个）
+
+
+
+## Other（共9个）
 
 
 
@@ -1203,6 +1216,10 @@ model = BertModel.from_pretrained('bert-base-chinese')
 
 ## Jupyter Notebook（共7个）
 
+
+
+## Jupyter Notebook（共7个）
+
 ### [patchy631/ai-engineering-hub](https://github.com/patchy631/ai-engineering-hub)
 
 API生成失败或429
@@ -1399,6 +1416,10 @@ Google AutoML 是一套强大的自动机器学习工具包，通过自动化流
 
 
 ## JavaScript（共3个）
+
+
+
+## JavaScript（共4个）
 
 
 
@@ -1691,284 +1712,14 @@ urllib.request.urlretrieve(url, 'transformer-explainable.ipynb')
 
 ## C#（共3个）
 
-### [randyrants/sharpkeys](https://github.com/randyrants/sharpkeys)
 
-1. 仓库名称：randyrants/sharpkeys
-2. 简要介绍：SharpKeys 是一个可以管理 Windows 注册表中键盘映射的实用工具，允许用户将一个按键映射到另一个按键。
-3. 创新点：提供了一个简单易用的界面，允许非专业用户轻松更改系统按键映射，而无需直接编辑复杂的 Windows 注册表。
-4. 简单用法：运行 SharpKeys，点击“Add”按钮，选择要映射的原键和目标键，点击“Write to Registry”完成映射。重启计算机后，映射生效。
-5. 总结：SharpKeys 为 Windows 系统提供了一个安全、简单的按键映射解决方案，特别适合需要自定义键盘布局的用户，提升用户的操作体验。
 
+## Go（共3个）
 
-### [microsoft/PowerToys](https://github.com/microsoft/PowerToys)
-
-1. 仓库名称：microsoft/PowerToys
-2. 简要介绍：PowerToys 是微软提供的一套Windows系统实用工具，旨在帮助用户提高生产力，包含了一系列实用工具如文件快速检索、窗口管理、批量重命名等功能。
-3. 创新点：PowerToys 集成了多个实用工具，提供了许多原本需要借助第三方软件才能实现的功能，让用户可以在 Windows 系统上更方便地进行操作和管理。
-4. 简单用法：PowerToys 提供了多个实用工具，例如:
-   - 文件快速检索工具 PowerToys Run：可以通过快捷键 Win + 空格 快速打开，并输入关键词来查找文件、应用程序和文件夹。
-   - 窗口管理工具 FancyZones：可以将应用程序窗口进行分屏和定位，提高多任务处理效率。
-   - 批量重命名工具 PowerRename：可以批量修改文件名，支持正则表达式替换。
-   - 键盘映射工具 Keyboard Manager：可以重新映射键盘的按键，提高键盘使用效率。
-5. 总结：PowerToys 提供了一系列实用的 Windows 系统工具，方便用户进行各种操作和管理，提高工作和生活效率。
-
-
-### [zetaloop/OFGB](https://github.com/zetaloop/OFGB)
-
-1. 仓库名称：zetaloop/OFGB
-2. 简要介绍：这是一个用于删除Windows 11系统各处广告的小工具，源自OFGB的中文本地化分支。
-3. 创新点：针对Windows 11系统界面广告进行一键式清除，提供中文本地化支持。
-4. 简单用法：下载并运行`OFGB.exe`程序，选择需要屏蔽的广告元素，点击应用即可。
-5. 总结：对于想要去除Windows 11系统广告、提升系统使用体验的用户，该工具提供了一个简单有效的解决方案。
-
-
-
-## C（共2个）
-
-
-
-## C（共2个）
-
-
-
-## C（共2个）
-
-
-
-## C（共2个）
-
-
-
-## C（共2个）
-
-
-
-## C（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## HTML（共2个）
-
-
-
-## HTML（共2个）
-
-
-
-## HTML（共2个）
-
-
-
-## HTML（共2个）
-
-
-
-## HTML（共2个）
-
-
-
-## HTML（共2个）
-
-
-
-## HTML（共2个）
-
-### [ripienaar/free-for-dev](https://github.com/ripienaar/free-for-dev)
+### [OpenListTeam/OpenList](https://github.com/OpenListTeam/OpenList)
 
 API生成失败或429
 
-
-### [Zie619/n8n-workflows](https://github.com/Zie619/n8n-workflows)
-
-API生成失败或429
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Roff（共1个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
-
-
-
-## Go（共2个）
 
 ### [ollama/ollama](https://github.com/ollama/ollama)
 
@@ -2212,6 +1963,297 @@ API生成失败或429
 
 ## C（共2个）
 
+
+
+## C#（共3个）
+
+### [randyrants/sharpkeys](https://github.com/randyrants/sharpkeys)
+
+1. 仓库名称：randyrants/sharpkeys
+2. 简要介绍：SharpKeys 是一个可以管理 Windows 注册表中键盘映射的实用工具，允许用户将一个按键映射到另一个按键。
+3. 创新点：提供了一个简单易用的界面，允许非专业用户轻松更改系统按键映射，而无需直接编辑复杂的 Windows 注册表。
+4. 简单用法：运行 SharpKeys，点击“Add”按钮，选择要映射的原键和目标键，点击“Write to Registry”完成映射。重启计算机后，映射生效。
+5. 总结：SharpKeys 为 Windows 系统提供了一个安全、简单的按键映射解决方案，特别适合需要自定义键盘布局的用户，提升用户的操作体验。
+
+
+### [microsoft/PowerToys](https://github.com/microsoft/PowerToys)
+
+1. 仓库名称：microsoft/PowerToys
+2. 简要介绍：PowerToys 是微软提供的一套Windows系统实用工具，旨在帮助用户提高生产力，包含了一系列实用工具如文件快速检索、窗口管理、批量重命名等功能。
+3. 创新点：PowerToys 集成了多个实用工具，提供了许多原本需要借助第三方软件才能实现的功能，让用户可以在 Windows 系统上更方便地进行操作和管理。
+4. 简单用法：PowerToys 提供了多个实用工具，例如:
+   - 文件快速检索工具 PowerToys Run：可以通过快捷键 Win + 空格 快速打开，并输入关键词来查找文件、应用程序和文件夹。
+   - 窗口管理工具 FancyZones：可以将应用程序窗口进行分屏和定位，提高多任务处理效率。
+   - 批量重命名工具 PowerRename：可以批量修改文件名，支持正则表达式替换。
+   - 键盘映射工具 Keyboard Manager：可以重新映射键盘的按键，提高键盘使用效率。
+5. 总结：PowerToys 提供了一系列实用的 Windows 系统工具，方便用户进行各种操作和管理，提高工作和生活效率。
+
+
+### [zetaloop/OFGB](https://github.com/zetaloop/OFGB)
+
+1. 仓库名称：zetaloop/OFGB
+2. 简要介绍：这是一个用于删除Windows 11系统各处广告的小工具，源自OFGB的中文本地化分支。
+3. 创新点：针对Windows 11系统界面广告进行一键式清除，提供中文本地化支持。
+4. 简单用法：下载并运行`OFGB.exe`程序，选择需要屏蔽的广告元素，点击应用即可。
+5. 总结：对于想要去除Windows 11系统广告、提升系统使用体验的用户，该工具提供了一个简单有效的解决方案。
+
+
+
+## C（共2个）
+
+
+
+## C（共2个）
+
+
+
+## C（共2个）
+
+
+
+## C（共2个）
+
+
+
+## C（共2个）
+
+
+
+## C（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## HTML（共2个）
+
+
+
+## HTML（共2个）
+
+
+
+## HTML（共2个）
+
+
+
+## HTML（共2个）
+
+
+
+## HTML（共2个）
+
+
+
+## HTML（共2个）
+
+
+
+## HTML（共2个）
+
+
+
+## HTML（共2个）
+
+### [ripienaar/free-for-dev](https://github.com/ripienaar/free-for-dev)
+
+API生成失败或429
+
+
+### [Zie619/n8n-workflows](https://github.com/Zie619/n8n-workflows)
+
+API生成失败或429
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Roff（共1个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## Go（共2个）
+
+
+
+## C（共2个）
+
 ### [ventoy/Ventoy](https://github.com/ventoy/Ventoy)
 
 ### 仓库内容总结
@@ -2246,6 +2288,10 @@ API生成失败或429
    ```
 
 5. **总结**: AltSnap 通过简单的键盘和鼠标组合键操作，极大提升了 Windows 窗口管理的便利性和效率。
+
+
+
+## C++（共2个）
 
 
 
@@ -2640,6 +2686,10 @@ API生成失败或429
 
 ## Vue（共1个）
 
+
+
+## Vue（共1个）
+
 ### [Sjj1024/PakePlus](https://github.com/Sjj1024/PakePlus)
 
 API生成失败或429
@@ -2712,6 +2762,10 @@ API生成失败或429
 
 ## Roff（共1个）
 
+
+
+## Roff（共1个）
+
 ### [TapXWorld/ChinaTextbook](https://github.com/TapXWorld/ChinaTextbook)
 
 1. 仓库名称：TapXWorld/ChinaTextbook
@@ -2719,6 +2773,10 @@ API生成失败或429
 3. 创新点：集中整理了各类教材的PDF版本，方便学生和教师获取和使用。
 4. 简单用法：用户可以直接在仓库中下载所需的教材PDF文件。
 5. 总结：该仓库为需要中国教育相关教材的用户提供便捷的资源下载服务。
+
+
+
+## Rust（共1个）
 
 
 
@@ -3127,6 +3185,10 @@ pake https://weekly.tw93.fun --name Weekly
 
 ## Haskell（共1个）
 
+
+
+## Haskell（共1个）
+
 ### [jgm/pandoc](https://github.com/jgm/pandoc)
 
 ```markdown
@@ -3356,6 +3418,10 @@ pake https://weekly.tw93.fun --name Weekly
 
 ## Shell（共1个）
 
+
+
+## Shell（共1个）
+
 ### [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds)
 
 ### 仓库信息
@@ -3367,6 +3433,10 @@ pake https://weekly.tw93.fun --name Weekly
 
 ### 详细总结
 该仓库的核心价值在于它提供了FFmpeg的预编译二进制文件，适用于Windows、Linux和macOS。开发者无需从头手动编译复杂的FFmpeg库，只需从Release页面下载符合需求的版本，解压后即可在命令行中使用。仓库还提供了多种许可证版本的构建：GPL和LGPL，以满足不同的使用场景和合规性要求。这个仓库极大地方便了想要快速使用FFmpeg的开发者。
+
+
+
+## Less（共1个）
 
 
 
@@ -3811,6 +3881,10 @@ VLOOK 是一个功能强大且极具美感的 Typora/Markdown 主题包和增强
 
 ## Java（共1个）
 
+
+
+## Java（共1个）
+
 ### [ZCShou/GoGoGo](https://github.com/ZCShou/GoGoGo)
 
 1. 仓库名称：ZCShou/GoGoGo
@@ -3818,6 +3892,10 @@ VLOOK 是一个功能强大且极具美感的 Typora/Markdown 主题包和增强
 3. 创新点：结合了 Android 调试 API 和百度地图，实现了在移动设备上模拟定位的功能，同时加入了自由移动的摇杆设计，提升了用户体验。
 4. 简单用法：根据仓库中的 README 文件配置环境，安装必要的依赖库，然后按照指南操作以实现虚拟定位。
 5. 总结：提供了一个便捷地在 Android 设备上进行虚拟定位的工具，适用于需要在特定位置进行测试或模拟的应用场景。
+
+
+
+## Clojure（共1个）
 
 
 
