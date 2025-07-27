@@ -747,6 +747,15 @@ out_polys = model(image)  # 输入为卫星图像，输出为预测的多边形
 
 ## TypeScript（共15个）
 
+
+
+## TypeScript（共16个）
+
+### [imsyy/DailyHotApi](https://github.com/imsyy/DailyHotApi)
+
+API生成失败或429
+
+
 ### [cline/cline](https://github.com/cline/cline)
 
 API生成失败或429
@@ -937,6 +946,10 @@ Teable是一个基于PostgreSQL的无代码数据库管理工具，为开发者�
 
 
 ## Other（共8个）
+
+
+
+## Other（共9个）
 
 
 
@@ -1278,6 +1291,10 @@ model = BertModel.from_pretrained('bert-base-chinese')
 
 ## Jupyter Notebook（共7个）
 
+
+
+## Jupyter Notebook（共7个）
+
 ### [patchy631/ai-engineering-hub](https://github.com/patchy631/ai-engineering-hub)
 
 API生成失败或429
@@ -1474,6 +1491,10 @@ Google AutoML 是一套强大的自动机器学习工具包，通过自动化流
 
 
 ## JavaScript（共3个）
+
+
+
+## JavaScript（共4个）
 
 
 
@@ -1806,6 +1827,10 @@ urllib.request.urlretrieve(url, 'transformer-explainable.ipynb')
 
 ## Go（共3个）
 
+
+
+## Go（共3个）
+
 ### [OpenListTeam/OpenList](https://github.com/OpenListTeam/OpenList)
 
 API生成失败或429
@@ -2073,6 +2098,10 @@ API生成失败或429
 
 ## C#（共3个）
 
+
+
+## C#（共3个）
+
 ### [randyrants/sharpkeys](https://github.com/randyrants/sharpkeys)
 
 1. 仓库名称：randyrants/sharpkeys
@@ -2291,6 +2320,254 @@ API生成失败或429
 
 ## HTML（共2个）
 
+
+
+## Rust（共2个）
+
+### [astral-sh/uv](https://github.com/astral-sh/uv)
+
+API生成失败或429
+
+
+### [tw93/Pake](https://github.com/tw93/Pake)
+
+1. 仓库名称：tw93/Pake
+2. 简要介绍：Pake 是一个用 Rust 开发的工具，可以将任何网页转为轻量级桌面应用，支持 Mac、Windows 和 Linux 系统。
+3. 创新点：利用 Rust 和 Tauri 框架，只需几行命令就能将网页打包为可执行文件，生成的桌面应用具有轻量级、高性能和跨平台特性，且打包后的应用相较于传统 Electron 应用要小近 20 倍。
+4. 简单用法：
+```sh
+# 安装 Pake 工具
+npm install -g pake-cli
+
+# 打包网页到桌面应用
+pake https://weekly.tw93.fun --name Weekly
+```
+5. 总结：Pake 提供了一种快速、简便的方法，让开发者或普通用户能将喜欢的网页快速地转化为桌面应用，同时具备高效的性能和跨平台特性。
+
+
+
+## Go（共1个）
+
+
+
+## Go（共1个）
+
+
+
+## Go（共1个）
+
+
+
+## Go（共1个）
+
+
+
+## Go（共1个）
+
+
+
+## Go（共1个）
+
+
+
+## Go（共1个）
+
+
+
+## Go（共1个）
+
+
+
+## Go（共1个）
+
+
+
+## Go（共1个）
+
+
+
+## Go（共1个）
+
+
+
+## Go（共1个）
+
+
+
+## Go（共1个）
+
+
+
+## Go（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## Haskell（共1个）
+
+
+
+## HTML（共2个）
+
 ### [ripienaar/free-for-dev](https://github.com/ripienaar/free-for-dev)
 
 API生成失败或429
@@ -2392,6 +2669,10 @@ API生成失败或429
 
 ## C（共2个）
 
+
+
+## C（共2个）
+
 ### [ventoy/Ventoy](https://github.com/ventoy/Ventoy)
 
 ### 仓库内容总结
@@ -2426,6 +2707,10 @@ API生成失败或429
    ```
 
 5. **总结**: AltSnap 通过简单的键盘和鼠标组合键操作，极大提升了 Windows 窗口管理的便利性和效率。
+
+
+
+## C++（共2个）
 
 
 
@@ -2860,6 +3145,10 @@ API生成失败或429
 
 ## PowerShell（共1个）
 
+
+
+## PowerShell（共1个）
+
 ### [anthropics/claude-code](https://github.com/anthropics/claude-code)
 
 API生成失败或429
@@ -2868,9 +3157,17 @@ API生成失败或429
 
 ## MDX（共1个）
 
+
+
+## MDX（共1个）
+
 ### [dair-ai/Prompt-Engineering-Guide](https://github.com/dair-ai/Prompt-Engineering-Guide)
 
 API生成失败或429
+
+
+
+## Vue（共1个）
 
 
 
@@ -2927,6 +3224,10 @@ API生成失败或429
 
 
 ## HTML（共1个）
+
+
+
+## Roff（共1个）
 
 
 
@@ -3196,237 +3497,6 @@ API生成失败或429
 
 ## Rust（共1个）
 
-### [tw93/Pake](https://github.com/tw93/Pake)
-
-1. 仓库名称：tw93/Pake
-2. 简要介绍：Pake 是一个用 Rust 开发的工具，可以将任何网页转为轻量级桌面应用，支持 Mac、Windows 和 Linux 系统。
-3. 创新点：利用 Rust 和 Tauri 框架，只需几行命令就能将网页打包为可执行文件，生成的桌面应用具有轻量级、高性能和跨平台特性，且打包后的应用相较于传统 Electron 应用要小近 20 倍。
-4. 简单用法：
-```sh
-# 安装 Pake 工具
-npm install -g pake-cli
-
-# 打包网页到桌面应用
-pake https://weekly.tw93.fun --name Weekly
-```
-5. 总结：Pake 提供了一种快速、简便的方法，让开发者或普通用户能将喜欢的网页快速地转化为桌面应用，同时具备高效的性能和跨平台特性。
-
-
-
-## Go（共1个）
-
-
-
-## Go（共1个）
-
-
-
-## Go（共1个）
-
-
-
-## Go（共1个）
-
-
-
-## Go（共1个）
-
-
-
-## Go（共1个）
-
-
-
-## Go（共1个）
-
-
-
-## Go（共1个）
-
-
-
-## Go（共1个）
-
-
-
-## Go（共1个）
-
-
-
-## Go（共1个）
-
-
-
-## Go（共1个）
-
-
-
-## Go（共1个）
-
-
-
-## Go（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
-
-
-## Haskell（共1个）
-
 
 
 ## Haskell（共1个）
@@ -3680,6 +3750,10 @@ pake https://weekly.tw93.fun --name Weekly
 
 ## Shell（共1个）
 
+
+
+## Shell（共1个）
+
 ### [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds)
 
 ### 仓库信息
@@ -3691,6 +3765,10 @@ pake https://weekly.tw93.fun --name Weekly
 
 ### 详细总结
 该仓库的核心价值在于它提供了FFmpeg的预编译二进制文件，适用于Windows、Linux和macOS。开发者无需从头手动编译复杂的FFmpeg库，只需从Release页面下载符合需求的版本，解压后即可在命令行中使用。仓库还提供了多种许可证版本的构建：GPL和LGPL，以满足不同的使用场景和合规性要求。这个仓库极大地方便了想要快速使用FFmpeg的开发者。
+
+
+
+## Less（共1个）
 
 
 
@@ -4175,6 +4253,10 @@ VLOOK 是一个功能强大且极具美感的 Typora/Markdown 主题包和增强
 
 ## Java（共1个）
 
+
+
+## Java（共1个）
+
 ### [ZCShou/GoGoGo](https://github.com/ZCShou/GoGoGo)
 
 1. 仓库名称：ZCShou/GoGoGo
@@ -4182,6 +4264,10 @@ VLOOK 是一个功能强大且极具美感的 Typora/Markdown 主题包和增强
 3. 创新点：结合了 Android 调试 API 和百度地图，实现了在移动设备上模拟定位的功能，同时加入了自由移动的摇杆设计，提升了用户体验。
 4. 简单用法：根据仓库中的 README 文件配置环境，安装必要的依赖库，然后按照指南操作以实现虚拟定位。
 5. 总结：提供了一个便捷地在 Android 设备上进行虚拟定位的工具，适用于需要在特定位置进行测试或模拟的应用场景。
+
+
+
+## Clojure（共1个）
 
 
 
