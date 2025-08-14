@@ -1,7 +1,12 @@
 # 我的 GitHub Star 项目AI总结（由 DeepSeek API 自动生成）
 
 
-## Python（共36个）
+## Python（共37个）
+
+### [tadata-org/fastapi_mcp](https://github.com/tadata-org/fastapi_mcp)
+
+API生成失败或429
+
 
 ### [mikf/gallery-dl](https://github.com/mikf/gallery-dl)
 
@@ -834,6 +839,20 @@ out_polys = model(image)  # 输入为卫星图像，输出为预测的多边形
 
 ## TypeScript（共18个）
 
+
+
+## TypeScript（共20个）
+
+### [umami-software/umami](https://github.com/umami-software/umami)
+
+API生成失败或429
+
+
+### [xyTom/snippai](https://github.com/xyTom/snippai)
+
+API生成失败或429
+
+
 ### [Snouzy/workout-cool](https://github.com/Snouzy/workout-cool)
 
 API生成失败或429
@@ -1260,6 +1279,10 @@ Teable是一个基于PostgreSQL的无代码数据库管理工具，为开发者�
 
 ## Other（共10个）
 
+
+
+## Other（共10个）
+
 ### [ashishpatel26/500-AI-Agents-Projects](https://github.com/ashishpatel26/500-AI-Agents-Projects)
 
 API生成失败或429
@@ -1585,6 +1608,10 @@ model = BertModel.from_pretrained('bert-base-chinese')
 
 ## Jupyter Notebook（共8个）
 
+
+
+## Jupyter Notebook（共8个）
+
 ### [roboflow/notebooks](https://github.com/roboflow/notebooks)
 
 API生成失败或429
@@ -1786,6 +1813,10 @@ Google AutoML 是一套强大的自动机器学习工具包，通过自动化流
 
 
 ## JavaScript（共3个）
+
+
+
+## JavaScript（共4个）
 
 
 
@@ -2262,6 +2293,336 @@ urllib.request.urlretrieve(url, 'transformer-explainable.ipynb')
 
 ## Go（共3个）
 
+
+
+## C++（共3个）
+
+### [nomic-ai/gpt4all](https://github.com/nomic-ai/gpt4all)
+
+API生成失败或429
+
+
+### [microsoft/WSL](https://github.com/microsoft/WSL)
+
+1. 仓库名称：microsoft/WSL
+
+2. 简要介绍：
+   Windows Subsystem for Linux (WSL) 是一项功能，可在 Windows 中运行本机 Linux 命令行工具。
+
+3. 创新点：
+   WSL 是 Windows 操作系统的一部分，允许用户直接在 Windows 系统上运行 Linux 环境，兼容多数Linux工具和应用程序。
+
+4. 简单用法：
+   - 启用 WSL：`wsl --install`
+   - 列出可用的 Linux 发行版：`wsl --list --online`
+   - 安装特定的发行版：`wsl --install -d [Distribution Name]`
+
+5. 总结：
+   WSL 为 Windows 用户提供了无缝运行 Linux 环境的能力，极大地提升了开发和跨平台操作的便利性。
+
+
+### [hluk/CopyQ](https://github.com/hluk/CopyQ)
+
+1. 仓库名称：hluk/CopyQ
+2. 简要介绍：Clipboard manager with advanced features，具有高级功能的剪贴板管理器。
+3. 创新点：支持保存剪贴板历史、编辑粘贴内容、运行命令行脚本和自定义动作的高级剪贴板管理工具。
+4. 简单用法：
+   - 复制文本：Ctrl+C，Ctrl+V
+   - 查看剪贴板历史：全局热键 Ctrl+Shift+V
+5. 总结：提供了强大的剪贴板管理功能，适用于经常需要复制粘贴的专业用户。
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## JavaScript（共2个）
+
+
+
+## Vue（共1个）
+
+
+
+## Vue（共1个）
+
+
+
+## Vue（共1个）
+
+
+
+## Vue（共1个）
+
+
+
+## Vue（共1个）
+
+
+
+## Vue（共1个）
+
+
+
+## Vue（共1个）
+
+
+
+## Vue（共1个）
+
+
+
+## Vue（共1个）
+
+
+
+## Vue（共1个）
+
+
+
+## Vue（共1个）
+
+
+
+## Vue（共1个）
+
+
+
+## Vue（共1个）
+
+
+
+## Vue（共1个）
+
+
+
+## Vue（共1个）
+
+
+
+## Vue（共1个）
+
+
+
+## Vue（共1个）
+
+
+
+## Vue（共1个）
+
+
+
+## Vue（共1个）
+
+
+
+## MDX（共1个）
+
+
+
+## MDX（共1个）
+
+
+
+## PowerShell（共1个）
+
+
+
+## PowerShell（共1个）
+
+
+
+## PowerShell（共1个）
+
+
+
+## PowerShell（共1个）
+
+
+
+## PowerShell（共1个）
+
+
+
+## PowerShell（共1个）
+
+
+
+## PowerShell（共1个）
+
+
+
+## PowerShell（共1个）
+
+
+
+## Markdown（共1个）
+
+
+
+## Markdown（共1个）
+
+
+
+## Markdown（共1个）
+
+
+
+## Markdown（共1个）
+
+
+
+## Markdown（共1个）
+
+
+
+## Markdown（共1个）
+
+
+
+## Markdown（共1个）
+
+
+
+## Markdown（共1个）
+
+
+
+## Markdown（共1个）
+
+
+
+## Markdown（共1个）
+
+
+
+## Markdown（共1个）
+
+
+
+## Go（共3个）
+
 ### [OpenListTeam/OpenList](https://github.com/OpenListTeam/OpenList)
 
 API生成失败或429
@@ -2601,6 +2962,10 @@ API生成失败或429
 
 ## C#（共3个）
 
+
+
+## C#（共3个）
+
 ### [randyrants/sharpkeys](https://github.com/randyrants/sharpkeys)
 
 1. 仓库名称：randyrants/sharpkeys
@@ -2818,6 +3183,10 @@ API生成失败或429
 
 
 ## HTML（共2个）
+
+
+
+## Rust（共2个）
 
 
 
@@ -3203,6 +3572,10 @@ pake https://weekly.tw93.fun --name Weekly
 
 ## HTML（共2个）
 
+
+
+## HTML（共2个）
+
 ### [ripienaar/free-for-dev](https://github.com/ripienaar/free-for-dev)
 
 API生成失败或429
@@ -3283,6 +3656,10 @@ API生成失败或429
 
 
 ## Go（共2个）
+
+
+
+## C（共2个）
 
 
 
@@ -3671,318 +4048,13 @@ API生成失败或429
 
 ## C++（共2个）
 
-### [microsoft/WSL](https://github.com/microsoft/WSL)
 
-1. 仓库名称：microsoft/WSL
 
-2. 简要介绍：
-   Windows Subsystem for Linux (WSL) 是一项功能，可在 Windows 中运行本机 Linux 命令行工具。
+## PHP（共1个）
 
-3. 创新点：
-   WSL 是 Windows 操作系统的一部分，允许用户直接在 Windows 系统上运行 Linux 环境，兼容多数Linux工具和应用程序。
+### [easychen/one-person-businesses-methodology-v2.0](https://github.com/easychen/one-person-businesses-methodology-v2.0)
 
-4. 简单用法：
-   - 启用 WSL：`wsl --install`
-   - 列出可用的 Linux 发行版：`wsl --list --online`
-   - 安装特定的发行版：`wsl --install -d [Distribution Name]`
-
-5. 总结：
-   WSL 为 Windows 用户提供了无缝运行 Linux 环境的能力，极大地提升了开发和跨平台操作的便利性。
-
-
-### [hluk/CopyQ](https://github.com/hluk/CopyQ)
-
-1. 仓库名称：hluk/CopyQ
-2. 简要介绍：Clipboard manager with advanced features，具有高级功能的剪贴板管理器。
-3. 创新点：支持保存剪贴板历史、编辑粘贴内容、运行命令行脚本和自定义动作的高级剪贴板管理工具。
-4. 简单用法：
-   - 复制文本：Ctrl+C，Ctrl+V
-   - 查看剪贴板历史：全局热键 Ctrl+Shift+V
-5. 总结：提供了强大的剪贴板管理功能，适用于经常需要复制粘贴的专业用户。
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## JavaScript（共2个）
-
-
-
-## Vue（共1个）
-
-
-
-## Vue（共1个）
-
-
-
-## Vue（共1个）
-
-
-
-## Vue（共1个）
-
-
-
-## Vue（共1个）
-
-
-
-## Vue（共1个）
-
-
-
-## Vue（共1个）
-
-
-
-## Vue（共1个）
-
-
-
-## Vue（共1个）
-
-
-
-## Vue（共1个）
-
-
-
-## Vue（共1个）
-
-
-
-## Vue（共1个）
-
-
-
-## Vue（共1个）
-
-
-
-## Vue（共1个）
-
-
-
-## Vue（共1个）
-
-
-
-## Vue（共1个）
-
-
-
-## Vue（共1个）
-
-
-
-## Vue（共1个）
-
-
-
-## Vue（共1个）
-
-
-
-## MDX（共1个）
-
-
-
-## MDX（共1个）
-
-
-
-## PowerShell（共1个）
-
-
-
-## PowerShell（共1个）
-
-
-
-## PowerShell（共1个）
-
-
-
-## PowerShell（共1个）
-
-
-
-## PowerShell（共1个）
-
-
-
-## PowerShell（共1个）
-
-
-
-## PowerShell（共1个）
-
-
-
-## PowerShell（共1个）
-
-
-
-## Markdown（共1个）
-
-
-
-## Markdown（共1个）
-
-
-
-## Markdown（共1个）
-
-
-
-## Markdown（共1个）
-
-
-
-## Markdown（共1个）
-
-
-
-## Markdown（共1个）
-
-
-
-## Markdown（共1个）
-
-
-
-## Markdown（共1个）
-
-
-
-## Markdown（共1个）
-
-
-
-## Markdown（共1个）
+API生成失败或429
 
 
 
@@ -4036,9 +4108,17 @@ API生成失败或429
 
 ## MDX（共1个）
 
+
+
+## MDX（共1个）
+
 ### [dair-ai/Prompt-Engineering-Guide](https://github.com/dair-ai/Prompt-Engineering-Guide)
 
 API生成失败或429
+
+
+
+## Vue（共1个）
 
 
 
@@ -4167,6 +4247,10 @@ API生成失败或429
 
 
 ## HTML（共1个）
+
+
+
+## Roff（共1个）
 
 
 
@@ -4580,6 +4664,10 @@ API生成失败或429
 
 ## Haskell（共1个）
 
+
+
+## Haskell（共1个）
+
 ### [jgm/pandoc](https://github.com/jgm/pandoc)
 
 ```markdown
@@ -4901,6 +4989,10 @@ API生成失败或429
 
 ## Shell（共1个）
 
+
+
+## Shell（共1个）
+
 ### [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds)
 
 ### 仓库信息
@@ -4912,6 +5004,10 @@ API生成失败或429
 
 ### 详细总结
 该仓库的核心价值在于它提供了FFmpeg的预编译二进制文件，适用于Windows、Linux和macOS。开发者无需从头手动编译复杂的FFmpeg库，只需从Release页面下载符合需求的版本，解压后即可在命令行中使用。仓库还提供了多种许可证版本的构建：GPL和LGPL，以满足不同的使用场景和合规性要求。这个仓库极大地方便了想要快速使用FFmpeg的开发者。
+
+
+
+## Less（共1个）
 
 
 
@@ -5540,6 +5636,10 @@ VLOOK 是一个功能强大且极具美感的 Typora/Markdown 主题包和增强
 
 ## Java（共1个）
 
+
+
+## Java（共1个）
+
 ### [ZCShou/GoGoGo](https://github.com/ZCShou/GoGoGo)
 
 1. 仓库名称：ZCShou/GoGoGo
@@ -5547,6 +5647,10 @@ VLOOK 是一个功能强大且极具美感的 Typora/Markdown 主题包和增强
 3. 创新点：结合了 Android 调试 API 和百度地图，实现了在移动设备上模拟定位的功能，同时加入了自由移动的摇杆设计，提升了用户体验。
 4. 简单用法：根据仓库中的 README 文件配置环境，安装必要的依赖库，然后按照指南操作以实现虚拟定位。
 5. 总结：提供了一个便捷地在 Android 设备上进行虚拟定位的工具，适用于需要在特定位置进行测试或模拟的应用场景。
+
+
+
+## Clojure（共1个）
 
 
 
