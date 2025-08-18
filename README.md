@@ -46,6 +46,7 @@
 - [rust](#rust)
 - [vue](#vue)
 - [cli](#cli)
+- [crawler](#crawler)
 - [data](#data)
 - [markdown](#markdown)
 - [automation](#automation)
@@ -380,6 +381,10 @@
 
 - [x-cmd/x-cmd](https://github.com/x-cmd/x-cmd) - x-cmd: Bootstrap 1000+ command line tools in seconds.
 - [n8n-io/n8n](https://github.com/n8n-io/n8n) - Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.
+
+## crawler 
+
+- [mendableai/firecrawl](https://github.com/mendableai/firecrawl) - 🔥 Turn entire websites into LLM-ready markdown or structured data. Scrape, crawl and extract with a single API.
 
 ## data 
 
