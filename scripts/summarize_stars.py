@@ -11,7 +11,7 @@ GITHUB_TOKEN = os.environ.get("STARRED_GITHUB_TOKEN")
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
 
 # API 配置
-DEFAULT_COPILOT_MODEL = "gpt-4o-mini"
+DEFAULT_COPILOT_MODEL = "openai/gpt-4o-mini"
 DEFAULT_OPENROUTER_MODEL = "deepseek/deepseek-prover-v2:free"
 MAX_WORKERS = 10
 BATCH_SIZE = 10
@@ -181,7 +181,7 @@ def copilot_summarize(repo: Dict) -> Optional[str]:
 
     try:
         resp = requests.post(
-            "https://models.githubusercontent.com/chat/completions",
+            "https://models.github.ai/inference/chat/completions",
             headers=headers,
             data=json.dumps(data),
             timeout=REQUEST_TIMEOUT
