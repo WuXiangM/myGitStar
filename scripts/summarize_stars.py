@@ -28,6 +28,53 @@ if OPENROUTER_API_KEY:
 if GITHUB_TOKEN:
     print(f"GitHub Token 前缀: {GITHUB_TOKEN[:8]}...")
 
+# 常量定义
+API_ENDPOINTS = {
+    "copilot": "https://api.github.com/copilot/v1/chat/completions",
+    "openrouter": "https://openrouter.ai/api/v1/chat/completions"
+}
+
+# 通用函数
+
+def make_api_request(url: str, headers: Dict, data: Dict, retries: int = 3, retry_delay: int = REQUEST_RETRY_DELAY) -> Optional[Dict]:
+    """通用的 API 请求函数，支持重试逻辑"""
+    for attempt in range(retries):
+        try:
+            resp = requests.post(url, headers=headers, data=json.dumps(data), timeout=REQUEST_TIMEOUT)
+            if resp.status_code == 429:
+                if attempt < retries - 1:
+                    print(f"遇到 429 错误，等待 {retry_delay} 秒后重试... (尝试 {attempt + 1}/{retries})")
+                    time.sleep(retry_delay)
+                    continue
+                else:
+                    raise requests.HTTPError("429 Too Many Requests")
+            resp.raise_for_status()
+            return resp.json()
+        except Exception as e:
+            if attempt < retries - 1:
+                print(f"API 调用失败，等待 {retry_delay} 秒后重试: {e}")
+                time.sleep(retry_delay)
+                continue
+            else:
+                print(f"API 调用失败: {e}")
+                return None
+
+
+def generate_prompt(repo: Dict) -> str:
+    """生成通用的总结提示"""
+    repo_name = repo["full_name"]
+    desc = repo.get("description") or ""
+    url = repo["html_url"]
+    return (
+        f"请对以下 GitHub 仓库进行内容总结，按如下格式输出（用中文）：\n"
+        f"1. **仓库名称：** {repo_name}\n"
+        f"2. **简要介绍：** （50字以内）\n"
+        f"3. **创新点：** （简述本仓库最有特色的地方）\n"
+        f"4. **简单用法：** （给出最简关键用法或调用示例，如无则略）\n"
+        f"5. **总结：** （一句话总结它的用途/价值）\n"
+        f"**仓库描述：** {desc}\n"
+        f"**仓库地址：** {url}\n"
+    )
 
 def get_starred_repos() -> List[Dict]:
     """获取用户的 GitHub 星标仓库"""
@@ -93,21 +140,10 @@ def load_old_summaries():
 
 
 def openrouter_summarize(repo: Dict) -> Optional[str]:
-    """使用 OpenRouter API 总结仓库"""
-    repo_name = repo["full_name"]
-    desc = repo.get("description") or ""
-    url = repo["html_url"]
-
-    prompt = (
-        f"请对以下 GitHub 仓库进行内容总结，按如下格式输出（用中文）：\n"
-        f"1. **仓库名称：** {repo_name}\n"
-        f"2. **简要介绍：** （50字以内）\n"
-        f"3. **创新点：** （简述本仓库最有特色的地方）\n"
-        f"4. **简单用法：** （给出最简关键用法或调用示例，如无则略）\n"
-        f"5. **总结：** （一句话总结它的用途/价值）\n"
-        f"**仓库描述：** {desc}\n"
-        f"**仓库地址：** {url}\n"
-    )
+    """使用 OpenRouter API 进行总结"""
+    if not OPENROUTER_API_KEY:
+        print("缺少 OPENROUTER_API_KEY，无法调用 OpenRouter API")
+        return None
 
     headers = {
         "Authorization": f"Bearer {OPENROUTER_API_KEY}",
@@ -115,51 +151,18 @@ def openrouter_summarize(repo: Dict) -> Optional[str]:
     }
     data = {
         "model": DEFAULT_OPENROUTER_MODEL,
-        "messages": [
-            {
-                "role": "user",
-                "content": prompt
-            }
-        ]
+        "messages": [{"role": "user", "content": generate_prompt(repo)}]
     }
-
-    try:
-        response = requests.post(
-            url="https://openrouter.ai/api/v1/chat/completions",
-            headers=headers,
-            data=json.dumps(data),
-            timeout=REQUEST_TIMEOUT
-        )
-        if response.status_code == 429:
-            raise requests.HTTPError("429 Too Many Requests")
-        response.raise_for_status()
-        content = response.json()['choices'][0]['message']['content'].strip()
-        return content
-    except Exception as e:
-        print(f"OpenRouter API 调用失败: {e}")
-        return None
+    response = make_api_request(API_ENDPOINTS["openrouter"], headers, data)
+    if response:
+        return response.get('choices', [{}])[0].get('message', {}).get('content', '').strip()
+    return None
 
 # 新增：使用 GitHub Copilot / GitHub Models API 进行总结
 # 需要 STARRED_GITHUB_TOKEN 具备访问 models:read & copilot 范围（一般 PAT 启用 copilot 即可）
 # 可通过环境变量 GITHUB_COPILOT_MODEL 指定模型，默认 gpt-4o-mini（依据 GitHub Models 可用模型自行调整）
 def copilot_summarize(repo: Dict) -> Optional[str]:
-    """使用 GitHub Copilot / GitHub Models API 进行总结"""
-    repo_name = repo["full_name"]
-    desc = repo.get("description") or ""
-    url = repo["html_url"]
-    model = os.environ.get("GITHUB_COPILOT_MODEL", DEFAULT_COPILOT_MODEL)
-
-    prompt = (
-        f"请对以下 GitHub 仓库进行内容总结，按如下格式输出（用中文）：\n"
-        f"1. **仓库名称：** {repo_name}\n"
-        f"2. **简要介绍：** （50字以内）\n"
-        f"3. **创新点：** （简述本仓库最有特色的地方）\n"
-        f"4. **简单用法：** （给出最简关键用法或调用示例，如无则略）\n"
-        f"5. **总结：** （一句话总结它的用途/价值）\n"
-        f"**仓库描述：** {desc}\n"
-        f"**仓库地址：** {url}\n"
-    )
-
+    """使用 GitHub Copilot API 进行总结"""
     if not GITHUB_TOKEN:
         print("缺少 STARRED_GITHUB_TOKEN，无法调用 GitHub Copilot API")
         return None
@@ -170,46 +173,15 @@ def copilot_summarize(repo: Dict) -> Optional[str]:
         "X-GitHub-Api-Version": "2023-07-01",
         "Content-Type": "application/json"
     }
-
     data = {
-        "model": model,
-        "messages": [
-            {"role": "user", "content": prompt}
-        ],
+        "model": os.environ.get("GITHUB_COPILOT_MODEL", DEFAULT_COPILOT_MODEL),
+        "messages": [{"role": "user", "content": generate_prompt(repo)}],
         "max_tokens": 600,
         "temperature": 0.4
     }
-
-    max_retries = 3
-    for attempt in range(max_retries):
-        try:
-            # 替换为更稳定的端点
-            resp = requests.post(
-                "https://api.github.com/copilot/v1/chat/completions",  # 更新为正确的 API 端点
-                headers=headers,
-                data=json.dumps(data),
-                timeout=REQUEST_TIMEOUT
-            )
-            if resp.status_code == 429:
-                if attempt < max_retries - 1:
-                    print(f"遇到 429 错误，等待 {REQUEST_RETRY_DELAY} 秒后重试... (尝试 {attempt + 1}/{max_retries})")
-                    time.sleep(REQUEST_RETRY_DELAY)
-                    continue
-                else:
-                    raise requests.HTTPError("429 Too Many Requests")
-            resp.raise_for_status()
-            j = resp.json()
-            content = j.get('choices', [{}])[0].get('message', {}).get('content', '')
-            return content.strip() if content else None
-        except Exception as e:
-            if attempt < max_retries - 1:
-                print(f"API 调用失败，等待 {REQUEST_RETRY_DELAY} 秒后重试: {e}")
-                time.sleep(REQUEST_RETRY_DELAY)
-                continue
-            else:
-                print(f"GitHub Models API 调用失败: {e}")
-                return None
-    
+    response = make_api_request(API_ENDPOINTS["copilot"], headers, data)
+    if response:
+        return response.get('choices', [{}])[0].get('message', {}).get('content', '').strip()
     return None
 
 
