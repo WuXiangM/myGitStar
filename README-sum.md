@@ -1,7 +1,5 @@
 # 我的 GitHub Star 项目AI总结
 
-# 我的 GitHub Star 项目AI总结
-
 **生成时间：** 2025年08月25日
 
 **AI模型：** GitHub Copilot
