@@ -100,13 +100,13 @@ def openrouter_summarize(repo: Dict) -> Optional[str]:
 
     prompt = (
         f"请对以下 GitHub 仓库进行内容总结，按如下格式输出（用中文）：\n"
-        f"1. 仓库名称：{repo_name}\n"
-        f"2. 简要介绍：（50字以内）\n"
-        f"3. 创新点：（简述本仓库最有特色的地方）\n"
-        f"4. 简单用法：（给出最简关键用法或调用示例，如无则略）\n"
-        f"5. 总结：（一句话总结它的用途/价值）\n"
-        f"仓库描述：{desc}\n"
-        f"仓库地址：{url}\n"
+        f"1. **仓库名称：** {repo_name}\n"
+        f"2. **简要介绍：** （50字以内）\n"
+        f"3. **创新点：** （简述本仓库最有特色的地方）\n"
+        f"4. **简单用法：** （给出最简关键用法或调用示例，如无则略）\n"
+        f"5. **总结：** （一句话总结它的用途/价值）\n"
+        f"**仓库描述：** {desc}\n"
+        f"**仓库地址：** {url}\n"
     )
 
     headers = {
@@ -151,13 +151,13 @@ def copilot_summarize(repo: Dict) -> Optional[str]:
 
     prompt = (
         f"请对以下 GitHub 仓库进行内容总结，按如下格式输出（用中文）：\n"
-        f"**仓库名称：** {repo_name}\n\n"
-        f"**简要介绍：** （50字以内）\n\n"
-        f"**创新点：** （简述本仓库最有特色的地方）\n\n"
-        f"**简单用法：** （给出最简关键用法或调用示例，如无则略）\n\n"
-        f"**总结：** （一句话总结它的用途/价值）\n\n"
-        f"仓库描述：{desc}\n"
-        f"仓库地址：{url}\n"
+        f"1. **仓库名称：** {repo_name}\n"
+        f"2. **简要介绍：** （50字以内）\n"
+        f"3. **创新点：** （简述本仓库最有特色的地方）\n"
+        f"4. **简单用法：** （给出最简关键用法或调用示例，如无则略）\n"
+        f"5. **总结：** （一句话总结它的用途/价值）\n"
+        f"**仓库描述：** {desc}\n"
+        f"**仓库地址：** {url}\n"
     )
 
     if not GITHUB_TOKEN:
@@ -212,6 +212,12 @@ def copilot_summarize(repo: Dict) -> Optional[str]:
     return None
 
 
+def is_valid_summary(summary: str) -> bool:
+    """检查给定的总结是否有效（不包含生成失败等内容）"""
+    invalid_phrases = ["生成失败", "暂无AI总结", "429"]
+    return not any(phrase in summary for phrase in invalid_phrases)
+
+
 def summarize_batch(repos: List[Dict], old_summaries: Dict[str, str], use_copilot: bool = False) -> List[str]:
     """批量总结仓库，支持选择使用 OpenRouter 或 GitHub Copilot"""
     results = [None] * len(repos)
@@ -227,9 +233,14 @@ def summarize_batch(repos: List[Dict], old_summaries: Dict[str, str], use_copilo
             idx = future_to_idx[future]
             repo = repos[idx]
             try:
-                summary = future.result()
-                if summary is None:  # 429等失败
-                    summary = old_summaries.get(repo["full_name"], f"{api_name} API生成失败或429")
+                # 检查是否已有有效总结
+                existing_summary = old_summaries.get(repo["full_name"], "")
+                if is_valid_summary(existing_summary):
+                    summary = existing_summary
+                else:
+                    summary = future.result()
+                    if summary is None:  # 429等失败
+                        summary = old_summaries.get(repo["full_name"], f"{api_name} API生成失败或429")
             except Exception as exc:
                 print(f"{repo['full_name']} 线程异常: {exc}")
                 summary = old_summaries.get(repo["full_name"], f"{api_name} API生成失败")
