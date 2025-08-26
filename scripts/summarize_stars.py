@@ -13,10 +13,10 @@ OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
 # API 配置
 DEFAULT_COPILOT_MODEL = "openai/gpt-4o-mini"
 DEFAULT_OPENROUTER_MODEL = "deepseek/deepseek-prover-v2:free"
-MAX_WORKERS = 3  # 降低并发数以避免 429 错误
+MAX_WORKERS = 1  # 降低并发数以避免 429 错误
 BATCH_SIZE = 5   # 减小批次大小
 REQUEST_TIMEOUT = 60
-RATE_LIMIT_DELAY = 10  # 增加延迟时间
+RATE_LIMIT_DELAY = 20  # 增加延迟时间
 REQUEST_RETRY_DELAY = 30  # 遇到 429 错误时的重试延迟
 
 # 输出配置
