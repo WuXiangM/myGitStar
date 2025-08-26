@@ -185,7 +185,7 @@ def copilot_summarize(repo: Dict) -> Optional[str]:
         try:
             # 替换为更稳定的端点
             resp = requests.post(
-                "https://api.github.com/copilot/v1/completions",
+                "https://api.github.com/copilot/v1/chat/completions",  # 更新为正确的 API 端点
                 headers=headers,
                 data=json.dumps(data),
                 timeout=REQUEST_TIMEOUT
