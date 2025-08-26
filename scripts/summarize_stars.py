@@ -183,8 +183,9 @@ def copilot_summarize(repo: Dict) -> Optional[str]:
     max_retries = 3
     for attempt in range(max_retries):
         try:
+            # 替换为更稳定的端点
             resp = requests.post(
-                "https://models.github.ai/inference/chat/completions",
+                "https://api.github.com/copilot/v1/completions",
                 headers=headers,
                 data=json.dumps(data),
                 timeout=REQUEST_TIMEOUT
@@ -215,7 +216,7 @@ def copilot_summarize(repo: Dict) -> Optional[str]:
 def is_valid_summary(summary: str) -> bool:
     """检查给定的总结是否有效（不包含生成失败等内容）"""
     invalid_phrases = ["生成失败", "暂无AI总结", "429"]
-    return not any(phrase in summary for phrase in invalid_phrases)
+    return not any(phrase in summary for phrase in summary)
 
 
 def summarize_batch(repos: List[Dict], old_summaries: Dict[str, str], use_copilot: bool = False) -> List[str]:
@@ -259,6 +260,26 @@ def classify_by_language(repos):
         lang = repo.get("language") or "Other"
         classified.setdefault(lang, []).append(repo)
     return classified
+
+
+def update_existing_summaries(lines, old_summaries):
+    """更新已有的 README-sum.md 文件中的总结内容"""
+    updated_lines = []
+    current_repo = None
+    for line in lines:
+        if line.startswith("### ["):
+            # 解析仓库名
+            left = line.find('[') + 1
+            right = line.find(']')
+            current_repo = line[left:right]
+            updated_lines.append(line)
+        elif current_repo and current_repo in old_summaries:
+            # 替换为新的总结内容
+            updated_lines.append(old_summaries[current_repo] + "\n")
+            current_repo = None  # 重置当前仓库
+        else:
+            updated_lines.append(line)
+    return updated_lines
 
 ###########################################
 def main():
@@ -375,8 +396,15 @@ def main():
         lines.append("*本文档由AI自动生成，如有错误请以原仓库信息为准。*\n")
         
         # 写入文件
-        with open(README_SUM_PATH, "w", encoding="utf-8") as f:
-            f.write(''.join(lines))
+        if os.path.exists(README_SUM_PATH):
+            with open(README_SUM_PATH, "r", encoding="utf-8") as f:
+                existing_lines = f.readlines()
+            updated_lines = update_existing_summaries(existing_lines, {repo['full_name']: summary for repo, summary in zip(this_batch, summaries)})
+            with open(README_SUM_PATH, "w", encoding="utf-8") as f:
+                f.writelines(updated_lines)
+        else:
+            with open(README_SUM_PATH, "w", encoding="utf-8") as f:
+                f.write(''.join(lines))
         
         print(f"\n✅ {README_SUM_PATH} 已生成，共处理了 {processed_repos} 个仓库。")
         
