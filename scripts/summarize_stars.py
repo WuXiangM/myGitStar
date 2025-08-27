@@ -18,6 +18,7 @@ BATCH_SIZE = 5   # 减小批次大小
 REQUEST_TIMEOUT = 60
 RATE_LIMIT_DELAY = 20  # 增加延迟时间
 REQUEST_RETRY_DELAY = 30  # 遇到 429 错误时的重试延迟
+RETRY_ATTEMPTS = 3  # 默认重试次数
 
 # 输出配置
 README_SUM_PATH = "README-sum.md"
@@ -30,13 +31,13 @@ if GITHUB_TOKEN:
 
 # 常量定义
 API_ENDPOINTS = {
-    "copilot": "https://api.github.com/copilot/v1/chat/completions",
+    "copilot": "https://models.github.ai/inference/chat/completions",
     "openrouter": "https://openrouter.ai/api/v1/chat/completions"
 }
 
 # 通用函数
 
-def make_api_request(url: str, headers: Dict, data: Dict, retries: int = 3, retry_delay: int = REQUEST_RETRY_DELAY) -> Optional[Dict]:
+def make_api_request(url: str, headers: Dict, data: Dict, retries: int = RETRY_ATTEMPTS, retry_delay: int = REQUEST_RETRY_DELAY) -> Optional[Dict]:
     """通用的 API 请求函数，支持重试逻辑"""
     for attempt in range(retries):
         try:
