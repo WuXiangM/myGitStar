@@ -2,8 +2,6 @@
     "language": "zh",
     "model_choice": "copilot",
     "github_username": "WuXiangM",
-    "github_token_env": "STARRED_GITHUB_TOKEN",
-    "openrouter_api_key_env": "OPENROUTER_API_KEY",
     "default_copilot_model": "openai/gpt-4o-mini",
     "default_openrouter_model": "deepseek/deepseek-prover-v2:free",
     "readme_sum_path": "README-sum.md",
