@@ -5,23 +5,77 @@ import json
 import concurrent.futures
 from typing import Dict, List, Optional
 
-# 配置常量
-GITHUB_USERNAME = "WuXiangM"
-GITHUB_TOKEN = os.environ.get("STARRED_GITHUB_TOKEN")
-OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
+# 加载配置文件
+CONFIG_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config.json')
+
+def load_config():
+    try:
+        with open(CONFIG_PATH, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {'language': 'zh'}  # 默认中文
+
+config = load_config()
+
+# 从配置文件加载参数
+github_username = config.get("github_username")
+github_token_env = config.get("github_token_env")
+openrouter_api_key_env = config.get("openrouter_api_key_env")
+model_choice = config.get("model_choice", "copilot")
+
+default_copilot_model = config.get("default_copilot_model")
+default_openrouter_model = config.get("default_openrouter_model")
+max_workers = config.get("max_workers")
+batch_size = config.get("batch_size")
+request_timeout = config.get("request_timeout")
+rate_limit_delay = config.get("rate_limit_delay")
+request_retry_delay = config.get("request_retry_delay")
+retry_attempts = config.get("retry_attempts")
+readme_sum_path = config.get("readme_sum_path")
+
+# 环境变量加载
+GITHUB_USERNAME = github_username
+GITHUB_TOKEN = os.environ.get(github_token_env)
+OPENROUTER_API_KEY = os.environ.get(openrouter_api_key_env)
+
+print(f"GitHub 用户名: {GITHUB_USERNAME}")
+
+# 根据配置选择总结函数
+def get_summarize_func():
+    if model_choice == 'copilot':
+        return copilot_summarize
+    elif model_choice == 'openrouter':
+        return openrouter_summarize
+    else:
+        raise ValueError(f"不支持的模型选择: {model_choice}")
+
+summarize_func = get_summarize_func()
 
 # API 配置
-DEFAULT_COPILOT_MODEL = "openai/gpt-4o-mini"
-DEFAULT_OPENROUTER_MODEL = "deepseek/deepseek-prover-v2:free"
-MAX_WORKERS = 1  # 降低并发数以避免 429 错误
-BATCH_SIZE = 5   # 减小批次大小
-REQUEST_TIMEOUT = 60
-RATE_LIMIT_DELAY = 20  # 增加延迟时间
-REQUEST_RETRY_DELAY = 30  # 遇到 429 错误时的重试延迟
-RETRY_ATTEMPTS = 3  # 默认重试次数
+DEFAULT_COPILOT_MODEL = default_copilot_model
+DEFAULT_OPENROUTER_MODEL = default_openrouter_model
+MAX_WORKERS = max_workers
+BATCH_SIZE = batch_size
+REQUEST_TIMEOUT = request_timeout
+RATE_LIMIT_DELAY = rate_limit_delay
+REQUEST_RETRY_DELAY = request_retry_delay
+RETRY_ATTEMPTS = retry_attempts
 
 # 输出配置
-README_SUM_PATH = "README-sum.md"
+README_SUM_PATH = readme_sum_path
+
+# 加载配置文件
+CONFIG_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config.json')
+
+def load_config():
+    try:
+        with open(CONFIG_PATH, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {'language': 'zh'}  # 默认中文
+
+config = load_config()
+LANGUAGE = config.get('language', 'zh')
 
 # 打印 API Key 前缀用于调试
 if OPENROUTER_API_KEY:
@@ -66,16 +120,28 @@ def generate_prompt(repo: Dict) -> str:
     repo_name = repo["full_name"]
     desc = repo.get("description") or ""
     url = repo["html_url"]
-    return (
-        f"请对以下 GitHub 仓库进行内容总结，按如下格式输出（用中文）：\n"
-        f"1. **仓库名称：** {repo_name}\n"
-        f"2. **简要介绍：** （50字以内）\n"
-        f"3. **创新点：** （简述本仓库最有特色的地方）\n"
-        f"4. **简单用法：** （给出最简关键用法或调用示例，如无则略）\n"
-        f"5. **总结：** （一句话总结它的用途/价值）\n"
-        f"**仓库描述：** {desc}\n"
-        f"**仓库地址：** {url}\n"
-    )
+    if LANGUAGE == 'zh':
+        return (
+            f"请对以下 GitHub 仓库进行内容总结，按如下格式输出：\n"
+            f"1. **仓库名称：** {repo_name}\n"
+            f"2. **简要介绍：** （50字以内）\n"
+            f"3. **创新点：** （简述本仓库最有特色的地方）\n"
+            f"4. **简单用法：** （给出最简关键用法或调用示例，如无则略）\n"
+            f"5. **总结：** （一句话总结它的用途/价值）\n"
+            f"**仓库描述：** {desc}\n"
+            f"**仓库地址：** {url}\n"
+        )
+    else:
+        return (
+            f"Please summarize the following GitHub repository in the specified format:\n"
+            f"1. **Repository Name:** {repo_name}\n"
+            f"2. **Brief Introduction:** (within 50 words)\n"
+            f"3. **Innovations:** (Briefly describe the most distinctive features)\n"
+            f"4. **Basic Usage:** (Provide the simplest key usage or example, omit if none)\n"
+            f"5. **Summary:** (One sentence summarizing its purpose/value)\n"
+            f"**Repository Description:** {desc}\n"
+            f"**Repository URL:** {url}\n"
+        )
 
 def get_starred_repos() -> List[Dict]:
     """获取用户的 GitHub 星标仓库"""

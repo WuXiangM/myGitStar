@@ -1,0 +1,52 @@
+{
+    "language": "zh",
+    "model_choice": "copilot",
+    "github_username": "WuXiangM",
+    "github_token_env": "STARRED_GITHUB_TOKEN",
+    "openrouter_api_key_env": "OPENROUTER_API_KEY",
+    "default_copilot_model": "openai/gpt-4o-mini",
+    "default_openrouter_model": "deepseek/deepseek-prover-v2:free",
+    "readme_sum_path": "README-sum.md",
+    
+    "max_workers": 1,
+    "batch_size": 5,
+    "request_timeout": 60,
+    "rate_limit_delay": 20,
+    "request_retry_delay": 30,
+    "retry_attempts": 3,
+
+    "comments_en": {
+        "language": "Output language, optional values: 'zh' (Chinese), 'en' (English)",
+        "model_choice": "Model selection, optional values: 'copilot' or 'openrouter'",
+        "github_username": "GitHub username, cannot be changed",
+        "github_token_env": "Environment variable name for GitHub access token, this value is a secret in GitHub Action",
+        "openrouter_api_key_env": "Environment variable name for OpenRouter API key, this value is a secret in GitHub Action",
+        "default_copilot_model": "Default Copilot API model, can be changed based on the models supported by the API provider",
+        "default_openrouter_model": "Default OpenRouter model, can be changed based on the models supported by OpenRouter",
+        "max_workers": "Maximum number of concurrent worker threads, integer, recommended 1-5",
+        "batch_size": "Batch size, integer, recommended 5-20",
+        "request_timeout": "Request timeout time (seconds), integer, recommended 30-120",
+        "rate_limit_delay": "Rate limit delay time (seconds), integer, recommended 10-60",
+        "request_retry_delay": "Request retry delay time (seconds), integer, recommended 20-120",
+        "retry_attempts": "Maximum retry attempts, integer, recommended 1-5",
+        "readme_sum_path": "Output file path, relative path or absolute path"
+    },
+
+    "comments_cn": {
+        "language": "输出语言，可选值: 'zh' (中文), 'en' (英文)",
+        "model_choice": "模型选择，可选值: 'copilot' 或 'openrouter'",
+        "github_username": "GitHub用户名，不可更改",
+        "github_token_env": "GitHub访问令牌的环境变量名，该值为GitHub Action的secret",
+        "openrouter_api_key_env": "OpenRouter API密钥的环境变量名，该值为GitHub Action的secret",
+        "default_copilot_model": "Copilot API默认模型，可根据API提供商支持的模型列表更改",
+        "default_openrouter_model": "OpenRouter默认模型，可根据OpenRouter支持的模型列表更改",
+        "max_workers": "最大并发工作线程数，整数，建议1-5",
+        "batch_size": "批处理大小，整数，建议5-20",
+        "request_timeout": "请求超时时间(秒)，整数，建议30-120",
+        "rate_limit_delay": "速率限制延迟时间(秒)，整数，建议10-60",
+        "request_retry_delay": "请求重试延迟时间(秒)，整数，建议20-120",
+        "retry_attempts": "最大重试次数，整数，建议1-5",
+        "readme_sum_path": "输出文件路径，相对路径或绝对路径"
+    }
+
+}
