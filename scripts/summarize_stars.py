@@ -40,6 +40,51 @@ readme_sum_path = config.get("readme_sum_path")
 # 环境变量加载
 GITHUB_USERNAME = github_username
 
+# 将 copilot_summarize 和 openrouter_summarize 函数移动到 get_summarize_func 之前
+
+def copilot_summarize(repo: Dict) -> Optional[str]:
+    """使用 GitHub Copilot API 进行总结"""
+    if not GITHUB_TOKEN:
+        print("缺少 STARRED_GITHUB_TOKEN，无法调用 GitHub Copilot API")
+        return None
+
+    headers = {
+        "Authorization": f"Bearer {GITHUB_TOKEN}",
+        "Accept": "application/json",
+        "X-GitHub-Api-Version": "2023-07-01",
+        "Content-Type": "application/json"
+    }
+    data = {
+        "model": os.environ.get("GITHUB_COPILOT_MODEL", DEFAULT_COPILOT_MODEL),
+        "messages": [{"role": "user", "content": generate_prompt(repo)}],
+        "max_tokens": 600,
+        "temperature": 0.4
+    }
+    response = make_api_request(API_ENDPOINTS["copilot"], headers, data)
+    if response:
+        return response.get('choices', [{}])[0].get('message', {}).get('content', '').strip()
+    return None
+
+
+def openrouter_summarize(repo: Dict) -> Optional[str]:
+    """使用 OpenRouter API 进行总结"""
+    if not OPENROUTER_API_KEY:
+        print("缺少 OPENROUTER_API_KEY，无法调用 OpenRouter API")
+        return None
+
+    headers = {
+        "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+        "Content-Type": "application/json"
+    }
+    data = {
+        "model": DEFAULT_OPENROUTER_MODEL,
+        "messages": [{"role": "user", "content": generate_prompt(repo)}]
+    }
+    response = make_api_request(API_ENDPOINTS["openrouter"], headers, data)
+    if response:
+        return response.get('choices', [{}])[0].get('message', {}).get('content', '').strip()
+    return None
+
 # 根据配置选择总结函数
 def get_summarize_func():
     if model_choice == 'copilot':
@@ -194,50 +239,9 @@ def load_old_summaries():
     return summaries
 
 
-def openrouter_summarize(repo: Dict) -> Optional[str]:
-    """使用 OpenRouter API 进行总结"""
-    if not OPENROUTER_API_KEY:
-        print("缺少 OPENROUTER_API_KEY，无法调用 OpenRouter API")
-        return None
-
-    headers = {
-        "Authorization": f"Bearer {OPENROUTER_API_KEY}",
-        "Content-Type": "application/json"
-    }
-    data = {
-        "model": DEFAULT_OPENROUTER_MODEL,
-        "messages": [{"role": "user", "content": generate_prompt(repo)}]
-    }
-    response = make_api_request(API_ENDPOINTS["openrouter"], headers, data)
-    if response:
-        return response.get('choices', [{}])[0].get('message', {}).get('content', '').strip()
-    return None
-
 # 新增：使用 GitHub Copilot / GitHub Models API 进行总结
 # 需要 STARRED_GITHUB_TOKEN 具备访问 models:read & copilot 范围（一般 PAT 启用 copilot 即可）
 # 可通过环境变量 GITHUB_COPILOT_MODEL 指定模型，默认 gpt-4o-mini（依据 GitHub Models 可用模型自行调整）
-def copilot_summarize(repo: Dict) -> Optional[str]:
-    """使用 GitHub Copilot API 进行总结"""
-    if not GITHUB_TOKEN:
-        print("缺少 STARRED_GITHUB_TOKEN，无法调用 GitHub Copilot API")
-        return None
-
-    headers = {
-        "Authorization": f"Bearer {GITHUB_TOKEN}",
-        "Accept": "application/json",
-        "X-GitHub-Api-Version": "2023-07-01",
-        "Content-Type": "application/json"
-    }
-    data = {
-        "model": os.environ.get("GITHUB_COPILOT_MODEL", DEFAULT_COPILOT_MODEL),
-        "messages": [{"role": "user", "content": generate_prompt(repo)}],
-        "max_tokens": 600,
-        "temperature": 0.4
-    }
-    response = make_api_request(API_ENDPOINTS["copilot"], headers, data)
-    if response:
-        return response.get('choices', [{}])[0].get('message', {}).get('content', '').strip()
-    return None
 
 
 def is_valid_summary(summary: str) -> bool:
