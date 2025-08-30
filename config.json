@@ -4,7 +4,7 @@
     "github_username": "WuXiangM",
     "default_copilot_model": "openai/gpt-4o-mini",
     "default_openrouter_model": "deepseek/deepseek-prover-v2:free",
-    "readme_sum_path": "README-sum.md",
+    "readme_sum_path": "README.md",
     
     "max_workers": 1,
     "batch_size": 5,
