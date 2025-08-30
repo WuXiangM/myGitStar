@@ -5,6 +5,10 @@ import json
 import concurrent.futures
 from typing import Dict, List, Optional
 
+# 配置token
+GITHUB_TOKEN = os.environ.get("STARRED_GITHUB_TOKEN")
+OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
+
 # 加载配置文件
 CONFIG_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config.json')
 
@@ -35,10 +39,6 @@ readme_sum_path = config.get("readme_sum_path")
 
 # 环境变量加载
 GITHUB_USERNAME = github_username
-GITHUB_TOKEN = os.environ.get(github_token_env)
-OPENROUTER_API_KEY = os.environ.get(openrouter_api_key_env)
-
-print(f"GitHub 用户名: {GITHUB_USERNAME}")
 
 # 根据配置选择总结函数
 def get_summarize_func():
@@ -63,25 +63,13 @@ RETRY_ATTEMPTS = retry_attempts
 
 # 输出配置
 README_SUM_PATH = readme_sum_path
-
-# 加载配置文件
-CONFIG_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config.json')
-
-def load_config():
-    try:
-        with open(CONFIG_PATH, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except FileNotFoundError:
-        return {'language': 'zh'}  # 默认中文
-
-config = load_config()
 LANGUAGE = config.get('language', 'zh')
 
 # 打印 API Key 前缀用于调试
 if OPENROUTER_API_KEY:
-    print(f"OpenRouter API Key 前缀: {OPENROUTER_API_KEY[:8]}...")
+    print(f"OpenRouter API Key 前缀: {OPENROUTER_API_KEY[:6]}...")
 if GITHUB_TOKEN:
-    print(f"GitHub Token 前缀: {GITHUB_TOKEN[:8]}...")
+    print(f"GitHub Token 前缀: {GITHUB_TOKEN[:6]}...")
 
 # 常量定义
 API_ENDPOINTS = {
