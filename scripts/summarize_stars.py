@@ -47,23 +47,29 @@ def copilot_summarize(repo: Dict) -> Optional[str]:
     if not GITHUB_TOKEN:
         print("缺少 STARRED_GITHUB_TOKEN，无法调用 GitHub Copilot API")
         return None
-
-    headers = {
-        "Authorization": f"Bearer {GITHUB_TOKEN}",
-        "Accept": "application/json",
-        "X-GitHub-Api-Version": "2023-07-01",
-        "Content-Type": "application/json"
-    }
-    data = {
-        "model": os.environ.get("GITHUB_COPILOT_MODEL", DEFAULT_COPILOT_MODEL),
-        "messages": [{"role": "user", "content": generate_prompt(repo)}],
-        "max_tokens": 600,
-        "temperature": 0.4
-    }
-    response = make_api_request(API_ENDPOINTS["copilot"], headers, data)
-    if response:
-        return response.get('choices', [{}])[0].get('message', {}).get('content', '').strip()
-    return None
+    try:
+        headers = {
+            "Authorization": f"Bearer {GITHUB_TOKEN}",
+            "Accept": "application/json",
+            "X-GitHub-Api-Version": "2023-07-01",
+            "Content-Type": "application/json"
+        }
+        data = {
+            "model": os.environ.get("GITHUB_COPILOT_MODEL", DEFAULT_COPILOT_MODEL),
+            "messages": [{"role": "user", "content": generate_prompt(repo)}],
+            "max_tokens": 600,
+            "temperature": 0.4
+        }
+        response = make_api_request(API_ENDPOINTS["copilot"], headers, data)
+        content = None
+        if response:
+            content = response.get('choices', [{}])[0].get('message', {}).get('content', '').strip()
+        if not content:
+            print("大模型输出为空 (Copilot)")
+        return content
+    except Exception as e:
+        print(f"Copilot总结异常: {e}")
+        return None
 
 
 def openrouter_summarize(repo: Dict) -> Optional[str]:
@@ -71,19 +77,25 @@ def openrouter_summarize(repo: Dict) -> Optional[str]:
     if not OPENROUTER_API_KEY:
         print("缺少 OPENROUTER_API_KEY，无法调用 OpenRouter API")
         return None
-
-    headers = {
-        "Authorization": f"Bearer {OPENROUTER_API_KEY}",
-        "Content-Type": "application/json"
-    }
-    data = {
-        "model": DEFAULT_OPENROUTER_MODEL,
-        "messages": [{"role": "user", "content": generate_prompt(repo)}]
-    }
-    response = make_api_request(API_ENDPOINTS["openrouter"], headers, data)
-    if response:
-        return response.get('choices', [{}])[0].get('message', {}).get('content', '').strip()
-    return None
+    try:
+        headers = {
+            "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+            "Content-Type": "application/json"
+        }
+        data = {
+            "model": DEFAULT_OPENROUTER_MODEL,
+            "messages": [{"role": "user", "content": generate_prompt(repo)}]
+        }
+        response = make_api_request(API_ENDPOINTS["openrouter"], headers, data)
+        content = None
+        if response:
+            content = response.get('choices', [{}])[0].get('message', {}).get('content', '').strip()
+        if not content:
+            print("大模型输出为空 (OpenRouter)")
+        return content
+    except Exception as e:
+        print(f"OpenRouter总结异常: {e}")
+        return None
 
 # 根据配置选择总结函数
 def get_summarize_func():
@@ -129,22 +141,29 @@ def make_api_request(url: str, headers: Dict, data: Dict, retries: int = RETRY_A
     for attempt in range(retries):
         try:
             resp = requests.post(url, headers=headers, data=json.dumps(data), timeout=REQUEST_TIMEOUT)
+            print(f"[API调试] 请求URL: {url}")
+            print(f"[API调试] 请求Headers: {headers}")
+            print(f"[API调试] 请求Data: {data}")
+            print(f"[API调试] 响应Status: {resp.status_code}")
+            print(f"[API调试] 响应Text: {resp.text}")
             if resp.status_code == 429:
                 if attempt < retries - 1:
                     print(f"遇到 429 错误，等待 {retry_delay} 秒后重试... (尝试 {attempt + 1}/{retries})")
                     time.sleep(retry_delay)
                     continue
                 else:
+                    print("API 429 Too Many Requests")
                     raise requests.HTTPError("429 Too Many Requests")
             resp.raise_for_status()
             return resp.json()
         except Exception as e:
+            print(f"API 调用失败: {e}")
             if attempt < retries - 1:
                 print(f"API 调用失败，等待 {retry_delay} 秒后重试: {e}")
                 time.sleep(retry_delay)
                 continue
             else:
-                print(f"API 调用失败: {e}")
+                print(f"API 调用最终失败: {e}")
                 return None
 
 
