@@ -167,11 +167,12 @@ def make_api_request(url: str, headers: Dict, data: Dict, retries: int = RETRY_A
     for attempt in range(retries):
         try:
             resp = requests.post(url, headers=headers, data=json.dumps(data), timeout=REQUEST_TIMEOUT)
-            print(f"[API调试] 请求URL: {url}")
-            print(f"[API调试] 请求Headers: {headers}")
-            print(f"[API调试] 请求Data: {data}")
-            print(f"[API调试] 响应Status: {resp.status_code}")
-            print(f"[API调试] 响应Text: {resp.text}")
+            print('[API调试]')
+            print(f"请求URL: {url}")
+            print(f"请求Headers: {headers}")
+            print(f"请求Data: {data}")
+            print(f"响应Status: {resp.status_code}")
+            print(f"响应Text: {resp.text}")
             if resp.status_code == 429:
                 if attempt < retries - 1:
                     print(f"遇到 429 错误，等待 {retry_delay} 秒后重试... (尝试 {attempt + 1}/{retries})")
@@ -316,12 +317,14 @@ def summarize_batch(repos: List[Dict], old_summaries: Dict[str, str], use_copilo
                     summary = existing_summary
                 else:
                     summary = future.result()
-                    if summary is None:  # 429等失败
+                    if summary is None:
                         summary = old_summaries.get(repo["full_name"], f"{api_name} API生成失败或429")
+                # Debug: 输出每个 summary 内容
+                print(f"[DEBUG] repo: {repo['full_name']} | summary: {repr(summary)}")
             except Exception as exc:
                 print(f"{repo['full_name']} 线程异常: {exc}")
                 summary = old_summaries.get(repo["full_name"], f"{api_name} API生成失败")
-            results[idx] = summary
+            results[idx] = summary if summary is not None else "*暂无AI总结*"
     return results
 
 
@@ -350,9 +353,10 @@ def update_existing_summaries(lines, old_summaries):
             current_repo = line[left:right]
             updated_lines.append(line)
         elif current_repo and current_repo in old_summaries:
-            # 替换为新的总结内容
+            # Debug: 输出替换内容
+            print(f"[DEBUG] 替换 {current_repo} 的 summary 为: {repr(old_summaries[current_repo])}")
             updated_lines.append(old_summaries[current_repo] + "\n")
-            current_repo = None  # 重置当前仓库
+            current_repo = None
         else:
             updated_lines.append(line)
     return updated_lines
@@ -396,6 +400,8 @@ def main():
         total_repos = sum(len(repos) for repos in classified.values())
         processed_repos = 0
         
+        repo_summary_map = {}  # 新增：全局仓库总结映射
+
         for lang, repos in sorted(classified.items(), key=lambda x: -len(x[1])):
             if lang in printed_langs:
                 continue  # 跳过已输出的语言标题
@@ -429,6 +435,8 @@ def main():
                         continue  # 跳过已输出的仓库
                     printed_repos.add(repo['full_name'])
                     
+                    repo_summary_map[repo['full_name']] = summary  # 新增：收集所有仓库的 summary
+
                     # 获取仓库信息
                     url = repo["html_url"]
                     stars = repo.get("stargazers_count", 0)
@@ -475,7 +483,7 @@ def main():
         if os.path.exists(README_SUM_PATH):
             with open(README_SUM_PATH, "r", encoding="utf-8") as f:
                 existing_lines = f.readlines()
-            updated_lines = update_existing_summaries(existing_lines, {repo['full_name']: summary for repo, summary in zip(this_batch, summaries)})
+            updated_lines = update_existing_summaries(existing_lines, repo_summary_map)  # 用全量 map
             with open(README_SUM_PATH, "w", encoding="utf-8") as f:
                 f.writelines(updated_lines)
         else:
