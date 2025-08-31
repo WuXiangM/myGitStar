@@ -1,7 +1,7 @@
 {
     "language": "zh",
     "model_choice": "copilot",
-    "github_username": "WuXiangM",
+    "github_username": 0, 
     "default_copilot_model": "openai/gpt-4o-mini",
     "default_openrouter_model": "deepseek/deepseek-prover-v2:free",
     "readme_sum_path": "README.md",
@@ -16,7 +16,7 @@
     "comments_en": {
         "language": "Output language, optional values: 'zh' (Chinese), 'en' (English)",
         "model_choice": "Model selection, optional values: 'copilot' or 'openrouter'",
-        "github_username": "GitHub username, cannot be changed",
+        "github_username": "GitHub username, set to 0 to use workflow account, or specify username",
         "github_token_env": "Environment variable name for GitHub access token, this value is a secret in GitHub Action",
         "openrouter_api_key_env": "Environment variable name for OpenRouter API key, this value is a secret in GitHub Action",
         "default_copilot_model": "Default Copilot API model, can be changed based on the models supported by the API provider",
@@ -33,7 +33,7 @@
     "comments_cn": {
         "language": "输出语言，可选值: 'zh' (中文), 'en' (英文)",
         "model_choice": "模型选择，可选值: 'copilot' 或 'openrouter'",
-        "github_username": "GitHub用户名，不可更改",
+        "github_username": "GitHub用户名，设置为0时自动使用workflow账号，或填写指定用户名",
         "github_token_env": "GitHub访问令牌的环境变量名，该值为GitHub Action的secret",
         "openrouter_api_key_env": "OpenRouter API密钥的环境变量名，该值为GitHub Action的secret",
         "default_copilot_model": "Copilot API默认模型，可根据API提供商支持的模型列表更改",
@@ -46,5 +46,4 @@
         "retry_attempts": "最大重试次数，整数，建议1-5",
         "readme_sum_path": "输出文件路径，相对路径或绝对路径"
     }
-
 }

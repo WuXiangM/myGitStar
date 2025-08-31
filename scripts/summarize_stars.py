@@ -38,7 +38,13 @@ retry_attempts = config.get("retry_attempts")
 readme_sum_path = config.get("readme_sum_path")
 
 # 环境变量加载
-GITHUB_USERNAME = github_username
+# 支持 config.json 配置为 0 时自动获取 workflow 账号
+if github_username == "0" or github_username == 0:
+    GITHUB_USERNAME = os.environ.get("GITHUB_ACTOR") or os.environ.get("GITHUB_USERNAME")
+    if not GITHUB_USERNAME:
+        print("未检测到 workflow 账号环境变量 GITHUB_ACTOR/GITHUB_USERNAME，请检查 workflow 配置！")
+else:
+    GITHUB_USERNAME = github_username
 
 # 将 copilot_summarize 和 openrouter_summarize 函数移动到 get_summarize_func 之前
 

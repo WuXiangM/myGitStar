@@ -24,10 +24,14 @@ jobs:
           pip install requests
           pip install openai
 
+      - name: Set workflow actor env
+        run: echo "GITHUB_ACTOR=${{ github.actor }}" >> $GITHUB_ENV
+
       - name: Summarize starred repos with ai
         env:
           STARRED_GITHUB_TOKEN: ${{ secrets.STARRED_GITHUB_TOKEN }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY}}
+          GITHUB_ACTOR: ${{ github.actor }}
         run: python scripts/summarize_stars.py
 
       - name: Read summarized README path from config.json
