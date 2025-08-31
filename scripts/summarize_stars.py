@@ -63,7 +63,17 @@ def copilot_summarize(repo: Dict) -> Optional[str]:
         response = make_api_request(API_ENDPOINTS["copilot"], headers, data)
         content = None
         if response:
-            content = response.get('choices', [{}])[0].get('message', {}).get('content', '').strip()
+            # Copilot API返回结构兼容性处理
+            choices = response.get('choices', [{}])
+            if choices and isinstance(choices[0], dict):
+                message = choices[0].get('message')
+                if message and isinstance(message, dict):
+                    content = message.get('content', '')
+                elif 'content' in choices[0]:
+                    content = choices[0]['content']
+            if content is not None:
+                content = str(content).strip()
+        print(f"Copilot内容: {content!r}")
         if not content:
             print("大模型输出为空 (Copilot)")
         return content
@@ -89,7 +99,17 @@ def openrouter_summarize(repo: Dict) -> Optional[str]:
         response = make_api_request(API_ENDPOINTS["openrouter"], headers, data)
         content = None
         if response:
-            content = response.get('choices', [{}])[0].get('message', {}).get('content', '').strip()
+            # OpenRouter API返回结构兼容性处理
+            choices = response.get('choices', [{}])
+            if choices and isinstance(choices[0], dict):
+                message = choices[0].get('message')
+                if message and isinstance(message, dict):
+                    content = message.get('content', '')
+                elif 'content' in choices[0]:
+                    content = choices[0]['content']
+            if content is not None:
+                content = str(content).strip()
+        print(f"OpenRouter内容: {content!r}")
         if not content:
             print("大模型输出为空 (OpenRouter)")
         return content
