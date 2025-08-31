@@ -291,9 +291,11 @@ def load_old_summaries():
 
 
 def is_valid_summary(summary: str) -> bool:
-    """检查给定的总结是否有效（不包含生成失败等内容）"""
+    """检查给定的总结是否有效（不包含生成失败等内容，也不能是空字符串）"""
+    if not summary or not summary.strip():
+        return False
     invalid_phrases = ["生成失败", "暂无AI总结", "429"]
-    return not any(phrase in summary for phrase in summary)
+    return not any(phrase in summary for phrase in invalid_phrases)
 
 
 def summarize_batch(repos: List[Dict], old_summaries: Dict[str, str], use_copilot: bool = False) -> List[str]:
