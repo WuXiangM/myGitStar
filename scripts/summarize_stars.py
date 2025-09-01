@@ -4,6 +4,7 @@ import requests
 import json
 import concurrent.futures
 from typing import Dict, List, Optional
+import re
 
 # 配置token
 GITHUB_TOKEN = os.environ.get("STARRED_GITHUB_TOKEN")
@@ -48,8 +49,16 @@ else:
 
 # 将 copilot_summarize 和 openrouter_summarize 函数移动到 get_summarize_func 之前
 
+# Copilot API调用计数器
+copilot_api_call_count = 0
+copilot_api_limit = 150  # 默认每日限额
+
 def copilot_summarize(repo: Dict) -> Optional[str]:
     """使用 GitHub Copilot API 进行总结"""
+    global copilot_api_call_count
+    copilot_api_call_count += 1
+    remaining = copilot_api_limit - copilot_api_call_count
+    print(f"[Copilot API调用] 第 {copilot_api_call_count} 次调用，仓库: {repo['full_name']}，剩余可用: {remaining}")
     if not GITHUB_TOKEN:
         print("缺少 STARRED_GITHUB_TOKEN，无法调用 GitHub Copilot API")
         return None
@@ -60,16 +69,23 @@ def copilot_summarize(repo: Dict) -> Optional[str]:
             "X-GitHub-Api-Version": "2023-07-01",
             "Content-Type": "application/json"
         }
+        model_name = os.environ.get("GITHUB_COPILOT_MODEL", DEFAULT_COPILOT_MODEL) or "openai/gpt-4o-mini"
         data = {
-            "model": os.environ.get("GITHUB_COPILOT_MODEL", DEFAULT_COPILOT_MODEL),
+            "model": model_name,
             "messages": [{"role": "user", "content": generate_prompt(repo)}],
             "max_tokens": 600,
             "temperature": 0.4
         }
         response = make_api_request(API_ENDPOINTS["copilot"], headers, data)
+        # 限额提醒处理
+        if response and isinstance(response, dict) and response.get("error"):
+            err = response["error"]
+            if err.get("code") == "RateLimitReached":
+                msg = err.get("message", "Copilot API限额已用尽，请明天再试。")
+                print(f"[Copilot限额] {msg}")
+                return f"Copilot API限额已用尽：{msg}"
         content = None
         if response:
-            # Copilot API返回结构兼容性处理
             choices = response.get('choices', [{}])
             if choices and isinstance(choices[0], dict):
                 message = choices[0].get('message')
@@ -291,10 +307,10 @@ def load_old_summaries():
 
 
 def is_valid_summary(summary: str) -> bool:
-    """检查给定的总结是否有效（不包含生成失败等内容，也不能是空字符串）"""
+    """检查给定的总结是否有效（不包含生成失败、限额提醒等内容，也不能是空字符串）"""
     if not summary or not summary.strip():
         return False
-    invalid_phrases = ["生成失败", "暂无AI总结", "429"]
+    invalid_phrases = ["生成失败", "暂无AI总结", "429", "Copilot API限额已用尽", "RateLimitReached"]
     return not any(phrase in summary for phrase in invalid_phrases)
 
 
@@ -363,6 +379,13 @@ def update_existing_summaries(lines, old_summaries):
             updated_lines.append(line)
     return updated_lines
 
+def github_anchor(text):
+    # GitHub锚点规则：小写，空格转-，去除特殊字符，仅保留字母、数字、中文和'-'
+    anchor = text.strip().lower()
+    anchor = re.sub(r'[\s]+', '-', anchor)  # 空格转-
+    anchor = re.sub(r'[^\w\u4e00-\u9fa5-]', '', anchor)  # 去除非字母数字中文和-
+    return anchor
+
 ###########################################
 def main():
     # 通过环境变量控制使用哪种 API，默认使用 Copilot
@@ -391,9 +414,9 @@ def main():
         lang_counts = {}
         for lang, repos in classified.items():
             lang_counts[lang] = len(repos)
-        
         for lang, count in sorted(lang_counts.items(), key=lambda x: -x[1]):
-            lines.append(f"- [{lang}](#-{lang.lower().replace(' ', '-').replace('+', 'plus').replace('#', 'sharp')})（{count}个）\n")
+            anchor = github_anchor(lang)
+            lines.append(f"- [{lang}](#{anchor})（{count}个）\n")
         lines.append("\n---\n\n")
         
         printed_repos = set()
