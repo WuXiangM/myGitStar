@@ -283,7 +283,10 @@ def get_starred_repos() -> List[Dict]:
 def load_old_summaries():
     """读取旧的README-sum.md，返回字典: {repo_full_name: summary}"""
     if not os.path.exists(README_SUM_PATH):
+        print(f"[DEBUG] {README_SUM_PATH} 不存在，跳过加载旧总结")
         return {}
+    
+    print(f"[DEBUG] 开始加载旧总结，文件路径: {README_SUM_PATH}")
     summaries = {}
     current_repo = None
     current_lines = []
@@ -301,6 +304,7 @@ def load_old_summaries():
                 current_lines.append(line)
         if current_repo and current_lines:
             summaries[current_repo] = "".join(current_lines).strip()
+        print(f"[DEBUG] 加载旧总结完成，仓库名称列表: {list(summaries.keys())}")
     return summaries
 
 

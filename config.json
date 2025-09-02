@@ -12,6 +12,7 @@
     "rate_limit_delay": 20,
     "request_retry_delay": 30,
     "retry_attempts": 3,
+    "update_mode": "all",
 
     "comments_en": {
         "language": "Output language, optional values: 'zh' (Chinese), 'en' (English)",
@@ -27,7 +28,8 @@
         "rate_limit_delay": "Rate limit delay time (seconds), integer, recommended 10-60",
         "request_retry_delay": "Request retry delay time (seconds), integer, recommended 20-120",
         "retry_attempts": "Maximum retry attempts, integer, recommended 1-5",
-        "readme_sum_path": "Output file path, relative path or absolute path"
+        "readme_sum_path": "Output file path, relative path or absolute path",
+        "update_mode": "Update mode, optional values: 'all' (update all) or 'missing_only' (only update missing summaries)"
     },
 
     "comments_cn": {
@@ -44,6 +46,7 @@
         "rate_limit_delay": "速率限制延迟时间(秒)，整数，建议10-60",
         "request_retry_delay": "请求重试延迟时间(秒)，整数，建议20-120",
         "retry_attempts": "最大重试次数，整数，建议1-5",
-        "readme_sum_path": "输出文件路径，相对路径或绝对路径"
+        "readme_sum_path": "输出文件路径，相对路径或绝对路径",
+        "update_mode": "更新模式，可选值：'all'（全部更新）或 'missing_only'（仅更新缺失总结）"
     }
 }
