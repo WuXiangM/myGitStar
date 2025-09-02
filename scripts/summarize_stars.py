@@ -292,7 +292,7 @@ def load_old_summaries():
     current_lines = []
     with open(README_SUM_PATH, encoding="utf-8") as f:
         for line in f:
-            if line.startswith("### ["):
+            if line.startswith("### 📌 ["):
                 if current_repo and current_lines:
                     summaries[current_repo] = "".join(current_lines).strip()
                 # 解析仓库名
@@ -535,18 +535,10 @@ def main():
         lines.append(f"- **AI模型：** {api_name}\n\n")
         lines.append("---\n\n")
         lines.append("*本文档由AI自动生成，如有错误请以原仓库信息为准。*\n")
-        
-        # 写入文件
-        if os.path.exists(README_SUM_PATH):
-            with open(README_SUM_PATH, "r", encoding="utf-8") as f:
-                existing_lines = f.readlines()
-            updated_lines = update_existing_summaries(existing_lines, repo_summary_map)  # 用全量 map
-            with open(README_SUM_PATH, "w", encoding="utf-8") as f:
-                f.writelines(updated_lines)
-        else:
-            with open(README_SUM_PATH, "w", encoding="utf-8") as f:
-                f.write(''.join(lines))
-        
+
+        # 始终生成完整的新md内容，直接覆盖写入
+        with open(README_SUM_PATH, "w", encoding="utf-8") as f:
+            f.write(''.join(lines))
         print(f"\n✅ {README_SUM_PATH} 已生成，共处理了 {processed_repos} 个仓库。")
         
     except Exception as e:
