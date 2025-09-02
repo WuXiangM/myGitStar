@@ -22,6 +22,9 @@ def load_config():
 
 config = load_config()
 
+# 新增：读取 update_mode 配置
+update_mode = config.get("update_mode", "all")  # 默认全部更新
+
 # 从配置文件加载参数
 github_username = config.get("github_username")
 github_token_env = config.get("github_token_env")
@@ -307,11 +310,21 @@ def load_old_summaries():
 
 
 def is_valid_summary(summary: str) -> bool:
-    """检查给定的总结是否有效（不包含生成失败、限额提醒等内容，也不能是空字符串）"""
+    """检查给定的总结是否有效（只要包含无效短语或仅为换行都判定为False）"""
     if not summary or not summary.strip():
+        print(f"[DEBUG] is_valid_summary: False (空字符串或仅换行)")
         return False
     invalid_phrases = ["生成失败", "暂无AI总结", "429", "Copilot API限额已用尽", "RateLimitReached"]
-    return not any(phrase in summary for phrase in invalid_phrases)
+    for phrase in invalid_phrases:
+        if phrase in summary:
+            print(f"[DEBUG] is_valid_summary: False (包含无效短语: {phrase})")
+            return False
+    # 检查是否仅为换行（如 '\n', '\r\n' 等）
+    if summary.strip() == "":
+        print(f"[DEBUG] is_valid_summary: False (仅换行)")
+        return False
+    print(f"[DEBUG] is_valid_summary: True")
+    return True
 
 
 def summarize_batch(repos: List[Dict], old_summaries: Dict[str, str], use_copilot: bool = False) -> List[str]:
@@ -399,6 +412,19 @@ def main():
         classified = classify_by_language(starred)
         old_summaries = load_old_summaries()
         
+        # 新增：根据 update_mode 过滤需要处理的仓库
+        if update_mode == "missing_only":
+            # 只处理没有有效总结的仓库
+            filtered_classified = {}
+            for lang, repos in classified.items():
+                filtered = [repo for repo in repos if not is_valid_summary(old_summaries.get(repo["full_name"], ""))]
+                if filtered:
+                    filtered_classified[lang] = filtered
+            classified_to_process = filtered_classified
+        else:
+            # 全部仓库都处理
+            classified_to_process = classified
+
         # 更新标题以反映实际使用的 API
         current_time = time.strftime("%Y年%m月%d日", time.localtime())
         title = f"# 我的 GitHub Star 项目AI总结\n\n"
@@ -412,7 +438,7 @@ def main():
         # 添加目录
         lines.append("## 📖 目录\n\n")
         lang_counts = {}
-        for lang, repos in classified.items():
+        for lang, repos in classified_to_process.items():
             lang_counts[lang] = len(repos)
         for lang, count in sorted(lang_counts.items(), key=lambda x: -x[1]):
             anchor = github_anchor(lang)
@@ -422,12 +448,12 @@ def main():
         printed_repos = set()
         printed_langs = set()  # 记录已输出的语言
         
-        total_repos = sum(len(repos) for repos in classified.values())
+        total_repos = sum(len(repos) for repos in classified_to_process.values())
         processed_repos = 0
         
         repo_summary_map = {}  # 新增：全局仓库总结映射
 
-        for lang, repos in sorted(classified.items(), key=lambda x: -len(x[1])):
+        for lang, repos in sorted(classified_to_process.items(), key=lambda x: -len(x[1])):
             if lang in printed_langs:
                 continue  # 跳过已输出的语言标题
             printed_langs.add(lang)
@@ -485,8 +511,10 @@ def main():
                     
                     # 添加AI总结内容
                     if summary and summary.strip():
+                        print(f"[DEBUG] 写入MD: {repo['full_name']} | 内容: {summary[:60]}...")
                         lines.append(f"{summary}\n\n")
                     else:
+                        print(f"[DEBUG] 写入MD: {repo['full_name']} | 内容: *暂无AI总结*")
                         lines.append("*暂无AI总结*\n\n")
                     
                     lines.append("---\n\n")
@@ -498,7 +526,7 @@ def main():
         # 添加页脚
         lines.append(f"\n## 📊 统计信息\n\n")
         lines.append(f"- **总仓库数：** {processed_repos} 个\n")
-        lines.append(f"- **编程语言数：** {len(classified)} 种\n")
+        lines.append(f"- **编程语言数：** {len(classified_to_process)} 种\n")
         lines.append(f"- **生成时间：** {current_time}\n")
         lines.append(f"- **AI模型：** {api_name}\n\n")
         lines.append("---\n\n")
