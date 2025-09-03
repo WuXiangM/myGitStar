@@ -34,6 +34,9 @@ jobs:
           GITHUB_ACTOR: ${{ github.actor }}
         run: python scripts/summarize_stars.py
 
+      - name: Print Copilot API call count
+        run: python scripts/summarize_stars.py --copilot-count
+
       - name: Read summarized README path from config.json
         run: |
           export README_SUM_PATH=$(python -c "import json; print(json.load(open('config.json'))['readme_sum_path'])")

@@ -547,4 +547,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+    if len(sys.argv) > 1 and sys.argv[1] == "--copilot-count":
+        print(copilot_api_call_count)
+    else:
+        main()
+        print(f"Copilot API 总调用次数: {copilot_api_call_count}")
