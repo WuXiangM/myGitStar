@@ -281,11 +281,10 @@ def get_starred_repos() -> List[Dict]:
 
 
 def load_old_summaries():
-    """读取旧的README-sum.md，返回字典: {repo_full_name: summary}"""
+    """读取旧的README-sum.md，返回字典: {repo_full_name: summary}，去掉仓库元信息，只保留 '---' 之前的内容作为总结"""
     if not os.path.exists(README_SUM_PATH):
         print(f"[DEBUG] {README_SUM_PATH} 不存在，跳过加载旧总结")
         return {}
-    
     print(f"[DEBUG] 开始加载旧总结，文件路径: {README_SUM_PATH}")
     summaries = {}
     current_repo = None
@@ -294,8 +293,12 @@ def load_old_summaries():
         for line in f:
             if line.startswith("### 📌 ["):
                 if current_repo and current_lines:
-                    summaries[current_repo] = "".join(current_lines).strip()
-                # 解析仓库名
+                    # 只保留 '---' 之前的内容
+                    summary_block = ''.join(current_lines)
+                    summary = summary_block.split('---')[0].strip()
+                    # 去掉仓库元信息行
+                    summary = re.sub(r"\*\*⭐ Stars:.*更新:.*\n", "", summary)
+                    summaries[current_repo] = summary
                 left = line.find('[') + 1
                 right = line.find(']')
                 current_repo = line[left:right]
@@ -303,7 +306,10 @@ def load_old_summaries():
             elif current_repo:
                 current_lines.append(line)
         if current_repo and current_lines:
-            summaries[current_repo] = "".join(current_lines).strip()
+            summary_block = ''.join(current_lines)
+            summary = summary_block.split('---')[0].strip()
+            summary = re.sub(r"\*\*⭐ Stars:.*更新:.*\n", "", summary)
+            summaries[current_repo] = summary
         print(f"[DEBUG] 加载旧总结完成，仓库名称列表: {list(summaries.keys())}")
     return summaries
 
