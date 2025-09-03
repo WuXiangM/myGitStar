@@ -281,7 +281,7 @@ def get_starred_repos() -> List[Dict]:
 
 
 def load_old_summaries():
-    """读取旧的README-sum.md，返回字典: {repo_full_name: summary}，去掉仓库元信息，只保留 '---' 之前的内容作为总结"""
+    """读取旧的README-sum.md，返回字典: {repo_full_name: summary}，只保留与 config.language 一致的内容"""
     if not os.path.exists(README_SUM_PATH):
         print(f"[DEBUG] {README_SUM_PATH} 不存在，跳过加载旧总结")
         return {}
@@ -293,12 +293,19 @@ def load_old_summaries():
         for line in f:
             if line.startswith("### 📌 ["):
                 if current_repo and current_lines:
-                    # 只保留 '---' 之前的内容
                     summary_block = ''.join(current_lines)
                     summary = summary_block.split('---')[0].strip()
-                    # 去掉仓库元信息行
                     summary = re.sub(r"\*\*⭐ Stars:.*更新:.*\n", "", summary)
-                    summaries[current_repo] = summary
+                    summary = re.sub(r"\*\*⭐ Stars:.*Updated:.*\n", "", summary)
+                    # 语言一致性判断
+                    if LANGUAGE == 'en':
+                        if re.search(r'[\u4e00-\u9fa5]', summary):
+                            summary = ''
+                    else:
+                        if re.search(r'[A-Za-z]', summary) and not re.search(r'[\u4e00-\u9fa5]', summary):
+                            summary = ''
+                    if summary:
+                        summaries[current_repo] = summary
                 left = line.find('[') + 1
                 right = line.find(']')
                 current_repo = line[left:right]
@@ -309,8 +316,16 @@ def load_old_summaries():
             summary_block = ''.join(current_lines)
             summary = summary_block.split('---')[0].strip()
             summary = re.sub(r"\*\*⭐ Stars:.*更新:.*\n", "", summary)
-            summaries[current_repo] = summary
-        print(f"[DEBUG] 加载旧总结完成，仓库名称列表: {list(summaries.keys())}")
+            summary = re.sub(r"\*\*⭐ Stars:.*Updated:.*\n", "", summary)
+            if LANGUAGE == 'en':
+                if re.search(r'[\u4e00-\u9fa5]', summary):
+                    summary = ''
+            else:
+                if re.search(r'[A-Za-z]', summary) and not re.search(r'[\u4e00-\u9fa5]', summary):
+                    summary = ''
+            if summary:
+                summaries[current_repo] = summary
+    print(f"[DEBUG] 加载旧总结完成，仓库名称列表: {list(summaries.keys())}")
     return summaries
 
 
