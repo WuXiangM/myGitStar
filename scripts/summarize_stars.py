@@ -436,24 +436,39 @@ def main():
             classified_to_process = classified
 
         # 更新标题以反映实际使用的 API
-        current_time = time.strftime("%Y年%m月%d日", time.localtime())
-        title = f"# 我的 GitHub Star 项目AI总结\n\n"
-        title += f"**生成时间：** {current_time}\n\n"
-        title += f"**AI模型：** {api_name}\n\n"
-        title += f"**总仓库数：** {len(starred)} 个\n\n"
-        title += "---\n\n"
-        
-        lines = [title]
-        
-        # 添加目录
-        lines.append("## 📖 目录\n\n")
-        lang_counts = {}
-        for lang, repos in classified_to_process.items():
-            lang_counts[lang] = len(repos)
-        for lang, count in sorted(lang_counts.items(), key=lambda x: -x[1]):
-            anchor = github_anchor(lang)
-            lines.append(f"- [{lang}](#{anchor})（{count}个）\n")
-        lines.append("\n---\n\n")
+        current_time = time.strftime("%Y-%m-%d", time.localtime())
+        if LANGUAGE == 'en':
+            title = f"# My GitHub Star Project AI Summary\n\n"
+            title += f"**Generated on:** {current_time}\n\n"
+            title += f"**AI Model:** {api_name}\n\n"
+            title += f"**Total repositories:** {len(starred)}\n\n"
+            title += "---\n\n"
+            lines = [title]
+            # 添加目录
+            lines.append("## 📖 Table of Contents\n\n")
+            lang_counts = {}
+            for lang, repos in classified_to_process.items():
+                lang_counts[lang] = len(repos)
+            for lang, count in sorted(lang_counts.items(), key=lambda x: -x[1]):
+                anchor = github_anchor(lang)
+                lines.append(f"- [{lang}](#{anchor}) ({count})\n")
+            lines.append("\n---\n\n")
+        else:
+            title = f"# 我的 GitHub Star 项目AI总结\n\n"
+            title += f"**生成时间：** {current_time}\n\n"
+            title += f"**AI模型：** {api_name}\n\n"
+            title += f"**总仓库数：** {len(starred)} 个\n\n"
+            title += "---\n\n"
+            lines = [title]
+            # 添加目录
+            lines.append("## 📖 目录\n\n")
+            lang_counts = {}
+            for lang, repos in classified_to_process.items():
+                lang_counts[lang] = len(repos)
+            for lang, count in sorted(lang_counts.items(), key=lambda x: -x[1]):
+                anchor = github_anchor(lang)
+                lines.append(f"- [{lang}](#{anchor})（{count}个）\n")
+            lines.append("\n---\n\n")
         
         printed_repos = set()
         printed_langs = set()  # 记录已输出的语言
@@ -470,16 +485,26 @@ def main():
             print(f"正在处理 {lang} 类型的仓库（共{len(repos)}个）...")
             
             # 添加语言标题和图标
-            lang_icon = {
-                "Python": "🐍", "JavaScript": "🟨", "TypeScript": "🔷", 
-                "Java": "☕", "Go": "🐹", "Rust": "🦀", "C++": "⚡", 
-                "C": "🔧", "C#": "💜", "PHP": "🐘", "Ruby": "💎", 
-                "Swift": "🐦", "Kotlin": "🅺", "Dart": "🎯", 
-                "Shell": "🐚", "HTML": "🌐", "CSS": "🎨", 
-                "Vue": "💚", "React": "⚛️", "Other": "📦"
-            }.get(lang, "📝")
-            
-            lines.append(f"## {lang_icon} {lang}（共{len(repos)}个）\n\n")
+            if LANGUAGE == 'en':
+                lang_icon = {
+                    "Python": "🐍", "JavaScript": "🟨", "TypeScript": "🔷", 
+                    "Java": "☕", "Go": "🐹", "Rust": "🦀", "C++": "⚡", 
+                    "C": "🔧", "C#": "💜", "PHP": "🐘", "Ruby": "💎", 
+                    "Swift": "🐦", "Kotlin": "🅺", "Dart": "🎯", 
+                    "Shell": "🐚", "HTML": "🌐", "CSS": "🎨", 
+                    "Vue": "💚", "React": "⚛️", "Other": "📦"
+                }.get(lang, "📝")
+                lines.append(f"## {lang_icon} {lang} (Total {len(repos)})\n\n")
+            else:
+                lang_icon = {
+                    "Python": "🐍", "JavaScript": "🟨", "TypeScript": "🔷", 
+                    "Java": "☕", "Go": "🐹", "Rust": "🦀", "C++": "⚡", 
+                    "C": "🔧", "C#": "💜", "PHP": "🐘", "Ruby": "💎", 
+                    "Swift": "🐦", "Kotlin": "🅺", "Dart": "🎯", 
+                    "Shell": "🐚", "HTML": "🌐", "CSS": "🎨", 
+                    "Vue": "💚", "React": "⚛️", "Other": "📦"
+                }.get(lang, "📝")
+                lines.append(f"## {lang_icon} {lang}（共{len(repos)}个）\n\n")
             
             for i in range(0, len(repos), BATCH_SIZE):
                 this_batch = repos[i:i+BATCH_SIZE]
@@ -517,7 +542,10 @@ def main():
                     lines.append(f"### 📌 [{repo['full_name']}]({url})\n\n")
                     
                     # 添加仓库元信息
-                    lines.append(f"**⭐ Stars:** {stars:,} | **🍴 Forks:** {forks:,} | **📅 更新:** {updated_at}\n\n")
+                    if LANGUAGE == 'en':
+                        lines.append(f"**⭐ Stars:** {stars:,} | **🍴 Forks:** {forks:,} | **📅 Updated:** {updated_at}\n\n")
+                    else:
+                        lines.append(f"**⭐ Stars:** {stars:,} | **🍴 Forks:** {forks:,} | **📅 更新:** {updated_at}\n\n")
                     
                     # 添加AI总结内容
                     if summary and summary.strip():
@@ -525,7 +553,10 @@ def main():
                         lines.append(f"{summary}\n\n")
                     else:
                         print(f"[DEBUG] 写入MD: {repo['full_name']} | 内容: *暂无AI总结*")
-                        lines.append("*暂无AI总结*\n\n")
+                        if LANGUAGE == 'en':
+                            lines.append("*No AI summary available*\n\n")
+                        else:
+                            lines.append("*暂无AI总结*\n\n")
                     
                     lines.append("---\n\n")
                     processed_repos += 1
@@ -534,13 +565,22 @@ def main():
                 time.sleep(RATE_LIMIT_DELAY)  # 避免 API 限流
         
         # 添加页脚
-        lines.append(f"\n## 📊 统计信息\n\n")
-        lines.append(f"- **总仓库数：** {processed_repos} 个\n")
-        lines.append(f"- **编程语言数：** {len(classified_to_process)} 种\n")
-        lines.append(f"- **生成时间：** {current_time}\n")
-        lines.append(f"- **AI模型：** {api_name}\n\n")
-        lines.append("---\n\n")
-        lines.append("*本文档由AI自动生成，如有错误请以原仓库信息为准。*\n")
+        if LANGUAGE == 'en':
+            lines.append(f"\n## 📊 Statistics\n\n")
+            lines.append(f"- **Total repositories:** {processed_repos}\n")
+            lines.append(f"- **Languages:** {len(classified_to_process)}\n")
+            lines.append(f"- **Generated on:** {current_time}\n")
+            lines.append(f"- **AI Model:** {api_name}\n\n")
+            lines.append("---\n\n")
+            lines.append("*This document is generated by AI. For any errors, please refer to the original repository information.*\n")
+        else:
+            lines.append(f"\n## 📊 统计信息\n\n")
+            lines.append(f"- **总仓库数：** {processed_repos} 个\n")
+            lines.append(f"- **编程语言数：** {len(classified_to_process)} 种\n")
+            lines.append(f"- **生成时间：** {current_time}\n")
+            lines.append(f"- **AI模型：** {api_name}\n\n")
+            lines.append("---\n\n")
+            lines.append("*本文档由AI自动生成，如有错误请以原仓库信息为准。*\n")
 
         # 始终生成完整的新md内容，直接覆盖写入
         with open(README_SUM_PATH, "w", encoding="utf-8") as f:
