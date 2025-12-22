@@ -1,6 +1,6 @@
 # 我的 GitHub Star 项目AI总结
 
-**生成时间：** 2025-12-21
+**生成时间：** 2025-12-22
 
 **AI模型：** GitHub Copilot
 
@@ -38,7 +38,8 @@
 
 ### 📌 [HKUDS/Paper2Slides](https://github.com/HKUDS/Paper2Slides)
 
-**⭐ Stars:** 2,382 | **🍴 Forks:** 325 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 2,417 | **🍴 Forks:** 325 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -60,7 +61,8 @@
 
 ### 📌 [jimmc414/Kosmos](https://github.com/jimmc414/Kosmos)
 
-**⭐ Stars:** 324 | **🍴 Forks:** 64 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 325 | **🍴 Forks:** 65 | **📅 更新:** 2025-12-21
+
 
 
 
@@ -83,7 +85,8 @@
 
 ### 📌 [HisMax/RedInk](https://github.com/HisMax/RedInk)
 
-**⭐ Stars:** 3,955 | **🍴 Forks:** 783 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 3,979 | **🍴 Forks:** 784 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -114,7 +117,8 @@
 
 ### 📌 [facebookresearch/sam-3d-body](https://github.com/facebookresearch/sam-3d-body)
 
-**⭐ Stars:** 2,295 | **🍴 Forks:** 215 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 2,304 | **🍴 Forks:** 218 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -147,7 +151,8 @@
 
 ### 📌 [facebookresearch/sam-3d-objects](https://github.com/facebookresearch/sam-3d-objects)
 
-**⭐ Stars:** 4,998 | **🍴 Forks:** 462 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 5,022 | **🍴 Forks:** 463 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -180,7 +185,8 @@
 
 ### 📌 [sansan0/TrendRadar](https://github.com/sansan0/TrendRadar)
 
-**⭐ Stars:** 39,836 | **🍴 Forks:** 20,768 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 39,974 | **🍴 Forks:** 20,797 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -217,7 +223,8 @@
 
 ### 📌 [jianchang512/pyvideotrans](https://github.com/jianchang512/pyvideotrans)
 
-**⭐ Stars:** 15,583 | **🍴 Forks:** 1,827 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 15,598 | **🍴 Forks:** 1,829 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -256,7 +263,8 @@
 
 ### 📌 [666ghj/BettaFish](https://github.com/666ghj/BettaFish)
 
-**⭐ Stars:** 33,238 | **🍴 Forks:** 6,398 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 33,294 | **🍴 Forks:** 6,415 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -313,7 +321,8 @@
 
 ### 📌 [YILING0013/AI_NovelGenerator](https://github.com/YILING0013/AI_NovelGenerator)
 
-**⭐ Stars:** 3,066 | **🍴 Forks:** 584 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 3,073 | **🍴 Forks:** 585 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -370,7 +379,8 @@
 
 ### 📌 [guofei9987/blind_watermark](https://github.com/guofei9987/blind_watermark)
 
-**⭐ Stars:** 11,726 | **🍴 Forks:** 1,180 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 11,735 | **🍴 Forks:** 1,182 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -537,6 +547,7 @@
 
 
 
+
 1. **仓库名称：** CharlesKeeling65/ManureCouplingStrategies  
 2. **简要介绍：** 这是一个优化粪便养分运输和分配的 Python 库，旨在提高农业资源利用效率。  
 3. **创新点：** 提供了一整套工具，专注于解决养殖场粪便资源向种植区的高效输送和分配问题。  
@@ -547,7 +558,8 @@
 
 ### 📌 [tadata-org/fastapi_mcp](https://github.com/tadata-org/fastapi_mcp)
 
-**⭐ Stars:** 11,271 | **🍴 Forks:** 883 | **📅 更新:** 2025-12-20
+**⭐ Stars:** 11,275 | **🍴 Forks:** 883 | **📅 更新:** 2025-12-21
+
 
 
 
@@ -668,7 +680,8 @@
 
 ### 📌 [mikf/gallery-dl](https://github.com/mikf/gallery-dl)
 
-**⭐ Stars:** 16,155 | **🍴 Forks:** 1,267 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 16,167 | **🍴 Forks:** 1,267 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -789,7 +802,8 @@
 
 ### 📌 [roboflow/supervision](https://github.com/roboflow/supervision)
 
-**⭐ Stars:** 36,180 | **🍴 Forks:** 3,054 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 36,187 | **🍴 Forks:** 3,055 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -910,7 +924,8 @@
 
 ### 📌 [lllyasviel/FramePack](https://github.com/lllyasviel/FramePack)
 
-**⭐ Stars:** 16,369 | **🍴 Forks:** 1,595 | **📅 更新:** 2025-12-20
+**⭐ Stars:** 16,373 | **🍴 Forks:** 1,595 | **📅 更新:** 2025-12-21
+
 
 
 
@@ -1031,7 +1046,8 @@
 
 ### 📌 [nunchaku-tech/nunchaku](https://github.com/nunchaku-tech/nunchaku)
 
-**⭐ Stars:** 3,473 | **🍴 Forks:** 205 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 3,483 | **🍴 Forks:** 206 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -1152,7 +1168,8 @@
 
 ### 📌 [NanmiCoder/MediaCrawler](https://github.com/NanmiCoder/MediaCrawler)
 
-**⭐ Stars:** 40,406 | **🍴 Forks:** 9,088 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 40,443 | **🍴 Forks:** 9,095 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -1273,7 +1290,8 @@
 
 ### 📌 [arcee-ai/mergekit](https://github.com/arcee-ai/mergekit)
 
-**⭐ Stars:** 6,614 | **🍴 Forks:** 649 | **📅 更新:** 2025-12-19
+**⭐ Stars:** 6,616 | **🍴 Forks:** 649 | **📅 更新:** 2025-12-21
+
 
 
 
@@ -1394,7 +1412,8 @@
 
 ### 📌 [opendatalab/MinerU](https://github.com/opendatalab/MinerU)
 
-**⭐ Stars:** 50,761 | **🍴 Forks:** 4,209 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 50,801 | **🍴 Forks:** 4,212 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -1515,7 +1534,8 @@
 
 ### 📌 [Zie619/n8n-workflows](https://github.com/Zie619/n8n-workflows)
 
-**⭐ Stars:** 48,153 | **🍴 Forks:** 5,557 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 48,220 | **🍴 Forks:** 5,571 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -1636,7 +1656,8 @@
 
 ### 📌 [hpcaitech/Open-Sora](https://github.com/hpcaitech/Open-Sora)
 
-**⭐ Stars:** 28,136 | **🍴 Forks:** 2,815 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 28,135 | **🍴 Forks:** 2,815 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -1757,7 +1778,8 @@
 
 ### 📌 [1Panel-dev/MaxKB](https://github.com/1Panel-dev/MaxKB)
 
-**⭐ Stars:** 19,583 | **🍴 Forks:** 2,554 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 19,592 | **🍴 Forks:** 2,556 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -1878,7 +1900,8 @@
 
 ### 📌 [Peterande/D-FINE](https://github.com/Peterande/D-FINE)
 
-**⭐ Stars:** 2,913 | **🍴 Forks:** 273 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 2,913 | **🍴 Forks:** 272 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -1999,7 +2022,8 @@
 
 ### 📌 [Fosowl/agenticSeek](https://github.com/Fosowl/agenticSeek)
 
-**⭐ Stars:** 24,121 | **🍴 Forks:** 2,644 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 24,122 | **🍴 Forks:** 2,644 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -2120,7 +2144,8 @@
 
 ### 📌 [yeongpin/cursor-free-vip](https://github.com/yeongpin/cursor-free-vip)
 
-**⭐ Stars:** 46,202 | **🍴 Forks:** 5,544 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 46,233 | **🍴 Forks:** 5,552 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -2241,7 +2266,8 @@
 
 ### 📌 [robert-mcdermott/ai-knowledge-graph](https://github.com/robert-mcdermott/ai-knowledge-graph)
 
-**⭐ Stars:** 1,402 | **🍴 Forks:** 208 | **📅 更新:** 2025-12-18
+**⭐ Stars:** 1,407 | **🍴 Forks:** 208 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -2362,7 +2388,8 @@
 
 ### 📌 [harry0703/MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo)
 
-**⭐ Stars:** 48,403 | **🍴 Forks:** 6,827 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 48,417 | **🍴 Forks:** 6,831 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -2483,7 +2510,8 @@
 
 ### 📌 [kijai/ComfyUI-FramePackWrapper](https://github.com/kijai/ComfyUI-FramePackWrapper)
 
-**⭐ Stars:** 1,603 | **🍴 Forks:** 111 | **📅 更新:** 2025-12-20
+**⭐ Stars:** 1,604 | **🍴 Forks:** 111 | **📅 更新:** 2025-12-21
+
 
 
 
@@ -2604,7 +2632,8 @@
 
 ### 📌 [langbot-app/LangBot](https://github.com/langbot-app/LangBot)
 
-**⭐ Stars:** 14,469 | **🍴 Forks:** 1,210 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 14,486 | **🍴 Forks:** 1,214 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -2725,7 +2754,8 @@
 
 ### 📌 [xming521/WeClone](https://github.com/xming521/WeClone)
 
-**⭐ Stars:** 16,011 | **🍴 Forks:** 1,279 | **📅 更新:** 2025-12-20
+**⭐ Stars:** 16,024 | **🍴 Forks:** 1,279 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -2846,7 +2876,8 @@
 
 ### 📌 [happycola233/tchMaterial-parser](https://github.com/happycola233/tchMaterial-parser)
 
-**⭐ Stars:** 4,086 | **🍴 Forks:** 479 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 4,091 | **🍴 Forks:** 480 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -3078,6 +3109,7 @@
 
 
 
+
 1. **仓库名称：** 0xsline/GeminiImageApp  
 2. **简要介绍：** 基于 Google Gemini AI 的全功能图像处理应用，提供多种图像编辑和处理功能。  
 3. **创新点：** 结合 Google Gemini AI 技术，实现智能化的图像处理，提升用户体验和处理效率。  
@@ -3088,7 +3120,8 @@
 
 ### 📌 [public-apis/public-apis](https://github.com/public-apis/public-apis)
 
-**⭐ Stars:** 386,944 | **🍴 Forks:** 41,303 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 387,133 | **🍴 Forks:** 41,326 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -3209,7 +3242,8 @@
 
 ### 📌 [SamuelSchmidgall/AgentLaboratory](https://github.com/SamuelSchmidgall/AgentLaboratory)
 
-**⭐ Stars:** 5,149 | **🍴 Forks:** 744 | **📅 更新:** 2025-12-20
+**⭐ Stars:** 5,150 | **🍴 Forks:** 745 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -3330,7 +3364,8 @@
 
 ### 📌 [VisionXLab/CrossEarth](https://github.com/VisionXLab/CrossEarth)
 
-**⭐ Stars:** 164 | **🍴 Forks:** 9 | **📅 更新:** 2025-12-08
+**⭐ Stars:** 164 | **🍴 Forks:** 9 | **📅 更新:** 2025-12-21
+
 
 
 
@@ -3451,7 +3486,8 @@
 
 ### 📌 [microsoft/markitdown](https://github.com/microsoft/markitdown)
 
-**⭐ Stars:** 84,442 | **🍴 Forks:** 4,855 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 84,469 | **🍴 Forks:** 4,858 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -3572,7 +3608,8 @@
 
 ### 📌 [subframe7536/maple-font](https://github.com/subframe7536/maple-font)
 
-**⭐ Stars:** 21,409 | **🍴 Forks:** 792 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 21,428 | **🍴 Forks:** 794 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -3693,7 +3730,8 @@
 
 ### 📌 [nvbn/thefuck](https://github.com/nvbn/thefuck)
 
-**⭐ Stars:** 94,965 | **🍴 Forks:** 3,803 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 94,971 | **🍴 Forks:** 3,804 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -3814,7 +3852,8 @@
 
 ### 📌 [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps)
 
-**⭐ Stars:** 83,574 | **🍴 Forks:** 11,841 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 83,685 | **🍴 Forks:** 11,865 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -4046,6 +4085,7 @@
 
 
 
+
 1. **仓库名称：** aws/aws-cli  
 2. **简要介绍：** AWS CLI 是一个统一的命令行界面，用于管理 Amazon Web Services 的各种服务。  
 3. **创新点：** 提供跨平台的命令行工具，支持多种 AWS 服务的操作，简化了云资源管理。  
@@ -4167,6 +4207,7 @@
 
 
 
+
 1. **仓库名称：** jonathanwilton/PUExtraTrees  
 2. **简要介绍：** 该仓库实现了使用Extra Trees分类器的uPU、nnPU和PN学习方法。  
 3. **创新点：** 提供了一种新的学习框架，专注于处理不平衡数据集，特别是正负样本比例不均的情况。  
@@ -4177,7 +4218,8 @@
 
 ### 📌 [bilibili/Index-1.9B](https://github.com/bilibili/Index-1.9B)
 
-**⭐ Stars:** 1,010 | **🍴 Forks:** 48 | **📅 更新:** 2025-12-12
+**⭐ Stars:** 1,011 | **🍴 Forks:** 48 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -4298,7 +4340,8 @@
 
 ### 📌 [huggingface/transformers](https://github.com/huggingface/transformers)
 
-**⭐ Stars:** 154,098 | **🍴 Forks:** 31,500 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 154,117 | **🍴 Forks:** 31,500 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -4419,7 +4462,8 @@
 
 ### 📌 [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
 
-**⭐ Stars:** 159,123 | **🍴 Forks:** 29,568 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 159,148 | **🍴 Forks:** 29,585 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -4540,7 +4584,8 @@
 
 ### 📌 [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT)
 
-**⭐ Stars:** 180,404 | **🍴 Forks:** 46,187 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 180,426 | **🍴 Forks:** 46,194 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -4662,7 +4707,8 @@
 
 ### 📌 [EvanLi/Github-Ranking](https://github.com/EvanLi/Github-Ranking)
 
-**⭐ Stars:** 9,831 | **🍴 Forks:** 591 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 9,841 | **🍴 Forks:** 592 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -4894,6 +4940,7 @@
 
 
 
+
 1. **仓库名称：** Lydorn/Polygonization-by-Frame-Field-Learning  
 2. **简要介绍：** 该仓库提供了一种从航拍图像中快速提取多边形建筑的代码实现。  
 3. **创新点：** 采用帧场学习的方法提高了建筑提取的效率和准确性。  
@@ -4905,6 +4952,7 @@
 ### 📌 [bubbliiiing/unet-keras](https://github.com/bubbliiiing/unet-keras)
 
 **⭐ Stars:** 112 | **🍴 Forks:** 35 | **📅 更新:** 2025-11-27
+
 
 
 
@@ -5136,6 +5184,7 @@
 
 
 
+
 1. **仓库名称：** zorzi-s/PolyWorldPretrainedNetwork  
 2. **简要介绍：** 该仓库提供了一个预训练的图神经网络，用于从卫星图像中提取多边形建筑。  
 3. **创新点：** 结合图神经网络和卫星图像处理，实现高效的建筑提取，适用于城市规划和环境监测。  
@@ -5148,7 +5197,8 @@
 
 ### 📌 [Anionex/banana-slides](https://github.com/Anionex/banana-slides)
 
-**⭐ Stars:** 5,276 | **🍴 Forks:** 582 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 5,569 | **🍴 Forks:** 612 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -5164,7 +5214,8 @@
 
 ### 📌 [lfnovo/open-notebook](https://github.com/lfnovo/open-notebook)
 
-**⭐ Stars:** 15,650 | **🍴 Forks:** 1,589 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 15,773 | **🍴 Forks:** 1,608 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -5189,7 +5240,8 @@
 
 ### 📌 [CapSoftware/Cap](https://github.com/CapSoftware/Cap)
 
-**⭐ Stars:** 15,961 | **🍴 Forks:** 1,096 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 15,980 | **🍴 Forks:** 1,097 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -5220,7 +5272,8 @@
 
 ### 📌 [027xiguapi/code-box](https://github.com/027xiguapi/code-box)
 
-**⭐ Stars:** 3,080 | **🍴 Forks:** 193 | **📅 更新:** 2025-12-20
+**⭐ Stars:** 3,084 | **🍴 Forks:** 193 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -5258,7 +5311,8 @@
 
 ### 📌 [iptv-org/iptv](https://github.com/iptv-org/iptv)
 
-**⭐ Stars:** 105,893 | **🍴 Forks:** 4,847 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 106,209 | **🍴 Forks:** 4,899 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -5308,7 +5362,8 @@
 
 ### 📌 [cjpais/Handy](https://github.com/cjpais/Handy)
 
-**⭐ Stars:** 8,739 | **🍴 Forks:** 602 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 8,766 | **🍴 Forks:** 604 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -5366,7 +5421,8 @@
 
 ### 📌 [crocofied/PortNote](https://github.com/crocofied/PortNote)
 
-**⭐ Stars:** 1,205 | **🍴 Forks:** 31 | **📅 更新:** 2025-12-19
+**⭐ Stars:** 1,206 | **🍴 Forks:** 31 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -5441,7 +5497,8 @@
 
 ### 📌 [hanydd/BilibiliSponsorBlock](https://github.com/hanydd/BilibiliSponsorBlock)
 
-**⭐ Stars:** 4,465 | **🍴 Forks:** 97 | **📅 更新:** 2025-12-20
+**⭐ Stars:** 4,471 | **🍴 Forks:** 97 | **📅 更新:** 2025-12-21
+
 
 
 
@@ -5562,7 +5619,8 @@
 
 ### 📌 [umami-software/umami](https://github.com/umami-software/umami)
 
-**⭐ Stars:** 34,260 | **🍴 Forks:** 6,087 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 34,287 | **🍴 Forks:** 6,101 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -5794,6 +5852,7 @@
 
 
 
+
 1. **仓库名称：** xyTom/snippai  
 2. **简要介绍：** Snippai 是一个灵活的代码片段管理工具，旨在提高开发者的工作效率。  
 3. **创新点：** 支持多种语言的代码片段管理，用户可以快速创建、搜索和共享代码片段。  
@@ -5804,7 +5863,8 @@
 
 ### 📌 [Snouzy/workout-cool](https://github.com/Snouzy/workout-cool)
 
-**⭐ Stars:** 6,820 | **🍴 Forks:** 516 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 6,820 | **🍴 Forks:** 516 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -5925,7 +5985,8 @@
 
 ### 📌 [imsyy/DailyHotApi](https://github.com/imsyy/DailyHotApi)
 
-**⭐ Stars:** 3,450 | **🍴 Forks:** 1,148 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 3,452 | **🍴 Forks:** 1,148 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -6046,7 +6107,8 @@
 
 ### 📌 [cline/cline](https://github.com/cline/cline)
 
-**⭐ Stars:** 56,281 | **🍴 Forks:** 5,468 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 56,306 | **🍴 Forks:** 5,470 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -6167,7 +6229,8 @@
 
 ### 📌 [google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli)
 
-**⭐ Stars:** 88,116 | **🍴 Forks:** 10,109 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 88,213 | **🍴 Forks:** 10,122 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -6288,7 +6351,8 @@
 
 ### 📌 [RSSNext/Folo](https://github.com/RSSNext/Folo)
 
-**⭐ Stars:** 36,365 | **🍴 Forks:** 1,873 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 36,370 | **🍴 Forks:** 1,873 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -6409,7 +6473,8 @@
 
 ### 📌 [antvis/mcp-server-chart](https://github.com/antvis/mcp-server-chart)
 
-**⭐ Stars:** 3,344 | **🍴 Forks:** 321 | **📅 更新:** 2025-12-20
+**⭐ Stars:** 3,346 | **🍴 Forks:** 321 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -6530,7 +6595,8 @@
 
 ### 📌 [firecrawl/firecrawl](https://github.com/firecrawl/firecrawl)
 
-**⭐ Stars:** 70,408 | **🍴 Forks:** 5,534 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 70,498 | **🍴 Forks:** 5,537 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -6651,7 +6717,8 @@
 
 ### 📌 [langgenius/dify](https://github.com/langgenius/dify)
 
-**⭐ Stars:** 122,294 | **🍴 Forks:** 19,015 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 122,362 | **🍴 Forks:** 19,027 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -6772,7 +6839,8 @@
 
 ### 📌 [n8n-io/n8n](https://github.com/n8n-io/n8n)
 
-**⭐ Stars:** 163,918 | **🍴 Forks:** 52,383 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 164,081 | **🍴 Forks:** 52,436 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -6894,7 +6962,8 @@
 
 ### 📌 [linshenkx/prompt-optimizer](https://github.com/linshenkx/prompt-optimizer)
 
-**⭐ Stars:** 17,939 | **🍴 Forks:** 2,230 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 17,971 | **🍴 Forks:** 2,233 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -7015,7 +7084,8 @@
 
 ### 📌 [ayangweb/BongoCat](https://github.com/ayangweb/BongoCat)
 
-**⭐ Stars:** 15,113 | **🍴 Forks:** 709 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 15,141 | **🍴 Forks:** 710 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -7136,7 +7206,8 @@
 
 ### 📌 [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)
 
-**⭐ Stars:** 345,800 | **🍴 Forks:** 43,532 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 345,853 | **🍴 Forks:** 43,533 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -7368,6 +7439,7 @@
 
 
 
+
 1. **仓库名称：** Yuiffy/BiliGPT  
 2. **简要介绍：** BiliGPT 是一个用于哔哩哔哩视频内容一键总结的工具，旨在提高用户获取信息的效率。  
 3. **创新点：** 该项目通过自然语言处理技术，自动提取和总结视频中的关键信息，节省用户观看时间。  
@@ -7379,6 +7451,7 @@
 ### 📌 [ahmedkhaleel2004/gitdiagram](https://github.com/ahmedkhaleel2004/gitdiagram)
 
 **⭐ Stars:** 15,015 | **🍴 Forks:** 1,137 | **📅 更新:** 2025-12-21
+
 
 
 
@@ -7610,6 +7683,7 @@
 
 
 
+
 1. **仓库名称：** kevmo314/magic-copy  
 2. **简要介绍：** 这是一个 Chrome 扩展，利用 Meta 的 Segment Anything Model 从图像中提取前景对象并复制到剪贴板。  
 3. **创新点：** 该扩展实现了图像前景提取的自动化，简化了图像处理流程，用户可以轻松复制和使用图像中的特定对象。  
@@ -7620,7 +7694,8 @@
 
 ### 📌 [teableio/teable](https://github.com/teableio/teable)
 
-**⭐ Stars:** 20,579 | **🍴 Forks:** 1,171 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 20,583 | **🍴 Forks:** 1,174 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -7743,7 +7818,8 @@
 
 ### 📌 [hmjz100/LinkSwift](https://github.com/hmjz100/LinkSwift)
 
-**⭐ Stars:** 9,994 | **🍴 Forks:** 514 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 10,060 | **🍴 Forks:** 523 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -7762,7 +7838,8 @@
 
 ### 📌 [fogsightai/fogsight](https://github.com/fogsightai/fogsight)
 
-**⭐ Stars:** 1,935 | **🍴 Forks:** 282 | **📅 更新:** 2025-12-20
+**⭐ Stars:** 1,939 | **🍴 Forks:** 283 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -7787,7 +7864,8 @@
 
 ### 📌 [glidea/banana-prompt-quicker](https://github.com/glidea/banana-prompt-quicker)
 
-**⭐ Stars:** 1,826 | **🍴 Forks:** 144 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 1,857 | **🍴 Forks:** 147 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -7818,7 +7896,8 @@
 
 ### 📌 [playcanvas/engine](https://github.com/playcanvas/engine)
 
-**⭐ Stars:** 14,242 | **🍴 Forks:** 1,688 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 14,247 | **🍴 Forks:** 1,688 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -7855,7 +7934,8 @@ app.start();
 
 ### 📌 [xanderfrangos/twinkle-tray](https://github.com/xanderfrangos/twinkle-tray)
 
-**⭐ Stars:** 7,683 | **🍴 Forks:** 259 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 7,685 | **🍴 Forks:** 259 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -7908,7 +7988,8 @@ app.start();
 
 ### 📌 [wordshub/free-font](https://github.com/wordshub/free-font)
 
-**⭐ Stars:** 5,966 | **🍴 Forks:** 414 | **📅 更新:** 2025-12-20
+**⭐ Stars:** 5,967 | **🍴 Forks:** 414 | **📅 更新:** 2025-12-21
+
 
 
 
@@ -7967,7 +8048,8 @@ app.start();
 
 ### 📌 [mrdoob/three.js](https://github.com/mrdoob/three.js)
 
-**⭐ Stars:** 109,952 | **🍴 Forks:** 36,174 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 109,964 | **🍴 Forks:** 36,177 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -8205,6 +8287,7 @@ app.start();
 
 
 
+
 1. **仓库名称：** SheepChef/Abracadabra  
 2. **简要介绍：** Abracadabra 是一个古文风格的文本加密工具，旨在通过古文形式对文本进行加密处理。  
 3. **创新点：** 该工具结合了古文的美感与现代加密技术，使得文本加密既有趣又具有文化内涵。  
@@ -8215,7 +8298,8 @@ app.start();
 
 ### 📌 [yitong2333/Bionic-Reading](https://github.com/yitong2333/Bionic-Reading)
 
-**⭐ Stars:** 136 | **🍴 Forks:** 12 | **📅 更新:** 2025-12-20
+**⭐ Stars:** 137 | **🍴 Forks:** 12 | **📅 更新:** 2025-12-21
+
 
 
 
@@ -8336,7 +8420,8 @@ app.start();
 
 ### 📌 [poloclub/transformer-explainer](https://github.com/poloclub/transformer-explainer)
 
-**⭐ Stars:** 6,224 | **🍴 Forks:** 667 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 6,230 | **🍴 Forks:** 667 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -8459,7 +8544,8 @@ app.start();
 
 ### 📌 [lukasmasuch/best-of-ml-python](https://github.com/lukasmasuch/best-of-ml-python)
 
-**⭐ Stars:** 22,955 | **🍴 Forks:** 3,053 | **📅 更新:** 2025-12-20
+**⭐ Stars:** 22,958 | **🍴 Forks:** 3,054 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -8516,7 +8602,8 @@ app.start();
 
 ### 📌 [ashishpatel26/500-AI-Agents-Projects](https://github.com/ashishpatel26/500-AI-Agents-Projects)
 
-**⭐ Stars:** 21,163 | **🍴 Forks:** 3,739 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 21,209 | **🍴 Forks:** 3,742 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -8637,7 +8724,8 @@ app.start();
 
 ### 📌 [svcvit/Awesome-Dify-Workflow](https://github.com/svcvit/Awesome-Dify-Workflow)
 
-**⭐ Stars:** 9,806 | **🍴 Forks:** 986 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 9,810 | **🍴 Forks:** 985 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -8758,7 +8846,8 @@ app.start();
 
 ### 📌 [zijie0/HumanSystemOptimization](https://github.com/zijie0/HumanSystemOptimization)
 
-**⭐ Stars:** 21,072 | **🍴 Forks:** 1,484 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 21,076 | **🍴 Forks:** 1,484 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -8990,6 +9079,7 @@ app.start();
 
 
 
+
 1. **仓库名称：** holyshell/AppsForMac  
 2. **简要介绍：** 本仓库汇集了一些优秀的 macOS 软件，方便用户查找和使用。  
 3. **创新点：** 提供了多种实用软件的集合，便于用户一站式获取所需工具。  
@@ -9000,7 +9090,8 @@ app.start();
 
 ### 📌 [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers)
 
-**⭐ Stars:** 77,099 | **🍴 Forks:** 6,558 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 77,162 | **🍴 Forks:** 6,568 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -9152,6 +9243,7 @@ app.start();
 
 
 
+
 1. **仓库名称：** kkeenee/TG-Twilight-AWAvenue-Ads-Rule  
 2. **简要介绍：** 该仓库提供了一系列广告过滤规则，旨在有效拦截Android应用中的广告SDK，保护用户隐私。  
 3. **创新点：** 结合了Adblock语法，专注于从网络层面阻止广告加载，提升了广告拦截的效率和精准度。  
@@ -9162,7 +9254,8 @@ app.start();
 
 ### 📌 [datawhalechina/so-large-lm](https://github.com/datawhalechina/so-large-lm)
 
-**⭐ Stars:** 6,343 | **🍴 Forks:** 525 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 6,349 | **🍴 Forks:** 525 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -9283,7 +9376,8 @@ app.start();
 
 ### 📌 [ruanyf/weekly](https://github.com/ruanyf/weekly)
 
-**⭐ Stars:** 81,004 | **🍴 Forks:** 3,782 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 81,082 | **🍴 Forks:** 3,783 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -9406,7 +9500,8 @@ app.start();
 
 ### 📌 [roboflow/notebooks](https://github.com/roboflow/notebooks)
 
-**⭐ Stars:** 9,011 | **🍴 Forks:** 1,399 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 9,018 | **🍴 Forks:** 1,399 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -9527,7 +9622,8 @@ app.start();
 
 ### 📌 [patchy631/ai-engineering-hub](https://github.com/patchy631/ai-engineering-hub)
 
-**⭐ Stars:** 23,535 | **🍴 Forks:** 3,770 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 23,612 | **🍴 Forks:** 3,772 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -9648,7 +9744,8 @@ app.start();
 
 ### 📌 [microsoft/AI-For-Beginners](https://github.com/microsoft/AI-For-Beginners)
 
-**⭐ Stars:** 44,491 | **🍴 Forks:** 8,894 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 44,506 | **🍴 Forks:** 8,904 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -9769,7 +9866,8 @@ app.start();
 
 ### 📌 [microsoft/generative-ai-for-beginners](https://github.com/microsoft/generative-ai-for-beginners)
 
-**⭐ Stars:** 104,059 | **🍴 Forks:** 55,334 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 104,096 | **🍴 Forks:** 55,362 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -9890,7 +9988,8 @@ app.start();
 
 ### 📌 [QwenLM/Qwen3-VL](https://github.com/QwenLM/Qwen3-VL)
 
-**⭐ Stars:** 17,293 | **🍴 Forks:** 1,444 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 17,309 | **🍴 Forks:** 1,448 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -9991,6 +10090,7 @@ app.start();
 ### 📌 [roywright/pu_learning](https://github.com/roywright/pu_learning)
 
 **⭐ Stars:** 124 | **🍴 Forks:** 41 | **📅 更新:** 2025-05-04
+
 
 
 
@@ -10222,6 +10322,7 @@ app.start();
 
 
 
+
 1. **仓库名称：** phuijse/bagging_pu  
 2. **简要介绍：** 该仓库提供了基于 sklearn 的正负标记分类（PU 分类）简单实现，使用了基于袋装的集成方法。  
 3. **创新点：** 结合了袋装技术与 PU 分类，提供了一种有效的处理正负样本不平衡问题的方案。  
@@ -10343,6 +10444,7 @@ app.start();
 
 
 
+
 1. **仓库名称：** henry-gu/prompt-engineering-for-developers  
 2. **简要介绍：** 本仓库是吴恩达《ChatGPT Prompt Engineering for Developers》课程的中文版，旨在帮助开发者掌握提示工程技巧。  
 3. **创新点：** 提供了中文翻译和本地化的学习资源，使得更多中文用户能够轻松学习和应用提示工程。  
@@ -10353,7 +10455,8 @@ app.start();
 
 ### 📌 [google/automl](https://github.com/google/automl)
 
-**⭐ Stars:** 6,437 | **🍴 Forks:** 1,463 | **📅 更新:** 2025-12-20
+**⭐ Stars:** 6,439 | **🍴 Forks:** 1,463 | **📅 更新:** 2025-12-21
+
 
 
 
@@ -10476,7 +10579,8 @@ app.start();
 
 ### 📌 [DearVa/Everywhere](https://github.com/DearVa/Everywhere)
 
-**⭐ Stars:** 4,433 | **🍴 Forks:** 247 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 4,460 | **🍴 Forks:** 249 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -10500,7 +10604,8 @@ app.start();
 
 ### 📌 [ZyperWave/ZyperWinOptimize](https://github.com/ZyperWave/ZyperWinOptimize)
 
-**⭐ Stars:** 5,864 | **🍴 Forks:** 346 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 5,902 | **🍴 Forks:** 351 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -10621,7 +10726,8 @@ app.start();
 
 ### 📌 [randyrants/sharpkeys](https://github.com/randyrants/sharpkeys)
 
-**⭐ Stars:** 6,743 | **🍴 Forks:** 438 | **📅 更新:** 2025-12-19
+**⭐ Stars:** 6,744 | **🍴 Forks:** 438 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -10742,7 +10848,8 @@ app.start();
 
 ### 📌 [microsoft/PowerToys](https://github.com/microsoft/PowerToys)
 
-**⭐ Stars:** 126,634 | **🍴 Forks:** 7,546 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 126,663 | **🍴 Forks:** 7,545 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -10863,7 +10970,8 @@ app.start();
 
 ### 📌 [zetaloop/OFGB](https://github.com/zetaloop/OFGB)
 
-**⭐ Stars:** 999 | **🍴 Forks:** 34 | **📅 更新:** 2025-12-16
+**⭐ Stars:** 1,000 | **🍴 Forks:** 34 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -10986,7 +11094,8 @@ app.start();
 
 ### 📌 [zetaloop/ExplorerPatcher](https://github.com/zetaloop/ExplorerPatcher)
 
-**⭐ Stars:** 2,008 | **🍴 Forks:** 85 | **📅 更新:** 2025-12-20
+**⭐ Stars:** 2,009 | **🍴 Forks:** 85 | **📅 更新:** 2025-12-21
+
 
 
 
@@ -11054,7 +11163,8 @@ app.start();
 
 ### 📌 [ventoy/Ventoy](https://github.com/ventoy/Ventoy)
 
-**⭐ Stars:** 73,243 | **🍴 Forks:** 4,608 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 73,267 | **🍴 Forks:** 4,612 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -11175,7 +11285,8 @@ app.start();
 
 ### 📌 [RamonUnch/AltSnap](https://github.com/RamonUnch/AltSnap)
 
-**⭐ Stars:** 4,456 | **🍴 Forks:** 134 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 4,460 | **🍴 Forks:** 134 | **📅 更新:** 2025-12-21
+
 
 
 
@@ -11298,7 +11409,8 @@ app.start();
 
 ### 📌 [Chuyu-Team/Dism-Multi-language](https://github.com/Chuyu-Team/Dism-Multi-language)
 
-**⭐ Stars:** 18,525 | **🍴 Forks:** 1,159 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 18,533 | **🍴 Forks:** 1,160 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -11373,7 +11485,8 @@ app.start();
 
 ### 📌 [ripienaar/free-for-dev](https://github.com/ripienaar/free-for-dev)
 
-**⭐ Stars:** 116,404 | **🍴 Forks:** 11,889 | **📅 更新:** 2025-12-20
+**⭐ Stars:** 116,419 | **🍴 Forks:** 11,889 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -11494,7 +11607,8 @@ app.start();
 
 ### 📌 [Sjj1024/PakePlus](https://github.com/Sjj1024/PakePlus)
 
-**⭐ Stars:** 8,453 | **🍴 Forks:** 4,243 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 8,504 | **🍴 Forks:** 4,246 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -11606,7 +11720,8 @@ app.start();
 
 ### 📌 [nomic-ai/gpt4all](https://github.com/nomic-ai/gpt4all)
 
-**⭐ Stars:** 76,968 | **🍴 Forks:** 8,299 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 76,978 | **🍴 Forks:** 8,301 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -11727,7 +11842,8 @@ app.start();
 
 ### 📌 [microsoft/WSL](https://github.com/microsoft/WSL)
 
-**⭐ Stars:** 30,643 | **🍴 Forks:** 1,560 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 30,654 | **🍴 Forks:** 1,564 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -11848,7 +11964,8 @@ app.start();
 
 ### 📌 [hluk/CopyQ](https://github.com/hluk/CopyQ)
 
-**⭐ Stars:** 10,899 | **🍴 Forks:** 522 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 10,904 | **🍴 Forks:** 522 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -11971,7 +12088,8 @@ app.start();
 
 ### 📌 [astral-sh/uv](https://github.com/astral-sh/uv)
 
-**⭐ Stars:** 75,347 | **🍴 Forks:** 2,367 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 75,393 | **🍴 Forks:** 2,370 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -12092,7 +12210,8 @@ app.start();
 
 ### 📌 [btjawa/BiliTools](https://github.com/btjawa/BiliTools)
 
-**⭐ Stars:** 4,288 | **🍴 Forks:** 282 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 4,298 | **🍴 Forks:** 283 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -12213,7 +12332,8 @@ app.start();
 
 ### 📌 [tw93/Pake](https://github.com/tw93/Pake)
 
-**⭐ Stars:** 44,155 | **🍴 Forks:** 8,587 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 44,172 | **🍴 Forks:** 8,590 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -12336,7 +12456,8 @@ app.start();
 
 ### 📌 [anthropics/claude-code](https://github.com/anthropics/claude-code)
 
-**⭐ Stars:** 47,471 | **🍴 Forks:** 3,330 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 47,782 | **🍴 Forks:** 3,346 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -12457,7 +12578,8 @@ app.start();
 
 ### 📌 [x-cmd/x-cmd](https://github.com/x-cmd/x-cmd)
 
-**⭐ Stars:** 3,731 | **🍴 Forks:** 112 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 3,737 | **🍴 Forks:** 112 | **📅 更新:** 2025-12-21
+
 
 
 
@@ -12578,7 +12700,8 @@ app.start();
 
 ### 📌 [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds)
 
-**⭐ Stars:** 9,991 | **🍴 Forks:** 1,349 | **📅 更新:** 2025-12-20
+**⭐ Stars:** 9,997 | **🍴 Forks:** 1,350 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -12701,7 +12824,8 @@ app.start();
 
 ### 📌 [OpenListTeam/OpenList](https://github.com/OpenListTeam/OpenList)
 
-**⭐ Stars:** 19,016 | **🍴 Forks:** 1,568 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 19,043 | **🍴 Forks:** 1,572 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -12822,7 +12946,8 @@ app.start();
 
 ### 📌 [ollama/ollama](https://github.com/ollama/ollama)
 
-**⭐ Stars:** 157,980 | **🍴 Forks:** 13,972 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 158,018 | **🍴 Forks:** 13,981 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -12943,7 +13068,8 @@ app.start();
 
 ### 📌 [fatedier/frp](https://github.com/fatedier/frp)
 
-**⭐ Stars:** 102,457 | **🍴 Forks:** 14,743 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 102,496 | **🍴 Forks:** 14,745 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -13066,7 +13192,8 @@ app.start();
 
 ### 📌 [Tosencen/XMSLEEP](https://github.com/Tosencen/XMSLEEP)
 
-**⭐ Stars:** 544 | **🍴 Forks:** 40 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 553 | **🍴 Forks:** 40 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -13090,7 +13217,8 @@ app.start();
 
 ### 📌 [gkd-kit/gkd](https://github.com/gkd-kit/gkd)
 
-**⭐ Stars:** 34,472 | **🍴 Forks:** 1,666 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 34,503 | **🍴 Forks:** 1,668 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -13154,7 +13282,8 @@ app.start();
 
 ### 📌 [kknifer7/FreeBox](https://github.com/kknifer7/FreeBox)
 
-**⭐ Stars:** 995 | **🍴 Forks:** 104 | **📅 更新:** 2025-12-20
+**⭐ Stars:** 1,002 | **🍴 Forks:** 104 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -13185,7 +13314,8 @@ app.start();
 
 ### 📌 [ZCShou/GoGoGo](https://github.com/ZCShou/GoGoGo)
 
-**⭐ Stars:** 9,447 | **🍴 Forks:** 1,074 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 9,451 | **🍴 Forks:** 1,074 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -13308,7 +13438,8 @@ app.start();
 
 ### 📌 [easychen/one-person-businesses-methodology-v2.0](https://github.com/easychen/one-person-businesses-methodology-v2.0)
 
-**⭐ Stars:** 12,329 | **🍴 Forks:** 1,380 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 12,342 | **🍴 Forks:** 1,384 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -13431,7 +13562,8 @@ app.start();
 
 ### 📌 [tldr-pages/tldr](https://github.com/tldr-pages/tldr)
 
-**⭐ Stars:** 60,517 | **🍴 Forks:** 4,966 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 60,534 | **🍴 Forks:** 4,968 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -13554,7 +13686,8 @@ app.start();
 
 ### 📌 [dair-ai/Prompt-Engineering-Guide](https://github.com/dair-ai/Prompt-Engineering-Guide)
 
-**⭐ Stars:** 68,013 | **🍴 Forks:** 7,208 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 68,046 | **🍴 Forks:** 7,214 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -13677,7 +13810,8 @@ app.start();
 
 ### 📌 [TapXWorld/ChinaTextbook](https://github.com/TapXWorld/ChinaTextbook)
 
-**⭐ Stars:** 63,082 | **🍴 Forks:** 13,981 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 63,113 | **🍴 Forks:** 13,995 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -13800,7 +13934,8 @@ app.start();
 
 ### 📌 [jgm/pandoc](https://github.com/jgm/pandoc)
 
-**⭐ Stars:** 40,910 | **🍴 Forks:** 3,718 | **📅 更新:** 2025-12-21
+**⭐ Stars:** 40,924 | **🍴 Forks:** 3,717 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -13923,7 +14058,8 @@ app.start();
 
 ### 📌 [MadMaxChow/VLOOK](https://github.com/MadMaxChow/VLOOK)
 
-**⭐ Stars:** 2,285 | **🍴 Forks:** 151 | **📅 更新:** 2025-12-19
+**⭐ Stars:** 2,286 | **🍴 Forks:** 151 | **📅 更新:** 2025-12-21
+
 
 
 
@@ -14046,7 +14182,8 @@ app.start();
 
 ### 📌 [penpot/penpot](https://github.com/penpot/penpot)
 
-**⭐ Stars:** 43,410 | **🍴 Forks:** 2,391 | **📅 更新:** 2025-12-20
+**⭐ Stars:** 43,417 | **🍴 Forks:** 2,392 | **📅 更新:** 2025-12-22
+
 
 
 
@@ -14170,7 +14307,7 @@ app.start();
 
 - **总仓库数：** 137 个
 - **编程语言数：** 21 种
-- **生成时间：** 2025-12-21
+- **生成时间：** 2025-12-22
 - **AI模型：** GitHub Copilot
 
 ---
