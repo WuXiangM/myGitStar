@@ -195,25 +195,50 @@ def openrouter_summarize(repo: Dict) -> Optional[str]:
 
 
 def gemini_summarize(repo: Dict) -> Optional[str]:
-    """使用 Gemini API 进行总结"""
+    """使用 Gemini API 进行总结（优化版）"""
+    # 1. 前置参数验证
     if not GEMINI_API_KEY:
         print("缺少 GEMINI_API_KEY，无法调用 Gemini API")
         return None
+    
+    prompt = generate_prompt(repo)
+    if not prompt.strip():
+        print(f"[Gemini] 仓库 {repo.get('full_name')} 的生成提示为空，跳过请求")
+        return None
+
     try:
-        headers = {"Content-Type": "application/json"}
-        model_name = os.environ.get("GEMINI_MODEL", default_gemini_model)
-        # Normalize model name: avoid duplicate 'models/' segment in URL
-        model_path = model_name
-        if isinstance(model_path, str) and model_path.startswith("models/"):
-            model_path = model_path[len("models/"):]
+        # 2. 模型名称标准化（兼容 Gemini 1.0/1.5 全系列模型）
+        model_name = os.environ.get("GEMINI_MODEL", default_gemini_model) or "gemini-pro"
+        # 严格处理模型路径：移除多余的 models/ 前缀，兼容用户输入的不同格式
+        model_path = model_name.lstrip("models/").strip()
+        # 补充官方模型前缀（确保 URL 符合规范）
+        if not model_path.startswith("gemini-"):
+            print(f"[Gemini] 模型名称 {model_name} 非标准格式，建议使用 gemini-pro/gemini-1.5-pro 等")
 
-        prompt = generate_prompt(repo)
+        # 3. 构造符合官方最新规范的请求 URL
+        api_url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_path}:generateContent"
+        
+        # 4. 优化请求头（添加 User-Agent、明确 Content-Type）
+        headers = {
+            "Content-Type": "application/json; charset=utf-8",
+            "User-Agent": "GitHub Star Summary Bot/1.0",  # 标识请求来源
+            "X-Goog-Api-Key": GEMINI_API_KEY  # 部分场景下该 Header 更兼容，同时 URL 仍保留 key 参数
+        }
 
-        # 官方兼容请求体：contents -> parts -> text（body 中不传 model，该信息在 URL 中）
+        # 5. 优化请求体（符合 Gemini 官方规范，增加可控参数）
+        # 可配置生成参数，提升总结质量
+        temperature = config.get("gemini_temperature", 0.4)
+        max_output_tokens = config.get("gemini_max_output_tokens", 800)
         payload = {
+            "generationConfig": {
+                "temperature": temperature,
+                "maxOutputTokens": max_output_tokens,
+                "topP": 0.8,
+                "topK": 40
+            },
             "contents": [
                 {
-                    "mimeType": "text/plain",
+                    "role": "user",
                     "parts": [
                         {"text": prompt}
                     ]
@@ -221,74 +246,83 @@ def gemini_summarize(repo: Dict) -> Optional[str]:
             ]
         }
 
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_path}:generateContent?key={GEMINI_API_KEY}"
-        print('[Gemini API调试]')
-        print(f"请求URL: {url}")
-        print(f"请求Payload keys: {list(payload.keys())}")
+        # 6. 复用通用的 make_api_request 函数（复用重试、超时、429 处理逻辑）
+        # URL 拼接 API Key（Gemini 支持 URL 参数或 Header 传 Key，双重兼容）
+        request_url = f"{api_url}?key={GEMINI_API_KEY}"
+        response = make_api_request(
+            url=request_url,
+            headers=headers,
+            data=payload,
+            retries=config.get("gemini_retry_attempts", RETRY_ATTEMPTS),
+            retry_delay=config.get("gemini_retry_delay", REQUEST_RETRY_DELAY)
+        )
 
-        resp = requests.post(url, headers=headers, json=payload, timeout=REQUEST_TIMEOUT)
-        print(f"响应Status: {resp.status_code}")
-        print(f"响应Text: {resp.text}")
-
-        if resp.status_code == 429:
-            print("Gemini API 429 Too Many Requests")
+        # 7. 细化响应解析（覆盖更多边缘场景，符合官方规范）
+        if not response or not isinstance(response, dict):
+            print(f"[Gemini] 仓库 {repo.get('full_name')} 响应为空或格式异常")
             return None
-        if resp.status_code == 400:
-            print("Gemini API 400 Bad Request - 请求体可能不符合规范，请检查 model/path 与 payload 格式")
-            return None
 
-        resp.raise_for_status()
-        result = resp.json()
+        # 处理错误响应（Gemini 官方错误格式）
+        if "error" in response:
+            error = response["error"]
+            error_code = error.get("code")
+            error_msg = error.get("message", "未知错误")
+            print(f"[Gemini] API 错误 - 代码: {error_code}, 信息: {error_msg}")
+            
+            # 区分不同错误类型，返回更明确的提示
+            if error_code == 401:
+                return "Gemini API Key 无效或无权限"
+            elif error_code == 404:
+                return f"Gemini 模型 {model_path} 不存在"
+            elif error_code == 429:
+                return "Gemini API 调用频率超限，请稍后重试"
+            elif error_code == 400:
+                return "Gemini 请求参数格式错误"
+            else:
+                return f"Gemini API 错误: {error_msg}"
 
-        # 解析官方返回结构：优先 candidates -> content -> parts -> text
+        # 解析正常响应（兼容 Gemini 1.0/1.5 响应格式）
         content = ""
         try:
-            if isinstance(result, dict):
-                # candidates -> content -> parts -> text
-                if 'candidates' in result and result['candidates']:
-                    cand = result['candidates'][0]
-                    if isinstance(cand, dict):
-                        content_obj = cand.get('content') or cand.get('output') or {}
-                        if isinstance(content_obj, dict):
-                            parts = content_obj.get('parts') or []
-                            if parts:
-                                first = parts[0]
-                                if isinstance(first, dict) and 'text' in first:
-                                    content = first.get('text', '')
-                                elif isinstance(first, str):
-                                    content = first
-                # fallback: output list with text/content
-                if not content and 'output' in result and isinstance(result['output'], list):
-                    parts = []
-                    for item in result['output']:
-                        if isinstance(item, dict):
-                            if 'content' in item and isinstance(item['content'], str):
-                                parts.append(item['content'])
-                            elif 'text' in item and isinstance(item['text'], str):
-                                parts.append(item['text'])
-                    if parts:
-                        content = '\n'.join(parts)
-                # openai-like fallback
-                if not content and 'choices' in result and isinstance(result['choices'], list) and result['choices']:
-                    c = result['choices'][0]
-                    if isinstance(c, dict):
-                        if 'message' in c and isinstance(c['message'], dict):
-                            content = c['message'].get('content', '')
-                        elif 'text' in c:
-                            content = c.get('text', '')
+            # 优先解析官方标准格式
+            candidates = response.get("candidates", [])
+            for candidate in candidates:
+                if candidate.get("finishReason") in ["STOP", "MAX_TOKENS"]:  # 有效完成的响应
+                    content_obj = candidate.get("content", {})
+                    parts = content_obj.get("parts", [])
+                    for part in parts:
+                        if isinstance(part, dict) and "text" in part:
+                            content += part["text"].strip() + "\n"
+                    break  # 取第一个有效候选结果
+            
+            # 兜底解析（兼容非标准返回）
+            if not content:
+                # 兼容旧版/第三方代理的 openai 格式返回
+                choices = response.get("choices", [])
+                for choice in choices:
+                    if isinstance(choice, dict):
+                        content = choice.get("message", {}).get("content", "") or choice.get("text", "")
+                        if content:
+                            break
+
+            # 清理内容（去除多余换行、空格）
+            content = content.strip()
+            if not content:
+                print(f"[Gemini] 仓库 {repo.get('full_name')} 无有效总结内容")
+                return None
+
         except Exception as e:
-            print(f"解析 Gemini 返回异常: {e}")
-            content = ''
+            print(f"[Gemini] 解析响应异常: {e}")
+            return None
 
-        content = str(content).strip()
-        print(f"Gemini内容: {content!r}")
-        if not content:
-            print("大模型输出为空 (Gemini)")
+        print(f"[Gemini] 仓库 {repo.get('full_name')} 总结内容: {content[:50]}...")
         return content
-    except Exception as e:
-        print(f"Gemini总结异常: {e}")
-        return None
 
+    except Exception as e:
+        print(f"[Gemini] 总结仓库 {repo.get('full_name')} 异常: {e}")
+        return None
+    
+    
 # 根据配置选择总结函数
 def get_summarize_func():
     if model_choice == 'copilot':
