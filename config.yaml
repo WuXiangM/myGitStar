@@ -4,7 +4,7 @@ language: en
 
 # 模型选择，可选值: 'copilot'、'openrouter' 或 'gemini'
 # Model selection: 'copilot', 'openrouter', 'gemini'
-model_choice: copilot
+model_choice: gemini
 
 
 # GitHub用户名，设置为0时自动使用 workflow 账号，或填写指定用户名
