@@ -21,8 +21,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install requests
-          pip install openai
+          pip install requests pyyaml openai
 
       - name: Set workflow actor env
         run: echo "GITHUB_ACTOR=${{ github.actor }}" >> $GITHUB_ENV
@@ -39,7 +38,7 @@ jobs:
 
       - name: Read summarized README path from config.json
         run: |
-          export README_SUM_PATH=$(python -c "import json; print(json.load(open('config.json'))['readme_sum_path'])")
+          export README_SUM_PATH=$(python -c "import yaml; print(__import__('yaml').safe_load(open('config.yaml'))['readme_sum_path'])")
           echo "README_SUM_PATH=$README_SUM_PATH" >> $GITHUB_ENV
 
       - name: Commit and push changes
