@@ -2,7 +2,7 @@
 
 **Generated on:** 2026-03-07
 
-**AI Model:** GitHub Copilot
+**AI Model:** Gemini
 
 **Total repositories:** 1
 
@@ -20,6 +20,7 @@
 
 **⭐ Stars:** 18,557 | **🍴 Forks:** 319 | **📅 Updated:** 2026-03-07
 
+
 1. **Repository Name:** githubnext/monaspace  
 2. **Brief Introduction:** Monaspace is a unique superfamily of fonts designed specifically for coding, enhancing readability and aesthetics for developers.  
 3. **Innovations:** Features include a variety of styles and weights tailored for different coding environments, improved character recognition, and support for multiple programming languages.  
@@ -36,7 +37,7 @@
 - **Total repositories:** 1
 - **Languages:** 1
 - **Generated on:** 2026-03-07
-- **AI Model:** GitHub Copilot
+- **AI Model:** Gemini
 
 ---
 
