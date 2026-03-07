@@ -38,7 +38,7 @@
 
 ### 📌 [cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources)
 
-**⭐ Stars:** 14,366 | **🍴 Forks:** 1,443 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 14,371 | **🍴 Forks:** 1,444 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -54,7 +54,7 @@ Gemini API生成失败或429
 
 ### 📌 [anthropics/skills](https://github.com/anthropics/skills)
 
-**⭐ Stars:** 86,340 | **🍴 Forks:** 9,129 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 86,361 | **🍴 Forks:** 9,132 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -86,7 +86,7 @@ Gemini API生成失败或429
 
 ### 📌 [funstory-ai/BabelDOC](https://github.com/funstory-ai/BabelDOC)
 
-**⭐ Stars:** 7,856 | **🍴 Forks:** 614 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 7,855 | **🍴 Forks:** 614 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -94,7 +94,7 @@ Gemini API生成失败或429
 
 ### 📌 [PDFMathTranslate/PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate)
 
-**⭐ Stars:** 32,078 | **🍴 Forks:** 2,889 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 32,079 | **🍴 Forks:** 2,889 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -142,7 +142,7 @@ Gemini API生成失败或429
 
 ### 📌 [sansan0/TrendRadar](https://github.com/sansan0/TrendRadar)
 
-**⭐ Stars:** 48,156 | **🍴 Forks:** 22,504 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 48,154 | **🍴 Forks:** 22,503 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -158,7 +158,7 @@ Gemini API生成失败或429
 
 ### 📌 [666ghj/BettaFish](https://github.com/666ghj/BettaFish)
 
-**⭐ Stars:** 36,401 | **🍴 Forks:** 6,920 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 36,407 | **🍴 Forks:** 6,922 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -174,7 +174,7 @@ Gemini API生成失败或429
 
 ### 📌 [guofei9987/blind_watermark](https://github.com/guofei9987/blind_watermark)
 
-**⭐ Stars:** 12,182 | **🍴 Forks:** 1,229 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 12,181 | **🍴 Forks:** 1,229 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -198,7 +198,7 @@ Gemini API生成失败或429
 
 ### 📌 [mikf/gallery-dl](https://github.com/mikf/gallery-dl)
 
-**⭐ Stars:** 17,081 | **🍴 Forks:** 1,341 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 17,082 | **🍴 Forks:** 1,340 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -230,7 +230,7 @@ Gemini API生成失败或429
 
 ### 📌 [NanmiCoder/MediaCrawler](https://github.com/NanmiCoder/MediaCrawler)
 
-**⭐ Stars:** 44,984 | **🍴 Forks:** 9,795 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 44,986 | **🍴 Forks:** 9,795 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -246,7 +246,7 @@ Gemini API生成失败或429
 
 ### 📌 [opendatalab/MinerU](https://github.com/opendatalab/MinerU)
 
-**⭐ Stars:** 55,644 | **🍴 Forks:** 4,611 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 55,647 | **🍴 Forks:** 4,611 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -254,7 +254,7 @@ Gemini API生成失败或429
 
 ### 📌 [Zie619/n8n-workflows](https://github.com/Zie619/n8n-workflows)
 
-**⭐ Stars:** 52,597 | **🍴 Forks:** 6,755 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 52,599 | **🍴 Forks:** 6,755 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -302,7 +302,7 @@ Gemini API生成失败或429
 
 ### 📌 [harry0703/MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo)
 
-**⭐ Stars:** 50,042 | **🍴 Forks:** 7,101 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 50,042 | **🍴 Forks:** 7,102 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -350,7 +350,7 @@ Gemini API生成失败或429
 
 ### 📌 [public-apis/public-apis](https://github.com/public-apis/public-apis)
 
-**⭐ Stars:** 404,948 | **🍴 Forks:** 43,706 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 404,954 | **🍴 Forks:** 43,706 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -374,7 +374,7 @@ Gemini API生成失败或429
 
 ### 📌 [microsoft/markitdown](https://github.com/microsoft/markitdown)
 
-**⭐ Stars:** 90,253 | **🍴 Forks:** 5,308 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 90,255 | **🍴 Forks:** 5,309 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -382,7 +382,7 @@ Gemini API生成失败或429
 
 ### 📌 [subframe7536/maple-font](https://github.com/subframe7536/maple-font)
 
-**⭐ Stars:** 24,303 | **🍴 Forks:** 965 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 24,304 | **🍴 Forks:** 965 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -398,7 +398,7 @@ Gemini API生成失败或429
 
 ### 📌 [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps)
 
-**⭐ Stars:** 100,259 | **🍴 Forks:** 14,575 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 100,280 | **🍴 Forks:** 14,580 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -446,7 +446,7 @@ Gemini API生成失败或429
 
 ### 📌 [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT)
 
-**⭐ Stars:** 182,239 | **🍴 Forks:** 46,203 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 182,239 | **🍴 Forks:** 46,202 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -488,7 +488,7 @@ Gemini API生成失败或429
 
 ### 📌 [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio)
 
-**⭐ Stars:** 40,930 | **🍴 Forks:** 3,774 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 40,932 | **🍴 Forks:** 3,775 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -496,7 +496,7 @@ Gemini API生成失败或429
 
 ### 📌 [openclaw/openclaw](https://github.com/openclaw/openclaw)
 
-**⭐ Stars:** 273,976 | **🍴 Forks:** 52,300 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 274,110 | **🍴 Forks:** 52,325 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -512,7 +512,7 @@ Gemini API生成失败或429
 
 ### 📌 [Anionex/banana-slides](https://github.com/Anionex/banana-slides)
 
-**⭐ Stars:** 12,696 | **🍴 Forks:** 1,484 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 12,697 | **🍴 Forks:** 1,484 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -520,7 +520,7 @@ Gemini API生成失败或429
 
 ### 📌 [lfnovo/open-notebook](https://github.com/lfnovo/open-notebook)
 
-**⭐ Stars:** 20,650 | **🍴 Forks:** 2,347 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 20,649 | **🍴 Forks:** 2,347 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -544,7 +544,7 @@ Gemini API生成失败或429
 
 ### 📌 [iptv-org/iptv](https://github.com/iptv-org/iptv)
 
-**⭐ Stars:** 112,519 | **🍴 Forks:** 5,680 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 112,520 | **🍴 Forks:** 5,680 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -600,7 +600,7 @@ Gemini API生成失败或429
 
 ### 📌 [cline/cline](https://github.com/cline/cline)
 
-**⭐ Stars:** 58,723 | **🍴 Forks:** 5,910 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 58,724 | **🍴 Forks:** 5,910 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -608,7 +608,7 @@ Gemini API生成失败或429
 
 ### 📌 [google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli)
 
-**⭐ Stars:** 96,772 | **🍴 Forks:** 11,987 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 96,776 | **🍴 Forks:** 11,987 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -624,7 +624,7 @@ Gemini API生成失败或429
 
 ### 📌 [antvis/mcp-server-chart](https://github.com/antvis/mcp-server-chart)
 
-**⭐ Stars:** 3,766 | **🍴 Forks:** 359 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 3,767 | **🍴 Forks:** 359 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -632,7 +632,7 @@ Gemini API生成失败或429
 
 ### 📌 [firecrawl/firecrawl](https://github.com/firecrawl/firecrawl)
 
-**⭐ Stars:** 89,070 | **🍴 Forks:** 6,234 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 89,078 | **🍴 Forks:** 6,234 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -648,7 +648,7 @@ Gemini API生成失败或429
 
 ### 📌 [n8n-io/n8n](https://github.com/n8n-io/n8n)
 
-**⭐ Stars:** 177,983 | **🍴 Forks:** 55,512 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 177,982 | **🍴 Forks:** 55,513 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -656,7 +656,7 @@ Gemini API生成失败或429
 
 ### 📌 [linshenkx/prompt-optimizer](https://github.com/linshenkx/prompt-optimizer)
 
-**⭐ Stars:** 23,356 | **🍴 Forks:** 2,811 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 23,357 | **🍴 Forks:** 2,812 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -664,7 +664,7 @@ Gemini API生成失败或429
 
 ### 📌 [ayangweb/BongoCat](https://github.com/ayangweb/BongoCat)
 
-**⭐ Stars:** 19,125 | **🍴 Forks:** 866 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 19,126 | **🍴 Forks:** 866 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -672,7 +672,7 @@ Gemini API生成失败或429
 
 ### 📌 [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)
 
-**⭐ Stars:** 350,361 | **🍴 Forks:** 43,744 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 350,364 | **🍴 Forks:** 43,745 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -714,7 +714,7 @@ Gemini API生成失败或429
 
 ### 📌 [hmjz100/LinkSwift](https://github.com/hmjz100/LinkSwift)
 
-**⭐ Stars:** 12,818 | **🍴 Forks:** 715 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 12,819 | **🍴 Forks:** 715 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -746,7 +746,7 @@ Gemini API生成失败或429
 
 ### 📌 [xanderfrangos/twinkle-tray](https://github.com/xanderfrangos/twinkle-tray)
 
-**⭐ Stars:** 8,066 | **🍴 Forks:** 272 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 8,067 | **🍴 Forks:** 272 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -762,7 +762,7 @@ Gemini API生成失败或429
 
 ### 📌 [mrdoob/three.js](https://github.com/mrdoob/three.js)
 
-**⭐ Stars:** 111,213 | **🍴 Forks:** 36,283 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 111,214 | **🍴 Forks:** 36,283 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -804,7 +804,7 @@ Gemini API生成失败或429
 
 ### 📌 [ashishpatel26/500-AI-Agents-Projects](https://github.com/ashishpatel26/500-AI-Agents-Projects)
 
-**⭐ Stars:** 25,686 | **🍴 Forks:** 4,461 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 25,688 | **🍴 Forks:** 4,462 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -820,7 +820,7 @@ Gemini API生成失败或429
 
 ### 📌 [zijie0/HumanSystemOptimization](https://github.com/zijie0/HumanSystemOptimization)
 
-**⭐ Stars:** 21,596 | **🍴 Forks:** 1,506 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 21,597 | **🍴 Forks:** 1,506 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -836,7 +836,7 @@ Gemini API生成失败或429
 
 ### 📌 [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers)
 
-**⭐ Stars:** 82,407 | **🍴 Forks:** 7,900 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 82,409 | **🍴 Forks:** 7,900 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -860,7 +860,7 @@ Gemini API生成失败或429
 
 ### 📌 [ruanyf/weekly](https://github.com/ruanyf/weekly)
 
-**⭐ Stars:** 85,330 | **🍴 Forks:** 3,896 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 85,334 | **🍴 Forks:** 3,896 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -878,7 +878,7 @@ Gemini API生成失败或429
 
 ### 📌 [patchy631/ai-engineering-hub](https://github.com/patchy631/ai-engineering-hub)
 
-**⭐ Stars:** 31,387 | **🍴 Forks:** 5,106 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 31,388 | **🍴 Forks:** 5,106 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -886,7 +886,7 @@ Gemini API生成失败或429
 
 ### 📌 [microsoft/AI-For-Beginners](https://github.com/microsoft/AI-For-Beginners)
 
-**⭐ Stars:** 45,871 | **🍴 Forks:** 9,348 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 45,872 | **🍴 Forks:** 9,348 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -894,7 +894,7 @@ Gemini API生成失败或429
 
 ### 📌 [microsoft/generative-ai-for-beginners](https://github.com/microsoft/generative-ai-for-beginners)
 
-**⭐ Stars:** 107,629 | **🍴 Forks:** 57,708 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 107,628 | **🍴 Forks:** 57,708 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -902,7 +902,7 @@ Gemini API生成失败或429
 
 ### 📌 [QwenLM/Qwen3-VL](https://github.com/QwenLM/Qwen3-VL)
 
-**⭐ Stars:** 18,529 | **🍴 Forks:** 1,650 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 18,527 | **🍴 Forks:** 1,650 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -944,7 +944,7 @@ Gemini API生成失败或429
 
 ### 📌 [Diorser/LiteMonitor](https://github.com/Diorser/LiteMonitor)
 
-**⭐ Stars:** 4,290 | **🍴 Forks:** 174 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 4,291 | **🍴 Forks:** 174 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -960,7 +960,7 @@ Gemini API生成失败或429
 
 ### 📌 [DearVa/Everywhere](https://github.com/DearVa/Everywhere)
 
-**⭐ Stars:** 5,624 | **🍴 Forks:** 328 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 5,625 | **🍴 Forks:** 329 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -968,7 +968,7 @@ Gemini API生成失败或429
 
 ### 📌 [ZyperWave/ZyperWinOptimize](https://github.com/ZyperWave/ZyperWinOptimize)
 
-**⭐ Stars:** 6,887 | **🍴 Forks:** 411 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 6,888 | **🍴 Forks:** 411 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -984,7 +984,7 @@ Gemini API生成失败或429
 
 ### 📌 [microsoft/PowerToys](https://github.com/microsoft/PowerToys)
 
-**⭐ Stars:** 130,283 | **🍴 Forks:** 7,754 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 130,283 | **🍴 Forks:** 7,755 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -1002,7 +1002,7 @@ Gemini API生成失败或429
 
 ### 📌 [githubnext/monaspace](https://github.com/githubnext/monaspace)
 
-**⭐ Stars:** 18,556 | **🍴 Forks:** 319 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 18,557 | **🍴 Forks:** 319 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -1010,7 +1010,7 @@ Gemini API生成失败或429
 
 ### 📌 [obra/superpowers](https://github.com/obra/superpowers)
 
-**⭐ Stars:** 73,025 | **🍴 Forks:** 5,617 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 73,034 | **🍴 Forks:** 5,618 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -1018,7 +1018,7 @@ Gemini API生成失败或429
 
 ### 📌 [anthropics/claude-code](https://github.com/anthropics/claude-code)
 
-**⭐ Stars:** 74,851 | **🍴 Forks:** 6,003 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 74,859 | **🍴 Forks:** 6,004 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -1044,7 +1044,7 @@ Gemini API生成失败或429
 
 ### 📌 [allenk/GeminiWatermarkTool](https://github.com/allenk/GeminiWatermarkTool)
 
-**⭐ Stars:** 1,702 | **🍴 Forks:** 146 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 1,703 | **🍴 Forks:** 146 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -1060,7 +1060,7 @@ Gemini API生成失败或429
 
 ### 📌 [microsoft/WSL](https://github.com/microsoft/WSL)
 
-**⭐ Stars:** 31,293 | **🍴 Forks:** 1,630 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 31,294 | **🍴 Forks:** 1,630 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -1078,7 +1078,7 @@ Gemini API生成失败或429
 
 ### 📌 [DigitalPlatDev/FreeDomain](https://github.com/DigitalPlatDev/FreeDomain)
 
-**⭐ Stars:** 151,123 | **🍴 Forks:** 2,607 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 151,125 | **🍴 Forks:** 2,607 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -1094,7 +1094,7 @@ Gemini API生成失败或429
 
 ### 📌 [ripienaar/free-for-dev](https://github.com/ripienaar/free-for-dev)
 
-**⭐ Stars:** 118,813 | **🍴 Forks:** 12,244 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 118,815 | **🍴 Forks:** 12,244 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -1120,7 +1120,7 @@ Gemini API生成失败或429
 
 ### 📌 [OpenListTeam/OpenList](https://github.com/OpenListTeam/OpenList)
 
-**⭐ Stars:** 21,186 | **🍴 Forks:** 1,780 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 21,188 | **🍴 Forks:** 1,781 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -1128,7 +1128,7 @@ Gemini API生成失败或429
 
 ### 📌 [ollama/ollama](https://github.com/ollama/ollama)
 
-**⭐ Stars:** 164,331 | **🍴 Forks:** 14,811 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 164,333 | **🍴 Forks:** 14,812 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -1136,7 +1136,7 @@ Gemini API生成失败或429
 
 ### 📌 [fatedier/frp](https://github.com/fatedier/frp)
 
-**⭐ Stars:** 104,956 | **🍴 Forks:** 14,923 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 104,957 | **🍴 Forks:** 14,923 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -1146,7 +1146,7 @@ Gemini API生成失败或429
 
 ### 📌 [cjpais/Handy](https://github.com/cjpais/Handy)
 
-**⭐ Stars:** 17,046 | **🍴 Forks:** 1,266 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 17,049 | **🍴 Forks:** 1,266 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -1154,7 +1154,7 @@ Gemini API生成失败或429
 
 ### 📌 [astral-sh/uv](https://github.com/astral-sh/uv)
 
-**⭐ Stars:** 80,418 | **🍴 Forks:** 2,643 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 80,420 | **🍴 Forks:** 2,644 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -1196,7 +1196,7 @@ Gemini API生成失败或429
 
 ### 📌 [RamonUnch/AltSnap](https://github.com/RamonUnch/AltSnap)
 
-**⭐ Stars:** 4,692 | **🍴 Forks:** 139 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 4,693 | **🍴 Forks:** 139 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -1232,7 +1232,7 @@ Gemini API生成失败或429
 
 ### 📌 [ZCShou/GoGoGo](https://github.com/ZCShou/GoGoGo)
 
-**⭐ Stars:** 9,968 | **🍴 Forks:** 1,142 | **📅 Updated:** 2026-03-06
+**⭐ Stars:** 9,969 | **🍴 Forks:** 1,142 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -1252,7 +1252,7 @@ Gemini API生成失败或429
 
 ### 📌 [tldr-pages/tldr](https://github.com/tldr-pages/tldr)
 
-**⭐ Stars:** 61,563 | **🍴 Forks:** 5,102 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 61,564 | **🍴 Forks:** 5,102 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -1262,7 +1262,7 @@ Gemini API生成失败或429
 
 ### 📌 [dair-ai/Prompt-Engineering-Guide](https://github.com/dair-ai/Prompt-Engineering-Guide)
 
-**⭐ Stars:** 71,225 | **🍴 Forks:** 7,590 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 71,225 | **🍴 Forks:** 7,591 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
@@ -1272,7 +1272,7 @@ Gemini API生成失败或429
 
 ### 📌 [TapXWorld/ChinaTextbook](https://github.com/TapXWorld/ChinaTextbook)
 
-**⭐ Stars:** 65,624 | **🍴 Forks:** 14,632 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 65,625 | **🍴 Forks:** 14,632 | **📅 Updated:** 2026-03-07
 
 Gemini API生成失败或429
 
