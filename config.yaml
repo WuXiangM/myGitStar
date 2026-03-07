@@ -1,6 +1,6 @@
 # 输出语言，可选值: 'zh' (中文), 'en' (英文)
 # Output language, options: 'zh', 'en'
-language: zh
+language: en
 
 # 模型选择，可选值: 'copilot'、'openrouter' 或 'gemini'
 # Model selection: 'copilot', 'openrouter', 'gemini'

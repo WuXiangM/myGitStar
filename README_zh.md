@@ -6,7 +6,7 @@
 
 **总仓库数：** 154 个
 
-**详细操作文档：**[GUIDE_cn.md](GUIDE_cn.md)
+**详细操作文档：**[GUIDE_zh.md](GUIDE_zh.md)
 
 ---
 
