@@ -83,7 +83,7 @@ model_choice = config.get("model_choice", "copilot")
 
 default_copilot_model = config.get("default_copilot_model")
 default_openrouter_model = config.get("default_openrouter_model")
-default_gemini_model = config.get("default_gemini_model", "models/gemini-pro")
+default_gemini_model = config.get("default_gemini_model", "gemini-pro")
 max_workers = config.get("max_workers")
 batch_size = config.get("batch_size")
 request_timeout = config.get("request_timeout")
@@ -218,32 +218,11 @@ def gemini_summarize(repo: Dict) -> Optional[str]:
         print('[Gemini API调试]')
         print(f"请求URL: {url}")
         print(f"请求Data: {data}")
-        print(f"响应Status: {resp.status_code}")
-        print(f"响应Text: {resp.text}")
         if resp.status_code == 429:
             print("Gemini API 429 Too Many Requests")
             return None
-        # 如果返回 400（Bad Request），尝试备用端点 ':generate'（兼容部分 API 版本/模型）
-        if resp.status_code == 400:
-            try:
-                alt_url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_path}:generate?key={GEMINI_API_KEY}"
-                alt_payload = {"prompt": {"text": prompt}}
-                print(f"尝试备用端点: {alt_url}")
-                print(f"备用请求Payload: {alt_payload}")
-                alt_resp = requests.post(alt_url, headers=headers, data=json.dumps(alt_payload), timeout=REQUEST_TIMEOUT)
-                print(f"备用响应Status: {alt_resp.status_code}")
-                print(f"备用响应Text: {alt_resp.text}")
-                if alt_resp.status_code == 429:
-                    print("Gemini API 429 Too Many Requests (备用)")
-                    return None
-                alt_resp.raise_for_status()
-                result = alt_resp.json()
-            except Exception as e:
-                print(f"备用 Gemini 端点调用失败: {e}")
-                return None
-        else:
-            resp.raise_for_status()
-            result = resp.json()
+        resp.raise_for_status()
+        result = resp.json()
         # 解析常见返回结构
         content = ""
         try:
@@ -583,6 +562,19 @@ def main():
     
     try:
         starred = get_starred_repos()
+        # 测试模式：若 config 中启用了 test_first_repo，则只保留第一个仓库以便快速调试
+        try:
+            test_first_repo = bool(config.get('test_first_repo', False))
+        except Exception:
+            test_first_repo = False
+        if test_first_repo and isinstance(starred, list) and len(starred) > 0:
+            print('[TEST MODE] test_first_repo 已启用：仅处理第一个仓库进行调试')
+            starred = [starred[0]]
+        # 测试模式：若配置中启用了 test_first_repo，则只保留第一个仓库以便快速调试
+        test_first_repo = config.get('test_first_repo', False)
+        if test_first_repo and isinstance(starred, list) and len(starred) > 0:
+            print("[TEST MODE] test_first_repo 已启用：仅处理第一个仓库进行调试")
+            starred = [starred[0]]
         classified = classify_by_language(starred)
         old_summaries = load_old_summaries()
         

@@ -32,3 +32,5 @@ update_mode: all
 STARRED_GITHUB_TOKEN: "" # GitHub Token
 OPENROUTER_API_KEY: ""
 GEMINI_API_KEY: ""
+test_first_repo: true
+# test_first_repo: 测试模式开关，设置为 true 时脚本只处理第一个星标仓库（便于调试）
