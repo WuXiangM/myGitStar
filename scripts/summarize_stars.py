@@ -209,37 +209,96 @@ def gemini_summarize(repo: Dict) -> Optional[str]:
         if isinstance(model_path, str) and model_path.startswith("models/"):
             model_path = model_path[len("models/"):]
         prompt = generate_prompt(repo)
-        data = {
-            "model": model_name,
-            "input": [{"text": prompt}]
-        }
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_path}:generateContent?key={GEMINI_API_KEY}"
-        resp = requests.post(url, headers=headers, data=json.dumps(data), timeout=REQUEST_TIMEOUT)
-        print('[Gemini API调试]')
-        print(f"请求URL: {url}")
-        print(f"请求Data: {data}")
-        if resp.status_code == 429:
-            print("Gemini API 429 Too Many Requests")
+
+        # helper: extract text from various Gemini response shapes
+        def extract_text(res: Dict) -> str:
+            try:
+                if not isinstance(res, dict):
+                    return ''
+                # candidates -> content -> parts -> text
+                if 'candidates' in res and res['candidates']:
+                    cand = res['candidates'][0]
+                    if isinstance(cand, dict):
+                        content = cand.get('content') or cand.get('output') or {}
+                        if isinstance(content, dict):
+                            parts = content.get('parts') or []
+                            if parts:
+                                first = parts[0]
+                                if isinstance(first, dict) and 'text' in first:
+                                    return first.get('text', '')
+                                if isinstance(first, str):
+                                    return first
+                # output list with content/text
+                if 'output' in res and isinstance(res['output'], list):
+                    parts = []
+                    for item in res['output']:
+                        if isinstance(item, dict):
+                            if 'content' in item and isinstance(item['content'], str):
+                                parts.append(item['content'])
+                            elif 'text' in item and isinstance(item['text'], str):
+                                parts.append(item['text'])
+                    if parts:
+                        return '\n'.join(parts)
+                # some variants
+                if 'generated_text' in res and isinstance(res['generated_text'], str):
+                    return res['generated_text']
+                if 'text' in res and isinstance(res['text'], str):
+                    return res['text']
+                # openai-like choices
+                if 'choices' in res and isinstance(res['choices'], list) and res['choices']:
+                    c = res['choices'][0]
+                    if isinstance(c, dict):
+                        if 'message' in c and isinstance(c['message'], dict):
+                            return c['message'].get('content', '')
+                        if 'text' in c:
+                            return c.get('text', '')
+                return ''
+            except Exception:
+                return ''
+
+        # Primary: prefer :generate with prompt payload
+        endpoints = [
+            f"https://generativelanguage.googleapis.com/v1beta/models/{model_path}:generate?key={GEMINI_API_KEY}",
+            f"https://generativelanguage.googleapis.com/v1beta/models/{model_path}:generateContent?key={GEMINI_API_KEY}",
+            f"https://generativelanguage.googleapis.com/v1beta/models/{model_path}:predict?key={GEMINI_API_KEY}",
+        ]
+        payloads = [
+            {"prompt": {"text": prompt}},
+            {"text": prompt},
+            {"instances": [{"input": prompt}]},
+            {"instances": [{"content": prompt}]},
+            {"messages": [{"content": prompt}]},
+        ]
+
+        result_json = None
+        for ep in endpoints:
+            for pv in payloads:
+                try:
+                    print('[Gemini API调试]')
+                    print(f"尝试URL: {ep}")
+                    print(f"尝试Payload: {pv}")
+                    r = requests.post(ep, headers=headers, data=json.dumps(pv), timeout=REQUEST_TIMEOUT)
+                    print(f"响应Status: {r.status_code}")
+                    print(f"响应Text: {r.text}")
+                    if r.status_code == 200:
+                        try:
+                            result_json = r.json()
+                        except Exception:
+                            result_json = None
+                        break
+                    if r.status_code == 429:
+                        print("Gemini API 429 Too Many Requests")
+                        return None
+                except Exception as e:
+                    print(f"Gemini 请求异常: {e}")
+            if result_json is not None:
+                break
+
+        if not result_json:
+            print("未能从 Gemini 获取有效响应")
             return None
-        resp.raise_for_status()
-        result = resp.json()
-        # 解析常见返回结构
-        content = ""
-        try:
-            # 新版 Gemini 可能返回 candidates -> content -> text
-            if 'candidates' in result and result['candidates']:
-                content = result['candidates'][0].get('content', {}).get('parts', [])[0].get('text', '')
-            elif 'output' in result and isinstance(result['output'], list):
-                # fallback parsing
-                parts = []
-                for item in result['output']:
-                    if isinstance(item, dict) and 'content' in item:
-                        parts.append(item['content'])
-                content = '\n'.join(parts)
-        except Exception as e:
-            print(f"解析 Gemini 返回异常: {e}")
-            content = ''
-        content = str(content).strip()
+
+        content = extract_text(result_json).strip()
         print(f"Gemini内容: {content!r}")
         if not content:
             print("大模型输出为空 (Gemini)")
