@@ -280,6 +280,12 @@ if OPENROUTER_API_KEY:
     print(f"OpenRouter API Key 前缀: {OPENROUTER_API_KEY[:6]}...")
 if GITHUB_TOKEN:
     print(f"GitHub Token 前缀: {GITHUB_TOKEN[:6]}...")
+if GEMINI_API_KEY:
+    try:
+        print(f"Gemini API Key 前缀: {GEMINI_API_KEY[:4]}...")
+    except Exception:
+        # 防止非字符串或长度不足导致异常
+        print("Gemini API Key 前缀: (已设置)")
 
 # 常量定义
 API_ENDPOINTS = {
