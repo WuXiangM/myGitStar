@@ -2,25 +2,75 @@ import os
 import time
 import requests
 import json
+import yaml
 import concurrent.futures
 from typing import Dict, List, Optional
 import re
 
-# 配置token
-GITHUB_TOKEN = os.environ.get("STARRED_GITHUB_TOKEN")
-OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
+# 请勿直接把密钥写在代码中。下面使用 config + 环境变量优先策略读取密钥。
 
 # 加载配置文件
-CONFIG_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config.json')
+CONFIG_PATH_JSON = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config.json')
+CONFIG_PATH_YAML = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config.yaml')
+
 
 def load_config():
+    # 优先读取 YAML 配置，其次回退到 JSON 配置
     try:
-        with open(CONFIG_PATH, 'r', encoding='utf-8') as f:
+        with open(CONFIG_PATH_YAML, 'r', encoding='utf-8') as f:
+            data = yaml.safe_load(f)
+            if isinstance(data, dict):
+                return data
+    except FileNotFoundError:
+        pass
+    except Exception:
+        pass
+
+    try:
+        with open(CONFIG_PATH_JSON, 'r', encoding='utf-8') as f:
             return json.load(f)
     except FileNotFoundError:
         return {'language': 'zh'}  # 默认中文
+    except Exception:
+        return {'language': 'zh'}
 
 config = load_config()
+
+# 通用获取密钥逻辑：优先环境变量（常见或大写名），其次 config 中的大写键，
+# 然后 config 指定的 env 名称字段（如 github_token_env），最后 config 中的明文字段（不推荐）
+def _get_secret(config_env_key: str, default_env_names: List[str], config_plain_key: str = "") -> str:
+    # 1) 检查环境变量
+    for name in default_env_names:
+        val = os.environ.get(name)
+        if val:
+            return val
+
+    # 2) 检查 config 中是否存在大写键（用户可能直接把 key 写在 config）
+    if isinstance(config, dict):
+        for name in default_env_names:
+            cfg_val = config.get(name)
+            if cfg_val:
+                return cfg_val
+
+    # 3) 兼容旧配置：config 中可能指定了一个 env 名称字段（如 github_token_env）
+    env_name_in_config = config.get(config_env_key, "") if isinstance(config, dict) else ""
+    if env_name_in_config:
+        val = os.environ.get(env_name_in_config)
+        if val:
+            return val
+
+    # 4) 最后尝试 config 中的明文字段（不推荐）
+    if config_plain_key and isinstance(config, dict):
+        val = config.get(config_plain_key, "")
+        if val:
+            return val
+
+    return ""
+
+# 读取各类 API Key（优先环境变量 / Secret）
+GITHUB_TOKEN = _get_secret("github_token_env", ["STARRED_GITHUB_TOKEN", "GITHUB_TOKEN"], "github_token")
+OPENROUTER_API_KEY = _get_secret("openrouter_api_key_env", ["OPENROUTER_API_KEY"], "openrouter_api_key")
+GEMINI_API_KEY = _get_secret("gemini_api_key_env", ["GEMINI_API_KEY"], "gemini_api_key")
 
 # 新增：读取 update_mode 配置
 update_mode = config.get("update_mode", "all")  # 默认全部更新
@@ -33,6 +83,7 @@ model_choice = config.get("model_choice", "copilot")
 
 default_copilot_model = config.get("default_copilot_model")
 default_openrouter_model = config.get("default_openrouter_model")
+default_gemini_model = config.get("default_gemini_model", "models/gemini-pro")
 max_workers = config.get("max_workers")
 batch_size = config.get("batch_size")
 request_timeout = config.get("request_timeout")
@@ -142,12 +193,65 @@ def openrouter_summarize(repo: Dict) -> Optional[str]:
         print(f"OpenRouter总结异常: {e}")
         return None
 
+
+def gemini_summarize(repo: Dict) -> Optional[str]:
+    """使用 Gemini API 进行总结"""
+    if not GEMINI_API_KEY:
+        print("缺少 GEMINI_API_KEY，无法调用 Gemini API")
+        return None
+    try:
+        headers = {
+            "Content-Type": "application/json"
+        }
+        model_name = os.environ.get("GEMINI_MODEL", default_gemini_model)
+        prompt = generate_prompt(repo)
+        data = {
+            "model": model_name,
+            "input": [{"text": prompt}]
+        }
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={GEMINI_API_KEY}"
+        resp = requests.post(url, headers=headers, data=json.dumps(data), timeout=REQUEST_TIMEOUT)
+        print('[Gemini API调试]')
+        print(f"请求URL: {url}")
+        print(f"请求Data: {data}")
+        if resp.status_code == 429:
+            print("Gemini API 429 Too Many Requests")
+            return None
+        resp.raise_for_status()
+        result = resp.json()
+        # 解析常见返回结构
+        content = ""
+        try:
+            # 新版 Gemini 可能返回 candidates -> content -> text
+            if 'candidates' in result and result['candidates']:
+                content = result['candidates'][0].get('content', {}).get('parts', [])[0].get('text', '')
+            elif 'output' in result and isinstance(result['output'], list):
+                # fallback parsing
+                parts = []
+                for item in result['output']:
+                    if isinstance(item, dict) and 'content' in item:
+                        parts.append(item['content'])
+                content = '\n'.join(parts)
+        except Exception as e:
+            print(f"解析 Gemini 返回异常: {e}")
+            content = ''
+        content = str(content).strip()
+        print(f"Gemini内容: {content!r}")
+        if not content:
+            print("大模型输出为空 (Gemini)")
+        return content
+    except Exception as e:
+        print(f"Gemini总结异常: {e}")
+        return None
+
 # 根据配置选择总结函数
 def get_summarize_func():
     if model_choice == 'copilot':
         return copilot_summarize
     elif model_choice == 'openrouter':
         return openrouter_summarize
+    elif model_choice == 'gemini':
+        return gemini_summarize
     else:
         raise ValueError(f"不支持的模型选择: {model_choice}")
 
@@ -176,7 +280,8 @@ if GITHUB_TOKEN:
 # 常量定义
 API_ENDPOINTS = {
     "copilot": "https://models.github.ai/inference/chat/completions",
-    "openrouter": "https://openrouter.ai/api/v1/chat/completions"
+    "openrouter": "https://openrouter.ai/api/v1/chat/completions",
+    "gemini": "https://generativelanguage.googleapis.com/v1beta/models"
 }
 
 # 通用函数
@@ -352,11 +457,15 @@ def is_valid_summary(summary: str) -> bool:
     return True
 
 
-def summarize_batch(repos: List[Dict], old_summaries: Dict[str, str], use_copilot: bool = False) -> List[str]:
-    """批量总结仓库，支持选择使用 OpenRouter 或 GitHub Copilot"""
+def summarize_batch(repos: List[Dict], old_summaries: Dict[str, str], use_copilot: bool = False, use_gemini: bool = False) -> List[str]:
+    """批量总结仓库，支持选择使用 OpenRouter、GitHub Copilot 或 Gemini"""
     results = [None] * len(repos)
-    summarize_func = copilot_summarize if use_copilot else openrouter_summarize
-    api_name = "Copilot" if use_copilot else "OpenRouter"
+    if use_gemini:
+        summarize_func = gemini_summarize
+        api_name = "Gemini"
+    else:
+        summarize_func = copilot_summarize if use_copilot else openrouter_summarize
+        api_name = "Copilot" if use_copilot else "OpenRouter"
     
     with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
         future_to_idx = {
@@ -387,6 +496,11 @@ def summarize_batch(repos: List[Dict], old_summaries: Dict[str, str], use_copilo
 def copilot_summarize_batch(repos: List[Dict], old_summaries: Dict[str, str]) -> List[str]:
     """使用 GitHub Copilot 批量总结仓库"""
     return summarize_batch(repos, old_summaries, use_copilot=True)
+
+
+def gemini_summarize_batch(repos: List[Dict], old_summaries: Dict[str, str]) -> List[str]:
+    """使用 Gemini 批量总结仓库"""
+    return summarize_batch(repos, old_summaries, use_gemini=True)
 
 
 def classify_by_language(repos):
@@ -427,9 +541,19 @@ def github_anchor(text):
 ###########################################
 def main():
     # 通过环境变量控制使用哪种 API，默认使用 Copilot
-    use_copilot_api = os.environ.get("USE_COPILOT_API", "true").lower() == "true"
-    api_name = "GitHub Copilot" if use_copilot_api else "OpenRouter (DeepSeek)"
-    
+    # 通过 config 的 model_choice 优先选择模型；若未设置，则使用环境变量 USE_COPILOT_API
+    if model_choice:
+        api_choice = model_choice.lower()
+    else:
+        api_choice = 'copilot' if os.environ.get("USE_COPILOT_API", "true").lower() == "true" else 'openrouter'
+
+    if api_choice == 'gemini':
+        api_name = 'Gemini'
+    elif api_choice == 'openrouter':
+        api_name = 'OpenRouter (DeepSeek)'
+    else:
+        api_name = 'GitHub Copilot'
+
     print(f"开始使用 {api_name} 生成 GitHub Star 项目总结...")
     
     try:
@@ -525,8 +649,10 @@ def main():
                 this_batch = repos[i:i+BATCH_SIZE]
                 print(f"处理批次 {i//BATCH_SIZE + 1}，包含 {len(this_batch)} 个仓库...")
                 
-                # 根据选择使用不同的总结函数
-                if use_copilot_api:
+                # 根据选择使用不同的总结函数（优先使用 config.model_choice）
+                if api_choice == 'gemini':
+                    summaries = gemini_summarize_batch(this_batch, old_summaries)
+                elif api_choice == 'copilot':
                     summaries = copilot_summarize_batch(this_batch, old_summaries)
                 else:
                     summaries = summarize_batch(this_batch, old_summaries, use_copilot=False)

@@ -4,6 +4,7 @@
     "github_username": 0, 
     "default_copilot_model": "openai/gpt-4o-mini",
     "default_openrouter_model": "deepseek/deepseek-prover-v2:free",
+    "default_gemini_model": "models/gemini-pro",
     "readme_sum_path": "README.md",
     
     "max_workers": 1,
@@ -14,14 +15,21 @@
     "retry_attempts": 3,
     "update_mode": "all",
 
+    // 可选：直接在 config 中存放密钥（不推荐，默认留空）
+    "STARRED_GITHUB_TOKEN": "",
+    "OPENROUTER_API_KEY": "",
+    "GEMINI_API_KEY": "",
+    
+
     "comments_en": {
         "language": "Output language, optional values: 'zh' (Chinese), 'en' (English)",
-        "model_choice": "Model selection, optional values: 'copilot' or 'openrouter'",
+        "model_choice": "Model selection, optional values: 'copilot', 'openrouter', or 'gemini'",
         "github_username": "GitHub username, set to 0 to use workflow account, or specify username",
-        "github_token_env": "Environment variable name for GitHub access token, this value is a secret in GitHub Action",
-        "openrouter_api_key_env": "Environment variable name for OpenRouter API key, this value is a secret in GitHub Action",
+        "github_token_env": "Environment variable name for GitHub access token (e.g. 'STARRED_GITHUB_TOKEN')",
+        "openrouter_api_key_env": "Environment variable name for OpenRouter API key (e.g. 'OPENROUTER_API_KEY')",
         "default_copilot_model": "Default Copilot API model, can be changed based on the models supported by the API provider",
         "default_openrouter_model": "Default OpenRouter model, can be changed based on the models supported by OpenRouter",
+        "default_gemini_model": "Default Gemini model, e.g. 'models/gemini-pro'",
         "max_workers": "Maximum number of concurrent worker threads, integer, recommended 1-5",
         "batch_size": "Batch size, integer, recommended 5-20",
         "request_timeout": "Request timeout time (seconds), integer, recommended 30-120",
@@ -34,12 +42,13 @@
 
     "comments_cn": {
         "language": "输出语言，可选值: 'zh' (中文), 'en' (英文)",
-        "model_choice": "模型选择，可选值: 'copilot' 或 'openrouter'",
+        "model_choice": "模型选择，可选值: 'copilot'、'openrouter' 或 'gemini'",
         "github_username": "GitHub用户名，设置为0时自动使用workflow账号，或填写指定用户名",
-        "github_token_env": "GitHub访问令牌的环境变量名，该值为GitHub Action的secret",
-        "openrouter_api_key_env": "OpenRouter API密钥的环境变量名，该值为GitHub Action的secret",
+        "github_token_env": "GitHub访问令牌的环境变量名（例如 'STARRED_GITHUB_TOKEN'）",
+        "openrouter_api_key_env": "OpenRouter API密钥的环境变量名（例如 'OPENROUTER_API_KEY'）",
         "default_copilot_model": "Copilot API默认模型，可根据API提供商支持的模型列表更改",
         "default_openrouter_model": "OpenRouter默认模型，可根据OpenRouter支持的模型列表更改",
+        "default_gemini_model": "Gemini默认模型，例如 'models/gemini-pro'",
         "max_workers": "最大并发工作线程数，整数，建议1-5",
         "batch_size": "批处理大小，整数，建议5-20",
         "request_timeout": "请求超时时间(秒)，整数，建议30-120",

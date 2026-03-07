@@ -1,0 +1,34 @@
+# 输出语言，可选值: 'zh' (中文), 'en' (英文)
+# Output language, options: 'zh', 'en'
+language: zh
+
+# 模型选择，可选值: 'copilot'、'openrouter' 或 'gemini'
+# Model selection: 'copilot', 'openrouter', 'gemini'
+model_choice: copilot
+
+
+# GitHub用户名，设置为0时自动使用 workflow 账号，或填写指定用户名
+# GitHub username, set 0 to use workflow account or specify username
+github_username: 0
+default_copilot_model: openai/gpt-4o-mini
+default_openrouter_model: deepseek/deepseek-prover-v2:free
+default_gemini_model: models/gemini-2.5-flash
+readme_sum_path: README.md # output README.md
+
+max_workers: 1
+batch_size: 5
+request_timeout: 60 # s
+rate_limit_delay: 20 # s
+request_retry_delay: 30 # s
+retry_attempts: 3
+
+# 更新模式，可选值：'all'（全部更新）或 'missing_only'（仅更新缺失总结）
+# Update mode: 'all' or 'missing_only'
+update_mode: all
+
+
+# 可选：直接在 config 中存放密钥（不推荐，优先从环境变量读取，默认留空）
+# Optional: store keys here (not recommended; prefer environment variables)
+STARRED_GITHUB_TOKEN: "" # GitHub Token
+OPENROUTER_API_KEY: ""
+GEMINI_API_KEY: ""
