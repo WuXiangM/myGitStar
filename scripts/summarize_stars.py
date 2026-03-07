@@ -218,11 +218,32 @@ def gemini_summarize(repo: Dict) -> Optional[str]:
         print('[Gemini API调试]')
         print(f"请求URL: {url}")
         print(f"请求Data: {data}")
+        print(f"响应Status: {resp.status_code}")
+        print(f"响应Text: {resp.text}")
         if resp.status_code == 429:
             print("Gemini API 429 Too Many Requests")
             return None
-        resp.raise_for_status()
-        result = resp.json()
+        # 如果返回 400（Bad Request），尝试备用端点 ':generate'（兼容部分 API 版本/模型）
+        if resp.status_code == 400:
+            try:
+                alt_url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_path}:generate?key={GEMINI_API_KEY}"
+                alt_payload = {"prompt": {"text": prompt}}
+                print(f"尝试备用端点: {alt_url}")
+                print(f"备用请求Payload: {alt_payload}")
+                alt_resp = requests.post(alt_url, headers=headers, data=json.dumps(alt_payload), timeout=REQUEST_TIMEOUT)
+                print(f"备用响应Status: {alt_resp.status_code}")
+                print(f"备用响应Text: {alt_resp.text}")
+                if alt_resp.status_code == 429:
+                    print("Gemini API 429 Too Many Requests (备用)")
+                    return None
+                alt_resp.raise_for_status()
+                result = alt_resp.json()
+            except Exception as e:
+                print(f"备用 Gemini 端点调用失败: {e}")
+                return None
+        else:
+            resp.raise_for_status()
+            result = resp.json()
         # 解析常见返回结构
         content = ""
         try:
