@@ -204,12 +204,16 @@ def gemini_summarize(repo: Dict) -> Optional[str]:
             "Content-Type": "application/json"
         }
         model_name = os.environ.get("GEMINI_MODEL", default_gemini_model)
+        # Normalize model name: avoid duplicate 'models/' segment in URL
+        model_path = model_name
+        if isinstance(model_path, str) and model_path.startswith("models/"):
+            model_path = model_path[len("models/"):]
         prompt = generate_prompt(repo)
         data = {
             "model": model_name,
             "input": [{"text": prompt}]
         }
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={GEMINI_API_KEY}"
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_path}:generateContent?key={GEMINI_API_KEY}"
         resp = requests.post(url, headers=headers, data=json.dumps(data), timeout=REQUEST_TIMEOUT)
         print('[Gemini API调试]')
         print(f"请求URL: {url}")
