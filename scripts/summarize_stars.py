@@ -13,7 +13,6 @@ import re
 CONFIG_PATH_JSON = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config.json')
 CONFIG_PATH_YAML = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config.yaml')
 
-
 def load_config():
     # 优先读取 YAML 配置，其次回退到 JSON 配置
     try:
@@ -35,6 +34,9 @@ def load_config():
         return {'language': 'zh'}
 
 config = load_config()
+
+# 合并调试与测试模式：当环境变量 DEBUG_API=1 或 config.test_first_repo 为 true 时启用详细 API 调试日志
+DEBUG_API = bool(os.environ.get("DEBUG_API")) or bool(config.get('test_first_repo', False))
 
 # 通用获取密钥逻辑：优先环境变量（常见或大写名），其次 config 中的大写键，
 # 然后 config 指定的 env 名称字段（如 github_token_env），最后 config 中的明文字段（不推荐）
@@ -376,12 +378,13 @@ def make_api_request(url: str, headers: Dict, data: Dict, retries: int = RETRY_A
     for attempt in range(retries):
         try:
             resp = requests.post(url, headers=headers, data=json.dumps(data), timeout=REQUEST_TIMEOUT)
-            print('[API调试]')
-            print(f"请求URL: {url}")
-            print(f"请求Headers: {headers}")
-            print(f"请求Data: {data}")
-            print(f"响应Status: {resp.status_code}")
-            print(f"响应Text: {resp.text}")
+            if DEBUG_API:
+                print('[API调试]')
+                print(f"请求URL: {url}")
+                print(f"请求Headers: {headers}")
+                print(f"请求Data: {data}")
+                print(f"响应Status: {resp.status_code}")
+                print(f"响应Text: {resp.text}")
             if resp.status_code == 429:
                 if attempt < retries - 1:
                     print(f"遇到 429 错误，等待 {retry_delay} 秒后重试... (尝试 {attempt + 1}/{retries})")
@@ -399,6 +402,8 @@ def make_api_request(url: str, headers: Dict, data: Dict, retries: int = RETRY_A
                 time.sleep(retry_delay)
                 continue
             else:
+                if DEBUG_API:
+                    print('[API调试] 重试已用尽，最终失败')
                 print(f"API 调用最终失败: {e}")
                 return None
 
