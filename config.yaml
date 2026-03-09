@@ -16,7 +16,7 @@ default_gemini_model: gemini-2.5-flash
 readme_sum_path: README.md # output README.md
 
 max_workers: 1
-batch_size: 5
+batch_size: 1
 request_timeout: 60 # s
 rate_limit_delay: 20 # s
 request_retry_delay: 30 # s
