@@ -248,77 +248,115 @@ def gemini_summarize(repo: Dict) -> Optional[str]:
             ]
         }
 
-        # 6. 复用通用的 make_api_request 函数（复用重试、超时、429 处理逻辑）
-        # URL 拼接 API Key（Gemini 支持 URL 参数或 Header 传 Key，双重兼容）
+        # 6. 支持基于内容完整性的重试（例如被截断导致 finishReason == 'MAX_TOKENS'）
         request_url = f"{api_url}?key={GEMINI_API_KEY}"
-        response = make_api_request(
-            url=request_url,
-            headers=headers,
-            data=payload,
-            retries=config.get("gemini_retry_attempts", RETRY_ATTEMPTS),
-            retry_delay=config.get("gemini_retry_delay", REQUEST_RETRY_DELAY)
-        )
 
-        # 7. 细化响应解析（覆盖更多边缘场景，符合官方规范）
-        if not response or not isinstance(response, dict):
-            print(f"[Gemini] 仓库 {repo.get('full_name')} 响应为空或格式异常")
-            return None
+        gen_retries = int(config.get("gemini_generation_retries", 3))
+        gen_backoff = int(config.get("gemini_retry_backoff", 5))  # seconds, will multiply per attempt
+        base_max_tokens = int(config.get("gemini_max_output_tokens", max_output_tokens))
 
-        # 处理错误响应（Gemini 官方错误格式）
-        if "error" in response:
-            error = response["error"]
-            error_code = error.get("code")
-            error_msg = error.get("message", "未知错误")
-            print(f"[Gemini] API 错误 - 代码: {error_code}, 信息: {error_msg}")
-            
-            # 区分不同错误类型，返回更明确的提示
-            if error_code == 401:
-                return "Gemini API Key 无效或无权限"
-            elif error_code == 404:
-                return f"Gemini 模型 {model_path} 不存在"
-            elif error_code == 429:
-                return "Gemini API 调用频率超限，请稍后重试"
-            elif error_code == 400:
-                return "Gemini 请求参数格式错误"
-            else:
-                return f"Gemini API 错误: {error_msg}"
+        final_content = None
+        for attempt in range(1, gen_retries + 1):
+            # adjust max tokens slightly on retry to try to avoid truncation
+            attempt_max_tokens = min(base_max_tokens + (attempt - 1) * 200, 2048)
+            payload["generationConfig"]["maxOutputTokens"] = attempt_max_tokens
 
-        # 解析正常响应（兼容 Gemini 1.0/1.5 响应格式）
-        content = ""
-        try:
-            # 优先解析官方标准格式
-            candidates = response.get("candidates", [])
-            for candidate in candidates:
-                if candidate.get("finishReason") in ["STOP", "MAX_TOKENS"]:  # 有效完成的响应
+            if DEBUG_API:
+                print(f"[Gemini] 生成尝试 {attempt}/{gen_retries}, maxOutputTokens={attempt_max_tokens}")
+
+            response = make_api_request(
+                url=request_url,
+                headers=headers,
+                data=payload,
+                retries=config.get("gemini_retry_attempts", RETRY_ATTEMPTS),
+                retry_delay=config.get("gemini_retry_delay", REQUEST_RETRY_DELAY)
+            )
+
+            if not response or not isinstance(response, dict):
+                if attempt < gen_retries:
+                    wait = gen_backoff * attempt
+                    print(f"[Gemini] 响应异常或为空，等待 {wait} 秒后重试...")
+                    time.sleep(wait)
+                    continue
+                else:
+                    print(f"[Gemini] 仓库 {repo.get('full_name')} 响应为空或格式异常，已放弃")
+                    return None
+
+            # 处理错误响应（Gemini 官方错误格式）
+            if "error" in response:
+                error = response["error"]
+                error_code = error.get("code")
+                error_msg = error.get("message", "未知错误")
+                print(f"[Gemini] API 错误 - 代码: {error_code}, 信息: {error_msg}")
+                if error_code in (429, 503):
+                    if attempt < gen_retries:
+                        wait = gen_backoff * attempt
+                        print(f"[Gemini] 遇到 {error_code}，等待 {wait} 秒后重试...")
+                        time.sleep(wait)
+                        continue
+                # 非重试错误或重试用尽
+                if error_code == 401:
+                    return "Gemini API Key 无效或无权限"
+                elif error_code == 404:
+                    return f"Gemini 模型 {model_path} 不存在"
+                elif error_code == 400:
+                    return "Gemini 请求参数格式错误"
+                else:
+                    return f"Gemini API 错误: {error_msg}"
+
+            # 解析响应并判断是否被截断
+            content = ""
+            truncated = False
+            try:
+                candidates = response.get("candidates", [])
+                for candidate in candidates:
+                    finish = candidate.get("finishReason")
                     content_obj = candidate.get("content", {})
                     parts = content_obj.get("parts", [])
                     for part in parts:
                         if isinstance(part, dict) and "text" in part:
                             content += part["text"].strip() + "\n"
-                    break  # 取第一个有效候选结果
-            
-            # 兜底解析（兼容非标准返回）
-            if not content:
-                # 兼容旧版/第三方代理的 openai 格式返回
-                choices = response.get("choices", [])
-                for choice in choices:
-                    if isinstance(choice, dict):
-                        content = choice.get("message", {}).get("content", "") or choice.get("text", "")
-                        if content:
-                            break
+                    if finish == "MAX_TOKENS":
+                        truncated = True
+                    # prefer first candidate
+                    break
 
-            # 清理内容（去除多余换行、空格）
-            content = content.strip()
-            if not content:
-                print(f"[Gemini] 仓库 {repo.get('full_name')} 无有效总结内容")
-                return None
+                # 兜底解析
+                if not content:
+                    choices = response.get("choices", [])
+                    for choice in choices:
+                        if isinstance(choice, dict):
+                            content = choice.get("message", {}).get("content", "") or choice.get("text", "")
+                            if content:
+                                break
 
-        except Exception as e:
-            print(f"[Gemini] 解析响应异常: {e}")
-            return None
+                content = content.strip()
+            except Exception as e:
+                print(f"[Gemini] 解析响应异常: {e}")
+                content = ""
 
-        print(f"[Gemini] 仓库 {repo.get('full_name')} 总结内容: {content[:50]}...")
-        return content
+            if content and not truncated:
+                final_content = content
+                break
+
+            # 如果为空或被截断，决定是否重试
+            if attempt < gen_retries:
+                wait = gen_backoff * attempt
+                print(f"[Gemini] 生成内容为空或被截断 (attempt={attempt})，等待 {wait} 秒后重试...")
+                time.sleep(wait)
+                continue
+            else:
+                # 重试用尽，返回当前可能不完整的内容或 None
+                if content:
+                    final_content = content
+                else:
+                    print(f"[Gemini] 仓库 {repo.get('full_name')} 无有效总结内容，已放弃")
+                    return None
+
+        if final_content:
+            print(f"[Gemini] 仓库 {repo.get('full_name')} 总结内容: {final_content[:50]}...")
+            return final_content
+        return None
 
     except Exception as e:
         print(f"[Gemini] 总结仓库 {repo.get('full_name')} 异常: {e}")
@@ -543,6 +581,28 @@ def is_valid_summary(summary: str) -> bool:
     if summary.strip() == "":
         print(f"[DEBUG] is_valid_summary: False (仅换行)")
         return False
+    # 内容完整性检查：根据语言确认摘要包含预期的段落标题或关键字段
+    try:
+        lang = config.get('language', 'zh')
+    except Exception:
+        lang = 'zh'
+
+    head = summary.strip()[:200]  # 只检查开头部分
+    content_ok = False
+    if lang == 'en':
+        patterns = [r'Summary\s*[:：]', r'Repository Name', r'Brief Introduction', r'Innovations']
+    else:
+        patterns = [r'总结\s*[:：]', r'仓库名称', r'简要介绍', r'创新点']
+
+    for p in patterns:
+        if re.search(p, head, flags=re.IGNORECASE):
+            content_ok = True
+            break
+
+    if not content_ok:
+        print(f"[DEBUG] is_valid_summary: False (缺少开头关键词，可能不完整)")
+        return False
+
     print(f"[DEBUG] is_valid_summary: True")
     return True
 
@@ -675,7 +735,16 @@ def main():
             classified_to_process = filtered_classified
         else:
             # 全部仓库都处理
-            classified_to_process = classified
+            # 优先处理已有总结不完整或包含错误的仓库（使它们在每次更新时先被刷新）
+            classified_to_process = {}
+            for lang, repos in classified.items():
+                try:
+                    # 将 is_valid_summary 为 False 的仓库排在前面
+                    sorted_repos = sorted(repos, key=lambda r: is_valid_summary(old_summaries.get(r.get('full_name', ''), '')))
+                except Exception:
+                    sorted_repos = repos
+                if sorted_repos:
+                    classified_to_process[lang] = sorted_repos
 
         # 更新标题以反映实际使用的 API
         current_time = time.strftime("%Y-%m-%d", time.localtime())
