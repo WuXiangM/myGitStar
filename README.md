@@ -1,6 +1,6 @@
 # My GitHub Star Project AI Summary
 
-**Generated on:** 2026-03-10
+**Generated on:** 2026-03-11
 
 **AI Model:** Gemini
 
@@ -38,7 +38,8 @@
 
 ### 📌 [cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources)
 
-**⭐ Stars:** 14,893 | **🍴 Forks:** 1,495 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 15,106 | **🍴 Forks:** 1,516 | **📅 Updated:** 2026-03-11
+
 
 
 Here's the summary of the GitHub repository:
@@ -53,7 +54,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [Anjok07/ultimatevocalremovergui](https://github.com/Anjok07/ultimatevocalremovergui)
 
-**⭐ Stars:** 23,856 | **🍴 Forks:** 1,778 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 23,863 | **🍴 Forks:** 1,777 | **📅 Updated:** 2026-03-11
+
 
 
 Here's the summary of the GitHub repository:
@@ -68,7 +70,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [anthropics/skills](https://github.com/anthropics/skills)
 
-**⭐ Stars:** 88,483 | **🍴 Forks:** 9,385 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 89,678 | **🍴 Forks:** 9,516 | **📅 Updated:** 2026-03-11
+
 
 
 Here is the summary of the GitHub repository:
@@ -80,7 +83,8 @@ Here is the summary of the GitHub repository:
 
 ### 📌 [Kevin-thu/StoryMem](https://github.com/Kevin-thu/StoryMem)
 
-**⭐ Stars:** 695 | **🍴 Forks:** 69 | **📅 Updated:** 2026-03-09
+**⭐ Stars:** 696 | **🍴 Forks:** 69 | **📅 Updated:** 2026-03-11
+
 
 
 Here's the summary of the GitHub repository:
@@ -95,7 +99,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [Usagi-org/ai-goofish-monitor](https://github.com/Usagi-org/ai-goofish-monitor)
 
-**⭐ Stars:** 9,275 | **🍴 Forks:** 1,301 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 9,290 | **🍴 Forks:** 1,303 | **📅 Updated:** 2026-03-11
+
 
 
 Here's the summary of the GitHub repository:
@@ -106,7 +111,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [zhu-xlab/GlobalBuildingAtlas](https://github.com/zhu-xlab/GlobalBuildingAtlas)
 
-**⭐ Stars:** 1,999 | **🍴 Forks:** 192 | **📅 Updated:** 2026-03-09
+**⭐ Stars:** 2,002 | **🍴 Forks:** 192 | **📅 Updated:** 2026-03-10
+
 
 
 Here's the summary of the GlobalBuildingAtlas GitHub repository:
@@ -119,7 +125,8 @@ Here's the summary of the GlobalBuildingAtlas GitHub repository:
 
 ### 📌 [funstory-ai/BabelDOC](https://github.com/funstory-ai/BabelDOC)
 
-**⭐ Stars:** 7,871 | **🍴 Forks:** 618 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 7,877 | **🍴 Forks:** 619 | **📅 Updated:** 2026-03-11
+
 
 
 Here's the summary of the BabelDOC GitHub repository:
@@ -131,7 +138,8 @@ Here's the summary of the BabelDOC GitHub repository:
 
 ### 📌 [PDFMathTranslate/PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate)
 
-**⭐ Stars:** 32,143 | **🍴 Forks:** 2,894 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 32,174 | **🍴 Forks:** 2,895 | **📅 Updated:** 2026-03-11
+
 
 
 1.  **Repository Name:** PDFMathTranslate/PDFMathTranslate
@@ -141,7 +149,8 @@ Here's the summary of the BabelDOC GitHub repository:
 
 ### 📌 [HKUDS/Paper2Slides](https://github.com/HKUDS/Paper2Slides)
 
-**⭐ Stars:** 3,154 | **🍴 Forks:** 419 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 3,162 | **🍴 Forks:** 420 | **📅 Updated:** 2026-03-11
+
 
 
 Here's the summary of the GitHub repository:
@@ -156,7 +165,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [jimmc414/Kosmos](https://github.com/jimmc414/Kosmos)
 
-**⭐ Stars:** 452 | **🍴 Forks:** 83 | **📅 Updated:** 2026-03-09
+**⭐ Stars:** 453 | **🍴 Forks:** 83 | **📅 Updated:** 2026-03-10
+
 
 
 1.  **Repository Name:** jimmc414/Kosmos
@@ -166,7 +176,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [HisMax/RedInk](https://github.com/HisMax/RedInk)
 
-**⭐ Stars:** 4,981 | **🍴 Forks:** 955 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 4,991 | **🍴 Forks:** 957 | **📅 Updated:** 2026-03-11
+
 
 
 Here's the summary of the RedInk GitHub repository:
@@ -178,7 +189,8 @@ Here's the summary of the RedInk GitHub repository:
 
 ### 📌 [facebookresearch/sam-3d-body](https://github.com/facebookresearch/sam-3d-body)
 
-**⭐ Stars:** 2,699 | **🍴 Forks:** 299 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 2,702 | **🍴 Forks:** 301 | **📅 Updated:** 2026-03-11
+
 
 
 Here's the summary of the GitHub repository:
@@ -193,7 +205,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [facebookresearch/sam-3d-objects](https://github.com/facebookresearch/sam-3d-objects)
 
-**⭐ Stars:** 6,170 | **🍴 Forks:** 701 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 6,181 | **🍴 Forks:** 705 | **📅 Updated:** 2026-03-11
+
 
 
 Here's the summary of the GitHub repository:
@@ -205,7 +218,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [sansan0/TrendRadar](https://github.com/sansan0/TrendRadar)
 
-**⭐ Stars:** 48,348 | **🍴 Forks:** 22,538 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 48,504 | **🍴 Forks:** 22,564 | **📅 Updated:** 2026-03-11
+
 
 
 Here's the summary of the GitHub repository:
@@ -217,7 +231,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [jianchang512/pyvideotrans](https://github.com/jianchang512/pyvideotrans)
 
-**⭐ Stars:** 16,386 | **🍴 Forks:** 1,921 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 16,390 | **🍴 Forks:** 1,921 | **📅 Updated:** 2026-03-11
+
 
 
 Here's the summary of the GitHub repository:
@@ -232,7 +247,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [666ghj/BettaFish](https://github.com/666ghj/BettaFish)
 
-**⭐ Stars:** 37,540 | **🍴 Forks:** 7,058 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 37,969 | **🍴 Forks:** 7,115 | **📅 Updated:** 2026-03-11
+
 
 
 Here's the summary of the GitHub repository:
@@ -246,7 +262,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [YILING0013/AI_NovelGenerator](https://github.com/YILING0013/AI_NovelGenerator)
 
-**⭐ Stars:** 3,574 | **🍴 Forks:** 665 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 3,584 | **🍴 Forks:** 671 | **📅 Updated:** 2026-03-11
+
 
 
 Here's the summary of the GitHub repository:
@@ -261,7 +278,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [guofei9987/blind_watermark](https://github.com/guofei9987/blind_watermark)
 
-**⭐ Stars:** 12,189 | **🍴 Forks:** 1,230 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 12,188 | **🍴 Forks:** 1,230 | **📅 Updated:** 2026-03-10
+
 
 
 Here's the summary of the GitHub repository:
@@ -275,6 +293,7 @@ Here's the summary of the GitHub repository:
 **⭐ Stars:** 3 | **🍴 Forks:** 0 | **📅 Updated:** 2025-09-04
 
 
+
 Here's the summary of the GitHub repository:
 
 1.  **Repository Name:** CharlesKeeling65/ManureCouplingStrategies
@@ -285,7 +304,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [tadata-org/fastapi_mcp](https://github.com/tadata-org/fastapi_mcp)
 
-**⭐ Stars:** 11,638 | **🍴 Forks:** 920 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 11,641 | **🍴 Forks:** 920 | **📅 Updated:** 2026-03-11
+
 
 
 Here's the summary of the GitHub repository:
@@ -300,7 +320,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [mikf/gallery-dl](https://github.com/mikf/gallery-dl)
 
-**⭐ Stars:** 17,118 | **🍴 Forks:** 1,344 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 17,125 | **🍴 Forks:** 1,346 | **📅 Updated:** 2026-03-11
+
 
 
 Here is the summary of the GitHub repository:
@@ -315,7 +336,8 @@ Here is the summary of the GitHub repository:
 
 ### 📌 [roboflow/supervision](https://github.com/roboflow/supervision)
 
-**⭐ Stars:** 36,661 | **🍴 Forks:** 3,115 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 36,673 | **🍴 Forks:** 3,117 | **📅 Updated:** 2026-03-11
+
 
 Here's a summary of the `roboflow/supervision` GitHub repository:
 
@@ -325,7 +347,8 @@ Here's a summary of the `roboflow/supervision` GitHub repository:
 
 ### 📌 [lllyasviel/FramePack](https://github.com/lllyasviel/FramePack)
 
-**⭐ Stars:** 16,660 | **🍴 Forks:** 1,648 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 16,659 | **🍴 Forks:** 1,648 | **📅 Updated:** 2026-03-10
+
 
 Here's a summary of the lllyasviel/FramePack GitHub repository:
 
@@ -335,7 +358,8 @@ Here's a summary of the lllyasviel/FramePack GitHub repository:
 
 ### 📌 [nunchaku-ai/nunchaku](https://github.com/nunchaku-ai/nunchaku)
 
-**⭐ Stars:** 3,718 | **🍴 Forks:** 227 | **📅 Updated:** 2026-03-09
+**⭐ Stars:** 3,721 | **🍴 Forks:** 228 | **📅 Updated:** 2026-03-11
+
 
 Here is the summary of the GitHub repository:
 
@@ -346,7 +370,8 @@ Here is the summary of the GitHub repository:
 
 ### 📌 [NanmiCoder/MediaCrawler](https://github.com/NanmiCoder/MediaCrawler)
 
-**⭐ Stars:** 45,144 | **🍴 Forks:** 9,821 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 45,219 | **🍴 Forks:** 9,827 | **📅 Updated:** 2026-03-11
+
 
 Here's the summary of the NanmiCoder/MediaCrawler GitHub repository:
 
@@ -356,7 +381,8 @@ Here's the summary of the NanmiCoder/MediaCrawler GitHub repository:
 
 ### 📌 [arcee-ai/mergekit](https://github.com/arcee-ai/mergekit)
 
-**⭐ Stars:** 6,844 | **🍴 Forks:** 671 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 6,850 | **🍴 Forks:** 671 | **📅 Updated:** 2026-03-11
+
 
 Here's the summary of the `arcee-ai/mergekit` GitHub repository:
 
@@ -368,7 +394,8 @@ Here's the summary of the `arcee-ai/mergekit` GitHub repository:
 
 ### 📌 [opendatalab/MinerU](https://github.com/opendatalab/MinerU)
 
-**⭐ Stars:** 55,821 | **🍴 Forks:** 4,629 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 55,894 | **🍴 Forks:** 4,634 | **📅 Updated:** 2026-03-11
+
 
 Here's the summary of the GitHub repository:
 
@@ -381,7 +408,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [Zie619/n8n-workflows](https://github.com/Zie619/n8n-workflows)
 
-**⭐ Stars:** 52,745 | **🍴 Forks:** 6,788 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 52,767 | **🍴 Forks:** 6,792 | **📅 Updated:** 2026-03-11
+
 
 Here's the summary of the GitHub repository:
 
@@ -395,7 +423,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [hpcaitech/Open-Sora](https://github.com/hpcaitech/Open-Sora)
 
-**⭐ Stars:** 28,675 | **🍴 Forks:** 2,905 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 28,679 | **🍴 Forks:** 2,906 | **📅 Updated:** 2026-03-11
+
 
 Here's the summary of the Open-Sora GitHub repository:
 
@@ -408,7 +437,8 @@ Here's the summary of the Open-Sora GitHub repository:
 
 ### 📌 [1Panel-dev/MaxKB](https://github.com/1Panel-dev/MaxKB)
 
-**⭐ Stars:** 20,275 | **🍴 Forks:** 2,656 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 20,286 | **🍴 Forks:** 2,659 | **📅 Updated:** 2026-03-11
+
 
 Here's the summary of the MaxKB GitHub repository:
 
@@ -422,7 +452,8 @@ Here's the summary of the MaxKB GitHub repository:
 
 ### 📌 [Peterande/D-FINE](https://github.com/Peterande/D-FINE)
 
-**⭐ Stars:** 3,043 | **🍴 Forks:** 285 | **📅 Updated:** 2026-03-09
+**⭐ Stars:** 3,046 | **🍴 Forks:** 286 | **📅 Updated:** 2026-03-11
+
 
 Here's the summary of the GitHub repository:
 
@@ -436,7 +467,7 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [Fosowl/agenticSeek](https://github.com/Fosowl/agenticSeek)
 
-**⭐ Stars:** 25,471 | **🍴 Forks:** 2,827 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 25,481 | **🍴 Forks:** 2,829 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -444,7 +475,7 @@ Gemini API生成失败或429
 
 ### 📌 [robert-mcdermott/ai-knowledge-graph](https://github.com/robert-mcdermott/ai-knowledge-graph)
 
-**⭐ Stars:** 1,919 | **🍴 Forks:** 285 | **📅 Updated:** 2026-03-09
+**⭐ Stars:** 1,921 | **🍴 Forks:** 285 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -452,7 +483,7 @@ Gemini API生成失败或429
 
 ### 📌 [harry0703/MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo)
 
-**⭐ Stars:** 50,109 | **🍴 Forks:** 7,122 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 50,132 | **🍴 Forks:** 7,130 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -460,7 +491,7 @@ Gemini API生成失败或429
 
 ### 📌 [kijai/ComfyUI-FramePackWrapper](https://github.com/kijai/ComfyUI-FramePackWrapper)
 
-**⭐ Stars:** 1,637 | **🍴 Forks:** 115 | **📅 Updated:** 2026-03-08
+**⭐ Stars:** 1,638 | **🍴 Forks:** 115 | **📅 Updated:** 2026-03-10
 
 Gemini API生成失败或429
 
@@ -468,7 +499,7 @@ Gemini API生成失败或429
 
 ### 📌 [langbot-app/LangBot](https://github.com/langbot-app/LangBot)
 
-**⭐ Stars:** 15,503 | **🍴 Forks:** 1,338 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 15,513 | **🍴 Forks:** 1,341 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -476,7 +507,7 @@ Gemini API生成失败或429
 
 ### 📌 [xming521/WeClone](https://github.com/xming521/WeClone)
 
-**⭐ Stars:** 16,392 | **🍴 Forks:** 1,339 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 16,394 | **🍴 Forks:** 1,342 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -484,7 +515,7 @@ Gemini API生成失败或429
 
 ### 📌 [happycola233/tchMaterial-parser](https://github.com/happycola233/tchMaterial-parser)
 
-**⭐ Stars:** 4,679 | **🍴 Forks:** 565 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 4,684 | **🍴 Forks:** 565 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -492,7 +523,7 @@ Gemini API生成失败或429
 
 ### 📌 [0xsline/GeminiImageApp](https://github.com/0xsline/GeminiImageApp)
 
-**⭐ Stars:** 241 | **🍴 Forks:** 38 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 242 | **🍴 Forks:** 38 | **📅 Updated:** 2026-03-10
 
 Gemini API生成失败或429
 
@@ -500,7 +531,7 @@ Gemini API生成失败或429
 
 ### 📌 [public-apis/public-apis](https://github.com/public-apis/public-apis)
 
-**⭐ Stars:** 406,032 | **🍴 Forks:** 43,841 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 406,437 | **🍴 Forks:** 43,902 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -508,7 +539,7 @@ Gemini API生成失败或429
 
 ### 📌 [SamuelSchmidgall/AgentLaboratory](https://github.com/SamuelSchmidgall/AgentLaboratory)
 
-**⭐ Stars:** 5,359 | **🍴 Forks:** 762 | **📅 Updated:** 2026-03-09
+**⭐ Stars:** 5,368 | **🍴 Forks:** 762 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -524,7 +555,7 @@ Gemini API生成失败或429
 
 ### 📌 [microsoft/markitdown](https://github.com/microsoft/markitdown)
 
-**⭐ Stars:** 90,462 | **🍴 Forks:** 5,331 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 90,537 | **🍴 Forks:** 5,337 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -532,7 +563,7 @@ Gemini API生成失败或429
 
 ### 📌 [subframe7536/maple-font](https://github.com/subframe7536/maple-font)
 
-**⭐ Stars:** 24,340 | **🍴 Forks:** 966 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 24,363 | **🍴 Forks:** 966 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -540,7 +571,7 @@ Gemini API生成失败或429
 
 ### 📌 [nvbn/thefuck](https://github.com/nvbn/thefuck)
 
-**⭐ Stars:** 95,643 | **🍴 Forks:** 3,850 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 95,658 | **🍴 Forks:** 3,850 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -548,7 +579,8 @@ Gemini API生成失败或429
 
 ### 📌 [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps)
 
-**⭐ Stars:** 101,234 | **🍴 Forks:** 14,718 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 101,482 | **🍴 Forks:** 14,754 | **📅 Updated:** 2026-03-11
+
 
 Here is the summary of the GitHub repository:
 
@@ -562,7 +594,7 @@ Here is the summary of the GitHub repository:
 
 ### 📌 [aws/aws-cli](https://github.com/aws/aws-cli)
 
-**⭐ Stars:** 16,802 | **🍴 Forks:** 4,490 | **📅 Updated:** 2026-03-09
+**⭐ Stars:** 16,803 | **🍴 Forks:** 4,490 | **📅 Updated:** 2026-03-10
 
 Gemini API生成失败或429
 
@@ -571,6 +603,7 @@ Gemini API生成失败或429
 ### 📌 [jonathanwilton/PUExtraTrees](https://github.com/jonathanwilton/PUExtraTrees)
 
 **⭐ Stars:** 19 | **🍴 Forks:** 1 | **📅 Updated:** 2026-03-04
+
 
 
 Here's the summary of the GitHub repository:
@@ -585,7 +618,7 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [bilibili/Index-1.9B](https://github.com/bilibili/Index-1.9B)
 
-**⭐ Stars:** 1,013 | **🍴 Forks:** 48 | **📅 Updated:** 2026-03-09
+**⭐ Stars:** 1,014 | **🍴 Forks:** 48 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -593,7 +626,7 @@ Gemini API生成失败或429
 
 ### 📌 [huggingface/transformers](https://github.com/huggingface/transformers)
 
-**⭐ Stars:** 157,672 | **🍴 Forks:** 32,340 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 157,727 | **🍴 Forks:** 32,360 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -601,7 +634,7 @@ Gemini API生成失败或429
 
 ### 📌 [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
 
-**⭐ Stars:** 161,627 | **🍴 Forks:** 30,139 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 161,663 | **🍴 Forks:** 30,136 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -609,7 +642,7 @@ Gemini API生成失败或429
 
 ### 📌 [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT)
 
-**⭐ Stars:** 182,313 | **🍴 Forks:** 46,206 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 182,350 | **🍴 Forks:** 46,207 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -617,7 +650,7 @@ Gemini API生成失败或429
 
 ### 📌 [EvanLi/Github-Ranking](https://github.com/EvanLi/Github-Ranking)
 
-**⭐ Stars:** 10,545 | **🍴 Forks:** 625 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 10,557 | **🍴 Forks:** 626 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -651,7 +684,7 @@ Gemini API生成失败或429
 
 ### 📌 [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio)
 
-**⭐ Stars:** 41,128 | **🍴 Forks:** 3,794 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 41,211 | **🍴 Forks:** 3,801 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -659,7 +692,7 @@ Gemini API生成失败或429
 
 ### 📌 [openclaw/openclaw](https://github.com/openclaw/openclaw)
 
-**⭐ Stars:** 292,421 | **🍴 Forks:** 55,381 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 300,006 | **🍴 Forks:** 56,699 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -667,7 +700,7 @@ Gemini API生成失败或429
 
 ### 📌 [antvis/Infographic](https://github.com/antvis/Infographic)
 
-**⭐ Stars:** 4,573 | **🍴 Forks:** 329 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 4,580 | **🍴 Forks:** 329 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -675,7 +708,7 @@ Gemini API生成失败或429
 
 ### 📌 [Anionex/banana-slides](https://github.com/Anionex/banana-slides)
 
-**⭐ Stars:** 12,785 | **🍴 Forks:** 1,496 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 12,834 | **🍴 Forks:** 1,503 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -683,7 +716,7 @@ Gemini API生成失败或429
 
 ### 📌 [lfnovo/open-notebook](https://github.com/lfnovo/open-notebook)
 
-**⭐ Stars:** 20,767 | **🍴 Forks:** 2,364 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 20,809 | **🍴 Forks:** 2,368 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -691,7 +724,7 @@ Gemini API生成失败或429
 
 ### 📌 [CapSoftware/Cap](https://github.com/CapSoftware/Cap)
 
-**⭐ Stars:** 17,282 | **🍴 Forks:** 1,302 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 17,297 | **🍴 Forks:** 1,306 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -699,7 +732,7 @@ Gemini API生成失败或429
 
 ### 📌 [027xiguapi/code-box](https://github.com/027xiguapi/code-box)
 
-**⭐ Stars:** 3,138 | **🍴 Forks:** 195 | **📅 Updated:** 2026-03-09
+**⭐ Stars:** 3,140 | **🍴 Forks:** 195 | **📅 Updated:** 2026-03-10
 
 Gemini API生成失败或429
 
@@ -707,7 +740,7 @@ Gemini API生成失败或429
 
 ### 📌 [iptv-org/iptv](https://github.com/iptv-org/iptv)
 
-**⭐ Stars:** 112,673 | **🍴 Forks:** 5,693 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 112,748 | **🍴 Forks:** 5,699 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -715,7 +748,7 @@ Gemini API生成失败或429
 
 ### 📌 [crocofied/PortNote](https://github.com/crocofied/PortNote)
 
-**⭐ Stars:** 1,241 | **🍴 Forks:** 32 | **📅 Updated:** 2026-03-09
+**⭐ Stars:** 1,242 | **🍴 Forks:** 32 | **📅 Updated:** 2026-03-10
 
 Gemini API生成失败或429
 
@@ -723,7 +756,7 @@ Gemini API生成失败或429
 
 ### 📌 [hanydd/BilibiliSponsorBlock](https://github.com/hanydd/BilibiliSponsorBlock)
 
-**⭐ Stars:** 4,961 | **🍴 Forks:** 110 | **📅 Updated:** 2026-03-09
+**⭐ Stars:** 4,970 | **🍴 Forks:** 110 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -731,7 +764,7 @@ Gemini API生成失败或429
 
 ### 📌 [umami-software/umami](https://github.com/umami-software/umami)
 
-**⭐ Stars:** 35,604 | **🍴 Forks:** 6,615 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 35,615 | **🍴 Forks:** 6,623 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -739,7 +772,7 @@ Gemini API生成失败或429
 
 ### 📌 [xyTom/snippai](https://github.com/xyTom/snippai)
 
-**⭐ Stars:** 1,482 | **🍴 Forks:** 85 | **📅 Updated:** 2026-03-09
+**⭐ Stars:** 1,481 | **🍴 Forks:** 85 | **📅 Updated:** 2026-03-10
 
 Gemini API生成失败或429
 
@@ -747,7 +780,7 @@ Gemini API生成失败或429
 
 ### 📌 [Snouzy/workout-cool](https://github.com/Snouzy/workout-cool)
 
-**⭐ Stars:** 7,109 | **🍴 Forks:** 551 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 7,110 | **🍴 Forks:** 551 | **📅 Updated:** 2026-03-10
 
 Gemini API生成失败或429
 
@@ -755,7 +788,7 @@ Gemini API生成失败或429
 
 ### 📌 [imsyy/DailyHotApi](https://github.com/imsyy/DailyHotApi)
 
-**⭐ Stars:** 3,637 | **🍴 Forks:** 1,207 | **📅 Updated:** 2026-03-09
+**⭐ Stars:** 3,641 | **🍴 Forks:** 1,210 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -763,7 +796,7 @@ Gemini API生成失败或429
 
 ### 📌 [cline/cline](https://github.com/cline/cline)
 
-**⭐ Stars:** 58,816 | **🍴 Forks:** 5,939 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 58,855 | **🍴 Forks:** 5,943 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -771,7 +804,7 @@ Gemini API生成失败或429
 
 ### 📌 [google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli)
 
-**⭐ Stars:** 97,065 | **🍴 Forks:** 12,084 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 97,202 | **🍴 Forks:** 12,122 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -779,7 +812,7 @@ Gemini API生成失败或429
 
 ### 📌 [RSSNext/Folo](https://github.com/RSSNext/Folo)
 
-**⭐ Stars:** 37,568 | **🍴 Forks:** 1,990 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 37,585 | **🍴 Forks:** 1,988 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -787,7 +820,7 @@ Gemini API生成失败或429
 
 ### 📌 [antvis/mcp-server-chart](https://github.com/antvis/mcp-server-chart)
 
-**⭐ Stars:** 3,787 | **🍴 Forks:** 359 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 3,796 | **🍴 Forks:** 360 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -795,7 +828,7 @@ Gemini API生成失败或429
 
 ### 📌 [firecrawl/firecrawl](https://github.com/firecrawl/firecrawl)
 
-**⭐ Stars:** 90,372 | **🍴 Forks:** 6,310 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 90,917 | **🍴 Forks:** 6,329 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -803,7 +836,7 @@ Gemini API生成失败或429
 
 ### 📌 [langgenius/dify](https://github.com/langgenius/dify)
 
-**⭐ Stars:** 131,842 | **🍴 Forks:** 20,526 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 132,204 | **🍴 Forks:** 20,597 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -811,7 +844,7 @@ Gemini API生成失败或429
 
 ### 📌 [n8n-io/n8n](https://github.com/n8n-io/n8n)
 
-**⭐ Stars:** 178,409 | **🍴 Forks:** 55,594 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 178,595 | **🍴 Forks:** 55,637 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -819,7 +852,7 @@ Gemini API生成失败或429
 
 ### 📌 [linshenkx/prompt-optimizer](https://github.com/linshenkx/prompt-optimizer)
 
-**⭐ Stars:** 23,630 | **🍴 Forks:** 2,836 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 23,760 | **🍴 Forks:** 2,848 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -827,7 +860,7 @@ Gemini API生成失败或429
 
 ### 📌 [ayangweb/BongoCat](https://github.com/ayangweb/BongoCat)
 
-**⭐ Stars:** 19,209 | **🍴 Forks:** 876 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 19,239 | **🍴 Forks:** 875 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -835,7 +868,7 @@ Gemini API生成失败或429
 
 ### 📌 [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)
 
-**⭐ Stars:** 350,641 | **🍴 Forks:** 43,766 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 350,716 | **🍴 Forks:** 43,770 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -851,7 +884,7 @@ Gemini API生成失败或429
 
 ### 📌 [ahmedkhaleel2004/gitdiagram](https://github.com/ahmedkhaleel2004/gitdiagram)
 
-**⭐ Stars:** 15,239 | **🍴 Forks:** 1,154 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 15,250 | **🍴 Forks:** 1,155 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -859,7 +892,7 @@ Gemini API生成失败或429
 
 ### 📌 [kevmo314/magic-copy](https://github.com/kevmo314/magic-copy)
 
-**⭐ Stars:** 2,484 | **🍴 Forks:** 158 | **📅 Updated:** 2026-03-09
+**⭐ Stars:** 2,485 | **🍴 Forks:** 158 | **📅 Updated:** 2026-03-10
 
 Gemini API生成失败或429
 
@@ -867,7 +900,7 @@ Gemini API生成失败或429
 
 ### 📌 [teableio/teable](https://github.com/teableio/teable)
 
-**⭐ Stars:** 21,002 | **🍴 Forks:** 1,224 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 21,007 | **🍴 Forks:** 1,223 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -877,9 +910,12 @@ Gemini API生成失败或429
 
 ### 📌 [hmjz100/LinkSwift](https://github.com/hmjz100/LinkSwift)
 
-**⭐ Stars:** 12,869 | **🍴 Forks:** 720 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 12,879 | **🍴 Forks:** 720 | **📅 Updated:** 2026-03-11
 
-Gemini API生成失败或429
+Here's the summary of the GitHub repository:
+
+1.  **Repository Name:** hmjz100/LinkSwift
+2.
 
 ---
 
@@ -887,55 +923,82 @@ Gemini API生成失败或429
 
 **⭐ Stars:** 2,329 | **🍴 Forks:** 349 | **📅 Updated:** 2026-03-09
 
-Gemini API生成失败或429
+Here's the summary of the Fogsight repository:
+
+1.  **Repository Name:** fogsightai/fogsight
+2.  **Brief Introduction:** Fogsight is an AI agent and animation engine powered by Large Language Models, designed for creating dynamic, intelligent characters.
+3.  **Innovations:** Its core innovation lies in leveraging Large Language Models to directly power both AI agents and an animation engine, enabling dynamic
 
 ---
 
 ### 📌 [glidea/banana-prompt-quicker](https://github.com/glidea/banana-prompt-quicker)
 
-**⭐ Stars:** 2,229 | **🍴 Forks:** 171 | **📅 Updated:** 2026-03-09
+**⭐ Stars:** 2,236 | **🍴 Forks:** 171 | **📅 Updated:** 2026-03-11
 
-Gemini API生成失败或429
+Here's the summary of the GitHub repository:
+
+1.  **Repository Name:** glidea/banana-prompt-quicker
+2.  **
 
 ---
 
 ### 📌 [playcanvas/engine](https://github.com/playcanvas/engine)
 
-**⭐ Stars:** 14,527 | **🍴 Forks:** 1,736 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 14,528 | **🍴 Forks:** 1,737 | **📅 Updated:** 2026-03-10
 
-Gemini API生成失败或429
+Here's the summary of the PlayCanvas Engine repository:
+
+1.  **Repository Name:** playcanvas/engine
+2.  **Brief Introduction:**
 
 ---
 
 ### 📌 [xanderfrangos/twinkle-tray](https://github.com/xanderfrangos/twinkle-tray)
 
-**⭐ Stars:** 8,095 | **🍴 Forks:** 274 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 8,098 | **🍴 Forks:** 274 | **📅 Updated:** 2026-03-11
 
-Gemini API生成失败或429
+Here's the summary of the GitHub repository:
+
+1.  **Repository Name:** xanderfrangos/twinkle-tray
+2.  **Brief Introduction:** Twinkle Tray is a Windows utility that allows users to easily manage the brightness of multiple monitors directly from the system tray, offering a centralized and convenient control point for all displays.
+3.  **Innovations:** Its key innovation is providing a unified, accessible interface in the Windows system tray for controlling the brightness of all connected monitors, including external displays, overcoming native Windows limitations for multi-monitor brightness adjustment.
+4.  **Basic Usage:** Install the application and click its icon in the system tray to access sliders for adjusting individual monitor brightness.
+5.  **Summary:** Twinkle Tray simplifies monitor brightness control on Windows by centralizing management for all displays within a convenient system tray application.
 
 ---
 
 ### 📌 [wordshub/free-font](https://github.com/wordshub/free-font)
 
-**⭐ Stars:** 6,126 | **🍴 Forks:** 426 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 6,128 | **🍴 Forks:** 426 | **📅 Updated:** 2026-03-10
 
-Gemini API生成失败或429
+Here's the summary of the GitHub repository:
+
+1.  **Repository Name:** wordshub/free-font
+2.  **Brief Introduction
 
 ---
 
 ### 📌 [mrdoob/three.js](https://github.com/mrdoob/three.js)
 
-**⭐ Stars:** 111,264 | **🍴 Forks:** 36,290 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 111,278 | **🍴 Forks:** 36,290 | **📅 Updated:** 2026-03-11
 
-Gemini API生成失败或429
+Here's the summary of the `mrdoob/three.js` repository:
+
+1.  **Repository Name:** `mrdoob
 
 ---
 
 ### 📌 [SheepChef/Abracadabra](https://github.com/SheepChef/Abracadabra)
 
-**⭐ Stars:** 2,251 | **🍴 Forks:** 206 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 2,260 | **🍴 Forks:** 207 | **📅 Updated:** 2026-03-10
 
-Gemini API生成失败或429
+Here's the summary of the GitHub repository:
+
+1.  **Repository Name:** SheepChef/Abracadabra
+2.  **Brief Introduction:** Abracadabra, also known as "Mo Yue" (魔曰), is a unique text encryption tool that transforms plain text into an ancient Chinese literary style, offering a distinctive and culturally flavored method for securing information.
+3.  **Innovations:** Its most distinctive feature is the transformation of encrypted text into an ancient Chinese literary style, moving beyond standard encryption to offer a culturally rich and aesthetically unique output.
+4.  **Basic Usage:** (Omitted as no specific usage examples are provided in the description)
+5.  **Summary:** This repository offers a novel text encryption tool that uniquely disguises information by rendering it in an ancient Chinese literary style.
 
 ---
 
@@ -943,15 +1006,23 @@ Gemini API生成失败或429
 
 **⭐ Stars:** 136 | **🍴 Forks:** 11 | **📅 Updated:** 2026-02-27
 
-Gemini API生成失败或429
+1.  **Repository Name:** yitong2333/Bionic-Reading
+2.  **Brief Introduction:** A Tampermonkey script implementing Bionic Reading to enhance reading experience. It emphasizes keywords and parts of text, making it easier to grasp important information, thus improving reading speed and comprehension.
+3.  **Innov
 
 ---
 
 ### 📌 [poloclub/transformer-explainer](https://github.com/poloclub/transformer-explainer)
 
-**⭐ Stars:** 6,888 | **🍴 Forks:** 740 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 6,899 | **🍴 Forks:** 740 | **📅 Updated:** 2026-03-10
 
-Gemini API生成失败或429
+Here's a summary of the GitHub repository `poloclub/transformer-explainer`:
+
+1.  **Repository Name:** poloclub/transformer-explainer
+2.  **Brief Introduction:** This repository provides an interactive visual tool to explain the inner workings of Large Language Model (LLM) Transformer architectures. It aims to demystify complex concepts through engaging, step-by-step visualizations, making the learning process intuitive and accessible for understanding how these powerful models function.
+3.  **Innovations:** Its primary innovation lies in offering an interactive, visual explanation of the Transformer architecture, allowing users to dynamically explore each component and process, from input embeddings to attention mechanisms, in a highly intuitive manner.
+4.  **Basic Usage:** Access the interactive visualization directly through its live web demo to explore Transformer concepts.
+5.  **Summary:** This repository offers an invaluable educational resource for anyone seeking to understand the intricate mechanisms of Transformer models through a highly engaging
 
 ---
 
@@ -959,33 +1030,53 @@ Gemini API生成失败或429
 
 ### 📌 [lukasmasuch/best-of-ml-python](https://github.com/lukasmasuch/best-of-ml-python)
 
-**⭐ Stars:** 23,300 | **🍴 Forks:** 3,104 | **📅 Updated:** 2026-03-09
+**⭐ Stars:** 23,306 | **🍴 Forks:** 3,103 | **📅 Updated:** 2026-03-10
 
-Gemini API生成失败或429
+Here's the summary of the GitHub repository:
+
+1.  **Repository Name:** lukasmasuch/best-of-ml-python
+2.  **Brief Introduction:** This repository curates a weekly updated, ranked list of awesome machine learning Python libraries. It aims to help developers and researchers easily discover and select the most effective tools for their ML projects.
+3.  **Innovations:** The primary innovation is providing a *ranked* compilation of ML Python libraries, offering a clear hierarchy of recommended tools. Furthermore, it's *updated weekly*, ensuring the list remains current and relevant with the rapidly evolving ML ecosystem.
+4.  **Basic Usage:** Users can simply browse the repository's README file to explore the categorized
 
 ---
 
 ### 📌 [ashishpatel26/500-AI-Agents-Projects](https://github.com/ashishpatel26/500-AI-Agents-Projects)
 
-**⭐ Stars:** 25,907 | **🍴 Forks:** 4,503 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 25,995 | **🍴 Forks:** 4,514 | **📅 Updated:** 2026-03-11
 
-Gemini API生成失败或429
+Here's the summary of the GitHub repository:
+
+1.  **Repository Name:** ashishpatel26/500-AI-Agents-Projects
+2.  **Brief Introduction:** This repository is a curated collection of 500 AI agent use cases across diverse industries like healthcare, finance, and education. It showcases practical applications and provides links to open-source projects, illustrating the transformative impact of AI agents in various sectors.
+3.  **Innovations:** Its most distinctive feature is the extensive, curated collection of 500 practical AI agent use cases spanning numerous industries, coupled with direct links to open-source projects for implementation, offering a comprehensive resource for real-world applications.
+4.  **Basic Usage:** Explore the repository to discover AI agent use cases relevant to specific industries and follow the provided links to open-source projects for practical implementation examples.
+5.  **Summary:** This repository serves as a comprehensive catalog showcasing 500 practical AI agent applications across various industries, providing valuable insights and actionable open-source project links for implementation.
 
 ---
 
 ### 📌 [svcvit/Awesome-Dify-Workflow](https://github.com/svcvit/Awesome-Dify-Workflow)
 
-**⭐ Stars:** 10,208 | **🍴 Forks:** 1,032 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 10,214 | **🍴 Forks:** 1,033 | **📅 Updated:** 2026-03-11
 
-Gemini API生成失败或429
+Here's the summary of the GitHub repository:
+
+1.  **Repository Name:** svcvit/Awesome-Dify-Workflow
+2.  **Brief Introduction:** A curated collection of useful Dify DSL workflows designed for both personal application and educational purposes. It provides ready-to-use templates to enhance productivity within the Dify platform.
+3.  **Innovations:** Offers a centralized repository of practical and effective Dify DSL workflows, simplifying the process for users to discover, share, and implement pre-built AI application logic without starting from scratch.
+4.  **Basic Usage:** Download the desired DSL JSON files from the repository and import them directly into your Dify application to deploy the pre-configured workflows.
+5.  **Summary:** This repository serves as a valuable resource for Dify users seeking ready-to-use, effective workflows to streamline their AI application development and learning.
 
 ---
 
 ### 📌 [zijie0/HumanSystemOptimization](https://github.com/zijie0/HumanSystemOptimization)
 
-**⭐ Stars:** 21,605 | **🍴 Forks:** 1,506 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 21,607 | **🍴 Forks:** 1,506 | **📅 Updated:** 2026-03-10
 
-Gemini API生成失败或429
+Here's the summary of the GitHub repository:
+
+1.  **Repository Name:** zijie0/HumanSystemOptimization
+2.  **Brief
 
 ---
 
@@ -993,15 +1084,25 @@ Gemini API生成失败或429
 
 **⭐ Stars:** 140 | **🍴 Forks:** 6 | **📅 Updated:** 2026-01-07
 
-Gemini API生成失败或429
+1.  **Repository Name:** holyshell/AppsForMac
+2.  **Brief Introduction:** This repository offers a curated collection of awesome software applications specifically for macOS users. It serves as a convenient resource to discover and enhance your computing experience with a variety of useful tools.
+3.  **Innovations:** Its primary distinction lies in providing a centralized, curated list of high-quality macOS applications, saving users time and effort in discovering valuable tools across various categories.
+4.  **Basic Usage:** Browse the repository's README file to find and select desired macOS applications, then follow the provided links or instructions to download and install them from their respective sources.
+5.  **Summary:** This repository functions as a valuable, organized directory for macOS users seeking to discover and install a wide range of useful applications.
 
 ---
 
 ### 📌 [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers)
 
-**⭐ Stars:** 82,623 | **🍴 Forks:** 8,012 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 82,722 | **🍴 Forks:** 8,038 | **📅 Updated:** 2026-03-11
 
-Gemini API生成失败或429
+Here's the summary of the GitHub repository:
+
+1.  **Repository Name:** punkpeye/awesome-mcp-servers
+2.  **Brief Introduction:** This repository is a curated list of various Minecraft Classic Protocol (MCP) servers. It serves as a centralized resource for players and developers interested in discovering and accessing different server implementations that adhere to the classic Minecraft experience.
+3.  **Innovations:** Its main innovation lies in providing a centralized, curated directory of diverse Minecraft Classic Protocol servers, simplifying discovery and access for enthusiasts and developers interested in the original Minecraft experience.
+4.  **Basic Usage:** Simply browse the repository's README file to explore the categorized list of MCP servers, complete with links and brief descriptions.
+5.  **Summary:** This repository acts as a comprehensive, easy-to-navigate directory for discovering and accessing various servers utilizing the Minecraft Classic Protocol.
 
 ---
 
@@ -1009,13 +1110,16 @@ Gemini API生成失败或429
 
 **⭐ Stars:** 4 | **🍴 Forks:** 0 | **📅 Updated:** 2026-03-08
 
-Gemini API生成失败或429
+Here's the summary of the GitHub repository:
+
+1.  **Repository Name:** kkeenee/TG-Twilight-AWAvenue-Ads
 
 ---
 
 ### 📌 [datawhalechina/so-large-lm](https://github.com/datawhalechina/so-large-lm)
 
-**⭐ Stars:** 6,876 | **🍴 Forks:** 579 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 6,885 | **🍴 Forks:** 581 | **📅 Updated:** 2026-03-11
+
 
 1.  **Repository Name:** datawhalechina/so-large-lm
 2.  **Brief Introduction:** This repository offers a comprehensive guide to the fundamental concepts and basic knowledge of large language models (LLMs). It serves as an introductory resource for understanding the core principles behind these powerful AI models, presented as a single, in-depth article.
@@ -1027,7 +1131,8 @@ Gemini API生成失败或429
 
 ### 📌 [ruanyf/weekly](https://github.com/ruanyf/weekly)
 
-**⭐ Stars:** 85,596 | **🍴 Forks:** 3,904 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 85,698 | **🍴 Forks:** 3,904 | **📅 Updated:** 2026-03-11
+
 
 Here's the summary of the GitHub repository `ruanyf/weekly`:
 
@@ -1043,7 +1148,8 @@ Here's the summary of the GitHub repository `ruanyf/weekly`:
 
 ### 📌 [roboflow/notebooks](https://github.com/roboflow/notebooks)
 
-**⭐ Stars:** 9,236 | **🍴 Forks:** 1,421 | **📅 Updated:** 2026-03-09
+**⭐ Stars:** 9,240 | **🍴 Forks:** 1,420 | **📅 Updated:** 2026-03-10
+
 
 Here's the summary of the GitHub repository:
 
@@ -1057,7 +1163,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [patchy631/ai-engineering-hub](https://github.com/patchy631/ai-engineering-hub)
 
-**⭐ Stars:** 31,600 | **🍴 Forks:** 5,159 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 31,658 | **🍴 Forks:** 5,167 | **📅 Updated:** 2026-03-11
+
 
 1.  **Repository Name:** patchy631/ai-engineering-hub
 2.  **Brief Introduction:** This repository offers in-depth tutorials covering Large Language Models (LLMs), Retrieval-Augmented Generation (RAGs), and practical real-world AI agent applications. It serves as a comprehensive learning hub for AI engineering.
@@ -1069,7 +1176,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [microsoft/AI-For-Beginners](https://github.com/microsoft/AI-For-Beginners)
 
-**⭐ Stars:** 45,938 | **🍴 Forks:** 9,375 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 45,961 | **🍴 Forks:** 9,380 | **📅 Updated:** 2026-03-11
+
 
 Here's the summary of the GitHub repository:
 
@@ -1080,7 +1188,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [microsoft/generative-ai-for-beginners](https://github.com/microsoft/generative-ai-for-beginners)
 
-**⭐ Stars:** 107,751 | **🍴 Forks:** 57,780 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 107,804 | **🍴 Forks:** 57,810 | **📅 Updated:** 2026-03-11
+
 
 Here's the summary of the GitHub repository:
 
@@ -1094,7 +1203,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [QwenLM/Qwen3-VL](https://github.com/QwenLM/Qwen3-VL)
 
-**⭐ Stars:** 18,557 | **🍴 Forks:** 1,661 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 18,576 | **🍴 Forks:** 1,667 | **📅 Updated:** 2026-03-11
+
 
 Here's the summary of the QwenLM/Qwen3-VL repository:
 
@@ -1110,6 +1220,7 @@ Here's the summary of the QwenLM/Qwen3-VL repository:
 
 **⭐ Stars:** 124 | **🍴 Forks:** 41 | **📅 Updated:** 2025-05-04
 
+
 Here's the summary of the GitHub repository:
 
 1.  **Repository Name:** roywright/pu_learning
@@ -1120,6 +1231,7 @@ Here's the summary of the GitHub repository:
 ### 📌 [phuijse/bagging_pu](https://github.com/phuijse/bagging_pu)
 
 **⭐ Stars:** 93 | **🍴 Forks:** 20 | **📅 Updated:** 2025-09-10
+
 
 Here's the summary of the GitHub repository:
 
@@ -1135,6 +1247,7 @@ Here's the summary of the GitHub repository:
 
 **⭐ Stars:** 10 | **🍴 Forks:** 0 | **📅 Updated:** 2026-02-26
 
+
 1.  **Repository Name:** henry-gu/prompt-engineering-for-developers
 2.  **Brief Introduction:** This repository offers the official Chinese version of Andrew Ng's renowned "ChatGPT Prompt Engineering for Developers" course. It provides comprehensive, practical guidance on crafting effective prompts for large language models
 
@@ -1142,7 +1255,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [google/automl](https://github.com/google/automl)
 
-**⭐ Stars:** 6,455 | **🍴 Forks:** 1,463 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 6,458 | **🍴 Forks:** 1,462 | **📅 Updated:** 2026-03-11
+
 
 Here is the summary of the `google/automl` GitHub repository:
 
@@ -1158,7 +1272,8 @@ Here is the summary of the `google/automl` GitHub repository:
 
 ### 📌 [Diorser/LiteMonitor](https://github.com/Diorser/LiteMonitor)
 
-**⭐ Stars:** 4,309 | **🍴 Forks:** 175 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 4,327 | **🍴 Forks:** 176 | **📅 Updated:** 2026-03-11
+
 
 Here's the summary of the LiteMonitor GitHub repository:
 
@@ -1172,7 +1287,8 @@ Here's the summary of the LiteMonitor GitHub repository:
 
 ### 📌 [Flow-Launcher/Flow.Launcher](https://github.com/Flow-Launcher/Flow.Launcher)
 
-**⭐ Stars:** 14,119 | **🍴 Forks:** 571 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 14,135 | **🍴 Forks:** 573 | **📅 Updated:** 2026-03-11
+
 
 Here's the summary of the GitHub repository:
 
@@ -1186,7 +1302,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [DearVa/Everywhere](https://github.com/DearVa/Everywhere)
 
-**⭐ Stars:** 5,642 | **🍴 Forks:** 328 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 5,645 | **🍴 Forks:** 329 | **📅 Updated:** 2026-03-11
+
 
 Here's the summary of the GitHub repository "DearVa/Everywhere":
 
@@ -1200,7 +1317,8 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 ### 📌 [ZyperWave/ZyperWinOptimize](https://github.com/ZyperWave/ZyperWinOptimize)
 
-**⭐ Stars:** 6,910 | **🍴 Forks:** 411 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 6,914 | **🍴 Forks:** 413 | **📅 Updated:** 2026-03-11
+
 
 1.  **Repository Name:** ZyperWave/ZyperWinOptimize
 2.  **Brief Introduction:** ZyperWinOptimize (ZyperWin++) is a lightweight Windows optimization tool for Win7-Win11. It offers performance tuning, service optimization, junk cleaning, system activation, and quick Office installation, aiming to enhance system efficiency and user convenience.
@@ -1212,7 +1330,8 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 ### 📌 [randyrants/sharpkeys](https://github.com/randyrants/sharpkeys)
 
-**⭐ Stars:** 6,837 | **🍴 Forks:** 439 | **📅 Updated:** 2026-03-09
+**⭐ Stars:** 6,838 | **🍴 Forks:** 439 | **📅 Updated:** 2026-03-11
+
 
 Here's the summary of the randyrants/sharpkeys GitHub repository:
 
@@ -1226,7 +1345,8 @@ Here's the summary of the randyrants/sharpkeys GitHub repository:
 
 ### 📌 [microsoft/PowerToys](https://github.com/microsoft/PowerToys)
 
-**⭐ Stars:** 130,359 | **🍴 Forks:** 7,760 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 130,387 | **🍴 Forks:** 7,762 | **📅 Updated:** 2026-03-11
+
 
 Here's the summary of the GitHub repository:
 
@@ -1238,6 +1358,7 @@ Here's the summary of the GitHub repository:
 ### 📌 [zetaloop/OFGB](https://github.com/zetaloop/OFGB)
 
 **⭐ Stars:** 1,006 | **🍴 Forks:** 35 | **📅 Updated:** 2026-03-08
+
 
 Here's the summary of the GitHub repository:
 
@@ -1253,7 +1374,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [githubnext/monaspace](https://github.com/githubnext/monaspace)
 
-**⭐ Stars:** 18,566 | **🍴 Forks:** 319 | **📅 Updated:** 2026-03-09
+**⭐ Stars:** 18,575 | **🍴 Forks:** 320 | **📅 Updated:** 2026-03-11
+
 
 
 
@@ -1273,7 +1395,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [obra/superpowers](https://github.com/obra/superpowers)
 
-**⭐ Stars:** 75,443 | **🍴 Forks:** 5,843 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 76,891 | **🍴 Forks:** 5,958 | **📅 Updated:** 2026-03-11
+
 
 Here's a summary of the GitHub repository:
 
@@ -1287,7 +1410,7 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [anthropics/claude-code](https://github.com/anthropics/claude-code)
 
-**⭐ Stars:** 75,929 | **🍴 Forks:** 6,128 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 76,396 | **🍴 Forks:** 6,182 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1295,7 +1418,7 @@ Gemini API生成失败或429
 
 ### 📌 [x-cmd/x-cmd](https://github.com/x-cmd/x-cmd)
 
-**⭐ Stars:** 4,084 | **🍴 Forks:** 129 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 4,085 | **🍴 Forks:** 129 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1303,7 +1426,7 @@ Gemini API生成失败或429
 
 ### 📌 [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds)
 
-**⭐ Stars:** 10,450 | **🍴 Forks:** 1,406 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 10,460 | **🍴 Forks:** 1,408 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1313,7 +1436,7 @@ Gemini API生成失败或429
 
 ### 📌 [allenk/GeminiWatermarkTool](https://github.com/allenk/GeminiWatermarkTool)
 
-**⭐ Stars:** 1,745 | **🍴 Forks:** 146 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 1,764 | **🍴 Forks:** 147 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1321,7 +1444,7 @@ Gemini API生成失败或429
 
 ### 📌 [nomic-ai/gpt4all](https://github.com/nomic-ai/gpt4all)
 
-**⭐ Stars:** 77,208 | **🍴 Forks:** 8,326 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 77,214 | **🍴 Forks:** 8,324 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1329,7 +1452,8 @@ Gemini API生成失败或429
 
 ### 📌 [microsoft/WSL](https://github.com/microsoft/WSL)
 
-**⭐ Stars:** 31,327 | **🍴 Forks:** 1,631 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 31,347 | **🍴 Forks:** 1,632 | **📅 Updated:** 2026-03-11
+
 
 Here's a summary of the `microsoft/WSL` GitHub repository:
 
@@ -1343,7 +1467,7 @@ Here's a summary of the `microsoft/WSL` GitHub repository:
 
 ### 📌 [hluk/CopyQ](https://github.com/hluk/CopyQ)
 
-**⭐ Stars:** 11,289 | **🍴 Forks:** 544 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 11,293 | **🍴 Forks:** 545 | **📅 Updated:** 2026-03-10
 
 Gemini API生成失败或429
 
@@ -1353,7 +1477,7 @@ Gemini API生成失败或429
 
 ### 📌 [DigitalPlatDev/FreeDomain](https://github.com/DigitalPlatDev/FreeDomain)
 
-**⭐ Stars:** 151,570 | **🍴 Forks:** 2,610 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 151,721 | **🍴 Forks:** 2,609 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1361,7 +1485,7 @@ Gemini API生成失败或429
 
 ### 📌 [Chuyu-Team/Dism-Multi-language](https://github.com/Chuyu-Team/Dism-Multi-language)
 
-**⭐ Stars:** 19,073 | **🍴 Forks:** 1,191 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 19,075 | **🍴 Forks:** 1,191 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1369,7 +1493,7 @@ Gemini API生成失败或429
 
 ### 📌 [ripienaar/free-for-dev](https://github.com/ripienaar/free-for-dev)
 
-**⭐ Stars:** 119,368 | **🍴 Forks:** 12,339 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 119,438 | **🍴 Forks:** 12,343 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1377,7 +1501,7 @@ Gemini API生成失败或429
 
 ### 📌 [Sjj1024/PakePlus](https://github.com/Sjj1024/PakePlus)
 
-**⭐ Stars:** 10,700 | **🍴 Forks:** 4,290 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 10,728 | **🍴 Forks:** 4,291 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1387,7 +1511,7 @@ Gemini API生成失败或429
 
 ### 📌 [Tencent/WeKnora](https://github.com/Tencent/WeKnora)
 
-**⭐ Stars:** 13,294 | **🍴 Forks:** 1,541 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 13,315 | **🍴 Forks:** 1,540 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1395,7 +1519,7 @@ Gemini API生成失败或429
 
 ### 📌 [OpenListTeam/OpenList](https://github.com/OpenListTeam/OpenList)
 
-**⭐ Stars:** 21,257 | **🍴 Forks:** 1,790 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 21,267 | **🍴 Forks:** 1,793 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1403,7 +1527,7 @@ Gemini API生成失败或429
 
 ### 📌 [ollama/ollama](https://github.com/ollama/ollama)
 
-**⭐ Stars:** 164,692 | **🍴 Forks:** 14,868 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 164,805 | **🍴 Forks:** 14,880 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1411,7 +1535,7 @@ Gemini API生成失败或429
 
 ### 📌 [fatedier/frp](https://github.com/fatedier/frp)
 
-**⭐ Stars:** 105,050 | **🍴 Forks:** 14,929 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 105,092 | **🍴 Forks:** 14,934 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1421,7 +1545,7 @@ Gemini API生成失败或429
 
 ### 📌 [cjpais/Handy](https://github.com/cjpais/Handy)
 
-**⭐ Stars:** 17,241 | **🍴 Forks:** 1,286 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 17,316 | **🍴 Forks:** 1,296 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1429,7 +1553,7 @@ Gemini API生成失败或429
 
 ### 📌 [astral-sh/uv](https://github.com/astral-sh/uv)
 
-**⭐ Stars:** 80,609 | **🍴 Forks:** 2,656 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 80,682 | **🍴 Forks:** 2,661 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1437,7 +1561,7 @@ Gemini API生成失败或429
 
 ### 📌 [btjawa/BiliTools](https://github.com/btjawa/BiliTools)
 
-**⭐ Stars:** 4,793 | **🍴 Forks:** 312 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 4,796 | **🍴 Forks:** 312 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1445,7 +1569,7 @@ Gemini API生成失败或429
 
 ### 📌 [tw93/Pake](https://github.com/tw93/Pake)
 
-**⭐ Stars:** 46,552 | **🍴 Forks:** 9,101 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 46,576 | **🍴 Forks:** 9,107 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1455,7 +1579,7 @@ Gemini API生成失败或429
 
 ### 📌 [zetaloop/ExplorerPatcher](https://github.com/zetaloop/ExplorerPatcher)
 
-**⭐ Stars:** 2,017 | **🍴 Forks:** 85 | **📅 Updated:** 2026-03-07
+**⭐ Stars:** 2,018 | **🍴 Forks:** 85 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1463,7 +1587,7 @@ Gemini API生成失败或429
 
 ### 📌 [ventoy/Ventoy](https://github.com/ventoy/Ventoy)
 
-**⭐ Stars:** 74,941 | **🍴 Forks:** 4,702 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 74,955 | **🍴 Forks:** 4,702 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1471,7 +1595,7 @@ Gemini API生成失败或429
 
 ### 📌 [RamonUnch/AltSnap](https://github.com/RamonUnch/AltSnap)
 
-**⭐ Stars:** 4,693 | **🍴 Forks:** 140 | **📅 Updated:** 2026-03-09
+**⭐ Stars:** 4,693 | **🍴 Forks:** 140 | **📅 Updated:** 2026-03-10
 
 Gemini API生成失败或429
 
@@ -1481,7 +1605,7 @@ Gemini API生成失败或429
 
 ### 📌 [Tosencen/XMSLEEP](https://github.com/Tosencen/XMSLEEP)
 
-**⭐ Stars:** 1,145 | **🍴 Forks:** 59 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 1,144 | **🍴 Forks:** 60 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1489,7 +1613,7 @@ Gemini API生成失败或429
 
 ### 📌 [gkd-kit/gkd](https://github.com/gkd-kit/gkd)
 
-**⭐ Stars:** 36,678 | **🍴 Forks:** 1,779 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 36,717 | **🍴 Forks:** 1,781 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1499,7 +1623,7 @@ Gemini API生成失败或429
 
 ### 📌 [kknifer7/FreeBox](https://github.com/kknifer7/FreeBox)
 
-**⭐ Stars:** 1,419 | **🍴 Forks:** 134 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 1,421 | **🍴 Forks:** 135 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1507,7 +1631,7 @@ Gemini API生成失败或429
 
 ### 📌 [ZCShou/GoGoGo](https://github.com/ZCShou/GoGoGo)
 
-**⭐ Stars:** 9,983 | **🍴 Forks:** 1,145 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 9,995 | **🍴 Forks:** 1,146 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1517,7 +1641,7 @@ Gemini API生成失败或429
 
 ### 📌 [easychen/one-person-businesses-methodology-v2.0](https://github.com/easychen/one-person-businesses-methodology-v2.0)
 
-**⭐ Stars:** 13,244 | **🍴 Forks:** 1,494 | **📅 Updated:** 2026-03-09
+**⭐ Stars:** 13,249 | **🍴 Forks:** 1,493 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1527,7 +1651,7 @@ Gemini API生成失败或429
 
 ### 📌 [tldr-pages/tldr](https://github.com/tldr-pages/tldr)
 
-**⭐ Stars:** 61,596 | **🍴 Forks:** 5,105 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 61,607 | **🍴 Forks:** 5,105 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1537,7 +1661,7 @@ Gemini API生成失败或429
 
 ### 📌 [dair-ai/Prompt-Engineering-Guide](https://github.com/dair-ai/Prompt-Engineering-Guide)
 
-**⭐ Stars:** 71,357 | **🍴 Forks:** 7,611 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 71,419 | **🍴 Forks:** 7,620 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1547,7 +1671,7 @@ Gemini API生成失败或429
 
 ### 📌 [TapXWorld/ChinaTextbook](https://github.com/TapXWorld/ChinaTextbook)
 
-**⭐ Stars:** 65,697 | **🍴 Forks:** 14,648 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 65,733 | **🍴 Forks:** 14,653 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1557,7 +1681,7 @@ Gemini API生成失败或429
 
 ### 📌 [jgm/pandoc](https://github.com/jgm/pandoc)
 
-**⭐ Stars:** 42,488 | **🍴 Forks:** 3,782 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 42,507 | **🍴 Forks:** 3,782 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1567,7 +1691,7 @@ Gemini API生成失败或429
 
 ### 📌 [MadMaxChow/VLOOK](https://github.com/MadMaxChow/VLOOK)
 
-**⭐ Stars:** 2,398 | **🍴 Forks:** 153 | **📅 Updated:** 2026-03-09
+**⭐ Stars:** 2,402 | **🍴 Forks:** 153 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1577,7 +1701,7 @@ Gemini API生成失败或429
 
 ### 📌 [penpot/penpot](https://github.com/penpot/penpot)
 
-**⭐ Stars:** 44,709 | **🍴 Forks:** 2,573 | **📅 Updated:** 2026-03-10
+**⭐ Stars:** 44,745 | **🍴 Forks:** 2,581 | **📅 Updated:** 2026-03-11
 
 Gemini API生成失败或429
 
@@ -1588,7 +1712,7 @@ Gemini API生成失败或429
 
 - **Total repositories:** 154
 - **Languages:** 21
-- **Generated on:** 2026-03-10
+- **Generated on:** 2026-03-11
 - **AI Model:** Gemini
 
 ---
