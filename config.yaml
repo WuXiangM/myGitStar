@@ -17,14 +17,14 @@ readme_sum_path: README.md # output README.md
 
 max_workers: 1
 batch_size: 1
-request_timeout: 60 # s
-rate_limit_delay: 20 # s
-request_retry_delay: 30 # s
+request_timeout: 10 # s
+rate_limit_delay: 10 # s
+request_retry_delay: 10 # s
 retry_attempts: 3
 
 # 更新模式，可选值：'all'（全部更新）或 'missing_only'（仅更新缺失总结）
 # Update mode: 'all' or 'missing_only'
-update_mode: all
+update_mode: missing_only
 
 
 # 可选：直接在 config 中存放密钥（不推荐，优先从环境变量读取，默认留空）

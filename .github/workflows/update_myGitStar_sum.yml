@@ -11,6 +11,7 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 300 # 超时时间，单位分钟
     steps:
       - uses: actions/checkout@v4
 
@@ -32,6 +33,8 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_ACTOR: ${{ github.actor }}
+          # 限制每次 Action 处理的仓库数量，避免超时/超配额，设置为 0 或留空表示不限
+          MAX_REPOS: 100
         run: python scripts/summarize_stars.py
 
       - name: Print Copilot API call count

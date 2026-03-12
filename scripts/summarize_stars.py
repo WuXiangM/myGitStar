@@ -6,6 +6,9 @@ import yaml
 import concurrent.futures
 from typing import Dict, List, Optional
 import re
+import logging
+from logging.handlers import RotatingFileHandler
+import sys
 
 # 请勿直接把密钥写在代码中。下面使用 config + 环境变量优先策略读取密钥。
 
@@ -129,6 +132,17 @@ if github_username == "0" or github_username == 0:
         print("未检测到 workflow 账号环境变量 GITHUB_ACTOR/GITHUB_USERNAME，请检查 workflow 配置！")
 else:
     GITHUB_USERNAME = github_username
+
+# 限制每次运行处理的最大仓库数（可通过环境变量 MAX_REPOS 设置）
+MAX_REPOS = None
+try:
+    max_repos_env = os.environ.get('MAX_REPOS')
+    if max_repos_env:
+        mr = int(max_repos_env)
+        if mr > 0:
+            MAX_REPOS = mr
+except Exception:
+    MAX_REPOS = None
 
 # 将 copilot_summarize 和 openrouter_summarize 函数移动到 get_summarize_func 之前
 
@@ -414,8 +428,56 @@ REQUEST_RETRY_DELAY = request_retry_delay
 RETRY_ATTEMPTS = retry_attempts
 
 # 输出配置
-README_SUM_PATH = readme_sum_path
+README_SUM_PATH = readme_sum_path or os.path.join(os.path.dirname(os.path.dirname(__file__)), 'README-sum.md')
 LANGUAGE = config.get('language', 'zh')
+
+# 日志配置：支持将输出写入文件（可通过 config.log_file 配置路径）
+LOG_FILE = config.get('log_file', os.path.join(os.path.dirname(__file__), 'summarize_stars.log'))
+LOG_MAX_BYTES = _get_int_config('log_max_bytes', 5 * 1024 * 1024)
+LOG_BACKUP_COUNT = _get_int_config('log_backup_count', 3)
+
+logger = logging.getLogger('summarize_stars')
+logger.setLevel(logging.DEBUG if DEBUG_API else logging.INFO)
+formatter = logging.Formatter('%(asctime)s %(levelname)s: %(message)s')
+
+file_handler = RotatingFileHandler(LOG_FILE, maxBytes=LOG_MAX_BYTES, backupCount=LOG_BACKUP_COUNT, encoding='utf-8')
+file_handler.setFormatter(formatter)
+logger.addHandler(file_handler)
+
+# 保留控制台输出，同时将控制台输出也记录到日志文件
+console_handler = logging.StreamHandler()
+console_handler.setFormatter(formatter)
+logger.addHandler(console_handler)
+
+# 将 print()/stderr 输出同时写入日志（tee）
+orig_stdout = sys.stdout
+orig_stderr = sys.stderr
+
+class TeeStream:
+    def __init__(self, orig, lg, level):
+        self.orig = orig
+        self.lg = lg
+        self.level = level
+
+    def write(self, msg):
+        try:
+            self.orig.write(msg)
+        except Exception:
+            pass
+        if msg and msg.strip():
+            try:
+                self.lg.log(self.level, msg.rstrip())
+            except Exception:
+                pass
+
+    def flush(self):
+        try:
+            self.orig.flush()
+        except Exception:
+            pass
+
+sys.stdout = TeeStream(orig_stdout, logger, logging.INFO)
+sys.stderr = TeeStream(orig_stderr, logger, logging.ERROR)
 
 # 打印 API Key 前缀用于调试
 if OPENROUTER_API_KEY:
@@ -636,7 +698,7 @@ def is_valid_summary(summary: str) -> bool:
 
 def summarize_batch(repos: List[Dict], old_summaries: Dict[str, str], use_copilot: bool = False, use_gemini: bool = False) -> List[str]:
     """批量总结仓库，支持选择使用 OpenRouter、GitHub Copilot 或 Gemini"""
-    results = [None] * len(repos)
+    results: List[str] = [""] * len(repos)
     if use_gemini:
         summarize_func = gemini_summarize
         api_name = "Gemini"
@@ -748,6 +810,15 @@ def main():
         if test_first_repo and isinstance(starred, list) and len(starred) > 0:
             print("[TEST MODE] test_first_repo 已启用：仅处理第一个仓库进行调试")
             starred = [starred[0]]
+        # 根据环境变量 MAX_REPOS 限制处理数量，方便在 CI 中避免超时
+        if MAX_REPOS and isinstance(starred, list):
+            try:
+                limit = int(MAX_REPOS)
+                if limit > 0 and len(starred) > limit:
+                    print(f"[LIMIT] 因环境变量 MAX_REPOS={limit}，仅处理前 {limit} 个仓库以避免超时")
+                    starred = starred[:limit]
+            except Exception:
+                pass
         classified = classify_by_language(starred)
         old_summaries = load_old_summaries()
         
