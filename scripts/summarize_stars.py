@@ -35,6 +35,32 @@ def load_config():
 
 config = load_config()
 
+# 安全读取数值型配置的辅助方法，避免 config.get 返回 None/str 导致类型错误
+def _get_int_config(key: str, default: int) -> int:
+    try:
+        if isinstance(config, dict):
+            val = config.get(key, default)
+        else:
+            val = default
+        if val is None:
+            return int(default)
+        return int(val)
+    except Exception:
+        return int(default)
+
+
+def _get_float_config(key: str, default: float) -> float:
+    try:
+        if isinstance(config, dict):
+            val = config.get(key, default)
+        else:
+            val = default
+        if val is None:
+            return float(default)
+        return float(val)
+    except Exception:
+        return float(default)
+
 # 合并调试与测试模式：当环境变量 DEBUG_API=1 或 config.test_first_repo 为 true 时启用详细 API 调试日志
 DEBUG_API = bool(os.environ.get("DEBUG_API")) or bool(config.get('test_first_repo', False))
 
@@ -86,12 +112,13 @@ model_choice = config.get("model_choice", "copilot")
 default_copilot_model = config.get("default_copilot_model")
 default_openrouter_model = config.get("default_openrouter_model")
 default_gemini_model = config.get("default_gemini_model", "gemini-pro")
-max_workers = config.get("max_workers")
-batch_size = config.get("batch_size")
-request_timeout = config.get("request_timeout")
-rate_limit_delay = config.get("rate_limit_delay")
-request_retry_delay = config.get("request_retry_delay")
-retry_attempts = config.get("retry_attempts")
+# 使用安全读取，确保为正确类型
+max_workers = _get_int_config("max_workers", 5)
+batch_size = _get_int_config("batch_size", 1)
+request_timeout = _get_float_config("request_timeout", 10.0)
+rate_limit_delay = _get_float_config("rate_limit_delay", 1.0)
+request_retry_delay = _get_int_config("request_retry_delay", 5)
+retry_attempts = _get_int_config("retry_attempts", 3)
 readme_sum_path = config.get("readme_sum_path")
 
 # 环境变量加载
@@ -264,13 +291,13 @@ def gemini_summarize(repo: Dict) -> Optional[str]:
             if DEBUG_API:
                 print(f"[Gemini] 生成尝试 {attempt}/{gen_retries}, maxOutputTokens={attempt_max_tokens}")
 
-            response = make_api_request(
-                url=request_url,
-                headers=headers,
-                data=payload,
-                retries=config.get("gemini_retry_attempts", RETRY_ATTEMPTS),
-                retry_delay=config.get("gemini_retry_delay", REQUEST_RETRY_DELAY)
-            )
+                response = make_api_request(
+                    url=request_url,
+                    headers=headers,
+                    data=payload,
+                    retries=_get_int_config("gemini_retry_attempts", RETRY_ATTEMPTS),
+                    retry_delay=_get_int_config("gemini_retry_delay", int(REQUEST_RETRY_DELAY))
+                )
 
             if not response or not isinstance(response, dict):
                 if attempt < gen_retries:
@@ -515,7 +542,7 @@ def get_starred_repos() -> List[Dict]:
 
 def load_old_summaries():
     """读取旧的README-sum.md，返回字典: {repo_full_name: summary}，只保留与 config.language 一致的内容"""
-    if not os.path.exists(README_SUM_PATH):
+    if not README_SUM_PATH or not isinstance(README_SUM_PATH, str) or not os.path.exists(README_SUM_PATH):
         print(f"[DEBUG] {README_SUM_PATH} 不存在，跳过加载旧总结")
         return {}
     print(f"[DEBUG] 开始加载旧总结，文件路径: {README_SUM_PATH}")
