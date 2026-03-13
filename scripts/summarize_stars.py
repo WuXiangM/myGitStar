@@ -9,6 +9,7 @@ import re
 import logging
 from logging.handlers import RotatingFileHandler
 import sys
+import random
 
 # 请勿直接把密钥写在代码中。下面使用 config + 环境变量优先策略读取密钥。
 
@@ -149,6 +150,8 @@ except Exception:
 # Copilot API调用计数器
 copilot_api_call_count = 0
 copilot_api_limit = 150  # 默认每日限额
+openrouter_api_call_count = 0
+gemini_api_call_count = 0
 
 def copilot_summarize(repo: Dict) -> Optional[str]:
     """使用 GitHub Copilot API 进行总结"""
@@ -203,6 +206,8 @@ def copilot_summarize(repo: Dict) -> Optional[str]:
 
 def openrouter_summarize(repo: Dict) -> Optional[str]:
     """使用 OpenRouter API 进行总结"""
+    global openrouter_api_call_count
+    openrouter_api_call_count += 1
     if not OPENROUTER_API_KEY:
         print("缺少 OPENROUTER_API_KEY，无法调用 OpenRouter API")
         return None
@@ -239,6 +244,8 @@ def openrouter_summarize(repo: Dict) -> Optional[str]:
 
 def gemini_summarize(repo: Dict) -> Optional[str]:
     """使用 Gemini API 进行总结（优化版）"""
+    global gemini_api_call_count
+    gemini_api_call_count += 1
     # 1. 前置参数验证
     if not GEMINI_API_KEY:
         print("缺少 GEMINI_API_KEY，无法调用 Gemini API")
@@ -506,32 +513,64 @@ def make_api_request(url: str, headers: Dict, data: Dict, retries: int = RETRY_A
         try:
             resp = requests.post(url, headers=headers, data=json.dumps(data), timeout=REQUEST_TIMEOUT)
             if DEBUG_API:
-                print('[API调试]')
-                print(f"请求URL: {url}")
-                print(f"请求Headers: {headers}")
-                print(f"请求Data: {data}")
-                print(f"响应Status: {resp.status_code}")
-                print(f"响应Text: {resp.text}")
+                logger.info('[API调试]')
+                logger.info(f"请求URL: {url}")
+                logger.info(f"请求Headers: {headers}")
+                logger.info(f"请求Data: {data}")
+                logger.info(f"响应Status: {resp.status_code}")
+                logger.info(f"响应Text: {resp.text}")
+
             if resp.status_code == 429:
+                # 优先使用服务器返回的 Retry-After
+                retry_after = None
+                try:
+                    ra = resp.headers.get('Retry-After')
+                    if ra is not None:
+                        retry_after = int(ra)
+                except Exception:
+                    retry_after = None
+
+                if retry_after and attempt < retries - 1:
+                    wait = retry_after
+                    logger.warning(f"遇到 429, 使用 Retry-After 等待 {wait}s 后重试 (尝试 {attempt+1}/{retries})")
+                    time.sleep(wait)
+                    continue
+
+                # 指数回退并带抖动
                 if attempt < retries - 1:
-                    print(f"遇到 429 错误，等待 {retry_delay} 秒后重试... (尝试 {attempt + 1}/{retries})")
-                    time.sleep(retry_delay)
+                    base = int(retry_delay)
+                    wait = base * (2 ** attempt) + random.uniform(0, 1)
+                    logger.warning(f"遇到 429, 等待 {wait:.1f}s 后重试 (尝试 {attempt+1}/{retries})")
+                    time.sleep(wait)
                     continue
                 else:
-                    print("API 429 Too Many Requests")
-                    raise requests.HTTPError("429 Too Many Requests")
+                    logger.error("API 429 Too Many Requests 并且重试用尽")
+                    return {'error': '429', 'message': 'Too Many Requests', 'status_code': 429}
+
             resp.raise_for_status()
-            return resp.json()
-        except Exception as e:
-            print(f"API 调用失败: {e}")
+            try:
+                return resp.json()
+            except Exception:
+                return {'text': resp.text}
+        except requests.HTTPError as e:
+            logger.warning(f"API HTTP 错误: {e}")
             if attempt < retries - 1:
-                print(f"API 调用失败，等待 {retry_delay} 秒后重试: {e}")
-                time.sleep(retry_delay)
+                wait = int(retry_delay) * (2 ** attempt)
+                logger.info(f"HTTP 错误，等待 {wait}s 后重试")
+                time.sleep(wait)
                 continue
             else:
-                if DEBUG_API:
-                    print('[API调试] 重试已用尽，最终失败')
-                print(f"API 调用最终失败: {e}")
+                logger.error(f"API 调用最终失败: {e}")
+                return None
+        except Exception as e:
+            logger.warning(f"API 调用失败: {e}")
+            if attempt < retries - 1:
+                wait = int(retry_delay) * (2 ** attempt) + random.uniform(0, 1)
+                logger.info(f"请求失败，等待 {wait:.1f}s 后重试: {e}")
+                time.sleep(wait)
+                continue
+            else:
+                logger.error(f"API 调用最终失败: {e}")
                 return None
 
 
@@ -824,13 +863,15 @@ def main():
         
         # 新增：根据 update_mode 过滤需要处理的仓库
         if update_mode == "missing_only":
-            # 只处理没有有效总结的仓库
-            filtered_classified = {}
+            # 只对缺失或无效的 summary 做实际的 API 调用，但保留完整仓库列表用于最终输出。
+            # 构建一个 process_set，包含需要调用 AI 的仓库 full_name
+            process_set = set()
             for lang, repos in classified.items():
-                filtered = [repo for repo in repos if not is_valid_summary(old_summaries.get(repo["full_name"], ""))]
-                if filtered:
-                    filtered_classified[lang] = filtered
-            classified_to_process = filtered_classified
+                for repo in repos:
+                    if not is_valid_summary(old_summaries.get(repo.get("full_name", ""), "")):
+                        process_set.add(repo.get('full_name'))
+            # classified_to_process 保留全部仓库（用于生成最终文档），但实际只对 process_set 中的仓库发起调用
+            classified_to_process = classified
         else:
             # 全部仓库都处理
             # 优先处理已有总结不完整或包含错误的仓库（使它们在每次更新时先被刷新）
@@ -915,8 +956,15 @@ def main():
                 }.get(lang, "📝")
                 lines.append(f"## {lang_icon} {lang}（共{len(repos)}个）\n\n")
             
-            for i in range(0, len(repos), BATCH_SIZE):
-                this_batch = repos[i:i+BATCH_SIZE]
+            # 为了避免在 missing_only 模式下把完整仓库列表裁剪掉，我们只对 process_list 发起请求
+            if update_mode == "missing_only":
+                # 只处理需要更新的仓库
+                repos_to_call = [r for r in repos if r.get('full_name') in process_set]
+            else:
+                repos_to_call = repos
+
+            for i in range(0, len(repos_to_call), BATCH_SIZE):
+                this_batch = repos_to_call[i:i+BATCH_SIZE]
                 print(f"处理批次 {i//BATCH_SIZE + 1}，包含 {len(this_batch)} 个仓库...")
                 
                 # 根据选择使用不同的总结函数（优先使用 config.model_choice）
@@ -928,49 +976,55 @@ def main():
                     summaries = summarize_batch(this_batch, old_summaries, use_copilot=False)
                 
                 for repo, summary in zip(this_batch, summaries):
-                    if repo['full_name'] in printed_repos:
-                        continue  # 跳过已输出的仓库
-                    printed_repos.add(repo['full_name'])
-                    
-                    repo_summary_map[repo['full_name']] = summary  # 新增：收集所有仓库的 summary
+                    repo_summary_map[repo['full_name']] = summary  # 收集更新后的 summary
 
-                    # 获取仓库信息
-                    url = repo["html_url"]
-                    stars = repo.get("stargazers_count", 0)
-                    forks = repo.get("forks_count", 0)
-                    language = repo.get("language", "Unknown")
-                    updated_at = repo.get("updated_at", "")
-                    if updated_at:
-                        try:
-                            # 解析时间并格式化
-                            from datetime import datetime
-                            dt = datetime.fromisoformat(updated_at.replace('Z', '+00:00'))
-                            updated_at = dt.strftime("%Y-%m-%d")
-                        except:
-                            updated_at = updated_at[:10]  # 取前10个字符作为日期
-                    
-                    # 构建仓库条目
-                    lines.append(f"### 📌 [{repo['full_name']}]({url})\n\n")
-                    
-                    # 添加仓库元信息
+                # 当使用 missing_only 时，this_batch 仅包含需要更新的仓库；后续在写入阶段会合并老的 summary
+
+            # 在写入阶段遍历原始 repos 列表，优先使用更新后的 summary（若存在），否则使用旧的 summary
+            for repo in repos:
+                if repo['full_name'] in printed_repos:
+                    continue  # 跳过已输出的仓库
+                printed_repos.add(repo['full_name'])
+
+                summary = repo_summary_map.get(repo['full_name']) or old_summaries.get(repo['full_name'], "")
+
+                # 获取仓库信息
+                url = repo["html_url"]
+                stars = repo.get("stargazers_count", 0)
+                forks = repo.get("forks_count", 0)
+                language = repo.get("language", "Unknown")
+                updated_at = repo.get("updated_at", "")
+                if updated_at:
+                    try:
+                        # 解析时间并格式化
+                        from datetime import datetime
+                        dt = datetime.fromisoformat(updated_at.replace('Z', '+00:00'))
+                        updated_at = dt.strftime("%Y-%m-%d")
+                    except:
+                        updated_at = updated_at[:10]  # 取前10个字符作为日期
+                
+                # 构建仓库条目
+                lines.append(f"### 📌 [{repo['full_name']}]({url})\n\n")
+
+                # 添加仓库元信息
+                if LANGUAGE == 'en':
+                    lines.append(f"**⭐ Stars:** {stars:,} | **🍴 Forks:** {forks:,} | **📅 Updated:** {updated_at}\n\n")
+                else:
+                    lines.append(f"**⭐ Stars:** {stars:,} | **🍴 Forks:** {forks:,} | **📅 更新:** {updated_at}\n\n")
+
+                # 添加AI总结内容
+                if summary and summary.strip():
+                    print(f"[DEBUG] 写入MD: {repo['full_name']} | 内容: {summary[:60]}...")
+                    lines.append(f"{summary}\n\n")
+                else:
+                    print(f"[DEBUG] 写入MD: {repo['full_name']} | 内容: *暂无AI总结*")
                     if LANGUAGE == 'en':
-                        lines.append(f"**⭐ Stars:** {stars:,} | **🍴 Forks:** {forks:,} | **📅 Updated:** {updated_at}\n\n")
+                        lines.append("*No AI summary available*\n\n")
                     else:
-                        lines.append(f"**⭐ Stars:** {stars:,} | **🍴 Forks:** {forks:,} | **📅 更新:** {updated_at}\n\n")
-                    
-                    # 添加AI总结内容
-                    if summary and summary.strip():
-                        print(f"[DEBUG] 写入MD: {repo['full_name']} | 内容: {summary[:60]}...")
-                        lines.append(f"{summary}\n\n")
-                    else:
-                        print(f"[DEBUG] 写入MD: {repo['full_name']} | 内容: *暂无AI总结*")
-                        if LANGUAGE == 'en':
-                            lines.append("*No AI summary available*\n\n")
-                        else:
-                            lines.append("*暂无AI总结*\n\n")
-                    
-                    lines.append("---\n\n")
-                    processed_repos += 1
+                        lines.append("*暂无AI总结*\n\n")
+
+                lines.append("---\n\n")
+                processed_repos += 1
                 
                 print(f"已处理 {processed_repos}/{total_repos} 个仓库")
                 time.sleep(RATE_LIMIT_DELAY)  # 避免 API 限流
@@ -982,6 +1036,7 @@ def main():
             lines.append(f"- **Languages:** {len(classified_to_process)}\n")
             lines.append(f"- **Generated on:** {current_time}\n")
             lines.append(f"- **AI Model:** {api_name}\n\n")
+            lines.append(f"- **API Calls:** Copilot={copilot_api_call_count}, OpenRouter={openrouter_api_call_count}, Gemini={gemini_api_call_count}\n")
             lines.append("---\n\n")
             lines.append("*This document is generated by AI. For any errors, please refer to the original repository information.*\n")
         else:
@@ -990,6 +1045,7 @@ def main():
             lines.append(f"- **编程语言数：** {len(classified_to_process)} 种\n")
             lines.append(f"- **生成时间：** {current_time}\n")
             lines.append(f"- **AI模型：** {api_name}\n\n")
+            lines.append(f"- **API 调用次数：** Copilot={copilot_api_call_count}，OpenRouter={openrouter_api_call_count}，Gemini={gemini_api_call_count}\n")
             lines.append("---\n\n")
             lines.append("*本文档由AI自动生成，如有错误请以原仓库信息为准。*\n")
 
