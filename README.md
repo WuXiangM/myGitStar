@@ -34,7 +34,7 @@
 
 ### 📌 [666ghj/MiroFish](https://github.com/666ghj/MiroFish)
 
-**⭐ Stars:** 22,084 | **🍴 Forks:** 2,417 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 22,144 | **🍴 Forks:** 2,426 | **📅 Updated:** 2026-03-14
 
 Gemini API 错误: Too Many Requests
 
@@ -50,7 +50,7 @@ Gemini API 错误: Too Many Requests
 
 ### 📌 [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
 
-**⭐ Stars:** 43,809 | **🍴 Forks:** 4,409 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 43,816 | **🍴 Forks:** 4,410 | **📅 Updated:** 2026-03-14
 
 Gemini API 错误: Too Many Requests
 
@@ -58,7 +58,8 @@ Gemini API 错误: Too Many Requests
 
 ### 📌 [cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources)
 
-**⭐ Stars:** 15,567 | **🍴 Forks:** 1,547 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 15,570 | **🍴 Forks:** 1,548 | **📅 Updated:** 2026-03-14
+
 
 
 
@@ -76,7 +77,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [Anjok07/ultimatevocalremovergui](https://github.com/Anjok07/ultimatevocalremovergui)
 
-**⭐ Stars:** 23,897 | **🍴 Forks:** 1,780 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 23,898 | **🍴 Forks:** 1,780 | **📅 Updated:** 2026-03-14
+
 
 
 
@@ -94,7 +96,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [anthropics/skills](https://github.com/anthropics/skills)
 
-**⭐ Stars:** 92,937 | **🍴 Forks:** 9,947 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 92,958 | **🍴 Forks:** 9,949 | **📅 Updated:** 2026-03-14
+
 
 
 
@@ -110,6 +113,7 @@ Here is the summary of the GitHub repository:
 ### 📌 [Kevin-thu/StoryMem](https://github.com/Kevin-thu/StoryMem)
 
 **⭐ Stars:** 697 | **🍴 Forks:** 70 | **📅 Updated:** 2026-03-11
+
 
 
 
@@ -133,6 +137,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 Here's the summary of the GitHub repository:
 
 1. **Repository Name:** Usagi-org/ai-goofish-monitor
@@ -142,6 +147,7 @@ Here's the summary of the GitHub repository:
 ### 📌 [zhu-xlab/GlobalBuildingAtlas](https://github.com/zhu-xlab/GlobalBuildingAtlas)
 
 **⭐ Stars:** 2,015 | **🍴 Forks:** 194 | **📅 Updated:** 2026-03-13
+
 
 
 
@@ -163,6 +169,7 @@ Here's the summary of the GlobalBuildingAtlas GitHub repository:
 
 
 
+
 Here's the summary of the BabelDOC GitHub repository:
 
 1. **Repository Name:** funstory-ai/BabelDOC
@@ -178,6 +185,7 @@ Here's the summary of the BabelDOC GitHub repository:
 
 
 
+
 1. **Repository Name:** PDFMathTranslate/PDFMathTranslate
 2. **Brief Introduction:** An AI-powered tool for translating
 
@@ -186,6 +194,7 @@ Here's the summary of the BabelDOC GitHub repository:
 ### 📌 [HKUDS/Paper2Slides](https://github.com/HKUDS/Paper2Slides)
 
 **⭐ Stars:** 3,172 | **🍴 Forks:** 420 | **📅 Updated:** 2026-03-13
+
 
 
 
@@ -209,6 +218,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 1. **Repository Name:** jimmc414/Kosmos
 2. **Brief Introduction:** This repository implements Kosmos, an AI Scientist for autonomous discovery
 
@@ -216,7 +226,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [HisMax/RedInk](https://github.com/HisMax/RedInk)
 
-**⭐ Stars:** 5,008 | **🍴 Forks:** 962 | **📅 Updated:** 2026-03-13
+**⭐ Stars:** 5,009 | **🍴 Forks:** 962 | **📅 Updated:** 2026-03-14
+
 
 
 
@@ -232,6 +243,7 @@ Here's the summary of the RedInk GitHub repository:
 ### 📌 [facebookresearch/sam-3d-body](https://github.com/facebookresearch/sam-3d-body)
 
 **⭐ Stars:** 2,714 | **🍴 Forks:** 305 | **📅 Updated:** 2026-03-13
+
 
 
 
@@ -255,6 +267,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 Here's the summary of the GitHub repository:
 
 1. **Repository Name:** facebookresearch/sam-3d-objects
@@ -264,7 +277,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [sansan0/TrendRadar](https://github.com/sansan0/TrendRadar)
 
-**⭐ Stars:** 48,877 | **🍴 Forks:** 22,630 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 48,880 | **🍴 Forks:** 22,632 | **📅 Updated:** 2026-03-14
+
 
 
 
@@ -279,7 +293,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [jianchang512/pyvideotrans](https://github.com/jianchang512/pyvideotrans)
 
-**⭐ Stars:** 16,417 | **🍴 Forks:** 1,926 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 16,419 | **🍴 Forks:** 1,926 | **📅 Updated:** 2026-03-14
+
 
 
 
@@ -297,7 +312,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [666ghj/BettaFish](https://github.com/666ghj/BettaFish)
 
-**⭐ Stars:** 38,530 | **🍴 Forks:** 7,197 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 38,535 | **🍴 Forks:** 7,197 | **📅 Updated:** 2026-03-14
+
 
 
 
@@ -314,7 +330,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [YILING0013/AI_NovelGenerator](https://github.com/YILING0013/AI_NovelGenerator)
 
-**⭐ Stars:** 3,624 | **🍴 Forks:** 675 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 3,625 | **🍴 Forks:** 675 | **📅 Updated:** 2026-03-14
+
 
 
 
@@ -338,6 +355,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 Here's the summary of the GitHub repository:
 
 1. **Repository Name:** guofei9987/blind_watermark
@@ -347,6 +365,7 @@ Here's the summary of the GitHub repository:
 ### 📌 [CharlesKeeling65/ManureCouplingStrategies](https://github.com/CharlesKeeling65/ManureCouplingStrategies)
 
 **⭐ Stars:** 3 | **🍴 Forks:** 0 | **📅 Updated:** 2025-09-04
+
 
 
 
@@ -368,6 +387,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 Here's the summary of the GitHub repository:
 
 1. **Repository Name:** tadata-org/fastapi_mcp
@@ -380,7 +400,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [mikf/gallery-dl](https://github.com/mikf/gallery-dl)
 
-**⭐ Stars:** 17,164 | **🍴 Forks:** 1,351 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 17,166 | **🍴 Forks:** 1,351 | **📅 Updated:** 2026-03-14
+
 
 
 
@@ -398,7 +419,8 @@ Here is the summary of the GitHub repository:
 
 ### 📌 [roboflow/supervision](https://github.com/roboflow/supervision)
 
-**⭐ Stars:** 36,689 | **🍴 Forks:** 3,127 | **📅 Updated:** 2026-03-13
+**⭐ Stars:** 36,690 | **🍴 Forks:** 3,127 | **📅 Updated:** 2026-03-14
+
 
 
 
@@ -412,7 +434,8 @@ Here's a summary of the `roboflow/supervision` GitHub repository:
 
 ### 📌 [lllyasviel/FramePack](https://github.com/lllyasviel/FramePack)
 
-**⭐ Stars:** 16,669 | **🍴 Forks:** 1,650 | **📅 Updated:** 2026-03-13
+**⭐ Stars:** 16,670 | **🍴 Forks:** 1,650 | **📅 Updated:** 2026-03-14
+
 
 
 
@@ -432,6 +455,7 @@ Here's a summary of the lllyasviel/FramePack GitHub repository:
 
 
 
+
 Here is the summary of the GitHub repository:
 
 1. **Repository Name:** nunchaku-ai/nunchaku
@@ -441,7 +465,8 @@ Here is the summary of the GitHub repository:
 
 ### 📌 [NanmiCoder/MediaCrawler](https://github.com/NanmiCoder/MediaCrawler)
 
-**⭐ Stars:** 45,727 | **🍴 Forks:** 9,887 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 45,728 | **🍴 Forks:** 9,887 | **📅 Updated:** 2026-03-14
+
 
 
 
@@ -461,6 +486,7 @@ Here's the summary of the NanmiCoder/MediaCrawler GitHub repository:
 
 
 
+
 Here's the summary of the `arcee-ai/mergekit` GitHub repository:
 
 1. **Repository Name:** arcee-ai/mergekit
@@ -471,7 +497,8 @@ Here's the summary of the `arcee-ai/mergekit` GitHub repository:
 
 ### 📌 [opendatalab/MinerU](https://github.com/opendatalab/MinerU)
 
-**⭐ Stars:** 56,127 | **🍴 Forks:** 4,657 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 56,128 | **🍴 Forks:** 4,656 | **📅 Updated:** 2026-03-14
+
 
 
 
@@ -488,7 +515,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [Zie619/n8n-workflows](https://github.com/Zie619/n8n-workflows)
 
-**⭐ Stars:** 52,881 | **🍴 Forks:** 6,825 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 52,881 | **🍴 Forks:** 6,823 | **📅 Updated:** 2026-03-14
+
 
 
 
@@ -506,7 +534,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [hpcaitech/Open-Sora](https://github.com/hpcaitech/Open-Sora)
 
-**⭐ Stars:** 28,685 | **🍴 Forks:** 2,907 | **📅 Updated:** 2026-03-13
+**⭐ Stars:** 28,686 | **🍴 Forks:** 2,907 | **📅 Updated:** 2026-03-14
+
 
 
 
@@ -524,6 +553,7 @@ Here's the summary of the Open-Sora GitHub repository:
 ### 📌 [1Panel-dev/MaxKB](https://github.com/1Panel-dev/MaxKB)
 
 **⭐ Stars:** 20,331 | **🍴 Forks:** 2,666 | **📅 Updated:** 2026-03-14
+
 
 
 
@@ -547,6 +577,7 @@ Here's the summary of the MaxKB GitHub repository:
 
 
 
+
 Here's the summary of the GitHub repository:
 
 1. **Repository Name:** Peterande/D-FINE
@@ -561,7 +592,7 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [anomalyco/opencode](https://github.com/anomalyco/opencode)
 
-**⭐ Stars:** 121,768 | **🍴 Forks:** 12,609 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 121,782 | **🍴 Forks:** 12,612 | **📅 Updated:** 2026-03-14
 
 Gemini API 错误: Too Many Requests
 
@@ -569,7 +600,7 @@ Gemini API 错误: Too Many Requests
 
 ### 📌 [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio)
 
-**⭐ Stars:** 41,441 | **🍴 Forks:** 3,831 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 41,443 | **🍴 Forks:** 3,831 | **📅 Updated:** 2026-03-14
 
 Gemini API 错误: Too Many Requests
 
@@ -577,7 +608,7 @@ Gemini API 错误: Too Many Requests
 
 ### 📌 [openclaw/openclaw](https://github.com/openclaw/openclaw)
 
-**⭐ Stars:** 311,132 | **🍴 Forks:** 59,182 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 311,204 | **🍴 Forks:** 59,210 | **📅 Updated:** 2026-03-14
 
 Gemini API 错误: Too Many Requests
 
@@ -593,7 +624,7 @@ Gemini API 错误: Too Many Requests
 
 ### 📌 [Anionex/banana-slides](https://github.com/Anionex/banana-slides)
 
-**⭐ Stars:** 12,925 | **🍴 Forks:** 1,511 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 12,926 | **🍴 Forks:** 1,511 | **📅 Updated:** 2026-03-14
 
 Gemini API 错误: Too Many Requests
 
@@ -625,7 +656,7 @@ Gemini API 错误: Too Many Requests
 
 ### 📌 [iptv-org/iptv](https://github.com/iptv-org/iptv)
 
-**⭐ Stars:** 112,852 | **🍴 Forks:** 5,715 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 112,852 | **🍴 Forks:** 5,717 | **📅 Updated:** 2026-03-14
 
 Gemini API 错误: Too Many Requests
 
@@ -681,7 +712,7 @@ Gemini API 错误: Too Many Requests
 
 ### 📌 [cline/cline](https://github.com/cline/cline)
 
-**⭐ Stars:** 58,956 | **🍴 Forks:** 5,960 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 58,957 | **🍴 Forks:** 5,960 | **📅 Updated:** 2026-03-14
 
 Gemini API 错误: Too Many Requests
 
@@ -689,7 +720,7 @@ Gemini API 错误: Too Many Requests
 
 ### 📌 [google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli)
 
-**⭐ Stars:** 97,618 | **🍴 Forks:** 12,235 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 97,623 | **🍴 Forks:** 12,236 | **📅 Updated:** 2026-03-14
 
 Gemini API 错误: Too Many Requests
 
@@ -713,7 +744,7 @@ Gemini API 错误: Too Many Requests
 
 ### 📌 [firecrawl/firecrawl](https://github.com/firecrawl/firecrawl)
 
-**⭐ Stars:** 92,668 | **🍴 Forks:** 6,415 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 92,676 | **🍴 Forks:** 6,416 | **📅 Updated:** 2026-03-14
 
 Gemini API 错误: Too Many Requests
 
@@ -721,7 +752,7 @@ Gemini API 错误: Too Many Requests
 
 ### 📌 [langgenius/dify](https://github.com/langgenius/dify)
 
-**⭐ Stars:** 132,711 | **🍴 Forks:** 20,687 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 132,715 | **🍴 Forks:** 20,688 | **📅 Updated:** 2026-03-14
 
 Gemini API 错误: Too Many Requests
 
@@ -729,7 +760,7 @@ Gemini API 错误: Too Many Requests
 
 ### 📌 [n8n-io/n8n](https://github.com/n8n-io/n8n)
 
-**⭐ Stars:** 179,020 | **🍴 Forks:** 55,768 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 179,032 | **🍴 Forks:** 55,770 | **📅 Updated:** 2026-03-14
 
 Gemini API 错误: Too Many Requests
 
@@ -737,7 +768,7 @@ Gemini API 错误: Too Many Requests
 
 ### 📌 [linshenkx/prompt-optimizer](https://github.com/linshenkx/prompt-optimizer)
 
-**⭐ Stars:** 24,357 | **🍴 Forks:** 2,904 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 24,374 | **🍴 Forks:** 2,905 | **📅 Updated:** 2026-03-14
 
 Gemini API 错误: Too Many Requests
 
@@ -747,7 +778,8 @@ Gemini API 错误: Too Many Requests
 
 ### 📌 [hmjz100/LinkSwift](https://github.com/hmjz100/LinkSwift)
 
-**⭐ Stars:** 12,961 | **🍴 Forks:** 725 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 12,985 | **🍴 Forks:** 727 | **📅 Updated:** 2026-03-14
+
 
 
 
@@ -763,6 +795,7 @@ Here's the summary of the GitHub repository:
 ### 📌 [fogsightai/fogsight](https://github.com/fogsightai/fogsight)
 
 **⭐ Stars:** 2,336 | **🍴 Forks:** 352 | **📅 Updated:** 2026-03-14
+
 
 
 
@@ -784,6 +817,7 @@ Here's the summary of the Fogsight repository:
 
 
 
+
 Here's the summary of the GitHub repository:
 
 1. **Repository Name:** glidea/banana-prompt-quicker
@@ -799,6 +833,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 Here's the summary of the PlayCanvas Engine repository:
 
 1. **Repository Name:** playcanvas/engine
@@ -809,6 +844,7 @@ Here's the summary of the PlayCanvas Engine repository:
 ### 📌 [xanderfrangos/twinkle-tray](https://github.com/xanderfrangos/twinkle-tray)
 
 **⭐ Stars:** 8,114 | **🍴 Forks:** 277 | **📅 Updated:** 2026-03-13
+
 
 
 
@@ -832,6 +868,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 Here's the summary of the GitHub repository:
 
 1. **Repository Name:** wordshub/free-font
@@ -842,6 +879,7 @@ Here's the summary of the GitHub repository:
 ### 📌 [mrdoob/three.js](https://github.com/mrdoob/three.js)
 
 **⭐ Stars:** 111,346 | **🍴 Forks:** 36,302 | **📅 Updated:** 2026-03-14
+
 
 
 
@@ -865,7 +903,7 @@ Gemini API 错误: Too Many Requests
 
 ### 📌 [VoltAgent/awesome-openclaw-skills](https://github.com/VoltAgent/awesome-openclaw-skills)
 
-**⭐ Stars:** 36,995 | **🍴 Forks:** 3,528 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 37,015 | **🍴 Forks:** 3,532 | **📅 Updated:** 2026-03-14
 
 Gemini API 错误: Too Many Requests
 
@@ -874,6 +912,7 @@ Gemini API 错误: Too Many Requests
 ### 📌 [lukasmasuch/best-of-ml-python](https://github.com/lukasmasuch/best-of-ml-python)
 
 **⭐ Stars:** 23,317 | **🍴 Forks:** 3,105 | **📅 Updated:** 2026-03-13
+
 
 
 
@@ -890,7 +929,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [ashishpatel26/500-AI-Agents-Projects](https://github.com/ashishpatel26/500-AI-Agents-Projects)
 
-**⭐ Stars:** 26,363 | **🍴 Forks:** 4,598 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 26,365 | **🍴 Forks:** 4,598 | **📅 Updated:** 2026-03-14
+
 
 
 
@@ -914,6 +954,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 Here's the summary of the GitHub repository:
 
 1. **Repository Name:** svcvit/Awesome-Dify-Workflow
@@ -932,6 +973,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 Here's the summary of the GitHub repository:
 
 1. **Repository Name:** zijie0/HumanSystemOptimization
@@ -943,7 +985,7 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser)
 
-**⭐ Stars:** 21,738 | **🍴 Forks:** 1,276 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 21,747 | **🍴 Forks:** 1,276 | **📅 Updated:** 2026-03-14
 
 Gemini API 错误: Too Many Requests
 
@@ -959,7 +1001,7 @@ Gemini API 错误: Too Many Requests
 
 ### 📌 [astral-sh/uv](https://github.com/astral-sh/uv)
 
-**⭐ Stars:** 80,910 | **🍴 Forks:** 2,682 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 80,909 | **🍴 Forks:** 2,681 | **📅 Updated:** 2026-03-14
 
 Gemini API 错误: Too Many Requests
 
@@ -983,6 +1025,7 @@ Gemini API 错误: Too Many Requests
 
 
 
+
 1. **Repository Name:** githubnext/monaspace
 2. **Brief Introduction:** Monaspace is a unique superfamily of fonts designed specifically for coding, enhancing readability and aesthetics for developers.
 3. **Innovations:** Features include a variety of styles and weights tailored for different coding environments, improved character recognition, and support for multiple programming languages.
@@ -995,7 +1038,8 @@ Gemini API 错误: Too Many Requests
 
 ### 📌 [obra/superpowers](https://github.com/obra/superpowers)
 
-**⭐ Stars:** 82,072 | **🍴 Forks:** 6,380 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 82,110 | **🍴 Forks:** 6,383 | **📅 Updated:** 2026-03-14
+
 
 
 
@@ -1013,7 +1057,7 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [anthropics/claude-code](https://github.com/anthropics/claude-code)
 
-**⭐ Stars:** 77,675 | **🍴 Forks:** 6,333 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 77,691 | **🍴 Forks:** 6,335 | **📅 Updated:** 2026-03-14
 
 Gemini API 错误: Too Many Requests
 
@@ -1031,7 +1075,7 @@ Gemini API 错误: Too Many Requests
 
 ### 📌 [DigitalPlatDev/FreeDomain](https://github.com/DigitalPlatDev/FreeDomain)
 
-**⭐ Stars:** 152,222 | **🍴 Forks:** 2,618 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 152,232 | **🍴 Forks:** 2,618 | **📅 Updated:** 2026-03-14
 
 Gemini API 错误: Too Many Requests
 
@@ -1047,7 +1091,7 @@ Gemini API 错误: Too Many Requests
 
 ### 📌 [ripienaar/free-for-dev](https://github.com/ripienaar/free-for-dev)
 
-**⭐ Stars:** 119,908 | **🍴 Forks:** 12,393 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 119,911 | **🍴 Forks:** 12,394 | **📅 Updated:** 2026-03-14
 
 Gemini API 错误: Too Many Requests
 
@@ -1055,7 +1099,7 @@ Gemini API 错误: Too Many Requests
 
 ### 📌 [Sjj1024/PakePlus](https://github.com/Sjj1024/PakePlus)
 
-**⭐ Stars:** 10,787 | **🍴 Forks:** 4,289 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 10,788 | **🍴 Forks:** 4,289 | **📅 Updated:** 2026-03-14
 
 Gemini API 错误: Too Many Requests
 
@@ -1066,6 +1110,7 @@ Gemini API 错误: Too Many Requests
 ### 📌 [Diorser/LiteMonitor](https://github.com/Diorser/LiteMonitor)
 
 **⭐ Stars:** 4,345 | **🍴 Forks:** 177 | **📅 Updated:** 2026-03-14
+
 
 
 
@@ -1089,6 +1134,7 @@ Here's the summary of the LiteMonitor GitHub repository:
 
 
 
+
 Here's the summary of the GitHub repository:
 
 1. **Repository Name:** Flow-Launcher/Flow.Launcher
@@ -1107,6 +1153,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 1. **Repository Name:** DearVa/Everywhere
@@ -1119,7 +1166,8 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 ### 📌 [ZyperWave/ZyperWinOptimize](https://github.com/ZyperWave/ZyperWinOptimize)
 
-**⭐ Stars:** 6,942 | **🍴 Forks:** 415 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 6,943 | **🍴 Forks:** 415 | **📅 Updated:** 2026-03-14
+
 
 
 
@@ -1145,7 +1193,7 @@ Gemini API 错误: Too Many Requests
 
 ### 📌 [OpenListTeam/OpenList](https://github.com/OpenListTeam/OpenList)
 
-**⭐ Stars:** 21,311 | **🍴 Forks:** 1,801 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 21,313 | **🍴 Forks:** 1,801 | **📅 Updated:** 2026-03-14
 
 Gemini API 错误: Too Many Requests
 
@@ -1153,7 +1201,7 @@ Gemini API 错误: Too Many Requests
 
 ### 📌 [ollama/ollama](https://github.com/ollama/ollama)
 
-**⭐ Stars:** 164,992 | **🍴 Forks:** 14,962 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 164,995 | **🍴 Forks:** 14,962 | **📅 Updated:** 2026-03-14
 
 Gemini API 错误: Too Many Requests
 
@@ -1163,7 +1211,7 @@ Gemini API 错误: Too Many Requests
 
 ### 📌 [allenk/GeminiWatermarkTool](https://github.com/allenk/GeminiWatermarkTool)
 
-**⭐ Stars:** 1,797 | **🍴 Forks:** 148 | **📅 Updated:** 2026-03-13
+**⭐ Stars:** 1,798 | **🍴 Forks:** 148 | **📅 Updated:** 2026-03-14
 
 Gemini API 错误: Too Many Requests
 
@@ -1205,6 +1253,7 @@ Gemini API 错误: Too Many Requests
 
 
 
+
 Here's the summary of the GitHub repository:
 
 1. **Repository Name:** roboflow/notebooks
@@ -1217,7 +1266,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [patchy631/ai-engineering-hub](https://github.com/patchy631/ai-engineering-hub)
 
-**⭐ Stars:** 31,947 | **🍴 Forks:** 5,231 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 31,950 | **🍴 Forks:** 5,233 | **📅 Updated:** 2026-03-14
+
 
 
 
@@ -1265,7 +1315,7 @@ Gemini API 错误: Too Many Requests
 
 ### 📌 [tldr-pages/tldr](https://github.com/tldr-pages/tldr)
 
-**⭐ Stars:** 61,643 | **🍴 Forks:** 5,110 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 61,645 | **🍴 Forks:** 5,110 | **📅 Updated:** 2026-03-14
 
 Gemini API 错误: Too Many Requests
 
@@ -1275,7 +1325,7 @@ Gemini API 错误: Too Many Requests
 
 ### 📌 [dair-ai/Prompt-Engineering-Guide](https://github.com/dair-ai/Prompt-Engineering-Guide)
 
-**⭐ Stars:** 71,571 | **🍴 Forks:** 7,643 | **📅 Updated:** 2026-03-14
+**⭐ Stars:** 71,573 | **🍴 Forks:** 7,642 | **📅 Updated:** 2026-03-14
 
 Gemini API 错误: Too Many Requests
 
