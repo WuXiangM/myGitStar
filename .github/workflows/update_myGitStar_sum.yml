@@ -34,7 +34,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_ACTOR: ${{ github.actor }}
           # 限制每次 Action 处理的仓库数量，避免超时/超配额，设置为 0 或留空表示不限
-          MAX_REPOS: 100
+            # 限制每次 Action 处理的仓库数量由 config.yaml 中的 `max_repos` 控制（或环境变量 `MAX_REPOS` 覆盖），因此此处不再设置
         run: python scripts/summarize_stars.py
 
       - name: Print Copilot API call count

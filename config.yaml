@@ -15,12 +15,21 @@ default_openrouter_model: deepseek/deepseek-prover-v2:free
 default_gemini_model: gemini-2.0-flash
 readme_sum_path: README.md # output README.md
 
-max_workers: 1
-batch_size: 1
-request_timeout: 10 # s
-rate_limit_delay: 10 # s
-request_retry_delay: 10 # s
-retry_attempts: 3
+max_workers: 1 # 最大并发数，建议根据个人网络环境调整
+batch_size: 4 # 每个请求处理的仓库数量（保守推荐: 4）
+request_timeout: 15 # s, 每个请求的超时时间
+rate_limit_delay: 0.5 # s, 每个批次之间的延迟（保守，减少总体速率）
+request_retry_delay: 2 # s, 每个请求重试的延迟（网络层）
+retry_attempts: 1 # 每个请求重试次数（保守：1）
+
+# Gemini 特定的保守配置
+gemini_generation_retries: 1
+gemini_retry_backoff: 2
+gemini_retry_attempts: 1
+gemini_retry_delay: 2
+gemini_max_output_tokens: 800
+# 每次运行处理的最大仓库数，优先使用环境变量 MAX_REPOS，如未设置则使用此配置（0 或留空 表示不限制）
+max_repos: 100
 
 # 更新模式，可选值：'all'（全部更新）或 'missing_only'（仅更新缺失总结）
 # Update mode: 'all' or 'missing_only'

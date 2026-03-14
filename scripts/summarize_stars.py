@@ -134,16 +134,26 @@ if github_username == "0" or github_username == 0:
 else:
     GITHUB_USERNAME = github_username
 
-# 限制每次运行处理的最大仓库数（可通过环境变量 MAX_REPOS 设置）
+# 限制每次运行处理的最大仓库数：优先使用环境变量 `MAX_REPOS`，若不存在则使用 config 中的 `max_repos`。
 MAX_REPOS = None
-try:
-    max_repos_env = os.environ.get('MAX_REPOS')
-    if max_repos_env:
+max_repos_env = os.environ.get('MAX_REPOS')
+if max_repos_env:
+    try:
         mr = int(max_repos_env)
         if mr > 0:
             MAX_REPOS = mr
-except Exception:
-    MAX_REPOS = None
+    except Exception:
+        MAX_REPOS = None
+else:
+    try:
+        if isinstance(config, dict):
+            cfg_mr = config.get('max_repos')
+            if cfg_mr is not None and cfg_mr != 0:
+                mr = int(cfg_mr)
+                if mr > 0:
+                    MAX_REPOS = mr
+    except Exception:
+        MAX_REPOS = None
 
 # 将 copilot_summarize 和 openrouter_summarize 函数移动到 get_summarize_func 之前
 
@@ -545,7 +555,7 @@ def make_api_request(url: str, headers: Dict, data: Dict, retries: int = RETRY_A
                     continue
                 else:
                     logger.error("API 429 Too Many Requests 并且重试用尽")
-                    return {'error': '429', 'message': 'Too Many Requests', 'status_code': 429}
+                    return {'error': {'code': 429, 'message': 'Too Many Requests'}, 'status_code': 429}
 
             resp.raise_for_status()
             try:
