@@ -310,15 +310,15 @@ def gemini_summarize(repo: Dict) -> Optional[str]:
             payload["generationConfig"]["maxOutputTokens"] = attempt_max_tokens
 
             if DEBUG_API:
-                print(f"[Gemini] 生成尝试 {attempt}/{gen_retries}, maxOutputTokens={attempt_max_tokens}")
+                logger.info(f"[Gemini] 生成尝试 {attempt}/{gen_retries}, maxOutputTokens={attempt_max_tokens}")
 
-                response = make_api_request(
-                    url=request_url,
-                    headers=headers,
-                    data=payload,
-                    retries=_get_int_config("gemini_retry_attempts", RETRY_ATTEMPTS),
-                    retry_delay=_get_int_config("gemini_retry_delay", int(REQUEST_RETRY_DELAY))
-                )
+            response = make_api_request(
+                url=request_url,
+                headers=headers,
+                data=payload,
+                retries=_get_int_config("gemini_retry_attempts", RETRY_ATTEMPTS),
+                retry_delay=_get_int_config("gemini_retry_delay", int(REQUEST_RETRY_DELAY))
+            )
 
             if not response or not isinstance(response, dict):
                 if attempt < gen_retries:
