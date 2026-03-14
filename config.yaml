@@ -4,7 +4,7 @@ language: en
 
 # 模型选择，可选值: 'copilot'、'openrouter' 或 'gemini'
 # Model selection: 'copilot', 'openrouter', 'gemini'
-model_choice: gemini
+model_choice: copilot
 
 
 # GitHub用户名，设置为0时自动使用 workflow 账号，或填写指定用户名
@@ -29,7 +29,7 @@ gemini_retry_attempts: 1 # 每个请求重试次数（保守：1）
 gemini_retry_delay: 2 # s, 每次重试的延迟（保守：2）
 gemini_max_output_tokens: 2000 # 最大输出token数（保守：800）
 # 每次运行处理的最大仓库数，优先使用环境变量 MAX_REPOS，如未设置则使用此配置（0 或留空 表示不限制）
-max_repos: 100
+max_repos: 50
 
 # 更新模式，可选值：'all'（全部更新）或 'missing_only'（仅更新缺失总结）
 # Update mode: 'all' or 'missing_only'
