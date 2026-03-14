@@ -17,17 +17,17 @@ readme_sum_path: README.md # output README.md
 
 max_workers: 1 # 最大并发数，建议根据个人网络环境调整
 batch_size: 4 # 每个请求处理的仓库数量（保守推荐: 4）
-request_timeout: 15 # s, 每个请求的超时时间
-rate_limit_delay: 0.5 # s, 每个批次之间的延迟（保守，减少总体速率）
+request_timeout: 30 # s, 每个请求的超时时间
+rate_limit_delay: 5 # s, 每个批次之间的延迟（保守，减少总体速率）
 request_retry_delay: 2 # s, 每个请求重试的延迟（网络层）
 retry_attempts: 1 # 每个请求重试次数（保守：1）
 
 # Gemini 特定的保守配置
-gemini_generation_retries: 1
-gemini_retry_backoff: 2
-gemini_retry_attempts: 1
-gemini_retry_delay: 2
-gemini_max_output_tokens: 800
+gemini_generation_retries: 1 # 每个请求重试次数（保守：1）
+gemini_retry_backoff: 2 # 每次重试的延迟倍数（保守：2）
+gemini_retry_attempts: 1 # 每个请求重试次数（保守：1）
+gemini_retry_delay: 2 # s, 每次重试的延迟（保守：2）
+gemini_max_output_tokens: 2000 # 最大输出token数（保守：800）
 # 每次运行处理的最大仓库数，优先使用环境变量 MAX_REPOS，如未设置则使用此配置（0 或留空 表示不限制）
 max_repos: 100
 
