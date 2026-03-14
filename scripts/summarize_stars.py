@@ -10,6 +10,8 @@ import logging
 from logging.handlers import RotatingFileHandler
 import sys
 import random
+import threading
+import time as _time
 
 # 请勿直接把密钥写在代码中。下面使用 config + 环境变量优先策略读取密钥。
 
@@ -144,16 +146,33 @@ if max_repos_env:
             MAX_REPOS = mr
     except Exception:
         MAX_REPOS = None
-else:
-    try:
-        if isinstance(config, dict):
-            cfg_mr = config.get('max_repos')
-            if cfg_mr is not None and cfg_mr != 0:
-                mr = int(cfg_mr)
-                if mr > 0:
-                    MAX_REPOS = mr
-    except Exception:
-        MAX_REPOS = None
+
+# 全局速率限制配置（请求每秒数），默认保守 0.5 req/s（即每 2s 一次）
+GLOBAL_QPS = _get_float_config('global_qps', 0.5)
+
+
+class SimpleThrottle:
+    def __init__(self, qps: float):
+        self.interval = 1.0 / qps if qps and qps > 0 else 0.0
+        self.lock = threading.Lock()
+        self.next_allowed = 0.0
+
+    def wait(self):
+        if self.interval <= 0:
+            return
+        with self.lock:
+            now = _time.time()
+            if now < self.next_allowed:
+                to_sleep = self.next_allowed - now
+                # small jitter
+                _time.sleep(to_sleep + random.uniform(0, 0.1))
+                now = _time.time()
+            # schedule next
+            self.next_allowed = now + self.interval
+
+
+# 全局节流器实例
+THROTTLE = SimpleThrottle(GLOBAL_QPS)
 
 # 将 copilot_summarize 和 openrouter_summarize 函数移动到 get_summarize_func 之前
 
