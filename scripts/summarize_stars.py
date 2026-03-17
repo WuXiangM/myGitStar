@@ -734,6 +734,48 @@ def is_valid_summary(summary: str) -> bool:
         if phrase in summary:
             print(f"[DEBUG] is_valid_summary: False (包含无效短语: {phrase})")
             return False
+    # 额外检测：若摘要使用了与当前语言不一致的模板关键词，或包含常见的不完整英文/模板开头，则视为无效，触发更新
+    try:
+        lang = config.get('language', 'zh')
+    except Exception:
+        lang = 'zh'
+
+    # 常见的、不完整或占位性质的英文模板短语/关键词
+    common_english_templates = [
+        r"Here'?s the summary",
+        r"Here is the summary",
+        r"Repository Name",
+        r"Brief Introduction",
+        r"Innovations",
+        r"Basic Usage",
+        r"Summary\s*:",
+        r"Please summarize",
+    ]
+
+    # 常见的、不完整或占位性质的中文模板短语
+    common_chinese_templates = [
+        r"仓库名称",
+        r"简要介绍",
+        r"创新点",
+        r"简单用法",
+        r"总结\s*[:：]",
+        r"请对以下 GitHub 仓库进行内容总结",
+    ]
+
+    s_head = summary.strip()[:200]
+
+    # 如果当前语言为中文，但摘要中出现明显英文模板关键词，则视为不完善（需要更新）
+    if lang != 'en':
+        for p in common_english_templates:
+            if re.search(p, s_head, flags=re.IGNORECASE):
+                print(f"[DEBUG] is_valid_summary: False (包含英文模板关键词，需更新: {p})")
+                return False
+    # 如果当前语言为英文，但摘要中出现明显中文模板关键词，则视为不完善（需要更新）
+    if lang == 'en':
+        for p in common_chinese_templates:
+            if re.search(p, s_head):
+                print(f"[DEBUG] is_valid_summary: False (包含中文模板关键词，需更新: {p})")
+                return False
     # 检查是否仅为换行（如 '\n', '\r\n' 等）
     if summary.strip() == "":
         print(f"[DEBUG] is_valid_summary: False (仅换行)")
