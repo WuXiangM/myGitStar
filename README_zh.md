@@ -1,12 +1,12 @@
 # 我的 GitHub Star 项目AI总结
 
+**仓库：** [WuXiangM/myGitStar](https://github.com/WuXiangM/myGitStar)
+
 **生成时间：** 2026-03-07
 
 **AI模型：** GitHub Copilot
 
 **总仓库数：** 154 个
-
-**详细操作文档：**[GUIDE_zh.md](GUIDE_zh.md)
 
 ---
 
@@ -1442,6 +1442,7 @@
 
 1. **仓库名称：** playcanvas/engine  
 2. **简要介绍：** PlayCanvas 引擎是一个强大的网页图形运行时，支持 WebGL、WebGPU、WebXR 和 glTF。  
+3. **参考链接：** [playcanvas/engine](https://github.com/playcanvas/engine)
 3. **创新点：** 该引擎提供了高性能的3D图形渲染能力，支持实时协作编辑和跨平台发布。  
 4. **简单用法：** ```javascript  
 var canvas = document.getElementById('myCanvas');  

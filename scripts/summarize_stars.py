@@ -965,6 +965,8 @@ def main():
             title += f"**Total repositories:** {len(starred)}\n\n"
             title += "---\n\n"
             lines = [title]
+            # Add repository reference link to generated document
+            lines.append("**Repository:** [WuXiangM/myGitStar](https://github.com/WuXiangM/myGitStar)\n\n")
             # 添加目录
             lines.append("## 📖 Table of Contents\n\n")
             lang_counts = {}
@@ -981,6 +983,8 @@ def main():
             title += f"**总仓库数：** {len(starred)} 个\n\n"
             title += "---\n\n"
             lines = [title]
+            # 在中文文档顶部加入仓库引用
+            lines.append("**仓库：** [WuXiangM/myGitStar](https://github.com/WuXiangM/myGitStar)\n\n")
             # 添加目录
             lines.append("## 📖 目录\n\n")
             lang_counts = {}
