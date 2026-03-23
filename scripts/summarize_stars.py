@@ -2,6 +2,7 @@ import os
 import time
 import requests
 import json
+from sympy import li
 import yaml
 import concurrent.futures
 from typing import Dict, List, Optional
@@ -787,20 +788,43 @@ def is_valid_summary(summary: str) -> bool:
         lang = 'zh'
 
     head = summary.strip()[:200]  # 只检查开头部分
-    content_ok = False
     if lang == 'en':
         patterns = [r'Summary\s*[:：]', r'Repository Name', r'Brief Introduction', r'Innovations']
     else:
         patterns = [r'总结\s*[:：]', r'仓库名称', r'简要介绍', r'创新点']
 
+    # 要求所有关键词都存在；任一缺失都视为不完整，需要更新
+    missing = []
     for p in patterns:
-        if re.search(p, head, flags=re.IGNORECASE):
-            content_ok = True
-            break
+        if not re.search(p, head, flags=re.IGNORECASE):
+            missing.append(p)
 
-    if not content_ok:
-        print(f"[DEBUG] is_valid_summary: False (缺少开头关键词，可能不完整)")
+    if missing:
+        print(f"[DEBUG] is_valid_summary: False (缺少关键词，需更新: {missing})")
         return False
+
+    # 额外检查：若摘要包含明确的“简要介绍/Brief Introduction”字段，但该字段内容非常短或仅为占位字符（如单字'A'），则视为无效
+    try:
+        s = summary
+        if lang == 'en':
+            m = re.search(r'Brief Introduction\s*[:：]\s*(.+?)(?:\n\s*\d+\.|\n\n|$)', s, flags=re.IGNORECASE | re.S)
+            if m:
+                intro = m.group(1).strip()
+                # 去除markdown标记和多余空白
+                intro_text = re.sub(r'\*|\*\*|`|\\n', '', intro).strip()
+                if len(intro_text) < 20:
+                    print(f"[DEBUG] is_valid_summary: False (英文简要介绍过短或占位: {intro_text!r})")
+                    return False
+        else:
+            m = re.search(r'简要介绍\s*[:：]\s*(.+?)(?:\n\s*\d+\.|\n\n|$)', s, flags=re.S)
+            if m:
+                intro = m.group(1).strip()
+                intro_text = re.sub(r'\*|\*\*|`|\\n', '', intro).strip()
+                if len(intro_text) < 10:
+                    print(f"[DEBUG] is_valid_summary: False (中文简要介绍过短或占位: {intro_text!r})")
+                    return False
+    except Exception:
+        pass
 
     print(f"[DEBUG] is_valid_summary: True")
     return True
@@ -966,7 +990,14 @@ def main():
             title += "---\n\n"
             lines = [title]
             # Add repository reference link to generated document
-            lines.append("**Repository:** [WuXiangM/myGitStar](https://github.com/WuXiangM/myGitStar)\n\n")
+            lines.append("**Reference Repository:** [WuXiangM/myGitStar](https://github.com/WuXiangM/myGitStar)\n\n")
+            # 根据配置决定中英文 README 链接的显示顺序（默认 English first）
+            repo_display_language = bool(config.get('repo_display_language', True))
+            if repo_display_language:
+                lines.append("[English README](README.md) | [中文 README](README2.md)\n\n")            
+            lines.append("[English GUIDE](GUIDE_en.md) | [中文 GUIDE](GUIDE_zh.md)\n\n")
+
+
             # 添加目录
             lines.append("## 📖 Table of Contents\n\n")
             lang_counts = {}
@@ -984,7 +1015,13 @@ def main():
             title += "---\n\n"
             lines = [title]
             # 在中文文档顶部加入仓库引用
-            lines.append("**仓库：** [WuXiangM/myGitStar](https://github.com/WuXiangM/myGitStar)\n\n")
+            lines.append("**参考仓库：** [WuXiangM/myGitStar](https://github.com/WuXiangM/myGitStar)\n\n")
+            # 根据配置决定中英文 README 链接的显示顺序（默认 中文 first）
+            repo_display_language = bool(config.get('repo_display_language', True))
+            if repo_display_language:
+                lines.append("[中文 README](README.md) | [English README](README2.md)\n\n")            
+            lines.append("[中文 GUIDE](GUIDE_zh.md) | [English GUIDE](GUIDE_en.md)\n\n")
+            
             # 添加目录
             lines.append("## 📖 目录\n\n")
             lang_counts = {}

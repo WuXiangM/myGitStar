@@ -28,6 +28,14 @@ myGitStar/
 └── GUIDE.md                          # 本完整说明文档
 ```
 
+
+新增配置说明：
+
+- `repo_display_language: true|false`（可选，默认 `true`）
+  - 作用：控制生成的 README 顶部是否显示中英文快速跳转链接以及显示顺序。
+  - 行为示例：当 `language: en` 且 `repo_display_language: true` 时，顶部会显示 `[English README](README.md) | [中文 README](README2.md)`；若设置为 `false` 则显示中文链接在前。对于 `language: zh` 同理，`true` 时中文链接在前。
+  - 注意：脚本默认使用仓库中约定的文件名（示例中为 `README.md`（英文）、`README2.md`（中文））；如果你的项目使用不同文件名，请在生成后手动调整或修改脚本中对应链接生成逻辑。
+
 ## 🔧 环境配置（Secrets 与 Keys）
 
 本项目在运行时会使用若干 API Key / Token，推荐在 CI（GitHub Actions）中通过 Secrets 提供。脚本在读取时遵循以下优先级：

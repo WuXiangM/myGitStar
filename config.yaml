@@ -2,6 +2,10 @@
 # Output language, options: 'zh', 'en'
 language: en
 
+# 是否在生成的 README 顶部显示中英文快速跳转链接
+# 当为 true 时，优先显示与 `language` 对应的语言在前；为 false 则反向显示
+repo_display_language: true
+
 # 模型选择，可选值: 'copilot'、'openrouter' 或 'gemini'
 # Model selection: 'copilot', 'openrouter', 'gemini'
 model_choice: copilot

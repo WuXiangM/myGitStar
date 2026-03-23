@@ -10,6 +10,12 @@
 
 ---
 
+**参考仓库：** [WuXiangM/myGitStar](https://github.com/WuXiangM/myGitStar)
+
+[中文 README](README.md) | [English README](README2.md)
+
+[中文 GUIDE](GUIDE_zh.md) | [English GUIDE](GUIDE_en.md)
+
 ## 📖 目录
 
 - [Python](#python)（56个）
