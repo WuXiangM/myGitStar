@@ -995,7 +995,7 @@ def main():
             repo_display_language = bool(config.get('repo_display_language', True))
             if repo_display_language:
                 lines.append("[English README](README.md) | [中文 README](README2.md)\n\n")            
-            lines.append("[English GUIDE](GUIDE_en.md) | [中文 GUIDE](GUIDE_zh.md)\n\n")
+            lines.append("[English GUIDE](GUIDE_en.md) | [中文教程](GUIDE_zh.md)\n\n")
 
 
             # 添加目录
@@ -1020,7 +1020,7 @@ def main():
             repo_display_language = bool(config.get('repo_display_language', True))
             if repo_display_language:
                 lines.append("[中文 README](README.md) | [English README](README2.md)\n\n")            
-            lines.append("[中文 GUIDE](GUIDE_zh.md) | [English GUIDE](GUIDE_en.md)\n\n")
+            lines.append("[中文教程](GUIDE_zh.md) | [English GUIDE](GUIDE_en.md)\n\n")
             
             # 添加目录
             lines.append("## 📖 目录\n\n")

@@ -14,7 +14,7 @@
 
 [中文 README](README.md) | [English README](README2.md)
 
-[中文 GUIDE](GUIDE_zh.md) | [English GUIDE](GUIDE_en.md)
+[中文教程](GUIDE_zh.md) | [English GUIDE](GUIDE_en.md)
 
 ## 📖 目录
 
