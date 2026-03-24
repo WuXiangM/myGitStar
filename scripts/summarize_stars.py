@@ -67,8 +67,15 @@ def _get_float_config(key: str, default: float) -> float:
     except Exception:
         return float(default)
 
-# 合并调试与测试模式：当环境变量 DEBUG_API=1 或 config.test_first_repo 为 true 时启用详细 API 调试日志
-DEBUG_API = bool(os.environ.get("DEBUG_API")) or bool(config.get('test_first_repo', False))
+# 合并调试与测试模式：当环境变量 DEBUG_API=1/true 或 config.test_first_repo 为 true 时启用详细 API 调试日志
+def _env_truthy(name: str) -> bool:
+    try:
+        return str(os.environ.get(name, "")).strip().lower() in {"1", "true", "yes", "y", "on"}
+    except Exception:
+        return False
+
+
+DEBUG_API = _env_truthy("DEBUG_API") or bool(config.get('test_first_repo', False))
 
 # 通用获取密钥逻辑：优先环境变量（常见或大写名），其次 config 中的大写键，
 # 然后 config 指定的 env 名称字段（如 github_token_env），最后 config 中的明文字段（不推荐）
@@ -288,8 +295,11 @@ def gemini_summarize(repo: Dict) -> Optional[str]:
     try:
         # 2. 模型名称标准化（兼容 Gemini 1.0/1.5 全系列模型）
         model_name = os.environ.get("GEMINI_MODEL", default_gemini_model) or "gemini-pro"
-        # 严格处理模型路径：移除多余的 models/ 前缀，兼容用户输入的不同格式
-        model_path = model_name.lstrip("models/").strip()
+        # 严格处理模型路径：移除多余的 models/ 前缀（注意：str.lstrip 会按字符集移除，不能用于前缀）
+        model_path = str(model_name).strip()
+        if model_path.startswith("models/"):
+            model_path = model_path[len("models/"):]
+        model_path = model_path.strip()
         # 补充官方模型前缀（确保 URL 符合规范）
         if not model_path.startswith("gemini-"):
             print(f"[Gemini] 模型名称 {model_name} 非标准格式，建议使用 gemini-pro/gemini-1.5-pro 等")
@@ -540,6 +550,11 @@ def make_api_request(url: str, headers: Dict, data: Dict, retries: int = RETRY_A
     """通用的 API 请求函数，支持重试逻辑"""
     for attempt in range(retries):
         try:
+            # 全局节流：在所有 POST 请求前做 QPS 限制，减少 429
+            try:
+                THROTTLE.wait()
+            except Exception:
+                pass
             resp = requests.post(url, headers=headers, data=json.dumps(data), timeout=REQUEST_TIMEOUT)
             if DEBUG_API:
                 logger.info('[API调试]')
@@ -648,6 +663,10 @@ def get_starred_repos() -> List[Dict]:
     while True:
         try:
             url = f"https://api.github.com/users/{GITHUB_USERNAME}/starred?per_page={per_page}&page={page}"
+            try:
+                THROTTLE.wait()
+            except Exception:
+                pass
             resp = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT)
             resp.raise_for_status()
             data = resp.json()
@@ -786,7 +805,8 @@ def is_valid_summary(summary: str) -> bool:
     except Exception:
         lang = 'zh'
 
-    head = summary.strip()[:200]  # 只检查开头部分
+    # 内容完整性：关键词在全文任意位置出现即可（避免模型加前言导致误判）
+    full_text = summary.strip()
     if lang == 'en':
         patterns = [r'Summary\s*[:：]', r'Repository Name', r'Brief Introduction', r'Innovations']
     else:
@@ -795,7 +815,7 @@ def is_valid_summary(summary: str) -> bool:
     # 要求所有关键词都存在；任一缺失都视为不完整，需要更新
     missing = []
     for p in patterns:
-        if not re.search(p, head, flags=re.IGNORECASE):
+        if not re.search(p, full_text, flags=re.IGNORECASE):
             missing.append(p)
 
     if missing:
@@ -850,11 +870,14 @@ def summarize_batch(repos: List[Dict], old_summaries: Dict[str, str], use_copilo
             try:
                 # 检查是否已有有效总结
                 existing_summary = old_summaries.get(repo["full_name"], "")
-                if is_valid_summary(existing_summary):
+                # 仅在 missing_only 模式下复用旧总结；all 模式应强制尝试生成新总结
+                reuse_existing = (update_mode == "missing_only") and is_valid_summary(existing_summary)
+                if reuse_existing:
                     summary = existing_summary
                 else:
                     summary = future.result()
                     if summary is None:
+                        # 若生成失败，则回退为旧总结（如果有），避免输出空
                         summary = old_summaries.get(repo["full_name"], f"{api_name} API生成失败或429")
                 # Debug: 输出每个 summary 内容
                 print(f"[DEBUG] repo: {repo['full_name']} | summary: {repr(summary)}")
@@ -938,11 +961,6 @@ def main():
         if test_first_repo and isinstance(starred, list) and len(starred) > 0:
             print('[TEST MODE] test_first_repo 已启用：仅处理第一个仓库进行调试')
             starred = [starred[0]]
-        # 测试模式：若配置中启用了 test_first_repo，则只保留第一个仓库以便快速调试
-        test_first_repo = config.get('test_first_repo', False)
-        if test_first_repo and isinstance(starred, list) and len(starred) > 0:
-            print("[TEST MODE] test_first_repo 已启用：仅处理第一个仓库进行调试")
-            starred = [starred[0]]
         # 根据环境变量 MAX_REPOS 限制处理数量，方便在 CI 中避免超时
         if MAX_REPOS and isinstance(starred, list):
             try:
@@ -994,6 +1012,8 @@ def main():
             repo_display_language = bool(config.get('repo_display_language', True))
             if repo_display_language:
                 lines.append("[English README](README.md) | [中文 README](README2.md)\n\n")            
+            else:
+                lines.append("[中文 README](README2.md) | [English README](README.md)\n\n")
             lines.append("[English GUIDE](GUIDE_en.md) | [中文教程](GUIDE_zh.md)\n\n")
 
 
@@ -1019,6 +1039,8 @@ def main():
             repo_display_language = bool(config.get('repo_display_language', True))
             if repo_display_language:
                 lines.append("[中文 README](README.md) | [English README](README2.md)\n\n")            
+            else:
+                lines.append("[English README](README2.md) | [中文 README](README.md)\n\n")
             lines.append("[中文教程](GUIDE_zh.md) | [English GUIDE](GUIDE_en.md)\n\n")
             
             # 添加目录
