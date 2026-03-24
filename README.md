@@ -16,8 +16,6 @@
 
 ---
 
-
-
 ## 📖 Table of Contents
 
 - [Python](#python) (60)
