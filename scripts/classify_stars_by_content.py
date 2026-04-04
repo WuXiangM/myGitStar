@@ -534,6 +534,85 @@ def _slugify_heading(text: str) -> str:
     return s
 
 
+def _strip_leading_symbols(text: str) -> str:
+    """Strip leading emoji/symbol decorations often used in headings."""
+    s = (text or "").strip()
+    # Remove a run of non-word symbols (emoji/punct) at the start.
+    s = re.sub(r"^[^\w\u4e00-\u9fff]+\s*", "", s)
+    return s.strip()
+
+
+_LANGUAGE_CATEGORY_ALIASES = {
+    "c#",
+    "c++",
+    "c",
+    "cpp",
+    "python",
+    "java",
+    "javascript",
+    "typescript",
+    "go",
+    "golang",
+    "rust",
+    "php",
+    "ruby",
+    "swift",
+    "kotlin",
+    "scala",
+    "dart",
+    "r",
+    "matlab",
+    "shell",
+    "bash",
+    "powershell",
+    "html",
+    "css",
+    "vue",
+    "react",
+    "jupyter notebook",
+}
+
+
+def _looks_like_language_category(name: str) -> bool:
+    s = _strip_leading_symbols(name).strip().lower()
+    s = re.sub(r"\s+", " ", s)
+    if not s:
+        return False
+    if s in _LANGUAGE_CATEGORY_ALIASES:
+        return True
+    # Allow patterns like "C# (something)" or "Python projects"
+    head = s.split("(", 1)[0].strip()
+    head = head.replace("项目", "").strip()
+    if head in _LANGUAGE_CATEGORY_ALIASES:
+        return True
+    if any(s.startswith(lang + " ") for lang in _LANGUAGE_CATEGORY_ALIASES):
+        return True
+    return False
+
+
+def _build_category_anchors(taxonomy: "Taxonomy") -> Dict[str, str]:
+    """Create stable, unique anchors for categories.
+
+    We use explicit <a id="..."> anchors to guarantee ToC links work,
+    independent of GitHub's heading slug algorithm.
+    """
+    used: set[str] = set()
+    anchors: Dict[str, str] = {}
+    for c in taxonomy.categories:
+        base = _slugify_heading(_strip_leading_symbols(c.get("name", "")))
+        if not base:
+            base = f"category-{str(c.get('id', '')).strip().lower() or 'x'}"
+
+        anchor = base
+        i = 2
+        while anchor in used:
+            anchor = f"{base}-{i}"
+            i += 1
+        used.add(anchor)
+        anchors[str(c.get("id"))] = anchor
+    return anchors
+
+
 @dataclass
 class Taxonomy:
     categories: List[Dict[str, Any]]
@@ -556,6 +635,7 @@ def build_taxonomy_prompt(items: List[Dict[str, Any]], min_categories: int, max_
         f"Constraints: create BETWEEN {min_categories} and {max_categories} categories total (inclusive), and include an 'Other' category.\n"
         "Rules:\n"
         "- Categories must be based on CONTENT/domains (e.g., LLM tooling, CV, data engineering), NOT programming languages.\n"
+        "- DO NOT create categories named after programming languages (e.g., Python/C++/Java/C#/JS/TS/Rust/Go).\n"
         "- Category names should be short and clear.\n"
         "- Include an 'Other' category for anything that doesn't fit.\n"
         "Output strictly as JSON, with this shape:\n"
@@ -617,6 +697,10 @@ def _normalize_taxonomy(raw: Any, min_categories: int, max_categories: int) -> T
             continue
         cats.append({"id": cid, "name": name, "description": desc})
 
+    # Remove obvious programming-language buckets (content taxonomy must not be language-based).
+    # We fold them into Other by dropping them here; assignments later will fall back to Other.
+    cats = [c for c in cats if not _looks_like_language_category(str(c.get("name", "")))]
+
     # Enforce max categories
     cats = cats[:max_categories]
 
@@ -671,6 +755,8 @@ def render_classified_readme(
     buckets: Dict[str, List[Dict[str, Any]]] = {cid: [] for cid in categories.keys()}
     other_id = next((c["id"] for c in taxonomy.categories if c["name"].lower() == "other"), taxonomy.categories[-1]["id"])
 
+    anchors = _build_category_anchors(taxonomy)
+
     for r in repos:
         rid = r.get("id")
         cid = assignment_map.get(rid, other_id)
@@ -710,13 +796,23 @@ def render_classified_readme(
     )
     lines.append("## 📖 Table of Contents\n\n")
     for c in taxonomy.categories:
-        anchor = _slugify_heading(c["name"])
-        lines.append(f"- [{c['name']}](#{anchor}) ({len(buckets.get(c['id'], []))})\n")
+        anchor = anchors.get(str(c.get("id")), _slugify_heading(c.get("name", "")))
+        display_name = _strip_leading_symbols(c.get("name", "")).strip() or str(c.get("name", "")).strip()
+        desc = _clean_inline_md(c.get("description", ""))
+        if desc:
+            lines.append(f"- [{display_name}](#{anchor}) ({len(buckets.get(c['id'], []))}) — {desc}\n")
+        else:
+            lines.append(f"- [{display_name}](#{anchor}) ({len(buckets.get(c['id'], []))})\n")
     lines.append("\n---\n\n")
 
     for c in taxonomy.categories:
         bucket = buckets.get(c["id"], [])
-        lines.append(f"## {c['name']} (Total {len(bucket)})\n\n")
+        anchor = anchors.get(str(c.get("id")), "")
+        if anchor:
+            lines.append(f"<a id=\"{anchor}\"></a>\n")
+
+        display_name = _strip_leading_symbols(c.get("name", "")).strip() or str(c.get("name", "")).strip()
+        lines.append(f"## {display_name} (Total {len(bucket)})\n\n")
         if c.get("description"):
             lines.append(f"> {c['description']}\n\n")
 
@@ -887,6 +983,11 @@ def main() -> int:
 
     try:
         taxonomy = _normalize_taxonomy(raw_tax, min_categories=args.min_categories, max_categories=args.max_categories)
+        # If the model ignored constraints and produced mostly language buckets (filtered out), retry once with stronger warning.
+        if len(taxonomy.categories) < args.min_categories:
+            retry_prompt = taxonomy_prompt + "\n\nIMPORTANT: Your previous output likely used programming-language categories. Redesign taxonomy strictly by CONTENT domains."
+            raw_tax2 = call_llm_json(retry_prompt, attempts=1)
+            taxonomy = _normalize_taxonomy(raw_tax2, min_categories=args.min_categories, max_categories=args.max_categories)
     except Exception as e:
         print(f"Failed to normalize taxonomy JSON: {e}")
         return 3
