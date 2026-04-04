@@ -1,0 +1,302 @@
+{
+  "generated_at": "2026-04-04T06:13:53Z",
+  "model_choice": "copilot",
+  "min_categories": 5,
+  "max_categories": 8,
+  "taxonomy": {
+    "categories": [
+      {
+        "id": "C1",
+        "name": "AI Models",
+        "description": "Repositories focused on developing and training AI models, including language models and vision-language models."
+      },
+      {
+        "id": "C2",
+        "name": "Computer Vision",
+        "description": "Projects related to image processing, object detection, and visual data analysis."
+      },
+      {
+        "id": "C3",
+        "name": "Natural Language Processing",
+        "description": "Tools and frameworks for processing and understanding human language, including translation and text generation."
+      },
+      {
+        "id": "C4",
+        "name": "Research Automation",
+        "description": "Repositories that automate research processes, including paper generation and data analysis."
+      },
+      {
+        "id": "C5",
+        "name": "Data Integration",
+        "description": "Tools for integrating and analyzing data from various sources, enhancing data accessibility and usability."
+      },
+      {
+        "id": "C6",
+        "name": "Web Crawling & APIs",
+        "description": "Projects that involve web scraping, data extraction, and API management for various applications."
+      },
+      {
+        "id": "C7",
+        "name": "Multimedia Processing",
+        "description": "Repositories focused on processing audio, video, and image content, including editing and enhancement tools."
+      },
+      {
+        "id": "C8",
+        "name": "Other",
+        "description": "Any repositories that do not fit into the above categories."
+      }
+    ]
+  },
+  "assignments": [
+    {
+      "id": 1,
+      "full_name": "open-gigaai/giga-brain-0",
+      "category_id": "C1"
+    },
+    {
+      "id": 2,
+      "full_name": "jingyaogong/minimind",
+      "category_id": "C1"
+    },
+    {
+      "id": 3,
+      "full_name": "fire-keeper/BlindWatermark",
+      "category_id": "C7"
+    },
+    {
+      "id": 4,
+      "full_name": "aiming-lab/AutoResearchClaw",
+      "category_id": "C4"
+    },
+    {
+      "id": 5,
+      "full_name": "666ghj/MiroFish",
+      "category_id": "C1"
+    },
+    {
+      "id": 6,
+      "full_name": "UniPat-AI/UniScientist",
+      "category_id": "C5"
+    },
+    {
+      "id": 7,
+      "full_name": "ComposioHQ/awesome-claude-skills",
+      "category_id": "C1"
+    },
+    {
+      "id": 8,
+      "full_name": "cheahjs/free-llm-api-resources",
+      "category_id": "C6"
+    },
+    {
+      "id": 9,
+      "full_name": "Anjok07/ultimatevocalremovergui",
+      "category_id": "C7"
+    },
+    {
+      "id": 10,
+      "full_name": "anthropics/skills",
+      "category_id": "C1"
+    },
+    {
+      "id": 11,
+      "full_name": "Kevin-thu/StoryMem",
+      "category_id": "C2"
+    },
+    {
+      "id": 12,
+      "full_name": "Usagi-org/ai-goofish-monitor",
+      "category_id": "C8"
+    },
+    {
+      "id": 13,
+      "full_name": "zhu-xlab/GlobalBuildingAtlas",
+      "category_id": "C2"
+    },
+    {
+      "id": 14,
+      "full_name": "funstory-ai/BabelDOC",
+      "category_id": "C3"
+    },
+    {
+      "id": 15,
+      "full_name": "PDFMathTranslate/PDFMathTranslate",
+      "category_id": "C3"
+    },
+    {
+      "id": 16,
+      "full_name": "HKUDS/Paper2Slides",
+      "category_id": "C4"
+    },
+    {
+      "id": 17,
+      "full_name": "jimmc414/Kosmos",
+      "category_id": "C1"
+    },
+    {
+      "id": 18,
+      "full_name": "HisMax/RedInk",
+      "category_id": "C1"
+    },
+    {
+      "id": 19,
+      "full_name": "facebookresearch/sam-3d-body",
+      "category_id": "C2"
+    },
+    {
+      "id": 20,
+      "full_name": "facebookresearch/sam-3d-objects",
+      "category_id": "C2"
+    },
+    {
+      "id": 21,
+      "full_name": "sansan0/TrendRadar",
+      "category_id": "C4"
+    },
+    {
+      "id": 22,
+      "full_name": "jianchang512/pyvideotrans",
+      "category_id": "C3"
+    },
+    {
+      "id": 23,
+      "full_name": "666ghj/BettaFish",
+      "category_id": "C4"
+    },
+    {
+      "id": 24,
+      "full_name": "YILING0013/AI_NovelGenerator",
+      "category_id": "C1"
+    },
+    {
+      "id": 25,
+      "full_name": "guofei9987/blind_watermark",
+      "category_id": "C7"
+    },
+    {
+      "id": 26,
+      "full_name": "CharlesKeeling65/ManureCouplingStrategies",
+      "category_id": "C8"
+    },
+    {
+      "id": 27,
+      "full_name": "tadata-org/fastapi_mcp",
+      "category_id": "C1"
+    },
+    {
+      "id": 28,
+      "full_name": "mikf/gallery-dl",
+      "category_id": "C2"
+    },
+    {
+      "id": 29,
+      "full_name": "roboflow/supervision",
+      "category_id": "C2"
+    },
+    {
+      "id": 30,
+      "full_name": "lllyasviel/FramePack",
+      "category_id": "C7"
+    },
+    {
+      "id": 31,
+      "full_name": "nunchaku-ai/nunchaku",
+      "category_id": "C1"
+    },
+    {
+      "id": 32,
+      "full_name": "NanmiCoder/MediaCrawler",
+      "category_id": "C6"
+    },
+    {
+      "id": 33,
+      "full_name": "arcee-ai/mergekit",
+      "category_id": "C1"
+    },
+    {
+      "id": 34,
+      "full_name": "opendatalab/MinerU",
+      "category_id": "C3"
+    },
+    {
+      "id": 35,
+      "full_name": "Zie619/n8n-workflows",
+      "category_id": "C4"
+    },
+    {
+      "id": 36,
+      "full_name": "hpcaitech/Open-Sora",
+      "category_id": "C7"
+    },
+    {
+      "id": 37,
+      "full_name": "1Panel-dev/MaxKB",
+      "category_id": "C1"
+    },
+    {
+      "id": 38,
+      "full_name": "Peterande/D-FINE",
+      "category_id": "C2"
+    },
+    {
+      "id": 39,
+      "full_name": "Fosowl/agenticSeek",
+      "category_id": "C1"
+    },
+    {
+      "id": 40,
+      "full_name": "robert-mcdermott/ai-knowledge-graph",
+      "category_id": "C1"
+    },
+    {
+      "id": 41,
+      "full_name": "harry0703/MoneyPrinterTurbo",
+      "category_id": "C1"
+    },
+    {
+      "id": 42,
+      "full_name": "kijai/ComfyUI-FramePackWrapper",
+      "category_id": "C8"
+    },
+    {
+      "id": 43,
+      "full_name": "langbot-app/LangBot",
+      "category_id": "C1"
+    },
+    {
+      "id": 44,
+      "full_name": "xming521/WeClone",
+      "category_id": "C1"
+    },
+    {
+      "id": 45,
+      "full_name": "happycola233/tchMaterial-parser",
+      "category_id": "C8"
+    },
+    {
+      "id": 46,
+      "full_name": "0xsline/GeminiImageApp",
+      "category_id": "C2"
+    },
+    {
+      "id": 47,
+      "full_name": "public-apis/public-apis",
+      "category_id": "C6"
+    },
+    {
+      "id": 48,
+      "full_name": "SamuelSchmidgall/AgentLaboratory",
+      "category_id": "C4"
+    },
+    {
+      "id": 49,
+      "full_name": "VisionXLab/CrossEarth",
+      "category_id": "C2"
+    },
+    {
+      "id": 50,
+      "full_name": "microsoft/markitdown",
+      "category_id": "C8"
+    }
+  ]
+}
