@@ -1,6 +1,6 @@
 # My GitHub Star Project AI Summary
 
-**Generated on:** 2026-04-03
+**Generated on:** 2026-04-04
 
 **AI Model:** GitHub Copilot
 
@@ -45,7 +45,8 @@
 
 ### 📌 [open-gigaai/giga-brain-0](https://github.com/open-gigaai/giga-brain-0)
 
-**⭐ Stars:** 2,460 | **🍴 Forks:** 195 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 2,461 | **🍴 Forks:** 195 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -61,7 +62,8 @@
 
 ### 📌 [jingyaogong/minimind](https://github.com/jingyaogong/minimind)
 
-**⭐ Stars:** 45,456 | **🍴 Forks:** 5,532 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 45,558 | **🍴 Forks:** 5,559 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -84,7 +86,8 @@
 
 ### 📌 [fire-keeper/BlindWatermark](https://github.com/fire-keeper/BlindWatermark)
 
-**⭐ Stars:** 1,623 | **🍴 Forks:** 193 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 1,622 | **🍴 Forks:** 193 | **📅 Updated:** 2026-04-03
+
 
 
 
@@ -107,7 +110,8 @@
 
 ### 📌 [aiming-lab/AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw)
 
-**⭐ Stars:** 10,097 | **🍴 Forks:** 1,118 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 10,205 | **🍴 Forks:** 1,142 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -131,7 +135,8 @@
 
 ### 📌 [666ghj/MiroFish](https://github.com/666ghj/MiroFish)
 
-**⭐ Stars:** 48,440 | **🍴 Forks:** 7,028 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 48,978 | **🍴 Forks:** 7,150 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -168,6 +173,7 @@
 
 
 
+
 1. **Repository Name:** UniPat-AI/UniScientist
 2. **Brief Introduction:** UniScientist aims to enhance scientific research intelligence by providing a unified framework for data integration and analysis across various scientific disciplines.
 3. **Innovations:** The repository features advanced algorithms for data synthesis, cross-disciplinary collaboration tools, and a comprehensive knowledge base that supports diverse scientific inquiries.
@@ -179,7 +185,8 @@
 
 ### 📌 [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
 
-**⭐ Stars:** 50,684 | **🍴 Forks:** 5,302 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 50,957 | **🍴 Forks:** 5,350 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -203,7 +210,8 @@
 
 ### 📌 [cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources)
 
-**⭐ Stars:** 17,745 | **🍴 Forks:** 1,760 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 17,829 | **🍴 Forks:** 1,766 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -228,7 +236,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [Anjok07/ultimatevocalremovergui](https://github.com/Anjok07/ultimatevocalremovergui)
 
-**⭐ Stars:** 24,144 | **🍴 Forks:** 1,802 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 24,153 | **🍴 Forks:** 1,804 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -253,7 +262,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [anthropics/skills](https://github.com/anthropics/skills)
 
-**⭐ Stars:** 109,484 | **🍴 Forks:** 12,300 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 110,144 | **🍴 Forks:** 12,404 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -288,6 +298,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 Here's the summary of the GitHub repository:
 
 1. **Repository Name:** Kevin-thu/StoryMem
@@ -300,7 +311,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [Usagi-org/ai-goofish-monitor](https://github.com/Usagi-org/ai-goofish-monitor)
 
-**⭐ Stars:** 10,538 | **🍴 Forks:** 1,496 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 10,659 | **🍴 Forks:** 1,509 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -323,7 +335,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [zhu-xlab/GlobalBuildingAtlas](https://github.com/zhu-xlab/GlobalBuildingAtlas)
 
-**⭐ Stars:** 2,047 | **🍴 Forks:** 200 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 2,048 | **🍴 Forks:** 201 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -346,7 +359,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [funstory-ai/BabelDOC](https://github.com/funstory-ai/BabelDOC)
 
-**⭐ Stars:** 8,046 | **🍴 Forks:** 634 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 8,053 | **🍴 Forks:** 634 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -369,7 +383,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [PDFMathTranslate/PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate)
 
-**⭐ Stars:** 32,666 | **🍴 Forks:** 2,946 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 32,682 | **🍴 Forks:** 2,946 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -391,7 +406,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [HKUDS/Paper2Slides](https://github.com/HKUDS/Paper2Slides)
 
-**⭐ Stars:** 3,255 | **🍴 Forks:** 431 | **📅 Updated:** 2026-04-02
+**⭐ Stars:** 3,256 | **🍴 Forks:** 431 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -416,7 +432,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [jimmc414/Kosmos](https://github.com/jimmc414/Kosmos)
 
-**⭐ Stars:** 481 | **🍴 Forks:** 92 | **📅 Updated:** 2026-04-02
+**⭐ Stars:** 481 | **🍴 Forks:** 92 | **📅 Updated:** 2026-04-03
+
 
 
 
@@ -438,7 +455,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [HisMax/RedInk](https://github.com/HisMax/RedInk)
 
-**⭐ Stars:** 5,085 | **🍴 Forks:** 963 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 5,090 | **🍴 Forks:** 964 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -461,7 +479,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [facebookresearch/sam-3d-body](https://github.com/facebookresearch/sam-3d-body)
 
-**⭐ Stars:** 2,783 | **🍴 Forks:** 322 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 2,784 | **🍴 Forks:** 321 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -486,7 +505,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [facebookresearch/sam-3d-objects](https://github.com/facebookresearch/sam-3d-objects)
 
-**⭐ Stars:** 6,355 | **🍴 Forks:** 744 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 6,361 | **🍴 Forks:** 744 | **📅 Updated:** 2026-04-03
+
 
 
 
@@ -508,7 +528,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [sansan0/TrendRadar](https://github.com/sansan0/TrendRadar)
 
-**⭐ Stars:** 50,660 | **🍴 Forks:** 22,900 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 50,796 | **🍴 Forks:** 22,927 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -531,7 +552,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [jianchang512/pyvideotrans](https://github.com/jianchang512/pyvideotrans)
 
-**⭐ Stars:** 16,776 | **🍴 Forks:** 1,986 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 16,786 | **🍴 Forks:** 1,987 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -556,7 +578,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [666ghj/BettaFish](https://github.com/666ghj/BettaFish)
 
-**⭐ Stars:** 40,132 | **🍴 Forks:** 7,449 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 40,134 | **🍴 Forks:** 7,451 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -579,7 +602,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [YILING0013/AI_NovelGenerator](https://github.com/YILING0013/AI_NovelGenerator)
 
-**⭐ Stars:** 3,879 | **🍴 Forks:** 727 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 3,890 | **🍴 Forks:** 727 | **📅 Updated:** 2026-04-03
+
 
 
 
@@ -604,7 +628,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [guofei9987/blind_watermark](https://github.com/guofei9987/blind_watermark)
 
-**⭐ Stars:** 12,253 | **🍴 Forks:** 1,236 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 12,255 | **🍴 Forks:** 1,236 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -638,6 +663,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 1. **Repository Name:** CharlesKeeling65/ManureCouplingStrategies  
 2. **Brief Introduction:** A Python library designed to optimize the transport and distribution of manure nutrients in agriculture, facilitating efficient resource recycling.  
 3. **Innovations:** Provides a comprehensive set of tools for addressing the logistical challenges of manure resource allocation from farms to crop areas, enhancing agricultural sustainability.  
@@ -649,7 +675,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [tadata-org/fastapi_mcp](https://github.com/tadata-org/fastapi_mcp)
 
-**⭐ Stars:** 11,771 | **🍴 Forks:** 930 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 11,777 | **🍴 Forks:** 931 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -674,7 +701,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [mikf/gallery-dl](https://github.com/mikf/gallery-dl)
 
-**⭐ Stars:** 17,488 | **🍴 Forks:** 1,377 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 17,506 | **🍴 Forks:** 1,379 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -699,7 +727,8 @@ Here is the summary of the GitHub repository:
 
 ### 📌 [roboflow/supervision](https://github.com/roboflow/supervision)
 
-**⭐ Stars:** 37,472 | **🍴 Forks:** 3,271 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 37,581 | **🍴 Forks:** 3,287 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -723,7 +752,8 @@ Here is the summary of the GitHub repository:
 
 ### 📌 [lllyasviel/FramePack](https://github.com/lllyasviel/FramePack)
 
-**⭐ Stars:** 16,713 | **🍴 Forks:** 1,651 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 16,716 | **🍴 Forks:** 1,651 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -744,7 +774,8 @@ Here is the summary of the GitHub repository:
 
 ### 📌 [nunchaku-ai/nunchaku](https://github.com/nunchaku-ai/nunchaku)
 
-**⭐ Stars:** 3,762 | **🍴 Forks:** 237 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 3,765 | **🍴 Forks:** 238 | **📅 Updated:** 2026-04-03
+
 
 
 
@@ -765,7 +796,8 @@ Here is the summary of the GitHub repository:
 
 ### 📌 [NanmiCoder/MediaCrawler](https://github.com/NanmiCoder/MediaCrawler)
 
-**⭐ Stars:** 47,151 | **🍴 Forks:** 10,144 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 47,234 | **🍴 Forks:** 10,161 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -787,7 +819,8 @@ Here is the summary of the GitHub repository:
 
 ### 📌 [arcee-ai/mergekit](https://github.com/arcee-ai/mergekit)
 
-**⭐ Stars:** 6,938 | **🍴 Forks:** 682 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 6,941 | **🍴 Forks:** 682 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -808,7 +841,8 @@ Here is the summary of the GitHub repository:
 
 ### 📌 [opendatalab/MinerU](https://github.com/opendatalab/MinerU)
 
-**⭐ Stars:** 57,935 | **🍴 Forks:** 4,792 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 58,034 | **🍴 Forks:** 4,797 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -830,7 +864,8 @@ Here is the summary of the GitHub repository:
 
 ### 📌 [Zie619/n8n-workflows](https://github.com/Zie619/n8n-workflows)
 
-**⭐ Stars:** 53,478 | **🍴 Forks:** 6,948 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 53,500 | **🍴 Forks:** 6,956 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -855,7 +890,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [hpcaitech/Open-Sora](https://github.com/hpcaitech/Open-Sora)
 
-**⭐ Stars:** 28,814 | **🍴 Forks:** 2,924 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 28,823 | **🍴 Forks:** 2,923 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -876,7 +912,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [1Panel-dev/MaxKB](https://github.com/1Panel-dev/MaxKB)
 
-**⭐ Stars:** 20,631 | **🍴 Forks:** 2,740 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 20,637 | **🍴 Forks:** 2,744 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -901,7 +938,8 @@ Here's the summary of the MaxKB GitHub repository:
 
 ### 📌 [Peterande/D-FINE](https://github.com/Peterande/D-FINE)
 
-**⭐ Stars:** 3,081 | **🍴 Forks:** 291 | **📅 Updated:** 2026-04-02
+**⭐ Stars:** 3,082 | **🍴 Forks:** 291 | **📅 Updated:** 2026-04-03
+
 
 
 
@@ -926,7 +964,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [Fosowl/agenticSeek](https://github.com/Fosowl/agenticSeek)
 
-**⭐ Stars:** 25,791 | **🍴 Forks:** 2,876 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 25,805 | **🍴 Forks:** 2,884 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -949,7 +988,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [robert-mcdermott/ai-knowledge-graph](https://github.com/robert-mcdermott/ai-knowledge-graph)
 
-**⭐ Stars:** 1,956 | **🍴 Forks:** 291 | **📅 Updated:** 2026-04-01
+**⭐ Stars:** 1,961 | **🍴 Forks:** 292 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -972,7 +1012,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [harry0703/MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo)
 
-**⭐ Stars:** 54,872 | **🍴 Forks:** 7,773 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 54,929 | **🍴 Forks:** 7,782 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -996,7 +1037,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [kijai/ComfyUI-FramePackWrapper](https://github.com/kijai/ComfyUI-FramePackWrapper)
 
-**⭐ Stars:** 1,647 | **🍴 Forks:** 116 | **📅 Updated:** 2026-04-02
+**⭐ Stars:** 1,648 | **🍴 Forks:** 117 | **📅 Updated:** 2026-04-03
+
 
 
 
@@ -1019,7 +1061,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [langbot-app/LangBot](https://github.com/langbot-app/LangBot)
 
-**⭐ Stars:** 15,736 | **🍴 Forks:** 1,382 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 15,739 | **🍴 Forks:** 1,382 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1056,6 +1099,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 1. **Repository Name:** xming521/WeClone
 2. **Brief Introduction:** WeClone is a comprehensive solution for creating an AI twin from chat history, allowing users to fine-tune language models with their chat logs to reflect their unique communication style.
 3. **Innovations:** The repository's distinctive features include the ability to fine-tune large language models (LLMs) using personal chat logs and the integration of these models into chatbots to create a digital representation of the user.
@@ -1067,7 +1111,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [happycola233/tchMaterial-parser](https://github.com/happycola233/tchMaterial-parser)
 
-**⭐ Stars:** 4,789 | **🍴 Forks:** 567 | **📅 Updated:** 2026-04-02
+**⭐ Stars:** 4,841 | **🍴 Forks:** 575 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1104,6 +1149,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 1. **Repository Name:** 0xsline/GeminiImageApp
 2. **Brief Introduction:** A comprehensive image processing application built on Google Gemini AI, offering various advanced features for image manipulation and enhancement.
 3. **Innovations:** The application leverages Google Gemini AI to provide unique image processing capabilities, including intelligent editing, style transfer, and automated enhancements, setting it apart from traditional image editing tools.
@@ -1114,7 +1160,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [public-apis/public-apis](https://github.com/public-apis/public-apis)
 
-**⭐ Stars:** 418,564 | **🍴 Forks:** 45,494 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 418,878 | **🍴 Forks:** 45,545 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1138,7 +1185,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [SamuelSchmidgall/AgentLaboratory](https://github.com/SamuelSchmidgall/AgentLaboratory)
 
-**⭐ Stars:** 5,474 | **🍴 Forks:** 770 | **📅 Updated:** 2026-04-02
+**⭐ Stars:** 5,476 | **🍴 Forks:** 771 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1175,6 +1223,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 1. **Repository Name:** VisionXLab/CrossEarth
 2. **Brief Introduction:** CrossEarth is a geospatial vision foundation model designed for cross-domain generalization in remote sensing semantic segmentation, enhancing the adaptability of models across different geographical contexts.
 3. **Innovations:** The repository features advanced techniques for domain adaptation, leveraging large-scale geospatial datasets to improve model performance in diverse environments, and implements state-of-the-art semantic segmentation methods tailored for remote sensing applications.
@@ -1185,7 +1234,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [microsoft/markitdown](https://github.com/microsoft/markitdown)
 
-**⭐ Stars:** 93,202 | **🍴 Forks:** 5,614 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 93,257 | **🍴 Forks:** 5,623 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1208,7 +1258,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [subframe7536/maple-font](https://github.com/subframe7536/maple-font)
 
-**⭐ Stars:** 24,930 | **🍴 Forks:** 992 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 24,940 | **🍴 Forks:** 996 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1232,7 +1283,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [nvbn/thefuck](https://github.com/nvbn/thefuck)
 
-**⭐ Stars:** 95,808 | **🍴 Forks:** 3,865 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 95,847 | **🍴 Forks:** 3,869 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1256,7 +1308,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps)
 
-**⭐ Stars:** 104,354 | **🍴 Forks:** 15,227 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 104,430 | **🍴 Forks:** 15,237 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1280,7 +1333,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [aws/aws-cli](https://github.com/aws/aws-cli)
 
-**⭐ Stars:** 16,857 | **🍴 Forks:** 4,510 | **📅 Updated:** 2026-04-02
+**⭐ Stars:** 16,857 | **🍴 Forks:** 4,511 | **📅 Updated:** 2026-04-03
+
 
 
 
@@ -1316,6 +1370,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 1. **Repository Name:** jonathanwilton/PUExtraTrees
 2. **Brief Introduction:** This repository implements unlabelled Positive Unlabelled (uPU), nearest-neighbor Positive Unlabelled (nnPU), and Positive-Negative (PN) learning using the Extra Trees classifier.
 3. **Innovations:** The repository introduces methods for handling positive and unlabeled data effectively, utilizing the Extra Trees algorithm for improved classification performance in scenarios with limited labeled data.
@@ -1326,7 +1381,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [bilibili/Index-1.9B](https://github.com/bilibili/Index-1.9B)
 
-**⭐ Stars:** 1,012 | **🍴 Forks:** 48 | **📅 Updated:** 2026-03-26
+**⭐ Stars:** 1,013 | **🍴 Forks:** 48 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1350,7 +1406,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [huggingface/transformers](https://github.com/huggingface/transformers)
 
-**⭐ Stars:** 158,716 | **🍴 Forks:** 32,719 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 158,769 | **🍴 Forks:** 32,727 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1374,7 +1431,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
 
-**⭐ Stars:** 162,106 | **🍴 Forks:** 30,207 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 162,107 | **🍴 Forks:** 30,213 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1397,7 +1455,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT)
 
-**⭐ Stars:** 183,083 | **🍴 Forks:** 46,216 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 183,116 | **🍴 Forks:** 46,219 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1421,7 +1480,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [EvanLi/Github-Ranking](https://github.com/EvanLi/Github-Ranking)
 
-**⭐ Stars:** 10,774 | **🍴 Forks:** 640 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 10,778 | **🍴 Forks:** 639 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1458,6 +1518,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 1. **Repository Name:** Lydorn/Polygonization-by-Frame-Field-Learning
 2. **Brief Introduction:** This repository provides a pipeline for fast polygonal building extraction from overhead images using frame field learning techniques.
 3. **Innovations:** The repository features advanced algorithms for efficient polygonization, leveraging machine learning to enhance accuracy in building extraction from aerial imagery.
@@ -1470,6 +1531,7 @@ Here's the summary of the GitHub repository:
 ### 📌 [bubbliiiing/unet-keras](https://github.com/bubbliiiing/unet-keras)
 
 **⭐ Stars:** 112 | **🍴 Forks:** 35 | **📅 Updated:** 2025-11-27
+
 
 
 
@@ -1506,6 +1568,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 1. **Repository Name:** zorzi-s/PolyWorldPretrainedNetwork
 2. **Brief Introduction:** PolyWorld is a project focused on extracting polygonal building outlines from satellite images using advanced graph neural network techniques.
 3. **Innovations:** The repository features a pretrained network specifically designed for building extraction, leveraging graph neural networks to enhance accuracy and efficiency in processing satellite imagery.
@@ -1518,7 +1581,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [hAcKlyc/MyAgents](https://github.com/hAcKlyc/MyAgents)
 
-**⭐ Stars:** 177 | **🍴 Forks:** 25 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 179 | **🍴 Forks:** 24 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1542,7 +1606,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [Narcooo/inkos](https://github.com/Narcooo/inkos)
 
-**⭐ Stars:** 3,265 | **🍴 Forks:** 609 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 3,365 | **🍴 Forks:** 618 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1566,7 +1631,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [anomalyco/opencode](https://github.com/anomalyco/opencode)
 
-**⭐ Stars:** 136,014 | **🍴 Forks:** 14,828 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 136,698 | **🍴 Forks:** 14,942 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1589,7 +1655,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio)
 
-**⭐ Stars:** 42,818 | **🍴 Forks:** 4,007 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 42,872 | **🍴 Forks:** 4,019 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1613,7 +1680,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [openclaw/openclaw](https://github.com/openclaw/openclaw)
 
-**⭐ Stars:** 346,333 | **🍴 Forks:** 68,958 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 347,406 | **🍴 Forks:** 69,323 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1636,7 +1704,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [antvis/Infographic](https://github.com/antvis/Infographic)
 
-**⭐ Stars:** 4,729 | **🍴 Forks:** 341 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 4,734 | **🍴 Forks:** 341 | **📅 Updated:** 2026-04-03
+
 
 
 
@@ -1660,7 +1729,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [Anionex/banana-slides](https://github.com/Anionex/banana-slides)
 
-**⭐ Stars:** 13,509 | **🍴 Forks:** 1,562 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 13,520 | **🍴 Forks:** 1,567 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1684,7 +1754,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [lfnovo/open-notebook](https://github.com/lfnovo/open-notebook)
 
-**⭐ Stars:** 21,691 | **🍴 Forks:** 2,479 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 21,725 | **🍴 Forks:** 2,483 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1707,7 +1778,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [CapSoftware/Cap](https://github.com/CapSoftware/Cap)
 
-**⭐ Stars:** 17,776 | **🍴 Forks:** 1,365 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 17,804 | **🍴 Forks:** 1,369 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1731,7 +1803,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [027xiguapi/code-box](https://github.com/027xiguapi/code-box)
 
-**⭐ Stars:** 3,146 | **🍴 Forks:** 195 | **📅 Updated:** 2026-04-02
+**⭐ Stars:** 3,145 | **🍴 Forks:** 195 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1755,7 +1828,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [iptv-org/iptv](https://github.com/iptv-org/iptv)
 
-**⭐ Stars:** 114,144 | **🍴 Forks:** 5,855 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 114,169 | **🍴 Forks:** 5,857 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1779,7 +1853,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [crocofied/PortNote](https://github.com/crocofied/PortNote)
 
-**⭐ Stars:** 1,249 | **🍴 Forks:** 32 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 1,250 | **🍴 Forks:** 32 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1804,7 +1879,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [hanydd/BilibiliSponsorBlock](https://github.com/hanydd/BilibiliSponsorBlock)
 
-**⭐ Stars:** 5,076 | **🍴 Forks:** 111 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 5,079 | **🍴 Forks:** 111 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1828,7 +1904,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [umami-software/umami](https://github.com/umami-software/umami)
 
-**⭐ Stars:** 35,961 | **🍴 Forks:** 6,808 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 35,983 | **🍴 Forks:** 6,820 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1852,7 +1929,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [xyTom/snippai](https://github.com/xyTom/snippai)
 
-**⭐ Stars:** 1,496 | **🍴 Forks:** 85 | **📅 Updated:** 2026-04-02
+**⭐ Stars:** 1,497 | **🍴 Forks:** 86 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1875,7 +1953,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [Snouzy/workout-cool](https://github.com/Snouzy/workout-cool)
 
-**⭐ Stars:** 7,162 | **🍴 Forks:** 565 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 7,165 | **🍴 Forks:** 565 | **📅 Updated:** 2026-04-03
+
 
 
 
@@ -1899,7 +1978,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [imsyy/DailyHotApi](https://github.com/imsyy/DailyHotApi)
 
-**⭐ Stars:** 3,706 | **🍴 Forks:** 1,240 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 3,711 | **🍴 Forks:** 1,239 | **📅 Updated:** 2026-04-03
+
 
 
 
@@ -1922,7 +2002,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [cline/cline](https://github.com/cline/cline)
 
-**⭐ Stars:** 59,820 | **🍴 Forks:** 6,082 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 59,857 | **🍴 Forks:** 6,087 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1946,7 +2027,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli)
 
-**⭐ Stars:** 100,055 | **🍴 Forks:** 12,844 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 100,144 | **🍴 Forks:** 12,868 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1970,7 +2052,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [RSSNext/Folo](https://github.com/RSSNext/Folo)
 
-**⭐ Stars:** 37,913 | **🍴 Forks:** 2,010 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 37,922 | **🍴 Forks:** 2,013 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -1993,7 +2076,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [antvis/mcp-server-chart](https://github.com/antvis/mcp-server-chart)
 
-**⭐ Stars:** 3,915 | **🍴 Forks:** 369 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 3,917 | **🍴 Forks:** 369 | **📅 Updated:** 2026-04-03
+
 
 
 
@@ -2017,7 +2101,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [firecrawl/firecrawl](https://github.com/firecrawl/firecrawl)
 
-**⭐ Stars:** 103,236 | **🍴 Forks:** 6,787 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 103,736 | **🍴 Forks:** 6,801 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -2040,7 +2125,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [langgenius/dify](https://github.com/langgenius/dify)
 
-**⭐ Stars:** 135,559 | **🍴 Forks:** 21,126 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 135,687 | **🍴 Forks:** 21,142 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -2064,7 +2150,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [n8n-io/n8n](https://github.com/n8n-io/n8n)
 
-**⭐ Stars:** 182,260 | **🍴 Forks:** 56,432 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 182,374 | **🍴 Forks:** 56,455 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -2088,7 +2175,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [linshenkx/prompt-optimizer](https://github.com/linshenkx/prompt-optimizer)
 
-**⭐ Stars:** 25,930 | **🍴 Forks:** 3,059 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 25,965 | **🍴 Forks:** 3,066 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -2112,7 +2200,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [ayangweb/BongoCat](https://github.com/ayangweb/BongoCat)
 
-**⭐ Stars:** 19,912 | **🍴 Forks:** 911 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 19,941 | **🍴 Forks:** 914 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -2136,7 +2225,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)
 
-**⭐ Stars:** 352,106 | **🍴 Forks:** 43,861 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 352,157 | **🍴 Forks:** 43,858 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -2173,6 +2263,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 1. **Repository Name:** Yuiffy/BiliGPT
 2. **Brief Introduction:** BiliGPT is a tool designed to summarize video content from Bilibili, providing users with quick insights and key points from videos.
 3. **Innovations:** The repository features an AI-driven summarization algorithm that extracts essential information from videos, making it easier for users to grasp content without watching the entire video.
@@ -2184,7 +2275,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [ahmedkhaleel2004/gitdiagram](https://github.com/ahmedkhaleel2004/gitdiagram)
 
-**⭐ Stars:** 15,399 | **🍴 Forks:** 1,181 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 15,403 | **🍴 Forks:** 1,180 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -2221,6 +2313,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 1. **Repository Name:** kevmo314/magic-copy
 2. **Brief Introduction:** Magic Copy is a Chrome extension that leverages Meta's Segment Anything Model to isolate and copy foreground objects from images directly to the clipboard.
 3. **Innovations:** The extension's distinctive feature is its ability to intelligently segment and extract objects from images, allowing users to easily copy them for use in other applications.
@@ -2232,7 +2325,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [teableio/teable](https://github.com/teableio/teable)
 
-**⭐ Stars:** 21,084 | **🍴 Forks:** 1,238 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 21,083 | **🍴 Forks:** 1,238 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -2257,7 +2351,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [HqWu-HITCS/Awesome-Chinese-LLM](https://github.com/HqWu-HITCS/Awesome-Chinese-LLM)
 
-**⭐ Stars:** 22,495 | **🍴 Forks:** 2,119 | **📅 Updated:** 2026-04-02
+**⭐ Stars:** 22,496 | **🍴 Forks:** 2,119 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -2280,7 +2375,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [VoltAgent/awesome-openclaw-skills](https://github.com/VoltAgent/awesome-openclaw-skills)
 
-**⭐ Stars:** 43,925 | **🍴 Forks:** 4,214 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 44,121 | **🍴 Forks:** 4,243 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -2304,7 +2400,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [lukasmasuch/best-of-ml-python](https://github.com/lukasmasuch/best-of-ml-python)
 
-**⭐ Stars:** 23,396 | **🍴 Forks:** 3,117 | **📅 Updated:** 2026-04-02
+**⭐ Stars:** 23,395 | **🍴 Forks:** 3,117 | **📅 Updated:** 2026-04-03
+
 
 
 
@@ -2327,7 +2424,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [ashishpatel26/500-AI-Agents-Projects](https://github.com/ashishpatel26/500-AI-Agents-Projects)
 
-**⭐ Stars:** 27,672 | **🍴 Forks:** 4,819 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 27,735 | **🍴 Forks:** 4,832 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -2352,7 +2450,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [svcvit/Awesome-Dify-Workflow](https://github.com/svcvit/Awesome-Dify-Workflow)
 
-**⭐ Stars:** 10,340 | **🍴 Forks:** 1,038 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 10,342 | **🍴 Forks:** 1,038 | **📅 Updated:** 2026-04-03
+
 
 
 
@@ -2377,7 +2476,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [zijie0/HumanSystemOptimization](https://github.com/zijie0/HumanSystemOptimization)
 
-**⭐ Stars:** 21,654 | **🍴 Forks:** 1,509 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 21,654 | **🍴 Forks:** 1,508 | **📅 Updated:** 2026-04-03
+
 
 
 
@@ -2411,6 +2511,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 1. **Repository Name:** holyshell/AppsForMac
 2. **Brief Introduction:** A collection of outstanding software applications specifically designed for macOS users, enhancing productivity and user experience.
 3. **Innovations:** Features a curated list of innovative apps that cater to various needs, including productivity, creativity, and system utilities, all optimized for macOS.
@@ -2421,7 +2522,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers)
 
-**⭐ Stars:** 84,124 | **🍴 Forks:** 8,679 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 84,173 | **🍴 Forks:** 8,699 | **📅 Updated:** 2026-04-04
+
 
 
 1. **Repository Name:** punkpeye/awesome-mcp-servers  
@@ -2447,6 +2549,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 1. **Repository Name:** kkeenee/TG-Twilight-AWAvenue-Ads-Rule
 2. **Brief Introduction:** A top-tier open-source ad filter list designed for effective ad blocking, privacy protection, and traffic savings, supporting various network-level ad blocking and proxy tools.
 3. **Innovations:** Utilizes Adblock syntax to combat advertising SDKs in Android applications at the network level, preventing their loading and enhancing user privacy.
@@ -2458,7 +2561,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [datawhalechina/so-large-lm](https://github.com/datawhalechina/so-large-lm)
 
-**⭐ Stars:** 7,040 | **🍴 Forks:** 585 | **📅 Updated:** 2026-04-02
+**⭐ Stars:** 7,048 | **🍴 Forks:** 585 | **📅 Updated:** 2026-04-03
+
 
 
 
@@ -2481,7 +2585,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [ruanyf/weekly](https://github.com/ruanyf/weekly)
 
-**⭐ Stars:** 87,262 | **🍴 Forks:** 3,935 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 87,336 | **🍴 Forks:** 3,936 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -2506,7 +2611,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [automeris-io/WebPlotDigitizer](https://github.com/automeris-io/WebPlotDigitizer)
 
-**⭐ Stars:** 3,043 | **🍴 Forks:** 424 | **📅 Updated:** 2026-04-02
+**⭐ Stars:** 3,044 | **🍴 Forks:** 424 | **📅 Updated:** 2026-04-03
+
 
 
 
@@ -2531,7 +2637,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [hmjz100/LinkSwift](https://github.com/hmjz100/LinkSwift)
 
-**⭐ Stars:** 13,773 | **🍴 Forks:** 800 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 13,794 | **🍴 Forks:** 802 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -2565,6 +2672,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 1. **Repository Name:** fogsightai/fogsight  
 2. **Brief Introduction:** Fogsight is an AI agent and animation engine that leverages Large Language Models to create dynamic and interactive experiences.  
 3. **Innovations:** Fogsight uniquely integrates AI-driven animation with natural language processing, enabling users to generate complex animations through simple text commands and interactions.  
@@ -2576,7 +2684,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [glidea/banana-prompt-quicker](https://github.com/glidea/banana-prompt-quicker)
 
-**⭐ Stars:** 2,294 | **🍴 Forks:** 174 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 2,295 | **🍴 Forks:** 174 | **📅 Updated:** 2026-04-03
+
 
 
 
@@ -2598,7 +2707,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [playcanvas/engine](https://github.com/playcanvas/engine)
 
-**⭐ Stars:** 14,678 | **🍴 Forks:** 1,749 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 14,683 | **🍴 Forks:** 1,750 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -2621,7 +2731,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [xanderfrangos/twinkle-tray](https://github.com/xanderfrangos/twinkle-tray)
 
-**⭐ Stars:** 8,232 | **🍴 Forks:** 280 | **📅 Updated:** 2026-04-02
+**⭐ Stars:** 8,237 | **🍴 Forks:** 280 | **📅 Updated:** 2026-04-03
+
 
 
 
@@ -2646,7 +2757,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [wordshub/free-font](https://github.com/wordshub/free-font)
 
-**⭐ Stars:** 6,176 | **🍴 Forks:** 426 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 6,181 | **🍴 Forks:** 426 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -2669,7 +2781,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [mrdoob/three.js](https://github.com/mrdoob/three.js)
 
-**⭐ Stars:** 111,735 | **🍴 Forks:** 36,320 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 111,752 | **🍴 Forks:** 36,317 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -2710,7 +2823,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [SheepChef/Abracadabra](https://github.com/SheepChef/Abracadabra)
 
-**⭐ Stars:** 2,328 | **🍴 Forks:** 220 | **📅 Updated:** 2026-04-02
+**⭐ Stars:** 2,329 | **🍴 Forks:** 220 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -2747,6 +2861,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 1. **Repository Name:** yitong2333/Bionic-Reading
 2. **Brief Introduction:** A Tampermonkey script that enhances reading experience by emphasizing keywords and key content, making it easier for readers to grasp important information.
 3. **Innovations:** The script alters text display to highlight critical elements, thereby improving reading speed and comprehension.
@@ -2758,7 +2873,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [poloclub/transformer-explainer](https://github.com/poloclub/transformer-explainer)
 
-**⭐ Stars:** 7,028 | **🍴 Forks:** 751 | **📅 Updated:** 2026-04-02
+**⭐ Stars:** 7,037 | **🍴 Forks:** 751 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -2794,6 +2910,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 1. **Repository Name:** wri/global-pasture-watch  
 2. **Brief Introduction:** This repository focuses on mapping the extent, management, and condition of global grasslands to support sustainable land use and conservation efforts.  
 3. **Innovations:** Key features include detailed mapping tools, data visualization capabilities, and integration of various datasets to assess grassland health and management practices.  
@@ -2806,7 +2923,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [roboflow/notebooks](https://github.com/roboflow/notebooks)
 
-**⭐ Stars:** 9,289 | **🍴 Forks:** 1,430 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 9,291 | **🍴 Forks:** 1,430 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -2831,7 +2949,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [patchy631/ai-engineering-hub](https://github.com/patchy631/ai-engineering-hub)
 
-**⭐ Stars:** 33,098 | **🍴 Forks:** 5,472 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 33,124 | **🍴 Forks:** 5,477 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -2854,7 +2973,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [microsoft/AI-For-Beginners](https://github.com/microsoft/AI-For-Beginners)
 
-**⭐ Stars:** 46,400 | **🍴 Forks:** 9,492 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 46,414 | **🍴 Forks:** 9,496 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -2878,7 +2998,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [microsoft/generative-ai-for-beginners](https://github.com/microsoft/generative-ai-for-beginners)
 
-**⭐ Stars:** 108,858 | **🍴 Forks:** 58,380 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 108,890 | **🍴 Forks:** 58,403 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -2903,7 +3024,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [QwenLM/Qwen3-VL](https://github.com/QwenLM/Qwen3-VL)
 
-**⭐ Stars:** 18,855 | **🍴 Forks:** 1,711 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 18,870 | **🍴 Forks:** 1,713 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -2940,6 +3062,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 1. **Repository Name:** roywright/pu_learning
 2. **Brief Introduction:** This repository conducts experiments in positive-unlabeled learning, a machine learning approach where only positive and unlabeled data are available for training.
 3. **Innovations:** The repository features novel algorithms and methodologies for effectively leveraging positive-unlabeled data, enhancing model performance in scenarios with limited labeled data.
@@ -2951,6 +3074,7 @@ Here's the summary of the GitHub repository:
 ### 📌 [phuijse/bagging_pu](https://github.com/phuijse/bagging_pu)
 
 **⭐ Stars:** 93 | **🍴 Forks:** 20 | **📅 Updated:** 2025-09-10
+
 
 
 
@@ -2987,6 +3111,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 1. **Repository Name:** henry-gu/prompt-engineering-for-developers
 2. **Brief Introduction:** This repository contains the Chinese version of Andrew Ng's course "ChatGPT Prompt Engineering for Developers," focusing on effective prompt design for AI applications.
 3. **Innovations:** It offers a comprehensive curriculum on prompt engineering, tailored for developers, with practical examples and insights into optimizing AI interactions.
@@ -2997,7 +3122,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [google/automl](https://github.com/google/automl)
 
-**⭐ Stars:** 6,465 | **🍴 Forks:** 1,465 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 6,463 | **🍴 Forks:** 1,465 | **📅 Updated:** 2026-04-03
+
 
 
 
@@ -3022,7 +3148,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [Diorser/LiteMonitor](https://github.com/Diorser/LiteMonitor)
 
-**⭐ Stars:** 4,579 | **🍴 Forks:** 186 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 4,585 | **🍴 Forks:** 186 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3047,7 +3174,8 @@ Here's the summary of the LiteMonitor GitHub repository:
 
 ### 📌 [Flow-Launcher/Flow.Launcher](https://github.com/Flow-Launcher/Flow.Launcher)
 
-**⭐ Stars:** 14,353 | **🍴 Forks:** 578 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 14,363 | **🍴 Forks:** 578 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3072,7 +3200,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [DearVa/Everywhere](https://github.com/DearVa/Everywhere)
 
-**⭐ Stars:** 5,754 | **🍴 Forks:** 340 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 5,754 | **🍴 Forks:** 342 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3097,7 +3226,8 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 ### 📌 [ZyperWave/ZyperWinOptimize](https://github.com/ZyperWave/ZyperWinOptimize)
 
-**⭐ Stars:** 7,107 | **🍴 Forks:** 423 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 7,113 | **🍴 Forks:** 423 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3120,7 +3250,8 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 ### 📌 [randyrants/sharpkeys](https://github.com/randyrants/sharpkeys)
 
-**⭐ Stars:** 6,853 | **🍴 Forks:** 438 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 6,853 | **🍴 Forks:** 437 | **📅 Updated:** 2026-04-03
+
 
 
 
@@ -3144,7 +3275,8 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 ### 📌 [microsoft/PowerToys](https://github.com/microsoft/PowerToys)
 
-**⭐ Stars:** 131,270 | **🍴 Forks:** 7,850 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 131,310 | **🍴 Forks:** 7,855 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3168,7 +3300,8 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 ### 📌 [zetaloop/OFGB](https://github.com/zetaloop/OFGB)
 
-**⭐ Stars:** 1,005 | **🍴 Forks:** 35 | **📅 Updated:** 2026-03-24
+**⭐ Stars:** 1,004 | **🍴 Forks:** 35 | **📅 Updated:** 2026-04-03
+
 
 
 
@@ -3194,7 +3327,8 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 ### 📌 [justlovemaki/openclaw-docker-cn-im](https://github.com/justlovemaki/openclaw-docker-cn-im)
 
-**⭐ Stars:** 3,682 | **🍴 Forks:** 436 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 3,694 | **🍴 Forks:** 438 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3218,7 +3352,8 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 ### 📌 [githubnext/monaspace](https://github.com/githubnext/monaspace)
 
-**⭐ Stars:** 18,789 | **🍴 Forks:** 320 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 18,798 | **🍴 Forks:** 320 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3243,7 +3378,8 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 ### 📌 [obra/superpowers](https://github.com/obra/superpowers)
 
-**⭐ Stars:** 132,637 | **🍴 Forks:** 11,021 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 134,232 | **🍴 Forks:** 11,186 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3268,7 +3404,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [anthropics/claude-code](https://github.com/anthropics/claude-code)
 
-**⭐ Stars:** 107,018 | **🍴 Forks:** 17,294 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 108,230 | **🍴 Forks:** 17,725 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3292,7 +3429,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds)
 
-**⭐ Stars:** 10,628 | **🍴 Forks:** 1,428 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 10,632 | **🍴 Forks:** 1,428 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3317,7 +3455,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser)
 
-**⭐ Stars:** 26,344 | **🍴 Forks:** 1,590 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 26,737 | **🍴 Forks:** 1,618 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3340,7 +3479,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [cjpais/Handy](https://github.com/cjpais/Handy)
 
-**⭐ Stars:** 19,113 | **🍴 Forks:** 1,529 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 19,170 | **🍴 Forks:** 1,535 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3364,7 +3504,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [astral-sh/uv](https://github.com/astral-sh/uv)
 
-**⭐ Stars:** 82,531 | **🍴 Forks:** 2,903 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 82,579 | **🍴 Forks:** 2,904 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3387,7 +3528,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [btjawa/BiliTools](https://github.com/btjawa/BiliTools)
 
-**⭐ Stars:** 4,903 | **🍴 Forks:** 316 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 4,906 | **🍴 Forks:** 317 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3411,7 +3553,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [tw93/Pake](https://github.com/tw93/Pake)
 
-**⭐ Stars:** 47,534 | **🍴 Forks:** 9,440 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 47,554 | **🍴 Forks:** 9,453 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3436,7 +3579,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [allenk/GeminiWatermarkTool](https://github.com/allenk/GeminiWatermarkTool)
 
-**⭐ Stars:** 1,976 | **🍴 Forks:** 163 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 1,983 | **🍴 Forks:** 163 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3459,7 +3603,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [nomic-ai/gpt4all](https://github.com/nomic-ai/gpt4all)
 
-**⭐ Stars:** 77,229 | **🍴 Forks:** 8,328 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 77,230 | **🍴 Forks:** 8,327 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3483,7 +3628,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [microsoft/WSL](https://github.com/microsoft/WSL)
 
-**⭐ Stars:** 31,669 | **🍴 Forks:** 1,669 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 31,680 | **🍴 Forks:** 1,667 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3506,7 +3652,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [hluk/CopyQ](https://github.com/hluk/CopyQ)
 
-**⭐ Stars:** 11,451 | **🍴 Forks:** 554 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 11,457 | **🍴 Forks:** 555 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3532,7 +3679,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [DigitalPlatDev/FreeDomain](https://github.com/DigitalPlatDev/FreeDomain)
 
-**⭐ Stars:** 155,488 | **🍴 Forks:** 2,645 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 155,615 | **🍴 Forks:** 2,646 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3556,7 +3704,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [Chuyu-Team/Dism-Multi-language](https://github.com/Chuyu-Team/Dism-Multi-language)
 
-**⭐ Stars:** 19,235 | **🍴 Forks:** 1,187 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 19,240 | **🍴 Forks:** 1,187 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3579,7 +3728,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [ripienaar/free-for-dev](https://github.com/ripienaar/free-for-dev)
 
-**⭐ Stars:** 120,482 | **🍴 Forks:** 12,526 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 120,501 | **🍴 Forks:** 12,529 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3603,7 +3753,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [Sjj1024/PakePlus](https://github.com/Sjj1024/PakePlus)
 
-**⭐ Stars:** 11,249 | **🍴 Forks:** 4,257 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 11,264 | **🍴 Forks:** 4,257 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3628,7 +3779,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [Tencent/WeKnora](https://github.com/Tencent/WeKnora)
 
-**⭐ Stars:** 13,720 | **🍴 Forks:** 1,607 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 13,730 | **🍴 Forks:** 1,612 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3652,7 +3804,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [OpenListTeam/OpenList](https://github.com/OpenListTeam/OpenList)
 
-**⭐ Stars:** 21,702 | **🍴 Forks:** 1,848 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 21,720 | **🍴 Forks:** 1,852 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3676,7 +3829,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [ollama/ollama](https://github.com/ollama/ollama)
 
-**⭐ Stars:** 166,881 | **🍴 Forks:** 15,285 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 167,050 | **🍴 Forks:** 15,306 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3700,7 +3854,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [fatedier/frp](https://github.com/fatedier/frp)
 
-**⭐ Stars:** 105,761 | **🍴 Forks:** 14,974 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 105,790 | **🍴 Forks:** 14,975 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3739,6 +3894,7 @@ Here's a summary of the GitHub repository:
 
 
 
+
 1. **Repository Name:** zetaloop/ExplorerPatcher
 2. **Brief Introduction:** ExplorerPatcher enhances the Windows 11 user experience by restoring classic features and improving functionality for a more efficient workflow.
 3. **Innovations:** Key features include the ability to customize the taskbar, restore the classic Start menu, and enhance file explorer capabilities, providing users with a familiar and productive environment.
@@ -3749,7 +3905,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [ventoy/Ventoy](https://github.com/ventoy/Ventoy)
 
-**⭐ Stars:** 75,455 | **🍴 Forks:** 4,719 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 75,468 | **🍴 Forks:** 4,716 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3774,7 +3931,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [RamonUnch/AltSnap](https://github.com/RamonUnch/AltSnap)
 
-**⭐ Stars:** 4,761 | **🍴 Forks:** 143 | **📅 Updated:** 2026-04-02
+**⭐ Stars:** 4,762 | **🍴 Forks:** 143 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3799,7 +3957,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [Tosencen/XMSLEEP](https://github.com/Tosencen/XMSLEEP)
 
-**⭐ Stars:** 1,195 | **🍴 Forks:** 63 | **📅 Updated:** 2026-04-02
+**⭐ Stars:** 1,195 | **🍴 Forks:** 63 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3823,7 +3982,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [gkd-kit/gkd](https://github.com/gkd-kit/gkd)
 
-**⭐ Stars:** 37,495 | **🍴 Forks:** 1,803 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 37,520 | **🍴 Forks:** 1,805 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3849,7 +4009,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [kknifer7/FreeBox](https://github.com/kknifer7/FreeBox)
 
-**⭐ Stars:** 1,481 | **🍴 Forks:** 137 | **📅 Updated:** 2026-04-02
+**⭐ Stars:** 1,481 | **🍴 Forks:** 137 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3872,7 +4033,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [ZCShou/GoGoGo](https://github.com/ZCShou/GoGoGo)
 
-**⭐ Stars:** 10,178 | **🍴 Forks:** 1,159 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 10,186 | **🍴 Forks:** 1,161 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3898,7 +4060,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [easychen/opc-methodology](https://github.com/easychen/opc-methodology)
 
-**⭐ Stars:** 14,353 | **🍴 Forks:** 1,604 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 14,373 | **🍴 Forks:** 1,606 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3924,7 +4087,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [tldr-pages/tldr](https://github.com/tldr-pages/tldr)
 
-**⭐ Stars:** 61,894 | **🍴 Forks:** 5,140 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 61,897 | **🍴 Forks:** 5,140 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3951,7 +4115,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [dair-ai/Prompt-Engineering-Guide](https://github.com/dair-ai/Prompt-Engineering-Guide)
 
-**⭐ Stars:** 72,708 | **🍴 Forks:** 7,793 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 72,761 | **🍴 Forks:** 7,800 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -3977,7 +4142,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [x-cmd/x-cmd](https://github.com/x-cmd/x-cmd)
 
-**⭐ Stars:** 4,191 | **🍴 Forks:** 130 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 4,196 | **🍴 Forks:** 130 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -4003,7 +4169,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [TapXWorld/ChinaTextbook](https://github.com/TapXWorld/ChinaTextbook)
 
-**⭐ Stars:** 66,208 | **🍴 Forks:** 14,746 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 66,494 | **🍴 Forks:** 14,832 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -4028,7 +4195,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [jgm/pandoc](https://github.com/jgm/pandoc)
 
-**⭐ Stars:** 43,060 | **🍴 Forks:** 3,805 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 43,083 | **🍴 Forks:** 3,806 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -4066,6 +4234,7 @@ Here's a summary of the GitHub repository:
 
 
 
+
 1. **Repository Name:** MadMaxChow/VLOOK
 2. **Brief Introduction:** VLOOK™ is an elegant and practical theme package and enhancement plugin designed for Typora and Markdown users.
 3. **Innovations:** VLOOK™ offers a visually appealing design, customizable themes, and enhanced functionality for Markdown editing, improving the overall user experience.
@@ -4079,7 +4248,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [penpot/penpot](https://github.com/penpot/penpot)
 
-**⭐ Stars:** 45,170 | **🍴 Forks:** 2,642 | **📅 Updated:** 2026-04-03
+**⭐ Stars:** 45,181 | **🍴 Forks:** 2,647 | **📅 Updated:** 2026-04-04
+
 
 
 
@@ -4105,7 +4275,7 @@ Here's a summary of the GitHub repository:
 
 - **Total repositories:** 170
 - **Languages:** 22
-- **Generated on:** 2026-04-03
+- **Generated on:** 2026-04-04
 - **AI Model:** GitHub Copilot
 
 - **API Calls:** Copilot=0, OpenRouter=0, Gemini=0
