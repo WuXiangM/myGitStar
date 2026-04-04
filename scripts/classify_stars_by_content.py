@@ -140,6 +140,28 @@ FALLBACK_ON_429 = _env_truthy("MYGITSTAR_FALLBACK_ON_429")
 DEBUG_API = _env_truthy("DEBUG_API")
 
 
+class RateLimitAbort(RuntimeError):
+    """Raised when too many consecutive 429 responses occur."""
+
+
+MAX_CONSECUTIVE_429 = int(os.environ.get("MYGITSTAR_MAX_CONSECUTIVE_429", "5") or "5")
+_CONSECUTIVE_429 = 0
+
+
+def _reset_consecutive_429() -> None:
+    global _CONSECUTIVE_429
+    _CONSECUTIVE_429 = 0
+
+
+def _note_429_and_maybe_abort(backend: str) -> None:
+    global _CONSECUTIVE_429
+    _CONSECUTIVE_429 += 1
+    if MAX_CONSECUTIVE_429 > 0 and _CONSECUTIVE_429 >= MAX_CONSECUTIVE_429:
+        raise RateLimitAbort(
+            f"Too many consecutive 429 rate-limit responses (count={_CONSECUTIVE_429}, max={MAX_CONSECUTIVE_429}) from {backend}. Aborting."
+        )
+
+
 class SimpleThrottle:
     def __init__(self, qps: float):
         self.interval = 1.0 / qps if qps and qps > 0 else 0.0
@@ -240,15 +262,25 @@ def _raise_if_error_response(resp: Optional[Dict[str, Any]], backend: str) -> No
         raise RuntimeError(f"{backend} request failed: empty response")
     err = resp.get("error")
     if not err:
+        _reset_consecutive_429()
         return
     try:
         code = err.get("code")
+
+        # Track consecutive 429 responses and abort if it persists.
+        if str(code) == "429" or resp.get("status_code") == 429:
+            _note_429_and_maybe_abort(backend)
+        else:
+            _reset_consecutive_429()
+
         msg = err.get("message") or ""
         body_preview = err.get("body_preview") or ""
         details = f"{msg}".strip()
         if body_preview:
             details = (details + "\n" if details else "") + f"body_preview: {body_preview}"
         raise RuntimeError(f"{backend} request failed (code={code})\n{details}".rstrip())
+    except RateLimitAbort:
+        raise
     except Exception as e:
         raise RuntimeError(f"{backend} request failed (unparseable error payload): {e}")
 
@@ -488,6 +520,8 @@ def call_llm_json(prompt: str, attempts: int = 2) -> Any:
         try:
             text = call_llm(p)
             return _extract_json_from_text(text)
+        except RateLimitAbort:
+            raise
         except Exception as e:
             last_error = e
             if i < attempts:
@@ -1112,6 +1146,9 @@ def main() -> int:
     )
     try:
         raw_tax = call_llm_json(taxonomy_prompt, attempts=2)
+    except RateLimitAbort as e:
+        print(f"[FATAL] {e}")
+        return 4
     except Exception as e:
         print(f"Failed to call LLM for taxonomy: {e}")
         print("\nChecklist:")
@@ -1145,6 +1182,9 @@ def main() -> int:
         try:
             raw = call_llm_json(prompt, attempts=2)
             assignments = _parse_assignments(raw)
+        except RateLimitAbort as e:
+            print(f"[FATAL] {e}")
+            return 4
         except Exception as e:
             print(f"[Batch {i}] failed to parse assignments: {e}")
             assignments = []

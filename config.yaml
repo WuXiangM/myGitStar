@@ -88,6 +88,12 @@ max_repos: 50
 update_mode: missing_only
 
 
+# 内容分类：类别数量区间（用于 classify_stars_by_content.py）
+# Content classification: category count range (used by classify_stars_by_content.py)
+content_min_categories: 5
+content_max_categories: 12
+
+
 # Workflow 仅执行内容分类：为 true 时，GitHub Actions 将跳过 summarize_stars.py，只运行 classify_stars_by_content.py
 # 注意：开启后需要仓库中已存在 README_lang.md（工作流会用它作为 --from-readme 输入）
 # Workflow classify-only: when true, GitHub Actions skips summarize_stars.py and only runs classify_stars_by_content.py

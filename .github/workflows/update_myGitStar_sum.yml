@@ -30,13 +30,31 @@ jobs:
       - name: Read workflow flags from config.yaml
         id: cfg
         run: |
-          CLASSIFY_ONLY=$(python - <<'PY'
+          python - <<'PY'
           import yaml
+
           d = yaml.safe_load(open('config.yaml', 'r', encoding='utf-8')) or {}
-          print('true' if bool(d.get('workflow_classify_only')) else 'false')
+
+          classify_only = 'true' if bool(d.get('workflow_classify_only')) else 'false'
+
+          def _to_int(v, default):
+            try:
+              return int(v)
+            except Exception:
+              return int(default)
+
+          min_cat = _to_int(d.get('content_min_categories', 5), 5)
+          max_cat = _to_int(d.get('content_max_categories', 8), 8)
+          if min_cat < 1:
+            min_cat = 1
+          if max_cat < min_cat:
+            max_cat = min_cat
+
+          with open('${GITHUB_OUTPUT}', 'a', encoding='utf-8') as f:
+            f.write(f"classify_only={classify_only}\n")
+            f.write(f"min_categories={min_cat}\n")
+            f.write(f"max_categories={max_cat}\n")
           PY
-          )
-          echo "classify_only=$CLASSIFY_ONLY" >> $GITHUB_OUTPUT
 
       - name: Ensure README_lang.md exists (classify-only mode)
         if: steps.cfg.outputs.classify_only == 'true'
@@ -62,6 +80,7 @@ jobs:
           GITHUB_ACTOR: ${{ github.actor }}
           # More conservative settings to reduce 429; and allow fallback if Copilot is rate-limited.
           MYGITSTAR_FALLBACK_ON_429: '1'
+          MYGITSTAR_MAX_CONSECUTIVE_429: '5'
           MYGITSTAR_RETRY_ATTEMPTS: '4'
           MYGITSTAR_REQUEST_RETRY_DELAY: '4'
           MYGITSTAR_GLOBAL_QPS: '0.25'
@@ -69,10 +88,10 @@ jobs:
         run: |
           python scripts/classify_stars_by_content.py \
             --from-readme "README_lang.md" \
-            --min-categories 5 \
-            --max-categories 8 \
+            --min-categories ${{ steps.cfg.outputs.min_categories }} \
+            --max-categories ${{ steps.cfg.outputs.max_categories }} \
             --sample-size 60 \
-            --batch-size 25 \
+            --batch-size 40 \
             --out-md README.md \
             --out-json repo_categories.json
 
