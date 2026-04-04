@@ -27,7 +27,24 @@ jobs:
       - name: Set workflow actor env
         run: echo "GITHUB_ACTOR=${{ github.actor }}" >> $GITHUB_ENV
 
+      - name: Read workflow flags from config.yaml
+        id: cfg
+        run: |
+          CLASSIFY_ONLY=$(python - <<'PY'
+          import yaml
+          d = yaml.safe_load(open('config.yaml', 'r', encoding='utf-8')) or {}
+          print('true' if bool(d.get('workflow_classify_only')) else 'false')
+          PY
+          )
+          echo "classify_only=$CLASSIFY_ONLY" >> $GITHUB_OUTPUT
+
+      - name: Ensure README_lang.md exists (classify-only mode)
+        if: steps.cfg.outputs.classify_only == 'true'
+        run: |
+          test -f README_lang.md || (echo "README_lang.md not found. Either run summarize first, or commit README_lang.md to the repo." && exit 1)
+
       - name: Summarize starred repos with ai
+        if: steps.cfg.outputs.classify_only != 'true'
         env:
           STARRED_GITHUB_TOKEN: ${{ secrets.STARRED_GITHUB_TOKEN }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
@@ -43,6 +60,12 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_ACTOR: ${{ github.actor }}
+          # More conservative settings to reduce 429; and allow fallback if Copilot is rate-limited.
+          MYGITSTAR_FALLBACK_ON_429: '1'
+          MYGITSTAR_RETRY_ATTEMPTS: '4'
+          MYGITSTAR_REQUEST_RETRY_DELAY: '4'
+          MYGITSTAR_GLOBAL_QPS: '0.25'
+          MYGITSTAR_RATE_LIMIT_DELAY: '6'
         run: |
           python scripts/classify_stars_by_content.py \
             --from-readme "README_lang.md" \
@@ -54,6 +77,7 @@ jobs:
             --out-json repo_categories.json
 
       - name: Print Copilot API call count
+        if: steps.cfg.outputs.classify_only != 'true'
         env:
           STARRED_GITHUB_TOKEN: ${{ secrets.STARRED_GITHUB_TOKEN }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
@@ -67,7 +91,9 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md README_lang.md README_lang_cn.md repo_categories.json
+          git add README.md repo_categories.json
+          test -f README_lang.md && git add README_lang.md || true
+          test -f README_lang_cn.md && git add README_lang_cn.md || true
           git commit -m "update AI summarized stars [bot]" || echo "No changes to commit"
           git remote set-url origin https://x-access-token:${STARRED_GITHUB_TOKEN}@github.com/${{ github.repository }}.git
           git pull --rebase origin main || echo "No remote changes to pull"

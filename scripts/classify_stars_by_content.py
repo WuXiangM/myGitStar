@@ -107,17 +107,35 @@ GITHUB_TOKEN = _get_secret("github_token_env", ["STARRED_GITHUB_TOKEN", "GITHUB_
 OPENROUTER_API_KEY = _get_secret("openrouter_api_key_env", ["OPENROUTER_API_KEY"], "openrouter_api_key")
 GEMINI_API_KEY = _get_secret("gemini_api_key_env", ["GEMINI_API_KEY"], "gemini_api_key")
 
-MODEL_CHOICE = (config.get("model_choice", "copilot") if isinstance(config, dict) else "copilot").strip().lower()
+def get_model_choice() -> str:
+    """Get selected backend.
+
+    Priority:
+    1) env MYGITSTAR_MODEL_CHOICE (per-step override)
+    2) config.yaml model_choice
+    """
+    try:
+        val = os.environ.get("MYGITSTAR_MODEL_CHOICE")
+        if val is not None and str(val).strip():
+            return str(val).strip().lower()
+        return (config.get("model_choice", "copilot") if isinstance(config, dict) else "copilot").strip().lower()
+    except Exception:
+        return "copilot"
+
+
+MODEL_CHOICE = get_model_choice()
 
 DEFAULT_COPILOT_MODEL = config.get("default_copilot_model", "openai/gpt-4o-mini")
 DEFAULT_OPENROUTER_MODEL = config.get("default_openrouter_model")
 DEFAULT_GEMINI_MODEL = config.get("default_gemini_model", "gemini-2.0-flash")
 
-REQUEST_TIMEOUT = _get_float_config("request_timeout", 30.0)
-REQUEST_RETRY_DELAY = _get_float_config("request_retry_delay", 2.0)
-RETRY_ATTEMPTS = _get_int_config("retry_attempts", 1)
-RATE_LIMIT_DELAY = _get_float_config("rate_limit_delay", 3.0)
-GLOBAL_QPS = _get_float_config("global_qps", 0.5)
+REQUEST_TIMEOUT = float(os.environ.get("MYGITSTAR_REQUEST_TIMEOUT", _get_float_config("request_timeout", 30.0)))
+REQUEST_RETRY_DELAY = float(os.environ.get("MYGITSTAR_REQUEST_RETRY_DELAY", _get_float_config("request_retry_delay", 2.0)))
+RETRY_ATTEMPTS = int(os.environ.get("MYGITSTAR_RETRY_ATTEMPTS", _get_int_config("retry_attempts", 1)))
+RATE_LIMIT_DELAY = float(os.environ.get("MYGITSTAR_RATE_LIMIT_DELAY", _get_float_config("rate_limit_delay", 3.0)))
+GLOBAL_QPS = float(os.environ.get("MYGITSTAR_GLOBAL_QPS", _get_float_config("global_qps", 0.5)))
+
+FALLBACK_ON_429 = _env_truthy("MYGITSTAR_FALLBACK_ON_429")
 
 DEBUG_API = _env_truthy("DEBUG_API")
 
@@ -177,7 +195,22 @@ def make_api_request(url: str, headers: Dict[str, str], data: Dict[str, Any], re
                     continue
                 return {"error": {"code": 429, "message": "Too Many Requests"}, "status_code": 429}
 
-            resp.raise_for_status()
+            # For non-2xx, return a structured error payload instead of raising.
+            if not (200 <= int(resp.status_code) < 300):
+                body_preview = ""
+                try:
+                    body_preview = (resp.text or "").strip()[:2000]
+                except Exception:
+                    body_preview = ""
+                return {
+                    "error": {
+                        "code": int(resp.status_code),
+                        "message": f"HTTP {resp.status_code}",
+                        "body_preview": body_preview,
+                    },
+                    "status_code": int(resp.status_code),
+                }
+
             try:
                 return resp.json()
             except Exception:
@@ -189,7 +222,7 @@ def make_api_request(url: str, headers: Dict[str, str], data: Dict[str, Any], re
                 time.sleep(wait)
                 continue
             print(f"[HTTPError] final: {e}")
-            return None
+            return {"error": {"code": "http_error", "message": str(e)}, "status_code": "http_error"}
         except Exception as e:
             if attempt < retries - 1:
                 wait = retry_delay * (2 ** attempt) + random.uniform(0, 1)
@@ -197,7 +230,27 @@ def make_api_request(url: str, headers: Dict[str, str], data: Dict[str, Any], re
                 time.sleep(wait)
                 continue
             print(f"[Error] final: {e}")
-            return None
+            return {"error": {"code": "exception", "message": str(e)}, "status_code": "exception"}
+
+    return {"error": {"code": "unknown", "message": "request failed"}, "status_code": "unknown"}
+
+
+def _raise_if_error_response(resp: Optional[Dict[str, Any]], backend: str) -> None:
+    if not resp or not isinstance(resp, dict):
+        raise RuntimeError(f"{backend} request failed: empty response")
+    err = resp.get("error")
+    if not err:
+        return
+    try:
+        code = err.get("code")
+        msg = err.get("message") or ""
+        body_preview = err.get("body_preview") or ""
+        details = f"{msg}".strip()
+        if body_preview:
+            details = (details + "\n" if details else "") + f"body_preview: {body_preview}"
+        raise RuntimeError(f"{backend} request failed (code={code})\n{details}".rstrip())
+    except Exception as e:
+        raise RuntimeError(f"{backend} request failed (unparseable error payload): {e}")
 
 
 def _extract_json_from_text(text: str) -> Any:
@@ -258,7 +311,9 @@ def _get_llm_text(response: Optional[Dict[str, Any]]) -> str:
 
 def call_llm(prompt: str) -> str:
     """Call the selected LLM backend with a user prompt. Returns raw text."""
-    if MODEL_CHOICE == "copilot":
+    model_choice = get_model_choice()
+
+    if model_choice == "copilot":
         if not GITHUB_TOKEN:
             raise RuntimeError("Missing STARRED_GITHUB_TOKEN (required for copilot backend).")
         headers = {
@@ -275,18 +330,98 @@ def call_llm(prompt: str) -> str:
             "temperature": 0.2,
         }
         resp = make_api_request(API_ENDPOINTS["copilot"], headers, data, retries=RETRY_ATTEMPTS, retry_delay=REQUEST_RETRY_DELAY)
-        return _get_llm_text(resp)
 
-    if MODEL_CHOICE == "openrouter":
+        # Optional fallback when Copilot is rate-limited (HTTP 429).
+        if (
+            FALLBACK_ON_429
+            and isinstance(resp, dict)
+            and isinstance(resp.get("error"), dict)
+            and resp.get("error", {}).get("code") == 429
+        ):
+            print("[WARN] Copilot rate-limited (429). Trying fallback backend...")
+            if OPENROUTER_API_KEY:
+                # Call OpenRouter directly (avoid recursion + static globals)
+                model_name2 = DEFAULT_OPENROUTER_MODEL or "openai/gpt-4o-mini"
+                headers2 = {"Authorization": f"Bearer {OPENROUTER_API_KEY}", "Content-Type": "application/json"}
+                data2 = {"model": model_name2, "messages": [{"role": "user", "content": prompt}]}
+                resp2 = make_api_request(API_ENDPOINTS["openrouter"], headers2, data2, retries=RETRY_ATTEMPTS, retry_delay=REQUEST_RETRY_DELAY)
+                _raise_if_error_response(resp2, backend="OpenRouter")
+                text2 = _get_llm_text(resp2)
+                if not str(text2).strip():
+                    raise RuntimeError("OpenRouter returned empty content")
+                return text2
+
+            if GEMINI_API_KEY:
+                # Call Gemini directly
+                model_name2 = os.environ.get("GEMINI_MODEL", DEFAULT_GEMINI_MODEL) or "gemini-2.0-flash"
+                model_path2 = str(model_name2).strip()
+                if model_path2.startswith("models/"):
+                    model_path2 = model_path2[len("models/"):]
+
+                api_url2 = f"https://generativelanguage.googleapis.com/v1beta/models/{model_path2}:generateContent"
+                request_url2 = f"{api_url2}?key={GEMINI_API_KEY}"
+                headers2 = {
+                    "Content-Type": "application/json; charset=utf-8",
+                    "User-Agent": "GitHub Star Content Classifier/1.0",
+                    "X-Goog-Api-Key": GEMINI_API_KEY,
+                }
+                temperature2 = config.get("gemini_temperature", 0.2)
+                max_output_tokens2 = int(config.get("gemini_max_output_tokens", 2000))
+                payload2 = {
+                    "generationConfig": {
+                        "temperature": temperature2,
+                        "maxOutputTokens": max_output_tokens2,
+                        "topP": 0.8,
+                        "topK": 40,
+                    },
+                    "contents": [{"role": "user", "parts": [{"text": prompt}]}],
+                }
+                resp2 = make_api_request(
+                    request_url2,
+                    headers2,
+                    payload2,
+                    retries=_get_int_config("gemini_retry_attempts", RETRY_ATTEMPTS),
+                    retry_delay=_get_float_config("gemini_retry_delay", REQUEST_RETRY_DELAY),
+                )
+                _raise_if_error_response(resp2, backend="Gemini")
+                if not isinstance(resp2, dict):
+                    raise RuntimeError("Gemini request failed: invalid response type")
+                text2 = ""
+                try:
+                    candidates = resp2.get("candidates") or []
+                    if candidates and isinstance(candidates[0], dict):
+                        content = candidates[0].get("content") or {}
+                        parts = content.get("parts") or []
+                        for part in parts:
+                            if isinstance(part, dict) and "text" in part:
+                                text2 += str(part.get("text") or "")
+                except Exception:
+                    pass
+                text2 = text2.strip()
+                if not text2:
+                    raise RuntimeError("Gemini returned empty content")
+                return text2
+
+        _raise_if_error_response(resp, backend="Copilot")
+        text = _get_llm_text(resp)
+        if not str(text).strip():
+            raise RuntimeError("Copilot returned empty content")
+        return text
+
+    if model_choice == "openrouter":
         if not OPENROUTER_API_KEY:
             raise RuntimeError("Missing OPENROUTER_API_KEY (required for openrouter backend).")
         model_name = DEFAULT_OPENROUTER_MODEL or "openai/gpt-4o-mini"
         headers = {"Authorization": f"Bearer {OPENROUTER_API_KEY}", "Content-Type": "application/json"}
         data = {"model": model_name, "messages": [{"role": "user", "content": prompt}]}
         resp = make_api_request(API_ENDPOINTS["openrouter"], headers, data, retries=RETRY_ATTEMPTS, retry_delay=REQUEST_RETRY_DELAY)
-        return _get_llm_text(resp)
+        _raise_if_error_response(resp, backend="OpenRouter")
+        text = _get_llm_text(resp)
+        if not str(text).strip():
+            raise RuntimeError("OpenRouter returned empty content")
+        return text
 
-    if MODEL_CHOICE == "gemini":
+    if model_choice == "gemini":
         if not GEMINI_API_KEY:
             raise RuntimeError("Missing GEMINI_API_KEY (required for gemini backend).")
 
@@ -315,10 +450,10 @@ def call_llm(prompt: str) -> str:
         }
 
         resp = make_api_request(request_url, headers, payload, retries=_get_int_config("gemini_retry_attempts", RETRY_ATTEMPTS), retry_delay=_get_float_config("gemini_retry_delay", REQUEST_RETRY_DELAY))
-        if not resp or not isinstance(resp, dict):
-            return ""
-        if "error" in resp:
-            return json.dumps(resp, ensure_ascii=False)
+        _raise_if_error_response(resp, backend="Gemini")
+
+        if not isinstance(resp, dict):
+            raise RuntimeError("Gemini request failed: invalid response type")
 
         # Gemini: candidates[0].content.parts[].text
         text = ""
@@ -332,9 +467,12 @@ def call_llm(prompt: str) -> str:
                         text += str(part.get("text") or "")
         except Exception:
             pass
-        return text.strip()
+        text = text.strip()
+        if not text:
+            raise RuntimeError("Gemini returned empty content")
+        return text
 
-    raise RuntimeError(f"Unsupported model_choice: {MODEL_CHOICE}")
+    raise RuntimeError(f"Unsupported model_choice: {model_choice}")
 
 
 def call_llm_json(prompt: str, attempts: int = 2) -> Any:
@@ -735,13 +873,14 @@ def _normalize_taxonomy(raw: Any, min_categories: int, max_categories: int) -> T
 
 
 def _model_display_name() -> str:
-    if MODEL_CHOICE == "copilot":
+    model_choice = get_model_choice()
+    if model_choice == "copilot":
         return "GitHub Copilot"
-    if MODEL_CHOICE == "openrouter":
+    if model_choice == "openrouter":
         return "OpenRouter"
-    if MODEL_CHOICE == "gemini":
+    if model_choice == "gemini":
         return "Gemini"
-    return MODEL_CHOICE
+    return model_choice
 
 
 def render_classified_readme(

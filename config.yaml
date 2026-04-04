@@ -88,6 +88,13 @@ max_repos: 50
 update_mode: missing_only
 
 
+# Workflow 仅执行内容分类：为 true 时，GitHub Actions 将跳过 summarize_stars.py，只运行 classify_stars_by_content.py
+# 注意：开启后需要仓库中已存在 README_lang.md（工作流会用它作为 --from-readme 输入）
+# Workflow classify-only: when true, GitHub Actions skips summarize_stars.py and only runs classify_stars_by_content.py
+# Note: when enabled, README_lang.md must already exist in the repo (used as --from-readme input)
+workflow_classify_only: true
+
+
 # 可选：直接在 config 中存放密钥（不推荐，优先从环境变量读取，默认留空）
 # Optional: store keys here (not recommended; prefer environment variables)
 STARRED_GITHUB_TOKEN: "" # GitHub Token
