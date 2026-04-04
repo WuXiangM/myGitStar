@@ -1,190 +1,192 @@
-# 🌟 GitHub Stars AI 自动总结系统 - 完整说明文档
+# 🌟 GitHub Stars AI 自动总结系统 — 中文使用指南
 
-## 📋 项目概述
+本项目会拉取指定 GitHub 账号的星标仓库（Stars），调用 AI 生成结构化 Markdown 总结，并输出为 README 文档，适合本地手动运行或在 GitHub Actions 中定时自动更新。
 
-这是一个自动化系统，用于获取 GitHub 用户的星标仓库并使用 AI 进行智能总结，生成结构化的 Markdown 文档。支持 GitHub Copilot、OpenRouter 和 Gemini 三种 AI 服务，具备自动化部署、智能缓存、错误处理等功能。
+## 1) 🎁 你会得到什么（产物）
 
-## ✨ 核心功能
+- 📘 英文总结：`README.md`
+- 📙 中文总结：`README2.md`
 
-- 🔍 自动获取所有 GitHub 星标仓库
-- 🤖 多 AI 引擎：Copilot API、OpenRouter API、Gemini（可选）
-- 📊 按编程语言分类展示
-- 🎨 美化 Markdown 输出，带 emoji 图标
-- ⚡ GitHub Actions 自动定时更新
-- 🔄 智能缓存，避免重复处理
-- 🛡️ 健壮错误处理与重试机制
+> 说明：最终输出文件名由 `config.yaml` 的 `readme_sum_path` 决定；仓库里常见约定是英文写到 `README.md`、中文写到 `README2.md`。
 
-## 📂 文件结构
+## 2) 📂 目录结构（关键文件）
 
 ```
 myGitStar/
-├── scripts/
-│   └── summarize_stars.py          # 主脚本
-├── .github/
-│   └── workflows/
-│       └── update_myGitStar_sum.yml # Actions 工作流
-├── README-sum.md                    # 生成总结文档
-├── README.md                        # 项目说明
-└── GUIDE.md                          # 本完整说明文档
+├── scripts/summarize_stars.py     # 主脚本
+├── config.yaml                   # 配置
+├── requirements.txt              # Python 依赖
+├── README.md                     # 英文输出（常见约定）
+├── README2.md                    # 中文输出（常见约定）
+├── GUIDE_en.md                   # 英文指南
+└── GUIDE_zh.md                   # 中文指南（本文件）
 ```
 
+## 3) 🚀 快速开始
 
-新增配置说明：
+### 3.1 🤖 GitHub Actions 运行（推荐）
 
-- `repo_display_language: true|false`（可选，默认 `true`）
-  - 作用：控制生成的 README 顶部是否显示中英文快速跳转链接以及显示顺序。
-  - 行为示例：当 `language: en` 且 `repo_display_language: true` 时，顶部会显示 `[English README](README.md) | [中文 README](README2.md)`；若设置为 `false` 则显示中文链接在前。对于 `language: zh` 同理，`true` 时中文链接在前。
-  - 注意：脚本默认使用仓库中约定的文件名（示例中为 `README.md`（英文）、`README2.md`（中文））；如果你的项目使用不同文件名，请在生成后手动调整或修改脚本中对应链接生成逻辑。
+在仓库 Settings → Secrets and variables → Actions 中添加：
 
-## 🔧 环境配置（Secrets 与 Keys）
+- ✅ `STARRED_GITHUB_TOKEN`（必需）
+- ➕ `OPENROUTER_API_KEY`（可选）
+- ➕ `GEMINI_API_KEY`（可选）
 
-本项目在运行时会使用若干 API Key / Token，推荐在 CI（GitHub Actions）中通过 Secrets 提供。脚本在读取时遵循以下优先级：
+工作流里将 secrets 注入为环境变量即可运行（仓库里已有 workflow 可参考）。
 
-1. 环境变量（来自 CI 的 Secrets，或本地环境导出，常见为全大写名称）
-2. `config.json` 中的大写键（如果你不使用 Secrets 且将 key 写入 config）
-3. `config.json` 中指定的 env 名称字段（兼容旧配置，例如 `github_token_env`）
-4. `config.json` 中的明文字段（不推荐，在仓库中不要保存真实密钥）
+### 3.2 💻 本地运行（Windows PowerShell）
 
-### 推荐的 Secret 名称（默认配置）
+1. 安装依赖（建议使用虚拟环境）：
 
-| 名称 (env)              | 用途                        | 在 `config.json` 中的对应字段 |
-| ----------------------- | --------------------------- | --------------------------- |
-| `STARRED_GITHUB_TOKEN`  | GitHub Personal Access Token，用于获取星标仓库与 Copilot Models API | `STARRED_GITHUB_TOKEN` 或 `github_token_env` |
-| `OPENROUTER_API_KEY`    | OpenRouter API Key（可选）  | `OPENROUTER_API_KEY` 或 `openrouter_api_key_env` |
-| `GEMINI_API_KEY`        | Gemini（Google）API Key（可选） | `GEMINI_API_KEY` 或 `gemini_api_key_env` |
-
-> 说明：脚本默认已把这些 env 名称作为首选（全大写）。如果你在 `config.json` 内使用了不同的 env 名称，可把该名称写入 `github_token_env`/`openrouter_api_key_env`/`gemini_api_key_env`，脚本会使用该 env 名称去读取。
-# 🌟 GitHub Stars AI 自动总结系统 — 使用指南
-
-## 📋 项目概述
-
-本项目会获取指定 GitHub 账号的星标仓库并使用 AI（支持 Copilot / OpenRouter / Gemini）生成结构化的 Markdown 总结，适合在 GitHub Actions 中定时运行并自动提交结果。
-
-## 📂 主要文件
-
-```
-myGitStar/
-├── scripts/summarize_stars.py    # 主脚本（支持 copilot/openrouter/gemini）
-├── config.yaml                   # 配置（优先读取 YAML）
-├── README-sum.md                 # 自动生成的总结文档
-├── README.md
-├── .github/workflows/            # Actions 工作流
-└── GUIDE.md                      # 本指南
+```powershell
+pip install -r requirements.txt
 ```
 
-## 🔧 配置与 Secrets（关键点）
+2. 设置 Token（至少需要 GitHub Token；用于拉取星标列表 + Copilot Models 时也会用到）：
 
-1) 配置文件：当前脚本优先读取 `config.yaml`（支持注释），若不存在会回退到 `config.json`。建议使用 `config.yaml` 并不要在仓库中提交真实密钥。
-
-2) 优先级（脚本读取顺序）：
-- 环境变量（来自 CI 的 Secrets 或本地导出，通常为全大写名称）
-- `config.yaml` 中的大写键（如 `STARRED_GITHUB_TOKEN`）
-- `config.yaml` 中指定的 env 名称字段（如 `github_token_env`）
-- `config.yaml` 中的明文字段（不推荐）
-
-3) 推荐的 Secrets 名称（默认）
-- `STARRED_GITHUB_TOKEN` — GitHub PAT（用于读取星标仓库与 Copilot Models）
-- `OPENROUTER_API_KEY` — OpenRouter API Key（可选）
-- `GEMINI_API_KEY` — Google Gemini API Key（可选）
-
-4) `config.yaml` 中常用字段示例（位于仓库根目录）：
-
-```yaml
-language: zh
-model_choice: copilot    # 可选: copilot | openrouter | gemini
-github_username: 0      # 0 表示使用 workflow 账号(GITHUB_ACTOR)
-default_gemini_model: models/gemini-pro
-STARRED_GITHUB_TOKEN: ""   # 可做回退（不推荐）
-OPENROUTER_API_KEY: ""
-GEMINI_API_KEY: ""
-max_workers: 1
-batch_size: 5
-request_timeout: 60
+```powershell
+$env:STARRED_GITHUB_TOKEN = "ghp_xxx"
 ```
 
-5) 注意：脚本里也支持通过如下 env 覆盖模型：
-- `GITHUB_COPILOT_MODEL` 覆盖 Copilot 模型
-- `GEMINI_MODEL` 覆盖 Gemini 模型
+3. 运行脚本：
 
-## 🚀 快速开始（本地 / CI）
-
-1. 克隆仓库并进入目录：
-
-```bash
-git clone https://github.com/<your>/myGitStar.git
-cd myGitStar
-```
-
-2. 安装依赖（包含 PyYAML）：
-
-```bash
-pip install requests pyyaml
-```
-
-3. 在 GitHub 仓库 Settings → Secrets and variables → Actions 添加 Secrets：
-
-- `STARRED_GITHUB_TOKEN`（必需）
-- `OPENROUTER_API_KEY`（可选）
-- `GEMINI_API_KEY`（可选）
-
-4. 在 Actions workflow 中注入 env（示例）：
-
-```yaml
-env:
-  STARRED_GITHUB_TOKEN: ${{ secrets.STARRED_GITHUB_TOKEN }}
-  OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-  GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-```
-
-5. 本地运行：
-
-```bash
-export STARRED_GITHUB_TOKEN="ghp_xxx"
+```powershell
 python scripts/summarize_stars.py
 ```
 
-## 🤖 使用 Gemini
+## 4) ⚙️ 配置说明（config.yaml）
 
-- 要启用 Gemini，请在 `config.yaml` 中将 `model_choice: gemini`，并在运行环境提供 `GEMINI_API_KEY`。
-- 可通过 `default_gemini_model` 或环境变量 `GEMINI_MODEL` 指定模型。脚本对常见的 Gemini 返回结构做了兼容解析，但若 Google 更新了 API，可能需要调整解析逻辑。
+脚本优先读取 `config.yaml`（支持注释）
 
-## ✅ 运行与故障排查要点
-
-- 若遇 429，增大 `rate_limit_delay` 或减小 `batch_size` / `max_workers`。
-- 验证 Secrets 是否正确注入：在 Actions 中可以临时打印前缀（脚本会输出前6位前缀以便调试）。
-- 遇到 Gemini 解析异常，请查看脚本日志（有请求/响应打印）并调整 `default_gemini_model`。
-
-## ⚙️ Action 示例（精简）
+下面是最常用、最容易踩坑的字段：
 
 ```yaml
-name: Update myGitStar Summaries
-on:
-  schedule:
-    - cron: '0 4 * * *'
-  workflow_dispatch:
-jobs:
-  update:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: { python-version: '3.x' }
-      - run: pip install requests pyyaml
-      - name: Run summarizer
-        env:
-          STARRED_GITHUB_TOKEN: ${{ secrets.STARRED_GITHUB_TOKEN }}
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python scripts/summarize_stars.py
-      - name: Commit
-        run: |
-          git add README-sum.md
-          git commit -m "update AI summarized stars [bot]" || echo "No changes"
-          git push origin HEAD:main || true
+# 输出语言：zh 或 en
+language: en
+
+# 选择 AI 引擎：copilot / openrouter / gemini
+model_choice: copilot
+
+# 生成文件路径：建议 en->README.md，zh->README2.md
+readme_sum_path: README.md
+
+# 更新模式：all（全量重写）/ missing_only（仅补全缺失或无效的总结）
+update_mode: missing_only
+
+# 并发与节流（遇到 429 建议调小并发、增大 delay）
+max_workers: 1
+batch_size: 4
+rate_limit_delay: 5
+request_timeout: 30
+
+# 是否在 README 顶部显示中英互跳链接，以及链接顺序
+# true：优先显示与 language 一致的语言在前；false：反过来
+repo_display_language: true
 ```
 
-## 📄 结语
+### 4.1 📌 配置字段速查表（含是否必需）
 
-已将配置格式迁移为 `config.yaml`（支持注释），脚本仍兼容 `config.json` 作为回退。建议在 CI 中使用 Secrets 而非在仓库保留明文密钥。
+下表汇总 `config.yaml` 中可用的配置字段（含常用字段），并标注“是否必需”。
 
-如需我同步 README 或 Actions workflow，我可以继续更新。
+| 字段                         | 必需修改                 | 类型/示例                                 | 作用                                                                           | 建议                                                                  |
+| ---------------------------- | ------------------------ | ----------------------------------------- | ------------------------------------------------------------------------------ | --------------------------------------------------------------------- |
+| `github_username`          | 是（账号名）             | `0` / `WuXiangM`                      | 拉取谁的 Stars。`0` 表示用 Actions 的 `GITHUB_ACTOR`；本地建议直接填用户名 | CI 用 `0`；本地填固定用户名更稳定                                   |
+| `STARRED_GITHUB_TOKEN`     | 是（必需，建议用 env）   | `""`                                    | GitHub Token（拉取 Stars + Copilot Models 会用到）                             | 不建议写入 config，改用 Actions Secrets / 环境变量                    |
+| `OPENROUTER_API_KEY`       | 条件（ openrouter 必需） | `""`                                    | OpenRouter Key（仅 `model_choice: openrouter` 时需要）                       | 建议用 env                                                            |
+| `GEMINI_API_KEY`           | 条件（ gemini 必需）     | `""`                                    | Gemini Key（仅 `model_choice: gemini` 时需要）                               | 建议用 env                                                            |
+| `language`                 | 否                       | `zh` / `en`                           | 输出语言                                                                       | 不填默认 `zh`                                                       |
+| `model_choice`             | 否                       | `copilot` / `openrouter` / `gemini` | 选择 AI 引擎                                                                   | 不填默认 `copilot`                                                  |
+| `readme_sum_path`          | 否                       | `README.md` / `README2.md`            | 输出文件路径                                                                   | en→`README.md`；zh→`README2.md`（不填则默认 `README-sum.md`） |
+| `update_mode`              | 否                       | `all` / `missing_only`                | 更新策略：全量重写 / 仅补全缺失或无效总结                                      | 想稳定增量更新就用 `missing_only`                                   |
+| `repo_display_language`    | 否                       | `true` / `false`                      | README 顶部中英互跳链接的显示顺序                                              | `true`：与 `language` 一致的链接在前                              |
+| `default_copilot_model`    | 否                       | `openai/gpt-4o-mini`                    | Copilot Models 默认模型名                                                      | 也可用环境变量覆盖（见下）                                            |
+| `default_openrouter_model` | 否                       | `deepseek/deepseek-prover-v2:free`      | OpenRouter 默认模型名                                                          | 选你账号可用的模型                                                    |
+| `default_gemini_model`     | 否                       | `gemini-2.0-flash`                      | Gemini 默认模型名                                                              | 也可用环境变量覆盖（见下）                                            |
+| `max_repos`                | 否                       | `50` / `0`                            | 限制每次运行最多处理多少个仓库；`0` 或留空表示不限制                         | CI 建议 20~80；本地可 `0`                                           |
+| `max_workers`              | 否                       | `1`                                     | 线程池并发数（影响并发请求）                                                   | 为避免限流，建议先从 `1` 开始                                       |
+| `batch_size`               | 否                       | `4`                                     | 每批处理仓库数（批内会发起总结请求）                                           | 限流/超时就调小                                                       |
+| `request_timeout`          | 否                       | `30`                                    | HTTP 超时时间（秒）                                                            | 网络不稳就调大                                                        |
+| `rate_limit_delay`         | 否                       | `5`                                     | 批次之间 sleep（秒）                                                           | 429 就调大                                                            |
+| `request_retry_delay`      | 否                       | `2`                                     | 网络层失败后的重试间隔（秒）                                                   | 2~10                                                                  |
+| `retry_attempts`           | 否                       | `1`                                     | 网络层重试次数（适用于通用请求封装）                                           | 1~3                                                                   |
+| `global_qps`               | 否                       | `0.5`                                   | 全局节流（QPS），默认 0.5 表示约每 2 秒 1 次请求                               | 429 就降低（如 0.2）                                                  |
+| `test_first_repo`          | 否                       | `false`                                 | 调试开关：只处理第一个仓库（也会开启更详细日志）                               | 本地排错用 `true`                                                   |
+| `log_file`                 | 否                       | `scripts/summarize_stars.log`           | 日志文件路径（默认写到脚本目录）                                               | CI 可保持默认                                                         |
+| `log_max_bytes`            | 否                       | `5242880`                               | 单个日志文件最大大小（字节），到达后滚动                                       | 默认即可                                                              |
+| `log_backup_count`         | 否                       | `3`                                     | 日志滚动保留的历史份数                                                         | 默认即可                                                              |
+
+#### Gemini 相关（仅 `model_choice: gemini` 时有用）
+
+| 字段                          | 必需 | 类型/示例 | 作用                                             | 建议                |
+| ----------------------------- | ---- | --------- | ------------------------------------------------ | ------------------- |
+| `gemini_temperature`        | 否   | `0.4`   | 生成温度（越大越发散）                           | 0.2~0.6             |
+| `gemini_max_output_tokens`  | 否   | `2000`  | 输出 token 上限（过小可能被截断）                | 缺字段/被截断就调大 |
+| `gemini_generation_retries` | 否   | `1`     | Gemini 生成层面的重试次数（如被截断/返回不完整） | 1~3                 |
+| `gemini_retry_backoff`      | 否   | `2`     | Gemini 生成重试的退避倍数                        | 2~5                 |
+| `gemini_retry_attempts`     | 否   | `1`     | Gemini 网络请求重试次数                          | 1~3                 |
+| `gemini_retry_delay`        | 否   | `2`     | Gemini 网络请求重试间隔（秒）                    | 2~10                |
+
+### 4.2 📌 环境变量可覆盖项（CI 常用）
+
+- `MAX_REPOS`：优先级高于 `config.yaml` 的 `max_repos`，用于 CI 临时限量，避免超时。
+- `GITHUB_COPILOT_MODEL`：覆盖 `default_copilot_model`。
+- `GEMINI_MODEL`：覆盖 `default_gemini_model`。
+
+### 4.3 📌 兼容旧配置的字段（一般不必写）
+
+脚本兼容一些旧写法，用于“在 config 里指定环境变量名”或“直接写小写明文 key”（不推荐）：
+
+- `github_token_env`：指定 GitHub Token 的环境变量名（默认推荐直接用 `STARRED_GITHUB_TOKEN`）。
+- `openrouter_api_key_env`：指定 OpenRouter Key 的环境变量名。
+- `gemini_api_key_env`：指定 Gemini Key 的环境变量名。
+- `github_token` / `openrouter_api_key` / `gemini_api_key`：明文 key（不推荐，避免提交到仓库）。
+
+### 4.4  📌不推荐写入配置文件的密钥字段（仅作回退）
+
+`config.yaml` 里也允许出现以下字段（仓库当前配置文件里就有），脚本会读取它们作为回退，但强烈建议保持为空，改用 Actions Secrets / 本地环境变量：
+
+- `STARRED_GITHUB_TOKEN`
+- `OPENROUTER_API_KEY`
+- `GEMINI_API_KEY`
+
+## 5) 🔒Secrets / 环境变量（Keys & Token）
+
+推荐永远用 CI Secrets 或本地环境变量提供密钥，不要把真实密钥提交到仓库。
+
+### 推荐的环境变量名
+
+| 环境变量                 | 用途                                                   |
+| ------------------------ | ------------------------------------------------------ |
+| `STARRED_GITHUB_TOKEN` | GitHub Token（拉取星标仓库 + Copilot Models 时会用到） |
+| `OPENROUTER_API_KEY`   | OpenRouter（可选）                                     |
+| `GEMINI_API_KEY`       | Gemini（可选）                                         |
+
+### 读取优先级（从高到低）
+
+1. 环境变量（Actions Secrets / 本地 `$env:...`）
+2. `config.yaml` 中的同名大写键（不推荐保存真实值，仅作回退）
+3. `config.yaml` 中的 `*_env` 字段指定的 env 名称（兼容旧配置）
+4. 明文字段（不推荐）
+
+## 6) 🧯 常见问题（排查清单）
+
+- **出现 429 / 限流**：降低 `batch_size`、保持 `max_workers: 1`、增大 `rate_limit_delay`。
+- **输出文件不更新**：确认 `update_mode`；`missing_only` 模式只会更新“缺失/无效”的仓库总结。
+- **生成到了意料之外的文件**：检查 `readme_sum_path` 是否指向了你想要的文件。
+- **本地运行找不到依赖**：用 `pip install -r requirements.txt`，或确认你在正确的 venv 里运行。
+
+## 7) 🧱 一个最小可用的 Actions 片段（参考）
+
+```yaml
+- uses: actions/checkout@v4
+- uses: actions/setup-python@v5
+  with:
+    python-version: '3.x'
+- run: pip install -r requirements.txt
+- name: Run summarizer
+  env:
+    STARRED_GITHUB_TOKEN: ${{ secrets.STARRED_GITHUB_TOKEN }}
+    OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+    GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+  run: python scripts/summarize_stars.py
+```
