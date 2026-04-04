@@ -4,10 +4,11 @@ This project fetches a GitHub account’s starred repositories (Stars), uses AI 
 
 ## 1) 🎁 What you get (outputs)
 
-- 📘 English summary: `README.md`
-- 📙 Chinese summary: `README2.md`
+- 📗 README (content classified): `README.md`
+- 📘 README classified by language (English): `README_lang.md`
+- 📙 README 按语言分类 (Chinese): `README_lang_cn.md`
 
-> Note: The final output file is controlled by `readme_sum_path` in `config.yaml`. A common convention in this repo is English → `README.md`, Chinese → `README2.md`.
+> Note: The language-classified output file is controlled by `readme_sum_path` in `config.yaml` or can be overridden via `--out`. The content-classified README is generated separately by `classify_stars_by_content.py` as `README.md`.
 
 ## 2) 📂 Project layout (key files)
 
@@ -16,8 +17,9 @@ myGitStar/
 ├── scripts/summarize_stars.py     # main script
 ├── config.yaml                   # configuration
 ├── requirements.txt              # Python dependencies
-├── README.md                     # English output (common convention)
-├── README2.md                    # Chinese output (common convention)
+├── README.md                     # content-classified output (main README)
+├── README_lang.md                # language-classified (English)
+├── README_lang_cn.md             # language-classified (Chinese)
 ├── GUIDE_en.md                   # English guide (this file)
 └── GUIDE_zh.md                   # Chinese guide
 ```
@@ -51,7 +53,11 @@ $env:STARRED_GITHUB_TOKEN = "ghp_xxx"
 3. Run the script:
 
 ```powershell
-python scripts/summarize_stars.py
+python scripts/summarize_stars.py --language en --out README_lang.md
+python scripts/summarize_stars.py --language zh --out README_lang_cn.md
+
+# Generate the content-classified README (parse repos from the language-classified README)
+python scripts/classify_stars_by_content.py --from-readme README_lang.md --out-md README.md --out-json repo_categories.json
 ```
 
 ## 4) ⚙️ Configuration (config.yaml)
@@ -67,8 +73,8 @@ language: en
 # AI backend: copilot / openrouter / gemini
 model_choice: copilot
 
-# Output path: recommended en->README.md, zh->README2.md
-readme_sum_path: README.md
+# Output path (language-classified): recommended en->README_lang.md, zh->README_lang_cn.md
+readme_sum_path: README_lang.md
 
 # Update mode: all (rewrite all) / missing_only (only fill missing/invalid summaries)
 update_mode: missing_only
@@ -96,7 +102,7 @@ The table below summarizes supported `config.yaml` fields and marks whether each
 | `GEMINI_API_KEY` | Conditional (gemini) | `""` | Gemini key (needed only when `model_choice: gemini`) | Use env |
 | `language` | No | `zh` / `en` | Output language | Defaults to `zh` if omitted |
 | `model_choice` | No | `copilot` / `openrouter` / `gemini` | Choose AI backend | Defaults to `copilot` |
-| `readme_sum_path` | No | `README.md` / `README2.md` | Output file path | en→`README.md`; zh→`README2.md` (if omitted: `README-sum.md`) |
+| `readme_sum_path` | No | `README_lang.md` / `README_lang_cn.md` | Language-classified output path | en→`README_lang.md`; zh→`README_lang_cn.md` (if omitted: `README-sum.md`) |
 | `update_mode` | No | `all` / `missing_only` | Update strategy: rewrite all / only fill missing or invalid summaries | Use `missing_only` for stable incremental updates |
 | `repo_display_language` | No | `true` / `false` | Order of README top language-switch links | `true`: put the language matching `language` first |
 | `default_copilot_model` | No | `openai/gpt-4o-mini` | Default Copilot Models model name | Can be overridden via env (see below) |

@@ -4,10 +4,11 @@
 
 ## 1) 🎁 你会得到什么（产物）
 
-- 📘 英文总结：`README.md`
-- 📙 中文总结：`README2.md`
+- 📗 README（内容分类）：`README.md`
+- 📘 README classified by language（英文）：`README_lang.md`
+- 📙 README 按语言分类（中文）：`README_lang_cn.md`
 
-> 说明：最终输出文件名由 `config.yaml` 的 `readme_sum_path` 决定；仓库里常见约定是英文写到 `README.md`、中文写到 `README2.md`。
+> 说明：按语言分类的输出文件名可由 `config.yaml` 的 `readme_sum_path` 或命令行 `--out` 覆盖；内容分类版由 `classify_stars_by_content.py` 生成到 `README.md`。
 
 ## 2) 📂 目录结构（关键文件）
 
@@ -16,8 +17,9 @@ myGitStar/
 ├── scripts/summarize_stars.py     # 主脚本
 ├── config.yaml                   # 配置
 ├── requirements.txt              # Python 依赖
-├── README.md                     # 英文输出（常见约定）
-├── README2.md                    # 中文输出（常见约定）
+├── README.md                     # 内容分类输出（主 README）
+├── README_lang.md                # 按语言分类（英文）
+├── README_lang_cn.md             # 按语言分类（中文）
 ├── GUIDE_en.md                   # 英文指南
 └── GUIDE_zh.md                   # 中文指南（本文件）
 ```
@@ -51,7 +53,11 @@ $env:STARRED_GITHUB_TOKEN = "ghp_xxx"
 3. 运行脚本：
 
 ```powershell
-python scripts/summarize_stars.py
+python scripts/summarize_stars.py --language en --out README_lang.md
+python scripts/summarize_stars.py --language zh --out README_lang_cn.md
+
+# 生成内容分类版（从按语言分类的 README 解析仓库列表）
+python scripts/classify_stars_by_content.py --from-readme README_lang.md --out-md README.md --out-json repo_categories.json
 ```
 
 ## 4) ⚙️ 配置说明（config.yaml）
@@ -68,7 +74,8 @@ language: en
 model_choice: copilot
 
 # 生成文件路径：建议 en->README.md，zh->README2.md
-readme_sum_path: README.md
+# 生成文件路径（按语言分类版）：建议 en->README_lang.md，zh->README_lang_cn.md
+readme_sum_path: README_lang.md
 
 # 更新模式：all（全量重写）/ missing_only（仅补全缺失或无效的总结）
 update_mode: missing_only
@@ -96,7 +103,7 @@ repo_display_language: true
 | `GEMINI_API_KEY`           | 条件（ gemini 必需）     | `""`                                    | Gemini Key（仅 `model_choice: gemini` 时需要）                               | 建议用 env                                                            |
 | `language`                 | 否                       | `zh` / `en`                           | 输出语言                                                                       | 不填默认 `zh`                                                       |
 | `model_choice`             | 否                       | `copilot` / `openrouter` / `gemini` | 选择 AI 引擎                                                                   | 不填默认 `copilot`                                                  |
-| `readme_sum_path`          | 否                       | `README.md` / `README2.md`            | 输出文件路径                                                                   | en→`README.md`；zh→`README2.md`（不填则默认 `README-sum.md`） |
+| `readme_sum_path`          | 否                       | `README_lang.md` / `README_lang_cn.md` | 按语言分类 README 输出路径                                                     | en→`README_lang.md`；zh→`README_lang_cn.md`（不填则默认 `README-sum.md`） |
 | `update_mode`              | 否                       | `all` / `missing_only`                | 更新策略：全量重写 / 仅补全缺失或无效总结                                      | 想稳定增量更新就用 `missing_only`                                   |
 | `repo_display_language`    | 否                       | `true` / `false`                      | README 顶部中英互跳链接的显示顺序                                              | `true`：与 `language` 一致的链接在前                              |
 | `default_copilot_model`    | 否                       | `openai/gpt-4o-mini`                    | Copilot Models 默认模型名                                                      | 也可用环境变量覆盖（见下）                                            |

@@ -27,9 +27,10 @@ default_openrouter_model: deepseek/deepseek-prover-v2:free
 # Gemini model name (used when model_choice: gemini)
 default_gemini_model: gemini-2.0-flash
 
-# 输出文件路径（推荐：英文 README.md；中文 README2.md）
-# Output file path (recommended: English README.md; Chinese README2.md)
-readme_sum_path: README.md # output README.md
+# 输出文件路径（按语言分类版 README，建议：英文 README_lang.md；中文 README_lang_cn.md）
+# Output file path (language-classified README). Recommended: English README_lang.md; Chinese README_lang_cn.md
+# Note: The content-classified README is generated separately as README.md.
+readme_sum_path: README_lang.md # default output for summarize_stars.py
 
 
 # 最大并发数（线程池 worker 数），建议先用 1，避免触发速率限制

@@ -1000,24 +1000,28 @@ def main():
         # 更新标题以反映实际使用的 API
         current_time = time.strftime("%Y-%m-%d", time.localtime())
         if LANGUAGE == 'en':
-            repo_display_language = bool(config.get('repo_display_language', True))
+            current_account = (GITHUB_USERNAME or "").strip() if isinstance(GITHUB_USERNAME, str) else (str(GITHUB_USERNAME).strip() if GITHUB_USERNAME else "")
+            current_account_html = (
+                f"<a href=\"https://github.com/{current_account}\">{current_account}</a>" if current_account else "Unknown"
+            )
             readme_links = (
-                "<a href=\"README.md\">English README</a> | <a href=\"README2.md\">中文 README</a> | <a href=\"README_classified.md\">📂 Content Classified</a>"
-                if repo_display_language
-                else "<a href=\"README2.md\">中文 README</a> | <a href=\"README.md\">English README</a> | <a href=\"README_classified.md\">📂 Content Classified</a>"
+                "<a href=\"README.md\">README (content classified)</a> | "
+                "<a href=\"README_lang.md\">README classified by language</a> | "
+                "<a href=\"README_lang_cn.md\">README 按语言分类</a>"
             )
             guide_links = "<a href=\"GUIDE_en.md\">English GUIDE</a> | <a href=\"GUIDE_zh.md\">中文教程</a>"
             lines = []
             lines.append(
                 "<div align=\"center\">\n\n"
                 "<h1>My GitHub Star Project AI Summary</h1>\n\n"
-                f"<p><b>Generated on:</b> {current_time}</p>\n"
-                f"<p><b>AI Model:</b> {api_name}</p>\n"
-                f"<p><b>Total repositories:</b> {len(starred)}</p>\n\n"
-                "<hr/>\n\n"
                 "<p><b>Reference Repository:</b> <a href=\"https://github.com/WuXiangM/myGitStar\">WuXiangM/myGitStar</a></p>\n\n"
                 f"<p>{readme_links}</p>\n"
                 f"<p>{guide_links}</p>\n\n"
+                "<hr/>\n\n"
+                f"<p><b>Current account:</b> {current_account_html}</p>\n"
+                f"<p><b>Generated on:</b> {current_time}</p>\n"
+                f"<p><b>AI Model:</b> {api_name}</p>\n"
+                f"<p><b>Total repositories:</b> {len(starred)}</p>\n\n"
                 "</div>\n\n"
             )
 
@@ -1032,24 +1036,28 @@ def main():
                 lines.append(f"- [{lang}](#{anchor}) ({count})\n")
             lines.append("\n---\n\n")
         else:
-            repo_display_language = bool(config.get('repo_display_language', True))
+            current_account = (GITHUB_USERNAME or "").strip() if isinstance(GITHUB_USERNAME, str) else (str(GITHUB_USERNAME).strip() if GITHUB_USERNAME else "")
+            current_account_html = (
+                f"<a href=\"https://github.com/{current_account}\">{current_account}</a>" if current_account else "未知"
+            )
             readme_links = (
-                "<a href=\"README.md\">中文 README</a> | <a href=\"README2.md\">English README</a> | <a href=\"README_classified.md\">📂 内容分类版</a>"
-                if repo_display_language
-                else "<a href=\"README2.md\">English README</a> | <a href=\"README.md\">中文 README</a> | <a href=\"README_classified.md\">📂 内容分类版</a>"
+                "<a href=\"README.md\">README（内容分类）</a> | "
+                "<a href=\"README_lang_cn.md\">README 按语言分类</a> | "
+                "<a href=\"README_lang.md\">README classified by language</a>"
             )
             guide_links = "<a href=\"GUIDE_zh.md\">中文教程</a> | <a href=\"GUIDE_en.md\">English GUIDE</a>"
             lines = []
             lines.append(
                 "<div align=\"center\">\n\n"
                 "<h1>我的 GitHub Star 项目AI总结</h1>\n\n"
-                f"<p><b>生成时间：</b> {current_time}</p>\n"
-                f"<p><b>AI模型：</b> {api_name}</p>\n"
-                f"<p><b>总仓库数：</b> {len(starred)} 个</p>\n\n"
-                "<hr/>\n\n"
                 "<p><b>参考仓库：</b> <a href=\"https://github.com/WuXiangM/myGitStar\">WuXiangM/myGitStar</a></p>\n\n"
                 f"<p>{readme_links}</p>\n"
                 f"<p>{guide_links}</p>\n\n"
+                "<hr/>\n\n"
+                f"<p><b>当前账号：</b> {current_account_html}</p>\n"
+                f"<p><b>生成时间：</b> {current_time}</p>\n"
+                f"<p><b>AI模型：</b> {api_name}</p>\n"
+                f"<p><b>总仓库数：</b> {len(starred)} 个</p>\n\n"
                 "</div>\n\n"
             )
             
@@ -1204,8 +1212,33 @@ def main():
 
 if __name__ == "__main__":
     import sys
-    if len(sys.argv) > 1 and sys.argv[1] == "--copilot-count":
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Generate language-classified README summaries.")
+    parser.add_argument("--language", type=str, default=None, help="Override language: en or zh.")
+    parser.add_argument("--out", type=str, default=None, help="Override output markdown path.")
+    parser.add_argument("--copilot-count", action="store_true", help="Print Copilot API call count (for this run) and exit.")
+    args = parser.parse_args()
+
+    if args.copilot_count or (len(sys.argv) > 1 and sys.argv[1] == "--copilot-count"):
         print(copilot_api_call_count)
-    else:
-        main()
-        print(f"Copilot API 总调用次数: {copilot_api_call_count}")
+        raise SystemExit(0)
+
+    if args.language:
+        lang = str(args.language).strip().lower()
+        if lang in {"cn", "zh-cn", "zh_cn", "zh"}:
+            LANGUAGE = "zh"
+        elif lang in {"en", "eng", "english"}:
+            LANGUAGE = "en"
+        else:
+            print(f"Unsupported --language: {args.language}")
+            raise SystemExit(2)
+
+    if args.out:
+        out_path = str(args.out).strip()
+        if not os.path.isabs(out_path):
+            out_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), out_path)
+        README_SUM_PATH = out_path
+
+    main()
+    print(f"Copilot API 总调用次数: {copilot_api_call_count}")

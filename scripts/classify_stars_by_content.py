@@ -373,6 +373,25 @@ def get_github_username() -> str:
     return str(gh)
 
 
+def get_current_account_optional() -> str:
+    """Best-effort current account display.
+
+    Never raises: returns empty string if it cannot be determined.
+    """
+    try:
+        gh = config.get("github_username") if isinstance(config, dict) else None
+        if gh and gh != "0" and gh != 0:
+            return str(gh).strip()
+
+        actor = (os.environ.get("GITHUB_ACTOR") or os.environ.get("GITHUB_USERNAME") or "").strip()
+        if actor:
+            return actor
+    except Exception:
+        return ""
+
+    return ""
+
+
 def get_starred_repos(max_repos: Optional[int] = None) -> List[Dict[str, Any]]:
     if not GITHUB_TOKEN:
         raise RuntimeError("Missing STARRED_GITHUB_TOKEN")
@@ -662,25 +681,31 @@ def render_classified_readme(
     generated_on = datetime.now(timezone.utc).strftime('%Y-%m-%d')
     model_name = _model_display_name()
     total_repos = len(repos)
+    current_account = (get_current_account_optional() or "").strip()
+    if current_account:
+        current_account_html = f"<a href=\"https://github.com/{current_account}\">{current_account}</a>"
+    else:
+        current_account_html = "Unknown"
 
     lines: List[str] = []
     lines.append(
         "<div align=\"center\">\n\n"
         "<h1>My GitHub Star Project AI Summary (Classified)</h1>\n\n"
-        f"<p><b>Generated on:</b> {generated_on}</p>\n"
-        f"<p><b>AI Model:</b> {model_name}</p>\n"
-        f"<p><b>Total repositories:</b> {total_repos}</p>\n\n"
-        "<hr/>\n\n"
         f"<p><b>Reference Repository:</b> <a href=\"https://github.com/{reference_repo}\">{reference_repo}</a></p>\n\n"
         "<p>"
-        "<a href=\"README.md\">English README</a> | "
-        "<a href=\"README2.md\">中文 README</a> | "
-        "<a href=\"README_classified.md\">📂 Content Classified</a>"
+        "<a href=\"README.md\">README (content classified)</a> | "
+        "<a href=\"README_lang.md\">README classified by language</a> | "
+        "<a href=\"README_lang_cn.md\">README 按语言分类</a>"
         "</p>\n"
         "<p>"
         "<a href=\"GUIDE_en.md\">English GUIDE</a> | "
         "<a href=\"GUIDE_zh.md\">中文教程</a>"
         "</p>\n\n"
+        "<hr/>\n\n"
+        f"<p><b>Current account:</b> {current_account_html}</p>\n"
+        f"<p><b>Generated on:</b> {generated_on}</p>\n"
+        f"<p><b>AI Model:</b> {model_name}</p>\n"
+        f"<p><b>Total repositories:</b> {total_repos}</p>\n\n"
         "</div>\n\n"
     )
     lines.append("## 📖 Table of Contents\n\n")
@@ -791,7 +816,7 @@ def main() -> int:
     parser.add_argument("--sample-size", type=int, default=60, help="How many repos to sample to design taxonomy (default: 60).")
     parser.add_argument("--batch-size", type=int, default=30, help="Repos per LLM classification call (default: 30).")
     parser.add_argument("--out-json", type=str, default="repo_categories.json", help="Output JSON filename.")
-    parser.add_argument("--out-md", type=str, default="README_classified.md", help="Output Markdown filename (default: README_classified.md).")
+    parser.add_argument("--out-md", type=str, default="README.md", help="Output Markdown filename (default: README.md).")
     args = parser.parse_args()
 
     if args.min_categories < 1:
