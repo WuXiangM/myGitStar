@@ -1000,21 +1000,26 @@ def main():
         # 更新标题以反映实际使用的 API
         current_time = time.strftime("%Y-%m-%d", time.localtime())
         if LANGUAGE == 'en':
-            title = f"# My GitHub Star Project AI Summary\n\n"
-            title += f"**Generated on:** {current_time}\n\n"
-            title += f"**AI Model:** {api_name}\n\n"
-            title += f"**Total repositories:** {len(starred)}\n\n"
-            title += "---\n\n"
-            lines = [title]
-            # Add repository reference link to generated document
-            lines.append("**Reference Repository:** [WuXiangM/myGitStar](https://github.com/WuXiangM/myGitStar)\n\n")
-            # 根据配置决定中英文 README 链接的显示顺序（默认 English first）
             repo_display_language = bool(config.get('repo_display_language', True))
-            if repo_display_language:
-                lines.append("[English README](README.md) | [中文 README](README2.md)\n\n")            
-            else:
-                lines.append("[中文 README](README2.md) | [English README](README.md)\n\n")
-            lines.append("[English GUIDE](GUIDE_en.md) | [中文教程](GUIDE_zh.md)\n\n")
+            readme_links = (
+                "<a href=\"README.md\">English README</a> | <a href=\"README2.md\">中文 README</a> | <a href=\"README_classified.md\">📂 Content Classified</a>"
+                if repo_display_language
+                else "<a href=\"README2.md\">中文 README</a> | <a href=\"README.md\">English README</a> | <a href=\"README_classified.md\">📂 Content Classified</a>"
+            )
+            guide_links = "<a href=\"GUIDE_en.md\">English GUIDE</a> | <a href=\"GUIDE_zh.md\">中文教程</a>"
+            lines = []
+            lines.append(
+                "<div align=\"center\">\n\n"
+                "<h1>My GitHub Star Project AI Summary</h1>\n\n"
+                f"<p><b>Generated on:</b> {current_time}</p>\n"
+                f"<p><b>AI Model:</b> {api_name}</p>\n"
+                f"<p><b>Total repositories:</b> {len(starred)}</p>\n\n"
+                "<hr/>\n\n"
+                "<p><b>Reference Repository:</b> <a href=\"https://github.com/WuXiangM/myGitStar\">WuXiangM/myGitStar</a></p>\n\n"
+                f"<p>{readme_links}</p>\n"
+                f"<p>{guide_links}</p>\n\n"
+                "</div>\n\n"
+            )
 
 
             # 添加目录
@@ -1027,21 +1032,26 @@ def main():
                 lines.append(f"- [{lang}](#{anchor}) ({count})\n")
             lines.append("\n---\n\n")
         else:
-            title = f"# 我的 GitHub Star 项目AI总结\n\n"
-            title += f"**生成时间：** {current_time}\n\n"
-            title += f"**AI模型：** {api_name}\n\n"
-            title += f"**总仓库数：** {len(starred)} 个\n\n"
-            title += "---\n\n"
-            lines = [title]
-            # 在中文文档顶部加入仓库引用
-            lines.append("**参考仓库：** [WuXiangM/myGitStar](https://github.com/WuXiangM/myGitStar)\n\n")
-            # 根据配置决定中英文 README 链接的显示顺序（默认 中文 first）
             repo_display_language = bool(config.get('repo_display_language', True))
-            if repo_display_language:
-                lines.append("[中文 README](README.md) | [English README](README2.md)\n\n")            
-            else:
-                lines.append("[English README](README2.md) | [中文 README](README.md)\n\n")
-            lines.append("[中文教程](GUIDE_zh.md) | [English GUIDE](GUIDE_en.md)\n\n")
+            readme_links = (
+                "<a href=\"README.md\">中文 README</a> | <a href=\"README2.md\">English README</a> | <a href=\"README_classified.md\">📂 内容分类版</a>"
+                if repo_display_language
+                else "<a href=\"README2.md\">English README</a> | <a href=\"README.md\">中文 README</a> | <a href=\"README_classified.md\">📂 内容分类版</a>"
+            )
+            guide_links = "<a href=\"GUIDE_zh.md\">中文教程</a> | <a href=\"GUIDE_en.md\">English GUIDE</a>"
+            lines = []
+            lines.append(
+                "<div align=\"center\">\n\n"
+                "<h1>我的 GitHub Star 项目AI总结</h1>\n\n"
+                f"<p><b>生成时间：</b> {current_time}</p>\n"
+                f"<p><b>AI模型：</b> {api_name}</p>\n"
+                f"<p><b>总仓库数：</b> {len(starred)} 个</p>\n\n"
+                "<hr/>\n\n"
+                "<p><b>参考仓库：</b> <a href=\"https://github.com/WuXiangM/myGitStar\">WuXiangM/myGitStar</a></p>\n\n"
+                f"<p>{readme_links}</p>\n"
+                f"<p>{guide_links}</p>\n\n"
+                "</div>\n\n"
+            )
             
             # 添加目录
             lines.append("## 📖 目录\n\n")

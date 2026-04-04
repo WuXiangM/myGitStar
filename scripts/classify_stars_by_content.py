@@ -659,19 +659,34 @@ def render_classified_readme(
             cid = other_id
         buckets[cid].append(r)
 
+    generated_on = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+    model_name = _model_display_name()
+    total_repos = len(repos)
+
     lines: List[str] = []
-    lines.append("# My GitHub Star Project AI Summary (Classified)\n")
-    lines.append(f"**Generated on:** {datetime.now(timezone.utc).strftime('%Y-%m-%d')}\n\n")
-    lines.append(f"**AI Model:** {_model_display_name()}\n\n")
-    lines.append(f"**Total repositories:** {len(repos)}\n\n")
-    lines.append("---\n\n")
-    lines.append(f"**Reference Repository:** [{reference_repo}](https://github.com/{reference_repo})\n\n")
-    lines.append("[English README](README.md) | [中文 README](README2.md)\n\n")
-    lines.append("[English GUIDE](GUIDE_en.md) | [中文教程](GUIDE_zh.md)\n\n")
+    lines.append(
+        "<div align=\"center\">\n\n"
+        "<h1>My GitHub Star Project AI Summary (Classified)</h1>\n\n"
+        f"<p><b>Generated on:</b> {generated_on}</p>\n"
+        f"<p><b>AI Model:</b> {model_name}</p>\n"
+        f"<p><b>Total repositories:</b> {total_repos}</p>\n\n"
+        "<hr/>\n\n"
+        f"<p><b>Reference Repository:</b> <a href=\"https://github.com/{reference_repo}\">{reference_repo}</a></p>\n\n"
+        "<p>"
+        "<a href=\"README.md\">English README</a> | "
+        "<a href=\"README2.md\">中文 README</a> | "
+        "<a href=\"README_classified.md\">📂 Content Classified</a>"
+        "</p>\n"
+        "<p>"
+        "<a href=\"GUIDE_en.md\">English GUIDE</a> | "
+        "<a href=\"GUIDE_zh.md\">中文教程</a>"
+        "</p>\n\n"
+        "</div>\n\n"
+    )
     lines.append("## 📖 Table of Contents\n\n")
     for c in taxonomy.categories:
         anchor = _slugify_heading(c["name"])
-        lines.append(f"- [{c['name']}](#{anchor}) ({len(buckets.get(c['id'], []))})")
+        lines.append(f"- [{c['name']}](#{anchor}) ({len(buckets.get(c['id'], []))})\n")
     lines.append("\n---\n\n")
 
     for c in taxonomy.categories:
@@ -786,8 +801,12 @@ def main() -> int:
         print("--max-categories must be >= --min-categories")
         return 2
 
+    # NOTE:
+    # - For --from-readme mode, we want to classify ALL repos already present in README by default.
+    #   So we only apply a limit if the user explicitly passes --max-repos.
+    # - For GitHub API mode, we keep the old behavior: env MAX_REPOS / config.max_repos can limit the run.
     max_repos = args.max_repos
-    if max_repos is None:
+    if max_repos is None and not args.from_readme:
         env_mr = os.environ.get("MAX_REPOS")
         if env_mr:
             try:
