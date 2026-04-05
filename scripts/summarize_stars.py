@@ -154,6 +154,17 @@ if max_repos_env:
     except Exception:
         MAX_REPOS = None
 
+# 回退：如果未设置环境变量 MAX_REPOS，则使用 config.yaml 的 max_repos（>0 才生效）
+if MAX_REPOS is None:
+    try:
+        cfg_mr = config.get('max_repos') if isinstance(config, dict) else None
+        if cfg_mr is not None:
+            mr = int(cfg_mr)
+            if mr > 0:
+                MAX_REPOS = mr
+    except Exception:
+        pass
+
 # 全局速率限制配置（请求每秒数），默认保守 0.5 req/s（即每 2s 一次）
 GLOBAL_QPS = _get_float_config('global_qps', 0.5)
 
