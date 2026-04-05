@@ -1,49 +1,64 @@
 {
-  "generated_at": "2026-04-04T07:59:49Z",
+  "generated_at": "2026-04-05T06:15:40Z",
   "model_choice": "copilot",
   "min_categories": 5,
-  "max_categories": 8,
+  "max_categories": 12,
   "taxonomy": {
     "categories": [
       {
         "id": "C1",
         "name": "AI Models",
-        "description": "Repositories focused on developing and training AI models, including LLMs and other machine learning frameworks."
+        "description": "Repositories focused on developing and training various AI models, including language models and vision models."
       },
       {
         "id": "C2",
-        "name": "Computer Vision",
-        "description": "Projects related to image processing, object detection, and visual data analysis."
+        "name": "Data Processing",
+        "description": "Tools and frameworks for processing, transforming, and analyzing data across different formats and sources."
       },
       {
         "id": "C3",
-        "name": "Natural Language Processing",
-        "description": "Tools and frameworks for processing and understanding human language, including text generation and translation."
+        "name": "Computer Vision",
+        "description": "Projects related to image and video analysis, including object detection, segmentation, and enhancement."
       },
       {
         "id": "C4",
-        "name": "Automation & Tools",
-        "description": "Repositories that provide automation solutions, tools for developers, or frameworks for building applications."
+        "name": "Natural Language Processing",
+        "description": "Repositories that focus on text analysis, language understanding, and generation tasks."
       },
       {
         "id": "C5",
-        "name": "Research & Academia",
-        "description": "Projects aimed at facilitating academic research, including tools for paper writing, data analysis, and scientific discovery."
+        "name": "Automation Tools",
+        "description": "Tools designed to automate workflows, processes, and tasks across various domains."
       },
       {
         "id": "C6",
-        "name": "Data Engineering",
-        "description": "Repositories focused on data processing, integration, and management across various domains."
+        "name": "Research Tools",
+        "description": "Repositories that support academic research, including tools for paper writing, data collection, and analysis."
       },
       {
         "id": "C7",
-        "name": "Web & Social Media",
-        "description": "Tools and frameworks for web scraping, social media analysis, and content management."
+        "name": "Web Development",
+        "description": "Projects that involve building web applications, APIs, and related technologies."
       },
       {
         "id": "C8",
+        "name": "Multimedia Processing",
+        "description": "Tools for processing audio, video, and images, including editing, conversion, and enhancement."
+      },
+      {
+        "id": "C9",
+        "name": "Geospatial Analysis",
+        "description": "Repositories focused on analyzing and visualizing geographical data and remote sensing."
+      },
+      {
+        "id": "C10",
+        "name": "Knowledge Management",
+        "description": "Tools for organizing, visualizing, and managing information and knowledge graphs."
+      },
+      {
+        "id": "C11",
         "name": "Other",
-        "description": "Any repositories that do not fit into the above categories."
+        "description": "Repositories that do not fit into the specified categories."
       }
     ]
   },
@@ -51,7 +66,7 @@
     {
       "id": 1,
       "full_name": "open-gigaai/giga-brain-0",
-      "category_id": "C3"
+      "category_id": "C1"
     },
     {
       "id": 2,
@@ -61,12 +76,12 @@
     {
       "id": 3,
       "full_name": "fire-keeper/BlindWatermark",
-      "category_id": "C8"
+      "category_id": "C11"
     },
     {
       "id": 4,
       "full_name": "aiming-lab/AutoResearchClaw",
-      "category_id": "C5"
+      "category_id": "C6"
     },
     {
       "id": 5,
@@ -76,7 +91,7 @@
     {
       "id": 6,
       "full_name": "UniPat-AI/UniScientist",
-      "category_id": "C5"
+      "category_id": "C2"
     },
     {
       "id": 7,
@@ -106,32 +121,32 @@
     {
       "id": 12,
       "full_name": "Usagi-org/ai-goofish-monitor",
-      "category_id": "C4"
+      "category_id": "C5"
     },
     {
       "id": 13,
       "full_name": "zhu-xlab/GlobalBuildingAtlas",
-      "category_id": "C6"
+      "category_id": "C9"
     },
     {
       "id": 14,
       "full_name": "funstory-ai/BabelDOC",
-      "category_id": "C3"
+      "category_id": "C4"
     },
     {
       "id": 15,
       "full_name": "PDFMathTranslate/PDFMathTranslate",
-      "category_id": "C3"
+      "category_id": "C4"
     },
     {
       "id": 16,
       "full_name": "HKUDS/Paper2Slides",
-      "category_id": "C5"
+      "category_id": "C6"
     },
     {
       "id": 17,
       "full_name": "jimmc414/Kosmos",
-      "category_id": "C5"
+      "category_id": "C1"
     },
     {
       "id": 18,
@@ -141,27 +156,27 @@
     {
       "id": 19,
       "full_name": "facebookresearch/sam-3d-body",
-      "category_id": "C2"
+      "category_id": "C3"
     },
     {
       "id": 20,
       "full_name": "facebookresearch/sam-3d-objects",
-      "category_id": "C2"
+      "category_id": "C3"
     },
     {
       "id": 21,
       "full_name": "sansan0/TrendRadar",
-      "category_id": "C7"
+      "category_id": "C2"
     },
     {
       "id": 22,
       "full_name": "jianchang512/pyvideotrans",
-      "category_id": "C3"
+      "category_id": "C4"
     },
     {
       "id": 23,
       "full_name": "666ghj/BettaFish",
-      "category_id": "C7"
+      "category_id": "C2"
     },
     {
       "id": 24,
@@ -171,32 +186,32 @@
     {
       "id": 25,
       "full_name": "guofei9987/blind_watermark",
-      "category_id": "C8"
+      "category_id": "C11"
     },
     {
       "id": 26,
       "full_name": "CharlesKeeling65/ManureCouplingStrategies",
-      "category_id": "C8"
+      "category_id": "C2"
     },
     {
       "id": 27,
       "full_name": "tadata-org/fastapi_mcp",
-      "category_id": "C4"
+      "category_id": "C5"
     },
     {
       "id": 28,
       "full_name": "mikf/gallery-dl",
-      "category_id": "C2"
+      "category_id": "C11"
     },
     {
       "id": 29,
       "full_name": "roboflow/supervision",
-      "category_id": "C2"
+      "category_id": "C3"
     },
     {
       "id": 30,
       "full_name": "lllyasviel/FramePack",
-      "category_id": "C2"
+      "category_id": "C8"
     },
     {
       "id": 31,
@@ -206,7 +221,7 @@
     {
       "id": 32,
       "full_name": "NanmiCoder/MediaCrawler",
-      "category_id": "C7"
+      "category_id": "C11"
     },
     {
       "id": 33,
@@ -216,17 +231,17 @@
     {
       "id": 34,
       "full_name": "opendatalab/MinerU",
-      "category_id": "C3"
+      "category_id": "C2"
     },
     {
       "id": 35,
       "full_name": "Zie619/n8n-workflows",
-      "category_id": "C4"
+      "category_id": "C5"
     },
     {
       "id": 36,
       "full_name": "hpcaitech/Open-Sora",
-      "category_id": "C4"
+      "category_id": "C8"
     },
     {
       "id": 37,
@@ -236,7 +251,7 @@
     {
       "id": 38,
       "full_name": "Peterande/D-FINE",
-      "category_id": "C2"
+      "category_id": "C3"
     },
     {
       "id": 39,
@@ -246,7 +261,7 @@
     {
       "id": 40,
       "full_name": "robert-mcdermott/ai-knowledge-graph",
-      "category_id": "C1"
+      "category_id": "C10"
     },
     {
       "id": 41,
@@ -256,7 +271,7 @@
     {
       "id": 42,
       "full_name": "kijai/ComfyUI-FramePackWrapper",
-      "category_id": "C4"
+      "category_id": "C5"
     },
     {
       "id": 43,
@@ -266,47 +281,47 @@
     {
       "id": 44,
       "full_name": "xming521/WeClone",
-      "category_id": "C3"
+      "category_id": "C1"
     },
     {
       "id": 45,
       "full_name": "happycola233/tchMaterial-parser",
-      "category_id": "C8"
+      "category_id": "C2"
     },
     {
       "id": 46,
       "full_name": "0xsline/GeminiImageApp",
-      "category_id": "C2"
+      "category_id": "C3"
     },
     {
       "id": 47,
       "full_name": "public-apis/public-apis",
-      "category_id": "C8"
+      "category_id": "C10"
     },
     {
       "id": 48,
       "full_name": "SamuelSchmidgall/AgentLaboratory",
-      "category_id": "C5"
+      "category_id": "C6"
     },
     {
       "id": 49,
       "full_name": "VisionXLab/CrossEarth",
-      "category_id": "C2"
+      "category_id": "C9"
     },
     {
       "id": 50,
       "full_name": "microsoft/markitdown",
-      "category_id": "C4"
+      "category_id": "C2"
     },
     {
       "id": 51,
       "full_name": "subframe7536/maple-font",
-      "category_id": "C8"
+      "category_id": "C11"
     },
     {
       "id": 52,
       "full_name": "nvbn/thefuck",
-      "category_id": "C4"
+      "category_id": "C5"
     },
     {
       "id": 53,
@@ -316,7 +331,7 @@
     {
       "id": 54,
       "full_name": "aws/aws-cli",
-      "category_id": "C4"
+      "category_id": "C5"
     },
     {
       "id": 55,
@@ -336,37 +351,37 @@
     {
       "id": 58,
       "full_name": "AUTOMATIC1111/stable-diffusion-webui",
-      "category_id": "C2"
+      "category_id": "C3"
     },
     {
       "id": 59,
       "full_name": "Significant-Gravitas/AutoGPT",
-      "category_id": "C4"
+      "category_id": "C5"
     },
     {
       "id": 60,
       "full_name": "EvanLi/Github-Ranking",
-      "category_id": "C4"
+      "category_id": "C5"
     },
     {
       "id": 61,
       "full_name": "Lydorn/Polygonization-by-Frame-Field-Learning",
-      "category_id": "C2"
+      "category_id": "C3"
     },
     {
       "id": 62,
       "full_name": "bubbliiiing/unet-keras",
-      "category_id": "C2"
+      "category_id": "C3"
     },
     {
       "id": 63,
       "full_name": "zorzi-s/PolyWorldPretrainedNetwork",
-      "category_id": "C2"
+      "category_id": "C3"
     },
     {
       "id": 64,
       "full_name": "hAcKlyc/MyAgents",
-      "category_id": "C4"
+      "category_id": "C5"
     },
     {
       "id": 65,
@@ -376,7 +391,7 @@
     {
       "id": 66,
       "full_name": "anomalyco/opencode",
-      "category_id": "C4"
+      "category_id": "C5"
     },
     {
       "id": 67,
@@ -401,57 +416,57 @@
     {
       "id": 71,
       "full_name": "lfnovo/open-notebook",
-      "category_id": "C5"
+      "category_id": "C11"
     },
     {
       "id": 72,
       "full_name": "CapSoftware/Cap",
-      "category_id": "C4"
+      "category_id": "C5"
     },
     {
       "id": 73,
       "full_name": "027xiguapi/code-box",
-      "category_id": "C4"
+      "category_id": "C5"
     },
     {
       "id": 74,
       "full_name": "iptv-org/iptv",
-      "category_id": "C8"
+      "category_id": "C11"
     },
     {
       "id": 75,
       "full_name": "crocofied/PortNote",
-      "category_id": "C4"
+      "category_id": "C5"
     },
     {
       "id": 76,
       "full_name": "hanydd/BilibiliSponsorBlock",
-      "category_id": "C8"
+      "category_id": "C5"
     },
     {
       "id": 77,
       "full_name": "umami-software/umami",
-      "category_id": "C4"
+      "category_id": "C10"
     },
     {
       "id": 78,
       "full_name": "xyTom/snippai",
-      "category_id": "C4"
+      "category_id": "C5"
     },
     {
       "id": 79,
       "full_name": "Snouzy/workout-cool",
-      "category_id": "C4"
+      "category_id": "C11"
     },
     {
       "id": 80,
       "full_name": "imsyy/DailyHotApi",
-      "category_id": "C4"
+      "category_id": "C2"
     },
     {
       "id": 81,
       "full_name": "cline/cline",
-      "category_id": "C4"
+      "category_id": "C5"
     },
     {
       "id": 82,
@@ -461,12 +476,12 @@
     {
       "id": 83,
       "full_name": "RSSNext/Folo",
-      "category_id": "C3"
+      "category_id": "C4"
     },
     {
       "id": 84,
       "full_name": "antvis/mcp-server-chart",
-      "category_id": "C6"
+      "category_id": "C2"
     },
     {
       "id": 85,
@@ -481,42 +496,42 @@
     {
       "id": 87,
       "full_name": "n8n-io/n8n",
-      "category_id": "C4"
+      "category_id": "C5"
     },
     {
       "id": 88,
       "full_name": "linshenkx/prompt-optimizer",
-      "category_id": "C3"
+      "category_id": "C4"
     },
     {
       "id": 89,
       "full_name": "ayangweb/BongoCat",
-      "category_id": "C8"
+      "category_id": "C11"
     },
     {
       "id": 90,
       "full_name": "kamranahmedse/developer-roadmap",
-      "category_id": "C5"
+      "category_id": "C6"
     },
     {
       "id": 91,
       "full_name": "Yuiffy/BiliGPT",
-      "category_id": "C3"
+      "category_id": "C4"
     },
     {
       "id": 92,
       "full_name": "ahmedkhaleel2004/gitdiagram",
-      "category_id": "C4"
+      "category_id": "C2"
     },
     {
       "id": 93,
       "full_name": "kevmo314/magic-copy",
-      "category_id": "C2"
+      "category_id": "C3"
     },
     {
       "id": 94,
       "full_name": "teableio/teable",
-      "category_id": "C4"
+      "category_id": "C2"
     },
     {
       "id": 95,
@@ -526,7 +541,7 @@
     {
       "id": 96,
       "full_name": "VoltAgent/awesome-openclaw-skills",
-      "category_id": "C8"
+      "category_id": "C11"
     },
     {
       "id": 97,
@@ -541,27 +556,27 @@
     {
       "id": 99,
       "full_name": "svcvit/Awesome-Dify-Workflow",
-      "category_id": "C1"
+      "category_id": "C5"
     },
     {
       "id": 100,
       "full_name": "zijie0/HumanSystemOptimization",
-      "category_id": "C8"
+      "category_id": "C11"
     },
     {
       "id": 101,
       "full_name": "holyshell/AppsForMac",
-      "category_id": "C8"
+      "category_id": "C11"
     },
     {
       "id": 102,
       "full_name": "punkpeye/awesome-mcp-servers",
-      "category_id": "C8"
+      "category_id": "C11"
     },
     {
       "id": 103,
       "full_name": "kkeenee/TG-Twilight-AWAvenue-Ads-Rule",
-      "category_id": "C4"
+      "category_id": "C11"
     },
     {
       "id": 104,
@@ -571,17 +586,17 @@
     {
       "id": 105,
       "full_name": "ruanyf/weekly",
-      "category_id": "C8"
+      "category_id": "C11"
     },
     {
       "id": 106,
       "full_name": "automeris-io/WebPlotDigitizer",
-      "category_id": "C2"
+      "category_id": "C3"
     },
     {
       "id": 107,
       "full_name": "hmjz100/LinkSwift",
-      "category_id": "C4"
+      "category_id": "C11"
     },
     {
       "id": 108,
@@ -591,32 +606,32 @@
     {
       "id": 109,
       "full_name": "glidea/banana-prompt-quicker",
-      "category_id": "C3"
+      "category_id": "C4"
     },
     {
       "id": 110,
       "full_name": "playcanvas/engine",
-      "category_id": "C8"
+      "category_id": "C7"
     },
     {
       "id": 111,
       "full_name": "xanderfrangos/twinkle-tray",
-      "category_id": "C4"
+      "category_id": "C11"
     },
     {
       "id": 112,
       "full_name": "wordshub/free-font",
-      "category_id": "C8"
+      "category_id": "C11"
     },
     {
       "id": 113,
       "full_name": "mrdoob/three.js",
-      "category_id": "C2"
+      "category_id": "C7"
     },
     {
       "id": 114,
       "full_name": "SheepChef/Abracadabra",
-      "category_id": "C8"
+      "category_id": "C11"
     },
     {
       "id": 115,
@@ -626,17 +641,17 @@
     {
       "id": 116,
       "full_name": "poloclub/transformer-explainer",
-      "category_id": "C3"
+      "category_id": "C1"
     },
     {
       "id": 117,
       "full_name": "wri/global-pasture-watch",
-      "category_id": "C5"
+      "category_id": "C9"
     },
     {
       "id": 118,
       "full_name": "roboflow/notebooks",
-      "category_id": "C2"
+      "category_id": "C3"
     },
     {
       "id": 119,
@@ -671,7 +686,7 @@
     {
       "id": 125,
       "full_name": "henry-gu/prompt-engineering-for-developers",
-      "category_id": "C3"
+      "category_id": "C4"
     },
     {
       "id": 126,
@@ -681,37 +696,37 @@
     {
       "id": 127,
       "full_name": "Diorser/LiteMonitor",
-      "category_id": "C4"
+      "category_id": "C5"
     },
     {
       "id": 128,
       "full_name": "Flow-Launcher/Flow.Launcher",
-      "category_id": "C4"
+      "category_id": "C5"
     },
     {
       "id": 129,
       "full_name": "DearVa/Everywhere",
-      "category_id": "C3"
+      "category_id": "C1"
     },
     {
       "id": 130,
       "full_name": "ZyperWave/ZyperWinOptimize",
-      "category_id": "C4"
+      "category_id": "C5"
     },
     {
       "id": 131,
       "full_name": "randyrants/sharpkeys",
-      "category_id": "C4"
+      "category_id": "C5"
     },
     {
       "id": 132,
       "full_name": "microsoft/PowerToys",
-      "category_id": "C4"
+      "category_id": "C5"
     },
     {
       "id": 133,
       "full_name": "zetaloop/OFGB",
-      "category_id": "C4"
+      "category_id": "C11"
     },
     {
       "id": 134,
@@ -721,7 +736,7 @@
     {
       "id": 135,
       "full_name": "githubnext/monaspace",
-      "category_id": "C4"
+      "category_id": "C11"
     },
     {
       "id": 136,
@@ -731,42 +746,42 @@
     {
       "id": 137,
       "full_name": "anthropics/claude-code",
-      "category_id": "C3"
+      "category_id": "C4"
     },
     {
       "id": 138,
       "full_name": "BtbN/FFmpeg-Builds",
-      "category_id": "C4"
+      "category_id": "C8"
     },
     {
       "id": 139,
       "full_name": "vercel-labs/agent-browser",
-      "category_id": "C4"
+      "category_id": "C5"
     },
     {
       "id": 140,
       "full_name": "cjpais/Handy",
-      "category_id": "C3"
+      "category_id": "C4"
     },
     {
       "id": 141,
       "full_name": "astral-sh/uv",
-      "category_id": "C4"
+      "category_id": "C11"
     },
     {
       "id": 142,
       "full_name": "btjawa/BiliTools",
-      "category_id": "C4"
+      "category_id": "C11"
     },
     {
       "id": 143,
       "full_name": "tw93/Pake",
-      "category_id": "C4"
+      "category_id": "C7"
     },
     {
       "id": 144,
       "full_name": "allenk/GeminiWatermarkTool",
-      "category_id": "C4"
+      "category_id": "C11"
     },
     {
       "id": 145,
@@ -776,32 +791,32 @@
     {
       "id": 146,
       "full_name": "microsoft/WSL",
-      "category_id": "C4"
+      "category_id": "C11"
     },
     {
       "id": 147,
       "full_name": "hluk/CopyQ",
-      "category_id": "C4"
+      "category_id": "C5"
     },
     {
       "id": 148,
       "full_name": "DigitalPlatDev/FreeDomain",
-      "category_id": "C4"
+      "category_id": "C7"
     },
     {
       "id": 149,
       "full_name": "Chuyu-Team/Dism-Multi-language",
-      "category_id": "C4"
+      "category_id": "C11"
     },
     {
       "id": 150,
       "full_name": "ripienaar/free-for-dev",
-      "category_id": "C4"
+      "category_id": "C11"
     },
     {
       "id": 151,
       "full_name": "Sjj1024/PakePlus",
-      "category_id": "C4"
+      "category_id": "C7"
     },
     {
       "id": 152,
@@ -811,7 +826,7 @@
     {
       "id": 153,
       "full_name": "OpenListTeam/OpenList",
-      "category_id": "C8"
+      "category_id": "C11"
     },
     {
       "id": 154,
@@ -821,82 +836,82 @@
     {
       "id": 155,
       "full_name": "fatedier/frp",
-      "category_id": "C4"
+      "category_id": "C11"
     },
     {
       "id": 156,
       "full_name": "zetaloop/ExplorerPatcher",
-      "category_id": "C4"
+      "category_id": "C5"
     },
     {
       "id": 157,
       "full_name": "ventoy/Ventoy",
-      "category_id": "C4"
+      "category_id": "C11"
     },
     {
       "id": 158,
       "full_name": "RamonUnch/AltSnap",
-      "category_id": "C4"
+      "category_id": "C5"
     },
     {
       "id": 159,
       "full_name": "Tosencen/XMSLEEP",
-      "category_id": "C8"
+      "category_id": "C11"
     },
     {
       "id": 160,
       "full_name": "gkd-kit/gkd",
-      "category_id": "C4"
+      "category_id": "C11"
     },
     {
       "id": 161,
       "full_name": "kknifer7/FreeBox",
-      "category_id": "C4"
+      "category_id": "C11"
     },
     {
       "id": 162,
       "full_name": "ZCShou/GoGoGo",
-      "category_id": "C4"
+      "category_id": "C11"
     },
     {
       "id": 163,
       "full_name": "easychen/opc-methodology",
-      "category_id": "C5"
+      "category_id": "C11"
     },
     {
       "id": 164,
       "full_name": "tldr-pages/tldr",
-      "category_id": "C5"
+      "category_id": "C6"
     },
     {
       "id": 165,
       "full_name": "dair-ai/Prompt-Engineering-Guide",
-      "category_id": "C3"
+      "category_id": "C1"
     },
     {
       "id": 166,
       "full_name": "x-cmd/x-cmd",
-      "category_id": "C4"
+      "category_id": "C5"
     },
     {
       "id": 167,
       "full_name": "TapXWorld/ChinaTextbook",
-      "category_id": "C5"
+      "category_id": "C11"
     },
     {
       "id": 168,
       "full_name": "jgm/pandoc",
-      "category_id": "C5"
+      "category_id": "C2"
     },
     {
       "id": 169,
       "full_name": "MadMaxChow/VLOOK",
-      "category_id": "C4"
+      "category_id": "C11"
     },
     {
       "id": 170,
       "full_name": "penpot/penpot",
-      "category_id": "C4"
+      "category_id": "C11"
     }
   ]
 }
