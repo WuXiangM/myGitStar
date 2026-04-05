@@ -884,7 +884,7 @@ def _normalize_taxonomy(raw: Any, min_categories: int, max_categories: int) -> T
         else:
             cats.append({"id": f"C{len(cats) + 1}", "name": "Other", "description": "Everything that does not fit other categories."})
 
-    # Ensure minimum category count (5~8 requirement). If model returns too few, pad with generic buckets.
+    # Ensure minimum category count. If model returns too few, pad with generic buckets.
     # We insert before Other to keep Other as the last bucket.
     other_idx = next((i for i, c in enumerate(cats) if str(c.get("name", "")).strip().lower() == "other"), len(cats) - 1)
     while len(cats) < min_categories:
@@ -1072,7 +1072,7 @@ def render_markdown(taxonomy: Taxonomy, repos: List[Dict[str, Any]], assignment_
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Classify GitHub repositories into 5~8 content categories using the selected LLM.")
+    parser = argparse.ArgumentParser(description="Classify GitHub repositories into content categories using the selected LLM.")
     parser.add_argument(
         "--from-readme",
         type=str,
@@ -1087,6 +1087,26 @@ def main() -> int:
     parser.add_argument("--out-json", type=str, default="repo_categories.json", help="Output JSON filename.")
     parser.add_argument("--out-md", type=str, default="README.md", help="Output Markdown filename (default: README.md).")
     args = parser.parse_args()
+
+    # If user didn't pass category range flags, allow config.yaml to override defaults.
+    # (Workflow always passes explicit values; this mainly improves local runs.)
+    passed_min = "--min-categories" in sys.argv
+    passed_max = "--max-categories" in sys.argv
+    if isinstance(config, dict):
+        if not passed_min and config.get("content_min_categories") is not None:
+            try:
+                v = config.get("content_min_categories")
+                if v is not None:
+                    args.min_categories = int(v)
+            except Exception:
+                pass
+        if not passed_max and config.get("content_max_categories") is not None:
+            try:
+                v = config.get("content_max_categories")
+                if v is not None:
+                    args.max_categories = int(v)
+            except Exception:
+                pass
 
     if args.min_categories < 1:
         print("--min-categories must be >= 1")

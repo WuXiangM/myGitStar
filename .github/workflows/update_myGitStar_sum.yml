@@ -22,7 +22,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install requests pyyaml openai
+          pip install -r requirements.txt
 
       - name: Set workflow actor env
         run: echo "GITHUB_ACTOR=${{ github.actor }}" >> $GITHUB_ENV
@@ -39,26 +39,26 @@ jobs:
           classify_only = 'true' if bool(d.get('workflow_classify_only')) else 'false'
 
           def _to_int(v, default):
-            try:
-              return int(v)
-            except Exception:
-              return int(default)
+              try:
+                  return int(v)
+              except Exception:
+                  return int(default)
 
           min_cat = _to_int(d.get('content_min_categories', 5), 5)
           max_cat = _to_int(d.get('content_max_categories', 8), 8)
           if min_cat < 1:
-            min_cat = 1
+              min_cat = 1
           if max_cat < min_cat:
-            max_cat = min_cat
+              max_cat = min_cat
 
-            out_path = os.environ.get('GITHUB_OUTPUT')
-            if not out_path:
+          out_path = os.environ.get('GITHUB_OUTPUT')
+          if not out_path:
               raise SystemExit('GITHUB_OUTPUT is not set')
 
-            with open(out_path, 'a', encoding='utf-8') as f:
-            f.write(f"classify_only={classify_only}\n")
-            f.write(f"min_categories={min_cat}\n")
-            f.write(f"max_categories={max_cat}\n")
+          with open(out_path, 'a', encoding='utf-8') as f:
+              f.write(f"classify_only={classify_only}\n")
+              f.write(f"min_categories={min_cat}\n")
+              f.write(f"max_categories={max_cat}\n")
           PY
 
       - name: Ensure README_lang.md exists (classify-only mode)

@@ -90,6 +90,10 @@ request_timeout: 30
 # 注意：开启后需要仓库中已存在 README_lang.md（作为 --from-readme 输入）
 workflow_classify_only: false
 
+# 内容分类的类别数量区间（Actions 会使用；本地运行在未显式传参时也会默认读取这里）
+content_min_categories: 5
+content_max_categories: 8
+
 # 是否在 README 顶部显示中英互跳链接，以及链接顺序
 # true：优先显示与 language 一致的语言在前；false：反过来
 repo_display_language: true
@@ -122,6 +126,8 @@ repo_display_language: true
 | `retry_attempts`           | 否                       | `1`                                     | 网络层重试次数（适用于通用请求封装）                                           | 1~3                                                                   |
 | `global_qps`               | 否                       | `0.5`                                   | 全局节流（QPS），默认 0.5 表示约每 2 秒 1 次请求                               | 429 就降低（如 0.2）                                                  |
 | `workflow_classify_only`   | 否                       | `true` / `false`                        | Actions 是否只跑内容分类（跳过 summarize 步骤）                                | 设 `true` 前先确保仓库里已有 `README_lang.md`；正常更新建议 `false`     |
+| `content_min_categories`   | 否                       | `5`                                     | 内容分类最少类别数（`classify_stars_by_content.py`）                           | 建议先用 5~8 起步                                                     |
+| `content_max_categories`   | 否                       | `8`                                     | 内容分类最多类别数（`classify_stars_by_content.py`）                           | 不建议太大（如 8~12）                                                 |
 | `test_first_repo`          | 否                       | `false`                                 | 调试开关：只处理第一个仓库（也会开启更详细日志）                               | 本地排错用 `true`                                                   |
 | `log_file`                 | 否                       | `scripts/summarize_stars.log`           | 日志文件路径（默认写到脚本目录）                                               | CI 可保持默认                                                         |
 | `log_max_bytes`            | 否                       | `5242880`                               | 单个日志文件最大大小（字节），到达后滚动                                       | 默认即可                                                              |

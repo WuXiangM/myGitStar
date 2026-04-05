@@ -89,6 +89,10 @@ request_timeout: 30
 # Note: when enabled, README_lang.md must already exist in the repo (used as --from-readme input)
 workflow_classify_only: false
 
+# Content-classification category count range (used by Actions; local runs also default to these when CLI flags are omitted)
+content_min_categories: 5
+content_max_categories: 8
+
 # README top language-switch link order
 # true: put the language matching `language` first; false: reverse
 repo_display_language: true
@@ -121,6 +125,8 @@ The table below summarizes supported `config.yaml` fields and marks whether each
 | `retry_attempts` | No | `1` | Network retry attempts (generic request wrapper) | 1–3 |
 | `global_qps` | No | `0.5` | Global throttling (QPS). Default 0.5 ≈ one request per ~2s | Reduce further if you hit 429 (e.g. 0.2) |
 | `workflow_classify_only` | No | `true` / `false` | Actions: run content-classifier only (skip summarize step) | Before setting `true`, ensure `README_lang.md` exists; keep `false` for normal updates |
+| `content_min_categories` | No | `5` | Min number of content categories for `classify_stars_by_content.py` | 5–8 is a good start |
+| `content_max_categories` | No | `8` | Max number of content categories for `classify_stars_by_content.py` | Keep it not too large (e.g. 8–12) |
 | `test_first_repo` | No | `false` | Debug switch: process only the first repo (also enables more verbose logs) | Use `true` for local debugging |
 | `log_file` | No | `scripts/summarize_stars.log` | Log file path (default is in the script directory) | Default is fine for CI |
 | `log_max_bytes` | No | `5242880` | Max single log file size (bytes), then rotate | Default is fine |

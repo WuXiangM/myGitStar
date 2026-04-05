@@ -88,16 +88,41 @@ max_repos: 50
 update_mode: missing_only
 
 
-# 内容分类：类别数量区间（用于 classify_stars_by_content.py）
-# Content classification: category count range (used by classify_stars_by_content.py)
+# 内容分类：类别数量区间（用于 scripts/classify_stars_by_content.py 设计 taxonomy）
+# - 数值含义：生成的“内容分类”大类数量范围（包含端点）
+# - 取值规则：min >= 1；max >= min（Actions 中会自动纠正；本地脚本也会校验）
+# - 生效方式：
+#   * GitHub Actions 会读取这里，并显式传入 --min-categories/--max-categories
+#   * 本地运行时：如果你没有显式传 --min-categories/--max-categories，则脚本会默认读取这里覆盖默认值
+# - 建议：先用 5~12；类别太多会让 ToC 变长、分类更碎且更不稳定
+#
+# Content classification: category count range (for taxonomy design in scripts/classify_stars_by_content.py)
+# - Meaning: number of top-level content categories to create (inclusive)
+# - Rules: min >= 1; max >= min (validated and auto-clamped in workflow)
+# - Applies to:
+#   * GitHub Actions: reads these and passes explicit CLI flags
+#   * Local runs: used as defaults only when CLI flags are omitted
+# - Recommendation: start with 5~12; too many categories makes output noisy/unstable
 content_min_categories: 5
 content_max_categories: 12
 
 
-# Workflow 仅执行内容分类：为 true 时，GitHub Actions 将跳过 summarize_stars.py，只运行 classify_stars_by_content.py
-# 注意：开启后需要仓库中已存在 README_lang.md（工作流会用它作为 --from-readme 输入）
-# Workflow classify-only: when true, GitHub Actions skips summarize_stars.py and only runs classify_stars_by_content.py
-# Note: when enabled, README_lang.md must already exist in the repo (used as --from-readme input)
+# Workflow 仅执行内容分类：为 true 时，GitHub Actions 将跳过 scripts/summarize_stars.py，
+# 只运行 scripts/classify_stars_by_content.py（从 README_lang.md 解析仓库列表并做“内容分类”）。
+#
+# ⚠️ 注意：
+# - 开启后要求仓库中已存在 README_lang.md（工作流会用它作为 --from-readme 输入）；否则工作流会直接失败。
+# - 该模式不会重新拉取 Stars 列表，也不会更新 README_lang.md。
+#   如果你新增/取消 Star 了仓库，需要临时关掉 classify-only 跑一次 summarize，
+#   或者在本地更新 README_lang.md 后提交。
+#
+# Workflow classify-only: when true, Actions skips scripts/summarize_stars.py and only runs
+# scripts/classify_stars_by_content.py (it parses repo list from README_lang.md via --from-readme).
+#
+# ⚠️ Notes:
+# - Requires README_lang.md already committed in the repo; otherwise the workflow fails fast.
+# - This mode does NOT refresh the Stars list or update README_lang.md.
+#   If your Stars changed, disable classify-only for one run (or update README_lang.md locally and commit).
 workflow_classify_only: true
 
 
