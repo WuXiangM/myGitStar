@@ -123,7 +123,7 @@ content_max_categories: 12
 # - Requires README_lang.md already committed in the repo; otherwise the workflow fails fast.
 # - This mode does NOT refresh the Stars list or update README_lang.md.
 #   If your Stars changed, disable classify-only for one run (or update README_lang.md locally and commit).
-workflow_classify_only: true
+workflow_classify_only: false
 
 
 # 可选：直接在 config 中存放密钥（不推荐，优先从环境变量读取，默认留空）
