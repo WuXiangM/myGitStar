@@ -10,7 +10,7 @@
 <hr/>
 
 <p><b>Current account:</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
-<p><b>Generated on:</b> 2026-04-05</p>
+<p><b>Generated on:</b> 2026-04-06</p>
 <p><b>AI Model:</b> GitHub Copilot</p>
 <p><b>Total repositories:</b> 170</p>
 
@@ -18,24 +18,24 @@
 
 ## 📖 Table of Contents
 
-- [AI Models](#ai-models) (48) — Repositories focused on developing and training various AI models, including language models and vision models.
-- [Data Processing](#data-processing) (12) — Tools and frameworks for processing, transforming, and analyzing data across different formats and sources.
-- [Computer Vision](#computer-vision) (13) — Projects related to image and video analysis, including object detection, segmentation, and enhancement.
-- [Natural Language Processing](#natural-language-processing) (11) — Repositories that focus on text analysis, language understanding, and generation tasks.
-- [Automation Tools](#automation-tools) (28) — Tools designed to automate workflows, processes, and tasks across various domains.
-- [Research Tools](#research-tools) (5) — Repositories that support academic research, including tools for paper writing, data collection, and analysis.
-- [Web Development](#web-development) (5) — Projects that involve building web applications, APIs, and related technologies.
-- [Multimedia Processing](#multimedia-processing) (4) — Tools for processing audio, video, and images, including editing, conversion, and enhancement.
-- [Geospatial Analysis](#geospatial-analysis) (3) — Repositories focused on analyzing and visualizing geographical data and remote sensing.
-- [Knowledge Management](#knowledge-management) (3) — Tools for organizing, visualizing, and managing information and knowledge graphs.
-- [Other](#other) (38) — Repositories that do not fit into the specified categories.
+- [AI Models](#ai-models) (48) — Repositories focused on developing and training various AI models, including language models and vision-language models.
+- [Computer Vision](#computer-vision) (11) — Projects related to image processing, object detection, and other computer vision techniques.
+- [Natural Language Processing](#natural-language-processing) (9) — Tools and frameworks for processing and understanding human language, including translation and text generation.
+- [Data Science](#data-science) (9) — Repositories that provide tools for data analysis, integration, and visualization across various domains.
+- [Automation Tools](#automation-tools) (34) — Projects that automate workflows, including task automation, document processing, and API integrations.
+- [Research Tools](#research-tools) (2) — Tools designed to support academic research, including systems for generating papers and managing research workflows.
+- [Audio Processing](#audio-processing) (1) — Repositories focused on audio manipulation, including vocal removal and sound enhancement techniques.
+- [Web Development](#web-development) (8) — Projects that involve building web applications, including frameworks and tools for enhancing web functionalities.
+- [Geospatial Analysis](#geospatial-analysis) (3) — Repositories focused on analyzing and visualizing geospatial data, including remote sensing and urban development.
+- [Educational Tools](#educational-tools) (10) — Tools designed to enhance learning experiences, including document translation and educational resource management.
+- [Other](#other) (35) — Repositories that do not fit into the above categories.
 
 ---
 
 <a id="ai-models"></a>
 ## AI Models (Total 48)
 
-> Repositories focused on developing and training various AI models, including language models and vision models.
+> Repositories focused on developing and training various AI models, including language models and vision-language models.
 
 ### 📌 [open-gigaai/giga-brain-0](https://github.com/open-gigaai/giga-brain-0)
 
@@ -240,6 +240,34 @@ Here's the summary of the GitHub repository:
 **Repository URL:** [HisMax/RedInk](https://github.com/HisMax/RedInk)
 
 ---
+### 📌 [facebookresearch/sam-3d-body](https://github.com/facebookresearch/sam-3d-body)
+
+
+**⭐ Stars:** 2,784 | **🍴 Forks:** 321 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Here's the summary of the GitHub repository:
+
+1. **Repository Name:** facebookresearch/sam-3d-body
+2. **Brief Introduction:** This repository provides code, trained model checkpoints, and datasets for running inference with the SAM 3D Body Model (3DB). It includes example notebooks to guide users on how to effectively utilize the model for 3D body understanding and analysis.
+3. **Innovations:** Focuses on the SAM 3D Body Model (3DB) for 3D human body understanding, providing a complete toolkit for inference, model access, and usage examples.
+4. **Basic Usage:** Run inference using the provided code and explore usage examples in the included notebooks.
+5. **Summary:** This repository serves as a comprehensive resource for researchers and developers to utilize and experiment with the SAM 3D Body Model (3DB) for 3D human body analysis.
+
+---
 ### 📌 [YILING0013/AI_NovelGenerator](https://github.com/YILING0013/AI_NovelGenerator)
 
 
@@ -368,6 +396,32 @@ Here's the summary of the MaxKB GitHub repository:
 3. **Innovations:** Distinctive features include complete local operation, eliminating the need for costly monthly subscriptions, and the ability to function independently while only requiring electricity.
 4. **Basic Usage:** Not specified.
 5. **Summary:** This repository offers a cost-effective solution for an autonomous AI agent that operates entirely locally without ongoing fees.
+
+---
+### 📌 [robert-mcdermott/ai-knowledge-graph](https://github.com/robert-mcdermott/ai-knowledge-graph)
+
+
+**⭐ Stars:** 1,961 | **🍴 Forks:** 292 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** robert-mcdermott/ai-knowledge-graph
+2. **Brief Introduction:** This repository features an AI-powered tool designed to generate knowledge graphs, facilitating the organization and visualization of information in a structured format.
+3. **Innovations:** The project leverages artificial intelligence to automate the creation of knowledge graphs, enabling dynamic updates and integration of diverse data sources, enhancing usability and accessibility.
+4. **Basic Usage:** Not specified.
+5. **Summary:** The AI Knowledge Graph Generator streamlines the process of creating knowledge graphs, making information management more efficient and insightful.
 
 ---
 ### 📌 [harry0703/MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo)
@@ -558,6 +612,33 @@ Here's the summary of the MaxKB GitHub repository:
    **Repository URL:** [huggingface/transformers](https://github.com/huggingface/transformers)
 
 ---
+### 📌 [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT)
+
+
+**⭐ Stars:** 183,111 | **🍴 Forks:** 46,217 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** Significant-Gravitas/AutoGPT
+2. **Brief Introduction:** AutoGPT aims to make AI accessible for everyone, providing tools that empower users to focus on their priorities.
+3. **Innovations:** Key features include autonomous task execution, the ability to generate and manage tasks, and integration with various APIs for enhanced functionality.
+4. **Basic Usage:** Users can initiate tasks by providing a prompt, and AutoGPT will autonomously complete them based on the input.
+5. **Summary:** AutoGPT serves as a versatile platform for users to leverage AI capabilities efficiently and effectively.
+   **Repository URL:** [AutoGPT on GitHub](https://github.com/Significant-Gravitas/AutoGPT)
+
+---
 ### 📌 [Narcooo/inkos](https://github.com/Narcooo/inkos)
 
 
@@ -636,33 +717,6 @@ Here's the summary of the MaxKB GitHub repository:
 3. **Innovations:** Distinctive features include cross-platform compatibility, a customizable interface, and an intuitive design that simplifies user interaction with AI technologies.
 4. **Basic Usage:** Not specified.
 5. **Summary:** OpenClaw serves as a flexible AI assistant, adaptable to various environments and user needs.
-
----
-### 📌 [antvis/Infographic](https://github.com/antvis/Infographic)
-
-
-**⭐ Stars:** 4,734 | **🍴 Forks:** 341 | **📅 Updated:** 2026-04-03
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** antvis/Infographic
-2. **Brief Introduction:** An Infographic Generation and Rendering Framework that utilizes AI to transform textual information into engaging visual representations.
-3. **Innovations:** Distinctive features include AI-driven content generation, customizable templates, and a user-friendly interface for creating dynamic infographics effortlessly.
-4. **Basic Usage:** Not provided.
-5. **Summary:** This repository aims to enhance communication by visually representing information through AI-generated infographics.
-   **Repository URL:** [antvis/Infographic](https://github.com/antvis/Infographic)
 
 ---
 ### 📌 [Anionex/banana-slides](https://github.com/Anionex/banana-slides)
@@ -904,35 +958,6 @@ Here's the summary of the GitHub repository:
 **Repository URL:** [fogsightai/fogsight](https://github.com/fogsightai/fogsight)
 
 ---
-### 📌 [poloclub/transformer-explainer](https://github.com/poloclub/transformer-explainer)
-
-
-**⭐ Stars:** 7,038 | **🍴 Forks:** 751 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** poloclub/transformer-explainer
-2. **Brief Introduction:** This repository provides an interactive visualization tool to help users understand how large language model (LLM) transformer architectures function.
-3. **Innovations:** The project features dynamic visualizations that illustrate transformer mechanisms, such as attention heads and token processing, making complex concepts more accessible to learners.
-4. **Basic Usage:** Not specified.
-5. **Summary:** The transformer-explainer repository aims to simplify the learning process of transformer models through engaging visual tools.
-   **Repository URL:** [poloclub/transformer-explainer](https://github.com/poloclub/transformer-explainer)
-
----
-
-## 📝 Jupyter Notebook (Total 10)
 ### 📌 [patchy631/ai-engineering-hub](https://github.com/patchy631/ai-engineering-hub)
 
 
@@ -957,33 +982,6 @@ Here's the summary of the GitHub repository:
 3. **Innovations:** Focuses on providing in-depth, practical tutorials, particularly emphasizing the development and application of real-world AI agents alongside foundational LLM and RAG concepts.
 4. **Basic Usage:** (Omitted as it's a tutorial hub, not a tool with direct usage commands)
 5. **Summary:** This repository is a comprehensive educational resource for mastering the practical application of LLMs, RAGs, and AI agents in real-world scenarios.
-
----
-### 📌 [microsoft/AI-For-Beginners](https://github.com/microsoft/AI-For-Beginners)
-
-
-**⭐ Stars:** 46,415 | **🍴 Forks:** 9,495 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** microsoft/AI-For-Beginners
-2. **Brief Introduction:** This repository provides a comprehensive 12-week curriculum with 24 lessons designed to introduce artificial intelligence concepts to beginners, making AI accessible to everyone.
-3. **Innovations:** The curriculum is structured into manageable weekly lessons, includes hands-on projects, and covers a wide range of AI topics, ensuring a practical learning experience.
-4. **Basic Usage:** Users can follow the weekly lessons and complete the associated projects to gain practical experience in AI.
-5. **Summary:** The repository aims to democratize AI education by offering a structured, beginner-friendly approach to learning artificial intelligence.
-   **Repository URL:** [microsoft/AI-For-Beginners](https://github.com/microsoft/AI-For-Beginners)
 
 ---
 ### 📌 [microsoft/generative-ai-for-beginners](https://github.com/microsoft/generative-ai-for-beginners)
@@ -1315,391 +1313,11 @@ Here's a summary of the GitHub repository:
 ---
 
 ## 📝 Awk (Total 1)
-<a id="data-processing"></a>
-## Data Processing (Total 12)
-
-> Tools and frameworks for processing, transforming, and analyzing data across different formats and sources.
-
-### 📌 [UniPat-AI/UniScientist](https://github.com/UniPat-AI/UniScientist)
-
-
-**⭐ Stars:** 157 | **🍴 Forks:** 11 | **📅 Updated:** 2026-04-02
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** UniPat-AI/UniScientist
-2. **Brief Introduction:** UniScientist aims to enhance scientific research intelligence by providing a unified framework for data integration and analysis across various scientific disciplines.
-3. **Innovations:** The repository features advanced algorithms for data synthesis, cross-disciplinary collaboration tools, and a comprehensive knowledge base that supports diverse scientific inquiries.
-4. **Basic Usage:** Not provided.
-5. **Summary:** UniScientist serves as a powerful tool for fostering collaboration and innovation in scientific research through a unified approach.
-   **Repository URL:** [UniScientist on GitHub](https://github.com/UniPat-AI/UniScientist)
-
----
-### 📌 [sansan0/TrendRadar](https://github.com/sansan0/TrendRadar)
-
-
-**⭐ Stars:** 50,804 | **🍴 Forks:** 22,929 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** sansan0/TrendRadar  
-2. **Brief Introduction:** AI-driven tool for monitoring public opinion and trends, aggregating data from multiple platforms and offering smart alerts to combat information overload.  
-3. **Innovations:** Features include multi-platform aggregation, precise keyword filtering, AI news curation, translation, analysis briefs, and integration with various messaging channels for intelligent notifications. Supports Docker and both local/cloud data management.  
-4. **Basic Usage:** Not specified.  
-5. **Summary:** TrendRadar serves as an AI-powered assistant for effective public sentiment monitoring and trend analysis.  
-**Repository URL:** [TrendRadar](https://github.com/sansan0/TrendRadar)
-
----
-### 📌 [666ghj/BettaFish](https://github.com/666ghj/BettaFish)
-
-
-**⭐ Stars:** 40,136 | **🍴 Forks:** 7,451 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** 666ghj/BettaFish  
-2. **Brief Introduction:** A multi-agent public opinion analysis assistant designed to break information silos, restore the true nature of public sentiment, predict future trends, and aid decision-making, developed from scratch without relying on any frameworks.  
-3. **Innovations:** Features a unique multi-agent system for comprehensive sentiment analysis, predictive capabilities for future trends, and a user-friendly interface that democratizes access to public opinion insights.  
-4. **Basic Usage:** Not specified.  
-5. **Summary:** BettaFish serves as an innovative tool for analyzing public sentiment and aiding decision-making through advanced multi-agent technology.  
-**Repository URL:** [https://github.com/666ghj/BettaFish](https://github.com/666ghj/BettaFish)
-
----
-### 📌 [CharlesKeeling65/ManureCouplingStrategies](https://github.com/CharlesKeeling65/ManureCouplingStrategies)
-
-
-**⭐ Stars:** 3 | **🍴 Forks:** 0 | **📅 Updated:** 2025-09-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** CharlesKeeling65/ManureCouplingStrategies  
-2. **Brief Introduction:** A Python library designed to optimize the transport and distribution of manure nutrients in agriculture, facilitating efficient resource recycling.  
-3. **Innovations:** Provides a comprehensive set of tools for addressing the logistical challenges of manure resource allocation from farms to crop areas, enhancing agricultural sustainability.  
-4. **Basic Usage:** Not specified.  
-5. **Summary:** This repository aims to improve the efficiency of manure nutrient distribution in agriculture, promoting sustainable farming practices.  
-**Repository URL:** [ManureCouplingStrategies](https://github.com/CharlesKeeling65/ManureCouplingStrategies)
-
----
-### 📌 [opendatalab/MinerU](https://github.com/opendatalab/MinerU)
-
-
-**⭐ Stars:** 58,042 | **🍴 Forks:** 4,796 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** opendatalab/MinerU  
-2. **Brief Introduction:** MinerU converts complex documents, such as PDFs, into structured markdown or JSON formats, making them suitable for large language model (LLM) applications.  
-3. **Innovations:** Key features include advanced document parsing, seamless conversion to LLM-ready formats, and support for various document types, enhancing workflow automation and efficiency.  
-4. **Basic Usage:** Not provided.  
-5. **Summary:** MinerU streamlines the processing of complex documents for enhanced integration with language models in automated workflows.  
-**Repository URL:** [opendatalab/MinerU](https://github.com/opendatalab/MinerU)
-
----
-### 📌 [happycola233/tchMaterial-parser](https://github.com/happycola233/tchMaterial-parser)
-
-
-**⭐ Stars:** 4,844 | **🍴 Forks:** 575 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** happycola233/tchMaterial-parser
-2. **Brief Introduction:** A tool for downloading electronic textbooks from the National Smart Education Platform, providing easy access to PDF file URLs for educational materials.
-3. **Innovations:** The repository features automated retrieval of textbook URLs, simplifying the download process for users, and supports batch downloading for multiple resources.
-4. **Basic Usage:** Not specified.
-5. **Summary:** This repository serves as a convenient solution for accessing and downloading electronic textbooks from a designated educational platform.
-   **Repository URL:** [happycola233/tchMaterial-parser](https://github.com/happycola233/tchMaterial-parser)
-
----
-### 📌 [microsoft/markitdown](https://github.com/microsoft/markitdown)
-
-
-**⭐ Stars:** 93,259 | **🍴 Forks:** 5,623 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** microsoft/markitdown
-2. **Brief Introduction:** Markitdown is a Python tool designed to convert various files and office documents into Markdown format, facilitating easier content management and editing.
-3. **Innovations:** Key features include support for multiple file types, automated conversion processes, and a focus on preserving formatting and structure during the transition to Markdown.
-4. **Basic Usage:** Not specified.
-5. **Summary:** Markitdown streamlines the conversion of office documents to Markdown, enhancing productivity for users who prefer Markdown for documentation.
-
----
-### 📌 [imsyy/DailyHotApi](https://github.com/imsyy/DailyHotApi)
-
-
-**⭐ Stars:** 3,711 | **🍴 Forks:** 1,239 | **📅 Updated:** 2026-04-03
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** imsyy/DailyHotApi
-2. **Brief Introduction:** DailyHotApi is an API that aggregates trending data, offering support for RSS format and Vercel deployment.
-3. **Innovations:** The repository features a unique aggregation of popular data sources, enabling easy access to trending topics and content through a simple API interface.
-4. **Basic Usage:** Not specified.
-5. **Summary:** This repository provides a convenient API for accessing and deploying trending data efficiently.
-
----
-### 📌 [antvis/mcp-server-chart](https://github.com/antvis/mcp-server-chart)
-
-
-**⭐ Stars:** 3,917 | **🍴 Forks:** 369 | **📅 Updated:** 2026-04-03
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** antvis/mcp-server-chart
-2. **Brief Introduction:** A visualization tool featuring over 25 visual charts built with @antvis, designed for chart generation and data analysis.
-3. **Innovations:** Distinctive features include a wide variety of customizable charts, integration with data analysis tools, and a focus on user-friendly visualization techniques.
-4. **Basic Usage:** Not specified.
-5. **Summary:** This repository provides a comprehensive set of visual charts for effective data analysis and visualization.
-   **Repository URL:** [antvis/mcp-server-chart](https://github.com/antvis/mcp-server-chart)
-
----
-### 📌 [ahmedkhaleel2004/gitdiagram](https://github.com/ahmedkhaleel2004/gitdiagram)
-
-
-**⭐ Stars:** 15,402 | **🍴 Forks:** 1,180 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** ahmedkhaleel2004/gitdiagram
-2. **Brief Introduction:** GitDiagram is a free tool that generates interactive diagrams for GitHub repositories, providing a visual representation of the repository's structure and dependencies.
-3. **Innovations:** The repository offers a user-friendly interface for creating diagrams, fast rendering of complex repository structures, and interactivity that enhances user engagement with the visualized data.
-4. **Basic Usage:** Users can generate a diagram by simply inputting the GitHub repository URL into the tool.
-5. **Summary:** GitDiagram simplifies the visualization of GitHub repositories, making it easier for users to understand their structure and relationships.
-   **Repository URL:** [gitdiagram](https://github.com/ahmedkhaleel2004/gitdiagram)
-
----
-### 📌 [teableio/teable](https://github.com/teableio/teable)
-
-
-**⭐ Stars:** 21,083 | **🍴 Forks:** 1,238 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** teableio/teable
-2. **Brief Introduction:** Teable is a no-code alternative to Airtable, built on top of PostgreSQL, designed to simplify database management for users without programming skills.
-3. **Innovations:** Teable offers a user-friendly interface, seamless integration with PostgreSQL, and powerful features like customizable views, data relationships, and collaborative tools, making it a versatile solution for database management.
-4. **Basic Usage:** Not specified.
-5. **Summary:** Teable provides an intuitive no-code platform for managing PostgreSQL databases, empowering users to organize and manipulate data effortlessly.
-
----
-
-## 📦 Other (Total 11)
-### 📌 [jgm/pandoc](https://github.com/jgm/pandoc)
-
-
-**⭐ Stars:** 43,083 | **🍴 Forks:** 3,806 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** jgm/pandoc
-2. **Brief Introduction:** Pandoc is a universal markup converter that allows users to convert documents between various markup formats, including Markdown, HTML, LaTeX, and more.
-3. **Innovations:** Pandoc supports a wide range of input and output formats, advanced citation handling, customizable templates, and the ability to process documents with complex structures, such as footnotes and tables.
-4. **Basic Usage:** To convert a Markdown file to HTML, use the command: `pandoc input.md -o output.html`.
-5. **Summary:** Pandoc serves as a powerful tool for document conversion, enabling seamless transitions between different markup languages.
-
----
-
-## 📝 Less (Total 1)
 <a id="computer-vision"></a>
-## Computer Vision (Total 13)
+## Computer Vision (Total 11)
 
-> Projects related to image and video analysis, including object detection, segmentation, and enhancement.
+> Projects related to image processing, object detection, and other computer vision techniques.
 
-### 📌 [Kevin-thu/StoryMem](https://github.com/Kevin-thu/StoryMem)
-
-
-**⭐ Stars:** 709 | **🍴 Forks:** 69 | **📅 Updated:** 2026-04-01
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Here's the summary of the GitHub repository:
-
-1. **Repository Name:** Kevin-thu/StoryMem
-2. **Brief Introduction:** StoryMem is the official code for a system designed for multi-shot long video storytelling. It leverages a memory mechanism to generate coherent narratives from extended video content, addressing challenges in long-form video understanding and summarization.
-3. **Innovations:** Its core innovation lies in using a memory mechanism to enable multi-shot storytelling for long videos, ensuring narrative coherence and addressing the challenges of extended video content.
-4. **Basic Usage:** (Omitted as specific usage instructions are not provided in the description)
-5. **Summary:** StoryMem provides a novel approach to generate coherent, multi-shot narratives from long videos by integrating a memory-based mechanism.
-
----
-### 📌 [facebookresearch/sam-3d-body](https://github.com/facebookresearch/sam-3d-body)
-
-
-**⭐ Stars:** 2,784 | **🍴 Forks:** 321 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Here's the summary of the GitHub repository:
-
-1. **Repository Name:** facebookresearch/sam-3d-body
-2. **Brief Introduction:** This repository provides code, trained model checkpoints, and datasets for running inference with the SAM 3D Body Model (3DB). It includes example notebooks to guide users on how to effectively utilize the model for 3D body understanding and analysis.
-3. **Innovations:** Focuses on the SAM 3D Body Model (3DB) for 3D human body understanding, providing a complete toolkit for inference, model access, and usage examples.
-4. **Basic Usage:** Run inference using the provided code and explore usage examples in the included notebooks.
-5. **Summary:** This repository serves as a comprehensive resource for researchers and developers to utilize and experiment with the SAM 3D Body Model (3DB) for 3D human body analysis.
-
----
 ### 📌 [facebookresearch/sam-3d-objects](https://github.com/facebookresearch/sam-3d-objects)
 
 
@@ -1998,65 +1616,14 @@ Here's the summary of the GitHub repository:
 
 ---
 <a id="natural-language-processing"></a>
-## Natural Language Processing (Total 11)
+## Natural Language Processing (Total 9)
 
-> Repositories that focus on text analysis, language understanding, and generation tasks.
+> Tools and frameworks for processing and understanding human language, including translation and text generation.
 
-### 📌 [funstory-ai/BabelDOC](https://github.com/funstory-ai/BabelDOC)
-
-
-**⭐ Stars:** 8,053 | **🍴 Forks:** 634 | **📅 Updated:** 2026-04-04
+### 📌 [Kevin-thu/StoryMem](https://github.com/Kevin-thu/StoryMem)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** funstory-ai/BabelDOC  
-2. **Brief Introduction:** BabelDOC is a document translation tool designed to facilitate seamless language conversion for various document formats.  
-3. **Innovations:** It supports multiple file types, utilizes advanced translation algorithms, and offers a user-friendly interface for efficient document handling.  
-4. **Basic Usage:** (No specific usage example provided)  
-5. **Summary:** BabelDOC aims to simplify the process of translating documents across different languages and formats.  
-**Repository URL:** [BabelDOC](https://github.com/funstory-ai/BabelDOC)
-
----
-### 📌 [PDFMathTranslate/PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate)
-
-
-**⭐ Stars:** 32,683 | **🍴 Forks:** 2,945 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** PDFMathTranslate/PDFMathTranslate  
-2. **Brief Introduction:** PDFMathTranslate offers a tool for translating PDF scientific papers while preserving their original formatting, utilizing various AI translation services.  
-3. **Innovations:** The repository features a multilingual translation capability that maintains the layout of documents, supports multiple translation services (Google, DeepL, Ollama, OpenAI), and provides various interfaces including CLI, GUI, MCP, Docker, and Zotero integration.  
-4. **Basic Usage:** Not specified.  
-5. **Summary:** This repository provides a comprehensive solution for bilingual translation of PDF documents, ensuring format preservation and compatibility with popular translation services.
-
----
-### 📌 [jianchang512/pyvideotrans](https://github.com/jianchang512/pyvideotrans)
-
-
-**⭐ Stars:** 16,787 | **🍴 Forks:** 1,987 | **📅 Updated:** 2026-04-04
+**⭐ Stars:** 709 | **🍴 Forks:** 69 | **📅 Updated:** 2026-04-01
 
 
 
@@ -2074,11 +1641,11 @@ Here's the summary of the GitHub repository:
 
 Here's the summary of the GitHub repository:
 
-1. **Repository Name:** jianchang512/pyvideotrans
-2. **Brief Introduction:** pyvideotrans is a Python tool designed to automate the process of translating videos from one language to another. It handles speech recognition, text translation, generating dubbed audio, and embedding both the new dubbing and translated subtitles directly into the video file.
-3. **Innovations:** Its most distinctive feature is the end-to-end automation of video translation, integrating speech-to-text, machine translation, text-to-speech for dubbing, and subtitle embedding into a single, streamlined process.
-4. **Basic Usage:** `python -m pyvideotrans --input video.mp4 --target-lang es` (example for translating to Spanish)
-5. **Summary:** pyvideotrans provides an automated solution for comprehensive video localization, enabling users to effortlessly translate video content with integrated dubbing and subtitles.
+1. **Repository Name:** Kevin-thu/StoryMem
+2. **Brief Introduction:** StoryMem is the official code for a system designed for multi-shot long video storytelling. It leverages a memory mechanism to generate coherent narratives from extended video content, addressing challenges in long-form video understanding and summarization.
+3. **Innovations:** Its core innovation lies in using a memory mechanism to enable multi-shot storytelling for long videos, ensuring narrative coherence and addressing the challenges of extended video content.
+4. **Basic Usage:** (Omitted as specific usage instructions are not provided in the description)
+5. **Summary:** StoryMem provides a novel approach to generate coherent, multi-shot narratives from long videos by integrating a memory-based mechanism.
 
 ---
 ### 📌 [RSSNext/Folo](https://github.com/RSSNext/Folo)
@@ -2186,13 +1753,10 @@ Here's the summary of the GitHub repository:
 5. **Summary:** This repository provides a resource for users to quickly access and utilize creative AI prompts for improved interaction with AI technologies.
 
 ---
-### 📌 [yitong2333/Bionic-Reading](https://github.com/yitong2333/Bionic-Reading)
+### 📌 [poloclub/transformer-explainer](https://github.com/poloclub/transformer-explainer)
 
 
-**⭐ Stars:** 136 | **🍴 Forks:** 11 | **📅 Updated:** 2026-03-27
-
-
-
+**⭐ Stars:** 7,038 | **🍴 Forks:** 751 | **📅 Updated:** 2026-04-04
 
 
 
@@ -2205,14 +1769,19 @@ Here's the summary of the GitHub repository:
 
 
 
-1. **Repository Name:** yitong2333/Bionic-Reading
-2. **Brief Introduction:** A Tampermonkey script that enhances reading experience by emphasizing keywords and key content, making it easier for readers to grasp important information.
-3. **Innovations:** The script alters text display to highlight critical elements, thereby improving reading speed and comprehension.
+
+
+
+1. **Repository Name:** poloclub/transformer-explainer
+2. **Brief Introduction:** This repository provides an interactive visualization tool to help users understand how large language model (LLM) transformer architectures function.
+3. **Innovations:** The project features dynamic visualizations that illustrate transformer mechanisms, such as attention heads and token processing, making complex concepts more accessible to learners.
 4. **Basic Usage:** Not specified.
-5. **Summary:** This repository provides a tool to enhance reading efficiency through visual emphasis on key information.
-   **Repository URL:** [yitong2333/Bionic-Reading](https://github.com/yitong2333/Bionic-Reading)
+5. **Summary:** The transformer-explainer repository aims to simplify the learning process of transformer models through engaging visual tools.
+   **Repository URL:** [poloclub/transformer-explainer](https://github.com/poloclub/transformer-explainer)
 
 ---
+
+## 📝 Jupyter Notebook (Total 10)
 ### 📌 [henry-gu/prompt-engineering-for-developers](https://github.com/henry-gu/prompt-engineering-for-developers)
 
 
@@ -2293,10 +1862,253 @@ Here's the summary of the GitHub repository:
    **Repository URL:** [cjpais/Handy](https://github.com/cjpais/Handy)
 
 ---
-<a id="automation-tools"></a>
-## Automation Tools (Total 28)
+<a id="data-science"></a>
+## Data Science (Total 9)
 
-> Tools designed to automate workflows, processes, and tasks across various domains.
+> Repositories that provide tools for data analysis, integration, and visualization across various domains.
+
+### 📌 [UniPat-AI/UniScientist](https://github.com/UniPat-AI/UniScientist)
+
+
+**⭐ Stars:** 157 | **🍴 Forks:** 11 | **📅 Updated:** 2026-04-02
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** UniPat-AI/UniScientist
+2. **Brief Introduction:** UniScientist aims to enhance scientific research intelligence by providing a unified framework for data integration and analysis across various scientific disciplines.
+3. **Innovations:** The repository features advanced algorithms for data synthesis, cross-disciplinary collaboration tools, and a comprehensive knowledge base that supports diverse scientific inquiries.
+4. **Basic Usage:** Not provided.
+5. **Summary:** UniScientist serves as a powerful tool for fostering collaboration and innovation in scientific research through a unified approach.
+   **Repository URL:** [UniScientist on GitHub](https://github.com/UniPat-AI/UniScientist)
+
+---
+### 📌 [sansan0/TrendRadar](https://github.com/sansan0/TrendRadar)
+
+
+**⭐ Stars:** 50,804 | **🍴 Forks:** 22,929 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** sansan0/TrendRadar  
+2. **Brief Introduction:** AI-driven tool for monitoring public opinion and trends, aggregating data from multiple platforms and offering smart alerts to combat information overload.  
+3. **Innovations:** Features include multi-platform aggregation, precise keyword filtering, AI news curation, translation, analysis briefs, and integration with various messaging channels for intelligent notifications. Supports Docker and both local/cloud data management.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** TrendRadar serves as an AI-powered assistant for effective public sentiment monitoring and trend analysis.  
+**Repository URL:** [TrendRadar](https://github.com/sansan0/TrendRadar)
+
+---
+### 📌 [666ghj/BettaFish](https://github.com/666ghj/BettaFish)
+
+
+**⭐ Stars:** 40,136 | **🍴 Forks:** 7,451 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** 666ghj/BettaFish  
+2. **Brief Introduction:** A multi-agent public opinion analysis assistant designed to break information silos, restore the true nature of public sentiment, predict future trends, and aid decision-making, developed from scratch without relying on any frameworks.  
+3. **Innovations:** Features a unique multi-agent system for comprehensive sentiment analysis, predictive capabilities for future trends, and a user-friendly interface that democratizes access to public opinion insights.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** BettaFish serves as an innovative tool for analyzing public sentiment and aiding decision-making through advanced multi-agent technology.  
+**Repository URL:** [https://github.com/666ghj/BettaFish](https://github.com/666ghj/BettaFish)
+
+---
+### 📌 [CharlesKeeling65/ManureCouplingStrategies](https://github.com/CharlesKeeling65/ManureCouplingStrategies)
+
+
+**⭐ Stars:** 3 | **🍴 Forks:** 0 | **📅 Updated:** 2025-09-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** CharlesKeeling65/ManureCouplingStrategies  
+2. **Brief Introduction:** A Python library designed to optimize the transport and distribution of manure nutrients in agriculture, facilitating efficient resource recycling.  
+3. **Innovations:** Provides a comprehensive set of tools for addressing the logistical challenges of manure resource allocation from farms to crop areas, enhancing agricultural sustainability.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** This repository aims to improve the efficiency of manure nutrient distribution in agriculture, promoting sustainable farming practices.  
+**Repository URL:** [ManureCouplingStrategies](https://github.com/CharlesKeeling65/ManureCouplingStrategies)
+
+---
+### 📌 [opendatalab/MinerU](https://github.com/opendatalab/MinerU)
+
+
+**⭐ Stars:** 58,042 | **🍴 Forks:** 4,796 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** opendatalab/MinerU  
+2. **Brief Introduction:** MinerU converts complex documents, such as PDFs, into structured markdown or JSON formats, making them suitable for large language model (LLM) applications.  
+3. **Innovations:** Key features include advanced document parsing, seamless conversion to LLM-ready formats, and support for various document types, enhancing workflow automation and efficiency.  
+4. **Basic Usage:** Not provided.  
+5. **Summary:** MinerU streamlines the processing of complex documents for enhanced integration with language models in automated workflows.  
+**Repository URL:** [opendatalab/MinerU](https://github.com/opendatalab/MinerU)
+
+---
+### 📌 [antvis/Infographic](https://github.com/antvis/Infographic)
+
+
+**⭐ Stars:** 4,734 | **🍴 Forks:** 341 | **📅 Updated:** 2026-04-03
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** antvis/Infographic
+2. **Brief Introduction:** An Infographic Generation and Rendering Framework that utilizes AI to transform textual information into engaging visual representations.
+3. **Innovations:** Distinctive features include AI-driven content generation, customizable templates, and a user-friendly interface for creating dynamic infographics effortlessly.
+4. **Basic Usage:** Not provided.
+5. **Summary:** This repository aims to enhance communication by visually representing information through AI-generated infographics.
+   **Repository URL:** [antvis/Infographic](https://github.com/antvis/Infographic)
+
+---
+### 📌 [umami-software/umami](https://github.com/umami-software/umami)
+
+
+**⭐ Stars:** 35,986 | **🍴 Forks:** 6,821 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** umami-software/umami
+2. **Brief Introduction:** Umami is a modern, open-source analytics platform designed to prioritize user privacy, serving as an alternative to traditional analytics tools like Google Analytics.
+3. **Innovations:** Umami features a user-friendly interface, real-time data tracking, self-hosting capabilities, and a focus on privacy, ensuring that user data is not collected or sold.
+4. **Basic Usage:** Users can easily integrate Umami into their websites by adding a simple tracking script to monitor user interactions.
+5. **Summary:** Umami provides a privacy-centric solution for website analytics, empowering users to track their data without compromising user privacy.
+   **Repository URL:** [https://github.com/umami-software/umami](https://github.com/umami-software/umami)
+
+---
+### 📌 [antvis/mcp-server-chart](https://github.com/antvis/mcp-server-chart)
+
+
+**⭐ Stars:** 3,917 | **🍴 Forks:** 369 | **📅 Updated:** 2026-04-03
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** antvis/mcp-server-chart
+2. **Brief Introduction:** A visualization tool featuring over 25 visual charts built with @antvis, designed for chart generation and data analysis.
+3. **Innovations:** Distinctive features include a wide variety of customizable charts, integration with data analysis tools, and a focus on user-friendly visualization techniques.
+4. **Basic Usage:** Not specified.
+5. **Summary:** This repository provides a comprehensive set of visual charts for effective data analysis and visualization.
+   **Repository URL:** [antvis/mcp-server-chart](https://github.com/antvis/mcp-server-chart)
+
+---
+### 📌 [ahmedkhaleel2004/gitdiagram](https://github.com/ahmedkhaleel2004/gitdiagram)
+
+
+**⭐ Stars:** 15,402 | **🍴 Forks:** 1,180 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** ahmedkhaleel2004/gitdiagram
+2. **Brief Introduction:** GitDiagram is a free tool that generates interactive diagrams for GitHub repositories, providing a visual representation of the repository's structure and dependencies.
+3. **Innovations:** The repository offers a user-friendly interface for creating diagrams, fast rendering of complex repository structures, and interactivity that enhances user engagement with the visualized data.
+4. **Basic Usage:** Users can generate a diagram by simply inputting the GitHub repository URL into the tool.
+5. **Summary:** GitDiagram simplifies the visualization of GitHub repositories, making it easier for users to understand their structure and relationships.
+   **Repository URL:** [gitdiagram](https://github.com/ahmedkhaleel2004/gitdiagram)
+
+---
+<a id="automation-tools"></a>
+## Automation Tools (Total 34)
+
+> Projects that automate workflows, including task automation, document processing, and API integrations.
 
 ### 📌 [Usagi-org/ai-goofish-monitor](https://github.com/Usagi-org/ai-goofish-monitor)
 
@@ -2352,6 +2164,31 @@ Here's the summary of the GitHub repository:
 5. **Summary:** This repository offers a secure and straightforward method to expose FastAPI services as Model Context Protocol (MCP) tools for AI model integration.
 
 ---
+### 📌 [NanmiCoder/MediaCrawler](https://github.com/NanmiCoder/MediaCrawler)
+
+
+**⭐ Stars:** 47,239 | **🍴 Forks:** 10,160 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** NanmiCoder/MediaCrawler  
+2. **Brief Introduction:** A versatile web crawler designed to extract comments and posts from various social media platforms, including Xiaohongshu, Douyin, Kuaishou, Bilibili, Weibo, Baidu Tieba, and Zhihu.  
+3. **Innovations:** Distinctive features include support for multiple platforms, efficient data extraction methods, and the ability to retrieve comments and replies, making it a comprehensive tool for social media analysis.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** MediaCrawler serves as a powerful tool for gathering social media insights by scraping user-generated content across popular Chinese platforms.  
+**Repository URL:** [MediaCrawler](https://github.com/NanmiCoder/MediaCrawler)
+
+---
 ### 📌 [Zie619/n8n-workflows](https://github.com/Zie619/n8n-workflows)
 
 
@@ -2380,13 +2217,10 @@ Here's the summary of the GitHub repository:
 5. **Summary:** This repository provides a valuable, centralized resource for n8n users seeking to easily discover and utilize a wide variety of pre-built automation workflows.
 
 ---
-### 📌 [kijai/ComfyUI-FramePackWrapper](https://github.com/kijai/ComfyUI-FramePackWrapper)
+### 📌 [microsoft/markitdown](https://github.com/microsoft/markitdown)
 
 
-**⭐ Stars:** 1,647 | **🍴 Forks:** 117 | **📅 Updated:** 2026-04-04
-
-
-
+**⭐ Stars:** 93,259 | **🍴 Forks:** 5,623 | **📅 Updated:** 2026-04-04
 
 
 
@@ -2399,11 +2233,14 @@ Here's the summary of the GitHub repository:
 
 
 
-1. **Repository Name:** kijai/ComfyUI-FramePackWrapper
-2. **Brief Introduction:** A wrapper for ComfyUI that simplifies the integration of frame packs, enhancing the user experience for developers and artists working with UI elements.
-3. **Innovations:** This repository offers seamless integration of frame packs, customizable UI components, and improved asset management, making it easier to create visually appealing interfaces.
+
+
+
+1. **Repository Name:** microsoft/markitdown
+2. **Brief Introduction:** Markitdown is a Python tool designed to convert various files and office documents into Markdown format, facilitating easier content management and editing.
+3. **Innovations:** Key features include support for multiple file types, automated conversion processes, and a focus on preserving formatting and structure during the transition to Markdown.
 4. **Basic Usage:** Not specified.
-5. **Summary:** This repository enhances ComfyUI by providing a framework for easily managing and integrating frame packs into user interfaces.
+5. **Summary:** Markitdown streamlines the conversion of office documents to Markdown, enhancing productivity for users who prefer Markdown for documentation.
 
 ---
 ### 📌 [nvbn/thefuck](https://github.com/nvbn/thefuck)
@@ -2457,33 +2294,6 @@ Here's the summary of the GitHub repository:
 3. **Innovations:** Key features include support for all AWS services, customizable command outputs, the ability to create scripts for automation, and integration with AWS Identity and Access Management (IAM) for secure access.
 4. **Basic Usage:** A simple command to list S3 buckets: `aws s3 ls`
 5. **Summary:** The AWS CLI streamlines the management of AWS services through a powerful command-line interface, enhancing efficiency and automation for users.
-
----
-### 📌 [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT)
-
-
-**⭐ Stars:** 183,111 | **🍴 Forks:** 46,217 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** Significant-Gravitas/AutoGPT
-2. **Brief Introduction:** AutoGPT aims to make AI accessible for everyone, providing tools that empower users to focus on their priorities.
-3. **Innovations:** Key features include autonomous task execution, the ability to generate and manage tasks, and integration with various APIs for enhanced functionality.
-4. **Basic Usage:** Users can initiate tasks by providing a prompt, and AutoGPT will autonomously complete them based on the input.
-5. **Summary:** AutoGPT serves as a versatile platform for users to leverage AI capabilities efficiently and effectively.
-   **Repository URL:** [AutoGPT on GitHub](https://github.com/Significant-Gravitas/AutoGPT)
 
 ---
 ### 📌 [EvanLi/Github-Ranking](https://github.com/EvanLi/Github-Ranking)
@@ -2564,33 +2374,6 @@ Here's the summary of the GitHub repository:
 3. **Innovations:** Features include intelligent code suggestions, real-time collaboration tools, and seamless integration with popular development environments to enhance productivity.
 4. **Basic Usage:** Not specified.
 5. **Summary:** This repository aims to streamline the coding process by providing innovative tools for developers.
-
----
-### 📌 [CapSoftware/Cap](https://github.com/CapSoftware/Cap)
-
-
-**⭐ Stars:** 17,807 | **🍴 Forks:** 1,369 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** CapSoftware/Cap
-2. **Brief Introduction:** Cap is an open-source alternative to Loom, enabling users to create beautiful and shareable screen recordings effortlessly.
-3. **Innovations:** Key features include a user-friendly interface, high-quality video recording, customizable settings, and easy sharing options, making it accessible for both personal and professional use.
-4. **Basic Usage:** Users can start recording their screen with a simple click and share the generated link instantly.
-5. **Summary:** Cap provides an efficient and visually appealing solution for screen recording and sharing.
-   **Repository URL:** [Cap on GitHub](https://github.com/CapSoftware/Cap)
 
 ---
 ### 📌 [027xiguapi/code-box](https://github.com/027xiguapi/code-box)
@@ -2701,6 +2484,32 @@ Here's the summary of the GitHub repository:
 5. **Summary:** Snippai enhances productivity by enabling users to capture and manage information snippets effectively.
 
 ---
+### 📌 [imsyy/DailyHotApi](https://github.com/imsyy/DailyHotApi)
+
+
+**⭐ Stars:** 3,711 | **🍴 Forks:** 1,239 | **📅 Updated:** 2026-04-03
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** imsyy/DailyHotApi
+2. **Brief Introduction:** DailyHotApi is an API that aggregates trending data, offering support for RSS format and Vercel deployment.
+3. **Innovations:** The repository features a unique aggregation of popular data sources, enabling easy access to trending topics and content through a simple API interface.
+4. **Basic Usage:** Not specified.
+5. **Summary:** This repository provides a convenient API for accessing and deploying trending data efficiently.
+
+---
 ### 📌 [cline/cline](https://github.com/cline/cline)
 
 
@@ -2755,6 +2564,34 @@ Here's the summary of the GitHub repository:
    **Repository URL:** [n8n-io/n8n](https://github.com/n8n-io/n8n)
 
 ---
+### 📌 [teableio/teable](https://github.com/teableio/teable)
+
+
+**⭐ Stars:** 21,083 | **🍴 Forks:** 1,238 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** teableio/teable
+2. **Brief Introduction:** Teable is a no-code alternative to Airtable, built on top of PostgreSQL, designed to simplify database management for users without programming skills.
+3. **Innovations:** Teable offers a user-friendly interface, seamless integration with PostgreSQL, and powerful features like customizable views, data relationships, and collaborative tools, making it a versatile solution for database management.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Teable provides an intuitive no-code platform for managing PostgreSQL databases, empowering users to organize and manipulate data effortlessly.
+
+---
+
+## 📦 Other (Total 11)
 ### 📌 [svcvit/Awesome-Dify-Workflow](https://github.com/svcvit/Awesome-Dify-Workflow)
 
 
@@ -2781,6 +2618,31 @@ Here's the summary of the GitHub repository:
 3. **Innovations:** Offers a centralized repository of practical and effective Dify DSL workflows, simplifying the process for users to discover, share, and implement pre-built AI application logic without starting from scratch.
 4. **Basic Usage:** Download the desired DSL JSON files from the repository and import them directly into your Dify application to deploy the pre-configured workflows.
 5. **Summary:** This repository serves as a valuable resource for Dify users seeking ready-to-use, effective workflows to streamline their AI application development and learning.
+
+---
+### 📌 [hmjz100/LinkSwift](https://github.com/hmjz100/LinkSwift)
+
+
+**⭐ Stars:** 13,798 | **🍴 Forks:** 802 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** hmjz100/LinkSwift  
+2. **Brief Introduction:** A JavaScript-based tool for obtaining direct download links from various cloud storage services, including Baidu Cloud and Aliyun Drive.  
+3. **Innovations:** Supports multiple cloud storage platforms, providing a streamlined way to retrieve direct download links, enhancing user accessibility and convenience.  
+4. **Basic Usage:** No specific usage example provided.  
+5. **Summary:** LinkSwift simplifies the process of downloading files from eight major cloud storage services by generating direct download links.
 
 ---
 ### 📌 [Diorser/LiteMonitor](https://github.com/Diorser/LiteMonitor)
@@ -2919,6 +2781,35 @@ Here's the summary of the GitHub repository:
    **Repository URL:** [microsoft/PowerToys](https://github.com/microsoft/PowerToys)
 
 ---
+### 📌 [zetaloop/OFGB](https://github.com/zetaloop/OFGB)
+
+
+**⭐ Stars:** 1,004 | **🍴 Forks:** 35 | **📅 Updated:** 2026-04-03
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** zetaloop/OFGB
+2. **Brief Introduction:** OFGB is a Chinese localized fork of a tool designed to remove ads from various parts of Windows 11, enhancing user experience by minimizing distractions.
+3. **Innovations:** The repository features a user-friendly interface and efficient ad removal capabilities, specifically tailored for Chinese-speaking users, making it accessible and effective for this demographic.
+4. **Basic Usage:** Not specified in the provided information.
+5. **Summary:** OFGB serves as a practical solution for Windows 11 users seeking to eliminate intrusive advertisements from their system.
+   **Repository URL:** [https://github.com/zetaloop/OFGB](https://github.com/zetaloop/OFGB)
+
+---
+
+## 🐚 Shell (Total 5)
 ### 📌 [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser)
 
 
@@ -3000,6 +2891,34 @@ Here's the summary of the GitHub repository:
 5. **Summary:** ExplorerPatcher aims to improve productivity on Windows 11 by reintroducing classic Windows features and customization options.
 
 ---
+### 📌 [ventoy/Ventoy](https://github.com/ventoy/Ventoy)
+
+
+**⭐ Stars:** 75,468 | **🍴 Forks:** 4,717 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** ventoy/Ventoy
+2. **Brief Introduction:** Ventoy is a tool that allows users to create bootable USB drives easily by simply copying ISO files to the USB drive without the need for formatting.
+3. **Innovations:** Ventoy supports multiple ISO files on a single USB drive, allows for easy updates, and features a simple drag-and-drop interface, making it user-friendly and versatile.
+4. **Basic Usage:** To use Ventoy, simply install it on a USB drive and copy the desired ISO files directly to the drive.
+5. **Summary:** Ventoy simplifies the process of creating bootable USB drives, making it efficient and user-friendly for various operating systems.
+   **Repository Description:** A new bootable USB solution.
+   **Repository URL:** https://github.com/ventoy/Ventoy
+
+---
 ### 📌 [RamonUnch/AltSnap](https://github.com/RamonUnch/AltSnap)
 
 
@@ -3028,149 +2947,6 @@ Here's the summary of the GitHub repository:
 ---
 
 ## 🅺 Kotlin (Total 2)
-### 📌 [x-cmd/x-cmd](https://github.com/x-cmd/x-cmd)
-
-
-**⭐ Stars:** 4,196 | **🍴 Forks:** 130 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** x-cmd/x-cmd
-2. **Brief Introduction:** A tool designed to quickly bootstrap over 1000 command line tools, enhancing productivity for AI agents and developers.
-3. **Innovations:** Features rapid setup of command line tools, integration capabilities for AI agents, and a user-friendly interface for seamless tool management.
-4. **Basic Usage:** Not specified.
-5. **Summary:** x-cmd serves as an efficient solution for rapidly deploying command line tools, streamlining workflows for AI development.
-   **Repository URL:** [https://github.com/x-cmd/x-cmd](https://github.com/x-cmd/x-cmd)
-
----
-
-## 📝 Roff (Total 1)
-<a id="research-tools"></a>
-## Research Tools (Total 5)
-
-> Repositories that support academic research, including tools for paper writing, data collection, and analysis.
-
-### 📌 [aiming-lab/AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw)
-
-
-**⭐ Stars:** 10,222 | **🍴 Forks:** 1,143 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** aiming-lab/AutoResearchClaw
-2. **Brief Introduction:** AutoResearchClaw enables fully autonomous and self-evolving research processes, transforming ideas into academic papers through an interactive chat interface.
-3. **Innovations:** The repository features a unique chat-based interface that facilitates idea generation and paper writing, alongside self-evolving algorithms that adapt research methodologies over time.
-4. **Basic Usage:** Users can engage in a conversation to develop research ideas and receive a structured paper based on their inputs.
-5. **Summary:** AutoResearchClaw streamlines the research process from concept to publication, making academic writing more accessible and efficient.
-   **Repository URL:** [AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw)
-
----
-### 📌 [HKUDS/Paper2Slides](https://github.com/HKUDS/Paper2Slides)
-
-
-**⭐ Stars:** 3,256 | **🍴 Forks:** 431 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Here's the summary of the GitHub repository:
-
-1. **Repository Name:** HKUDS/Paper2Slides
-2. **Brief Introduction:** Paper2Slides is an innovative tool designed to transform academic papers into presentation slides automatically. It streamlines the process of creating presentations, saving researchers and students significant time and effort by automating content extraction and slide generation.
-3. **Innovations:** The most distinctive feature is its "one-click" capability to convert an entire research paper into a structured presentation, leveraging automation to simplify a typically time-consuming task.
-4. **Basic Usage:** Upload a research paper and initiate the "one-click" process to generate a complete presentation.
-5. **Summary:** Paper2Slides automates the creation of presentations from academic papers, offering a swift and efficient solution for researchers and students to generate slides with minimal effort.
-
----
-### 📌 [SamuelSchmidgall/AgentLaboratory](https://github.com/SamuelSchmidgall/AgentLaboratory)
-
-
-**⭐ Stars:** 5,477 | **🍴 Forks:** 771 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** SamuelSchmidgall/AgentLaboratory
-2. **Brief Introduction:** Agent Laboratory is an end-to-end autonomous research workflow designed to support researchers in implementing their research ideas efficiently.
-3. **Innovations:** The repository features an integrated framework for automating research tasks, facilitating collaboration, and streamlining data management, making it easier for researchers to focus on their core ideas.
-4. **Basic Usage:** Not specified.
-5. **Summary:** Agent Laboratory enhances the research process by providing tools that automate and simplify various research workflows.
-   **Repository URL:** [Agent Laboratory](https://github.com/SamuelSchmidgall/AgentLaboratory)
-
----
-### 📌 [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)
-
-
-**⭐ Stars:** 352,162 | **🍴 Forks:** 43,860 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** kamranahmedse/developer-roadmap
-2. **Brief Introduction:** An interactive resource offering roadmaps, guides, and educational content designed to assist developers in advancing their careers.
-3. **Innovations:** Features include visual roadmaps for various development paths, community contributions, and a focus on up-to-date technologies and best practices, making it a comprehensive guide for developers at all levels.
-4. **Basic Usage:** Users can explore different career paths in software development through interactive diagrams that outline necessary skills and technologies.
-5. **Summary:** This repository serves as a valuable tool for developers seeking structured guidance to enhance their skills and career trajectories.
-   **Repository URL:** [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)
-
----
 ### 📌 [tldr-pages/tldr](https://github.com/tldr-pages/tldr)
 
 
@@ -3201,11 +2977,237 @@ Here's the summary of the GitHub repository:
 ---
 
 ## 📝 MDX (Total 1)
+### 📌 [x-cmd/x-cmd](https://github.com/x-cmd/x-cmd)
+
+
+**⭐ Stars:** 4,196 | **🍴 Forks:** 130 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** x-cmd/x-cmd
+2. **Brief Introduction:** A tool designed to quickly bootstrap over 1000 command line tools, enhancing productivity for AI agents and developers.
+3. **Innovations:** Features rapid setup of command line tools, integration capabilities for AI agents, and a user-friendly interface for seamless tool management.
+4. **Basic Usage:** Not specified.
+5. **Summary:** x-cmd serves as an efficient solution for rapidly deploying command line tools, streamlining workflows for AI development.
+   **Repository URL:** [https://github.com/x-cmd/x-cmd](https://github.com/x-cmd/x-cmd)
+
+---
+
+## 📝 Roff (Total 1)
+### 📌 [jgm/pandoc](https://github.com/jgm/pandoc)
+
+
+**⭐ Stars:** 43,083 | **🍴 Forks:** 3,806 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** jgm/pandoc
+2. **Brief Introduction:** Pandoc is a universal markup converter that allows users to convert documents between various markup formats, including Markdown, HTML, LaTeX, and more.
+3. **Innovations:** Pandoc supports a wide range of input and output formats, advanced citation handling, customizable templates, and the ability to process documents with complex structures, such as footnotes and tables.
+4. **Basic Usage:** To convert a Markdown file to HTML, use the command: `pandoc input.md -o output.html`.
+5. **Summary:** Pandoc serves as a powerful tool for document conversion, enabling seamless transitions between different markup languages.
+
+---
+
+## 📝 Less (Total 1)
+<a id="research-tools"></a>
+## Research Tools (Total 2)
+
+> Tools designed to support academic research, including systems for generating papers and managing research workflows.
+
+### 📌 [aiming-lab/AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw)
+
+
+**⭐ Stars:** 10,222 | **🍴 Forks:** 1,143 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** aiming-lab/AutoResearchClaw
+2. **Brief Introduction:** AutoResearchClaw enables fully autonomous and self-evolving research processes, transforming ideas into academic papers through an interactive chat interface.
+3. **Innovations:** The repository features a unique chat-based interface that facilitates idea generation and paper writing, alongside self-evolving algorithms that adapt research methodologies over time.
+4. **Basic Usage:** Users can engage in a conversation to develop research ideas and receive a structured paper based on their inputs.
+5. **Summary:** AutoResearchClaw streamlines the research process from concept to publication, making academic writing more accessible and efficient.
+   **Repository URL:** [AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw)
+
+---
+### 📌 [SamuelSchmidgall/AgentLaboratory](https://github.com/SamuelSchmidgall/AgentLaboratory)
+
+
+**⭐ Stars:** 5,477 | **🍴 Forks:** 771 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** SamuelSchmidgall/AgentLaboratory
+2. **Brief Introduction:** Agent Laboratory is an end-to-end autonomous research workflow designed to support researchers in implementing their research ideas efficiently.
+3. **Innovations:** The repository features an integrated framework for automating research tasks, facilitating collaboration, and streamlining data management, making it easier for researchers to focus on their core ideas.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Agent Laboratory enhances the research process by providing tools that automate and simplify various research workflows.
+   **Repository URL:** [Agent Laboratory](https://github.com/SamuelSchmidgall/AgentLaboratory)
+
+---
+<a id="audio-processing"></a>
+## Audio Processing (Total 1)
+
+> Repositories focused on audio manipulation, including vocal removal and sound enhancement techniques.
+
+### 📌 [Anjok07/ultimatevocalremovergui](https://github.com/Anjok07/ultimatevocalremovergui)
+
+
+**⭐ Stars:** 24,154 | **🍴 Forks:** 1,804 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Here's the summary of the GitHub repository:
+
+1. **Repository Name:** Anjok07/ultimatevocalremovergui
+2. **Brief Introduction:** Ultimate Vocal Remover GUI (UVR) is a user-friendly graphical interface for a powerful vocal removal tool. It leverages advanced deep neural networks to accurately separate vocals, instrumentals, and other components from audio tracks, making high-quality audio source separation accessible to everyone.
+3. **Innovations:** Its primary innovation lies in providing an intuitive graphical user interface (GUI) for a highly effective vocal remover powered by state-of-the-art deep neural networks, making complex audio source separation accessible without command-line expertise.
+4. **Basic Usage:** (Omitted as no specific key usage or example was provided in the description)
+5. **Summary:** Ultimate Vocal Remover GUI simplifies high-quality audio source separation, allowing users to easily remove vocals and other components from songs using deep neural networks through a user-friendly interface.
+
+---
 <a id="web-development"></a>
-## Web Development (Total 5)
+## Web Development (Total 8)
 
-> Projects that involve building web applications, APIs, and related technologies.
+> Projects that involve building web applications, including frameworks and tools for enhancing web functionalities.
 
+### 📌 [hpcaitech/Open-Sora](https://github.com/hpcaitech/Open-Sora)
+
+
+**⭐ Stars:** 28,822 | **🍴 Forks:** 2,923 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** hpcaitech/Open-Sora  
+2. **Brief Introduction:** Open-Sora is an innovative platform designed to make efficient video production accessible to everyone, leveraging advanced technologies to streamline the creation process.  
+3. **Innovations:** Key features include user-friendly tools for video editing, integration of AI for content enhancement, and collaborative functionalities that allow multiple users to work seamlessly on projects.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** Open-Sora aims to democratize video production, empowering users of all skill levels to create high-quality content effortlessly.
+
+---
+### 📌 [kijai/ComfyUI-FramePackWrapper](https://github.com/kijai/ComfyUI-FramePackWrapper)
+
+
+**⭐ Stars:** 1,647 | **🍴 Forks:** 117 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** kijai/ComfyUI-FramePackWrapper
+2. **Brief Introduction:** A wrapper for ComfyUI that simplifies the integration of frame packs, enhancing the user experience for developers and artists working with UI elements.
+3. **Innovations:** This repository offers seamless integration of frame packs, customizable UI components, and improved asset management, making it easier to create visually appealing interfaces.
+4. **Basic Usage:** Not specified.
+5. **Summary:** This repository enhances ComfyUI by providing a framework for easily managing and integrating frame packs into user interfaces.
+
+---
+### 📌 [CapSoftware/Cap](https://github.com/CapSoftware/Cap)
+
+
+**⭐ Stars:** 17,807 | **🍴 Forks:** 1,369 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** CapSoftware/Cap
+2. **Brief Introduction:** Cap is an open-source alternative to Loom, enabling users to create beautiful and shareable screen recordings effortlessly.
+3. **Innovations:** Key features include a user-friendly interface, high-quality video recording, customizable settings, and easy sharing options, making it accessible for both personal and professional use.
+4. **Basic Usage:** Users can start recording their screen with a simple click and share the generated link instantly.
+5. **Summary:** Cap provides an efficient and visually appealing solution for screen recording and sharing.
+   **Repository URL:** [Cap on GitHub](https://github.com/CapSoftware/Cap)
+
+---
 ### 📌 [playcanvas/engine](https://github.com/playcanvas/engine)
 
 
@@ -3359,119 +3361,10 @@ Here's the summary of the GitHub repository:
 ---
 
 ## 🐹 Go (Total 4)
-<a id="multimedia-processing"></a>
-## Multimedia Processing (Total 4)
-
-> Tools for processing audio, video, and images, including editing, conversion, and enhancement.
-
-### 📌 [Anjok07/ultimatevocalremovergui](https://github.com/Anjok07/ultimatevocalremovergui)
-
-
-**⭐ Stars:** 24,154 | **🍴 Forks:** 1,804 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Here's the summary of the GitHub repository:
-
-1. **Repository Name:** Anjok07/ultimatevocalremovergui
-2. **Brief Introduction:** Ultimate Vocal Remover GUI (UVR) is a user-friendly graphical interface for a powerful vocal removal tool. It leverages advanced deep neural networks to accurately separate vocals, instrumentals, and other components from audio tracks, making high-quality audio source separation accessible to everyone.
-3. **Innovations:** Its primary innovation lies in providing an intuitive graphical user interface (GUI) for a highly effective vocal remover powered by state-of-the-art deep neural networks, making complex audio source separation accessible without command-line expertise.
-4. **Basic Usage:** (Omitted as no specific key usage or example was provided in the description)
-5. **Summary:** Ultimate Vocal Remover GUI simplifies high-quality audio source separation, allowing users to easily remove vocals and other components from songs using deep neural networks through a user-friendly interface.
-
----
-### 📌 [lllyasviel/FramePack](https://github.com/lllyasviel/FramePack)
-
-
-**⭐ Stars:** 16,715 | **🍴 Forks:** 1,651 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** lllyasviel/FramePack  
-2. **Brief Introduction:** FramePack is a tool designed to make video diffusion practical, streamlining the process of applying diffusion techniques to video content.  
-3. **Innovations:** The repository features efficient algorithms for video processing, user-friendly interfaces, and integration capabilities with existing video editing workflows, enhancing the practicality of video diffusion.  
-4. **Basic Usage:** Not specified.  
-5. **Summary:** FramePack aims to simplify and enhance the application of diffusion methods in video production.
-
----
-### 📌 [hpcaitech/Open-Sora](https://github.com/hpcaitech/Open-Sora)
-
-
-**⭐ Stars:** 28,822 | **🍴 Forks:** 2,923 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** hpcaitech/Open-Sora  
-2. **Brief Introduction:** Open-Sora is an innovative platform designed to make efficient video production accessible to everyone, leveraging advanced technologies to streamline the creation process.  
-3. **Innovations:** Key features include user-friendly tools for video editing, integration of AI for content enhancement, and collaborative functionalities that allow multiple users to work seamlessly on projects.  
-4. **Basic Usage:** Not specified.  
-5. **Summary:** Open-Sora aims to democratize video production, empowering users of all skill levels to create high-quality content effortlessly.
-
----
-### 📌 [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds)
-
-
-**⭐ Stars:** 10,631 | **🍴 Forks:** 1,428 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** BtbN/FFmpeg-Builds
-2. **Brief Introduction:** This repository provides pre-built FFmpeg binaries for various platforms, simplifying the installation process for users who need FFmpeg for multimedia processing tasks.
-3. **Innovations:** The repository features automated builds for multiple architectures, including Windows, macOS, and Linux, along with the latest FFmpeg features and codecs, ensuring users have access to up-to-date versions.
-4. **Basic Usage:** Users can download the appropriate binary for their platform and run it directly from the command line to utilize FFmpeg's functionalities.
-5. **Summary:** BtbN/FFmpeg-Builds offers convenient access to the latest FFmpeg binaries, streamlining multimedia processing for developers and users alike.
-
----
-
-## 🦀 Rust (Total 5)
 <a id="geospatial-analysis"></a>
 ## Geospatial Analysis (Total 3)
 
-> Repositories focused on analyzing and visualizing geographical data and remote sensing.
+> Repositories focused on analyzing and visualizing geospatial data, including remote sensing and urban development.
 
 ### 📌 [zhu-xlab/GlobalBuildingAtlas](https://github.com/zhu-xlab/GlobalBuildingAtlas)
 
@@ -3550,17 +3443,15 @@ Here's the summary of the GitHub repository:
 **Repository URL:** [https://github.com/wri/global-pasture-watch](https://github.com/wri/global-pasture-watch)
 
 ---
-<a id="knowledge-management"></a>
-## Knowledge Management (Total 3)
+<a id="educational-tools"></a>
+## Educational Tools (Total 10)
 
-> Tools for organizing, visualizing, and managing information and knowledge graphs.
+> Tools designed to enhance learning experiences, including document translation and educational resource management.
 
-### 📌 [robert-mcdermott/ai-knowledge-graph](https://github.com/robert-mcdermott/ai-knowledge-graph)
-
-
-**⭐ Stars:** 1,961 | **🍴 Forks:** 292 | **📅 Updated:** 2026-04-04
+### 📌 [funstory-ai/BabelDOC](https://github.com/funstory-ai/BabelDOC)
 
 
+**⭐ Stars:** 8,053 | **🍴 Forks:** 634 | **📅 Updated:** 2026-04-04
 
 
 
@@ -3574,44 +3465,127 @@ Here's the summary of the GitHub repository:
 
 
 
-1. **Repository Name:** robert-mcdermott/ai-knowledge-graph
-2. **Brief Introduction:** This repository features an AI-powered tool designed to generate knowledge graphs, facilitating the organization and visualization of information in a structured format.
-3. **Innovations:** The project leverages artificial intelligence to automate the creation of knowledge graphs, enabling dynamic updates and integration of diverse data sources, enhancing usability and accessibility.
+
+1. **Repository Name:** funstory-ai/BabelDOC  
+2. **Brief Introduction:** BabelDOC is a document translation tool designed to facilitate seamless language conversion for various document formats.  
+3. **Innovations:** It supports multiple file types, utilizes advanced translation algorithms, and offers a user-friendly interface for efficient document handling.  
+4. **Basic Usage:** (No specific usage example provided)  
+5. **Summary:** BabelDOC aims to simplify the process of translating documents across different languages and formats.  
+**Repository URL:** [BabelDOC](https://github.com/funstory-ai/BabelDOC)
+
+---
+### 📌 [PDFMathTranslate/PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate)
+
+
+**⭐ Stars:** 32,683 | **🍴 Forks:** 2,945 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** PDFMathTranslate/PDFMathTranslate  
+2. **Brief Introduction:** PDFMathTranslate offers a tool for translating PDF scientific papers while preserving their original formatting, utilizing various AI translation services.  
+3. **Innovations:** The repository features a multilingual translation capability that maintains the layout of documents, supports multiple translation services (Google, DeepL, Ollama, OpenAI), and provides various interfaces including CLI, GUI, MCP, Docker, and Zotero integration.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** This repository provides a comprehensive solution for bilingual translation of PDF documents, ensuring format preservation and compatibility with popular translation services.
+
+---
+### 📌 [HKUDS/Paper2Slides](https://github.com/HKUDS/Paper2Slides)
+
+
+**⭐ Stars:** 3,256 | **🍴 Forks:** 431 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Here's the summary of the GitHub repository:
+
+1. **Repository Name:** HKUDS/Paper2Slides
+2. **Brief Introduction:** Paper2Slides is an innovative tool designed to transform academic papers into presentation slides automatically. It streamlines the process of creating presentations, saving researchers and students significant time and effort by automating content extraction and slide generation.
+3. **Innovations:** The most distinctive feature is its "one-click" capability to convert an entire research paper into a structured presentation, leveraging automation to simplify a typically time-consuming task.
+4. **Basic Usage:** Upload a research paper and initiate the "one-click" process to generate a complete presentation.
+5. **Summary:** Paper2Slides automates the creation of presentations from academic papers, offering a swift and efficient solution for researchers and students to generate slides with minimal effort.
+
+---
+### 📌 [jianchang512/pyvideotrans](https://github.com/jianchang512/pyvideotrans)
+
+
+**⭐ Stars:** 16,787 | **🍴 Forks:** 1,987 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Here's the summary of the GitHub repository:
+
+1. **Repository Name:** jianchang512/pyvideotrans
+2. **Brief Introduction:** pyvideotrans is a Python tool designed to automate the process of translating videos from one language to another. It handles speech recognition, text translation, generating dubbed audio, and embedding both the new dubbing and translated subtitles directly into the video file.
+3. **Innovations:** Its most distinctive feature is the end-to-end automation of video translation, integrating speech-to-text, machine translation, text-to-speech for dubbing, and subtitle embedding into a single, streamlined process.
+4. **Basic Usage:** `python -m pyvideotrans --input video.mp4 --target-lang es` (example for translating to Spanish)
+5. **Summary:** pyvideotrans provides an automated solution for comprehensive video localization, enabling users to effortlessly translate video content with integrated dubbing and subtitles.
+
+---
+### 📌 [happycola233/tchMaterial-parser](https://github.com/happycola233/tchMaterial-parser)
+
+
+**⭐ Stars:** 4,844 | **🍴 Forks:** 575 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** happycola233/tchMaterial-parser
+2. **Brief Introduction:** A tool for downloading electronic textbooks from the National Smart Education Platform, providing easy access to PDF file URLs for educational materials.
+3. **Innovations:** The repository features automated retrieval of textbook URLs, simplifying the download process for users, and supports batch downloading for multiple resources.
 4. **Basic Usage:** Not specified.
-5. **Summary:** The AI Knowledge Graph Generator streamlines the process of creating knowledge graphs, making information management more efficient and insightful.
+5. **Summary:** This repository serves as a convenient solution for accessing and downloading electronic textbooks from a designated educational platform.
+   **Repository URL:** [happycola233/tchMaterial-parser](https://github.com/happycola233/tchMaterial-parser)
 
 ---
-### 📌 [public-apis/public-apis](https://github.com/public-apis/public-apis)
+### 📌 [Snouzy/workout-cool](https://github.com/Snouzy/workout-cool)
 
 
-**⭐ Stars:** 418,905 | **🍴 Forks:** 45,549 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** public-apis/public-apis
-2. **Brief Introduction:** A comprehensive collection of free APIs for various categories, enabling developers to easily find and utilize APIs for their projects.
-3. **Innovations:** Features a well-organized directory of APIs categorized by type, authentication requirements, and availability, making it user-friendly for developers seeking specific functionalities.
-4. **Basic Usage:** Not applicable.
-5. **Summary:** This repository serves as a valuable resource for developers looking to integrate free APIs into their applications.
-   **Repository URL:** [public-apis/public-apis](https://github.com/public-apis/public-apis)
-
----
-### 📌 [umami-software/umami](https://github.com/umami-software/umami)
-
-
-**⭐ Stars:** 35,986 | **🍴 Forks:** 6,821 | **📅 Updated:** 2026-04-04
+**⭐ Stars:** 7,164 | **🍴 Forks:** 565 | **📅 Updated:** 2026-04-04
 
 
 
@@ -3627,18 +3601,127 @@ Here's the summary of the GitHub repository:
 
 
 
-1. **Repository Name:** umami-software/umami
-2. **Brief Introduction:** Umami is a modern, open-source analytics platform designed to prioritize user privacy, serving as an alternative to traditional analytics tools like Google Analytics.
-3. **Innovations:** Umami features a user-friendly interface, real-time data tracking, self-hosting capabilities, and a focus on privacy, ensuring that user data is not collected or sold.
-4. **Basic Usage:** Users can easily integrate Umami into their websites by adding a simple tracking script to monitor user interactions.
-5. **Summary:** Umami provides a privacy-centric solution for website analytics, empowering users to track their data without compromising user privacy.
-   **Repository URL:** [https://github.com/umami-software/umami](https://github.com/umami-software/umami)
+1. **Repository Name:** Snouzy/workout-cool
+2. **Brief Introduction:** Modern open-source fitness coaching platform that allows users to create workout plans, track their progress, and access a comprehensive exercise database.
+3. **Innovations:** Key features include customizable workout plans, progress tracking, and an extensive library of exercises, making it user-friendly for fitness enthusiasts.
+4. **Basic Usage:** Users can create personalized workout plans and log their progress through the platform's intuitive interface.
+5. **Summary:** This repository provides a comprehensive tool for individuals seeking to enhance their fitness journey through structured coaching and tracking.
+   **Repository URL:** [https://github.com/Snouzy/workout-cool](https://github.com/Snouzy/workout-cool)
 
 ---
+### 📌 [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)
+
+
+**⭐ Stars:** 352,162 | **🍴 Forks:** 43,860 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** kamranahmedse/developer-roadmap
+2. **Brief Introduction:** An interactive resource offering roadmaps, guides, and educational content designed to assist developers in advancing their careers.
+3. **Innovations:** Features include visual roadmaps for various development paths, community contributions, and a focus on up-to-date technologies and best practices, making it a comprehensive guide for developers at all levels.
+4. **Basic Usage:** Users can explore different career paths in software development through interactive diagrams that outline necessary skills and technologies.
+5. **Summary:** This repository serves as a valuable tool for developers seeking structured guidance to enhance their skills and career trajectories.
+   **Repository URL:** [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)
+
+---
+### 📌 [yitong2333/Bionic-Reading](https://github.com/yitong2333/Bionic-Reading)
+
+
+**⭐ Stars:** 136 | **🍴 Forks:** 11 | **📅 Updated:** 2026-03-27
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** yitong2333/Bionic-Reading
+2. **Brief Introduction:** A Tampermonkey script that enhances reading experience by emphasizing keywords and key content, making it easier for readers to grasp important information.
+3. **Innovations:** The script alters text display to highlight critical elements, thereby improving reading speed and comprehension.
+4. **Basic Usage:** Not specified.
+5. **Summary:** This repository provides a tool to enhance reading efficiency through visual emphasis on key information.
+   **Repository URL:** [yitong2333/Bionic-Reading](https://github.com/yitong2333/Bionic-Reading)
+
+---
+### 📌 [microsoft/AI-For-Beginners](https://github.com/microsoft/AI-For-Beginners)
+
+
+**⭐ Stars:** 46,415 | **🍴 Forks:** 9,495 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** microsoft/AI-For-Beginners
+2. **Brief Introduction:** This repository provides a comprehensive 12-week curriculum with 24 lessons designed to introduce artificial intelligence concepts to beginners, making AI accessible to everyone.
+3. **Innovations:** The curriculum is structured into manageable weekly lessons, includes hands-on projects, and covers a wide range of AI topics, ensuring a practical learning experience.
+4. **Basic Usage:** Users can follow the weekly lessons and complete the associated projects to gain practical experience in AI.
+5. **Summary:** The repository aims to democratize AI education by offering a structured, beginner-friendly approach to learning artificial intelligence.
+   **Repository URL:** [microsoft/AI-For-Beginners](https://github.com/microsoft/AI-For-Beginners)
+
+---
+### 📌 [TapXWorld/ChinaTextbook](https://github.com/TapXWorld/ChinaTextbook)
+
+
+**⭐ Stars:** 66,511 | **🍴 Forks:** 14,839 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** TapXWorld/ChinaTextbook
+2. **Brief Introduction:** This repository contains PDF textbooks for primary, secondary, and university education in China, providing a comprehensive resource for students and educators.
+3. **Innovations:** The repository uniquely aggregates a wide range of educational materials across various academic levels, making it a valuable one-stop resource for Chinese textbooks.
+4. **Basic Usage:** Not specified.
+5. **Summary:** The repository serves as a centralized collection of educational PDFs, facilitating access to essential learning materials for students in China.
+
+---
+
+## 📝 Haskell (Total 1)
 <a id="other"></a>
-## Other (Total 38)
+## Other (Total 35)
 
-> Repositories that do not fit into the specified categories.
+> Repositories that do not fit into the above categories.
 
 ### 📌 [fire-keeper/BlindWatermark](https://github.com/fire-keeper/BlindWatermark)
 
@@ -3719,13 +3802,10 @@ Here is the summary of the GitHub repository:
 5. **Summary:** gallery-dl is an essential command-line tool for efficiently downloading and archiving image galleries and collections from a vast number of online image hosting platforms.
 
 ---
-### 📌 [NanmiCoder/MediaCrawler](https://github.com/NanmiCoder/MediaCrawler)
+### 📌 [lllyasviel/FramePack](https://github.com/lllyasviel/FramePack)
 
 
-**⭐ Stars:** 47,239 | **🍴 Forks:** 10,160 | **📅 Updated:** 2026-04-04
-
-
-
+**⭐ Stars:** 16,715 | **🍴 Forks:** 1,651 | **📅 Updated:** 2026-04-04
 
 
 
@@ -3736,12 +3816,41 @@ Here is the summary of the GitHub repository:
 
 
 
-1. **Repository Name:** NanmiCoder/MediaCrawler  
-2. **Brief Introduction:** A versatile web crawler designed to extract comments and posts from various social media platforms, including Xiaohongshu, Douyin, Kuaishou, Bilibili, Weibo, Baidu Tieba, and Zhihu.  
-3. **Innovations:** Distinctive features include support for multiple platforms, efficient data extraction methods, and the ability to retrieve comments and replies, making it a comprehensive tool for social media analysis.  
+
+
+
+1. **Repository Name:** lllyasviel/FramePack  
+2. **Brief Introduction:** FramePack is a tool designed to make video diffusion practical, streamlining the process of applying diffusion techniques to video content.  
+3. **Innovations:** The repository features efficient algorithms for video processing, user-friendly interfaces, and integration capabilities with existing video editing workflows, enhancing the practicality of video diffusion.  
 4. **Basic Usage:** Not specified.  
-5. **Summary:** MediaCrawler serves as a powerful tool for gathering social media insights by scraping user-generated content across popular Chinese platforms.  
-**Repository URL:** [MediaCrawler](https://github.com/NanmiCoder/MediaCrawler)
+5. **Summary:** FramePack aims to simplify and enhance the application of diffusion methods in video production.
+
+---
+### 📌 [public-apis/public-apis](https://github.com/public-apis/public-apis)
+
+
+**⭐ Stars:** 418,905 | **🍴 Forks:** 45,549 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** public-apis/public-apis
+2. **Brief Introduction:** A comprehensive collection of free APIs for various categories, enabling developers to easily find and utilize APIs for their projects.
+3. **Innovations:** Features a well-organized directory of APIs categorized by type, authentication requirements, and availability, making it user-friendly for developers seeking specific functionalities.
+4. **Basic Usage:** Not applicable.
+5. **Summary:** This repository serves as a valuable resource for developers looking to integrate free APIs into their applications.
+   **Repository URL:** [public-apis/public-apis](https://github.com/public-apis/public-apis)
 
 ---
 ### 📌 [subframe7536/maple-font](https://github.com/subframe7536/maple-font)
@@ -3822,33 +3931,6 @@ Here is the summary of the GitHub repository:
 4. **Basic Usage:** Users can access the channel lists via provided M3U links for streaming on compatible devices.
 5. **Summary:** This repository serves as a valuable resource for accessing global IPTV channels easily and efficiently.
    **Repository URL:** [iptv-org/iptv](https://github.com/iptv-org/iptv)
-
----
-### 📌 [Snouzy/workout-cool](https://github.com/Snouzy/workout-cool)
-
-
-**⭐ Stars:** 7,164 | **🍴 Forks:** 565 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** Snouzy/workout-cool
-2. **Brief Introduction:** Modern open-source fitness coaching platform that allows users to create workout plans, track their progress, and access a comprehensive exercise database.
-3. **Innovations:** Key features include customizable workout plans, progress tracking, and an extensive library of exercises, making it user-friendly for fitness enthusiasts.
-4. **Basic Usage:** Users can create personalized workout plans and log their progress through the platform's intuitive interface.
-5. **Summary:** This repository provides a comprehensive tool for individuals seeking to enhance their fitness journey through structured coaching and tracking.
-   **Repository URL:** [https://github.com/Snouzy/workout-cool](https://github.com/Snouzy/workout-cool)
 
 ---
 ### 📌 [ayangweb/BongoCat](https://github.com/ayangweb/BongoCat)
@@ -4026,31 +4108,6 @@ Here is the summary of the GitHub repository:
 ---
 
 ## 🟨 JavaScript (Total 11)
-### 📌 [hmjz100/LinkSwift](https://github.com/hmjz100/LinkSwift)
-
-
-**⭐ Stars:** 13,798 | **🍴 Forks:** 802 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** hmjz100/LinkSwift  
-2. **Brief Introduction:** A JavaScript-based tool for obtaining direct download links from various cloud storage services, including Baidu Cloud and Aliyun Drive.  
-3. **Innovations:** Supports multiple cloud storage platforms, providing a streamlined way to retrieve direct download links, enhancing user accessibility and convenience.  
-4. **Basic Usage:** No specific usage example provided.  
-5. **Summary:** LinkSwift simplifies the process of downloading files from eight major cloud storage services by generating direct download links.
-
----
 ### 📌 [xanderfrangos/twinkle-tray](https://github.com/xanderfrangos/twinkle-tray)
 
 
@@ -4132,35 +4189,6 @@ Here's the summary of the GitHub repository:
    **Repository URL:** [Abracadabra on GitHub](https://github.com/SheepChef/Abracadabra)
 
 ---
-### 📌 [zetaloop/OFGB](https://github.com/zetaloop/OFGB)
-
-
-**⭐ Stars:** 1,004 | **🍴 Forks:** 35 | **📅 Updated:** 2026-04-03
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** zetaloop/OFGB
-2. **Brief Introduction:** OFGB is a Chinese localized fork of a tool designed to remove ads from various parts of Windows 11, enhancing user experience by minimizing distractions.
-3. **Innovations:** The repository features a user-friendly interface and efficient ad removal capabilities, specifically tailored for Chinese-speaking users, making it accessible and effective for this demographic.
-4. **Basic Usage:** Not specified in the provided information.
-5. **Summary:** OFGB serves as a practical solution for Windows 11 users seeking to eliminate intrusive advertisements from their system.
-   **Repository URL:** [https://github.com/zetaloop/OFGB](https://github.com/zetaloop/OFGB)
-
----
-
-## 🐚 Shell (Total 5)
 ### 📌 [githubnext/monaspace](https://github.com/githubnext/monaspace)
 
 
@@ -4189,6 +4217,34 @@ Here's the summary of the GitHub repository:
    **Repository URL:** [githubnext/monaspace](https://github.com/githubnext/monaspace)
 
 ---
+### 📌 [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds)
+
+
+**⭐ Stars:** 10,631 | **🍴 Forks:** 1,428 | **📅 Updated:** 2026-04-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** BtbN/FFmpeg-Builds
+2. **Brief Introduction:** This repository provides pre-built FFmpeg binaries for various platforms, simplifying the installation process for users who need FFmpeg for multimedia processing tasks.
+3. **Innovations:** The repository features automated builds for multiple architectures, including Windows, macOS, and Linux, along with the latest FFmpeg features and codecs, ensuring users have access to up-to-date versions.
+4. **Basic Usage:** Users can download the appropriate binary for their platform and run it directly from the command line to utilize FFmpeg's functionalities.
+5. **Summary:** BtbN/FFmpeg-Builds offers convenient access to the latest FFmpeg binaries, streamlining multimedia processing for developers and users alike.
+
+---
+
+## 🦀 Rust (Total 5)
 ### 📌 [astral-sh/uv](https://github.com/astral-sh/uv)
 
 
@@ -4403,34 +4459,6 @@ Here's the summary of the GitHub repository:
 ---
 
 ## 🔧 C (Total 3)
-### 📌 [ventoy/Ventoy](https://github.com/ventoy/Ventoy)
-
-
-**⭐ Stars:** 75,468 | **🍴 Forks:** 4,717 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** ventoy/Ventoy
-2. **Brief Introduction:** Ventoy is a tool that allows users to create bootable USB drives easily by simply copying ISO files to the USB drive without the need for formatting.
-3. **Innovations:** Ventoy supports multiple ISO files on a single USB drive, allows for easy updates, and features a simple drag-and-drop interface, making it user-friendly and versatile.
-4. **Basic Usage:** To use Ventoy, simply install it on a USB drive and copy the desired ISO files directly to the drive.
-5. **Summary:** Ventoy simplifies the process of creating bootable USB drives, making it efficient and user-friendly for various operating systems.
-   **Repository Description:** A new bootable USB solution.
-   **Repository URL:** https://github.com/ventoy/Ventoy
-
----
 ### 📌 [Tosencen/XMSLEEP](https://github.com/Tosencen/XMSLEEP)
 
 
@@ -4571,34 +4599,6 @@ Here's the summary of the GitHub repository:
 ---
 
 ## 📝 Markdown (Total 1)
-### 📌 [TapXWorld/ChinaTextbook](https://github.com/TapXWorld/ChinaTextbook)
-
-
-**⭐ Stars:** 66,511 | **🍴 Forks:** 14,839 | **📅 Updated:** 2026-04-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** TapXWorld/ChinaTextbook
-2. **Brief Introduction:** This repository contains PDF textbooks for primary, secondary, and university education in China, providing a comprehensive resource for students and educators.
-3. **Innovations:** The repository uniquely aggregates a wide range of educational materials across various academic levels, making it a valuable one-stop resource for Chinese textbooks.
-4. **Basic Usage:** Not specified.
-5. **Summary:** The repository serves as a centralized collection of educational PDFs, facilitating access to essential learning materials for students in China.
-
----
-
-## 📝 Haskell (Total 1)
 ### 📌 [MadMaxChow/VLOOK](https://github.com/MadMaxChow/VLOOK)
 
 
