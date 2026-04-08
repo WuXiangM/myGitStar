@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-07T05:56:14Z",
+  "generated_at": "2026-04-08T05:55:42Z",
   "model_choice": "copilot",
   "min_categories": 5,
   "max_categories": 12,
@@ -8,12 +8,12 @@
       {
         "id": "C1",
         "name": "Language Models",
-        "description": "Repositories focused on training, utilizing, or enhancing large language models (LLMs) for various applications."
+        "description": "Repositories focused on training, utilizing, or enhancing language models, including LLMs."
       },
       {
         "id": "C2",
         "name": "Computer Vision",
-        "description": "Projects that involve image processing, visual data analysis, and related technologies."
+        "description": "Projects related to image processing, visual data analysis, and computer vision applications."
       },
       {
         "id": "C3",
@@ -23,37 +23,37 @@
       {
         "id": "C4",
         "name": "AI Agents",
-        "description": "Repositories that focus on developing intelligent agents capable of performing tasks autonomously."
+        "description": "Repositories that involve the development of AI agents for various applications and tasks."
       },
       {
         "id": "C5",
         "name": "Data Processing",
-        "description": "Projects aimed at data integration, transformation, and analysis across various domains."
+        "description": "Projects focused on data extraction, transformation, and integration across different domains."
       },
       {
         "id": "C6",
         "name": "Content Generation",
-        "description": "Tools for generating text, images, or other media content using AI techniques."
+        "description": "Tools designed for generating text, audio, or visual content, including writing assistants and multimedia tools."
       },
       {
         "id": "C7",
-        "name": "Productivity Tools",
-        "description": "Applications designed to enhance productivity through automation, task management, or workflow optimization."
+        "name": "Automation",
+        "description": "Repositories that provide automation solutions for tasks, including browser automation and workflow management."
       },
       {
         "id": "C8",
-        "name": "Web Development",
-        "description": "Projects related to web technologies, including automation, frameworks, and user interface enhancements."
+        "name": "Visualization Tools",
+        "description": "Projects that focus on creating visual representations of data, including infographics and presentation tools."
       },
       {
         "id": "C9",
-        "name": "Data Visualization",
-        "description": "Tools and frameworks for visualizing data in engaging and informative ways."
+        "name": "Translation & Localization",
+        "description": "Tools aimed at translating and localizing content across different languages and formats."
       },
       {
         "id": "C10",
-        "name": "Audio Processing",
-        "description": "Repositories focused on manipulating and analyzing audio signals and tracks."
+        "name": "Monitoring & Analysis",
+        "description": "Repositories that provide monitoring tools and systems for performance analysis and data management."
       },
       {
         "id": "C11",
@@ -71,7 +71,7 @@
     {
       "id": 2,
       "full_name": "open-gigaai/giga-brain-0",
-      "category_id": "C1"
+      "category_id": "C2"
     },
     {
       "id": 3,
@@ -91,17 +91,17 @@
     {
       "id": 6,
       "full_name": "666ghj/MiroFish",
-      "category_id": "C4"
+      "category_id": "C11"
     },
     {
       "id": 7,
       "full_name": "UniPat-AI/UniScientist",
-      "category_id": "C5"
+      "category_id": "C3"
     },
     {
       "id": 8,
       "full_name": "ComposioHQ/awesome-claude-skills",
-      "category_id": "C1"
+      "category_id": "C4"
     },
     {
       "id": 9,
@@ -111,7 +111,7 @@
     {
       "id": 10,
       "full_name": "Anjok07/ultimatevocalremovergui",
-      "category_id": "C10"
+      "category_id": "C6"
     },
     {
       "id": 11,
@@ -121,27 +121,27 @@
     {
       "id": 12,
       "full_name": "Kevin-thu/StoryMem",
-      "category_id": "C6"
+      "category_id": "C3"
     },
     {
       "id": 13,
       "full_name": "Usagi-org/ai-goofish-monitor",
-      "category_id": "C4"
+      "category_id": "C10"
     },
     {
       "id": 14,
       "full_name": "zhu-xlab/GlobalBuildingAtlas",
-      "category_id": "C5"
+      "category_id": "C11"
     },
     {
       "id": 15,
       "full_name": "funstory-ai/BabelDOC",
-      "category_id": "C6"
+      "category_id": "C9"
     },
     {
       "id": 16,
       "full_name": "PDFMathTranslate/PDFMathTranslate",
-      "category_id": "C3"
+      "category_id": "C9"
     },
     {
       "id": 17,
@@ -151,7 +151,7 @@
     {
       "id": 18,
       "full_name": "jimmc414/Kosmos",
-      "category_id": "C4"
+      "category_id": "C3"
     },
     {
       "id": 19,
@@ -181,7 +181,7 @@
     {
       "id": 24,
       "full_name": "CherryHQ/cherry-studio",
-      "category_id": "C7"
+      "category_id": "C4"
     },
     {
       "id": 25,
@@ -191,7 +191,7 @@
     {
       "id": 26,
       "full_name": "antvis/Infographic",
-      "category_id": "C9"
+      "category_id": "C8"
     },
     {
       "id": 27,
@@ -206,7 +206,7 @@
     {
       "id": 29,
       "full_name": "CapSoftware/Cap",
-      "category_id": "C8"
+      "category_id": "C11"
     },
     {
       "id": 30,
@@ -230,48 +230,48 @@
     },
     {
       "id": 34,
-      "full_name": "playcanvas/engine",
-      "category_id": "C8"
+      "full_name": "datawhalechina/every-embodied",
+      "category_id": "C4"
     },
     {
       "id": 35,
-      "full_name": "justlovemaki/openclaw-docker-cn-im",
-      "category_id": "C4"
-    },
-    {
-      "id": 36,
-      "full_name": "githubnext/monaspace",
-      "category_id": "C11"
-    },
-    {
-      "id": 37,
-      "full_name": "obra/superpowers",
-      "category_id": "C4"
-    },
-    {
-      "id": 38,
-      "full_name": "Diorser/LiteMonitor",
-      "category_id": "C11"
-    },
-    {
-      "id": 39,
-      "full_name": "Flow-Launcher/Flow.Launcher",
-      "category_id": "C7"
-    },
-    {
-      "id": 40,
-      "full_name": "DearVa/Everywhere",
-      "category_id": "C4"
-    },
-    {
-      "id": 41,
       "full_name": "Lordog/dive-into-llms",
       "category_id": "C1"
     },
     {
-      "id": 42,
+      "id": 36,
       "full_name": "wri/global-pasture-watch",
       "category_id": "C3"
+    },
+    {
+      "id": 37,
+      "full_name": "justlovemaki/openclaw-docker-cn-im",
+      "category_id": "C4"
+    },
+    {
+      "id": 38,
+      "full_name": "githubnext/monaspace",
+      "category_id": "C11"
+    },
+    {
+      "id": 39,
+      "full_name": "obra/superpowers",
+      "category_id": "C4"
+    },
+    {
+      "id": 40,
+      "full_name": "Diorser/LiteMonitor",
+      "category_id": "C10"
+    },
+    {
+      "id": 41,
+      "full_name": "Flow-Launcher/Flow.Launcher",
+      "category_id": "C11"
+    },
+    {
+      "id": 42,
+      "full_name": "DearVa/Everywhere",
+      "category_id": "C4"
     },
     {
       "id": 43,
@@ -281,12 +281,12 @@
     {
       "id": 44,
       "full_name": "VoltAgent/awesome-openclaw-skills",
-      "category_id": "C4"
+      "category_id": "C11"
     },
     {
       "id": 45,
       "full_name": "vercel-labs/agent-browser",
-      "category_id": "C4"
+      "category_id": "C7"
     },
     {
       "id": 46,
@@ -296,7 +296,7 @@
     {
       "id": 47,
       "full_name": "DigitalPlatDev/FreeDomain",
-      "category_id": "C8"
+      "category_id": "C11"
     },
     {
       "id": 48,
@@ -306,7 +306,7 @@
     {
       "id": 49,
       "full_name": "Tosencen/XMSLEEP",
-      "category_id": "C10"
+      "category_id": "C11"
     },
     {
       "id": 50,
