@@ -608,6 +608,96 @@ def _clean_inline_md(text: str) -> str:
     return s
 
 
+def _is_repo_stats_or_meta_line(line: str) -> bool:
+    """Detect non-description noise lines in generated README blocks.
+
+    This is used ONLY for extracting a clean description for classification.
+    We intentionally ignore statistics/metadata so the LLM focuses on repo content.
+    """
+    s = _clean_inline_md(line)
+    if not s:
+        return True
+
+    # Markdown fences / separators
+    if s.startswith("```"):
+        return True
+    if s == "---" or s.startswith("---"):
+        return True
+
+    # Common generated stats lines
+    if s.startswith("**⭐") or s.startswith("**🍴") or s.startswith("**📅"):
+        return True
+    if "Stars:" in s or "Forks:" in s or "Updated:" in s:
+        # Keep it conservative; these are almost always metadata.
+        return True
+
+    # Common generated meta labels
+    lower = s.lower()
+    if lower.startswith("here's the summary") or lower.startswith("here is the summary"):
+        return True
+    if lower.startswith("repository url") or lower.startswith("**repository url"):
+        return True
+    if lower.startswith("repository name") or lower.startswith("**repository name"):
+        return True
+
+    # Chinese meta labels
+    if "仓库url" in s.lower() or "仓库链接" in s:
+        return True
+    if "仓库名称" in s or "repository name" in lower:
+        return True
+
+    return False
+
+
+def _extract_description_from_block(block: str) -> str:
+    """Extract a clean, content-focused description from a repo markdown block."""
+    if not block:
+        return ""
+
+    extract_patterns = [
+        # Preferred: brief introduction / short intro
+        r"^2\.\s*\*\*Brief Introduction:\*\*\s*(?P<d>.+?)\s*$",
+        r"^2\.\s*\*\*简要介绍：\*\*\s*(?P<d>.+?)\s*$",
+        # Also accept direct description labels
+        r"^\*\*Repository Description:\*\*\s*(?P<d>.+?)\s*$",
+        r"^\*\*仓库描述：\*\*\s*(?P<d>.+?)\s*$",
+        # Fallback: summary can still represent repo content
+        r"^5\.\s*\*\*Summary:\*\*\s*(?P<d>.+?)\s*$",
+        r"^5\.\s*\*\*总结：\*\*\s*(?P<d>.+?)\s*$",
+        r"^\*\*Summary:\*\*\s*(?P<d>.+?)\s*$",
+        r"^\*\*总结：\*\*\s*(?P<d>.+?)\s*$",
+    ]
+    for ep in extract_patterns:
+        mm = re.search(ep, block, flags=re.MULTILINE)
+        if mm:
+            desc = _clean_inline_md(mm.group("d"))
+            if desc:
+                return desc
+
+    # Last resort: pick first meaningful non-meta line.
+    for line in str(block).splitlines():
+        s = _clean_inline_md(line)
+        if not s:
+            continue
+        if _is_repo_stats_or_meta_line(s):
+            continue
+
+        # Skip numbered meta items like "1. **Repository Name:** ..."
+        if re.match(r"^\d+\.\s*\*\*Repository Name:\*\*", s, flags=re.IGNORECASE):
+            continue
+        if re.match(r"^\d+\.\s*\*\*仓库名称：\*\*", s):
+            continue
+
+        # If it's a numbered item, strip the prefix.
+        s = re.sub(r"^\d+\.\s*", "", s)
+        s = re.sub(r"^[-*]\s+", "", s)
+        s = s.strip()
+        if s:
+            return s
+
+    return ""
+
+
 def parse_repos_from_readme(readme_path: str, max_repos: Optional[int] = None) -> List[Dict[str, Any]]:
     """Parse repo list from an existing generated README.
 
@@ -643,6 +733,7 @@ def parse_repos_from_readme(readme_path: str, max_repos: Optional[int] = None) -
         start = m.end()
         end = matches[idx + 1].start() if idx + 1 < len(matches) else len(content)
         block = content[start:end]
+        block = _trim_repo_block_before_language_section(block)
         block_md = (heading_line + "\n" + block).strip() + "\n"
 
         full_name = _clean_inline_md(m.group("full_name"))
@@ -760,6 +851,38 @@ def _looks_like_language_category(name: str) -> bool:
     if any(s.startswith(lang + " ") for lang in _LANGUAGE_CATEGORY_ALIASES):
         return True
     return False
+
+
+def _trim_repo_block_before_language_section(block: str) -> str:
+    """Trim accidental language section headings inside a per-repo block.
+
+    In README_lang.md / README_lang_cn.md, language buckets are rendered as level-2 headings like:
+    - "## 📝 Jupyter Notebook (Total 3)"
+    - "## 📝 Jupyter Notebook（共3个）"
+
+    Our parser splits only by per-repo headings ("### 📌 ..."), so those bucket headings can end up
+    inside the previous repo's block. If we carry that block into the content-classified README,
+    the language markers will leak into README.md.
+
+    This helper stops copying lines once it detects such a language-bucket heading.
+    """
+    if not block:
+        return ""
+
+    kept: List[str] = []
+    for line in str(block).splitlines():
+        stripped = line.strip()
+        if stripped.startswith("## "):
+            title = stripped[len("## ") :].strip()
+            # Strip common count suffixes: (Total N) / （共N个）
+            title = re.sub(r"\s*\(\s*total\s*\d+\s*\)\s*$", "", title, flags=re.IGNORECASE)
+            title = re.sub(r"（\s*共\s*\d+\s*个\s*）\s*$", "", title)
+            title = title.strip()
+            if _looks_like_language_category(title):
+                break
+        kept.append(line)
+
+    return ("\n".join(kept)).rstrip() + "\n"
 
 
 def _build_category_anchors(taxonomy: "Taxonomy") -> Dict[str, str]:
@@ -993,7 +1116,8 @@ def render_classified_readme(
         for r in bucket:
             block_md = r.get("block_md")
             if isinstance(block_md, str) and block_md.strip():
-                lines.append(block_md.strip() + "\n")
+                cleaned = _trim_repo_block_before_language_section(block_md)
+                lines.append(cleaned.strip() + "\n")
             else:
                 full_name = r.get("full_name") or ""
                 url = r.get("html_url") or f"https://github.com/{full_name}"

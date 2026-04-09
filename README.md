@@ -164,8 +164,6 @@ Here's the summary of the GitHub repository:
 5. **Summary:** This repository provides a resource for users to quickly access and utilize creative AI prompts for improved interaction with AI technologies.
 
 ---
-
-## 📝 Jupyter Notebook (Total 3)
 ### 📌 [Lordog/dive-into-llms](https://github.com/Lordog/dive-into-llms)
 
 
@@ -236,8 +234,6 @@ Here's the summary of the GitHub repository:
    **Repository URL:** [Tencent/WeKnora](https://github.com/Tencent/WeKnora)
 
 ---
-
-## 🅺 Kotlin (Total 1)
 <a id="computer-vision"></a>
 ## Computer Vision (Total 2)
 
@@ -471,8 +467,6 @@ Here's the summary of the GitHub repository:
 **Repository URL:** [https://github.com/wri/global-pasture-watch](https://github.com/wri/global-pasture-watch)
 
 ---
-
-## 🐚 Shell (Total 3)
 <a id="ai-agents"></a>
 ## AI Agents (Total 12)
 
@@ -777,8 +771,6 @@ Here's a summary of the GitHub repository:
 5. **Summary:** This repository provides a practical framework and methodology for developing effective and reliable AI agents by structuring their skills and development process.
 
 ---
-
-## 💜 C# (Total 3)
 ### 📌 [DearVa/Everywhere](https://github.com/DearVa/Everywhere)
 
 
@@ -809,8 +801,6 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 5. **Summary:** Everywhere is a desktop AI assistant that leverages context awareness and integrates multiple LLMs and MCP tools to provide intelligent and comprehensive responses.
 
 ---
-
-## 📦 Other (Total 2)
 <a id="data-processing"></a>
 ## Data Processing (Total 0)
 
@@ -879,8 +869,6 @@ Here's the summary of the GitHub repository:
 **Repository URL:** [HisMax/RedInk](https://github.com/HisMax/RedInk)
 
 ---
-
-## 🔷 TypeScript (Total 10)
 ### 📌 [ExplosiveCoderflome/AI-Novel-Writing-Assistant](https://github.com/ExplosiveCoderflome/AI-Novel-Writing-Assistant)
 
 
@@ -957,8 +945,6 @@ Here's the summary of the GitHub repository:
 5. **Summary:** This repository provides a powerful tool for automating browser interactions, enhancing the capabilities of AI agents.
 
 ---
-
-## ⚡ C++ (Total 1)
 <a id="visualization-tools"></a>
 ## Visualization Tools (Total 1)
 
@@ -1235,8 +1221,6 @@ Here's the summary of the LiteMonitor GitHub repository:
    **Repository URL:** [Cap on GitHub](https://github.com/CapSoftware/Cap)
 
 ---
-
-## 🟨 JavaScript (Total 4)
 ### 📌 [hmjz100/LinkSwift](https://github.com/hmjz100/LinkSwift)
 
 
@@ -1353,8 +1337,6 @@ Here's the summary of the GitHub repository:
    **Repository URL:** [VoltAgent/awesome-openclaw-skills](https://github.com/VoltAgent/awesome-openclaw-skills)
 
 ---
-
-## 🦀 Rust (Total 1)
 ### 📌 [allenk/GeminiWatermarkTool](https://github.com/allenk/GeminiWatermarkTool)
 
 
@@ -1383,8 +1365,6 @@ Here's the summary of the GitHub repository:
 5. **Summary:** This repository provides a specialized tool for managing watermarks on Gemini devices, improving user experience and efficiency.
 
 ---
-
-## 🌐 HTML (Total 1)
 ### 📌 [DigitalPlatDev/FreeDomain](https://github.com/DigitalPlatDev/FreeDomain)
 
 
@@ -1414,8 +1394,6 @@ Here's the summary of the GitHub repository:
    **Repository URL:** [DigitalPlatDev/FreeDomain](https://github.com/DigitalPlatDev/FreeDomain)
 
 ---
-
-## 🐹 Go (Total 1)
 ### 📌 [Tosencen/XMSLEEP](https://github.com/Tosencen/XMSLEEP)
 
 
@@ -1445,8 +1423,6 @@ Here's the summary of the GitHub repository:
    **Repository URL:** [https://github.com/Tosencen/XMSLEEP](https://github.com/Tosencen/XMSLEEP)
 
 ---
-
-## ☕ Java (Total 1)
 ### 📌 [kknifer7/FreeBox](https://github.com/kknifer7/FreeBox)
 
 
