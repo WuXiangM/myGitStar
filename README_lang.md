@@ -10,7 +10,7 @@
 <hr/>
 
 <p><b>Current account:</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
-<p><b>Generated on:</b> 2026-04-09</p>
+<p><b>Generated on:</b> 2026-04-10</p>
 <p><b>AI Model:</b> GitHub Copilot</p>
 <p><b>Total repositories:</b> 50</p>
 
@@ -20,9 +20,9 @@
 
 - [Python](#python) (21)
 - [TypeScript](#typescript) (9)
-- [JavaScript](#javascript) (4)
+- [Shell](#shell) (4)
 - [Jupyter Notebook](#jupyter-notebook) (3)
-- [Shell](#shell) (3)
+- [JavaScript](#javascript) (3)
 - [C#](#c) (3)
 - [Other](#other) (2)
 - [Rust](#rust) (1)
@@ -37,7 +37,8 @@
 
 ### 📌 [EverMind-AI/MSA](https://github.com/EverMind-AI/MSA)
 
-**⭐ Stars:** 2,817 | **🍴 Forks:** 165 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 2,882 | **🍴 Forks:** 168 | **📅 Updated:** 2026-04-10
+
 
 1. **Repository Name:** EverMind-AI/MSA  
 2. **Brief Introduction:** Memory Sparse Attention is a scalable framework designed for efficient training of latent memory, capable of handling contexts up to 100 million tokens.  
@@ -52,6 +53,7 @@
 
 **⭐ Stars:** 16 | **🍴 Forks:** 0 | **📅 Updated:** 2026-04-09
 
+
 1. **Repository Name:** Henrymachiyu/FIPO  
 2. **Brief Introduction:** FIPO is a value-free reinforcement learning algorithm designed to enhance deeper reasoning capabilities from a clean base model.  
 3. **Innovations:** The repository features a novel approach to reinforcement learning that prioritizes reasoning without bias, allowing for more generalized and adaptable learning outcomes.  
@@ -63,7 +65,8 @@
 
 ### 📌 [jingyaogong/minimind-v](https://github.com/jingyaogong/minimind-v)
 
-**⭐ Stars:** 7,343 | **🍴 Forks:** 806 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 7,370 | **🍴 Forks:** 810 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -78,7 +81,8 @@
 
 ### 📌 [open-gigaai/giga-brain-0](https://github.com/open-gigaai/giga-brain-0)
 
-**⭐ Stars:** 2,464 | **🍴 Forks:** 195 | **📅 Updated:** 2026-04-08
+**⭐ Stars:** 2,466 | **🍴 Forks:** 195 | **📅 Updated:** 2026-04-09
+
 
 
 
@@ -100,7 +104,8 @@
 
 ### 📌 [jingyaogong/minimind](https://github.com/jingyaogong/minimind)
 
-**⭐ Stars:** 46,119 | **🍴 Forks:** 5,666 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 46,327 | **🍴 Forks:** 5,715 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -129,7 +134,8 @@
 
 ### 📌 [fire-keeper/BlindWatermark](https://github.com/fire-keeper/BlindWatermark)
 
-**⭐ Stars:** 1,621 | **🍴 Forks:** 193 | **📅 Updated:** 2026-04-05
+**⭐ Stars:** 1,621 | **🍴 Forks:** 193 | **📅 Updated:** 2026-04-09
+
 
 
 
@@ -158,7 +164,8 @@
 
 ### 📌 [aiming-lab/AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw)
 
-**⭐ Stars:** 10,809 | **🍴 Forks:** 1,222 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 10,875 | **🍴 Forks:** 1,235 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -188,7 +195,8 @@
 
 ### 📌 [666ghj/MiroFish](https://github.com/666ghj/MiroFish)
 
-**⭐ Stars:** 52,202 | **🍴 Forks:** 7,777 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 52,851 | **🍴 Forks:** 7,883 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -237,6 +245,7 @@
 
 
 
+
 1. **Repository Name:** UniPat-AI/UniScientist
 2. **Brief Introduction:** UniScientist aims to enhance scientific research intelligence by providing a unified framework for data integration and analysis across various scientific disciplines.
 3. **Innovations:** The repository features advanced algorithms for data synthesis, cross-disciplinary collaboration tools, and a comprehensive knowledge base that supports diverse scientific inquiries.
@@ -248,7 +257,8 @@
 
 ### 📌 [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
 
-**⭐ Stars:** 52,259 | **🍴 Forks:** 5,543 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 52,557 | **🍴 Forks:** 5,573 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -278,7 +288,8 @@
 
 ### 📌 [cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources)
 
-**⭐ Stars:** 18,267 | **🍴 Forks:** 1,809 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 18,339 | **🍴 Forks:** 1,818 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -309,7 +320,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [Anjok07/ultimatevocalremovergui](https://github.com/Anjok07/ultimatevocalremovergui)
 
-**⭐ Stars:** 24,213 | **🍴 Forks:** 1,811 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 24,224 | **🍴 Forks:** 1,811 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -340,7 +352,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [anthropics/skills](https://github.com/anthropics/skills)
 
-**⭐ Stars:** 113,373 | **🍴 Forks:** 12,894 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 114,132 | **🍴 Forks:** 13,005 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -368,7 +381,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [Kevin-thu/StoryMem](https://github.com/Kevin-thu/StoryMem)
 
-**⭐ Stars:** 713 | **🍴 Forks:** 70 | **📅 Updated:** 2026-04-08
+**⭐ Stars:** 714 | **🍴 Forks:** 70 | **📅 Updated:** 2026-04-09
+
 
 
 
@@ -399,7 +413,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [Usagi-org/ai-goofish-monitor](https://github.com/Usagi-org/ai-goofish-monitor)
 
-**⭐ Stars:** 10,819 | **🍴 Forks:** 1,534 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 10,840 | **🍴 Forks:** 1,540 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -428,7 +443,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [zhu-xlab/GlobalBuildingAtlas](https://github.com/zhu-xlab/GlobalBuildingAtlas)
 
-**⭐ Stars:** 2,052 | **🍴 Forks:** 201 | **📅 Updated:** 2026-04-07
+**⭐ Stars:** 2,056 | **🍴 Forks:** 202 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -457,7 +473,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [funstory-ai/BabelDOC](https://github.com/funstory-ai/BabelDOC)
 
-**⭐ Stars:** 8,078 | **🍴 Forks:** 636 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 8,079 | **🍴 Forks:** 636 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -486,7 +503,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [PDFMathTranslate/PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate)
 
-**⭐ Stars:** 32,816 | **🍴 Forks:** 2,958 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 32,852 | **🍴 Forks:** 2,963 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -514,7 +532,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [HKUDS/Paper2Slides](https://github.com/HKUDS/Paper2Slides)
 
-**⭐ Stars:** 3,274 | **🍴 Forks:** 434 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 3,280 | **🍴 Forks:** 434 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -563,6 +582,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 1. **Repository Name:** jimmc414/Kosmos  
 2. **Brief Introduction:** Kosmos is an AI system designed for autonomous scientific discovery, leveraging Claude Code or API for implementation and adaptation based on the Kosmos AI Paper.  
 3. **Innovations:** The repository features an AI-driven approach to scientific exploration, enabling autonomous hypothesis generation and testing, and integrates with Claude for enhanced computational capabilities.  
@@ -573,7 +593,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [HisMax/RedInk](https://github.com/HisMax/RedInk)
 
-**⭐ Stars:** 5,107 | **🍴 Forks:** 969 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 5,111 | **🍴 Forks:** 969 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -604,7 +625,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [ExplosiveCoderflome/AI-Novel-Writing-Assistant](https://github.com/ExplosiveCoderflome/AI-Novel-Writing-Assistant)
 
-**⭐ Stars:** 591 | **🍴 Forks:** 135 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 602 | **🍴 Forks:** 139 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -619,7 +641,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [hAcKlyc/MyAgents](https://github.com/hAcKlyc/MyAgents)
 
-**⭐ Stars:** 180 | **🍴 Forks:** 26 | **📅 Updated:** 2026-04-08
+**⭐ Stars:** 180 | **🍴 Forks:** 26 | **📅 Updated:** 2026-04-09
+
 
 
 
@@ -649,7 +672,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [Narcooo/inkos](https://github.com/Narcooo/inkos)
 
-**⭐ Stars:** 3,833 | **🍴 Forks:** 722 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 3,959 | **🍴 Forks:** 747 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -679,7 +703,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [anomalyco/opencode](https://github.com/anomalyco/opencode)
 
-**⭐ Stars:** 139,998 | **🍴 Forks:** 15,552 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 140,699 | **🍴 Forks:** 15,658 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -708,7 +733,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio)
 
-**⭐ Stars:** 43,173 | **🍴 Forks:** 4,052 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 43,228 | **🍴 Forks:** 4,057 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -738,7 +764,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [openclaw/openclaw](https://github.com/openclaw/openclaw)
 
-**⭐ Stars:** 352,511 | **🍴 Forks:** 71,058 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 353,521 | **🍴 Forks:** 71,391 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -767,7 +794,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [antvis/Infographic](https://github.com/antvis/Infographic)
 
-**⭐ Stars:** 4,760 | **🍴 Forks:** 346 | **📅 Updated:** 2026-04-08
+**⭐ Stars:** 4,771 | **🍴 Forks:** 346 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -797,7 +825,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [Anionex/banana-slides](https://github.com/Anionex/banana-slides)
 
-**⭐ Stars:** 13,619 | **🍴 Forks:** 1,584 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 13,654 | **🍴 Forks:** 1,587 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -827,7 +856,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [lfnovo/open-notebook](https://github.com/lfnovo/open-notebook)
 
-**⭐ Stars:** 21,957 | **🍴 Forks:** 2,514 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 22,008 | **🍴 Forks:** 2,515 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -854,217 +884,38 @@ Here's the summary of the GitHub repository:
 
 ---
 
-## 🟨 JavaScript (Total 4)
+## 🐚 Shell (Total 4)
 
-### 📌 [automeris-io/WebPlotDigitizer](https://github.com/automeris-io/WebPlotDigitizer)
+### 📌 [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents)
 
-**⭐ Stars:** 3,046 | **🍴 Forks:** 424 | **📅 Updated:** 2026-04-08
+**⭐ Stars:** 77,210 | **🍴 Forks:** 12,203 | **📅 Updated:** 2026-04-10
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** automeris-io/WebPlotDigitizer
-2. **Brief Introduction:** WebPlotDigitizer is a computer vision tool designed to extract numerical data from images of plots, graphs, and other visual data representations.
-3. **Innovations:** Key features include support for various plot types, automatic data extraction, and a user-friendly web interface that simplifies the digitization process.
-4. **Basic Usage:** Users can upload an image of a plot, select data points, and export the extracted data in multiple formats.
-5. **Summary:** This tool provides an efficient way to convert visual data into usable numerical formats for analysis.
-   **Repository Description:** Computer vision assisted tool to extract numerical data from plot images.
-   **Repository URL:** https://github.com/automeris-io/WebPlotDigitizer
-
----
-
-### 📌 [hmjz100/LinkSwift](https://github.com/hmjz100/LinkSwift)
-
-**⭐ Stars:** 13,902 | **🍴 Forks:** 808 | **📅 Updated:** 2026-04-09
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** hmjz100/LinkSwift  
-2. **Brief Introduction:** A JavaScript-based tool for obtaining direct download links from various cloud storage services, including Baidu Cloud and Aliyun Drive.  
-3. **Innovations:** Supports multiple cloud storage platforms, providing a streamlined way to retrieve direct download links, enhancing user accessibility and convenience.  
-4. **Basic Usage:** No specific usage example provided.  
-5. **Summary:** LinkSwift simplifies the process of downloading files from eight major cloud storage services by generating direct download links.
-
----
-
-### 📌 [fogsightai/fogsight](https://github.com/fogsightai/fogsight)
-
-**⭐ Stars:** 2,376 | **🍴 Forks:** 362 | **📅 Updated:** 2026-04-08
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** fogsightai/fogsight  
-2. **Brief Introduction:** Fogsight is an AI agent and animation engine that leverages Large Language Models to create dynamic and interactive experiences.  
-3. **Innovations:** Fogsight uniquely integrates AI-driven animation with natural language processing, enabling users to generate complex animations through simple text commands and interactions.  
+1. **Repository Name:** msitarzewski/agency-agents  
+2. **Brief Introduction:** A comprehensive AI agency framework featuring specialized agents designed for various tasks, from frontend development to community engagement.  
+3. **Innovations:** Distinctive features include customizable agents with unique personalities, specialized workflows, and the ability to deliver tailored outputs for diverse applications.  
 4. **Basic Usage:** Not specified.  
-5. **Summary:** Fogsight empowers users to create engaging animations effortlessly using advanced AI technology.  
-**Repository URL:** [fogsightai/fogsight](https://github.com/fogsightai/fogsight)
+5. **Summary:** This repository offers a versatile platform for deploying AI agents tailored to specific tasks and personalities, enhancing productivity and creativity.  
+**Repository URL:** [https://github.com/msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents)
 
 ---
 
-### 📌 [glidea/banana-prompt-quicker](https://github.com/glidea/banana-prompt-quicker)
+### 📌 [justlovemaki/openclaw-china-docker](https://github.com/justlovemaki/openclaw-china-docker)
 
-**⭐ Stars:** 2,301 | **🍴 Forks:** 175 | **📅 Updated:** 2026-04-08
+**⭐ Stars:** 3,748 | **🍴 Forks:** 444 | **📅 Updated:** 2026-04-10
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** glidea/banana-prompt-quicker  
-2. **Brief Introduction:** A collection of innovative AI prompts designed to enhance user interaction with AI models efficiently and effectively.  
-3. **Innovations:** Features include a variety of unique prompts tailored for different AI applications, quick access to prompt templates, and integration with AI tools for streamlined usage.  
+1. **Repository Name:** justlovemaki/openclaw-china-docker  
+2. **Brief Introduction:** This repository provides a Docker version of OpenClaw tailored for the Chinese market, pre-configured with plugins for popular IM platforms like Feishu, DingTalk, QQ, and WeChat.  
+3. **Innovations:** Distinctive features include seamless integration of multiple Chinese IM platforms, pre-installed plugins, and simplified deployment for AI bot gateways.  
 4. **Basic Usage:** Not specified.  
-5. **Summary:** This repository provides a resource for users to quickly access and utilize creative AI prompts for improved interaction with AI technologies.
-
----
-
-## 📝 Jupyter Notebook (Total 3)
-
-### 📌 [datawhalechina/every-embodied](https://github.com/datawhalechina/every-embodied)
-
-**⭐ Stars:** 1,272 | **🍴 Forks:** 141 | **📅 Updated:** 2026-04-09
-
-
-1. **Repository Name:** datawhalechina/every-embodied  
-2. **Brief Introduction:** A project designed for beginners to build their own embodied intelligent robots from scratch using Python, focusing on various models like VLA, OpenVLA, SmolVLA, and Pi0.  
-3. **Innovations:** The repository offers a step-by-step approach to constructing embodied intelligence systems, making advanced concepts accessible to those with basic Python knowledge.  
-4. **Basic Usage:** Not specified.  
-5. **Summary:** This repository serves as a comprehensive guide for building embodied intelligent robots, enhancing understanding of the underlying technologies.  
-**Repository URL:** [datawhalechina/every-embodied](https://github.com/datawhalechina/every-embodied)
-
----
-
-### 📌 [Lordog/dive-into-llms](https://github.com/Lordog/dive-into-llms)
-
-**⭐ Stars:** 26,289 | **🍴 Forks:** 3,132 | **📅 Updated:** 2026-04-09
-
-
-
-1. **Repository Name:** Lordog/dive-into-llms  
-2. **Brief Introduction:** A practical programming tutorial series focused on large language models (LLMs), designed to help users understand and implement LLMs effectively.  
-3. **Innovations:** The repository features hands-on coding examples, comprehensive explanations of LLM concepts, and interactive exercises to facilitate learning and experimentation with LLMs.  
-4. **Basic Usage:** Not specified.  
-5. **Summary:** This repository serves as a valuable resource for anyone looking to learn about and work with large language models through practical implementation.
-
----
-
-### 📌 [wri/global-pasture-watch](https://github.com/wri/global-pasture-watch)
-
-**⭐ Stars:** 59 | **🍴 Forks:** 7 | **📅 Updated:** 2026-03-25
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** wri/global-pasture-watch  
-2. **Brief Introduction:** This repository focuses on mapping the extent, management, and condition of global grasslands to support sustainable land use and conservation efforts.  
-3. **Innovations:** Key features include detailed mapping tools, data visualization capabilities, and integration of various datasets to assess grassland health and management practices.  
-4. **Basic Usage:** Not specified.  
-5. **Summary:** The project aims to enhance understanding and management of grasslands worldwide for better environmental stewardship.  
-**Repository Description:** Mapping the extent, management and condition of the world’s grasslands  
-**Repository URL:** [https://github.com/wri/global-pasture-watch](https://github.com/wri/global-pasture-watch)
-
----
-
-## 🐚 Shell (Total 3)
-
-### 📌 [justlovemaki/openclaw-docker-cn-im](https://github.com/justlovemaki/openclaw-docker-cn-im)
-
-**⭐ Stars:** 3,743 | **🍴 Forks:** 444 | **📅 Updated:** 2026-04-09
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** justlovemaki/openclaw-docker-cn-im
-2. **Brief Introduction:** This repository provides a Docker-integrated version of OpenClaw, pre-configured with plugins for popular Chinese IM platforms like Feishu, DingTalk, QQ, and WeChat Work, enabling quick deployment of an AI bot gateway.
-3. **Innovations:** The repository uniquely combines multiple Chinese IM platforms into a single Docker environment, streamlining the setup process for AI bot integration across these services.
-4. **Basic Usage:** Not specified.
-5. **Summary:** The repository simplifies the deployment of AI bots across major Chinese IM platforms using Docker.
-   **Repository URL:** [justlovemaki/openclaw-docker-cn-im](https://github.com/justlovemaki/openclaw-docker-cn-im)
+5. **Summary:** The repository facilitates quick deployment of an AI bot gateway that supports various Chinese IM platforms.  
+**Repository URL:** [justlovemaki/openclaw-china-docker](https://github.com/justlovemaki/openclaw-china-docker)
 
 ---
 
 ### 📌 [githubnext/monaspace](https://github.com/githubnext/monaspace)
 
-**⭐ Stars:** 18,839 | **🍴 Forks:** 321 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 18,839 | **🍴 Forks:** 321 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -1095,7 +946,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [obra/superpowers](https://github.com/obra/superpowers)
 
-**⭐ Stars:** 142,052 | **🍴 Forks:** 12,104 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 144,212 | **🍴 Forks:** 12,342 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -1124,11 +976,166 @@ Here's a summary of the GitHub repository:
 
 ---
 
+## 📝 Jupyter Notebook (Total 3)
+
+### 📌 [datawhalechina/every-embodied](https://github.com/datawhalechina/every-embodied)
+
+**⭐ Stars:** 1,307 | **🍴 Forks:** 143 | **📅 Updated:** 2026-04-10
+
+
+
+1. **Repository Name:** datawhalechina/every-embodied  
+2. **Brief Introduction:** A project designed for beginners to build their own embodied intelligent robots from scratch using Python, focusing on various models like VLA, OpenVLA, SmolVLA, and Pi0.  
+3. **Innovations:** The repository offers a step-by-step approach to constructing embodied intelligence systems, making advanced concepts accessible to those with basic Python knowledge.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** This repository serves as a comprehensive guide for building embodied intelligent robots, enhancing understanding of the underlying technologies.  
+**Repository URL:** [datawhalechina/every-embodied](https://github.com/datawhalechina/every-embodied)
+
+---
+
+### 📌 [Lordog/dive-into-llms](https://github.com/Lordog/dive-into-llms)
+
+**⭐ Stars:** 26,452 | **🍴 Forks:** 3,163 | **📅 Updated:** 2026-04-10
+
+
+
+
+1. **Repository Name:** Lordog/dive-into-llms  
+2. **Brief Introduction:** A practical programming tutorial series focused on large language models (LLMs), designed to help users understand and implement LLMs effectively.  
+3. **Innovations:** The repository features hands-on coding examples, comprehensive explanations of LLM concepts, and interactive exercises to facilitate learning and experimentation with LLMs.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** This repository serves as a valuable resource for anyone looking to learn about and work with large language models through practical implementation.
+
+---
+
+### 📌 [wri/global-pasture-watch](https://github.com/wri/global-pasture-watch)
+
+**⭐ Stars:** 59 | **🍴 Forks:** 7 | **📅 Updated:** 2026-03-25
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** wri/global-pasture-watch  
+2. **Brief Introduction:** This repository focuses on mapping the extent, management, and condition of global grasslands to support sustainable land use and conservation efforts.  
+3. **Innovations:** Key features include detailed mapping tools, data visualization capabilities, and integration of various datasets to assess grassland health and management practices.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** The project aims to enhance understanding and management of grasslands worldwide for better environmental stewardship.  
+**Repository Description:** Mapping the extent, management and condition of the world’s grasslands  
+**Repository URL:** [https://github.com/wri/global-pasture-watch](https://github.com/wri/global-pasture-watch)
+
+---
+
+## 🟨 JavaScript (Total 3)
+
+### 📌 [automeris-io/WebPlotDigitizer](https://github.com/automeris-io/WebPlotDigitizer)
+
+**⭐ Stars:** 3,047 | **🍴 Forks:** 424 | **📅 Updated:** 2026-04-09
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** automeris-io/WebPlotDigitizer
+2. **Brief Introduction:** WebPlotDigitizer is a computer vision tool designed to extract numerical data from images of plots, graphs, and other visual data representations.
+3. **Innovations:** Key features include support for various plot types, automatic data extraction, and a user-friendly web interface that simplifies the digitization process.
+4. **Basic Usage:** Users can upload an image of a plot, select data points, and export the extracted data in multiple formats.
+5. **Summary:** This tool provides an efficient way to convert visual data into usable numerical formats for analysis.
+   **Repository Description:** Computer vision assisted tool to extract numerical data from plot images.
+   **Repository URL:** https://github.com/automeris-io/WebPlotDigitizer
+
+---
+
+### 📌 [hmjz100/LinkSwift](https://github.com/hmjz100/LinkSwift)
+
+**⭐ Stars:** 13,924 | **🍴 Forks:** 809 | **📅 Updated:** 2026-04-10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** hmjz100/LinkSwift  
+2. **Brief Introduction:** A JavaScript-based tool for obtaining direct download links from various cloud storage services, including Baidu Cloud and Aliyun Drive.  
+3. **Innovations:** Supports multiple cloud storage platforms, providing a streamlined way to retrieve direct download links, enhancing user accessibility and convenience.  
+4. **Basic Usage:** No specific usage example provided.  
+5. **Summary:** LinkSwift simplifies the process of downloading files from eight major cloud storage services by generating direct download links.
+
+---
+
+### 📌 [fogsightai/fogsight](https://github.com/fogsightai/fogsight)
+
+**⭐ Stars:** 2,376 | **🍴 Forks:** 362 | **📅 Updated:** 2026-04-10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** fogsightai/fogsight  
+2. **Brief Introduction:** Fogsight is an AI agent and animation engine that leverages Large Language Models to create dynamic and interactive experiences.  
+3. **Innovations:** Fogsight uniquely integrates AI-driven animation with natural language processing, enabling users to generate complex animations through simple text commands and interactions.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** Fogsight empowers users to create engaging animations effortlessly using advanced AI technology.  
+**Repository URL:** [fogsightai/fogsight](https://github.com/fogsightai/fogsight)
+
+---
+
 ## 💜 C# (Total 3)
 
 ### 📌 [Diorser/LiteMonitor](https://github.com/Diorser/LiteMonitor)
 
-**⭐ Stars:** 4,621 | **🍴 Forks:** 187 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 4,635 | **🍴 Forks:** 189 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -1159,7 +1166,8 @@ Here's the summary of the LiteMonitor GitHub repository:
 
 ### 📌 [Flow-Launcher/Flow.Launcher](https://github.com/Flow-Launcher/Flow.Launcher)
 
-**⭐ Stars:** 14,410 | **🍴 Forks:** 581 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 14,411 | **🍴 Forks:** 581 | **📅 Updated:** 2026-04-09
+
 
 
 
@@ -1190,7 +1198,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [DearVa/Everywhere](https://github.com/DearVa/Everywhere)
 
-**⭐ Stars:** 5,775 | **🍴 Forks:** 343 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 5,780 | **🍴 Forks:** 345 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -1223,7 +1232,8 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 ### 📌 [HqWu-HITCS/Awesome-Chinese-LLM](https://github.com/HqWu-HITCS/Awesome-Chinese-LLM)
 
-**⭐ Stars:** 22,507 | **🍴 Forks:** 2,123 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 22,511 | **🍴 Forks:** 2,123 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -1252,7 +1262,8 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 ### 📌 [VoltAgent/awesome-openclaw-skills](https://github.com/VoltAgent/awesome-openclaw-skills)
 
-**⭐ Stars:** 45,114 | **🍴 Forks:** 4,389 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 45,323 | **🍴 Forks:** 4,406 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -1284,7 +1295,8 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 ### 📌 [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser)
 
-**⭐ Stars:** 28,254 | **🍴 Forks:** 1,716 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 28,423 | **🍴 Forks:** 1,725 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -1315,7 +1327,8 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 ### 📌 [allenk/GeminiWatermarkTool](https://github.com/allenk/GeminiWatermarkTool)
 
-**⭐ Stars:** 2,040 | **🍴 Forks:** 171 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 2,048 | **🍴 Forks:** 172 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -1346,7 +1359,8 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 ### 📌 [DigitalPlatDev/FreeDomain](https://github.com/DigitalPlatDev/FreeDomain)
 
-**⭐ Stars:** 156,334 | **🍴 Forks:** 2,664 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 156,472 | **🍴 Forks:** 2,668 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -1378,7 +1392,8 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 ### 📌 [Tencent/WeKnora](https://github.com/Tencent/WeKnora)
 
-**⭐ Stars:** 13,785 | **🍴 Forks:** 1,627 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 13,804 | **🍴 Forks:** 1,631 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -1410,7 +1425,8 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 ### 📌 [Tosencen/XMSLEEP](https://github.com/Tosencen/XMSLEEP)
 
-**⭐ Stars:** 1,203 | **🍴 Forks:** 64 | **📅 Updated:** 2026-04-08
+**⭐ Stars:** 1,204 | **🍴 Forks:** 64 | **📅 Updated:** 2026-04-09
+
 
 
 
@@ -1443,7 +1459,7 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 - **Total repositories:** 50
 - **Languages:** 12
-- **Generated on:** 2026-04-09
+- **Generated on:** 2026-04-10
 - **AI Model:** GitHub Copilot
 
 - **API Calls:** Copilot=2, OpenRouter=0, Gemini=0
