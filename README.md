@@ -10,7 +10,7 @@
 <hr/>
 
 <p><b>Current account:</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
-<p><b>Generated on:</b> 2026-04-10</p>
+<p><b>Generated on:</b> 2026-04-11</p>
 <p><b>AI Model:</b> GitHub Copilot</p>
 <p><b>Total repositories:</b> 50</p>
 
@@ -18,29 +18,30 @@
 
 ## 📖 Table of Contents
 
-- [AI Models](#ai-models) (8) — Repositories focused on developing and training various AI models, including language and visual models.
-- [Reinforcement Learning](#reinforcement-learning) (2) — Projects centered around reinforcement learning algorithms and frameworks for enhancing AI decision-making.
-- [Data Processing](#data-processing) (2) — Tools and frameworks for data integration, analysis, and transformation across different domains.
-- [Content Generation](#content-generation) (9) — Repositories that facilitate the generation of content, including text, images, and presentations.
-- [Computer Vision](#computer-vision) (1) — Projects that utilize computer vision techniques for tasks such as image analysis and data extraction.
-- [Natural Language Processing](#natural-language-processing) (2) — Tools and frameworks for processing and understanding human language in various applications.
-- [Scientific Research](#scientific-research) (3) — Repositories aimed at enhancing scientific research through automation, data analysis, and collaboration tools.
-- [AI Tools](#ai-tools) (12) — General-purpose tools and platforms that leverage AI for various applications and workflows.
-- [Automation](#automation) (3) — Projects focused on automating tasks and processes using AI and other technologies.
-- [Visualization](#visualization) (0) — Repositories that provide tools for visualizing data and information in engaging formats.
-- [Other](#other) (8) — Repositories that do not fit into the specified categories.
+- [AI Research](#ai-research) (13) — Repositories focused on advancing artificial intelligence methodologies, including algorithms and frameworks.
+- [Natural Language Processing](#natural-language-processing) (8) — Projects related to processing and understanding human language using AI techniques.
+- [Computer Vision](#computer-vision) (2) — Tools and frameworks designed for interpreting and processing visual data.
+- [Data Science](#data-science) (2) — Repositories that focus on data analysis, visualization, and scientific research methodologies.
+- [Automation Tools](#automation-tools) (9) — Projects that automate tasks or processes, enhancing productivity and efficiency.
+- [Creative Tools](#creative-tools) (6) — Repositories that assist in creative processes, such as writing, design, and multimedia production.
+- [Web Development](#web-development) (1) — Tools and frameworks aimed at building and enhancing web applications and services.
+- [Robotics](#robotics) (1) — Projects focused on building and programming robots and autonomous systems.
+- [Educational Resources](#educational-resources) (1) — Repositories that provide learning materials, tutorials, and tools for educational purposes.
+- [Data Engineering](#data-engineering) (1) — Projects that focus on the architecture and management of data pipelines and storage solutions.
+- [Other](#other) (6) — Repositories that do not fit into the specified categories.
 
 ---
 
-<a id="ai-models"></a>
-## AI Models (Total 8)
+<a id="ai-research"></a>
+## AI Research (Total 13)
 
-> Repositories focused on developing and training various AI models, including language and visual models.
+> Repositories focused on advancing artificial intelligence methodologies, including algorithms and frameworks.
 
 ### 📌 [EverMind-AI/MSA](https://github.com/EverMind-AI/MSA)
 
 
-**⭐ Stars:** 2,882 | **🍴 Forks:** 168 | **📅 Updated:** 2026-04-10
+**⭐ Stars:** 2,940 | **🍴 Forks:** 171 | **📅 Updated:** 2026-04-11
+
 
 
 1. **Repository Name:** EverMind-AI/MSA  
@@ -51,10 +52,26 @@
 **Repository URL:** [EverMind-AI/MSA](https://github.com/EverMind-AI/MSA)
 
 ---
+### 📌 [Henrymachiyu/FIPO](https://github.com/Henrymachiyu/FIPO)
+
+
+**⭐ Stars:** 16 | **🍴 Forks:** 0 | **📅 Updated:** 2026-04-09
+
+
+
+1. **Repository Name:** Henrymachiyu/FIPO  
+2. **Brief Introduction:** FIPO is a value-free reinforcement learning algorithm designed to enhance deeper reasoning capabilities from a clean base model.  
+3. **Innovations:** The repository features a novel approach to reinforcement learning that prioritizes reasoning without bias, allowing for more generalized and adaptable learning outcomes.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** FIPO aims to improve reasoning in AI models by implementing a unique, value-free reinforcement learning strategy.  
+**Repository URL:** [FIPO on GitHub](https://github.com/Henrymachiyu/FIPO)
+
+---
 ### 📌 [jingyaogong/minimind-v](https://github.com/jingyaogong/minimind-v)
 
 
-**⭐ Stars:** 7,370 | **🍴 Forks:** 810 | **📅 Updated:** 2026-04-10
+**⭐ Stars:** 7,384 | **🍴 Forks:** 811 | **📅 Updated:** 2026-04-11
+
 
 
 
@@ -67,33 +84,11 @@
 **Repository URL:** [https://github.com/jingyaogong/minimind-v](https://github.com/jingyaogong/minimind-v)
 
 ---
-### 📌 [open-gigaai/giga-brain-0](https://github.com/open-gigaai/giga-brain-0)
-
-
-**⭐ Stars:** 2,466 | **🍴 Forks:** 195 | **📅 Updated:** 2026-04-09
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** open-gigaai/giga-brain-0  
-2. **Brief Introduction:** GigaBrain-0 is a vision-language-action model powered by world models, designed to enhance the interaction between visual inputs and language processing for intelligent actions.  
-3. **Innovations:** This repository features advanced integration of vision and language understanding, enabling dynamic action generation based on contextual visual cues, leveraging world models for improved decision-making.  
-4. **Basic Usage:** (No specific usage example provided.)  
-5. **Summary:** GigaBrain-0 aims to advance the capabilities of AI in understanding and acting upon visual and linguistic information seamlessly.  
-**Repository Description:** GigaBrain-0: A World Model-Powered Vision-Language-Action Model  
-**Repository URL:** [GigaBrain-0 on GitHub](https://github.com/open-gigaai/giga-brain-0)
-
----
 ### 📌 [jingyaogong/minimind](https://github.com/jingyaogong/minimind)
 
 
-**⭐ Stars:** 46,327 | **🍴 Forks:** 5,715 | **📅 Updated:** 2026-04-10
+**⭐ Stars:** 46,449 | **🍴 Forks:** 5,721 | **📅 Updated:** 2026-04-11
+
 
 
 
@@ -120,70 +115,10 @@
 **Repository URL:** [https://github.com/jingyaogong/minimind](https://github.com/jingyaogong/minimind)
 
 ---
-### 📌 [datawhalechina/every-embodied](https://github.com/datawhalechina/every-embodied)
+### 📌 [aiming-lab/AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw)
 
 
-**⭐ Stars:** 1,307 | **🍴 Forks:** 143 | **📅 Updated:** 2026-04-10
-
-
-
-1. **Repository Name:** datawhalechina/every-embodied  
-2. **Brief Introduction:** A project designed for beginners to build their own embodied intelligent robots from scratch using Python, focusing on various models like VLA, OpenVLA, SmolVLA, and Pi0.  
-3. **Innovations:** The repository offers a step-by-step approach to constructing embodied intelligence systems, making advanced concepts accessible to those with basic Python knowledge.  
-4. **Basic Usage:** Not specified.  
-5. **Summary:** This repository serves as a comprehensive guide for building embodied intelligent robots, enhancing understanding of the underlying technologies.  
-**Repository URL:** [datawhalechina/every-embodied](https://github.com/datawhalechina/every-embodied)
-
----
-### 📌 [Lordog/dive-into-llms](https://github.com/Lordog/dive-into-llms)
-
-
-**⭐ Stars:** 26,452 | **🍴 Forks:** 3,163 | **📅 Updated:** 2026-04-10
-
-
-
-
-1. **Repository Name:** Lordog/dive-into-llms  
-2. **Brief Introduction:** A practical programming tutorial series focused on large language models (LLMs), designed to help users understand and implement LLMs effectively.  
-3. **Innovations:** The repository features hands-on coding examples, comprehensive explanations of LLM concepts, and interactive exercises to facilitate learning and experimentation with LLMs.  
-4. **Basic Usage:** Not specified.  
-5. **Summary:** This repository serves as a valuable resource for anyone looking to learn about and work with large language models through practical implementation.
-
----
-### 📌 [HqWu-HITCS/Awesome-Chinese-LLM](https://github.com/HqWu-HITCS/Awesome-Chinese-LLM)
-
-
-**⭐ Stars:** 22,511 | **🍴 Forks:** 2,123 | **📅 Updated:** 2026-04-10
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** HqWu-HITCS/Awesome-Chinese-LLM  
-2. **Brief Introduction:** A curated collection of open-source Chinese large language models, focusing on smaller models suitable for private deployment and lower training costs, including base models, domain-specific fine-tuning, applications, datasets, and tutorials.  
-3. **Innovations:** Highlights include a focus on smaller, easily deployable models, resources for domain-specific applications, and comprehensive tutorials for users to effectively utilize and train models.  
-4. **Basic Usage:** N/A  
-5. **Summary:** This repository serves as a valuable resource for developers and researchers interested in accessible and cost-effective Chinese large language models.  
-**Repository URL:** [Awesome-Chinese-LLM](https://github.com/HqWu-HITCS/Awesome-Chinese-LLM)
-
----
-### 📌 [Tencent/WeKnora](https://github.com/Tencent/WeKnora)
-
-
-**⭐ Stars:** 13,804 | **🍴 Forks:** 1,631 | **📅 Updated:** 2026-04-10
+**⭐ Stars:** 10,907 | **🍴 Forks:** 1,243 | **📅 Updated:** 2026-04-11
 
 
 
@@ -203,37 +138,20 @@
 
 
 
-1. **Repository Name:** Tencent/WeKnora
-2. **Brief Introduction:** WeKnora is an LLM-powered framework designed for deep document understanding, semantic retrieval, and context-aware answers, leveraging the Retrieval-Augmented Generation (RAG) paradigm.
-3. **Innovations:** It uniquely integrates large language models with advanced document processing techniques to enhance information retrieval and contextual response generation.
-4. **Basic Usage:** Not specified.
-5. **Summary:** WeKnora aims to improve the efficiency and accuracy of information retrieval and understanding through advanced AI techniques.
-   **Repository URL:** [Tencent/WeKnora](https://github.com/Tencent/WeKnora)
 
----
-<a id="reinforcement-learning"></a>
-## Reinforcement Learning (Total 2)
-
-> Projects centered around reinforcement learning algorithms and frameworks for enhancing AI decision-making.
-
-### 📌 [Henrymachiyu/FIPO](https://github.com/Henrymachiyu/FIPO)
-
-
-**⭐ Stars:** 16 | **🍴 Forks:** 0 | **📅 Updated:** 2026-04-09
-
-
-1. **Repository Name:** Henrymachiyu/FIPO  
-2. **Brief Introduction:** FIPO is a value-free reinforcement learning algorithm designed to enhance deeper reasoning capabilities from a clean base model.  
-3. **Innovations:** The repository features a novel approach to reinforcement learning that prioritizes reasoning without bias, allowing for more generalized and adaptable learning outcomes.  
-4. **Basic Usage:** Not specified.  
-5. **Summary:** FIPO aims to improve reasoning in AI models by implementing a unique, value-free reinforcement learning strategy.  
-**Repository URL:** [FIPO on GitHub](https://github.com/Henrymachiyu/FIPO)
+1. **Repository Name:** aiming-lab/AutoResearchClaw
+2. **Brief Introduction:** AutoResearchClaw enables fully autonomous and self-evolving research processes, transforming ideas into academic papers through an interactive chat interface.
+3. **Innovations:** The repository features a unique chat-based interface that facilitates idea generation and paper writing, alongside self-evolving algorithms that adapt research methodologies over time.
+4. **Basic Usage:** Users can engage in a conversation to develop research ideas and receive a structured paper based on their inputs.
+5. **Summary:** AutoResearchClaw streamlines the research process from concept to publication, making academic writing more accessible and efficient.
+   **Repository URL:** [AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw)
 
 ---
 ### 📌 [666ghj/MiroFish](https://github.com/666ghj/MiroFish)
 
 
-**⭐ Stars:** 52,851 | **🍴 Forks:** 7,883 | **📅 Updated:** 2026-04-10
+**⭐ Stars:** 53,308 | **🍴 Forks:** 7,983 | **📅 Updated:** 2026-04-11
+
 
 
 
@@ -261,15 +179,10 @@
    **Repository URL:** [MiroFish on GitHub](https://github.com/666ghj/MiroFish)
 
 ---
-<a id="data-processing"></a>
-## Data Processing (Total 2)
-
-> Tools and frameworks for data integration, analysis, and transformation across different domains.
-
-### 📌 [UniPat-AI/UniScientist](https://github.com/UniPat-AI/UniScientist)
+### 📌 [anthropics/skills](https://github.com/anthropics/skills)
 
 
-**⭐ Stars:** 158 | **🍴 Forks:** 11 | **📅 Updated:** 2026-04-06
+**⭐ Stars:** 114,739 | **🍴 Forks:** 13,112 | **📅 Updated:** 2026-04-11
 
 
 
@@ -289,115 +202,18 @@
 
 
 
-1. **Repository Name:** UniPat-AI/UniScientist
-2. **Brief Introduction:** UniScientist aims to enhance scientific research intelligence by providing a unified framework for data integration and analysis across various scientific disciplines.
-3. **Innovations:** The repository features advanced algorithms for data synthesis, cross-disciplinary collaboration tools, and a comprehensive knowledge base that supports diverse scientific inquiries.
-4. **Basic Usage:** Not provided.
-5. **Summary:** UniScientist serves as a powerful tool for fostering collaboration and innovation in scientific research through a unified approach.
-   **Repository URL:** [UniScientist on GitHub](https://github.com/UniPat-AI/UniScientist)
-
----
-### 📌 [zhu-xlab/GlobalBuildingAtlas](https://github.com/zhu-xlab/GlobalBuildingAtlas)
-
-
-**⭐ Stars:** 2,056 | **🍴 Forks:** 202 | **📅 Updated:** 2026-04-10
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** zhu-xlab/GlobalBuildingAtlas  
-2. **Brief Introduction:** An open global dataset providing comprehensive building polygons, heights, and Level of Detail 1 (LoD1) 3D models for urban analysis and development.  
-3. **Innovations:** Features a complete and standardized dataset of building geometries and heights, enabling advanced urban modeling, planning, and analysis across various geographical regions.  
+1. **Repository Name:** anthropics/skills  
+2. **Brief Introduction:** This repository contains various agent skills designed to enhance the capabilities of AI models, facilitating more sophisticated interactions and tasks.  
+3. **Innovations:** The repository features modular skills that can be easily integrated into AI systems, promoting adaptability and efficiency in task execution.  
 4. **Basic Usage:** Not specified.  
-5. **Summary:** The repository serves as a valuable resource for researchers and developers in urban studies, offering detailed building data for enhanced spatial analysis.  
-**Repository URL:** [GlobalBuildingAtlas](https://github.com/zhu-xlab/GlobalBuildingAtlas)
-
----
-<a id="content-generation"></a>
-## Content Generation (Total 9)
-
-> Repositories that facilitate the generation of content, including text, images, and presentations.
-
-### 📌 [fire-keeper/BlindWatermark](https://github.com/fire-keeper/BlindWatermark)
-
-
-**⭐ Stars:** 1,621 | **🍴 Forks:** 193 | **📅 Updated:** 2026-04-09
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** fire-keeper/BlindWatermark  
-2. **Brief Introduction:** This repository implements an invisible watermarking technique designed to protect the intellectual property of creators by embedding watermarks in digital content.  
-3. **Innovations:** The project features advanced algorithms for embedding and extracting watermarks without altering the perceptual quality of the original content, ensuring robust protection against unauthorized use.  
-4. **Basic Usage:** Not specified.  
-5. **Summary:** BlindWatermark provides a solution for creators to safeguard their intellectual property through invisible watermarking technology.  
-**Repository URL:** [fire-keeper/BlindWatermark](https://github.com/fire-keeper/BlindWatermark)
-
----
-### 📌 [Anjok07/ultimatevocalremovergui](https://github.com/Anjok07/ultimatevocalremovergui)
-
-
-**⭐ Stars:** 24,224 | **🍴 Forks:** 1,811 | **📅 Updated:** 2026-04-10
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Here's the summary of the GitHub repository:
-
-1. **Repository Name:** Anjok07/ultimatevocalremovergui
-2. **Brief Introduction:** Ultimate Vocal Remover GUI (UVR) is a user-friendly graphical interface for a powerful vocal removal tool. It leverages advanced deep neural networks to accurately separate vocals, instrumentals, and other components from audio tracks, making high-quality audio source separation accessible to everyone.
-3. **Innovations:** Its primary innovation lies in providing an intuitive graphical user interface (GUI) for a highly effective vocal remover powered by state-of-the-art deep neural networks, making complex audio source separation accessible without command-line expertise.
-4. **Basic Usage:** (Omitted as no specific key usage or example was provided in the description)
-5. **Summary:** Ultimate Vocal Remover GUI simplifies high-quality audio source separation, allowing users to easily remove vocals and other components from songs using deep neural networks through a user-friendly interface.
+5. **Summary:** The repository serves as a resource for developing and implementing advanced skills in AI agents to improve their functionality and user interaction.
 
 ---
 ### 📌 [Kevin-thu/StoryMem](https://github.com/Kevin-thu/StoryMem)
 
 
 **⭐ Stars:** 714 | **🍴 Forks:** 70 | **📅 Updated:** 2026-04-09
+
 
 
 
@@ -426,318 +242,11 @@ Here's the summary of the GitHub repository:
 5. **Summary:** StoryMem provides a novel approach to generate coherent, multi-shot narratives from long videos by integrating a memory-based mechanism.
 
 ---
-### 📌 [HKUDS/Paper2Slides](https://github.com/HKUDS/Paper2Slides)
-
-
-**⭐ Stars:** 3,280 | **🍴 Forks:** 434 | **📅 Updated:** 2026-04-10
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Here's the summary of the GitHub repository:
-
-1. **Repository Name:** HKUDS/Paper2Slides
-2. **Brief Introduction:** Paper2Slides is an innovative tool designed to transform academic papers into presentation slides automatically. It streamlines the process of creating presentations, saving researchers and students significant time and effort by automating content extraction and slide generation.
-3. **Innovations:** The most distinctive feature is its "one-click" capability to convert an entire research paper into a structured presentation, leveraging automation to simplify a typically time-consuming task.
-4. **Basic Usage:** Upload a research paper and initiate the "one-click" process to generate a complete presentation.
-5. **Summary:** Paper2Slides automates the creation of presentations from academic papers, offering a swift and efficient solution for researchers and students to generate slides with minimal effort.
-
----
-### 📌 [HisMax/RedInk](https://github.com/HisMax/RedInk)
-
-
-**⭐ Stars:** 5,111 | **🍴 Forks:** 969 | **📅 Updated:** 2026-04-10
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** HisMax/RedInk  
-2. **Brief Introduction:** Red Ink is a comprehensive generator for Xiaohongshu, enabling users to create text and images seamlessly using the Nano Banana Pro.  
-3. **Innovations:** The repository features a unique integration of text and image generation tailored specifically for Xiaohongshu, allowing for efficient content creation in a single workflow.  
-4. **Basic Usage:** Not specified.  
-5. **Summary:** Red Ink streamlines the process of generating engaging Xiaohongshu content through an innovative text-and-image generation tool.  
-**Repository URL:** [HisMax/RedInk](https://github.com/HisMax/RedInk)
-
----
-### 📌 [ExplosiveCoderflome/AI-Novel-Writing-Assistant](https://github.com/ExplosiveCoderflome/AI-Novel-Writing-Assistant)
-
-
-**⭐ Stars:** 602 | **🍴 Forks:** 139 | **📅 Updated:** 2026-04-10
-
-
-
-
-1. **Repository Name:** ExplosiveCoderflome/AI-Novel-Writing-Assistant  
-2. **Brief Introduction:** An AI-native open-source system designed for long-form novel writing, facilitating the journey from a single idea to a complete novel through structured planning and agent-driven workflows.  
-3. **Innovations:** Features include an agent-driven approach, worldbuilding tools, a writing engine, retrieval-augmented generation (RAG), and a comprehensive workflow for producing entire books.  
-4. **Basic Usage:** Not specified.  
-5. **Summary:** This repository provides a comprehensive toolset for novice writers to develop their ideas into fully realized novels.  
-**Repository URL:** [AI-Novel-Writing-Assistant](https://github.com/ExplosiveCoderflome/AI-Novel-Writing-Assistant)
-
----
-### 📌 [Narcooo/inkos](https://github.com/Narcooo/inkos)
-
-
-**⭐ Stars:** 3,959 | **🍴 Forks:** 747 | **📅 Updated:** 2026-04-10
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** Narcooo/inkos
-2. **Brief Introduction:** An autonomous novel writing CLI agent that utilizes AI to write, audit, and revise novels, incorporating human review checkpoints.
-3. **Innovations:** The repository features AI-driven writing capabilities, automated auditing, and revision processes, along with integration of human feedback to enhance the quality of novel writing.
-4. **Basic Usage:** Not specified.
-5. **Summary:** The project aims to streamline the novel writing process by leveraging AI while ensuring quality through human oversight.
-   **Repository URL:** [Narcooo/inkos](https://github.com/Narcooo/inkos)
-
----
-### 📌 [antvis/Infographic](https://github.com/antvis/Infographic)
-
-
-**⭐ Stars:** 4,771 | **🍴 Forks:** 346 | **📅 Updated:** 2026-04-10
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** antvis/Infographic
-2. **Brief Introduction:** An Infographic Generation and Rendering Framework that utilizes AI to transform textual information into engaging visual representations.
-3. **Innovations:** Distinctive features include AI-driven content generation, customizable templates, and a user-friendly interface for creating dynamic infographics effortlessly.
-4. **Basic Usage:** Not provided.
-5. **Summary:** This repository aims to enhance communication by visually representing information through AI-generated infographics.
-   **Repository URL:** [antvis/Infographic](https://github.com/antvis/Infographic)
-
----
-### 📌 [Anionex/banana-slides](https://github.com/Anionex/banana-slides)
-
-
-**⭐ Stars:** 13,654 | **🍴 Forks:** 1,587 | **📅 Updated:** 2026-04-10
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** Anionex/banana-slides
-2. **Brief Introduction:** An AI-native slide generator based on the nano banana pro🍌, designed to create dynamic "Vibe PPT" presentations effortlessly.
-3. **Innovations:** Supports uploading custom template images and materials, intelligently parses content, auto-generates slides from outlines or descriptions, allows verbal modifications of specific areas, and enables one-click export of editable PPT files.
-4. **Basic Usage:** Not specified.
-5. **Summary:** This repository offers a unique solution for generating personalized presentations using AI technology, streamlining the creation process for users.
-   **Repository URL:** [Anionex/banana-slides](https://github.com/Anionex/banana-slides)
-
----
-<a id="computer-vision"></a>
-## Computer Vision (Total 1)
-
-> Projects that utilize computer vision techniques for tasks such as image analysis and data extraction.
-
-### 📌 [automeris-io/WebPlotDigitizer](https://github.com/automeris-io/WebPlotDigitizer)
-
-
-**⭐ Stars:** 3,047 | **🍴 Forks:** 424 | **📅 Updated:** 2026-04-09
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** automeris-io/WebPlotDigitizer
-2. **Brief Introduction:** WebPlotDigitizer is a computer vision tool designed to extract numerical data from images of plots, graphs, and other visual data representations.
-3. **Innovations:** Key features include support for various plot types, automatic data extraction, and a user-friendly web interface that simplifies the digitization process.
-4. **Basic Usage:** Users can upload an image of a plot, select data points, and export the extracted data in multiple formats.
-5. **Summary:** This tool provides an efficient way to convert visual data into usable numerical formats for analysis.
-   **Repository Description:** Computer vision assisted tool to extract numerical data from plot images.
-   **Repository URL:** https://github.com/automeris-io/WebPlotDigitizer
-
----
-<a id="natural-language-processing"></a>
-## Natural Language Processing (Total 2)
-
-> Tools and frameworks for processing and understanding human language in various applications.
-
-### 📌 [funstory-ai/BabelDOC](https://github.com/funstory-ai/BabelDOC)
-
-
-**⭐ Stars:** 8,079 | **🍴 Forks:** 636 | **📅 Updated:** 2026-04-10
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** funstory-ai/BabelDOC  
-2. **Brief Introduction:** BabelDOC is a document translation tool designed to facilitate seamless language conversion for various document formats.  
-3. **Innovations:** It supports multiple file types, utilizes advanced translation algorithms, and offers a user-friendly interface for efficient document handling.  
-4. **Basic Usage:** (No specific usage example provided)  
-5. **Summary:** BabelDOC aims to simplify the process of translating documents across different languages and formats.  
-**Repository URL:** [BabelDOC](https://github.com/funstory-ai/BabelDOC)
-
----
-### 📌 [PDFMathTranslate/PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate)
-
-
-**⭐ Stars:** 32,852 | **🍴 Forks:** 2,963 | **📅 Updated:** 2026-04-10
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** PDFMathTranslate/PDFMathTranslate  
-2. **Brief Introduction:** PDFMathTranslate offers a tool for translating PDF scientific papers while preserving their original formatting, utilizing various AI translation services.  
-3. **Innovations:** The repository features a multilingual translation capability that maintains the layout of documents, supports multiple translation services (Google, DeepL, Ollama, OpenAI), and provides various interfaces including CLI, GUI, MCP, Docker, and Zotero integration.  
-4. **Basic Usage:** Not specified.  
-5. **Summary:** This repository provides a comprehensive solution for bilingual translation of PDF documents, ensuring format preservation and compatibility with popular translation services.
-
----
-<a id="scientific-research"></a>
-## Scientific Research (Total 3)
-
-> Repositories aimed at enhancing scientific research through automation, data analysis, and collaboration tools.
-
-### 📌 [aiming-lab/AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw)
-
-
-**⭐ Stars:** 10,875 | **🍴 Forks:** 1,235 | **📅 Updated:** 2026-04-10
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** aiming-lab/AutoResearchClaw
-2. **Brief Introduction:** AutoResearchClaw enables fully autonomous and self-evolving research processes, transforming ideas into academic papers through an interactive chat interface.
-3. **Innovations:** The repository features a unique chat-based interface that facilitates idea generation and paper writing, alongside self-evolving algorithms that adapt research methodologies over time.
-4. **Basic Usage:** Users can engage in a conversation to develop research ideas and receive a structured paper based on their inputs.
-5. **Summary:** AutoResearchClaw streamlines the research process from concept to publication, making academic writing more accessible and efficient.
-   **Repository URL:** [AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw)
-
----
 ### 📌 [jimmc414/Kosmos](https://github.com/jimmc414/Kosmos)
 
 
-**⭐ Stars:** 490 | **🍴 Forks:** 91 | **📅 Updated:** 2026-04-08
+**⭐ Stars:** 493 | **🍴 Forks:** 92 | **📅 Updated:** 2026-04-11
+
 
 
 
@@ -763,44 +272,10 @@ Here's the summary of the GitHub repository:
 5. **Summary:** Kosmos serves as a platform for advancing autonomous scientific research through AI-driven methodologies.
 
 ---
-### 📌 [wri/global-pasture-watch](https://github.com/wri/global-pasture-watch)
+### 📌 [lfnovo/open-notebook](https://github.com/lfnovo/open-notebook)
 
 
-**⭐ Stars:** 59 | **🍴 Forks:** 7 | **📅 Updated:** 2026-03-25
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** wri/global-pasture-watch  
-2. **Brief Introduction:** This repository focuses on mapping the extent, management, and condition of global grasslands to support sustainable land use and conservation efforts.  
-3. **Innovations:** Key features include detailed mapping tools, data visualization capabilities, and integration of various datasets to assess grassland health and management practices.  
-4. **Basic Usage:** Not specified.  
-5. **Summary:** The project aims to enhance understanding and management of grasslands worldwide for better environmental stewardship.  
-**Repository Description:** Mapping the extent, management and condition of the world’s grasslands  
-**Repository URL:** [https://github.com/wri/global-pasture-watch](https://github.com/wri/global-pasture-watch)
-
----
-<a id="ai-tools"></a>
-## AI Tools (Total 12)
-
-> General-purpose tools and platforms that leverage AI for various applications and workflows.
-
-### 📌 [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
-
-
-**⭐ Stars:** 52,557 | **🍴 Forks:** 5,573 | **📅 Updated:** 2026-04-10
+**⭐ Stars:** 22,033 | **🍴 Forks:** 2,525 | **📅 Updated:** 2026-04-11
 
 
 
@@ -820,201 +295,19 @@ Here's the summary of the GitHub repository:
 
 
 
-1. **Repository Name:** ComposioHQ/awesome-claude-skills
-2. **Brief Introduction:** A curated collection of exceptional Claude Skills, resources, and tools designed to enhance and customize Claude AI workflows.
-3. **Innovations:** This repository features a comprehensive list of innovative skills and resources that enable users to tailor their interactions with Claude AI, improving functionality and user experience.
+
+1. **Repository Name:** lfnovo/open-notebook
+2. **Brief Introduction:** An open-source project that implements Notebook LM, offering enhanced flexibility and additional features for users.
+3. **Innovations:** This repository stands out for its customizable architecture, allowing users to tailor the notebook experience, and its rich set of features that enhance functionality beyond standard notebook implementations.
 4. **Basic Usage:** Not specified.
-5. **Summary:** This repository serves as a valuable resource for anyone looking to optimize their use of Claude AI through curated skills and tools.
-   **Repository URL:** [awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
-
----
-### 📌 [cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources)
-
-
-**⭐ Stars:** 18,339 | **🍴 Forks:** 1,818 | **📅 Updated:** 2026-04-10
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Here's the summary of the GitHub repository:
-
-1. **Repository Name:** cheahjs/free-llm-api-resources
-2. **Brief Introduction:** A curated list of free Large Language Model (LLM) inference resources that are accessible via API, helping developers find cost-free options for their projects.
-3. **Innovations:** It provides a centralized, organized directory of otherwise scattered free LLM API resources, significantly simplifying the discovery process for developers seeking no-cost inference.
-4. **Basic Usage:** Browse the repository's README file to find and select a free LLM API resource suitable for your development needs.
-5. **Summary:** This repository serves as a valuable directory for developers to easily discover and leverage free LLM inference APIs for various applications.
-
----
-### 📌 [anthropics/skills](https://github.com/anthropics/skills)
-
-
-**⭐ Stars:** 114,132 | **🍴 Forks:** 13,005 | **📅 Updated:** 2026-04-10
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** anthropics/skills  
-2. **Brief Introduction:** This repository contains various agent skills designed to enhance the capabilities of AI models, facilitating more sophisticated interactions and tasks.  
-3. **Innovations:** The repository features modular skills that can be easily integrated into AI systems, promoting adaptability and efficiency in task execution.  
-4. **Basic Usage:** Not specified.  
-5. **Summary:** The repository serves as a resource for developing and implementing advanced skills in AI agents to improve their functionality and user interaction.
-
----
-### 📌 [hAcKlyc/MyAgents](https://github.com/hAcKlyc/MyAgents)
-
-
-**⭐ Stars:** 180 | **🍴 Forks:** 26 | **📅 Updated:** 2026-04-09
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** hAcKlyc/MyAgents
-2. **Brief Introduction:** MyAgents is a user-friendly desktop application that combines an AI workspace with an active agent system, providing a centralized task management hub for agents.
-3. **Innovations:** The repository features an elegant design, ease of use, and integrates both an AI workspace and a proactive agent system, enhancing productivity and task management.
-4. **Basic Usage:** Not specified.
-5. **Summary:** MyAgents serves as a versatile task center that merges AI capabilities with proactive agent functionalities for efficient desktop management.
-   **Repository URL:** [hAcKlyc/MyAgents](https://github.com/hAcKlyc/MyAgents)
-
----
-### 📌 [anomalyco/opencode](https://github.com/anomalyco/opencode)
-
-
-**⭐ Stars:** 140,699 | **🍴 Forks:** 15,658 | **📅 Updated:** 2026-04-10
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** anomalyco/opencode
-2. **Brief Introduction:** An open-source coding agent designed to assist developers in writing and managing code efficiently.
-3. **Innovations:** Features include intelligent code suggestions, real-time collaboration tools, and seamless integration with popular development environments to enhance productivity.
-4. **Basic Usage:** Not specified.
-5. **Summary:** This repository aims to streamline the coding process by providing innovative tools for developers.
-
----
-### 📌 [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio)
-
-
-**⭐ Stars:** 43,228 | **🍴 Forks:** 4,057 | **📅 Updated:** 2026-04-10
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** CherryHQ/cherry-studio
-2. **Brief Introduction:** Cherry Studio is an AI productivity platform that integrates smart chat, autonomous agents, and over 300 assistants, offering unified access to cutting-edge large language models (LLMs).
-3. **Innovations:** Key features include a diverse array of autonomous agents, a smart chat interface, and seamless integration with multiple advanced LLMs, enhancing productivity and user experience.
-4. **Basic Usage:** Not specified.
-5. **Summary:** Cherry Studio aims to enhance productivity through innovative AI tools and assistants, streamlining user interactions with advanced language models.
-   **Repository URL:** [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio)
-
----
-### 📌 [openclaw/openclaw](https://github.com/openclaw/openclaw)
-
-
-**⭐ Stars:** 353,521 | **🍴 Forks:** 71,391 | **📅 Updated:** 2026-04-10
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** openclaw/openclaw
-2. **Brief Introduction:** OpenClaw is a personal AI assistant designed to work across any operating system and platform, providing a versatile and user-friendly experience.
-3. **Innovations:** Distinctive features include cross-platform compatibility, a customizable interface, and an intuitive design that simplifies user interaction with AI technologies.
-4. **Basic Usage:** Not specified.
-5. **Summary:** OpenClaw serves as a flexible AI assistant, adaptable to various environments and user needs.
+5. **Summary:** The repository provides a versatile and feature-rich alternative to traditional notebook implementations for enhanced data management and analysis.
 
 ---
 ### 📌 [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents)
 
 
-**⭐ Stars:** 77,210 | **🍴 Forks:** 12,203 | **📅 Updated:** 2026-04-10
+**⭐ Stars:** 77,927 | **🍴 Forks:** 12,349 | **📅 Updated:** 2026-04-11
+
 
 1. **Repository Name:** msitarzewski/agency-agents  
 2. **Brief Introduction:** A comprehensive AI agency framework featuring specialized agents designed for various tasks, from frontend development to community engagement.  
@@ -1024,23 +317,11 @@ Here's the summary of the GitHub repository:
 **Repository URL:** [https://github.com/msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents)
 
 ---
-### 📌 [justlovemaki/openclaw-china-docker](https://github.com/justlovemaki/openclaw-china-docker)
-
-
-**⭐ Stars:** 3,748 | **🍴 Forks:** 444 | **📅 Updated:** 2026-04-10
-
-1. **Repository Name:** justlovemaki/openclaw-china-docker  
-2. **Brief Introduction:** This repository provides a Docker version of OpenClaw tailored for the Chinese market, pre-configured with plugins for popular IM platforms like Feishu, DingTalk, QQ, and WeChat.  
-3. **Innovations:** Distinctive features include seamless integration of multiple Chinese IM platforms, pre-installed plugins, and simplified deployment for AI bot gateways.  
-4. **Basic Usage:** Not specified.  
-5. **Summary:** The repository facilitates quick deployment of an AI bot gateway that supports various Chinese IM platforms.  
-**Repository URL:** [justlovemaki/openclaw-china-docker](https://github.com/justlovemaki/openclaw-china-docker)
-
----
 ### 📌 [obra/superpowers](https://github.com/obra/superpowers)
 
 
-**⭐ Stars:** 144,212 | **🍴 Forks:** 12,342 | **📅 Updated:** 2026-04-10
+**⭐ Stars:** 146,031 | **🍴 Forks:** 12,520 | **📅 Updated:** 2026-04-11
+
 
 
 
@@ -1072,7 +353,8 @@ Here's a summary of the GitHub repository:
 ### 📌 [fogsightai/fogsight](https://github.com/fogsightai/fogsight)
 
 
-**⭐ Stars:** 2,376 | **🍴 Forks:** 362 | **📅 Updated:** 2026-04-10
+**⭐ Stars:** 2,377 | **🍴 Forks:** 362 | **📅 Updated:** 2026-04-11
+
 
 
 
@@ -1099,10 +381,166 @@ Here's a summary of the GitHub repository:
 **Repository URL:** [fogsightai/fogsight](https://github.com/fogsightai/fogsight)
 
 ---
+<a id="natural-language-processing"></a>
+## Natural Language Processing (Total 8)
+
+> Projects related to processing and understanding human language using AI techniques.
+
+### 📌 [open-gigaai/giga-brain-0](https://github.com/open-gigaai/giga-brain-0)
+
+
+**⭐ Stars:** 2,465 | **🍴 Forks:** 194 | **📅 Updated:** 2026-04-10
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** open-gigaai/giga-brain-0  
+2. **Brief Introduction:** GigaBrain-0 is a vision-language-action model powered by world models, designed to enhance the interaction between visual inputs and language processing for intelligent actions.  
+3. **Innovations:** This repository features advanced integration of vision and language understanding, enabling dynamic action generation based on contextual visual cues, leveraging world models for improved decision-making.  
+4. **Basic Usage:** (No specific usage example provided.)  
+5. **Summary:** GigaBrain-0 aims to advance the capabilities of AI in understanding and acting upon visual and linguistic information seamlessly.  
+**Repository Description:** GigaBrain-0: A World Model-Powered Vision-Language-Action Model  
+**Repository URL:** [GigaBrain-0 on GitHub](https://github.com/open-gigaai/giga-brain-0)
+
+---
+### 📌 [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
+
+
+**⭐ Stars:** 52,805 | **🍴 Forks:** 5,624 | **📅 Updated:** 2026-04-11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** ComposioHQ/awesome-claude-skills
+2. **Brief Introduction:** A curated collection of exceptional Claude Skills, resources, and tools designed to enhance and customize Claude AI workflows.
+3. **Innovations:** This repository features a comprehensive list of innovative skills and resources that enable users to tailor their interactions with Claude AI, improving functionality and user experience.
+4. **Basic Usage:** Not specified.
+5. **Summary:** This repository serves as a valuable resource for anyone looking to optimize their use of Claude AI through curated skills and tools.
+   **Repository URL:** [awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
+
+---
+### 📌 [cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources)
+
+
+**⭐ Stars:** 18,438 | **🍴 Forks:** 1,826 | **📅 Updated:** 2026-04-11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Here's the summary of the GitHub repository:
+
+1. **Repository Name:** cheahjs/free-llm-api-resources
+2. **Brief Introduction:** A curated list of free Large Language Model (LLM) inference resources that are accessible via API, helping developers find cost-free options for their projects.
+3. **Innovations:** It provides a centralized, organized directory of otherwise scattered free LLM API resources, significantly simplifying the discovery process for developers seeking no-cost inference.
+4. **Basic Usage:** Browse the repository's README file to find and select a free LLM API resource suitable for your development needs.
+5. **Summary:** This repository serves as a valuable directory for developers to easily discover and leverage free LLM inference APIs for various applications.
+
+---
+### 📌 [funstory-ai/BabelDOC](https://github.com/funstory-ai/BabelDOC)
+
+
+**⭐ Stars:** 8,083 | **🍴 Forks:** 637 | **📅 Updated:** 2026-04-11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** funstory-ai/BabelDOC  
+2. **Brief Introduction:** BabelDOC is a document translation tool designed to facilitate seamless language conversion for various document formats.  
+3. **Innovations:** It supports multiple file types, utilizes advanced translation algorithms, and offers a user-friendly interface for efficient document handling.  
+4. **Basic Usage:** (No specific usage example provided)  
+5. **Summary:** BabelDOC aims to simplify the process of translating documents across different languages and formats.  
+**Repository URL:** [BabelDOC](https://github.com/funstory-ai/BabelDOC)
+
+---
+### 📌 [PDFMathTranslate/PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate)
+
+
+**⭐ Stars:** 32,880 | **🍴 Forks:** 2,963 | **📅 Updated:** 2026-04-11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** PDFMathTranslate/PDFMathTranslate  
+2. **Brief Introduction:** PDFMathTranslate offers a tool for translating PDF scientific papers while preserving their original formatting, utilizing various AI translation services.  
+3. **Innovations:** The repository features a multilingual translation capability that maintains the layout of documents, supports multiple translation services (Google, DeepL, Ollama, OpenAI), and provides various interfaces including CLI, GUI, MCP, Docker, and Zotero integration.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** This repository provides a comprehensive solution for bilingual translation of PDF documents, ensuring format preservation and compatibility with popular translation services.
+
+---
 ### 📌 [DearVa/Everywhere](https://github.com/DearVa/Everywhere)
 
 
-**⭐ Stars:** 5,780 | **🍴 Forks:** 345 | **📅 Updated:** 2026-04-10
+**⭐ Stars:** 5,778 | **🍴 Forks:** 346 | **📅 Updated:** 2026-04-11
+
 
 
 
@@ -1133,15 +571,216 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 ---
 
 ## 📦 Other (Total 2)
-<a id="automation"></a>
-## Automation (Total 3)
+### 📌 [HqWu-HITCS/Awesome-Chinese-LLM](https://github.com/HqWu-HITCS/Awesome-Chinese-LLM)
 
-> Projects focused on automating tasks and processes using AI and other technologies.
+
+**⭐ Stars:** 22,513 | **🍴 Forks:** 2,122 | **📅 Updated:** 2026-04-11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** HqWu-HITCS/Awesome-Chinese-LLM  
+2. **Brief Introduction:** A curated collection of open-source Chinese large language models, focusing on smaller models suitable for private deployment and lower training costs, including base models, domain-specific fine-tuning, applications, datasets, and tutorials.  
+3. **Innovations:** Highlights include a focus on smaller, easily deployable models, resources for domain-specific applications, and comprehensive tutorials for users to effectively utilize and train models.  
+4. **Basic Usage:** N/A  
+5. **Summary:** This repository serves as a valuable resource for developers and researchers interested in accessible and cost-effective Chinese large language models.  
+**Repository URL:** [Awesome-Chinese-LLM](https://github.com/HqWu-HITCS/Awesome-Chinese-LLM)
+
+---
+### 📌 [Tencent/WeKnora](https://github.com/Tencent/WeKnora)
+
+
+**⭐ Stars:** 13,816 | **🍴 Forks:** 1,631 | **📅 Updated:** 2026-04-11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** Tencent/WeKnora
+2. **Brief Introduction:** WeKnora is an LLM-powered framework designed for deep document understanding, semantic retrieval, and context-aware answers, leveraging the Retrieval-Augmented Generation (RAG) paradigm.
+3. **Innovations:** It uniquely integrates large language models with advanced document processing techniques to enhance information retrieval and contextual response generation.
+4. **Basic Usage:** Not specified.
+5. **Summary:** WeKnora aims to improve the efficiency and accuracy of information retrieval and understanding through advanced AI techniques.
+   **Repository URL:** [Tencent/WeKnora](https://github.com/Tencent/WeKnora)
+
+---
+<a id="computer-vision"></a>
+## Computer Vision (Total 2)
+
+> Tools and frameworks designed for interpreting and processing visual data.
+
+### 📌 [antvis/Infographic](https://github.com/antvis/Infographic)
+
+
+**⭐ Stars:** 4,779 | **🍴 Forks:** 346 | **📅 Updated:** 2026-04-11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** antvis/Infographic
+2. **Brief Introduction:** An Infographic Generation and Rendering Framework that utilizes AI to transform textual information into engaging visual representations.
+3. **Innovations:** Distinctive features include AI-driven content generation, customizable templates, and a user-friendly interface for creating dynamic infographics effortlessly.
+4. **Basic Usage:** Not provided.
+5. **Summary:** This repository aims to enhance communication by visually representing information through AI-generated infographics.
+   **Repository URL:** [antvis/Infographic](https://github.com/antvis/Infographic)
+
+---
+### 📌 [automeris-io/WebPlotDigitizer](https://github.com/automeris-io/WebPlotDigitizer)
+
+
+**⭐ Stars:** 3,048 | **🍴 Forks:** 424 | **📅 Updated:** 2026-04-10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** automeris-io/WebPlotDigitizer
+2. **Brief Introduction:** WebPlotDigitizer is a computer vision tool designed to extract numerical data from images of plots, graphs, and other visual data representations.
+3. **Innovations:** Key features include support for various plot types, automatic data extraction, and a user-friendly web interface that simplifies the digitization process.
+4. **Basic Usage:** Users can upload an image of a plot, select data points, and export the extracted data in multiple formats.
+5. **Summary:** This tool provides an efficient way to convert visual data into usable numerical formats for analysis.
+   **Repository Description:** Computer vision assisted tool to extract numerical data from plot images.
+   **Repository URL:** https://github.com/automeris-io/WebPlotDigitizer
+
+---
+<a id="data-science"></a>
+## Data Science (Total 2)
+
+> Repositories that focus on data analysis, visualization, and scientific research methodologies.
+
+### 📌 [UniPat-AI/UniScientist](https://github.com/UniPat-AI/UniScientist)
+
+
+**⭐ Stars:** 158 | **🍴 Forks:** 11 | **📅 Updated:** 2026-04-06
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** UniPat-AI/UniScientist
+2. **Brief Introduction:** UniScientist aims to enhance scientific research intelligence by providing a unified framework for data integration and analysis across various scientific disciplines.
+3. **Innovations:** The repository features advanced algorithms for data synthesis, cross-disciplinary collaboration tools, and a comprehensive knowledge base that supports diverse scientific inquiries.
+4. **Basic Usage:** Not provided.
+5. **Summary:** UniScientist serves as a powerful tool for fostering collaboration and innovation in scientific research through a unified approach.
+   **Repository URL:** [UniScientist on GitHub](https://github.com/UniPat-AI/UniScientist)
+
+---
+### 📌 [wri/global-pasture-watch](https://github.com/wri/global-pasture-watch)
+
+
+**⭐ Stars:** 59 | **🍴 Forks:** 7 | **📅 Updated:** 2026-03-25
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** wri/global-pasture-watch  
+2. **Brief Introduction:** This repository focuses on mapping the extent, management, and condition of global grasslands to support sustainable land use and conservation efforts.  
+3. **Innovations:** Key features include detailed mapping tools, data visualization capabilities, and integration of various datasets to assess grassland health and management practices.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** The project aims to enhance understanding and management of grasslands worldwide for better environmental stewardship.  
+**Repository Description:** Mapping the extent, management and condition of the world’s grasslands  
+**Repository URL:** [https://github.com/wri/global-pasture-watch](https://github.com/wri/global-pasture-watch)
+
+---
+<a id="automation-tools"></a>
+## Automation Tools (Total 9)
+
+> Projects that automate tasks or processes, enhancing productivity and efficiency.
 
 ### 📌 [Usagi-org/ai-goofish-monitor](https://github.com/Usagi-org/ai-goofish-monitor)
 
 
-**⭐ Stars:** 10,840 | **🍴 Forks:** 1,540 | **📅 Updated:** 2026-04-10
+**⭐ Stars:** 10,853 | **🍴 Forks:** 1,543 | **📅 Updated:** 2026-04-11
+
 
 
 
@@ -1168,10 +807,184 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 **Repository URL:** [Usagi-org/ai-goofish-monitor](https://github.com/Usagi-org/ai-goofish-monitor)
 
 ---
+### 📌 [HKUDS/Paper2Slides](https://github.com/HKUDS/Paper2Slides)
+
+
+**⭐ Stars:** 3,282 | **🍴 Forks:** 435 | **📅 Updated:** 2026-04-10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Here's the summary of the GitHub repository:
+
+1. **Repository Name:** HKUDS/Paper2Slides
+2. **Brief Introduction:** Paper2Slides is an innovative tool designed to transform academic papers into presentation slides automatically. It streamlines the process of creating presentations, saving researchers and students significant time and effort by automating content extraction and slide generation.
+3. **Innovations:** The most distinctive feature is its "one-click" capability to convert an entire research paper into a structured presentation, leveraging automation to simplify a typically time-consuming task.
+4. **Basic Usage:** Upload a research paper and initiate the "one-click" process to generate a complete presentation.
+5. **Summary:** Paper2Slides automates the creation of presentations from academic papers, offering a swift and efficient solution for researchers and students to generate slides with minimal effort.
+
+---
+### 📌 [hAcKlyc/MyAgents](https://github.com/hAcKlyc/MyAgents)
+
+
+**⭐ Stars:** 181 | **🍴 Forks:** 26 | **📅 Updated:** 2026-04-10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** hAcKlyc/MyAgents
+2. **Brief Introduction:** MyAgents is a user-friendly desktop application that combines an AI workspace with an active agent system, providing a centralized task management hub for agents.
+3. **Innovations:** The repository features an elegant design, ease of use, and integrates both an AI workspace and a proactive agent system, enhancing productivity and task management.
+4. **Basic Usage:** Not specified.
+5. **Summary:** MyAgents serves as a versatile task center that merges AI capabilities with proactive agent functionalities for efficient desktop management.
+   **Repository URL:** [hAcKlyc/MyAgents](https://github.com/hAcKlyc/MyAgents)
+
+---
+### 📌 [anomalyco/opencode](https://github.com/anomalyco/opencode)
+
+
+**⭐ Stars:** 141,239 | **🍴 Forks:** 15,781 | **📅 Updated:** 2026-04-11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** anomalyco/opencode
+2. **Brief Introduction:** An open-source coding agent designed to assist developers in writing and managing code efficiently.
+3. **Innovations:** Features include intelligent code suggestions, real-time collaboration tools, and seamless integration with popular development environments to enhance productivity.
+4. **Basic Usage:** Not specified.
+5. **Summary:** This repository aims to streamline the coding process by providing innovative tools for developers.
+
+---
+### 📌 [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio)
+
+
+**⭐ Stars:** 43,276 | **🍴 Forks:** 4,063 | **📅 Updated:** 2026-04-11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** CherryHQ/cherry-studio
+2. **Brief Introduction:** Cherry Studio is an AI productivity platform that integrates smart chat, autonomous agents, and over 300 assistants, offering unified access to cutting-edge large language models (LLMs).
+3. **Innovations:** Key features include a diverse array of autonomous agents, a smart chat interface, and seamless integration with multiple advanced LLMs, enhancing productivity and user experience.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Cherry Studio aims to enhance productivity through innovative AI tools and assistants, streamlining user interactions with advanced language models.
+   **Repository URL:** [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio)
+
+---
+### 📌 [openclaw/openclaw](https://github.com/openclaw/openclaw)
+
+
+**⭐ Stars:** 354,320 | **🍴 Forks:** 71,618 | **📅 Updated:** 2026-04-11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** openclaw/openclaw
+2. **Brief Introduction:** OpenClaw is a personal AI assistant designed to work across any operating system and platform, providing a versatile and user-friendly experience.
+3. **Innovations:** Distinctive features include cross-platform compatibility, a customizable interface, and an intuitive design that simplifies user interaction with AI technologies.
+4. **Basic Usage:** Not specified.
+5. **Summary:** OpenClaw serves as a flexible AI assistant, adaptable to various environments and user needs.
+
+---
+### 📌 [justlovemaki/openclaw-china-docker](https://github.com/justlovemaki/openclaw-china-docker)
+
+
+**⭐ Stars:** 3,754 | **🍴 Forks:** 447 | **📅 Updated:** 2026-04-11
+
+
+1. **Repository Name:** justlovemaki/openclaw-china-docker  
+2. **Brief Introduction:** This repository provides a Docker version of OpenClaw tailored for the Chinese market, pre-configured with plugins for popular IM platforms like Feishu, DingTalk, QQ, and WeChat.  
+3. **Innovations:** Distinctive features include seamless integration of multiple Chinese IM platforms, pre-installed plugins, and simplified deployment for AI bot gateways.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** The repository facilitates quick deployment of an AI bot gateway that supports various Chinese IM platforms.  
+**Repository URL:** [justlovemaki/openclaw-china-docker](https://github.com/justlovemaki/openclaw-china-docker)
+
+---
 ### 📌 [Flow-Launcher/Flow.Launcher](https://github.com/Flow-Launcher/Flow.Launcher)
 
 
-**⭐ Stars:** 14,411 | **🍴 Forks:** 581 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 14,416 | **🍴 Forks:** 581 | **📅 Updated:** 2026-04-11
+
 
 
 
@@ -1203,7 +1016,8 @@ Here's the summary of the GitHub repository:
 ### 📌 [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser)
 
 
-**⭐ Stars:** 28,423 | **🍴 Forks:** 1,725 | **📅 Updated:** 2026-04-10
+**⭐ Stars:** 28,555 | **🍴 Forks:** 1,732 | **📅 Updated:** 2026-04-11
+
 
 
 
@@ -1230,50 +1044,312 @@ Here's the summary of the GitHub repository:
 5. **Summary:** This repository provides a powerful tool for automating browser interactions, enhancing the capabilities of AI agents.
 
 ---
-<a id="visualization"></a>
-## Visualization (Total 0)
+<a id="creative-tools"></a>
+## Creative Tools (Total 6)
 
-> Repositories that provide tools for visualizing data and information in engaging formats.
+> Repositories that assist in creative processes, such as writing, design, and multimedia production.
 
+### 📌 [fire-keeper/BlindWatermark](https://github.com/fire-keeper/BlindWatermark)
+
+
+**⭐ Stars:** 1,621 | **🍴 Forks:** 193 | **📅 Updated:** 2026-04-09
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** fire-keeper/BlindWatermark  
+2. **Brief Introduction:** This repository implements an invisible watermarking technique designed to protect the intellectual property of creators by embedding watermarks in digital content.  
+3. **Innovations:** The project features advanced algorithms for embedding and extracting watermarks without altering the perceptual quality of the original content, ensuring robust protection against unauthorized use.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** BlindWatermark provides a solution for creators to safeguard their intellectual property through invisible watermarking technology.  
+**Repository URL:** [fire-keeper/BlindWatermark](https://github.com/fire-keeper/BlindWatermark)
+
+---
+### 📌 [Anjok07/ultimatevocalremovergui](https://github.com/Anjok07/ultimatevocalremovergui)
+
+
+**⭐ Stars:** 24,230 | **🍴 Forks:** 1,813 | **📅 Updated:** 2026-04-11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Here's the summary of the GitHub repository:
+
+1. **Repository Name:** Anjok07/ultimatevocalremovergui
+2. **Brief Introduction:** Ultimate Vocal Remover GUI (UVR) is a user-friendly graphical interface for a powerful vocal removal tool. It leverages advanced deep neural networks to accurately separate vocals, instrumentals, and other components from audio tracks, making high-quality audio source separation accessible to everyone.
+3. **Innovations:** Its primary innovation lies in providing an intuitive graphical user interface (GUI) for a highly effective vocal remover powered by state-of-the-art deep neural networks, making complex audio source separation accessible without command-line expertise.
+4. **Basic Usage:** (Omitted as no specific key usage or example was provided in the description)
+5. **Summary:** Ultimate Vocal Remover GUI simplifies high-quality audio source separation, allowing users to easily remove vocals and other components from songs using deep neural networks through a user-friendly interface.
+
+---
+### 📌 [HisMax/RedInk](https://github.com/HisMax/RedInk)
+
+
+**⭐ Stars:** 5,116 | **🍴 Forks:** 969 | **📅 Updated:** 2026-04-11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** HisMax/RedInk  
+2. **Brief Introduction:** Red Ink is a comprehensive generator for Xiaohongshu, enabling users to create text and images seamlessly using the Nano Banana Pro.  
+3. **Innovations:** The repository features a unique integration of text and image generation tailored specifically for Xiaohongshu, allowing for efficient content creation in a single workflow.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** Red Ink streamlines the process of generating engaging Xiaohongshu content through an innovative text-and-image generation tool.  
+**Repository URL:** [HisMax/RedInk](https://github.com/HisMax/RedInk)
+
+---
+### 📌 [ExplosiveCoderflome/AI-Novel-Writing-Assistant](https://github.com/ExplosiveCoderflome/AI-Novel-Writing-Assistant)
+
+
+**⭐ Stars:** 609 | **🍴 Forks:** 143 | **📅 Updated:** 2026-04-11
+
+
+
+
+
+1. **Repository Name:** ExplosiveCoderflome/AI-Novel-Writing-Assistant  
+2. **Brief Introduction:** An AI-native open-source system designed for long-form novel writing, facilitating the journey from a single idea to a complete novel through structured planning and agent-driven workflows.  
+3. **Innovations:** Features include an agent-driven approach, worldbuilding tools, a writing engine, retrieval-augmented generation (RAG), and a comprehensive workflow for producing entire books.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** This repository provides a comprehensive toolset for novice writers to develop their ideas into fully realized novels.  
+**Repository URL:** [AI-Novel-Writing-Assistant](https://github.com/ExplosiveCoderflome/AI-Novel-Writing-Assistant)
+
+---
+### 📌 [Narcooo/inkos](https://github.com/Narcooo/inkos)
+
+
+**⭐ Stars:** 4,075 | **🍴 Forks:** 764 | **📅 Updated:** 2026-04-11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** Narcooo/inkos
+2. **Brief Introduction:** An autonomous novel writing CLI agent that utilizes AI to write, audit, and revise novels, incorporating human review checkpoints.
+3. **Innovations:** The repository features AI-driven writing capabilities, automated auditing, and revision processes, along with integration of human feedback to enhance the quality of novel writing.
+4. **Basic Usage:** Not specified.
+5. **Summary:** The project aims to streamline the novel writing process by leveraging AI while ensuring quality through human oversight.
+   **Repository URL:** [Narcooo/inkos](https://github.com/Narcooo/inkos)
+
+---
+### 📌 [Anionex/banana-slides](https://github.com/Anionex/banana-slides)
+
+
+**⭐ Stars:** 13,669 | **🍴 Forks:** 1,596 | **📅 Updated:** 2026-04-10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** Anionex/banana-slides
+2. **Brief Introduction:** An AI-native slide generator based on the nano banana pro🍌, designed to create dynamic "Vibe PPT" presentations effortlessly.
+3. **Innovations:** Supports uploading custom template images and materials, intelligently parses content, auto-generates slides from outlines or descriptions, allows verbal modifications of specific areas, and enables one-click export of editable PPT files.
+4. **Basic Usage:** Not specified.
+5. **Summary:** This repository offers a unique solution for generating personalized presentations using AI technology, streamlining the creation process for users.
+   **Repository URL:** [Anionex/banana-slides](https://github.com/Anionex/banana-slides)
+
+---
+<a id="web-development"></a>
+## Web Development (Total 1)
+
+> Tools and frameworks aimed at building and enhancing web applications and services.
+
+### 📌 [DigitalPlatDev/FreeDomain](https://github.com/DigitalPlatDev/FreeDomain)
+
+
+**⭐ Stars:** 156,628 | **🍴 Forks:** 2,672 | **📅 Updated:** 2026-04-11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** DigitalPlatDev/FreeDomain
+2. **Brief Introduction:** FreeDomain offers users the ability to register and manage free domain names, making web presence accessible to everyone.
+3. **Innovations:** The repository features a user-friendly interface for domain registration, automated DNS management, and a unique system for ensuring domain availability without costs.
+4. **Basic Usage:** Users can easily register a domain by following the straightforward setup process outlined in the documentation.
+5. **Summary:** FreeDomain democratizes web presence by providing free domain registration and management tools for all users.
+   **Repository URL:** [DigitalPlatDev/FreeDomain](https://github.com/DigitalPlatDev/FreeDomain)
+
+---
+<a id="robotics"></a>
+## Robotics (Total 1)
+
+> Projects focused on building and programming robots and autonomous systems.
+
+### 📌 [datawhalechina/every-embodied](https://github.com/datawhalechina/every-embodied)
+
+
+**⭐ Stars:** 1,325 | **🍴 Forks:** 147 | **📅 Updated:** 2026-04-11
+
+
+
+
+1. **Repository Name:** datawhalechina/every-embodied  
+2. **Brief Introduction:** A project designed for beginners to build their own embodied intelligent robots from scratch using Python, focusing on various models like VLA, OpenVLA, SmolVLA, and Pi0.  
+3. **Innovations:** The repository offers a step-by-step approach to constructing embodied intelligence systems, making advanced concepts accessible to those with basic Python knowledge.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** This repository serves as a comprehensive guide for building embodied intelligent robots, enhancing understanding of the underlying technologies.  
+**Repository URL:** [datawhalechina/every-embodied](https://github.com/datawhalechina/every-embodied)
+
+---
+<a id="educational-resources"></a>
+## Educational Resources (Total 1)
+
+> Repositories that provide learning materials, tutorials, and tools for educational purposes.
+
+### 📌 [Lordog/dive-into-llms](https://github.com/Lordog/dive-into-llms)
+
+
+**⭐ Stars:** 26,608 | **🍴 Forks:** 3,188 | **📅 Updated:** 2026-04-11
+
+
+
+
+
+1. **Repository Name:** Lordog/dive-into-llms  
+2. **Brief Introduction:** A practical programming tutorial series focused on large language models (LLMs), designed to help users understand and implement LLMs effectively.  
+3. **Innovations:** The repository features hands-on coding examples, comprehensive explanations of LLM concepts, and interactive exercises to facilitate learning and experimentation with LLMs.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** This repository serves as a valuable resource for anyone looking to learn about and work with large language models through practical implementation.
+
+---
+<a id="data-engineering"></a>
+## Data Engineering (Total 1)
+
+> Projects that focus on the architecture and management of data pipelines and storage solutions.
+
+### 📌 [zhu-xlab/GlobalBuildingAtlas](https://github.com/zhu-xlab/GlobalBuildingAtlas)
+
+
+**⭐ Stars:** 2,060 | **🍴 Forks:** 202 | **📅 Updated:** 2026-04-10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** zhu-xlab/GlobalBuildingAtlas  
+2. **Brief Introduction:** An open global dataset providing comprehensive building polygons, heights, and Level of Detail 1 (LoD1) 3D models for urban analysis and development.  
+3. **Innovations:** Features a complete and standardized dataset of building geometries and heights, enabling advanced urban modeling, planning, and analysis across various geographical regions.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** The repository serves as a valuable resource for researchers and developers in urban studies, offering detailed building data for enhanced spatial analysis.  
+**Repository URL:** [GlobalBuildingAtlas](https://github.com/zhu-xlab/GlobalBuildingAtlas)
+
+---
 <a id="other"></a>
-## Other (Total 8)
+## Other (Total 6)
 
 > Repositories that do not fit into the specified categories.
 
-### 📌 [lfnovo/open-notebook](https://github.com/lfnovo/open-notebook)
-
-
-**⭐ Stars:** 22,008 | **🍴 Forks:** 2,515 | **📅 Updated:** 2026-04-10
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** lfnovo/open-notebook
-2. **Brief Introduction:** An open-source project that implements Notebook LM, offering enhanced flexibility and additional features for users.
-3. **Innovations:** This repository stands out for its customizable architecture, allowing users to tailor the notebook experience, and its rich set of features that enhance functionality beyond standard notebook implementations.
-4. **Basic Usage:** Not specified.
-5. **Summary:** The repository provides a versatile and feature-rich alternative to traditional notebook implementations for enhanced data management and analysis.
-
----
 ### 📌 [githubnext/monaspace](https://github.com/githubnext/monaspace)
 
 
-**⭐ Stars:** 18,839 | **🍴 Forks:** 321 | **📅 Updated:** 2026-04-10
+**⭐ Stars:** 18,842 | **🍴 Forks:** 321 | **📅 Updated:** 2026-04-11
+
 
 
 
@@ -1305,7 +1381,8 @@ Here's the summary of the GitHub repository:
 ### 📌 [hmjz100/LinkSwift](https://github.com/hmjz100/LinkSwift)
 
 
-**⭐ Stars:** 13,924 | **🍴 Forks:** 809 | **📅 Updated:** 2026-04-10
+**⭐ Stars:** 13,946 | **🍴 Forks:** 808 | **📅 Updated:** 2026-04-11
+
 
 
 
@@ -1334,7 +1411,8 @@ Here's the summary of the GitHub repository:
 ### 📌 [Diorser/LiteMonitor](https://github.com/Diorser/LiteMonitor)
 
 
-**⭐ Stars:** 4,635 | **🍴 Forks:** 189 | **📅 Updated:** 2026-04-10
+**⭐ Stars:** 4,643 | **🍴 Forks:** 189 | **📅 Updated:** 2026-04-11
+
 
 
 
@@ -1366,7 +1444,8 @@ Here's the summary of the LiteMonitor GitHub repository:
 ### 📌 [VoltAgent/awesome-openclaw-skills](https://github.com/VoltAgent/awesome-openclaw-skills)
 
 
-**⭐ Stars:** 45,323 | **🍴 Forks:** 4,406 | **📅 Updated:** 2026-04-10
+**⭐ Stars:** 45,460 | **🍴 Forks:** 4,416 | **📅 Updated:** 2026-04-11
+
 
 
 
@@ -1397,7 +1476,8 @@ Here's the summary of the LiteMonitor GitHub repository:
 ### 📌 [allenk/GeminiWatermarkTool](https://github.com/allenk/GeminiWatermarkTool)
 
 
-**⭐ Stars:** 2,048 | **🍴 Forks:** 172 | **📅 Updated:** 2026-04-10
+**⭐ Stars:** 2,057 | **🍴 Forks:** 174 | **📅 Updated:** 2026-04-11
+
 
 
 
@@ -1424,41 +1504,11 @@ Here's the summary of the LiteMonitor GitHub repository:
 5. **Summary:** This repository provides a specialized tool for managing watermarks on Gemini devices, improving user experience and efficiency.
 
 ---
-### 📌 [DigitalPlatDev/FreeDomain](https://github.com/DigitalPlatDev/FreeDomain)
-
-
-**⭐ Stars:** 156,472 | **🍴 Forks:** 2,668 | **📅 Updated:** 2026-04-10
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** DigitalPlatDev/FreeDomain
-2. **Brief Introduction:** FreeDomain offers users the ability to register and manage free domain names, making web presence accessible to everyone.
-3. **Innovations:** The repository features a user-friendly interface for domain registration, automated DNS management, and a unique system for ensuring domain availability without costs.
-4. **Basic Usage:** Users can easily register a domain by following the straightforward setup process outlined in the documentation.
-5. **Summary:** FreeDomain democratizes web presence by providing free domain registration and management tools for all users.
-   **Repository URL:** [DigitalPlatDev/FreeDomain](https://github.com/DigitalPlatDev/FreeDomain)
-
----
 ### 📌 [Tosencen/XMSLEEP](https://github.com/Tosencen/XMSLEEP)
 
 
-**⭐ Stars:** 1,204 | **🍴 Forks:** 64 | **📅 Updated:** 2026-04-09
+**⭐ Stars:** 1,207 | **🍴 Forks:** 64 | **📅 Updated:** 2026-04-10
+
 
 
 
@@ -1492,10 +1542,10 @@ Here's the summary of the LiteMonitor GitHub repository:
 
 - **Total repositories:** 50
 - **Languages:** 12
-- **Generated on:** 2026-04-10
+- **Generated on:** 2026-04-11
 - **AI Model:** GitHub Copilot
 
-- **API Calls:** Copilot=2, OpenRouter=0, Gemini=0
+- **API Calls:** Copilot=0, OpenRouter=0, Gemini=0
 ---
 
 *This document is generated by AI. For any errors, please refer to the original repository information.*
