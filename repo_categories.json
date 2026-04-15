@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-14T06:10:01Z",
+  "generated_at": "2026-04-15T06:09:05Z",
   "model_choice": "copilot",
   "min_categories": 5,
   "max_categories": 12,
@@ -8,12 +8,12 @@
       {
         "id": "C1",
         "name": "AI Agents",
-        "description": "Repositories focused on developing intelligent agents that can perform tasks autonomously or assist users."
+        "description": "Repositories focused on developing intelligent agents for various tasks and interactions."
       },
       {
         "id": "C2",
         "name": "Natural Language Processing",
-        "description": "Projects related to processing and understanding human language using AI techniques."
+        "description": "Projects related to processing and understanding human language through AI and machine learning."
       },
       {
         "id": "C3",
@@ -28,32 +28,32 @@
       {
         "id": "C5",
         "name": "Data Science",
-        "description": "Projects that focus on data analysis, integration, and visualization across various domains."
+        "description": "Projects that focus on data analysis, visualization, and scientific research methodologies."
       },
       {
         "id": "C6",
         "name": "Robotics",
-        "description": "Repositories aimed at building and programming robots, including embodied intelligent systems."
+        "description": "Repositories aimed at building and programming robots and autonomous systems."
       },
       {
         "id": "C7",
         "name": "Document Processing",
-        "description": "Tools for translating, summarizing, or converting documents into different formats."
+        "description": "Tools for handling, translating, and converting documents across various formats."
       },
       {
         "id": "C8",
-        "name": "Productivity Tools",
-        "description": "Applications designed to enhance user productivity through automation and intelligent assistance."
+        "name": "Presentation Tools",
+        "description": "Projects that assist in creating, transforming, or enhancing presentation materials."
       },
       {
         "id": "C9",
         "name": "Swarm Intelligence",
-        "description": "Projects that utilize collective behavior models to solve problems through decentralized systems."
+        "description": "Repositories focused on collective behavior models and swarm-based algorithms."
       },
       {
         "id": "C10",
-        "name": "Educational Resources",
-        "description": "Repositories that provide tutorials, guides, or frameworks for learning about AI and related technologies."
+        "name": "Knowledge Management",
+        "description": "Tools and frameworks for organizing, retrieving, and managing knowledge and information."
       },
       {
         "id": "C11",
@@ -86,12 +86,12 @@
     {
       "id": 5,
       "full_name": "jingyaogong/minimind-v",
-      "category_id": "C3"
+      "category_id": "C2"
     },
     {
       "id": 6,
       "full_name": "open-gigaai/giga-brain-0",
-      "category_id": "C1"
+      "category_id": "C2"
     },
     {
       "id": 7,
@@ -121,12 +121,12 @@
     {
       "id": 12,
       "full_name": "ComposioHQ/awesome-claude-skills",
-      "category_id": "C10"
+      "category_id": "C1"
     },
     {
       "id": 13,
       "full_name": "cheahjs/free-llm-api-resources",
-      "category_id": "C10"
+      "category_id": "C2"
     },
     {
       "id": 14,
@@ -166,7 +166,7 @@
     {
       "id": 21,
       "full_name": "HKUDS/Paper2Slides",
-      "category_id": "C7"
+      "category_id": "C8"
     },
     {
       "id": 22,
@@ -196,7 +196,7 @@
     {
       "id": 27,
       "full_name": "CherryHQ/cherry-studio",
-      "category_id": "C8"
+      "category_id": "C1"
     },
     {
       "id": 28,
@@ -261,7 +261,7 @@
     {
       "id": 40,
       "full_name": "Flow-Launcher/Flow.Launcher",
-      "category_id": "C8"
+      "category_id": "C11"
     },
     {
       "id": 41,
