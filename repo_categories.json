@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-15T06:09:05Z",
+  "generated_at": "2026-04-16T06:10:08Z",
   "model_choice": "copilot",
   "min_categories": 5,
   "max_categories": 12,
@@ -8,12 +8,12 @@
       {
         "id": "C1",
         "name": "AI Agents",
-        "description": "Repositories focused on developing intelligent agents for various tasks and interactions."
+        "description": "Repositories focused on developing intelligent agents that perform tasks autonomously or assist users."
       },
       {
         "id": "C2",
         "name": "Natural Language Processing",
-        "description": "Projects related to processing and understanding human language through AI and machine learning."
+        "description": "Projects related to processing and understanding human language using AI techniques."
       },
       {
         "id": "C3",
@@ -33,27 +33,27 @@
       {
         "id": "C6",
         "name": "Robotics",
-        "description": "Repositories aimed at building and programming robots and autonomous systems."
+        "description": "Repositories aimed at building and programming robots, including frameworks for embodied intelligence."
       },
       {
         "id": "C7",
         "name": "Document Processing",
-        "description": "Tools for handling, translating, and converting documents across various formats."
+        "description": "Tools for managing, translating, or converting documents across various formats."
       },
       {
         "id": "C8",
-        "name": "Presentation Tools",
-        "description": "Projects that assist in creating, transforming, or enhancing presentation materials."
+        "name": "Productivity Tools",
+        "description": "Applications designed to enhance user productivity through automation and efficient task management."
       },
       {
         "id": "C9",
         "name": "Swarm Intelligence",
-        "description": "Repositories focused on collective behavior models and swarm-based algorithms."
+        "description": "Projects that utilize collective behavior models to solve problems or predict outcomes."
       },
       {
         "id": "C10",
-        "name": "Knowledge Management",
-        "description": "Tools and frameworks for organizing, retrieving, and managing knowledge and information."
+        "name": "Educational Resources",
+        "description": "Repositories providing tutorials, frameworks, or tools aimed at learning and education in AI and related fields."
       },
       {
         "id": "C11",
@@ -86,12 +86,12 @@
     {
       "id": 5,
       "full_name": "jingyaogong/minimind-v",
-      "category_id": "C2"
+      "category_id": "C3"
     },
     {
       "id": 6,
       "full_name": "open-gigaai/giga-brain-0",
-      "category_id": "C2"
+      "category_id": "C1"
     },
     {
       "id": 7,
@@ -121,12 +121,12 @@
     {
       "id": 12,
       "full_name": "ComposioHQ/awesome-claude-skills",
-      "category_id": "C1"
+      "category_id": "C10"
     },
     {
       "id": 13,
       "full_name": "cheahjs/free-llm-api-resources",
-      "category_id": "C2"
+      "category_id": "C10"
     },
     {
       "id": 14,
@@ -196,7 +196,7 @@
     {
       "id": 27,
       "full_name": "CherryHQ/cherry-studio",
-      "category_id": "C1"
+      "category_id": "C8"
     },
     {
       "id": 28,
@@ -226,7 +226,7 @@
     {
       "id": 33,
       "full_name": "justlovemaki/openclaw-china-docker",
-      "category_id": "C1"
+      "category_id": "C11"
     },
     {
       "id": 34,
@@ -261,7 +261,7 @@
     {
       "id": 40,
       "full_name": "Flow-Launcher/Flow.Launcher",
-      "category_id": "C11"
+      "category_id": "C8"
     },
     {
       "id": 41,
