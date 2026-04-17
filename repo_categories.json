@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-16T06:10:08Z",
+  "generated_at": "2026-04-17T06:11:31Z",
   "model_choice": "copilot",
   "min_categories": 5,
   "max_categories": 12,
@@ -8,52 +8,52 @@
       {
         "id": "C1",
         "name": "AI Agents",
-        "description": "Repositories focused on developing intelligent agents that perform tasks autonomously or assist users."
+        "description": "Repositories focused on developing intelligent agents that perform tasks autonomously."
       },
       {
         "id": "C2",
         "name": "Natural Language Processing",
-        "description": "Projects related to processing and understanding human language using AI techniques."
+        "description": "Projects that involve processing and understanding human language through AI."
       },
       {
         "id": "C3",
         "name": "Computer Vision",
-        "description": "Tools and frameworks for enabling machines to interpret and understand visual information from the world."
+        "description": "Tools and frameworks for enabling machines to interpret and understand visual information."
       },
       {
         "id": "C4",
         "name": "Reinforcement Learning",
-        "description": "Repositories that implement algorithms and frameworks for training agents through reinforcement learning techniques."
+        "description": "Repositories that implement algorithms for training agents through rewards and penalties."
       },
       {
         "id": "C5",
         "name": "Data Science",
-        "description": "Projects that focus on data analysis, visualization, and scientific research methodologies."
+        "description": "Projects that involve data analysis, visualization, and scientific research methodologies."
       },
       {
         "id": "C6",
         "name": "Robotics",
-        "description": "Repositories aimed at building and programming robots, including frameworks for embodied intelligence."
+        "description": "Repositories focused on building and programming robots and autonomous systems."
       },
       {
         "id": "C7",
         "name": "Document Processing",
-        "description": "Tools for managing, translating, or converting documents across various formats."
+        "description": "Tools for managing, translating, and extracting information from documents."
       },
       {
         "id": "C8",
         "name": "Productivity Tools",
-        "description": "Applications designed to enhance user productivity through automation and efficient task management."
+        "description": "Applications designed to enhance user productivity through automation and organization."
       },
       {
         "id": "C9",
-        "name": "Swarm Intelligence",
-        "description": "Projects that utilize collective behavior models to solve problems or predict outcomes."
+        "name": "Visualization",
+        "description": "Projects that create visual representations of data or concepts, enhancing understanding."
       },
       {
         "id": "C10",
-        "name": "Educational Resources",
-        "description": "Repositories providing tutorials, frameworks, or tools aimed at learning and education in AI and related fields."
+        "name": "Research Automation",
+        "description": "Tools that facilitate automated research processes, including paper generation and data integration."
       },
       {
         "id": "C11",
@@ -86,7 +86,7 @@
     {
       "id": 5,
       "full_name": "jingyaogong/minimind-v",
-      "category_id": "C3"
+      "category_id": "C2"
     },
     {
       "id": 6,
@@ -106,12 +106,12 @@
     {
       "id": 9,
       "full_name": "aiming-lab/AutoResearchClaw",
-      "category_id": "C1"
+      "category_id": "C10"
     },
     {
       "id": 10,
       "full_name": "666ghj/MiroFish",
-      "category_id": "C9"
+      "category_id": "C1"
     },
     {
       "id": 11,
@@ -121,12 +121,12 @@
     {
       "id": 12,
       "full_name": "ComposioHQ/awesome-claude-skills",
-      "category_id": "C10"
+      "category_id": "C2"
     },
     {
       "id": 13,
       "full_name": "cheahjs/free-llm-api-resources",
-      "category_id": "C10"
+      "category_id": "C2"
     },
     {
       "id": 14,
@@ -166,7 +166,7 @@
     {
       "id": 21,
       "full_name": "HKUDS/Paper2Slides",
-      "category_id": "C8"
+      "category_id": "C10"
     },
     {
       "id": 22,
@@ -206,12 +206,12 @@
     {
       "id": 29,
       "full_name": "antvis/Infographic",
-      "category_id": "C3"
+      "category_id": "C9"
     },
     {
       "id": 30,
       "full_name": "Anionex/banana-slides",
-      "category_id": "C8"
+      "category_id": "C10"
     },
     {
       "id": 31,
@@ -301,12 +301,12 @@
     {
       "id": 48,
       "full_name": "DigitalPlatDev/FreeDomain",
-      "category_id": "C11"
+      "category_id": "C8"
     },
     {
       "id": 49,
       "full_name": "Tencent/WeKnora",
-      "category_id": "C2"
+      "category_id": "C7"
     },
     {
       "id": 50,
