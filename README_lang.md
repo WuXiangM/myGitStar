@@ -10,7 +10,7 @@
 <hr/>
 
 <p><b>Current account:</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
-<p><b>Generated on:</b> 2026-04-19</p>
+<p><b>Generated on:</b> 2026-04-20</p>
 <p><b>AI Model:</b> GitHub Copilot</p>
 <p><b>Total repositories:</b> 50</p>
 
@@ -36,7 +36,8 @@
 
 ### 📌 [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)
 
-**⭐ Stars:** 99,996 | **🍴 Forks:** 14,187 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 103,070 | **🍴 Forks:** 14,703 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -53,7 +54,8 @@
 
 ### 📌 [EverMind-AI/MSA](https://github.com/EverMind-AI/MSA)
 
-**⭐ Stars:** 3,179 | **🍴 Forks:** 193 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 3,200 | **🍴 Forks:** 194 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -88,6 +90,7 @@
 
 
 
+
 1. **Repository Name:** Henrymachiyu/FIPO  
 2. **Brief Introduction:** FIPO is a value-free reinforcement learning algorithm designed to enhance deeper reasoning capabilities from a clean base model.  
 3. **Innovations:** The repository features a novel approach to reinforcement learning that prioritizes reasoning without bias, allowing for more generalized and adaptable learning outcomes.  
@@ -99,7 +102,8 @@
 
 ### 📌 [datawhalechina/every-embodied](https://github.com/datawhalechina/every-embodied)
 
-**⭐ Stars:** 1,471 | **🍴 Forks:** 162 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 1,497 | **🍴 Forks:** 164 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -123,7 +127,8 @@
 
 ### 📌 [jingyaogong/minimind-v](https://github.com/jingyaogong/minimind-v)
 
-**⭐ Stars:** 7,538 | **🍴 Forks:** 819 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 7,557 | **🍴 Forks:** 822 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -168,6 +173,7 @@
 
 
 
+
 1. **Repository Name:** open-gigaai/giga-brain-0  
 2. **Brief Introduction:** GigaBrain-0 is a vision-language-action model powered by world models, designed to enhance the interaction between visual inputs and language processing for intelligent actions.  
 3. **Innovations:** This repository features advanced integration of vision and language understanding, enabling dynamic action generation based on contextual visual cues, leveraging world models for improved decision-making.  
@@ -180,7 +186,8 @@
 
 ### 📌 [jingyaogong/minimind](https://github.com/jingyaogong/minimind)
 
-**⭐ Stars:** 47,459 | **🍴 Forks:** 5,929 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 47,643 | **🍴 Forks:** 5,973 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -247,6 +254,7 @@
 
 
 
+
 1. **Repository Name:** fire-keeper/BlindWatermark  
 2. **Brief Introduction:** This repository implements an invisible watermarking technique designed to protect the intellectual property of creators by embedding watermarks in digital content.  
 3. **Innovations:** The project features advanced algorithms for embedding and extracting watermarks without altering the perceptual quality of the original content, ensuring robust protection against unauthorized use.  
@@ -258,7 +266,8 @@
 
 ### 📌 [aiming-lab/AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw)
 
-**⭐ Stars:** 11,362 | **🍴 Forks:** 1,310 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 11,405 | **🍴 Forks:** 1,315 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -298,7 +307,8 @@
 
 ### 📌 [666ghj/MiroFish](https://github.com/666ghj/MiroFish)
 
-**⭐ Stars:** 56,142 | **🍴 Forks:** 8,544 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 56,340 | **🍴 Forks:** 8,591 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -367,6 +377,7 @@
 
 
 
+
 1. **Repository Name:** UniPat-AI/UniScientist
 2. **Brief Introduction:** UniScientist aims to enhance scientific research intelligence by providing a unified framework for data integration and analysis across various scientific disciplines.
 3. **Innovations:** The repository features advanced algorithms for data synthesis, cross-disciplinary collaboration tools, and a comprehensive knowledge base that supports diverse scientific inquiries.
@@ -378,7 +389,8 @@
 
 ### 📌 [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
 
-**⭐ Stars:** 54,771 | **🍴 Forks:** 5,878 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 55,017 | **🍴 Forks:** 5,902 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -418,7 +430,8 @@
 
 ### 📌 [cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources)
 
-**⭐ Stars:** 19,054 | **🍴 Forks:** 1,899 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 19,112 | **🍴 Forks:** 1,906 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -459,7 +472,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [Anjok07/ultimatevocalremovergui](https://github.com/Anjok07/ultimatevocalremovergui)
 
-**⭐ Stars:** 24,332 | **🍴 Forks:** 1,822 | **📅 Updated:** 2026-04-18
+**⭐ Stars:** 24,348 | **🍴 Forks:** 1,822 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -500,7 +514,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [anthropics/skills](https://github.com/anthropics/skills)
 
-**⭐ Stars:** 120,119 | **🍴 Forks:** 13,917 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 120,656 | **🍴 Forks:** 13,996 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -567,6 +582,7 @@ Here's the summary of the GitHub repository:
 
 
 
+
 Here's the summary of the GitHub repository:
 
 1. **Repository Name:** Kevin-thu/StoryMem
@@ -579,7 +595,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [Usagi-org/ai-goofish-monitor](https://github.com/Usagi-org/ai-goofish-monitor)
 
-**⭐ Stars:** 10,995 | **🍴 Forks:** 1,570 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 11,007 | **🍴 Forks:** 1,572 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -618,7 +635,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [zhu-xlab/GlobalBuildingAtlas](https://github.com/zhu-xlab/GlobalBuildingAtlas)
 
-**⭐ Stars:** 2,073 | **🍴 Forks:** 201 | **📅 Updated:** 2026-04-18
+**⭐ Stars:** 2,074 | **🍴 Forks:** 201 | **📅 Updated:** 2026-04-19
+
 
 
 
@@ -657,7 +675,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [funstory-ai/BabelDOC](https://github.com/funstory-ai/BabelDOC)
 
-**⭐ Stars:** 8,137 | **🍴 Forks:** 644 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 8,143 | **🍴 Forks:** 645 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -696,7 +715,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [PDFMathTranslate/PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate)
 
-**⭐ Stars:** 33,176 | **🍴 Forks:** 2,989 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 33,203 | **🍴 Forks:** 2,991 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -734,7 +754,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [HKUDS/Paper2Slides](https://github.com/HKUDS/Paper2Slides)
 
-**⭐ Stars:** 3,314 | **🍴 Forks:** 435 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 3,343 | **🍴 Forks:** 440 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -775,7 +796,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [jimmc414/Kosmos](https://github.com/jimmc414/Kosmos)
 
-**⭐ Stars:** 498 | **🍴 Forks:** 94 | **📅 Updated:** 2026-04-15
+**⭐ Stars:** 498 | **🍴 Forks:** 95 | **📅 Updated:** 2026-04-15
+
 
 
 
@@ -815,7 +837,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)
 
-**⭐ Stars:** 5,247 | **🍴 Forks:** 374 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 7,168 | **🍴 Forks:** 542 | **📅 Updated:** 2026-04-20
+
 
 1. **Repository Name:** heygen-com/hyperframes  
 2. **Brief Introduction:** Hyperframes is a tool designed for creating HTML content that can be rendered as videos, specifically tailored for agents.  
@@ -829,7 +852,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [multica-ai/multica](https://github.com/multica-ai/multica)
 
-**⭐ Stars:** 16,300 | **🍴 Forks:** 2,015 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 17,017 | **🍴 Forks:** 2,101 | **📅 Updated:** 2026-04-20
+
 
 1. **Repository Name:** multica-ai/multica  
 2. **Brief Introduction:** An open-source platform for managed agents that transforms coding agents into collaborative teammates, enabling task assignment, progress tracking, and skill compounding.  
@@ -842,7 +866,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [ExplosiveCoderflome/AI-Novel-Writing-Assistant](https://github.com/ExplosiveCoderflome/AI-Novel-Writing-Assistant)
 
-**⭐ Stars:** 690 | **🍴 Forks:** 168 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 697 | **🍴 Forks:** 170 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -867,7 +892,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [hAcKlyc/MyAgents](https://github.com/hAcKlyc/MyAgents)
 
-**⭐ Stars:** 289 | **🍴 Forks:** 37 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 293 | **🍴 Forks:** 37 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -907,7 +933,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [Narcooo/inkos](https://github.com/Narcooo/inkos)
 
-**⭐ Stars:** 4,561 | **🍴 Forks:** 870 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 4,637 | **🍴 Forks:** 894 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -947,7 +974,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [anomalyco/opencode](https://github.com/anomalyco/opencode)
 
-**⭐ Stars:** 145,636 | **🍴 Forks:** 16,525 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 146,113 | **🍴 Forks:** 16,610 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -986,7 +1014,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio)
 
-**⭐ Stars:** 43,806 | **🍴 Forks:** 4,125 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 43,865 | **🍴 Forks:** 4,132 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1026,7 +1055,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [openclaw/openclaw](https://github.com/openclaw/openclaw)
 
-**⭐ Stars:** 360,165 | **🍴 Forks:** 73,394 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 360,740 | **🍴 Forks:** 73,571 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1065,7 +1095,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [antvis/Infographic](https://github.com/antvis/Infographic)
 
-**⭐ Stars:** 4,901 | **🍴 Forks:** 359 | **📅 Updated:** 2026-04-18
+**⭐ Stars:** 4,913 | **🍴 Forks:** 359 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1105,7 +1136,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [Anionex/banana-slides](https://github.com/Anionex/banana-slides)
 
-**⭐ Stars:** 13,980 | **🍴 Forks:** 1,634 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 14,004 | **🍴 Forks:** 1,637 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1147,7 +1179,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents)
 
-**⭐ Stars:** 82,761 | **🍴 Forks:** 13,226 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 83,680 | **🍴 Forks:** 13,340 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1169,7 +1202,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [justlovemaki/openclaw-china-docker](https://github.com/justlovemaki/openclaw-china-docker)
 
-**⭐ Stars:** 3,774 | **🍴 Forks:** 451 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 3,773 | **🍴 Forks:** 452 | **📅 Updated:** 2026-04-19
+
 
 
 
@@ -1191,7 +1225,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [githubnext/monaspace](https://github.com/githubnext/monaspace)
 
-**⭐ Stars:** 18,944 | **🍴 Forks:** 322 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 18,960 | **🍴 Forks:** 322 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1232,7 +1267,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [obra/superpowers](https://github.com/obra/superpowers)
 
-**⭐ Stars:** 159,100 | **🍴 Forks:** 13,851 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 160,373 | **🍴 Forks:** 13,981 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1273,22 +1309,23 @@ Here's a summary of the GitHub repository:
 
 ## 📦 Other (Total 3)
 
-### 📌 [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills)
+### 📌 [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills)
 
-**⭐ Stars:** 58,728 | **🍴 Forks:** 5,067 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 62,733 | **🍴 Forks:** 5,459 | **📅 Updated:** 2026-04-20
 
-1. **Repository Name:** multica-ai/andrej-karpathy-skills  
-2. **Brief Introduction:** This repository contains a CLAUDE.md file aimed at enhancing Claude's coding capabilities, based on insights from Andrej Karpathy regarding common pitfalls in large language model (LLM) coding practices.  
-3. **Innovations:** The repository uniquely focuses on improving LLM behavior in coding by leveraging expert observations, providing a structured approach to mitigate coding errors commonly encountered by AI models.  
+1. **Repository Name:** forrestchang/andrej-karpathy-skills  
+2. **Brief Introduction:** This repository contains a single CLAUDE.md file aimed at enhancing Claude Code's performance, based on Andrej Karpathy's insights into common pitfalls in large language model (LLM) coding.  
+3. **Innovations:** The repository uniquely compiles observations and strategies to mitigate coding errors in LLMs, specifically tailored for improving Claude Code's behavior.  
 4. **Basic Usage:** Not specified.  
-5. **Summary:** This repository serves as a resource for refining the coding performance of AI models by addressing identified shortcomings in their coding abilities.  
-**Repository URL:** [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills)
+5. **Summary:** The repository serves as a resource for refining the coding capabilities of Claude Code by leveraging expert insights on LLM challenges.  
+**Repository URL:** [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills)
 
 ---
 
 ### 📌 [HqWu-HITCS/Awesome-Chinese-LLM](https://github.com/HqWu-HITCS/Awesome-Chinese-LLM)
 
-**⭐ Stars:** 22,533 | **🍴 Forks:** 2,126 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 22,534 | **🍴 Forks:** 2,125 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1327,7 +1364,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [VoltAgent/awesome-openclaw-skills](https://github.com/VoltAgent/awesome-openclaw-skills)
 
-**⭐ Stars:** 46,538 | **🍴 Forks:** 4,559 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 46,654 | **🍴 Forks:** 4,572 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1369,7 +1407,8 @@ Here's a summary of the GitHub repository:
 
 ### 📌 [Diorser/LiteMonitor](https://github.com/Diorser/LiteMonitor)
 
-**⭐ Stars:** 4,726 | **🍴 Forks:** 197 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 4,736 | **🍴 Forks:** 197 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1410,7 +1449,8 @@ Here's the summary of the LiteMonitor GitHub repository:
 
 ### 📌 [Flow-Launcher/Flow.Launcher](https://github.com/Flow-Launcher/Flow.Launcher)
 
-**⭐ Stars:** 14,475 | **🍴 Forks:** 584 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 14,485 | **🍴 Forks:** 585 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1451,7 +1491,8 @@ Here's the summary of the GitHub repository:
 
 ### 📌 [DearVa/Everywhere](https://github.com/DearVa/Everywhere)
 
-**⭐ Stars:** 5,832 | **🍴 Forks:** 355 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 5,832 | **🍴 Forks:** 354 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1494,7 +1535,8 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 ### 📌 [Lordog/dive-into-llms](https://github.com/Lordog/dive-into-llms)
 
-**⭐ Stars:** 32,138 | **🍴 Forks:** 3,907 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 32,641 | **🍴 Forks:** 3,973 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1519,6 +1561,7 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 ### 📌 [wri/global-pasture-watch](https://github.com/wri/global-pasture-watch)
 
 **⭐ Stars:** 59 | **🍴 Forks:** 7 | **📅 Updated:** 2026-03-25
+
 
 
 
@@ -1587,6 +1630,7 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 
 
+
 1. **Repository Name:** automeris-io/WebPlotDigitizer
 2. **Brief Introduction:** WebPlotDigitizer is a computer vision tool designed to extract numerical data from images of plots, graphs, and other visual data representations.
 3. **Innovations:** Key features include support for various plot types, automatic data extraction, and a user-friendly web interface that simplifies the digitization process.
@@ -1599,7 +1643,8 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 ### 📌 [hmjz100/LinkSwift](https://github.com/hmjz100/LinkSwift)
 
-**⭐ Stars:** 14,128 | **🍴 Forks:** 810 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 14,149 | **🍴 Forks:** 809 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1639,7 +1684,8 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 ### 📌 [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser)
 
-**⭐ Stars:** 29,725 | **🍴 Forks:** 1,808 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 29,842 | **🍴 Forks:** 1,823 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1680,7 +1726,8 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 ### 📌 [allenk/GeminiWatermarkTool](https://github.com/allenk/GeminiWatermarkTool)
 
-**⭐ Stars:** 2,128 | **🍴 Forks:** 179 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 2,139 | **🍴 Forks:** 180 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1721,7 +1768,8 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 ### 📌 [DigitalPlatDev/FreeDomain](https://github.com/DigitalPlatDev/FreeDomain)
 
-**⭐ Stars:** 157,769 | **🍴 Forks:** 2,689 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 157,915 | **🍴 Forks:** 2,689 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1763,7 +1811,8 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 ### 📌 [Tencent/WeKnora](https://github.com/Tencent/WeKnora)
 
-**⭐ Stars:** 13,927 | **🍴 Forks:** 1,661 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 13,943 | **🍴 Forks:** 1,663 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1806,10 +1855,10 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 - **Total repositories:** 50
 - **Languages:** 11
-- **Generated on:** 2026-04-19
+- **Generated on:** 2026-04-20
 - **AI Model:** GitHub Copilot
 
-- **API Calls:** Copilot=3, OpenRouter=0, Gemini=0
+- **API Calls:** Copilot=1, OpenRouter=0, Gemini=0
 ---
 
 *This document is generated by AI. For any errors, please refer to the original repository information.*

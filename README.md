@@ -10,7 +10,7 @@
 <hr/>
 
 <p><b>Current account:</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
-<p><b>Generated on:</b> 2026-04-19</p>
+<p><b>Generated on:</b> 2026-04-20</p>
 <p><b>AI Model:</b> GitHub Copilot</p>
 <p><b>Total repositories:</b> 50</p>
 
@@ -18,28 +18,30 @@
 
 ## 📖 Table of Contents
 
-- [AI Agents](#ai-agents) (17) — Repositories focused on developing intelligent agents that can perform tasks autonomously.
-- [Natural Language Processing](#natural-language-processing) (10) — Projects related to processing and understanding human language using AI techniques.
-- [Computer Vision](#computer-vision) (1) — Repositories that involve the interpretation and understanding of visual information from the world.
-- [Reinforcement Learning](#reinforcement-learning) (1) — Projects that utilize reinforcement learning techniques for training models to make decisions.
-- [Data Science](#data-science) (1) — Repositories focused on data analysis, integration, and scientific research methodologies.
-- [Document Processing](#document-processing) (3) — Tools and frameworks for processing, translating, and managing documents.
-- [Robotics](#robotics) (1) — Projects related to building and programming robots, including embodied intelligence.
-- [Visualization Tools](#visualization-tools) (1) — Repositories that focus on creating visual representations of data or information.
-- [Productivity Tools](#productivity-tools) (4) — Tools designed to enhance productivity through automation and efficient task management.
-- [Other](#other) (11) — Repositories that do not fit into the specified categories.
+- [AI Agents](#ai-agents) (19) — Repositories focused on developing intelligent agents for various tasks and applications.
+- [Natural Language Processing](#natural-language-processing) (4) — Projects related to processing and understanding human language using AI techniques.
+- [Computer Vision](#computer-vision) (2) — Tools and frameworks for enabling machines to interpret and understand visual information.
+- [Reinforcement Learning](#reinforcement-learning) (1) — Repositories that implement algorithms and frameworks for training agents through reinforcement learning.
+- [Data Science](#data-science) (3) — Projects focused on data analysis, visualization, and scientific research methodologies.
+- [Robotics](#robotics) (1) — Repositories aimed at building and programming robots and autonomous systems.
+- [Document Processing](#document-processing) (2) — Tools for manipulating, translating, and extracting information from documents.
+- [Productivity Tools](#productivity-tools) (4) — Applications designed to enhance productivity through automation and efficient workflows.
+- [Swarm Intelligence](#swarm-intelligence) (1) — Projects that utilize collective behavior models for problem-solving and prediction.
+- [Educational Resources](#educational-resources) (5) — Repositories providing tutorials, frameworks, and resources for learning AI and related technologies.
+- [Other](#other) (8) — Repositories that do not fit into the specified categories.
 
 ---
 
 <a id="ai-agents"></a>
-## AI Agents (Total 17)
+## AI Agents (Total 19)
 
-> Repositories focused on developing intelligent agents that can perform tasks autonomously.
+> Repositories focused on developing intelligent agents for various tasks and applications.
 
 ### 📌 [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)
 
 
-**⭐ Stars:** 99,996 | **🍴 Forks:** 14,187 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 103,070 | **🍴 Forks:** 14,703 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -53,10 +55,44 @@
 5. **Summary:** Hermes Agent aims to provide a customizable and evolving assistant that improves user productivity and engagement.
 
 ---
+### 📌 [open-gigaai/giga-brain-0](https://github.com/open-gigaai/giga-brain-0)
+
+
+**⭐ Stars:** 2,481 | **🍴 Forks:** 194 | **📅 Updated:** 2026-04-17
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** open-gigaai/giga-brain-0  
+2. **Brief Introduction:** GigaBrain-0 is a vision-language-action model powered by world models, designed to enhance the interaction between visual inputs and language processing for intelligent actions.  
+3. **Innovations:** This repository features advanced integration of vision and language understanding, enabling dynamic action generation based on contextual visual cues, leveraging world models for improved decision-making.  
+4. **Basic Usage:** (No specific usage example provided.)  
+5. **Summary:** GigaBrain-0 aims to advance the capabilities of AI in understanding and acting upon visual and linguistic information seamlessly.  
+**Repository Description:** GigaBrain-0: A World Model-Powered Vision-Language-Action Model  
+**Repository URL:** [GigaBrain-0 on GitHub](https://github.com/open-gigaai/giga-brain-0)
+
+---
 ### 📌 [aiming-lab/AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw)
 
 
-**⭐ Stars:** 11,362 | **🍴 Forks:** 1,310 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 11,405 | **🍴 Forks:** 1,315 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -93,50 +129,11 @@
    **Repository URL:** [AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw)
 
 ---
-### 📌 [666ghj/MiroFish](https://github.com/666ghj/MiroFish)
-
-
-**⭐ Stars:** 56,142 | **🍴 Forks:** 8,544 | **📅 Updated:** 2026-04-19
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** 666ghj/MiroFish
-2. **Brief Introduction:** MiroFish is a simple and universal swarm intelligence engine designed for predicting various outcomes using collective behavior models.
-3. **Innovations:** The repository features a flexible architecture for swarm intelligence algorithms, enabling predictions across diverse domains and applications, along with user-friendly interfaces for easy integration.
-4. **Basic Usage:** N/A
-5. **Summary:** MiroFish serves as a versatile tool for leveraging swarm intelligence to make accurate predictions in multiple fields.
-   **Repository URL:** [MiroFish on GitHub](https://github.com/666ghj/MiroFish)
-
----
 ### 📌 [anthropics/skills](https://github.com/anthropics/skills)
 
 
-**⭐ Stars:** 120,119 | **🍴 Forks:** 13,917 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 120,656 | **🍴 Forks:** 13,996 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -174,7 +171,8 @@
 ### 📌 [Usagi-org/ai-goofish-monitor](https://github.com/Usagi-org/ai-goofish-monitor)
 
 
-**⭐ Stars:** 10,995 | **🍴 Forks:** 1,570 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 11,007 | **🍴 Forks:** 1,572 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -213,7 +211,8 @@
 ### 📌 [jimmc414/Kosmos](https://github.com/jimmc414/Kosmos)
 
 
-**⭐ Stars:** 498 | **🍴 Forks:** 94 | **📅 Updated:** 2026-04-15
+**⭐ Stars:** 498 | **🍴 Forks:** 95 | **📅 Updated:** 2026-04-15
+
 
 
 
@@ -248,10 +247,26 @@
 5. **Summary:** Kosmos serves as a platform for advancing autonomous scientific research through AI-driven methodologies.
 
 ---
+### 📌 [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)
+
+
+**⭐ Stars:** 7,168 | **🍴 Forks:** 542 | **📅 Updated:** 2026-04-20
+
+
+1. **Repository Name:** heygen-com/hyperframes  
+2. **Brief Introduction:** Hyperframes is a tool designed for creating HTML content that can be rendered as videos, specifically tailored for agents.  
+3. **Innovations:** Key features include seamless HTML rendering into video format, user-friendly interface for content creation, and optimized performance for agent applications.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** Hyperframes enables agents to efficiently create and render engaging video content from HTML.  
+**Repository Description:** Write HTML. Render video. Built for agents.  
+**Repository URL:** [https://github.com/heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)
+
+---
 ### 📌 [multica-ai/multica](https://github.com/multica-ai/multica)
 
 
-**⭐ Stars:** 16,300 | **🍴 Forks:** 2,015 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 17,017 | **🍴 Forks:** 2,101 | **📅 Updated:** 2026-04-20
+
 
 1. **Repository Name:** multica-ai/multica  
 2. **Brief Introduction:** An open-source platform for managed agents that transforms coding agents into collaborative teammates, enabling task assignment, progress tracking, and skill compounding.  
@@ -264,7 +279,8 @@
 ### 📌 [ExplosiveCoderflome/AI-Novel-Writing-Assistant](https://github.com/ExplosiveCoderflome/AI-Novel-Writing-Assistant)
 
 
-**⭐ Stars:** 690 | **🍴 Forks:** 168 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 697 | **🍴 Forks:** 170 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -289,7 +305,8 @@
 ### 📌 [hAcKlyc/MyAgents](https://github.com/hAcKlyc/MyAgents)
 
 
-**⭐ Stars:** 289 | **🍴 Forks:** 37 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 293 | **🍴 Forks:** 37 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -329,7 +346,8 @@
 ### 📌 [Narcooo/inkos](https://github.com/Narcooo/inkos)
 
 
-**⭐ Stars:** 4,561 | **🍴 Forks:** 870 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 4,637 | **🍴 Forks:** 894 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -369,7 +387,8 @@
 ### 📌 [anomalyco/opencode](https://github.com/anomalyco/opencode)
 
 
-**⭐ Stars:** 145,636 | **🍴 Forks:** 16,525 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 146,113 | **🍴 Forks:** 16,610 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -408,7 +427,8 @@
 ### 📌 [openclaw/openclaw](https://github.com/openclaw/openclaw)
 
 
-**⭐ Stars:** 360,165 | **🍴 Forks:** 73,394 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 360,740 | **🍴 Forks:** 73,571 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -447,7 +467,8 @@
 ### 📌 [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents)
 
 
-**⭐ Stars:** 82,761 | **🍴 Forks:** 13,226 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 83,680 | **🍴 Forks:** 13,340 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -466,10 +487,34 @@
 **Repository URL:** [https://github.com/msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents)
 
 ---
+### 📌 [justlovemaki/openclaw-china-docker](https://github.com/justlovemaki/openclaw-china-docker)
+
+
+**⭐ Stars:** 3,773 | **🍴 Forks:** 452 | **📅 Updated:** 2026-04-19
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** justlovemaki/openclaw-china-docker  
+2. **Brief Introduction:** This repository provides a Docker version of OpenClaw tailored for the Chinese market, pre-configured with plugins for popular IM platforms like Feishu, DingTalk, QQ, and WeChat.  
+3. **Innovations:** Distinctive features include seamless integration of multiple Chinese IM platforms, pre-installed plugins, and simplified deployment for AI bot gateways.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** The repository facilitates quick deployment of an AI bot gateway that supports various Chinese IM platforms.  
+**Repository URL:** [justlovemaki/openclaw-china-docker](https://github.com/justlovemaki/openclaw-china-docker)
+
+---
 ### 📌 [obra/superpowers](https://github.com/obra/superpowers)
 
 
-**⭐ Stars:** 159,100 | **🍴 Forks:** 13,851 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 160,373 | **🍴 Forks:** 13,981 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -512,7 +557,8 @@ Here's a summary of the GitHub repository:
 ### 📌 [VoltAgent/awesome-openclaw-skills](https://github.com/VoltAgent/awesome-openclaw-skills)
 
 
-**⭐ Stars:** 46,538 | **🍴 Forks:** 4,559 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 46,654 | **🍴 Forks:** 4,572 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -552,7 +598,8 @@ Here's a summary of the GitHub repository:
 ### 📌 [DearVa/Everywhere](https://github.com/DearVa/Everywhere)
 
 
-**⭐ Stars:** 5,832 | **🍴 Forks:** 355 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 5,832 | **🍴 Forks:** 354 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -593,7 +640,8 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 ### 📌 [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser)
 
 
-**⭐ Stars:** 29,725 | **🍴 Forks:** 1,808 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 29,842 | **🍴 Forks:** 1,823 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -630,14 +678,15 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 
 ---
 <a id="natural-language-processing"></a>
-## Natural Language Processing (Total 10)
+## Natural Language Processing (Total 4)
 
 > Projects related to processing and understanding human language using AI techniques.
 
 ### 📌 [EverMind-AI/MSA](https://github.com/EverMind-AI/MSA)
 
 
-**⭐ Stars:** 3,179 | **🍴 Forks:** 193 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 3,200 | **🍴 Forks:** 194 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -657,67 +706,11 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 **Repository URL:** [EverMind-AI/MSA](https://github.com/EverMind-AI/MSA)
 
 ---
-### 📌 [jingyaogong/minimind-v](https://github.com/jingyaogong/minimind-v)
-
-
-**⭐ Stars:** 7,538 | **🍴 Forks:** 819 | **📅 Updated:** 2026-04-19
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** jingyaogong/minimind-v  
-2. **Brief Introduction:** A visual language model (VLM) that allows users to train a 67M-parameter model from scratch in just one hour.  
-3. **Innovations:** This repository features rapid training capabilities for a large-scale visual model, enabling efficient experimentation and deployment in multimodal tasks.  
-4. **Basic Usage:** Not provided.  
-5. **Summary:** Minimind-v offers a quick and efficient way to train a powerful visual language model, enhancing accessibility for developers and researchers in multimodal AI.  
-**Repository URL:** [https://github.com/jingyaogong/minimind-v](https://github.com/jingyaogong/minimind-v)
-
----
-### 📌 [open-gigaai/giga-brain-0](https://github.com/open-gigaai/giga-brain-0)
-
-
-**⭐ Stars:** 2,481 | **🍴 Forks:** 194 | **📅 Updated:** 2026-04-17
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** open-gigaai/giga-brain-0  
-2. **Brief Introduction:** GigaBrain-0 is a vision-language-action model powered by world models, designed to enhance the interaction between visual inputs and language processing for intelligent actions.  
-3. **Innovations:** This repository features advanced integration of vision and language understanding, enabling dynamic action generation based on contextual visual cues, leveraging world models for improved decision-making.  
-4. **Basic Usage:** (No specific usage example provided.)  
-5. **Summary:** GigaBrain-0 aims to advance the capabilities of AI in understanding and acting upon visual and linguistic information seamlessly.  
-**Repository Description:** GigaBrain-0: A World Model-Powered Vision-Language-Action Model  
-**Repository URL:** [GigaBrain-0 on GitHub](https://github.com/open-gigaai/giga-brain-0)
-
----
 ### 📌 [jingyaogong/minimind](https://github.com/jingyaogong/minimind)
 
 
-**⭐ Stars:** 47,459 | **🍴 Forks:** 5,929 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 47,643 | **🍴 Forks:** 5,973 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -753,91 +746,11 @@ Here's the summary of the GitHub repository "DearVa/Everywhere":
 **Repository URL:** [https://github.com/jingyaogong/minimind](https://github.com/jingyaogong/minimind)
 
 ---
-### 📌 [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
-
-
-**⭐ Stars:** 54,771 | **🍴 Forks:** 5,878 | **📅 Updated:** 2026-04-19
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** ComposioHQ/awesome-claude-skills
-2. **Brief Introduction:** A curated collection of exceptional Claude Skills, resources, and tools designed to enhance and customize Claude AI workflows.
-3. **Innovations:** This repository features a comprehensive list of innovative skills and resources that enable users to tailor their interactions with Claude AI, improving functionality and user experience.
-4. **Basic Usage:** Not specified.
-5. **Summary:** This repository serves as a valuable resource for anyone looking to optimize their use of Claude AI through curated skills and tools.
-   **Repository URL:** [awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
-
----
-### 📌 [cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources)
-
-
-**⭐ Stars:** 19,054 | **🍴 Forks:** 1,899 | **📅 Updated:** 2026-04-19
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Here's the summary of the GitHub repository:
-
-1. **Repository Name:** cheahjs/free-llm-api-resources
-2. **Brief Introduction:** A curated list of free Large Language Model (LLM) inference resources that are accessible via API, helping developers find cost-free options for their projects.
-3. **Innovations:** It provides a centralized, organized directory of otherwise scattered free LLM API resources, significantly simplifying the discovery process for developers seeking no-cost inference.
-4. **Basic Usage:** Browse the repository's README file to find and select a free LLM API resource suitable for your development needs.
-5. **Summary:** This repository serves as a valuable directory for developers to easily discover and leverage free LLM inference APIs for various applications.
-
----
 ### 📌 [Kevin-thu/StoryMem](https://github.com/Kevin-thu/StoryMem)
 
 
 **⭐ Stars:** 719 | **🍴 Forks:** 69 | **📅 Updated:** 2026-04-16
+
 
 
 
@@ -875,287 +788,11 @@ Here's the summary of the GitHub repository:
 5. **Summary:** StoryMem provides a novel approach to generate coherent, multi-shot narratives from long videos by integrating a memory-based mechanism.
 
 ---
-### 📌 [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills)
-
-
-**⭐ Stars:** 58,728 | **🍴 Forks:** 5,067 | **📅 Updated:** 2026-04-19
-
-1. **Repository Name:** multica-ai/andrej-karpathy-skills  
-2. **Brief Introduction:** This repository contains a CLAUDE.md file aimed at enhancing Claude's coding capabilities, based on insights from Andrej Karpathy regarding common pitfalls in large language model (LLM) coding practices.  
-3. **Innovations:** The repository uniquely focuses on improving LLM behavior in coding by leveraging expert observations, providing a structured approach to mitigate coding errors commonly encountered by AI models.  
-4. **Basic Usage:** Not specified.  
-5. **Summary:** This repository serves as a resource for refining the coding performance of AI models by addressing identified shortcomings in their coding abilities.  
-**Repository URL:** [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills)
-
----
-### 📌 [HqWu-HITCS/Awesome-Chinese-LLM](https://github.com/HqWu-HITCS/Awesome-Chinese-LLM)
-
-
-**⭐ Stars:** 22,533 | **🍴 Forks:** 2,126 | **📅 Updated:** 2026-04-19
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** HqWu-HITCS/Awesome-Chinese-LLM  
-2. **Brief Introduction:** A curated collection of open-source Chinese large language models, focusing on smaller models suitable for private deployment and lower training costs, including base models, domain-specific fine-tuning, applications, datasets, and tutorials.  
-3. **Innovations:** Highlights include a focus on smaller, easily deployable models, resources for domain-specific applications, and comprehensive tutorials for users to effectively utilize and train models.  
-4. **Basic Usage:** N/A  
-5. **Summary:** This repository serves as a valuable resource for developers and researchers interested in accessible and cost-effective Chinese large language models.  
-**Repository URL:** [Awesome-Chinese-LLM](https://github.com/HqWu-HITCS/Awesome-Chinese-LLM)
-
----
-### 📌 [Lordog/dive-into-llms](https://github.com/Lordog/dive-into-llms)
-
-
-**⭐ Stars:** 32,138 | **🍴 Forks:** 3,907 | **📅 Updated:** 2026-04-19
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** Lordog/dive-into-llms  
-2. **Brief Introduction:** A practical programming tutorial series focused on large language models (LLMs), designed to help users understand and implement LLMs effectively.  
-3. **Innovations:** The repository features hands-on coding examples, comprehensive explanations of LLM concepts, and interactive exercises to facilitate learning and experimentation with LLMs.  
-4. **Basic Usage:** Not specified.  
-5. **Summary:** This repository serves as a valuable resource for anyone looking to learn about and work with large language models through practical implementation.
-
----
-<a id="computer-vision"></a>
-## Computer Vision (Total 1)
-
-> Repositories that involve the interpretation and understanding of visual information from the world.
-
-### 📌 [automeris-io/WebPlotDigitizer](https://github.com/automeris-io/WebPlotDigitizer)
-
-
-**⭐ Stars:** 3,053 | **🍴 Forks:** 425 | **📅 Updated:** 2026-04-18
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** automeris-io/WebPlotDigitizer
-2. **Brief Introduction:** WebPlotDigitizer is a computer vision tool designed to extract numerical data from images of plots, graphs, and other visual data representations.
-3. **Innovations:** Key features include support for various plot types, automatic data extraction, and a user-friendly web interface that simplifies the digitization process.
-4. **Basic Usage:** Users can upload an image of a plot, select data points, and export the extracted data in multiple formats.
-5. **Summary:** This tool provides an efficient way to convert visual data into usable numerical formats for analysis.
-   **Repository Description:** Computer vision assisted tool to extract numerical data from plot images.
-   **Repository URL:** https://github.com/automeris-io/WebPlotDigitizer
-
----
-<a id="reinforcement-learning"></a>
-## Reinforcement Learning (Total 1)
-
-> Projects that utilize reinforcement learning techniques for training models to make decisions.
-
-### 📌 [Henrymachiyu/FIPO](https://github.com/Henrymachiyu/FIPO)
-
-
-**⭐ Stars:** 15 | **🍴 Forks:** 1 | **📅 Updated:** 2026-04-17
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** Henrymachiyu/FIPO  
-2. **Brief Introduction:** FIPO is a value-free reinforcement learning algorithm designed to enhance deeper reasoning capabilities from a clean base model.  
-3. **Innovations:** The repository features a novel approach to reinforcement learning that prioritizes reasoning without bias, allowing for more generalized and adaptable learning outcomes.  
-4. **Basic Usage:** Not specified.  
-5. **Summary:** FIPO aims to improve reasoning in AI models by implementing a unique, value-free reinforcement learning strategy.  
-**Repository URL:** [FIPO on GitHub](https://github.com/Henrymachiyu/FIPO)
-
----
-<a id="data-science"></a>
-## Data Science (Total 1)
-
-> Repositories focused on data analysis, integration, and scientific research methodologies.
-
-### 📌 [UniPat-AI/UniScientist](https://github.com/UniPat-AI/UniScientist)
-
-
-**⭐ Stars:** 160 | **🍴 Forks:** 12 | **📅 Updated:** 2026-04-17
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** UniPat-AI/UniScientist
-2. **Brief Introduction:** UniScientist aims to enhance scientific research intelligence by providing a unified framework for data integration and analysis across various scientific disciplines.
-3. **Innovations:** The repository features advanced algorithms for data synthesis, cross-disciplinary collaboration tools, and a comprehensive knowledge base that supports diverse scientific inquiries.
-4. **Basic Usage:** Not provided.
-5. **Summary:** UniScientist serves as a powerful tool for fostering collaboration and innovation in scientific research through a unified approach.
-   **Repository URL:** [UniScientist on GitHub](https://github.com/UniPat-AI/UniScientist)
-
----
-<a id="document-processing"></a>
-## Document Processing (Total 3)
-
-> Tools and frameworks for processing, translating, and managing documents.
-
-### 📌 [funstory-ai/BabelDOC](https://github.com/funstory-ai/BabelDOC)
-
-
-**⭐ Stars:** 8,137 | **🍴 Forks:** 644 | **📅 Updated:** 2026-04-19
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** funstory-ai/BabelDOC  
-2. **Brief Introduction:** BabelDOC is a document translation tool designed to facilitate seamless language conversion for various document formats.  
-3. **Innovations:** It supports multiple file types, utilizes advanced translation algorithms, and offers a user-friendly interface for efficient document handling.  
-4. **Basic Usage:** (No specific usage example provided)  
-5. **Summary:** BabelDOC aims to simplify the process of translating documents across different languages and formats.  
-**Repository URL:** [BabelDOC](https://github.com/funstory-ai/BabelDOC)
-
----
-### 📌 [PDFMathTranslate/PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate)
-
-
-**⭐ Stars:** 33,176 | **🍴 Forks:** 2,989 | **📅 Updated:** 2026-04-19
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** PDFMathTranslate/PDFMathTranslate  
-2. **Brief Introduction:** PDFMathTranslate offers a tool for translating PDF scientific papers while preserving their original formatting, utilizing various AI translation services.  
-3. **Innovations:** The repository features a multilingual translation capability that maintains the layout of documents, supports multiple translation services (Google, DeepL, Ollama, OpenAI), and provides various interfaces including CLI, GUI, MCP, Docker, and Zotero integration.  
-4. **Basic Usage:** Not specified.  
-5. **Summary:** This repository provides a comprehensive solution for bilingual translation of PDF documents, ensuring format preservation and compatibility with popular translation services.
-
----
 ### 📌 [Tencent/WeKnora](https://github.com/Tencent/WeKnora)
 
 
-**⭐ Stars:** 13,927 | **🍴 Forks:** 1,661 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 13,943 | **🍴 Forks:** 1,663 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1198,24 +835,22 @@ Here's the summary of the GitHub repository:
 
 - **Total repositories:** 50
 - **Languages:** 11
-- **Generated on:** 2026-04-19
+- **Generated on:** 2026-04-20
 - **AI Model:** GitHub Copilot
 
-- **API Calls:** Copilot=3, OpenRouter=0, Gemini=0
+- **API Calls:** Copilot=1, OpenRouter=0, Gemini=0
 ---
 
 *This document is generated by AI. For any errors, please refer to the original repository information.*
-<a id="robotics"></a>
-## Robotics (Total 1)
+<a id="computer-vision"></a>
+## Computer Vision (Total 2)
 
-> Projects related to building and programming robots, including embodied intelligence.
+> Tools and frameworks for enabling machines to interpret and understand visual information.
 
-### 📌 [datawhalechina/every-embodied](https://github.com/datawhalechina/every-embodied)
-
-
-**⭐ Stars:** 1,471 | **🍴 Forks:** 162 | **📅 Updated:** 2026-04-19
+### 📌 [jingyaogong/minimind-v](https://github.com/jingyaogong/minimind-v)
 
 
+**⭐ Stars:** 7,557 | **🍴 Forks:** 822 | **📅 Updated:** 2026-04-20
 
 
 
@@ -1226,23 +861,140 @@ Here's the summary of the GitHub repository:
 
 
 
-1. **Repository Name:** datawhalechina/every-embodied  
-2. **Brief Introduction:** A project designed for beginners to build their own embodied intelligent robots from scratch using Python, focusing on various models like VLA, OpenVLA, SmolVLA, and Pi0.  
-3. **Innovations:** The repository offers a step-by-step approach to constructing embodied intelligence systems, making advanced concepts accessible to those with basic Python knowledge.  
-4. **Basic Usage:** Not specified.  
-5. **Summary:** This repository serves as a comprehensive guide for building embodied intelligent robots, enhancing understanding of the underlying technologies.  
-**Repository URL:** [datawhalechina/every-embodied](https://github.com/datawhalechina/every-embodied)
+
+
+
+
+1. **Repository Name:** jingyaogong/minimind-v  
+2. **Brief Introduction:** A visual language model (VLM) that allows users to train a 67M-parameter model from scratch in just one hour.  
+3. **Innovations:** This repository features rapid training capabilities for a large-scale visual model, enabling efficient experimentation and deployment in multimodal tasks.  
+4. **Basic Usage:** Not provided.  
+5. **Summary:** Minimind-v offers a quick and efficient way to train a powerful visual language model, enhancing accessibility for developers and researchers in multimodal AI.  
+**Repository URL:** [https://github.com/jingyaogong/minimind-v](https://github.com/jingyaogong/minimind-v)
 
 ---
-<a id="visualization-tools"></a>
-## Visualization Tools (Total 1)
+### 📌 [automeris-io/WebPlotDigitizer](https://github.com/automeris-io/WebPlotDigitizer)
 
-> Repositories that focus on creating visual representations of data or information.
 
+**⭐ Stars:** 3,053 | **🍴 Forks:** 425 | **📅 Updated:** 2026-04-18
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** automeris-io/WebPlotDigitizer
+2. **Brief Introduction:** WebPlotDigitizer is a computer vision tool designed to extract numerical data from images of plots, graphs, and other visual data representations.
+3. **Innovations:** Key features include support for various plot types, automatic data extraction, and a user-friendly web interface that simplifies the digitization process.
+4. **Basic Usage:** Users can upload an image of a plot, select data points, and export the extracted data in multiple formats.
+5. **Summary:** This tool provides an efficient way to convert visual data into usable numerical formats for analysis.
+   **Repository Description:** Computer vision assisted tool to extract numerical data from plot images.
+   **Repository URL:** https://github.com/automeris-io/WebPlotDigitizer
+
+---
+<a id="reinforcement-learning"></a>
+## Reinforcement Learning (Total 1)
+
+> Repositories that implement algorithms and frameworks for training agents through reinforcement learning.
+
+### 📌 [Henrymachiyu/FIPO](https://github.com/Henrymachiyu/FIPO)
+
+
+**⭐ Stars:** 15 | **🍴 Forks:** 1 | **📅 Updated:** 2026-04-17
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** Henrymachiyu/FIPO  
+2. **Brief Introduction:** FIPO is a value-free reinforcement learning algorithm designed to enhance deeper reasoning capabilities from a clean base model.  
+3. **Innovations:** The repository features a novel approach to reinforcement learning that prioritizes reasoning without bias, allowing for more generalized and adaptable learning outcomes.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** FIPO aims to improve reasoning in AI models by implementing a unique, value-free reinforcement learning strategy.  
+**Repository URL:** [FIPO on GitHub](https://github.com/Henrymachiyu/FIPO)
+
+---
+<a id="data-science"></a>
+## Data Science (Total 3)
+
+> Projects focused on data analysis, visualization, and scientific research methodologies.
+
+### 📌 [UniPat-AI/UniScientist](https://github.com/UniPat-AI/UniScientist)
+
+
+**⭐ Stars:** 160 | **🍴 Forks:** 12 | **📅 Updated:** 2026-04-17
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** UniPat-AI/UniScientist
+2. **Brief Introduction:** UniScientist aims to enhance scientific research intelligence by providing a unified framework for data integration and analysis across various scientific disciplines.
+3. **Innovations:** The repository features advanced algorithms for data synthesis, cross-disciplinary collaboration tools, and a comprehensive knowledge base that supports diverse scientific inquiries.
+4. **Basic Usage:** Not provided.
+5. **Summary:** UniScientist serves as a powerful tool for fostering collaboration and innovation in scientific research through a unified approach.
+   **Repository URL:** [UniScientist on GitHub](https://github.com/UniPat-AI/UniScientist)
+
+---
 ### 📌 [antvis/Infographic](https://github.com/antvis/Infographic)
 
 
-**⭐ Stars:** 4,901 | **🍴 Forks:** 359 | **📅 Updated:** 2026-04-18
+**⭐ Stars:** 4,913 | **🍴 Forks:** 359 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1279,15 +1031,169 @@ Here's the summary of the GitHub repository:
    **Repository URL:** [antvis/Infographic](https://github.com/antvis/Infographic)
 
 ---
+### 📌 [wri/global-pasture-watch](https://github.com/wri/global-pasture-watch)
+
+
+**⭐ Stars:** 59 | **🍴 Forks:** 7 | **📅 Updated:** 2026-03-25
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** wri/global-pasture-watch  
+2. **Brief Introduction:** This repository focuses on mapping the extent, management, and condition of global grasslands to support sustainable land use and conservation efforts.  
+3. **Innovations:** Key features include detailed mapping tools, data visualization capabilities, and integration of various datasets to assess grassland health and management practices.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** The project aims to enhance understanding and management of grasslands worldwide for better environmental stewardship.  
+**Repository Description:** Mapping the extent, management and condition of the world’s grasslands  
+**Repository URL:** [https://github.com/wri/global-pasture-watch](https://github.com/wri/global-pasture-watch)
+
+---
+<a id="robotics"></a>
+## Robotics (Total 1)
+
+> Repositories aimed at building and programming robots and autonomous systems.
+
+### 📌 [datawhalechina/every-embodied](https://github.com/datawhalechina/every-embodied)
+
+
+**⭐ Stars:** 1,497 | **🍴 Forks:** 164 | **📅 Updated:** 2026-04-20
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** datawhalechina/every-embodied  
+2. **Brief Introduction:** A project designed for beginners to build their own embodied intelligent robots from scratch using Python, focusing on various models like VLA, OpenVLA, SmolVLA, and Pi0.  
+3. **Innovations:** The repository offers a step-by-step approach to constructing embodied intelligence systems, making advanced concepts accessible to those with basic Python knowledge.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** This repository serves as a comprehensive guide for building embodied intelligent robots, enhancing understanding of the underlying technologies.  
+**Repository URL:** [datawhalechina/every-embodied](https://github.com/datawhalechina/every-embodied)
+
+---
+<a id="document-processing"></a>
+## Document Processing (Total 2)
+
+> Tools for manipulating, translating, and extracting information from documents.
+
+### 📌 [funstory-ai/BabelDOC](https://github.com/funstory-ai/BabelDOC)
+
+
+**⭐ Stars:** 8,143 | **🍴 Forks:** 645 | **📅 Updated:** 2026-04-20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** funstory-ai/BabelDOC  
+2. **Brief Introduction:** BabelDOC is a document translation tool designed to facilitate seamless language conversion for various document formats.  
+3. **Innovations:** It supports multiple file types, utilizes advanced translation algorithms, and offers a user-friendly interface for efficient document handling.  
+4. **Basic Usage:** (No specific usage example provided)  
+5. **Summary:** BabelDOC aims to simplify the process of translating documents across different languages and formats.  
+**Repository URL:** [BabelDOC](https://github.com/funstory-ai/BabelDOC)
+
+---
+### 📌 [PDFMathTranslate/PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate)
+
+
+**⭐ Stars:** 33,203 | **🍴 Forks:** 2,991 | **📅 Updated:** 2026-04-20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** PDFMathTranslate/PDFMathTranslate  
+2. **Brief Introduction:** PDFMathTranslate offers a tool for translating PDF scientific papers while preserving their original formatting, utilizing various AI translation services.  
+3. **Innovations:** The repository features a multilingual translation capability that maintains the layout of documents, supports multiple translation services (Google, DeepL, Ollama, OpenAI), and provides various interfaces including CLI, GUI, MCP, Docker, and Zotero integration.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** This repository provides a comprehensive solution for bilingual translation of PDF documents, ensuring format preservation and compatibility with popular translation services.
+
+---
 <a id="productivity-tools"></a>
 ## Productivity Tools (Total 4)
 
-> Tools designed to enhance productivity through automation and efficient task management.
+> Applications designed to enhance productivity through automation and efficient workflows.
 
 ### 📌 [HKUDS/Paper2Slides](https://github.com/HKUDS/Paper2Slides)
 
 
-**⭐ Stars:** 3,314 | **🍴 Forks:** 435 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 3,343 | **🍴 Forks:** 440 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1328,7 +1234,8 @@ Here's the summary of the GitHub repository:
 ### 📌 [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio)
 
 
-**⭐ Stars:** 43,806 | **🍴 Forks:** 4,125 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 43,865 | **🍴 Forks:** 4,132 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1368,7 +1275,8 @@ Here's the summary of the GitHub repository:
 ### 📌 [Anionex/banana-slides](https://github.com/Anionex/banana-slides)
 
 
-**⭐ Stars:** 13,980 | **🍴 Forks:** 1,634 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 14,004 | **🍴 Forks:** 1,637 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1408,7 +1316,8 @@ Here's the summary of the GitHub repository:
 ### 📌 [Flow-Launcher/Flow.Launcher](https://github.com/Flow-Launcher/Flow.Launcher)
 
 
-**⭐ Stars:** 14,475 | **🍴 Forks:** 584 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 14,485 | **🍴 Forks:** 585 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1446,8 +1355,220 @@ Here's the summary of the GitHub repository:
 5. **Summary:** Flow Launcher is an essential Windows productivity tool that streamlines file and application access, enhanced by a powerful, community-driven plugin system.
 
 ---
+<a id="swarm-intelligence"></a>
+## Swarm Intelligence (Total 1)
+
+> Projects that utilize collective behavior models for problem-solving and prediction.
+
+### 📌 [666ghj/MiroFish](https://github.com/666ghj/MiroFish)
+
+
+**⭐ Stars:** 56,340 | **🍴 Forks:** 8,591 | **📅 Updated:** 2026-04-20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** 666ghj/MiroFish
+2. **Brief Introduction:** MiroFish is a simple and universal swarm intelligence engine designed for predicting various outcomes using collective behavior models.
+3. **Innovations:** The repository features a flexible architecture for swarm intelligence algorithms, enabling predictions across diverse domains and applications, along with user-friendly interfaces for easy integration.
+4. **Basic Usage:** N/A
+5. **Summary:** MiroFish serves as a versatile tool for leveraging swarm intelligence to make accurate predictions in multiple fields.
+   **Repository URL:** [MiroFish on GitHub](https://github.com/666ghj/MiroFish)
+
+---
+<a id="educational-resources"></a>
+## Educational Resources (Total 5)
+
+> Repositories providing tutorials, frameworks, and resources for learning AI and related technologies.
+
+### 📌 [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
+
+
+**⭐ Stars:** 55,017 | **🍴 Forks:** 5,902 | **📅 Updated:** 2026-04-20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** ComposioHQ/awesome-claude-skills
+2. **Brief Introduction:** A curated collection of exceptional Claude Skills, resources, and tools designed to enhance and customize Claude AI workflows.
+3. **Innovations:** This repository features a comprehensive list of innovative skills and resources that enable users to tailor their interactions with Claude AI, improving functionality and user experience.
+4. **Basic Usage:** Not specified.
+5. **Summary:** This repository serves as a valuable resource for anyone looking to optimize their use of Claude AI through curated skills and tools.
+   **Repository URL:** [awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
+
+---
+### 📌 [cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources)
+
+
+**⭐ Stars:** 19,112 | **🍴 Forks:** 1,906 | **📅 Updated:** 2026-04-20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Here's the summary of the GitHub repository:
+
+1. **Repository Name:** cheahjs/free-llm-api-resources
+2. **Brief Introduction:** A curated list of free Large Language Model (LLM) inference resources that are accessible via API, helping developers find cost-free options for their projects.
+3. **Innovations:** It provides a centralized, organized directory of otherwise scattered free LLM API resources, significantly simplifying the discovery process for developers seeking no-cost inference.
+4. **Basic Usage:** Browse the repository's README file to find and select a free LLM API resource suitable for your development needs.
+5. **Summary:** This repository serves as a valuable directory for developers to easily discover and leverage free LLM inference APIs for various applications.
+
+---
+### 📌 [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills)
+
+
+**⭐ Stars:** 62,733 | **🍴 Forks:** 5,459 | **📅 Updated:** 2026-04-20
+
+1. **Repository Name:** forrestchang/andrej-karpathy-skills  
+2. **Brief Introduction:** This repository contains a single CLAUDE.md file aimed at enhancing Claude Code's performance, based on Andrej Karpathy's insights into common pitfalls in large language model (LLM) coding.  
+3. **Innovations:** The repository uniquely compiles observations and strategies to mitigate coding errors in LLMs, specifically tailored for improving Claude Code's behavior.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** The repository serves as a resource for refining the coding capabilities of Claude Code by leveraging expert insights on LLM challenges.  
+**Repository URL:** [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills)
+
+---
+### 📌 [HqWu-HITCS/Awesome-Chinese-LLM](https://github.com/HqWu-HITCS/Awesome-Chinese-LLM)
+
+
+**⭐ Stars:** 22,534 | **🍴 Forks:** 2,125 | **📅 Updated:** 2026-04-20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** HqWu-HITCS/Awesome-Chinese-LLM  
+2. **Brief Introduction:** A curated collection of open-source Chinese large language models, focusing on smaller models suitable for private deployment and lower training costs, including base models, domain-specific fine-tuning, applications, datasets, and tutorials.  
+3. **Innovations:** Highlights include a focus on smaller, easily deployable models, resources for domain-specific applications, and comprehensive tutorials for users to effectively utilize and train models.  
+4. **Basic Usage:** N/A  
+5. **Summary:** This repository serves as a valuable resource for developers and researchers interested in accessible and cost-effective Chinese large language models.  
+**Repository URL:** [Awesome-Chinese-LLM](https://github.com/HqWu-HITCS/Awesome-Chinese-LLM)
+
+---
+### 📌 [Lordog/dive-into-llms](https://github.com/Lordog/dive-into-llms)
+
+
+**⭐ Stars:** 32,641 | **🍴 Forks:** 3,973 | **📅 Updated:** 2026-04-20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. **Repository Name:** Lordog/dive-into-llms  
+2. **Brief Introduction:** A practical programming tutorial series focused on large language models (LLMs), designed to help users understand and implement LLMs effectively.  
+3. **Innovations:** The repository features hands-on coding examples, comprehensive explanations of LLM concepts, and interactive exercises to facilitate learning and experimentation with LLMs.  
+4. **Basic Usage:** Not specified.  
+5. **Summary:** This repository serves as a valuable resource for anyone looking to learn about and work with large language models through practical implementation.
+
+---
 <a id="other"></a>
-## Other (Total 11)
+## Other (Total 8)
 
 > Repositories that do not fit into the specified categories.
 
@@ -1455,6 +1576,7 @@ Here's the summary of the GitHub repository:
 
 
 **⭐ Stars:** 1,625 | **🍴 Forks:** 195 | **📅 Updated:** 2026-04-18
+
 
 
 
@@ -1493,7 +1615,8 @@ Here's the summary of the GitHub repository:
 ### 📌 [Anjok07/ultimatevocalremovergui](https://github.com/Anjok07/ultimatevocalremovergui)
 
 
-**⭐ Stars:** 24,332 | **🍴 Forks:** 1,822 | **📅 Updated:** 2026-04-18
+**⭐ Stars:** 24,348 | **🍴 Forks:** 1,822 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1534,7 +1657,8 @@ Here's the summary of the GitHub repository:
 ### 📌 [zhu-xlab/GlobalBuildingAtlas](https://github.com/zhu-xlab/GlobalBuildingAtlas)
 
 
-**⭐ Stars:** 2,073 | **🍴 Forks:** 201 | **📅 Updated:** 2026-04-18
+**⭐ Stars:** 2,074 | **🍴 Forks:** 201 | **📅 Updated:** 2026-04-19
+
 
 
 
@@ -1570,46 +1694,11 @@ Here's the summary of the GitHub repository:
 **Repository URL:** [GlobalBuildingAtlas](https://github.com/zhu-xlab/GlobalBuildingAtlas)
 
 ---
-### 📌 [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)
-
-
-**⭐ Stars:** 5,247 | **🍴 Forks:** 374 | **📅 Updated:** 2026-04-19
-
-1. **Repository Name:** heygen-com/hyperframes  
-2. **Brief Introduction:** Hyperframes is a tool designed for creating HTML content that can be rendered as videos, specifically tailored for agents.  
-3. **Innovations:** Key features include seamless HTML rendering into video format, user-friendly interface for content creation, and optimized performance for agent applications.  
-4. **Basic Usage:** Not specified.  
-5. **Summary:** Hyperframes enables agents to efficiently create and render engaging video content from HTML.  
-**Repository Description:** Write HTML. Render video. Built for agents.  
-**Repository URL:** [https://github.com/heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)
-
----
-### 📌 [justlovemaki/openclaw-china-docker](https://github.com/justlovemaki/openclaw-china-docker)
-
-
-**⭐ Stars:** 3,774 | **🍴 Forks:** 451 | **📅 Updated:** 2026-04-19
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** justlovemaki/openclaw-china-docker  
-2. **Brief Introduction:** This repository provides a Docker version of OpenClaw tailored for the Chinese market, pre-configured with plugins for popular IM platforms like Feishu, DingTalk, QQ, and WeChat.  
-3. **Innovations:** Distinctive features include seamless integration of multiple Chinese IM platforms, pre-installed plugins, and simplified deployment for AI bot gateways.  
-4. **Basic Usage:** Not specified.  
-5. **Summary:** The repository facilitates quick deployment of an AI bot gateway that supports various Chinese IM platforms.  
-**Repository URL:** [justlovemaki/openclaw-china-docker](https://github.com/justlovemaki/openclaw-china-docker)
-
----
 ### 📌 [githubnext/monaspace](https://github.com/githubnext/monaspace)
 
 
-**⭐ Stars:** 18,944 | **🍴 Forks:** 322 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 18,960 | **🍴 Forks:** 322 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1650,7 +1739,8 @@ Here's the summary of the GitHub repository:
 ### 📌 [Diorser/LiteMonitor](https://github.com/Diorser/LiteMonitor)
 
 
-**⭐ Stars:** 4,726 | **🍴 Forks:** 197 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 4,736 | **🍴 Forks:** 197 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1688,48 +1778,11 @@ Here's the summary of the LiteMonitor GitHub repository:
 5. **Summary:** LiteMonitor provides a lightweight, highly customizable, and comprehensive solution for monitoring Windows hardware performance directly on the desktop or taskbar.
 
 ---
-### 📌 [wri/global-pasture-watch](https://github.com/wri/global-pasture-watch)
-
-
-**⭐ Stars:** 59 | **🍴 Forks:** 7 | **📅 Updated:** 2026-03-25
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. **Repository Name:** wri/global-pasture-watch  
-2. **Brief Introduction:** This repository focuses on mapping the extent, management, and condition of global grasslands to support sustainable land use and conservation efforts.  
-3. **Innovations:** Key features include detailed mapping tools, data visualization capabilities, and integration of various datasets to assess grassland health and management practices.  
-4. **Basic Usage:** Not specified.  
-5. **Summary:** The project aims to enhance understanding and management of grasslands worldwide for better environmental stewardship.  
-**Repository Description:** Mapping the extent, management and condition of the world’s grasslands  
-**Repository URL:** [https://github.com/wri/global-pasture-watch](https://github.com/wri/global-pasture-watch)
-
----
 ### 📌 [hmjz100/LinkSwift](https://github.com/hmjz100/LinkSwift)
 
 
-**⭐ Stars:** 14,128 | **🍴 Forks:** 810 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 14,149 | **🍴 Forks:** 809 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1767,7 +1820,8 @@ Here's the summary of the LiteMonitor GitHub repository:
 ### 📌 [allenk/GeminiWatermarkTool](https://github.com/allenk/GeminiWatermarkTool)
 
 
-**⭐ Stars:** 2,128 | **🍴 Forks:** 179 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 2,139 | **🍴 Forks:** 180 | **📅 Updated:** 2026-04-20
+
 
 
 
@@ -1806,7 +1860,8 @@ Here's the summary of the LiteMonitor GitHub repository:
 ### 📌 [DigitalPlatDev/FreeDomain](https://github.com/DigitalPlatDev/FreeDomain)
 
 
-**⭐ Stars:** 157,769 | **🍴 Forks:** 2,689 | **📅 Updated:** 2026-04-19
+**⭐ Stars:** 157,915 | **🍴 Forks:** 2,689 | **📅 Updated:** 2026-04-20
+
 
 
 
