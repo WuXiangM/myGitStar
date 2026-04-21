@@ -81,7 +81,7 @@ gemini_max_output_tokens: 2000 # 最大输出token数（保守：2000）
 
 # 每次运行处理的最大仓库数，优先使用环境变量 MAX_REPOS，如未设置则使用此配置（0 或留空 表示不限制）
 # Max repositories per run. Env var MAX_REPOS overrides this. 0/empty means no limit.
-max_repos: 50
+max_repos: 0
 
 # 更新模式，可选值：'all'（全部更新）或 'missing_only'（仅更新缺失总结）
 # Update mode: 'all' or 'missing_only'
