@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-20T06:22:50Z",
+  "generated_at": "2026-04-25T06:29:26Z",
   "model_choice": "copilot",
   "min_categories": 5,
   "max_categories": 12,
@@ -8,7 +8,7 @@
       {
         "id": "C1",
         "name": "AI Agents",
-        "description": "Repositories focused on developing intelligent agents for various tasks and applications."
+        "description": "Repositories focused on developing intelligent agents that can interact and perform tasks autonomously."
       },
       {
         "id": "C2",
@@ -18,300 +18,970 @@
       {
         "id": "C3",
         "name": "Computer Vision",
-        "description": "Tools and frameworks for enabling machines to interpret and understand visual information."
+        "description": "Repositories that involve techniques for enabling machines to interpret and understand visual information from the world."
       },
       {
         "id": "C4",
         "name": "Reinforcement Learning",
-        "description": "Repositories that implement algorithms and frameworks for training agents through reinforcement learning."
+        "description": "Projects that implement algorithms for training models through rewards and penalties."
       },
       {
         "id": "C5",
         "name": "Data Science",
-        "description": "Projects focused on data analysis, visualization, and scientific research methodologies."
+        "description": "Repositories that focus on data analysis, visualization, and scientific computing."
       },
       {
         "id": "C6",
         "name": "Robotics",
-        "description": "Repositories aimed at building and programming robots and autonomous systems."
+        "description": "Projects aimed at building and programming robots, including embodied intelligent systems."
       },
       {
         "id": "C7",
-        "name": "Document Processing",
-        "description": "Tools for manipulating, translating, and extracting information from documents."
+        "name": "Presentation Tools",
+        "description": "Repositories that provide tools for creating and managing presentations from various content sources."
       },
       {
         "id": "C8",
-        "name": "Productivity Tools",
-        "description": "Applications designed to enhance productivity through automation and efficient workflows."
+        "name": "Document Processing",
+        "description": "Projects that focus on translating, summarizing, or otherwise processing documents."
       },
       {
         "id": "C9",
-        "name": "Swarm Intelligence",
-        "description": "Projects that utilize collective behavior models for problem-solving and prediction."
+        "name": "3D Modeling",
+        "description": "Repositories related to creating and manipulating 3D models and environments."
       },
       {
         "id": "C10",
-        "name": "Educational Resources",
-        "description": "Repositories providing tutorials, frameworks, and resources for learning AI and related technologies."
+        "name": "Swarm Intelligence",
+        "description": "Projects that utilize collective behavior models to solve problems or predict outcomes."
       },
       {
         "id": "C11",
         "name": "Other",
-        "description": "Repositories that do not fit into the specified categories."
+        "description": "Repositories that do not fit into the defined categories."
       }
     ]
   },
   "assignments": [
     {
       "id": 1,
+      "full_name": "vllm-project/vllm",
+      "category_id": "C11"
+    },
+    {
+      "id": 2,
+      "full_name": "OpenBMB/VoxCPM",
+      "category_id": "C11"
+    },
+    {
+      "id": 3,
       "full_name": "NousResearch/hermes-agent",
       "category_id": "C1"
     },
     {
-      "id": 2,
+      "id": 4,
       "full_name": "EverMind-AI/MSA",
-      "category_id": "C2"
+      "category_id": "C11"
     },
     {
-      "id": 3,
+      "id": 5,
       "full_name": "Henrymachiyu/FIPO",
       "category_id": "C4"
     },
     {
-      "id": 4,
+      "id": 6,
       "full_name": "datawhalechina/every-embodied",
       "category_id": "C6"
     },
     {
-      "id": 5,
+      "id": 7,
       "full_name": "jingyaogong/minimind-v",
       "category_id": "C3"
     },
     {
-      "id": 6,
+      "id": 8,
       "full_name": "open-gigaai/giga-brain-0",
       "category_id": "C1"
     },
     {
-      "id": 7,
+      "id": 9,
       "full_name": "jingyaogong/minimind",
       "category_id": "C2"
     },
     {
-      "id": 8,
+      "id": 10,
       "full_name": "fire-keeper/BlindWatermark",
       "category_id": "C11"
     },
     {
-      "id": 9,
+      "id": 11,
       "full_name": "aiming-lab/AutoResearchClaw",
       "category_id": "C1"
     },
     {
-      "id": 10,
-      "full_name": "666ghj/MiroFish",
-      "category_id": "C9"
-    },
-    {
-      "id": 11,
-      "full_name": "UniPat-AI/UniScientist",
-      "category_id": "C5"
-    },
-    {
       "id": 12,
-      "full_name": "ComposioHQ/awesome-claude-skills",
+      "full_name": "666ghj/MiroFish",
       "category_id": "C10"
     },
     {
       "id": 13,
-      "full_name": "cheahjs/free-llm-api-resources",
-      "category_id": "C10"
+      "full_name": "UniPat-AI/UniScientist",
+      "category_id": "C5"
     },
     {
       "id": 14,
-      "full_name": "Anjok07/ultimatevocalremovergui",
+      "full_name": "ComposioHQ/awesome-claude-skills",
       "category_id": "C11"
     },
     {
       "id": 15,
+      "full_name": "cheahjs/free-llm-api-resources",
+      "category_id": "C11"
+    },
+    {
+      "id": 16,
+      "full_name": "Anjok07/ultimatevocalremovergui",
+      "category_id": "C11"
+    },
+    {
+      "id": 17,
       "full_name": "anthropics/skills",
       "category_id": "C1"
     },
     {
-      "id": 16,
+      "id": 18,
       "full_name": "Kevin-thu/StoryMem",
-      "category_id": "C2"
+      "category_id": "C8"
     },
     {
-      "id": 17,
+      "id": 19,
       "full_name": "Usagi-org/ai-goofish-monitor",
       "category_id": "C1"
     },
     {
-      "id": 18,
-      "full_name": "zhu-xlab/GlobalBuildingAtlas",
-      "category_id": "C11"
-    },
-    {
-      "id": 19,
-      "full_name": "funstory-ai/BabelDOC",
-      "category_id": "C7"
-    },
-    {
       "id": 20,
-      "full_name": "PDFMathTranslate/PDFMathTranslate",
-      "category_id": "C7"
+      "full_name": "zhu-xlab/GlobalBuildingAtlas",
+      "category_id": "C9"
     },
     {
       "id": 21,
-      "full_name": "HKUDS/Paper2Slides",
+      "full_name": "funstory-ai/BabelDOC",
       "category_id": "C8"
     },
     {
       "id": 22,
+      "full_name": "PDFMathTranslate/PDFMathTranslate",
+      "category_id": "C8"
+    },
+    {
+      "id": 23,
+      "full_name": "Anionex/banana-slides",
+      "category_id": "C7"
+    },
+    {
+      "id": 24,
+      "full_name": "HKUDS/Paper2Slides",
+      "category_id": "C7"
+    },
+    {
+      "id": 25,
       "full_name": "jimmc414/Kosmos",
       "category_id": "C1"
     },
     {
-      "id": 23,
-      "full_name": "heygen-com/hyperframes",
-      "category_id": "C1"
-    },
-    {
-      "id": 24,
-      "full_name": "multica-ai/multica",
-      "category_id": "C1"
-    },
-    {
-      "id": 25,
-      "full_name": "ExplosiveCoderflome/AI-Novel-Writing-Assistant",
-      "category_id": "C1"
-    },
-    {
       "id": 26,
-      "full_name": "hAcKlyc/MyAgents",
-      "category_id": "C1"
+      "full_name": "HisMax/RedInk",
+      "category_id": "C11"
     },
     {
       "id": 27,
-      "full_name": "Narcooo/inkos",
-      "category_id": "C1"
+      "full_name": "facebookresearch/sam-3d-body",
+      "category_id": "C11"
     },
     {
       "id": 28,
-      "full_name": "anomalyco/opencode",
-      "category_id": "C1"
+      "full_name": "facebookresearch/sam-3d-objects",
+      "category_id": "C11"
     },
     {
       "id": 29,
-      "full_name": "CherryHQ/cherry-studio",
-      "category_id": "C8"
+      "full_name": "sansan0/TrendRadar",
+      "category_id": "C11"
     },
     {
       "id": 30,
-      "full_name": "openclaw/openclaw",
-      "category_id": "C1"
+      "full_name": "jianchang512/pyvideotrans",
+      "category_id": "C11"
     },
     {
       "id": 31,
-      "full_name": "antvis/Infographic",
-      "category_id": "C5"
+      "full_name": "666ghj/BettaFish",
+      "category_id": "C11"
     },
     {
       "id": 32,
-      "full_name": "Anionex/banana-slides",
-      "category_id": "C8"
+      "full_name": "YILING0013/AI_NovelGenerator",
+      "category_id": "C11"
     },
     {
       "id": 33,
-      "full_name": "msitarzewski/agency-agents",
-      "category_id": "C1"
+      "full_name": "guofei9987/blind_watermark",
+      "category_id": "C11"
     },
     {
       "id": 34,
-      "full_name": "justlovemaki/openclaw-china-docker",
-      "category_id": "C1"
+      "full_name": "CharlesKeeling65/ManureCouplingStrategies",
+      "category_id": "C11"
     },
     {
       "id": 35,
-      "full_name": "githubnext/monaspace",
+      "full_name": "tadata-org/fastapi_mcp",
       "category_id": "C11"
     },
     {
       "id": 36,
-      "full_name": "obra/superpowers",
-      "category_id": "C1"
+      "full_name": "mikf/gallery-dl",
+      "category_id": "C11"
     },
     {
       "id": 37,
-      "full_name": "forrestchang/andrej-karpathy-skills",
-      "category_id": "C10"
+      "full_name": "roboflow/supervision",
+      "category_id": "C11"
     },
     {
       "id": 38,
-      "full_name": "HqWu-HITCS/Awesome-Chinese-LLM",
-      "category_id": "C10"
+      "full_name": "lllyasviel/FramePack",
+      "category_id": "C11"
     },
     {
       "id": 39,
-      "full_name": "VoltAgent/awesome-openclaw-skills",
-      "category_id": "C1"
+      "full_name": "nunchaku-ai/nunchaku",
+      "category_id": "C11"
     },
     {
       "id": 40,
-      "full_name": "Diorser/LiteMonitor",
+      "full_name": "NanmiCoder/MediaCrawler",
       "category_id": "C11"
     },
     {
       "id": 41,
-      "full_name": "Flow-Launcher/Flow.Launcher",
-      "category_id": "C8"
+      "full_name": "arcee-ai/mergekit",
+      "category_id": "C11"
     },
     {
       "id": 42,
-      "full_name": "DearVa/Everywhere",
-      "category_id": "C1"
+      "full_name": "opendatalab/MinerU",
+      "category_id": "C11"
     },
     {
       "id": 43,
-      "full_name": "Lordog/dive-into-llms",
-      "category_id": "C10"
+      "full_name": "Zie619/n8n-workflows",
+      "category_id": "C11"
     },
     {
       "id": 44,
-      "full_name": "wri/global-pasture-watch",
-      "category_id": "C5"
+      "full_name": "hpcaitech/Open-Sora",
+      "category_id": "C11"
     },
     {
       "id": 45,
-      "full_name": "automeris-io/WebPlotDigitizer",
-      "category_id": "C3"
+      "full_name": "1Panel-dev/MaxKB",
+      "category_id": "C11"
     },
     {
       "id": 46,
-      "full_name": "hmjz100/LinkSwift",
+      "full_name": "Peterande/D-FINE",
       "category_id": "C11"
     },
     {
       "id": 47,
-      "full_name": "vercel-labs/agent-browser",
+      "full_name": "Fosowl/agenticSeek",
       "category_id": "C1"
     },
     {
       "id": 48,
-      "full_name": "allenk/GeminiWatermarkTool",
+      "full_name": "robert-mcdermott/ai-knowledge-graph",
       "category_id": "C11"
     },
     {
       "id": 49,
-      "full_name": "DigitalPlatDev/FreeDomain",
+      "full_name": "harry0703/MoneyPrinterTurbo",
       "category_id": "C11"
     },
     {
       "id": 50,
+      "full_name": "kijai/ComfyUI-FramePackWrapper",
+      "category_id": "C11"
+    },
+    {
+      "id": 51,
+      "full_name": "langbot-app/LangBot",
+      "category_id": "C1"
+    },
+    {
+      "id": 52,
+      "full_name": "xming521/WeClone",
+      "category_id": "C11"
+    },
+    {
+      "id": 53,
+      "full_name": "happycola233/tchMaterial-parser",
+      "category_id": "C11"
+    },
+    {
+      "id": 54,
+      "full_name": "0xsline/GeminiImageApp",
+      "category_id": "C11"
+    },
+    {
+      "id": 55,
+      "full_name": "public-apis/public-apis",
+      "category_id": "C11"
+    },
+    {
+      "id": 56,
+      "full_name": "SamuelSchmidgall/AgentLaboratory",
+      "category_id": "C1"
+    },
+    {
+      "id": 57,
+      "full_name": "VisionXLab/CrossEarth",
+      "category_id": "C11"
+    },
+    {
+      "id": 58,
+      "full_name": "microsoft/markitdown",
+      "category_id": "C11"
+    },
+    {
+      "id": 59,
+      "full_name": "subframe7536/maple-font",
+      "category_id": "C11"
+    },
+    {
+      "id": 60,
+      "full_name": "nvbn/thefuck",
+      "category_id": "C11"
+    },
+    {
+      "id": 61,
+      "full_name": "Shubhamsaboo/awesome-llm-apps",
+      "category_id": "C2"
+    },
+    {
+      "id": 62,
+      "full_name": "aws/aws-cli",
+      "category_id": "C11"
+    },
+    {
+      "id": 63,
+      "full_name": "jonathanwilton/PUExtraTrees",
+      "category_id": "C11"
+    },
+    {
+      "id": 64,
+      "full_name": "bilibili/Index-1.9B",
+      "category_id": "C11"
+    },
+    {
+      "id": 65,
+      "full_name": "huggingface/transformers",
+      "category_id": "C2"
+    },
+    {
+      "id": 66,
+      "full_name": "AUTOMATIC1111/stable-diffusion-webui",
+      "category_id": "C2"
+    },
+    {
+      "id": 67,
+      "full_name": "Significant-Gravitas/AutoGPT",
+      "category_id": "C1"
+    },
+    {
+      "id": 68,
+      "full_name": "EvanLi/Github-Ranking",
+      "category_id": "C11"
+    },
+    {
+      "id": 69,
+      "full_name": "Lydorn/Polygonization-by-Frame-Field-Learning",
+      "category_id": "C11"
+    },
+    {
+      "id": 70,
+      "full_name": "bubbliiiing/unet-keras",
+      "category_id": "C11"
+    },
+    {
+      "id": 71,
+      "full_name": "zorzi-s/PolyWorldPretrainedNetwork",
+      "category_id": "C11"
+    },
+    {
+      "id": 72,
+      "full_name": "heygen-com/hyperframes",
+      "category_id": "C1"
+    },
+    {
+      "id": 73,
+      "full_name": "multica-ai/multica",
+      "category_id": "C1"
+    },
+    {
+      "id": 74,
+      "full_name": "ExplosiveCoderflome/AI-Novel-Writing-Assistant",
+      "category_id": "C1"
+    },
+    {
+      "id": 75,
+      "full_name": "hAcKlyc/MyAgents",
+      "category_id": "C1"
+    },
+    {
+      "id": 76,
+      "full_name": "Narcooo/inkos",
+      "category_id": "C1"
+    },
+    {
+      "id": 77,
+      "full_name": "anomalyco/opencode",
+      "category_id": "C1"
+    },
+    {
+      "id": 78,
+      "full_name": "CherryHQ/cherry-studio",
+      "category_id": "C1"
+    },
+    {
+      "id": 79,
+      "full_name": "openclaw/openclaw",
+      "category_id": "C1"
+    },
+    {
+      "id": 80,
+      "full_name": "antvis/Infographic",
+      "category_id": "C3"
+    },
+    {
+      "id": 81,
+      "full_name": "lfnovo/open-notebook",
+      "category_id": "C11"
+    },
+    {
+      "id": 82,
+      "full_name": "CapSoftware/Cap",
+      "category_id": "C11"
+    },
+    {
+      "id": 83,
+      "full_name": "027xiguapi/code-box",
+      "category_id": "C11"
+    },
+    {
+      "id": 84,
+      "full_name": "iptv-org/iptv",
+      "category_id": "C11"
+    },
+    {
+      "id": 85,
+      "full_name": "crocofied/PortNote",
+      "category_id": "C11"
+    },
+    {
+      "id": 86,
+      "full_name": "hanydd/BilibiliSponsorBlock",
+      "category_id": "C11"
+    },
+    {
+      "id": 87,
+      "full_name": "umami-software/umami",
+      "category_id": "C11"
+    },
+    {
+      "id": 88,
+      "full_name": "xyTom/snippai",
+      "category_id": "C11"
+    },
+    {
+      "id": 89,
+      "full_name": "Snouzy/workout-cool",
+      "category_id": "C11"
+    },
+    {
+      "id": 90,
+      "full_name": "imsyy/DailyHotApi",
+      "category_id": "C11"
+    },
+    {
+      "id": 91,
+      "full_name": "cline/cline",
+      "category_id": "C11"
+    },
+    {
+      "id": 92,
+      "full_name": "google-gemini/gemini-cli",
+      "category_id": "C11"
+    },
+    {
+      "id": 93,
+      "full_name": "RSSNext/Folo",
+      "category_id": "C11"
+    },
+    {
+      "id": 94,
+      "full_name": "antvis/mcp-server-chart",
+      "category_id": "C11"
+    },
+    {
+      "id": 95,
+      "full_name": "firecrawl/firecrawl",
+      "category_id": "C11"
+    },
+    {
+      "id": 96,
+      "full_name": "langgenius/dify",
+      "category_id": "C11"
+    },
+    {
+      "id": 97,
+      "full_name": "n8n-io/n8n",
+      "category_id": "C11"
+    },
+    {
+      "id": 98,
+      "full_name": "linshenkx/prompt-optimizer",
+      "category_id": "C11"
+    },
+    {
+      "id": 99,
+      "full_name": "kamranahmedse/developer-roadmap",
+      "category_id": "C11"
+    },
+    {
+      "id": 100,
+      "full_name": "Yuiffy/BiliGPT",
+      "category_id": "C11"
+    },
+    {
+      "id": 101,
+      "full_name": "ahmedkhaleel2004/gitdiagram",
+      "category_id": "C11"
+    },
+    {
+      "id": 102,
+      "full_name": "kevmo314/magic-copy",
+      "category_id": "C11"
+    },
+    {
+      "id": 103,
+      "full_name": "teableio/teable",
+      "category_id": "C11"
+    },
+    {
+      "id": 104,
+      "full_name": "elder-plinius/CL4R1T4S",
+      "category_id": "C11"
+    },
+    {
+      "id": 105,
+      "full_name": "forrestchang/andrej-karpathy-skills",
+      "category_id": "C2"
+    },
+    {
+      "id": 106,
+      "full_name": "HqWu-HITCS/Awesome-Chinese-LLM",
+      "category_id": "C2"
+    },
+    {
+      "id": 107,
+      "full_name": "VoltAgent/awesome-openclaw-skills",
+      "category_id": "C1"
+    },
+    {
+      "id": 108,
+      "full_name": "lukasmasuch/best-of-ml-python",
+      "category_id": "C11"
+    },
+    {
+      "id": 109,
+      "full_name": "ashishpatel26/500-AI-Agents-Projects",
+      "category_id": "C11"
+    },
+    {
+      "id": 110,
+      "full_name": "svcvit/Awesome-Dify-Workflow",
+      "category_id": "C11"
+    },
+    {
+      "id": 111,
+      "full_name": "zijie0/HumanSystemOptimization",
+      "category_id": "C11"
+    },
+    {
+      "id": 112,
+      "full_name": "holyshell/AppsForMac",
+      "category_id": "C11"
+    },
+    {
+      "id": 113,
+      "full_name": "punkpeye/awesome-mcp-servers",
+      "category_id": "C11"
+    },
+    {
+      "id": 114,
+      "full_name": "kkeenee/TG-Twilight-AWAvenue-Ads-Rule",
+      "category_id": "C11"
+    },
+    {
+      "id": 115,
+      "full_name": "datawhalechina/so-large-lm",
+      "category_id": "C11"
+    },
+    {
+      "id": 116,
+      "full_name": "ruanyf/weekly",
+      "category_id": "C11"
+    },
+    {
+      "id": 117,
+      "full_name": "Lordog/dive-into-llms",
+      "category_id": "C2"
+    },
+    {
+      "id": 118,
+      "full_name": "wri/global-pasture-watch",
+      "category_id": "C5"
+    },
+    {
+      "id": 119,
+      "full_name": "roboflow/notebooks",
+      "category_id": "C11"
+    },
+    {
+      "id": 120,
+      "full_name": "patchy631/ai-engineering-hub",
+      "category_id": "C11"
+    },
+    {
+      "id": 121,
+      "full_name": "microsoft/AI-For-Beginners",
+      "category_id": "C1"
+    },
+    {
+      "id": 122,
+      "full_name": "microsoft/generative-ai-for-beginners",
+      "category_id": "C1"
+    },
+    {
+      "id": 123,
+      "full_name": "QwenLM/Qwen3-VL",
+      "category_id": "C1"
+    },
+    {
+      "id": 124,
+      "full_name": "roywright/pu_learning",
+      "category_id": "C4"
+    },
+    {
+      "id": 125,
+      "full_name": "phuijse/bagging_pu",
+      "category_id": "C4"
+    },
+    {
+      "id": 126,
+      "full_name": "henry-gu/prompt-engineering-for-developers",
+      "category_id": "C2"
+    },
+    {
+      "id": 127,
+      "full_name": "google/automl",
+      "category_id": "C1"
+    },
+    {
+      "id": 128,
+      "full_name": "automeris-io/WebPlotDigitizer",
+      "category_id": "C3"
+    },
+    {
+      "id": 129,
+      "full_name": "hmjz100/LinkSwift",
+      "category_id": "C11"
+    },
+    {
+      "id": 130,
+      "full_name": "fogsightai/fogsight",
+      "category_id": "C1"
+    },
+    {
+      "id": 131,
+      "full_name": "glidea/banana-prompt-quicker",
+      "category_id": "C11"
+    },
+    {
+      "id": 132,
+      "full_name": "playcanvas/engine",
+      "category_id": "C11"
+    },
+    {
+      "id": 133,
+      "full_name": "xanderfrangos/twinkle-tray",
+      "category_id": "C11"
+    },
+    {
+      "id": 134,
+      "full_name": "wordshub/free-font",
+      "category_id": "C11"
+    },
+    {
+      "id": 135,
+      "full_name": "mrdoob/three.js",
+      "category_id": "C9"
+    },
+    {
+      "id": 136,
+      "full_name": "SheepChef/Abracadabra",
+      "category_id": "C11"
+    },
+    {
+      "id": 137,
+      "full_name": "yitong2333/Bionic-Reading",
+      "category_id": "C11"
+    },
+    {
+      "id": 138,
+      "full_name": "poloclub/transformer-explainer",
+      "category_id": "C2"
+    },
+    {
+      "id": 139,
+      "full_name": "Diorser/LiteMonitor",
+      "category_id": "C11"
+    },
+    {
+      "id": 140,
+      "full_name": "Flow-Launcher/Flow.Launcher",
+      "category_id": "C11"
+    },
+    {
+      "id": 141,
+      "full_name": "DearVa/Everywhere",
+      "category_id": "C1"
+    },
+    {
+      "id": 142,
+      "full_name": "ZyperWave/ZyperWinOptimize",
+      "category_id": "C11"
+    },
+    {
+      "id": 143,
+      "full_name": "randyrants/sharpkeys",
+      "category_id": "C11"
+    },
+    {
+      "id": 144,
+      "full_name": "microsoft/PowerToys",
+      "category_id": "C11"
+    },
+    {
+      "id": 145,
+      "full_name": "zetaloop/OFGB",
+      "category_id": "C11"
+    },
+    {
+      "id": 146,
+      "full_name": "msitarzewski/agency-agents",
+      "category_id": "C1"
+    },
+    {
+      "id": 147,
+      "full_name": "justlovemaki/openclaw-china-docker",
+      "category_id": "C11"
+    },
+    {
+      "id": 148,
+      "full_name": "githubnext/monaspace",
+      "category_id": "C11"
+    },
+    {
+      "id": 149,
+      "full_name": "obra/superpowers",
+      "category_id": "C1"
+    },
+    {
+      "id": 150,
+      "full_name": "anthropics/claude-code",
+      "category_id": "C1"
+    },
+    {
+      "id": 151,
+      "full_name": "BtbN/FFmpeg-Builds",
+      "category_id": "C11"
+    },
+    {
+      "id": 152,
+      "full_name": "vercel-labs/agent-browser",
+      "category_id": "C1"
+    },
+    {
+      "id": 153,
+      "full_name": "cjpais/Handy",
+      "category_id": "C11"
+    },
+    {
+      "id": 154,
+      "full_name": "astral-sh/uv",
+      "category_id": "C11"
+    },
+    {
+      "id": 155,
+      "full_name": "btjawa/BiliTools",
+      "category_id": "C11"
+    },
+    {
+      "id": 156,
+      "full_name": "tw93/Pake",
+      "category_id": "C11"
+    },
+    {
+      "id": 157,
+      "full_name": "allenk/GeminiWatermarkTool",
+      "category_id": "C11"
+    },
+    {
+      "id": 158,
+      "full_name": "nomic-ai/gpt4all",
+      "category_id": "C1"
+    },
+    {
+      "id": 159,
+      "full_name": "microsoft/WSL",
+      "category_id": "C11"
+    },
+    {
+      "id": 160,
+      "full_name": "hluk/CopyQ",
+      "category_id": "C11"
+    },
+    {
+      "id": 161,
+      "full_name": "DigitalPlatDev/FreeDomain",
+      "category_id": "C11"
+    },
+    {
+      "id": 162,
+      "full_name": "Chuyu-Team/Dism-Multi-language",
+      "category_id": "C11"
+    },
+    {
+      "id": 163,
+      "full_name": "ripienaar/free-for-dev",
+      "category_id": "C11"
+    },
+    {
+      "id": 164,
+      "full_name": "Sjj1024/PakePlus",
+      "category_id": "C11"
+    },
+    {
+      "id": 165,
       "full_name": "Tencent/WeKnora",
       "category_id": "C2"
+    },
+    {
+      "id": 166,
+      "full_name": "OpenListTeam/OpenList",
+      "category_id": "C11"
+    },
+    {
+      "id": 167,
+      "full_name": "ollama/ollama",
+      "category_id": "C11"
+    },
+    {
+      "id": 168,
+      "full_name": "fatedier/frp",
+      "category_id": "C11"
+    },
+    {
+      "id": 169,
+      "full_name": "zetaloop/ExplorerPatcher",
+      "category_id": "C11"
+    },
+    {
+      "id": 170,
+      "full_name": "ventoy/Ventoy",
+      "category_id": "C11"
+    },
+    {
+      "id": 171,
+      "full_name": "RamonUnch/AltSnap",
+      "category_id": "C11"
+    },
+    {
+      "id": 172,
+      "full_name": "Tosencen/XMSLEEP",
+      "category_id": "C11"
+    },
+    {
+      "id": 173,
+      "full_name": "gkd-kit/gkd",
+      "category_id": "C11"
+    },
+    {
+      "id": 174,
+      "full_name": "kknifer7/FreeBox",
+      "category_id": "C11"
+    },
+    {
+      "id": 175,
+      "full_name": "ZCShou/GoGoGo",
+      "category_id": "C11"
+    },
+    {
+      "id": 176,
+      "full_name": "easychen/opc-methodology",
+      "category_id": "C11"
+    },
+    {
+      "id": 177,
+      "full_name": "tldr-pages/tldr",
+      "category_id": "C11"
+    },
+    {
+      "id": 178,
+      "full_name": "dair-ai/Prompt-Engineering-Guide",
+      "category_id": "C11"
+    },
+    {
+      "id": 179,
+      "full_name": "x-cmd/x-cmd",
+      "category_id": "C11"
+    },
+    {
+      "id": 180,
+      "full_name": "TapXWorld/ChinaTextbook",
+      "category_id": "C11"
+    },
+    {
+      "id": 181,
+      "full_name": "ayangweb/BongoCat",
+      "category_id": "C11"
+    },
+    {
+      "id": 182,
+      "full_name": "jgm/pandoc",
+      "category_id": "C11"
+    },
+    {
+      "id": 183,
+      "full_name": "MadMaxChow/VLOOK",
+      "category_id": "C11"
+    },
+    {
+      "id": 184,
+      "full_name": "penpot/penpot",
+      "category_id": "C11"
     }
   ]
 }
