@@ -107,6 +107,27 @@ content_min_categories: 5
 content_max_categories: 12
 
 
+# 内容分类：每个“非 Other”类别的最小仓库数（0 表示不启用）
+# 说明：当某个类别数量 < X 时，分类脚本会把该类别裁剪并合并到 Other，避免出现大量“只有 1~2 个仓库”的小类。
+# Content classification: minimum repos per non-'Other' category (0 disables).
+# If a category has < X repos, it will be pruned and merged into 'Other' to reduce fragmentation.
+content_min_repos_per_category: 8
+
+# 内容分类：taxonomy 设计时的抽样策略
+# - head: 取前 N 个（旧行为，可能对 README 顺序有偏置）
+# - random: 稳定随机抽样（推荐，覆盖更均衡；配合 seed 可复现）
+# Content classification: taxonomy sampling strategy
+# - head: take first N (legacy behavior; may be biased by README ordering)
+# - random: deterministic random sample (recommended; more representative with a fixed seed)
+content_taxonomy_sample_strategy: random
+content_taxonomy_sample_seed: 42
+
+# 内容分类：README.md 中类别排序
+# 为 true 时按类别仓库数降序排列，并把 Other 放在最后。
+# Content classification: sort categories by repo count (desc) in README.md, with Other last.
+content_sort_categories_by_count: true
+
+
 # Workflow 仅执行内容分类：为 true 时，GitHub Actions 将跳过 scripts/summarize_stars.py，
 # 只运行 scripts/classify_stars_by_content.py（从 README_lang.md 解析仓库列表并做“内容分类”）。
 #

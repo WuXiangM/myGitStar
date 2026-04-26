@@ -113,8 +113,28 @@ GITHUB_TOKEN = _get_secret("github_token_env", ["STARRED_GITHUB_TOKEN", "GITHUB_
 OPENROUTER_API_KEY = _get_secret("openrouter_api_key_env", ["OPENROUTER_API_KEY"], "openrouter_api_key")
 GEMINI_API_KEY = _get_secret("gemini_api_key_env", ["GEMINI_API_KEY"], "gemini_api_key")
 
-# 新增：读取 update_mode 配置
-update_mode = config.get("update_mode", "all")  # 默认全部更新
+def _normalize_update_mode(mode: Any) -> str: # type: ignore
+    """Normalize update_mode.
+
+    Semantics:
+    - missing_only: only call AI for NEW / missing / invalid summaries, but still output the full README.
+    - all: re-summarize every repo (force refresh).
+    """
+    try:
+        s = str(mode or "").strip().lower()
+    except Exception:
+        s = ""
+    s = s.replace("-", "_")
+    if s in {"missing", "missingonly", "missing_only", "incremental"}:
+        return "missing_only"
+    if s in {"all", "full"}:
+        return "all"
+    # Default to all for safety/clarity
+    return "all"
+
+
+# 新增：读取 update_mode 配置（可被环境变量/CLI 覆盖）
+update_mode = _normalize_update_mode(os.environ.get("MYGITSTAR_UPDATE_MODE") or (config.get("update_mode") if isinstance(config, dict) else None) or "all")
 
 # 从配置文件加载参数
 github_username = config.get("github_username")
@@ -961,6 +981,7 @@ def main():
         api_name = 'GitHub Copilot'
 
     print(f"开始使用 {api_name} 生成 GitHub Star 项目总结...")
+    print(f"[mode] update_mode={update_mode} (missing_only=仅补缺失/新增；all=全量重汇总)")
     
     try:
         starred = get_starred_repos()
@@ -1228,6 +1249,12 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate language-classified README summaries.")
     parser.add_argument("--language", type=str, default=None, help="Override language: en or zh.")
     parser.add_argument("--out", type=str, default=None, help="Override output markdown path.")
+    parser.add_argument(
+        "--update-mode",
+        type=str,
+        default=None,
+        help="Override update mode: missing_only or all (also supports env MYGITSTAR_UPDATE_MODE).",
+    )
     parser.add_argument("--copilot-count", action="store_true", help="Print Copilot API call count (for this run) and exit.")
     args = parser.parse_args()
 
@@ -1250,6 +1277,9 @@ if __name__ == "__main__":
         if not os.path.isabs(out_path):
             out_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), out_path)
         README_SUM_PATH = out_path
+
+    if args.update_mode is not None:
+        update_mode = _normalize_update_mode(args.update_mode)
 
     main()
     print(f"Copilot API 总调用次数: {copilot_api_call_count}")

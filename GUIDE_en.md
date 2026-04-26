@@ -111,7 +111,7 @@ The table below summarizes supported `config.yaml` fields and marks whether each
 | `language` | No | `zh` / `en` | Output language | Defaults to `zh` if omitted |
 | `model_choice` | No | `copilot` / `openrouter` / `gemini` | Choose AI backend | Defaults to `copilot` |
 | `readme_sum_path` | No | `README_lang.md` / `README_lang_cn.md` | Language-classified output path | en→`README_lang.md`; zh→`README_lang_cn.md` (if omitted: `README-sum.md`) |
-| `update_mode` | No | `all` / `missing_only` | Update strategy: rewrite all / only fill missing or invalid summaries | Use `missing_only` for stable incremental updates |
+| `update_mode` | No | `all` / `missing_only` | Summarization update strategy: `missing_only` only fills NEW/missing/invalid summaries; `all` forces full refresh | Workflow still re-runs content classification for ALL repos each run |
 | `repo_display_language` | No | `true` / `false` | Order of README top language-switch links | `true`: put the language matching `language` first |
 | `default_copilot_model` | No | `openai/gpt-4o-mini` | Default Copilot Models model name | Can be overridden via env (see below) |
 | `default_openrouter_model` | No | `deepseek/deepseek-prover-v2:free` | Default OpenRouter model name | Pick a model available to your account |
@@ -127,6 +127,10 @@ The table below summarizes supported `config.yaml` fields and marks whether each
 | `workflow_classify_only` | No | `true` / `false` | Actions: run content-classifier only (skip summarize step) | Before setting `true`, ensure `README_lang.md` exists; keep `false` for normal updates |
 | `content_min_categories` | No | `5` | Min number of content categories for `classify_stars_by_content.py` | 5–8 is a good start |
 | `content_max_categories` | No | `8` | Max number of content categories for `classify_stars_by_content.py` | Keep it not too large (e.g. 8–12) |
+| `content_min_repos_per_category` | No | `0` / `8` / `10` | Minimum repos per non-`Other` category; tiny categories get merged into `Other` | Use `8–12` if your categories are too fragmented; set `0` to disable |
+| `content_taxonomy_sample_strategy` | No | `head` / `random` | How to sample repos when designing taxonomy | `random` is more representative; keep `head` if you want legacy behavior |
+| `content_taxonomy_sample_seed` | No | `42` | Seed for deterministic `random` taxonomy sampling | Keep fixed for stable CI outputs |
+| `content_sort_categories_by_count` | No | `true` / `false` | Sort categories by repo count in content-classified README | Keep `true` to make big buckets appear first |
 | `test_first_repo` | No | `false` | Debug switch: process only the first repo (also enables more verbose logs) | Use `true` for local debugging |
 | `log_file` | No | `scripts/summarize_stars.log` | Log file path (default is in the script directory) | Default is fine for CI |
 | `log_max_bytes` | No | `5242880` | Max single log file size (bytes), then rotate | Default is fine |

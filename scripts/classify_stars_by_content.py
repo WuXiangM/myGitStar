@@ -646,7 +646,84 @@ def _is_repo_stats_or_meta_line(line: str) -> bool:
     if "仓库名称" in s or "repository name" in lower:
         return True
 
+    # Common generation failure placeholders (not repo content)
+    if "生成失败" in s or "rate limit" in lower or "ratelimit" in lower:
+        return True
+    if re.search(r"\b429\b", s):
+        return True
+
     return False
+
+
+def _extract_structured_fields_from_block(block: str) -> Dict[str, str]:
+    """Extract structured content fields from a generated per-repo markdown block."""
+    if not block:
+        return {}
+
+    patterns = {
+        "brief_intro": [
+            r"^2\.\s*\*\*Brief Introduction:\*\*\s*(?P<v>.+?)\s*$",
+            r"^2\.\s*\*\*简要介绍：\*\*\s*(?P<v>.+?)\s*$",
+            r"^\*\*Repository Description:\*\*\s*(?P<v>.+?)\s*$",
+            r"^\*\*仓库描述：\*\*\s*(?P<v>.+?)\s*$",
+        ],
+        "innovations": [
+            r"^3\.\s*\*\*Innovations:\*\*\s*(?P<v>.+?)\s*$",
+            r"^3\.\s*\*\*创新点：\*\*\s*(?P<v>.+?)\s*$",
+        ],
+        "summary": [
+            r"^5\.\s*\*\*Summary:\*\*\s*(?P<v>.+?)\s*$",
+            r"^5\.\s*\*\*总结：\*\*\s*(?P<v>.+?)\s*$",
+            r"^\*\*Summary:\*\*\s*(?P<v>.+?)\s*$",
+            r"^\*\*总结：\*\*\s*(?P<v>.+?)\s*$",
+        ],
+    }
+
+    out: Dict[str, str] = {}
+    for key, pats in patterns.items():
+        for ep in pats:
+            mm = re.search(ep, block, flags=re.MULTILINE)
+            if mm:
+                val = _clean_inline_md(mm.group("v"))
+                if val:
+                    out[key] = val
+                break
+
+    return out
+
+
+def _build_repo_content_text(repo: Dict[str, Any]) -> str:
+    """Create a stable, content-focused text blob for taxonomy + classification."""
+    full_name = _clean_inline_md(str(repo.get("full_name") or ""))
+    title = full_name.split("/")[-1] if "/" in full_name else full_name
+
+    parts: List[str] = []
+    if title:
+        parts.append(title)
+
+    # Prefer structured fields when available.
+    for k in ("brief_intro", "innovations", "summary"):
+        v = _clean_inline_md(str(repo.get(k) or ""))
+        if v and not _is_repo_stats_or_meta_line(v):
+            parts.append(v)
+
+    # Fallback to extracted description.
+    desc = _clean_inline_md(str(repo.get("description") or ""))
+    if desc and not _is_repo_stats_or_meta_line(desc):
+        parts.append(desc)
+
+    # De-duplicate while preserving order.
+    seen: set[str] = set()
+    uniq: List[str] = []
+    for p in parts:
+        if not p:
+            continue
+        if p in seen:
+            continue
+        seen.add(p)
+        uniq.append(p)
+
+    return " | ".join(uniq).strip()
 
 
 def _extract_description_from_block(block: str) -> str:
@@ -739,35 +816,8 @@ def parse_repos_from_readme(readme_path: str, max_repos: Optional[int] = None) -
         full_name = _clean_inline_md(m.group("full_name"))
         url = _clean_inline_md(m.group("url"))
 
-        # Try to extract a brief description
-        desc = ""
-        extract_patterns = [
-            r"^2\.\s*\*\*Brief Introduction:\*\*\s*(?P<d>.+?)\s*$",
-            r"^2\.\s*\*\*简要介绍：\*\*\s*(?P<d>.+?)\s*$",
-            r"^\*\*Repository Description:\*\*\s*(?P<d>.+?)\s*$",
-            r"^\*\*仓库描述：\*\*\s*(?P<d>.+?)\s*$",
-        ]
-        for ep in extract_patterns:
-            mm = re.search(ep, block, flags=re.MULTILINE)
-            if mm:
-                desc = _clean_inline_md(mm.group("d"))
-                break
-
-        # Fall back: use the first non-empty paragraph line (skip stars/forks/updated and separators)
-        if not desc:
-            for line in block.splitlines():
-                line = _clean_inline_md(line)
-                if not line:
-                    continue
-                if line.startswith("**⭐") or line.startswith("---"):
-                    continue
-                if line.startswith("**🍴") or line.startswith("**📅"):
-                    continue
-                # skip numbered items other than introduction if they exist
-                if re.match(r"^\d+\.\s*\*\*", line):
-                    continue
-                desc = line
-                break
+        fields = _extract_structured_fields_from_block(block)
+        desc = _extract_description_from_block(block)
 
         repos.append(
             {
@@ -776,8 +826,11 @@ def parse_repos_from_readme(readme_path: str, max_repos: Optional[int] = None) -
                 "description": desc,
                 "html_url": url,
                 "block_md": block_md,
+                **fields,
             }
         )
+
+        repos[-1]["content_text"] = _build_repo_content_text(repos[-1])
 
         if max_repos and max_repos > 0 and len(repos) >= max_repos:
             break
@@ -920,18 +973,21 @@ def build_taxonomy_prompt(items: List[Dict[str, Any]], min_categories: int, max_
             {
                 "id": r.get("id"),
                 "full_name": r.get("full_name"),
-                "description": r.get("description") or "",
+                "title": (str(r.get("full_name") or "").split("/")[-1] if str(r.get("full_name") or "").strip() else ""),
+                "text": r.get("content_text") or r.get("description") or "",
             }
         )
 
     return (
         "You are a taxonomy designer.\n"
-        "Task: create a content-based taxonomy to classify GitHub repositories, mainly using the repository description.\n"
+        "Task: create a content-based taxonomy to classify GitHub repositories, using repo title + a cleaned content summary text (not stats).\n"
         f"Constraints: create BETWEEN {min_categories} and {max_categories} categories total (inclusive), and include an 'Other' category.\n"
         "Rules:\n"
         "- Categories must be based on CONTENT/domains (e.g., LLM tooling, CV, data engineering), NOT programming languages.\n"
         "- DO NOT create categories named after programming languages (e.g., Python/C++/Java/C#/JS/TS/Rust/Go).\n"
         "- Category names should be short and clear.\n"
+        "- Prefer broader categories over tiny niche buckets.\n"
+        "- Design categories so that most repositories can fit a non-'Other' category; use 'Other' only as a true fallback.\n"
         "- Include an 'Other' category for anything that doesn't fit.\n"
         "Output strictly as JSON, with this shape:\n"
         "{\n"
@@ -940,7 +996,7 @@ def build_taxonomy_prompt(items: List[Dict[str, Any]], min_categories: int, max_
         "    ...\n"
         "  ]\n"
         "}\n\n"
-        "Here are example repositories (id, full_name, description):\n"
+        "Here are example repositories (id, full_name, title, text):\n"
         + json.dumps(examples, ensure_ascii=False, indent=2)
     )
 
@@ -952,19 +1008,21 @@ def build_classification_prompt(taxonomy: Taxonomy, repos: List[Dict[str, Any]])
             {
                 "id": r.get("id"),
                 "full_name": r.get("full_name"),
-                "description": r.get("description") or "",
+                "title": (str(r.get("full_name") or "").split("/")[-1] if str(r.get("full_name") or "").strip() else ""),
+                "text": r.get("content_text") or r.get("description") or "",
             }
         )
 
     return (
         "You are a classifier.\n"
         "Classify each GitHub repository into exactly ONE category from the provided taxonomy.\n"
-        "Use mainly the repository description.\n"
+        "Use the repository title + content text (ignore stars/forks/updated).\n"
+        "Pick the BEST matching category; use 'Other' only if none of the categories fit.\n"
         "Return STRICT JSON only.\n\n"
         "Taxonomy JSON:\n"
         + json.dumps({"categories": taxonomy.categories}, ensure_ascii=False, indent=2)
         + "\n\n"
-        "Repositories to classify (id, full_name, description):\n"
+        "Repositories to classify (id, full_name, title, text):\n"
         + json.dumps(items, ensure_ascii=False, indent=2)
         + "\n\n"
         "Output JSON shape:\n"
@@ -1051,14 +1109,33 @@ def render_classified_readme(
     buckets: Dict[str, List[Dict[str, Any]]] = {cid: [] for cid in categories.keys()}
     other_id = next((c["id"] for c in taxonomy.categories if c["name"].lower() == "other"), taxonomy.categories[-1]["id"])
 
-    anchors = _build_category_anchors(taxonomy)
-
     for r in repos:
         rid = r.get("id")
         cid = assignment_map.get(rid, other_id)
         if cid not in buckets:
             cid = other_id
         buckets[cid].append(r)
+
+    # Category order: by bucket size desc; keep Other last.
+    sort_by_count = True
+    try:
+        if isinstance(config, dict) and config.get("content_sort_categories_by_count") is not None:
+            sort_by_count = bool(config.get("content_sort_categories_by_count"))
+    except Exception:
+        sort_by_count = True
+
+    ordered_categories = taxonomy.categories
+    if sort_by_count:
+        ordered_categories = sorted(
+            taxonomy.categories,
+            key=lambda c: (
+                1 if str(c.get("name", "")).strip().lower() == "other" else 0,
+                -len(buckets.get(str(c.get("id")), [])),
+                str(c.get("name", "")),
+            ),
+        )
+
+    anchors = _build_category_anchors(Taxonomy(categories=ordered_categories))
 
     generated_on = datetime.now(timezone.utc).strftime('%Y-%m-%d')
     model_name = _model_display_name()
@@ -1091,7 +1168,7 @@ def render_classified_readme(
         "</div>\n\n"
     )
     lines.append("## 📖 Table of Contents\n\n")
-    for c in taxonomy.categories:
+    for c in ordered_categories:
         anchor = anchors.get(str(c.get("id")), _slugify_heading(c.get("name", "")))
         display_name = _strip_leading_symbols(c.get("name", "")).strip() or str(c.get("name", "")).strip()
         desc = _clean_inline_md(c.get("description", ""))
@@ -1101,7 +1178,7 @@ def render_classified_readme(
             lines.append(f"- [{display_name}](#{anchor}) ({len(buckets.get(c['id'], []))})\n")
     lines.append("\n---\n\n")
 
-    for c in taxonomy.categories:
+    for c in ordered_categories:
         bucket = buckets.get(c["id"], [])
         anchor = anchors.get(str(c.get("id")), "")
         if anchor:
@@ -1151,6 +1228,136 @@ def chunk_list(items: List[Any], size: int) -> List[List[Any]]:
     return [items[i : i + size] for i in range(0, len(items), size)]
 
 
+def _resolve_min_repos_per_category(args_value: Optional[int]) -> int:
+    if args_value is not None:
+        try:
+            return max(0, int(args_value))
+        except Exception:
+            return 0
+    try:
+        if isinstance(config, dict) and config.get("content_min_repos_per_category") is not None:
+            return max(0, int(config.get("content_min_repos_per_category")))
+    except Exception:
+        pass
+    return 0
+
+
+def _compute_effective_max_categories(total_repos: int, min_repos_per_category: int, min_categories: int, max_categories: int) -> int:
+    if total_repos <= 0:
+        return max_categories
+    if min_repos_per_category <= 0:
+        return max_categories
+    # Rough upper bound: if each category should have >= X repos, we shouldn't create more than N//X categories.
+    # (We still allow an 'Other' category; the post-pruning step will enforce the minimum where possible.)
+    upper = max(1, total_repos // min_repos_per_category)
+    return max(min_categories, min(max_categories, upper))
+
+
+def _sample_repos_for_taxonomy(repos: List[Dict[str, Any]], sample_size: int) -> List[Dict[str, Any]]:
+    sample_size = max(1, min(int(sample_size or 0), len(repos)))
+    strategy = "head"
+    seed = None
+    try:
+        if isinstance(config, dict):
+            strategy = str(config.get("content_taxonomy_sample_strategy", "head") or "head").strip().lower()
+            seed_val = config.get("content_taxonomy_sample_seed")
+            if seed_val is not None and str(seed_val).strip() != "":
+                seed = int(seed_val)
+    except Exception:
+        strategy = "head"
+        seed = None
+
+    if strategy == "random" and len(repos) > sample_size:
+        rng = random.Random(seed) if seed is not None else random.Random()
+        # sample() keeps uniqueness; good for representative taxonomy.
+        return rng.sample(repos, k=sample_size)
+
+    return repos[:sample_size]
+
+
+def _apply_min_repos_per_category(
+    taxonomy: Taxonomy,
+    repos: List[Dict[str, Any]],
+    assignment_map: Dict[Any, str],
+    *,
+    min_repos_per_category: int,
+    min_categories: int,
+) -> Tuple[Taxonomy, Dict[Any, str]]:
+    """Prune/merge tiny categories to satisfy a minimum bucket size when possible.
+
+    Strategy:
+    - If a non-Other category has < X repos, drop it and move its repos to Other.
+    - Do not prune if it would reduce categories below min_categories.
+    - Renumber category ids to keep output tidy (C1..Cn).
+    """
+    if min_repos_per_category <= 0:
+        return taxonomy, assignment_map
+
+    if not taxonomy.categories:
+        return taxonomy, assignment_map
+
+    other_old = next((c["id"] for c in taxonomy.categories if str(c.get("name", "")).strip().lower() == "other"), taxonomy.categories[-1]["id"])
+
+    counts: Dict[str, int] = {str(c["id"]): 0 for c in taxonomy.categories}
+    for r in repos:
+        rid = r.get("id")
+        cid = str(assignment_map.get(rid, other_old))
+        if cid not in counts:
+            cid = other_old
+        counts[cid] = counts.get(cid, 0) + 1
+
+    # Build prune candidates (non-Other categories only), smallest first.
+    candidates: List[Tuple[str, int]] = []
+    for c in taxonomy.categories:
+        if str(c.get("name", "")).strip().lower() == "other":
+            continue
+        cid = str(c["id"])
+        cnt = int(counts.get(cid, 0) or 0)
+        if cnt < min_repos_per_category:
+            candidates.append((cid, cnt))
+    candidates.sort(key=lambda x: (x[1], x[0]))
+
+    # Iteratively prune as many tiny categories as possible while respecting min_categories.
+    drop_ids: set[str] = set()
+    remaining_count = len(taxonomy.categories)
+    min_keep = max(1, int(min_categories))
+    for cid, _cnt in candidates:
+        if remaining_count - 1 < min_keep:
+            break
+        drop_ids.add(cid)
+        remaining_count -= 1
+
+    if not drop_ids:
+        return taxonomy, assignment_map
+
+    # Build remaining categories (keep Other last)
+    remaining = [c for c in taxonomy.categories if str(c["id"]) not in drop_ids and str(c.get("name", "")).strip().lower() != "other"]
+    other_cat = next((c for c in taxonomy.categories if str(c.get("name", "")).strip().lower() == "other"), taxonomy.categories[-1])
+
+    new_categories: List[Dict[str, Any]] = []
+    id_map: Dict[str, str] = {}
+    for idx, c in enumerate(remaining, start=1):
+        new_id = f"C{idx}"
+        id_map[str(c["id"])] = new_id
+        new_categories.append({"id": new_id, "name": c.get("name", ""), "description": c.get("description", "")})
+
+    other_new_id = f"C{len(new_categories) + 1}"
+    id_map[str(other_cat["id"])] = other_new_id
+    new_categories.append({"id": other_new_id, "name": "Other", "description": other_cat.get("description", "") or "Everything that does not fit other categories."})
+
+    # Remap assignments
+    new_assignment: Dict[Any, str] = {}
+    for r in repos:
+        rid = r.get("id")
+        old_cid = str(assignment_map.get(rid, other_old))
+        if old_cid in drop_ids:
+            new_assignment[rid] = other_new_id
+            continue
+        new_assignment[rid] = id_map.get(old_cid, other_new_id)
+
+    return Taxonomy(categories=new_categories), new_assignment
+
+
 def render_markdown(taxonomy: Taxonomy, repos: List[Dict[str, Any]], assignment_map: Dict[Any, str]) -> str:
     # Build reverse index
     categories = {c["id"]: c for c in taxonomy.categories}
@@ -1173,12 +1380,31 @@ def render_markdown(taxonomy: Taxonomy, repos: List[Dict[str, Any]], assignment_
 
     # Table of contents
     lines.append("## Table of Contents\n")
-    for c in taxonomy.categories:
+    # Sort by bucket size (Other last) for readability
+    sort_by_count = True
+    try:
+        if isinstance(config, dict) and config.get("content_sort_categories_by_count") is not None:
+            sort_by_count = bool(config.get("content_sort_categories_by_count"))
+    except Exception:
+        sort_by_count = True
+
+    ordered = taxonomy.categories
+    if sort_by_count:
+        ordered = sorted(
+            taxonomy.categories,
+            key=lambda c: (
+                1 if str(c.get("name", "")).strip().lower() == "other" else 0,
+                -len(buckets.get(str(c.get("id")), [])),
+                str(c.get("name", "")),
+            ),
+        )
+
+    for c in ordered:
         anchor = re.sub(r"[^a-z0-9\- ]", "", c["name"].lower()).strip().replace(" ", "-")
         lines.append(f"- [{c['name']}](#{anchor}) ({len(buckets.get(c['id'], []))})")
     lines.append("\n---\n")
 
-    for c in taxonomy.categories:
+    for c in ordered:
         anchor = re.sub(r"[^a-z0-9\- ]", "", c["name"].lower()).strip().replace(" ", "-")
         lines.append(f"## {c['name']}\n")
         if c.get("description"):
@@ -1206,6 +1432,12 @@ def main() -> int:
     parser.add_argument("--max-repos", type=int, default=None, help="Limit number of repos (overrides config/env MAX_REPOS).")
     parser.add_argument("--min-categories", type=int, default=5, help="Min number of categories (default: 5).")
     parser.add_argument("--max-categories", type=int, default=8, help="Max number of categories (default: 8).")
+    parser.add_argument(
+        "--min-repos-per-category",
+        type=int,
+        default=None,
+        help="Optional: enforce each non-'Other' category has at least X repos by pruning tiny categories into Other (default: read config 'content_min_repos_per_category', 0 disables).",
+    )
     parser.add_argument("--sample-size", type=int, default=60, help="How many repos to sample to design taxonomy (default: 60).")
     parser.add_argument("--batch-size", type=int, default=30, help="Repos per LLM classification call (default: 30).")
     parser.add_argument("--out-json", type=str, default="repo_categories.json", help="Output JSON filename.")
@@ -1281,9 +1513,30 @@ def main() -> int:
         print("No repos fetched.")
         return 2
 
+    # Ensure a consistent content text field exists for both API-fetched repos and README-parsed repos.
+    for r in repos:
+        try:
+            if not str(r.get("content_text") or "").strip():
+                r["content_text"] = _build_repo_content_text(r)
+        except Exception:
+            pass
+
+    min_repos_per_category = _resolve_min_repos_per_category(args.min_repos_per_category)
+    effective_max_categories = _compute_effective_max_categories(
+        total_repos=len(repos),
+        min_repos_per_category=min_repos_per_category,
+        min_categories=args.min_categories,
+        max_categories=args.max_categories,
+    )
+    if effective_max_categories != args.max_categories:
+        print(
+            f"[info] Adjusted max_categories {args.max_categories} -> {effective_max_categories} due to content_min_repos_per_category={min_repos_per_category} (total_repos={len(repos)})"
+        )
+        args.max_categories = effective_max_categories
+
     # Build taxonomy from a sample
     sample_size = max(5, min(args.sample_size, len(repos)))
-    sample = repos[:sample_size]
+    sample = _sample_repos_for_taxonomy(repos, sample_size)
     taxonomy_prompt = build_taxonomy_prompt(sample, min_categories=args.min_categories, max_categories=args.max_categories)
     print(
         f"Designing taxonomy from {len(sample)} sample repos (min_categories={args.min_categories}, max_categories={args.max_categories})..."
@@ -1358,11 +1611,22 @@ def main() -> int:
         if rid not in assignment_map:
             assignment_map[rid] = other_id
 
+    # Optional: prune tiny categories into Other to keep buckets meaningful.
+    taxonomy, assignment_map = _apply_min_repos_per_category(
+        taxonomy,
+        repos,
+        assignment_map,
+        min_repos_per_category=min_repos_per_category,
+        min_categories=args.min_categories,
+    )
+    other_id = next((c["id"] for c in taxonomy.categories if c["name"].lower() == "other"), taxonomy.categories[-1]["id"])
+
     out = {
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "model_choice": MODEL_CHOICE,
         "min_categories": args.min_categories,
         "max_categories": args.max_categories,
+        "min_repos_per_category": min_repos_per_category,
         "taxonomy": {"categories": taxonomy.categories},
         "assignments": [{"id": r.get("id"), "full_name": r.get("full_name"), "category_id": assignment_map.get(r.get("id"), other_id)} for r in repos],
     }

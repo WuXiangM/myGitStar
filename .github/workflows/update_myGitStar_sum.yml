@@ -19,6 +19,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
+          cache: 'pip'
 
       - name: Install dependencies
         run: |
@@ -46,6 +47,14 @@ jobs:
 
           min_cat = _to_int(d.get('content_min_categories', 5), 5)
           max_cat = _to_int(d.get('content_max_categories', 8), 8)
+          min_repos_per_cat = _to_int(d.get('content_min_repos_per_category', 0), 0)
+            update_mode = str(d.get('update_mode', 'all') or 'all').strip().lower().replace('-', '_')
+            if update_mode in ('missing', 'missingonly', 'missing_only', 'incremental'):
+              update_mode = 'missing_only'
+            elif update_mode in ('all', 'full'):
+              update_mode = 'all'
+            else:
+              update_mode = 'all'
           if min_cat < 1:
               min_cat = 1
           if max_cat < min_cat:
@@ -57,9 +66,19 @@ jobs:
 
           with open(out_path, 'a', encoding='utf-8') as f:
               f.write(f"classify_only={classify_only}\n")
+              f.write(f"update_mode={update_mode}\n")
               f.write(f"min_categories={min_cat}\n")
               f.write(f"max_categories={max_cat}\n")
+              f.write(f"min_repos_per_category={min_repos_per_cat}\n")
           PY
+
+      - name: Print effective workflow settings
+        run: |
+          echo "classify_only=${{ steps.cfg.outputs.classify_only }}"
+          echo "update_mode=${{ steps.cfg.outputs.update_mode }}"
+          echo "min_categories=${{ steps.cfg.outputs.min_categories }}"
+          echo "max_categories=${{ steps.cfg.outputs.max_categories }}"
+          echo "min_repos_per_category=${{ steps.cfg.outputs.min_repos_per_category }}"
 
       - name: Ensure README_lang.md exists (classify-only mode)
         if: steps.cfg.outputs.classify_only == 'true'
@@ -74,8 +93,8 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_ACTOR: ${{ github.actor }}
         run: |
-          python scripts/summarize_stars.py --language en --out README_lang.md
-          python scripts/summarize_stars.py --language zh --out README_lang_cn.md
+          python scripts/summarize_stars.py --language en --out README_lang.md --update-mode ${{ steps.cfg.outputs.update_mode }}
+          python scripts/summarize_stars.py --language zh --out README_lang_cn.md --update-mode ${{ steps.cfg.outputs.update_mode }}
 
       - name: Classify repos by content from README
         env:
@@ -95,6 +114,7 @@ jobs:
             --from-readme "README_lang.md" \
             --min-categories ${{ steps.cfg.outputs.min_categories }} \
             --max-categories ${{ steps.cfg.outputs.max_categories }} \
+            --min-repos-per-category ${{ steps.cfg.outputs.min_repos_per_category }} \
             --sample-size 60 \
             --batch-size 40 \
             --out-md README.md \
