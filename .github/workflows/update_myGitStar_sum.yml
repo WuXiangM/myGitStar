@@ -48,12 +48,12 @@ jobs:
           min_cat = _to_int(d.get('content_min_categories', 5), 5)
           max_cat = _to_int(d.get('content_max_categories', 8), 8)
           min_repos_per_cat = _to_int(d.get('content_min_repos_per_category', 0), 0)
-            update_mode = str(d.get('update_mode', 'all') or 'all').strip().lower().replace('-', '_')
-            if update_mode in ('missing', 'missingonly', 'missing_only', 'incremental'):
+          update_mode = str(d.get('update_mode', 'all') or 'all').strip().lower().replace('-', '_')
+          if update_mode in ('missing', 'missingonly', 'missing_only', 'incremental'):
               update_mode = 'missing_only'
-            elif update_mode in ('all', 'full'):
+          elif update_mode in ('all', 'full'):
               update_mode = 'all'
-            else:
+          else:
               update_mode = 'all'
           if min_cat < 1:
               min_cat = 1
