@@ -201,6 +201,7 @@ def make_api_request(url: str, headers: Dict[str, str], data: Dict[str, Any], re
             if DEBUG_API:
                 _safe_print_debug(f"[API] Response text: {resp.text[:2000]}")
 
+
             if resp.status_code == 429:
                 retry_after = None
                 try:
@@ -209,6 +210,11 @@ def make_api_request(url: str, headers: Dict[str, str], data: Dict[str, Any], re
                         retry_after = int(ra)
                 except Exception:
                     retry_after = None
+
+                # 跳过超长等待的批次
+                if retry_after is not None and retry_after > 600:
+                    print(f"[429] Retry-After={retry_after}s 超过 600s，跳过该批次！")
+                    return {"error": {"code": 429, "message": f"Too Many Requests, Retry-After={retry_after}s, skipped batch."}, "status_code": 429}
 
                 if attempt < retries - 1:
                     wait = retry_after if retry_after else (retry_delay * (2 ** attempt) + random.uniform(0, 1))
