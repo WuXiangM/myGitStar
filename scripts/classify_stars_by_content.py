@@ -1236,7 +1236,7 @@ def _resolve_min_repos_per_category(args_value: Optional[int]) -> int:
             return 0
     try:
         if isinstance(config, dict) and config.get("content_min_repos_per_category") is not None:
-            return max(0, int(config.get("content_min_repos_per_category")))
+            return max(0, int(config.get("content_min_repos_per_category"))) # type: ignore
     except Exception:
         pass
     return 0
@@ -1442,7 +1442,47 @@ def main() -> int:
     parser.add_argument("--batch-size", type=int, default=30, help="Repos per LLM classification call (default: 30).")
     parser.add_argument("--out-json", type=str, default="repo_categories.json", help="Output JSON filename.")
     parser.add_argument("--out-md", type=str, default="README.md", help="Output Markdown filename (default: README.md).")
+
     args = parser.parse_args()
+
+    # 优先级：命令行参数 > config.yaml > 默认值
+    # batch_size
+    passed_batch = any(arg.startswith("--batch-size") for arg in sys.argv)
+    if not passed_batch and isinstance(config, dict):
+        classify_bs = config.get("classify_batch_size")
+        if classify_bs is not None:
+            try:
+                args.batch_size = int(classify_bs)
+            except Exception:
+                pass
+        else:
+            batch_bs = config.get("batch_size")
+            if batch_bs is not None:
+                try:
+                    args.batch_size = int(batch_bs)
+                except Exception:
+                    pass
+    # sample_size
+    passed_sample = any(arg.startswith("--sample-size") for arg in sys.argv)
+    if not passed_sample and isinstance(config, dict):
+        sample_size = config.get("classify_sample_size")
+        if sample_size is not None:
+            try:
+                args.sample_size = int(sample_size)
+            except Exception:
+                pass
+    # out-json
+    passed_outjson = any(arg.startswith("--out-json") for arg in sys.argv)
+    if not passed_outjson and isinstance(config, dict):
+        out_json = config.get("classify_out_json")
+        if out_json:
+            args.out_json = str(out_json)
+    # out-md
+    passed_outmd = any(arg.startswith("--out-md") for arg in sys.argv)
+    if not passed_outmd and isinstance(config, dict):
+        out_md = config.get("classify_out_md")
+        if out_md:
+            args.out_md = str(out_md)
 
     # If user didn't pass category range flags, allow config.yaml to override defaults.
     # (Workflow always passes explicit values; this mainly improves local runs.)

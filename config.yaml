@@ -33,29 +33,31 @@ default_gemini_model: gemini-2.0-flash
 readme_sum_path: README_lang.md # default output for summarize_stars.py
 
 
-# 最大并发数（线程池 worker 数），建议先用 1，避免触发速率限制
-# Max concurrency (thread workers). Start with 1 to avoid rate limiting.
-max_workers: 1 # 最大并发数，建议根据个人网络环境调整
 
-# 每个批次处理的仓库数量（批次越大，请求越重，越容易触发限流/超时）
-# Repositories per batch (bigger batch = heavier request; more likely to hit rate limits/timeouts)
-batch_size: 4 # 每个请求处理的仓库数量（保守推荐: 4）
+# 最大并发数（线程池 worker 数），建议先用 1，避免触发速率限制
+max_workers: 1
+
+
+# summarize_stars.py 每个批次处理的仓库数量（AI 总结用，推荐 10）
+batch_size: 10
+
+# classify_stars_by_content.py 每个批次处理的仓库数量（内容分类用，推荐 8~20，独立于 batch_size）
+classify_batch_size: 20
 
 # 请求超时时间（秒）
-# Request timeout (seconds)
-request_timeout: 30 # s, 每个请求的超时时间
+request_timeout: 30
 
 # 每个批次之间的延迟（秒），用于降低总体速率
-# Delay between batches (seconds) to reduce overall request rate
-rate_limit_delay: 5 # s, 每个批次之间的延迟（保守，减少总体速率）
+rate_limit_delay: 4
 
 # 网络层重试：每次重试之间的延迟（秒）
-# Network retry: delay between attempts (seconds)
-request_retry_delay: 2 # s, 每个请求重试的延迟（网络层）
+request_retry_delay: 2
 
-# 网络层重试次数（保守建议：1~3）
-# Network retry attempts (conservative: 1~3)
-retry_attempts: 1 # 每个请求重试次数（保守：1）
+# 网络层重试次数
+retry_attempts: 2
+
+# 全局 QPS 限制（每秒最多几次请求，推荐 1）
+global_qps: 1
 
 # Gemini 特定的保守配置
 

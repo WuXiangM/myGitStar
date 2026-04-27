@@ -105,10 +105,10 @@ jobs:
           # More conservative settings to reduce 429; and allow fallback if Copilot is rate-limited.
           MYGITSTAR_FALLBACK_ON_429: '1'
           MYGITSTAR_MAX_CONSECUTIVE_429: '5'
-          MYGITSTAR_RETRY_ATTEMPTS: '4'
-          MYGITSTAR_REQUEST_RETRY_DELAY: '4'
-          MYGITSTAR_GLOBAL_QPS: '0.25'
-          MYGITSTAR_RATE_LIMIT_DELAY: '6'
+          MYGITSTAR_RETRY_ATTEMPTS: '2'
+          MYGITSTAR_REQUEST_RETRY_DELAY: '2'
+          MYGITSTAR_GLOBAL_QPS: '1'
+          MYGITSTAR_RATE_LIMIT_DELAY: '2'
         run: |
           python scripts/classify_stars_by_content.py \
             --from-readme "README_lang.md" \
@@ -116,7 +116,7 @@ jobs:
             --max-categories ${{ steps.cfg.outputs.max_categories }} \
             --min-repos-per-category ${{ steps.cfg.outputs.min_repos_per_category }} \
             --sample-size 60 \
-            --batch-size 40 \
+            --batch-size 20 \
             --out-md README.md \
             --out-json repo_categories.json
 
