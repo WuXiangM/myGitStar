@@ -7,8 +7,10 @@
 - 📗 README（内容分类）：`README.md`
 - 📘 README classified by language（英文）：`README_lang.md`
 - 📙 README 按语言分类（中文）：`README_lang_cn.md`
+- 🧾 总结 JSON（结构化数据源）：`repo_summaries_en.json` / `repo_summaries_zh.json`
 
 > 说明：按语言分类的输出文件名可由 `config.yaml` 的 `readme_sum_path` 或命令行 `--out` 覆盖；内容分类版由 `classify_stars_by_content.py` 生成到 `README.md`。
+> 新逻辑：总结优先写入 JSON，再由 JSON 生成 MD；README 仅作为旧数据回退来源。
 
 ## 2) 📂 目录结构（关键文件）
 

@@ -7,8 +7,10 @@ This project fetches a GitHub account’s starred repositories (Stars), uses AI 
 - 📗 README (content classified): `README.md`
 - 📘 README classified by language (English): `README_lang.md`
 - 📙 README 按语言分类 (Chinese): `README_lang_cn.md`
+- 🧾 Summary JSON (source of truth): `repo_summaries_en.json` / `repo_summaries_zh.json`
 
 > Note: The language-classified output file is controlled by `readme_sum_path` in `config.yaml` or can be overridden via `--out`. The content-classified README is generated separately by `classify_stars_by_content.py` as `README.md`.
+> New logic: summaries are written to JSON first, then MD is rendered from JSON; README is only a legacy fallback source.
 
 ## 2) 📂 Project layout (key files)
 

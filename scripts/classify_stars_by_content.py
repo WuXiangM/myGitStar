@@ -129,6 +129,26 @@ DEFAULT_COPILOT_MODEL = config.get("default_copilot_model", "openai/gpt-4o-mini"
 DEFAULT_OPENROUTER_MODEL = config.get("default_openrouter_model")
 DEFAULT_GEMINI_MODEL = config.get("default_gemini_model", "gemini-2.0-flash")
 
+
+def _normalize_update_mode(mode: Any) -> str:
+    try:
+        s = str(mode or "").strip().lower()
+    except Exception:
+        s = ""
+    s = s.replace("-", "_")
+    if s in {"missing", "missingonly", "missing_only", "incremental"}:
+        return "missing_only"
+    if s in {"all", "full"}:
+        return "all"
+    return "all"
+
+
+update_mode = _normalize_update_mode(
+    os.environ.get("MYGITSTAR_UPDATE_MODE")
+    or (config.get("update_mode") if isinstance(config, dict) else None)
+    or "all"
+)
+
 REQUEST_TIMEOUT = float(os.environ.get("MYGITSTAR_REQUEST_TIMEOUT", _get_float_config("request_timeout", 30.0)))
 REQUEST_RETRY_DELAY = float(os.environ.get("MYGITSTAR_REQUEST_RETRY_DELAY", _get_float_config("request_retry_delay", 2.0)))
 RETRY_ATTEMPTS = int(os.environ.get("MYGITSTAR_RETRY_ATTEMPTS", _get_int_config("retry_attempts", 1)))
@@ -972,6 +992,45 @@ class Taxonomy:
     categories: List[Dict[str, Any]]
 
 
+def load_existing_categories(path: str) -> Tuple[Optional[Taxonomy], Dict[str, str]]:
+    if not path or not os.path.exists(path):
+        return None, {}
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception:
+        return None, {}
+    if not isinstance(data, dict):
+        return None, {}
+    taxonomy_raw = data.get("taxonomy") or {}
+    categories = taxonomy_raw.get("categories") if isinstance(taxonomy_raw, dict) else None
+    if not isinstance(categories, list):
+        return None, {}
+    try:
+        taxonomy = Taxonomy(categories=[
+            {
+                "id": str(c.get("id") or "").strip(),
+                "name": str(c.get("name") or "").strip(),
+                "description": str(c.get("description") or "").strip(),
+            }
+            for c in categories
+            if isinstance(c, dict)
+        ])
+    except Exception:
+        taxonomy = None
+    assignments_map: Dict[str, str] = {}
+    assignments = data.get("assignments")
+    if isinstance(assignments, list):
+        for a in assignments:
+            if not isinstance(a, dict):
+                continue
+            full_name = str(a.get("full_name") or "").strip()
+            category_id = str(a.get("category_id") or "").strip()
+            if full_name and category_id:
+                assignments_map[full_name] = category_id
+    return taxonomy, assignments_map
+
+
 def build_taxonomy_prompt(items: List[Dict[str, Any]], min_categories: int, max_categories: int) -> str:
     examples = []
     for r in items:
@@ -1448,8 +1507,18 @@ def main() -> int:
     parser.add_argument("--batch-size", type=int, default=30, help="Repos per LLM classification call (default: 30).")
     parser.add_argument("--out-json", type=str, default="repo_categories.json", help="Output JSON filename.")
     parser.add_argument("--out-md", type=str, default="README.md", help="Output Markdown filename (default: README.md).")
+    parser.add_argument(
+        "--update-mode",
+        type=str,
+        default=None,
+        help="Override update mode: missing_only or all (also supports env MYGITSTAR_UPDATE_MODE).",
+    )
 
     args = parser.parse_args()
+
+    if args.update_mode is not None:
+        global update_mode
+        update_mode = _normalize_update_mode(args.update_mode)
 
     # 优先级：命令行参数 > config.yaml > 默认值
     # batch_size
@@ -1489,6 +1558,14 @@ def main() -> int:
         out_md = config.get("classify_out_md")
         if out_md:
             args.out_md = str(out_md)
+
+    out_json_path = args.out_json
+    if not os.path.isabs(out_json_path):
+        out_json_path = os.path.join(REPO_ROOT, out_json_path)
+
+    out_md_path = args.out_md
+    if not os.path.isabs(out_md_path):
+        out_md_path = os.path.join(REPO_ROOT, out_md_path)
 
     # If user didn't pass category range flags, allow config.yaml to override defaults.
     # (Workflow always passes explicit values; this mainly improves local runs.)
@@ -1580,76 +1657,93 @@ def main() -> int:
         )
         args.max_categories = effective_max_categories
 
-    # Build taxonomy from a sample
-    sample_size = max(5, min(args.sample_size, len(repos)))
-    sample = _sample_repos_for_taxonomy(repos, sample_size)
-    taxonomy_prompt = build_taxonomy_prompt(sample, min_categories=args.min_categories, max_categories=args.max_categories)
-    print(
-        f"Designing taxonomy from {len(sample)} sample repos (min_categories={args.min_categories}, max_categories={args.max_categories})..."
-    )
-    try:
-        raw_tax = call_llm_json(taxonomy_prompt, attempts=2)
-    except RateLimitAbort as e:
-        print(f"[FATAL] {e}")
-        return 4
-    except Exception as e:
-        print(f"Failed to call LLM for taxonomy: {e}")
-        print("\nChecklist:")
-        print("- model_choice=copilot requires STARRED_GITHUB_TOKEN")
-        print("- model_choice=openrouter requires OPENROUTER_API_KEY")
-        print("- model_choice=gemini requires GEMINI_API_KEY")
-        return 3
-
-    try:
-        taxonomy = _normalize_taxonomy(raw_tax, min_categories=args.min_categories, max_categories=args.max_categories)
-        # If the model ignored constraints and produced mostly language buckets (filtered out), retry once with stronger warning.
-        if len(taxonomy.categories) < args.min_categories:
-            retry_prompt = taxonomy_prompt + "\n\nIMPORTANT: Your previous output likely used programming-language categories. Redesign taxonomy strictly by CONTENT domains."
-            raw_tax2 = call_llm_json(retry_prompt, attempts=1)
-            taxonomy = _normalize_taxonomy(raw_tax2, min_categories=args.min_categories, max_categories=args.max_categories)
-    except Exception as e:
-        print(f"Failed to normalize taxonomy JSON: {e}")
-        return 3
-
-    print("Taxonomy:")
-    for c in taxonomy.categories:
-        print(f"  {c['id']}: {c['name']}")
-
-    # Classify repos in batches
+    taxonomy: Optional[Taxonomy] = None
     assignment_map: Dict[Any, str] = {}
     all_ids = {r.get("id") for r in repos}
 
-    print(f"Classifying {len(repos)} repos in batches of {args.batch_size}...")
-    for i, batch in enumerate(chunk_list(repos, args.batch_size), start=1):
-        prompt = build_classification_prompt(taxonomy, batch)
+    existing_taxonomy, existing_assignments = (None, {})
+    if update_mode == "missing_only":
+        existing_taxonomy, existing_assignments = load_existing_categories(out_json_path)
+
+    repos_to_classify = repos
+    if update_mode == "missing_only" and existing_taxonomy and existing_assignments:
+        taxonomy = existing_taxonomy
+        repos_to_classify = [r for r in repos if str(r.get("full_name") or "").strip() not in existing_assignments]
+        for r in repos:
+            full_name = str(r.get("full_name") or "").strip()
+            cid = existing_assignments.get(full_name)
+            if cid:
+                assignment_map[r.get("id")] = cid
+
+    if taxonomy is None:
+        # Build taxonomy from a sample
+        sample_size = max(5, min(args.sample_size, len(repos)))
+        sample = _sample_repos_for_taxonomy(repos, sample_size)
+        taxonomy_prompt = build_taxonomy_prompt(sample, min_categories=args.min_categories, max_categories=args.max_categories)
+        print(
+            f"Designing taxonomy from {len(sample)} sample repos (min_categories={args.min_categories}, max_categories={args.max_categories})..."
+        )
         try:
-            raw = call_llm_json(prompt, attempts=2)
-            assignments = _parse_assignments(raw)
+            raw_tax = call_llm_json(taxonomy_prompt, attempts=2)
         except RateLimitAbort as e:
             print(f"[FATAL] {e}")
             return 4
         except Exception as e:
-            print(f"[Batch {i}] failed to parse assignments: {e}")
-            assignments = []
+            print(f"Failed to call LLM for taxonomy: {e}")
+            print("\nChecklist:")
+            print("- model_choice=copilot requires STARRED_GITHUB_TOKEN")
+            print("- model_choice=openrouter requires OPENROUTER_API_KEY")
+            print("- model_choice=gemini requires GEMINI_API_KEY")
+            return 3
 
-        # validate and fill
-        valid_category_ids = {c["id"] for c in taxonomy.categories}
-        other_id = next((c["id"] for c in taxonomy.categories if c["name"].lower() == "other"), taxonomy.categories[-1]["id"])
-        for a in assignments:
-            rid = a["id"]
-            cid = a["category_id"]
-            if cid not in valid_category_ids:
-                cid = other_id
-            assignment_map[rid] = cid
+        try:
+            taxonomy = _normalize_taxonomy(raw_tax, min_categories=args.min_categories, max_categories=args.max_categories)
+            # If the model ignored constraints and produced mostly language buckets (filtered out), retry once with stronger warning.
+            if len(taxonomy.categories) < args.min_categories:
+                retry_prompt = taxonomy_prompt + "\n\nIMPORTANT: Your previous output likely used programming-language categories. Redesign taxonomy strictly by CONTENT domains."
+                raw_tax2 = call_llm_json(retry_prompt, attempts=1)
+                taxonomy = _normalize_taxonomy(raw_tax2, min_categories=args.min_categories, max_categories=args.max_categories)
+        except Exception as e:
+            print(f"Failed to normalize taxonomy JSON: {e}")
+            return 3
 
-        # Fill missing in this batch as Other
-        batch_ids = {r.get("id") for r in batch}
-        for rid in batch_ids:
-            if rid not in assignment_map:
-                assignment_map[rid] = other_id
+        print("Taxonomy:")
+        for c in taxonomy.categories:
+            print(f"  {c['id']}: {c['name']}")
 
-        print(f"  batch {i}/{(len(repos) + args.batch_size - 1) // args.batch_size} done")
-        time.sleep(RATE_LIMIT_DELAY)
+    # Classify repos in batches (only missing ones in missing_only)
+    if repos_to_classify:
+        print(f"Classifying {len(repos_to_classify)} repos in batches of {args.batch_size}...")
+        for i, batch in enumerate(chunk_list(repos_to_classify, args.batch_size), start=1):
+            prompt = build_classification_prompt(taxonomy, batch)
+            try:
+                raw = call_llm_json(prompt, attempts=2)
+                assignments = _parse_assignments(raw)
+            except RateLimitAbort as e:
+                print(f"[FATAL] {e}")
+                return 4
+            except Exception as e:
+                print(f"[Batch {i}] failed to parse assignments: {e}")
+                assignments = []
+
+            # validate and fill
+            valid_category_ids = {c["id"] for c in taxonomy.categories}
+            other_id = next((c["id"] for c in taxonomy.categories if c["name"].lower() == "other"), taxonomy.categories[-1]["id"])
+            for a in assignments:
+                rid = a["id"]
+                cid = a["category_id"]
+                if cid not in valid_category_ids:
+                    cid = other_id
+                assignment_map[rid] = cid
+
+            # Fill missing in this batch as Other
+            batch_ids = {r.get("id") for r in batch}
+            for rid in batch_ids:
+                if rid not in assignment_map:
+                    assignment_map[rid] = other_id
+
+            print(f"  batch {i}/{(len(repos_to_classify) + args.batch_size - 1) // args.batch_size} done")
+            time.sleep(RATE_LIMIT_DELAY)
 
     # Ensure every repo is assigned
     other_id = next((c["id"] for c in taxonomy.categories if c["name"].lower() == "other"), taxonomy.categories[-1]["id"])
@@ -1677,15 +1771,15 @@ def main() -> int:
         "assignments": [{"id": r.get("id"), "full_name": r.get("full_name"), "category_id": assignment_map.get(r.get("id"), other_id)} for r in repos],
     }
 
-    with open(args.out_json, "w", encoding="utf-8") as f:
+    with open(out_json_path, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
 
     md = render_classified_readme(taxonomy, repos, assignment_map)
-    with open(args.out_md, "w", encoding="utf-8") as f:
+    with open(out_md_path, "w", encoding="utf-8") as f:
         f.write(md)
 
-    print(f"Wrote: {args.out_json}")
-    print(f"Wrote: {args.out_md}")
+    print(f"Wrote: {out_json_path}")
+    print(f"Wrote: {out_md_path}")
     return 0
 
 

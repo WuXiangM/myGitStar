@@ -4,7 +4,7 @@ import requests
 import json
 import yaml
 import concurrent.futures
-from typing import Dict, List, Optional
+from typing import Any, Dict, List, Optional
 import re
 import logging
 from logging.handlers import RotatingFileHandler
@@ -12,6 +12,174 @@ import sys
 import random
 import threading
 import time as _time
+
+# ========== 新增：AI总结JSON增量保存相关 ===========
+REPO_ROOT = os.path.dirname(os.path.dirname(__file__))
+
+def get_json_path(language: str) -> str:
+    # 可根据需要自定义路径
+    filename = 'repo_summaries_zh.json' if language == 'zh' else 'repo_summaries_en.json'
+    return os.path.join(REPO_ROOT, filename)
+
+def load_existing_json(path: str) -> dict:
+    if os.path.exists(path):
+        try:
+            with open(path, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception:
+            return {}
+    return {}
+
+
+def normalize_json_store(data: Any) -> Dict[str, Dict]:  # type: ignore
+    """Normalize JSON store to {full_name: entry_dict}.
+
+    Supports:
+    1) full_name -> entry dict (current format)
+    2) category -> [entry dict] (extracted from README)
+    3) list of entry dicts
+    """
+    normalized: Dict[str, Dict] = {}
+    if not data:
+        return normalized
+
+    def _add_entry(full_name: str, entry: Dict) -> None:
+        if not full_name:
+            return
+        normalized[full_name] = entry
+
+    if isinstance(data, dict):
+        # category -> [entry dict]
+        if all(isinstance(v, list) for v in data.values()):
+            for _, items in data.items():
+                for item in items:
+                    if not isinstance(item, dict):
+                        continue
+                    full_name = item.get("full_name") or item.get("Repository Name") or item.get("repo")
+                    if not full_name:
+                        continue
+                    summary = item.get("summary") or item.get("Summary") or ""
+                    normalized_entry = dict(item)
+                    normalized_entry["summary"] = summary
+                    normalized_entry["full_name"] = full_name
+                    _add_entry(full_name, normalized_entry)
+            return normalized
+
+        # full_name -> entry dict or summary string
+        for key, value in data.items():
+            if isinstance(value, dict):
+                full_name = value.get("full_name") or value.get("Repository Name") or key
+                summary = value.get("summary") or value.get("Summary") or ""
+                normalized_entry = dict(value)
+                normalized_entry["summary"] = summary
+                normalized_entry["full_name"] = full_name
+                _add_entry(full_name, normalized_entry)
+            elif isinstance(value, str):
+                normalized_entry = {"full_name": key, "summary": value}
+                _add_entry(key, normalized_entry)
+        return normalized
+
+    if isinstance(data, list):
+        for item in data:
+            if not isinstance(item, dict):
+                continue
+            full_name = item.get("full_name") or item.get("Repository Name") or item.get("repo")
+            if not full_name:
+                continue
+            summary = item.get("summary") or item.get("Summary") or ""
+            normalized_entry = dict(item)
+            normalized_entry["summary"] = summary
+            normalized_entry["full_name"] = full_name
+            _add_entry(full_name, normalized_entry)
+    return normalized
+
+
+def build_summary_index(json_store: Dict[str, Dict]) -> Dict[str, str]:
+    summaries: Dict[str, str] = {}
+    for full_name, entry in (json_store or {}).items():
+        if not isinstance(entry, dict):
+            continue
+        summary = entry.get("summary") or entry.get("Summary") or ""
+        if summary:
+            summaries[full_name] = str(summary)
+    return summaries
+
+
+def get_summary_from_json(json_store: Dict[str, Dict], full_name: str) -> str:
+    if not json_store or not full_name:
+        return ""
+    entry = json_store.get(full_name)
+    if not isinstance(entry, dict):
+        return ""
+    return str(entry.get("summary") or entry.get("Summary") or "")
+
+def save_json_atomic(data: dict, path: str):
+    tmp_path = path + '.tmp'
+    with open(tmp_path, 'w', encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    os.replace(tmp_path, path)
+
+
+def _repo_key(repo: Dict) -> str:
+    return str(repo.get("full_name") or repo.get("Repository Name") or "").strip()
+
+
+def load_summary_store(json_path: str) -> Dict[str, Dict]:
+    raw = load_existing_json(json_path)
+    return normalize_json_store(raw)
+
+
+def should_update_repo(repo: Dict, summary_store: Dict[str, Dict], fallback_summary: str = "") -> bool:
+    key = _repo_key(repo)
+    if not key:
+        return True
+    summary = get_summary_from_json(summary_store, key) or fallback_summary
+    return not is_valid_summary(summary)
+
+
+def build_repo_entry(repo: Dict, summary: str) -> Dict:
+    entry = {
+        "full_name": repo.get("full_name"),
+        "Repository Name": repo.get("full_name"),
+        "Repository URL": repo.get("html_url"),
+        "description": repo.get("description"),
+        "language": repo.get("language"),
+        "stargazers_count": repo.get("stargazers_count"),
+        "forks_count": repo.get("forks_count"),
+        "updated_at": repo.get("updated_at"),
+        "summary": summary or "",
+    }
+    return entry
+
+
+def merge_summary_store(existing_store: Dict[str, Dict], updates: Dict[str, Dict]) -> Dict[str, Dict]:
+    merged = dict(existing_store or {})
+    for key, value in (updates or {}).items():
+        if not key:
+            continue
+        merged[key] = value
+    return merged
+
+
+def select_repos_for_update(
+    classified: Dict[str, List[Dict]],
+    summary_store: Dict[str, Dict],
+    old_summaries: Dict[str, str],
+    mode: str,
+) -> Dict[str, List[Dict]]:
+    if mode != "missing_only":
+        return classified
+    filtered: Dict[str, List[Dict]] = {}
+    for lang, repos in classified.items():
+        needs_update = []
+        for repo in repos:
+            key = _repo_key(repo)
+            fallback = old_summaries.get(key, "")
+            if should_update_repo(repo, summary_store, fallback):
+                needs_update.append(repo)
+        if needs_update:
+            filtered[lang] = needs_update
+    return filtered
 
 # 请勿直接把密钥写在代码中。下面使用 config + 环境变量优先策略读取密钥。
 
@@ -720,12 +888,19 @@ def get_starred_repos() -> List[Dict]:
     return repos
 
 
-def load_old_summaries():
-    """读取旧的README-sum.md，返回字典: {repo_full_name: summary}，只保留与 config.language 一致的内容"""
+def load_old_summaries(json_path: str):
+    """优先读取 JSON，总结回退到 README-sum.md。"""
+    json_data = load_existing_json(json_path)
+    json_store = normalize_json_store(json_data)
+    summaries = build_summary_index(json_store)
+    if summaries:
+        print(f"[DEBUG] 优先使用 JSON 旧总结，条目数: {len(summaries)}")
+        return summaries
+
     if not README_SUM_PATH or not isinstance(README_SUM_PATH, str) or not os.path.exists(README_SUM_PATH):
         print(f"[DEBUG] {README_SUM_PATH} 不存在，跳过加载旧总结")
         return {}
-    print(f"[DEBUG] 开始加载旧总结，文件路径: {README_SUM_PATH}")
+    print(f"[DEBUG] 回退加载 README 旧总结，文件路径: {README_SUM_PATH}")
     summaries = {}
     current_repo = None
     current_lines = []
@@ -1003,31 +1178,34 @@ def main():
             except Exception:
                 pass
         classified = classify_by_language(starred)
-        old_summaries = load_old_summaries()
-        
-        # 新增：根据 update_mode 过滤需要处理的仓库
-        if update_mode == "missing_only":
-            # 只对缺失或无效的 summary 做实际的 API 调用，但保留完整仓库列表用于最终输出。
-            # 构建一个 process_set，包含需要调用 AI 的仓库 full_name
-            process_set = set()
-            for lang, repos in classified.items():
-                for repo in repos:
-                    if not is_valid_summary(old_summaries.get(repo.get("full_name", ""), "")):
-                        process_set.add(repo.get('full_name'))
-            # classified_to_process 保留全部仓库（用于生成最终文档），但实际只对 process_set 中的仓库发起调用
-            classified_to_process = classified
-        else:
-            # 全部仓库都处理
-            # 优先处理已有总结不完整或包含错误的仓库（使它们在每次更新时先被刷新）
-            classified_to_process = {}
-            for lang, repos in classified.items():
-                try:
-                    # 将 is_valid_summary 为 False 的仓库排在前面
-                    sorted_repos = sorted(repos, key=lambda r: is_valid_summary(old_summaries.get(r.get('full_name', ''), '')))
-                except Exception:
-                    sorted_repos = repos
-                if sorted_repos:
-                    classified_to_process[lang] = sorted_repos
+
+        # 优先从 JSON 读取历史总结（并规范化结构）
+        json_path = get_json_path(LANGUAGE)
+        summary_store = load_summary_store(json_path)
+        old_summaries = build_summary_index(summary_store)
+        if not old_summaries:
+            old_summaries = load_old_summaries(json_path)
+        if not summary_store and old_summaries:
+            # 用 README 旧总结回填 JSON，保证后续 MD 从 JSON 渲染
+            for full_name, summary in old_summaries.items():
+                summary_store[full_name] = {
+                    "full_name": full_name,
+                    "summary": summary,
+                }
+
+        # 根据 update_mode 计算需要更新的仓库集合（missing_only 仅处理缺失/无效）
+        repos_to_update = select_repos_for_update(classified, summary_store, old_summaries, update_mode)
+
+        # 保留完整仓库列表用于最终输出
+        classified_to_process: Dict[str, List[Dict]] = {}
+        for lang, repos in classified.items():
+            try:
+                # 让缺失/无效总结的仓库优先处理
+                sorted_repos = sorted(repos, key=lambda r: is_valid_summary(old_summaries.get(r.get('full_name', ''), '')))
+            except Exception:
+                sorted_repos = repos
+            if sorted_repos:
+                classified_to_process[lang] = sorted_repos
 
         # 更新标题以反映实际使用的 API
         current_time = time.strftime("%Y-%m-%d", time.localtime())
@@ -1109,7 +1287,8 @@ def main():
         total_repos = sum(len(repos) for repos in classified_to_process.values())
         processed_repos = 0
         
-        repo_summary_map = {}  # 新增：全局仓库总结映射
+
+        repo_summary_map: Dict[str, Dict] = {}
 
         for lang, repos in sorted(classified_to_process.items(), key=lambda x: -len(x[1])):
             if lang in printed_langs:
@@ -1139,17 +1318,14 @@ def main():
                 }.get(lang, "📝")
                 lines.append(f"## {lang_icon} {lang}（共{len(repos)}个）\n\n")
             
-            # 为了避免在 missing_only 模式下把完整仓库列表裁剪掉，我们只对 process_list 发起请求
-            if update_mode == "missing_only":
-                # 只处理需要更新的仓库
-                repos_to_call = [r for r in repos if r.get('full_name') in process_set]
-            else:
-                repos_to_call = repos
+            # missing_only 模式：只对需要更新的仓库发起请求
+            repos_to_call = repos_to_update.get(lang, []) if update_mode == "missing_only" else repos
+
 
             for i in range(0, len(repos_to_call), BATCH_SIZE):
                 this_batch = repos_to_call[i:i+BATCH_SIZE]
                 print(f"处理批次 {i//BATCH_SIZE + 1}，包含 {len(this_batch)} 个仓库...")
-                
+
                 # 根据选择使用不同的总结函数（优先使用 config.model_choice）
                 if api_choice == 'gemini':
                     summaries = gemini_summarize_batch(this_batch, old_summaries)
@@ -1157,11 +1333,16 @@ def main():
                     summaries = copilot_summarize_batch(this_batch, old_summaries)
                 else:
                     summaries = summarize_batch(this_batch, old_summaries, use_copilot=False)
-                
-                for repo, summary in zip(this_batch, summaries):
-                    repo_summary_map[repo['full_name']] = summary  # 收集更新后的 summary
 
-                # 当使用 missing_only 时，this_batch 仅包含需要更新的仓库；后续在写入阶段会合并老的 summary
+                # 构建更新条目并增量写回 JSON
+                for repo, summary in zip(this_batch, summaries):
+                    key = _repo_key(repo)
+                    entry = build_repo_entry(repo, summary)
+                    if key:
+                        repo_summary_map[key] = entry
+
+                summary_store = merge_summary_store(summary_store, repo_summary_map)
+                save_json_atomic(summary_store, json_path)
 
             # 在写入阶段遍历原始 repos 列表，优先使用更新后的 summary（若存在），否则使用旧的 summary
             for repo in repos:
@@ -1169,7 +1350,7 @@ def main():
                     continue  # 跳过已输出的仓库
                 printed_repos.add(repo['full_name'])
 
-                summary = repo_summary_map.get(repo['full_name']) or old_summaries.get(repo['full_name'], "")
+                summary = get_summary_from_json(summary_store, repo['full_name']) or old_summaries.get(repo['full_name'], "")
 
                 # 获取仓库信息
                 url = repo["html_url"]
