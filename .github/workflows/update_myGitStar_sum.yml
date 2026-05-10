@@ -135,7 +135,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md repo_categories.json
+          git add README.md repo_categories.json repo_summaries_en.json repo_summaries_zh.json
           test -f README_lang.md && git add README_lang.md || true
           test -f README_lang_cn.md && git add README_lang_cn.md || true
           git commit -m "update AI summarized stars [bot]" || echo "No changes to commit"

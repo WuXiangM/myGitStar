@@ -10,39 +10,22 @@ from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional, Tuple
 
 import requests
-import yaml
+
+from scripts.core.config import (
+    load_config,
+    get_int_config,
+    get_float_config,
+    env_truthy,
+    normalize_update_mode,
+    resolve_update_mode,
+    get_model_choice,
+)
+from scripts.core.secrets import load_api_keys
+from scripts.core.throttle import SimpleThrottle
 
 # NOTE:
 # - This script reuses the same config + env secret strategy as scripts/summarize_stars.py
 # - It classifies repos by CONTENT (based mainly on repository description), not by language.
-
-CONFIG_PATH_JSON = os.path.join(os.path.dirname(os.path.dirname(__file__)), "config.json")
-CONFIG_PATH_YAML = os.path.join(os.path.dirname(os.path.dirname(__file__)), "config.yaml")
-
-
-def load_config() -> Dict[str, Any]:
-    try:
-        with open(CONFIG_PATH_YAML, "r", encoding="utf-8") as f:
-            data = yaml.safe_load(f)
-            if isinstance(data, dict):
-                return data
-    except FileNotFoundError:
-        pass
-    except Exception:
-        pass
-
-    try:
-        with open(CONFIG_PATH_JSON, "r", encoding="utf-8") as f:
-            data = json.load(f)
-            if isinstance(data, dict):
-                return data
-    except FileNotFoundError:
-        pass
-    except Exception:
-        pass
-
-    return {}
-
 
 config = load_config()
 
@@ -50,114 +33,26 @@ config = load_config()
 REPO_ROOT = os.path.dirname(os.path.dirname(__file__))
 
 
-def _env_truthy(name: str) -> bool:
-    try:
-        return str(os.environ.get(name, "")).strip().lower() in {"1", "true", "yes", "y", "on"}
-    except Exception:
-        return False
+GITHUB_TOKEN, OPENROUTER_API_KEY, GEMINI_API_KEY = load_api_keys(config)
 
-
-def _get_int_config(key: str, default: int) -> int:
-    try:
-        val = config.get(key, default) if isinstance(config, dict) else default
-        if val is None:
-            return int(default)
-        return int(val)
-    except Exception:
-        return int(default)
-
-
-def _get_float_config(key: str, default: float) -> float:
-    try:
-        val = config.get(key, default) if isinstance(config, dict) else default
-        if val is None:
-            return float(default)
-        return float(val)
-    except Exception:
-        return float(default)
-
-
-def _get_secret(config_env_key: str, default_env_names: List[str], config_plain_key: str = "") -> str:
-    for name in default_env_names:
-        val = os.environ.get(name)
-        if val:
-            return val
-
-    if isinstance(config, dict):
-        for name in default_env_names:
-            cfg_val = config.get(name)
-            if cfg_val:
-                return cfg_val
-
-    env_name_in_config = config.get(config_env_key, "") if isinstance(config, dict) else ""
-    if env_name_in_config:
-        val = os.environ.get(env_name_in_config)
-        if val:
-            return val
-
-    if config_plain_key and isinstance(config, dict):
-        val = config.get(config_plain_key, "")
-        if val:
-            return val
-
-    return ""
-
-
-GITHUB_TOKEN = _get_secret("github_token_env", ["STARRED_GITHUB_TOKEN", "GITHUB_TOKEN"], "github_token")
-OPENROUTER_API_KEY = _get_secret("openrouter_api_key_env", ["OPENROUTER_API_KEY"], "openrouter_api_key")
-GEMINI_API_KEY = _get_secret("gemini_api_key_env", ["GEMINI_API_KEY"], "gemini_api_key")
-
-def get_model_choice() -> str:
-    """Get selected backend.
-
-    Priority:
-    1) env MYGITSTAR_MODEL_CHOICE (per-step override)
-    2) config.yaml model_choice
-    """
-    try:
-        val = os.environ.get("MYGITSTAR_MODEL_CHOICE")
-        if val is not None and str(val).strip():
-            return str(val).strip().lower()
-        return (config.get("model_choice", "copilot") if isinstance(config, dict) else "copilot").strip().lower()
-    except Exception:
-        return "copilot"
-
-
-MODEL_CHOICE = get_model_choice()
+MODEL_CHOICE = get_model_choice(config)
 
 DEFAULT_COPILOT_MODEL = config.get("default_copilot_model", "openai/gpt-4o-mini")
 DEFAULT_OPENROUTER_MODEL = config.get("default_openrouter_model")
 DEFAULT_GEMINI_MODEL = config.get("default_gemini_model", "gemini-2.0-flash")
 
 
-def _normalize_update_mode(mode: Any) -> str:
-    try:
-        s = str(mode or "").strip().lower()
-    except Exception:
-        s = ""
-    s = s.replace("-", "_")
-    if s in {"missing", "missingonly", "missing_only", "incremental"}:
-        return "missing_only"
-    if s in {"all", "full"}:
-        return "all"
-    return "all"
+update_mode = resolve_update_mode(config)
 
+REQUEST_TIMEOUT = float(os.environ.get("MYGITSTAR_REQUEST_TIMEOUT", get_float_config(config, "request_timeout", 30.0)))
+REQUEST_RETRY_DELAY = float(os.environ.get("MYGITSTAR_REQUEST_RETRY_DELAY", get_float_config(config, "request_retry_delay", 2.0)))
+RETRY_ATTEMPTS = int(os.environ.get("MYGITSTAR_RETRY_ATTEMPTS", get_int_config(config, "retry_attempts", 1)))
+RATE_LIMIT_DELAY = float(os.environ.get("MYGITSTAR_RATE_LIMIT_DELAY", get_float_config(config, "rate_limit_delay", 3.0)))
+GLOBAL_QPS = float(os.environ.get("MYGITSTAR_GLOBAL_QPS", get_float_config(config, "global_qps", 0.5)))
 
-update_mode = _normalize_update_mode(
-    os.environ.get("MYGITSTAR_UPDATE_MODE")
-    or (config.get("update_mode") if isinstance(config, dict) else None)
-    or "all"
-)
+FALLBACK_ON_429 = env_truthy("MYGITSTAR_FALLBACK_ON_429")
 
-REQUEST_TIMEOUT = float(os.environ.get("MYGITSTAR_REQUEST_TIMEOUT", _get_float_config("request_timeout", 30.0)))
-REQUEST_RETRY_DELAY = float(os.environ.get("MYGITSTAR_REQUEST_RETRY_DELAY", _get_float_config("request_retry_delay", 2.0)))
-RETRY_ATTEMPTS = int(os.environ.get("MYGITSTAR_RETRY_ATTEMPTS", _get_int_config("retry_attempts", 1)))
-RATE_LIMIT_DELAY = float(os.environ.get("MYGITSTAR_RATE_LIMIT_DELAY", _get_float_config("rate_limit_delay", 3.0)))
-GLOBAL_QPS = float(os.environ.get("MYGITSTAR_GLOBAL_QPS", _get_float_config("global_qps", 0.5)))
-
-FALLBACK_ON_429 = _env_truthy("MYGITSTAR_FALLBACK_ON_429")
-
-DEBUG_API = _env_truthy("DEBUG_API")
+DEBUG_API = env_truthy("DEBUG_API")
 
 
 class RateLimitAbort(RuntimeError):
@@ -180,22 +75,6 @@ def _note_429_and_maybe_abort(backend: str) -> None:
         raise RateLimitAbort(
             f"Too many consecutive 429 rate-limit responses (count={_CONSECUTIVE_429}, max={MAX_CONSECUTIVE_429}) from {backend}. Aborting."
         )
-
-
-class SimpleThrottle:
-    def __init__(self, qps: float):
-        self.interval = 1.0 / qps if qps and qps > 0 else 0.0
-        self.next_allowed = 0.0
-
-    def wait(self) -> None:
-        if self.interval <= 0:
-            return
-        now = time.time()
-        if now < self.next_allowed:
-            to_sleep = self.next_allowed - now
-            time.sleep(to_sleep + random.uniform(0, 0.1))
-            now = time.time()
-        self.next_allowed = now + self.interval
 
 
 THROTTLE = SimpleThrottle(GLOBAL_QPS)
@@ -369,7 +248,7 @@ def _get_llm_text(response: Optional[Dict[str, Any]]) -> str:
 
 def call_llm(prompt: str) -> str:
     """Call the selected LLM backend with a user prompt. Returns raw text."""
-    model_choice = get_model_choice()
+    model_choice = get_model_choice(config)
 
     if model_choice == "copilot":
         if not GITHUB_TOKEN:
@@ -438,8 +317,8 @@ def call_llm(prompt: str) -> str:
                     request_url2,
                     headers2,
                     payload2,
-                    retries=_get_int_config("gemini_retry_attempts", RETRY_ATTEMPTS),
-                    retry_delay=_get_float_config("gemini_retry_delay", REQUEST_RETRY_DELAY),
+                    retries=get_int_config(config, "gemini_retry_attempts", RETRY_ATTEMPTS),
+                    retry_delay=get_float_config(config, "gemini_retry_delay", REQUEST_RETRY_DELAY),
                 )
                 _raise_if_error_response(resp2, backend="Gemini")
                 if not isinstance(resp2, dict):
@@ -507,7 +386,13 @@ def call_llm(prompt: str) -> str:
             "contents": [{"role": "user", "parts": [{"text": prompt}]}],
         }
 
-        resp = make_api_request(request_url, headers, payload, retries=_get_int_config("gemini_retry_attempts", RETRY_ATTEMPTS), retry_delay=_get_float_config("gemini_retry_delay", REQUEST_RETRY_DELAY))
+        resp = make_api_request(
+            request_url,
+            headers,
+            payload,
+            retries=get_int_config(config, "gemini_retry_attempts", RETRY_ATTEMPTS),
+            retry_delay=get_float_config(config, "gemini_retry_delay", REQUEST_RETRY_DELAY),
+        )
         _raise_if_error_response(resp, backend="Gemini")
 
         if not isinstance(resp, dict):
@@ -1153,7 +1038,7 @@ def _normalize_taxonomy(raw: Any, min_categories: int, max_categories: int) -> T
 
 
 def _model_display_name() -> str:
-    model_choice = get_model_choice()
+    model_choice = get_model_choice(config)
     if model_choice == "copilot":
         return "GitHub Copilot"
     if model_choice == "openrouter":
@@ -1518,7 +1403,7 @@ def main() -> int:
 
     if args.update_mode is not None:
         global update_mode
-        update_mode = _normalize_update_mode(args.update_mode)
+        update_mode = normalize_update_mode(args.update_mode)
 
     # 优先级：命令行参数 > config.yaml > 默认值
     # batch_size

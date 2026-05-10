@@ -2,7 +2,6 @@ import os
 import time
 import requests
 import json
-import yaml
 import concurrent.futures
 from typing import Any, Dict, List, Optional
 import re
@@ -13,111 +12,26 @@ import random
 import threading
 import time as _time
 
-# ========== 新增：AI总结JSON增量保存相关 ===========
-REPO_ROOT = os.path.dirname(os.path.dirname(__file__))
-
-def get_json_path(language: str) -> str:
-    # 可根据需要自定义路径
-    filename = 'repo_summaries_zh.json' if language == 'zh' else 'repo_summaries_en.json'
-    return os.path.join(REPO_ROOT, filename)
-
-def load_existing_json(path: str) -> dict:
-    if os.path.exists(path):
-        try:
-            with open(path, 'r', encoding='utf-8') as f:
-                return json.load(f)
-        except Exception:
-            return {}
-    return {}
-
-
-def normalize_json_store(data: Any) -> Dict[str, Dict]:  # type: ignore
-    """Normalize JSON store to {full_name: entry_dict}.
-
-    Supports:
-    1) full_name -> entry dict (current format)
-    2) category -> [entry dict] (extracted from README)
-    3) list of entry dicts
-    """
-    normalized: Dict[str, Dict] = {}
-    if not data:
-        return normalized
-
-    def _add_entry(full_name: str, entry: Dict) -> None:
-        if not full_name:
-            return
-        normalized[full_name] = entry
-
-    if isinstance(data, dict):
-        # category -> [entry dict]
-        if all(isinstance(v, list) for v in data.values()):
-            for _, items in data.items():
-                for item in items:
-                    if not isinstance(item, dict):
-                        continue
-                    full_name = item.get("full_name") or item.get("Repository Name") or item.get("repo")
-                    if not full_name:
-                        continue
-                    summary = item.get("summary") or item.get("Summary") or ""
-                    normalized_entry = dict(item)
-                    normalized_entry["summary"] = summary
-                    normalized_entry["full_name"] = full_name
-                    _add_entry(full_name, normalized_entry)
-            return normalized
-
-        # full_name -> entry dict or summary string
-        for key, value in data.items():
-            if isinstance(value, dict):
-                full_name = value.get("full_name") or value.get("Repository Name") or key
-                summary = value.get("summary") or value.get("Summary") or ""
-                normalized_entry = dict(value)
-                normalized_entry["summary"] = summary
-                normalized_entry["full_name"] = full_name
-                _add_entry(full_name, normalized_entry)
-            elif isinstance(value, str):
-                normalized_entry = {"full_name": key, "summary": value}
-                _add_entry(key, normalized_entry)
-        return normalized
-
-    if isinstance(data, list):
-        for item in data:
-            if not isinstance(item, dict):
-                continue
-            full_name = item.get("full_name") or item.get("Repository Name") or item.get("repo")
-            if not full_name:
-                continue
-            summary = item.get("summary") or item.get("Summary") or ""
-            normalized_entry = dict(item)
-            normalized_entry["summary"] = summary
-            normalized_entry["full_name"] = full_name
-            _add_entry(full_name, normalized_entry)
-    return normalized
-
-
-def build_summary_index(json_store: Dict[str, Dict]) -> Dict[str, str]:
-    summaries: Dict[str, str] = {}
-    for full_name, entry in (json_store or {}).items():
-        if not isinstance(entry, dict):
-            continue
-        summary = entry.get("summary") or entry.get("Summary") or ""
-        if summary:
-            summaries[full_name] = str(summary)
-    return summaries
-
-
-def get_summary_from_json(json_store: Dict[str, Dict], full_name: str) -> str:
-    if not json_store or not full_name:
-        return ""
-    entry = json_store.get(full_name)
-    if not isinstance(entry, dict):
-        return ""
-    return str(entry.get("summary") or entry.get("Summary") or "")
-
-def save_json_atomic(data: dict, path: str):
-    tmp_path = path + '.tmp'
-    with open(tmp_path, 'w', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-    os.replace(tmp_path, path)
+from scripts.core.json_store import (
+    get_summary_json_path,
+    load_json,
+    normalize_json_store,
+    build_summary_index,
+    get_summary_from_json,
+    save_json_atomic,
+    merge_summary_store,
+    load_summary_store,
+)
+from scripts.core.config import (
+    load_config,
+    get_int_config,
+    get_float_config,
+    env_truthy,
+    resolve_update_mode,
+    normalize_update_mode,
+)
+from scripts.core.secrets import load_api_keys
+from scripts.core.throttle import SimpleThrottle
 
 
 def _repo_key(repo: Dict) -> str:
@@ -125,7 +39,7 @@ def _repo_key(repo: Dict) -> str:
 
 
 def load_summary_store(json_path: str) -> Dict[str, Dict]:
-    raw = load_existing_json(json_path)
+    raw = load_json(json_path)
     return normalize_json_store(raw)
 
 
@@ -181,128 +95,13 @@ def select_repos_for_update(
             filtered[lang] = needs_update
     return filtered
 
-# 请勿直接把密钥写在代码中。下面使用 config + 环境变量优先策略读取密钥。
-
-# 加载配置文件
-CONFIG_PATH_JSON = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config.json')
-CONFIG_PATH_YAML = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config.yaml')
-
-def load_config():
-    # 优先读取 YAML 配置，其次回退到 JSON 配置
-    try:
-        with open(CONFIG_PATH_YAML, 'r', encoding='utf-8') as f:
-            data = yaml.safe_load(f)
-            if isinstance(data, dict):
-                return data
-    except FileNotFoundError:
-        pass
-    except Exception:
-        pass
-
-    try:
-        with open(CONFIG_PATH_JSON, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except FileNotFoundError:
-        return {'language': 'zh'}  # 默认中文
-    except Exception:
-        return {'language': 'zh'}
-
 config = load_config()
 
-# 安全读取数值型配置的辅助方法，避免 config.get 返回 None/str 导致类型错误
-def _get_int_config(key: str, default: int) -> int:
-    try:
-        if isinstance(config, dict):
-            val = config.get(key, default)
-        else:
-            val = default
-        if val is None:
-            return int(default)
-        return int(val)
-    except Exception:
-        return int(default)
+DEBUG_API = env_truthy("DEBUG_API") or bool(config.get('test_first_repo', False))
 
+GITHUB_TOKEN, OPENROUTER_API_KEY, GEMINI_API_KEY = load_api_keys(config)
 
-def _get_float_config(key: str, default: float) -> float:
-    try:
-        if isinstance(config, dict):
-            val = config.get(key, default)
-        else:
-            val = default
-        if val is None:
-            return float(default)
-        return float(val)
-    except Exception:
-        return float(default)
-
-# 合并调试与测试模式：当环境变量 DEBUG_API=1/true 或 config.test_first_repo 为 true 时启用详细 API 调试日志
-def _env_truthy(name: str) -> bool:
-    try:
-        return str(os.environ.get(name, "")).strip().lower() in {"1", "true", "yes", "y", "on"}
-    except Exception:
-        return False
-
-
-DEBUG_API = _env_truthy("DEBUG_API") or bool(config.get('test_first_repo', False))
-
-# 通用获取密钥逻辑：优先环境变量（常见或大写名），其次 config 中的大写键，
-# 然后 config 指定的 env 名称字段（如 github_token_env），最后 config 中的明文字段（不推荐）
-def _get_secret(config_env_key: str, default_env_names: List[str], config_plain_key: str = "") -> str:
-    # 1) 检查环境变量
-    for name in default_env_names:
-        val = os.environ.get(name)
-        if val:
-            return val
-
-    # 2) 检查 config 中是否存在大写键（用户可能直接把 key 写在 config）
-    if isinstance(config, dict):
-        for name in default_env_names:
-            cfg_val = config.get(name)
-            if cfg_val:
-                return cfg_val
-
-    # 3) 兼容旧配置：config 中可能指定了一个 env 名称字段（如 github_token_env）
-    env_name_in_config = config.get(config_env_key, "") if isinstance(config, dict) else ""
-    if env_name_in_config:
-        val = os.environ.get(env_name_in_config)
-        if val:
-            return val
-
-    # 4) 最后尝试 config 中的明文字段（不推荐）
-    if config_plain_key and isinstance(config, dict):
-        val = config.get(config_plain_key, "")
-        if val:
-            return val
-
-    return ""
-
-# 读取各类 API Key（优先环境变量 / Secret）
-GITHUB_TOKEN = _get_secret("github_token_env", ["STARRED_GITHUB_TOKEN", "GITHUB_TOKEN"], "github_token")
-OPENROUTER_API_KEY = _get_secret("openrouter_api_key_env", ["OPENROUTER_API_KEY"], "openrouter_api_key")
-GEMINI_API_KEY = _get_secret("gemini_api_key_env", ["GEMINI_API_KEY"], "gemini_api_key")
-
-def _normalize_update_mode(mode: Any) -> str: # type: ignore
-    """Normalize update_mode.
-
-    Semantics:
-    - missing_only: only call AI for NEW / missing / invalid summaries, but still output the full README.
-    - all: re-summarize every repo (force refresh).
-    """
-    try:
-        s = str(mode or "").strip().lower()
-    except Exception:
-        s = ""
-    s = s.replace("-", "_")
-    if s in {"missing", "missingonly", "missing_only", "incremental"}:
-        return "missing_only"
-    if s in {"all", "full"}:
-        return "all"
-    # Default to all for safety/clarity
-    return "all"
-
-
-# 新增：读取 update_mode 配置（可被环境变量/CLI 覆盖）
-update_mode = _normalize_update_mode(os.environ.get("MYGITSTAR_UPDATE_MODE") or (config.get("update_mode") if isinstance(config, dict) else None) or "all")
+update_mode = resolve_update_mode(config)
 
 # 从配置文件加载参数
 github_username = config.get("github_username")
@@ -314,12 +113,12 @@ default_copilot_model = config.get("default_copilot_model")
 default_openrouter_model = config.get("default_openrouter_model")
 default_gemini_model = config.get("default_gemini_model", "gemini-pro")
 # 使用安全读取，确保为正确类型
-max_workers = _get_int_config("max_workers", 5)
-batch_size = _get_int_config("batch_size", 1)
-request_timeout = _get_float_config("request_timeout", 10.0)
-rate_limit_delay = _get_float_config("rate_limit_delay", 1.0)
-request_retry_delay = _get_int_config("request_retry_delay", 5)
-retry_attempts = _get_int_config("retry_attempts", 3)
+max_workers = get_int_config(config, "max_workers", 5)
+batch_size = get_int_config(config, "batch_size", 1)
+request_timeout = get_float_config(config, "request_timeout", 10.0)
+rate_limit_delay = get_float_config(config, "rate_limit_delay", 1.0)
+request_retry_delay = get_int_config(config, "request_retry_delay", 5)
+retry_attempts = get_int_config(config, "retry_attempts", 3)
 readme_sum_path = config.get("readme_sum_path")
 
 # 环境变量加载
@@ -354,27 +153,7 @@ if MAX_REPOS is None:
         pass
 
 # 全局速率限制配置（请求每秒数），默认保守 0.5 req/s（即每 2s 一次）
-GLOBAL_QPS = _get_float_config('global_qps', 0.5)
-
-
-class SimpleThrottle:
-    def __init__(self, qps: float):
-        self.interval = 1.0 / qps if qps and qps > 0 else 0.0
-        self.lock = threading.Lock()
-        self.next_allowed = 0.0
-
-    def wait(self):
-        if self.interval <= 0:
-            return
-        with self.lock:
-            now = _time.time()
-            if now < self.next_allowed:
-                to_sleep = self.next_allowed - now
-                # small jitter
-                _time.sleep(to_sleep + random.uniform(0, 0.1))
-                now = _time.time()
-            # schedule next
-            self.next_allowed = now + self.interval
+GLOBAL_QPS = get_float_config(config, 'global_qps', 0.5)
 
 
 # 全局节流器实例
@@ -554,8 +333,8 @@ def gemini_summarize(repo: Dict) -> Optional[str]:
                 url=request_url,
                 headers=headers,
                 data=payload,
-                retries=_get_int_config("gemini_retry_attempts", RETRY_ATTEMPTS),
-                retry_delay=_get_int_config("gemini_retry_delay", int(REQUEST_RETRY_DELAY))
+                retries=get_int_config(config, "gemini_retry_attempts", RETRY_ATTEMPTS),
+                retry_delay=int(get_float_config(config, "gemini_retry_delay", float(REQUEST_RETRY_DELAY)))
             )
 
             if not response or not isinstance(response, dict):
@@ -678,8 +457,8 @@ LANGUAGE = config.get('language', 'zh')
 
 # 日志配置：支持将输出写入文件（可通过 config.log_file 配置路径）
 LOG_FILE = config.get('log_file', os.path.join(os.path.dirname(__file__), 'summarize_stars.log'))
-LOG_MAX_BYTES = _get_int_config('log_max_bytes', 5 * 1024 * 1024)
-LOG_BACKUP_COUNT = _get_int_config('log_backup_count', 3)
+LOG_MAX_BYTES = get_int_config(config, 'log_max_bytes', 5 * 1024 * 1024)
+LOG_BACKUP_COUNT = get_int_config(config, 'log_backup_count', 3)
 
 logger = logging.getLogger('summarize_stars')
 logger.setLevel(logging.DEBUG if DEBUG_API else logging.INFO)
@@ -890,7 +669,7 @@ def get_starred_repos() -> List[Dict]:
 
 def load_old_summaries(json_path: str):
     """优先读取 JSON，总结回退到 README-sum.md。"""
-    json_data = load_existing_json(json_path)
+    json_data = load_json(json_path)
     json_store = normalize_json_store(json_data)
     summaries = build_summary_index(json_store)
     if summaries:
@@ -1180,7 +959,7 @@ def main():
         classified = classify_by_language(starred)
 
         # 优先从 JSON 读取历史总结（并规范化结构）
-        json_path = get_json_path(LANGUAGE)
+        json_path = get_summary_json_path(LANGUAGE)
         summary_store = load_summary_store(json_path)
         old_summaries = build_summary_index(summary_store)
         if not old_summaries:
@@ -1460,7 +1239,7 @@ if __name__ == "__main__":
         README_SUM_PATH = out_path
 
     if args.update_mode is not None:
-        update_mode = _normalize_update_mode(args.update_mode)
+        update_mode = normalize_update_mode(args.update_mode)
 
     main()
     print(f"Copilot API 总调用次数: {copilot_api_call_count}")
