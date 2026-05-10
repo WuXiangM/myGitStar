@@ -12,11 +12,87 @@
 > 说明：按语言分类的输出文件名可由 `config.yaml` 的 `readme_sum_path` 或命令行 `--out` 覆盖；内容分类版由 `classify_stars_by_content.py` 生成到 `README.md`。
 > 新逻辑：总结优先写入 JSON，再由 JSON 生成 MD；README 仅作为旧数据回退来源。
 
+### 1.1 🔄 整体流程图
+
+```
+                              GitHub Stars AI 总结系统
+                    ┌─────────────────────────────────────────────────┐
+                    │                   数据输入                        │
+                    └─────────────────────────────────────────────────┘
+                                        │
+                                        ▼
+                    ┌─────────────────────────────────────────────────┐
+                    │  Step 1: 获取星标仓库                          │
+                    │  GET /users/{user}/starred                      │
+                    │  (github_api.py)                               │
+                    └─────────────────────────────────────────────────┘
+                                        │
+                                        ▼
+                    ┌─────────────────────────────────────────────────┐
+                    │  Step 2: 生成 AI 总结 (并行处理)                │
+                    │  summarize_stars.py                            │
+                    │  ┌──────────┐ ┌──────────┐ ┌──────────┐       │
+                    │  │ Copilot  │ │OpenRouter│ │  Gemini  │       │
+                    │  │  (GitHub)│ │ (第三方) │ │ (Google) │       │
+                    │  └──────────┘ └──────────┘ └──────────┘       │
+                    └─────────────────────────────────────────────────┘
+                                        │
+                         ┌──────────────┴──────────────┐
+                         ▼                              ▼
+              ┌─────────────────────┐    ┌─────────────────────────┐
+              │  repo_summaries_en.json  │    │  repo_summaries_zh.json  │
+              └─────────────────────┘    └─────────────────────────┘
+                         │                              │
+                         ▼                              ▼
+              ┌─────────────────────┐    ┌─────────────────────────┐
+              │  README_lang.md     │    │  README_lang_cn.md       │
+              │  (按语言-英文)        │    │  (按语言-中文)            │
+              └─────────────────────┘    └─────────────────────────┘
+                         │                              │
+                         └──────────────┬───────────────┘
+                                        ▼
+                    ┌─────────────────────────────────────────────────┐
+                    │  Step 3: 内容分类 (classify_stars_by_content.py) │
+                    │                                                 │
+                    │  3.1 解析 README ──▶ 提取仓库列表                 │
+                    │       ▼                                        │
+                    │  3.2 LLM 设计 Taxonomy ──▶ 分类体系 (C1~Cn)       │
+                    │       ▼                                        │
+                    │  3.3 LLM 批量分类 ──▶ 仓库 → 类别映射             │
+                    │       ▼                                        │
+                    │  3.4 渲染输出 ──▶ README.md                      │
+                    └─────────────────────────────────────────────────┘
+                                        │
+                                        ▼
+                    ┌─────────────────────────────────────────────────┐
+                    │                    输出文件                      │
+                    │  📗 README.md (内容分类)                        │
+                    │  📘 README_lang.md (按语言-英文)                 │
+                    │  📙 README_lang_cn.md (按语言-中文)              │
+                    │  🧾 repo_categories.json (分类数据)              │
+                    └─────────────────────────────────────────────────┘
+```
+
 ## 2) 📂 目录结构（关键文件）
 
 ```
 myGitStar/
-├── scripts/summarize_stars.py     # 主脚本
+├── scripts/
+│   ├── summarize_stars.py          # 主脚本：生成星标仓库的 AI 总结
+│   ├── classify_stars_by_content.py  # 主脚本：按内容分类仓库
+│   ├── api_clients.py              # AI API 客户端（Copilot/OpenRouter/Gemini）
+│   ├── github_api.py               # GitHub API 交互
+│   ├── prompts.py                  # AI 提示词生成
+│   ├── readme_builder.py           # README 生成器
+│   ├── llm_caller.py              # LLM 调用封装
+│   ├── classification_parser.py    # 仓库解析和分类
+│   ├── markdown_renderer.py        # Markdown 渲染
+│   └── core/                      # 核心模块
+│       ├── config.py              # 配置管理
+│       ├── secrets.py             # 密钥管理
+│       ├── json_store.py          # JSON 存储
+│       ├── throttle.py            # 速率限制
+│       └── summary_reader.py      # 摘要读取
 ├── config.yaml                   # 配置
 ├── requirements.txt              # Python 依赖
 ├── README.md                     # 内容分类输出（主 README）

@@ -12,11 +12,88 @@ This project fetches a GitHub account’s starred repositories (Stars), uses AI 
 > Note: The language-classified output file is controlled by `readme_sum_path` in `config.yaml` or can be overridden via `--out`. The content-classified README is generated separately by `classify_stars_by_content.py` as `README.md`.
 > New logic: summaries are written to JSON first, then MD is rendered from JSON; README is only a legacy fallback source.
 
+### 1.1 🔄 Overall Flowchart
+
+```
+                              GitHub Stars AI Summary System
+                    ┌─────────────────────────────────────────────────┐
+                    │                   Data Input                     │
+                    └─────────────────────────────────────────────────┘
+                                        │
+                                        ▼
+                    ┌─────────────────────────────────────────────────┐
+                    │  Step 1: Fetch Starred Repos                   │
+                    │  GET /users/{user}/starred                      │
+                    │  (github_api.py)                               │
+                    └─────────────────────────────────────────────────┘
+                                        │
+                                        ▼
+                    ┌─────────────────────────────────────────────────┐
+                    │  Step 2: Generate AI Summaries (Parallel)      │
+                    │  summarize_stars.py                            │
+                    │  ┌──────────┐ ┌──────────┐ ┌──────────┐       │
+                    │  │ Copilot  │ │OpenRouter│ │  Gemini  │       │
+                    │  │  (GitHub)│ │ (3rd-party│ │ (Google) │       │
+                    │  └──────────┘ └──────────┘ └──────────┘       │
+                    └─────────────────────────────────────────────────┘
+                                        │
+                         ┌──────────────┴──────────────┐
+                         ▼                              ▼
+              ┌─────────────────────┐    ┌─────────────────────────┐
+              │  repo_summaries_en.json  │    │  repo_summaries_zh.json  │
+              └─────────────────────┘    └─────────────────────────┘
+                         │                              │
+                         ▼                              ▼
+              ┌─────────────────────┐    ┌─────────────────────────┐
+              │  README_lang.md     │    │  README_lang_cn.md       │
+              │  (by Language-En)   │    │  (by Language-Zh)       │
+              └─────────────────────┘    └─────────────────────────┘
+                         │                              │
+                         └──────────────┬───────────────┘
+                                        ▼
+                    ┌─────────────────────────────────────────────────┐
+                    │  Step 3: Content Classification                │
+                    │  (classify_stars_by_content.py)                 │
+                    │                                                 │
+                    │  3.1 Parse README ──▶ Extract Repo List       │
+                    │       ▼                                        │
+                    │  3.2 LLM Design Taxonomy ──▶ Categories (C1~Cn)│
+                    │       ▼                                        │
+                    │  3.3 LLM Batch Classify ──▶ Repo→Category Map  │
+                    │       ▼                                        │
+                    │  3.4 Render Output ──▶ README.md               │
+                    └─────────────────────────────────────────────────┘
+                                        │
+                                        ▼
+                    ┌─────────────────────────────────────────────────┐
+                    │                    Outputs                         │
+                    │  📗 README.md (content classified)              │
+                    │  📘 README_lang.md (by language-En)             │
+                    │  📙 README_lang_cn.md (by language-Zh)          │
+                    │  🧾 repo_categories.json (classification data)  │
+                    └─────────────────────────────────────────────────┘
+```
+
 ## 2) 📂 Project layout (key files)
 
 ```
 myGitStar/
-├── scripts/summarize_stars.py     # main script
+├── scripts/
+│   ├── summarize_stars.py          # main script: generate AI summaries for starred repos
+│   ├── classify_stars_by_content.py  # main script: classify repos by content
+│   ├── api_clients.py              # AI API clients (Copilot/OpenRouter/Gemini)
+│   ├── github_api.py               # GitHub API interactions
+│   ├── prompts.py                  # AI prompt generation
+│   ├── readme_builder.py           # README builder
+│   ├── llm_caller.py              # LLM caller abstraction
+│   ├── classification_parser.py    # repo parsing and classification
+│   ├── markdown_renderer.py        # Markdown rendering
+│   └── core/                      # core modules
+│       ├── config.py              # configuration management
+│       ├── secrets.py             # secrets management
+│       ├── json_store.py          # JSON storage
+│       ├── throttle.py            # rate limiting
+│       └── summary_reader.py      # summary reader
 ├── config.yaml                   # configuration
 ├── requirements.txt              # Python dependencies
 ├── README.md                     # content-classified output (main README)

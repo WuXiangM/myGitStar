@@ -1,27 +1,11 @@
-import os
-import time
-import requests
-import json
 import concurrent.futures
-from typing import Any, Dict, List, Optional
-import re
 import logging
-from logging.handlers import RotatingFileHandler
+import os
 import sys
-import random
-import threading
-import time as _time
+import time
+from logging.handlers import RotatingFileHandler
+from typing import Any, Dict, List, Optional
 
-from scripts.core.json_store import (
-    get_summary_json_path,
-    load_json,
-    normalize_json_store,
-    build_summary_index,
-    get_summary_from_json,
-    save_json_atomic,
-    merge_summary_store,
-    load_summary_store,
-)
 from scripts.core.config import (
     load_config,
     get_int_config,
@@ -32,87 +16,43 @@ from scripts.core.config import (
 )
 from scripts.core.secrets import load_api_keys
 from scripts.core.throttle import SimpleThrottle
+from scripts.core.json_store import (
+    get_summary_json_path,
+    load_json,
+    normalize_json_store,
+    build_summary_index,
+    get_summary_from_json,
+    save_json_atomic,
+    merge_summary_store,
+    load_summary_store,
+)
+from scripts.api_clients import make_api_request
+from scripts.github_api import get_starred_repos
+from scripts.prompts import generate_summarize_prompt
+from scripts.readme_builder import (
+    classify_by_language,
+    build_readme_header,
+    build_table_of_contents,
+    build_repo_section,
+    build_readme_footer,
+)
 
-
-def _repo_key(repo: Dict) -> str:
-    return str(repo.get("full_name") or repo.get("Repository Name") or "").strip()
-
-
-def load_summary_store(json_path: str) -> Dict[str, Dict]:
-    raw = load_json(json_path)
-    return normalize_json_store(raw)
-
-
-def should_update_repo(repo: Dict, summary_store: Dict[str, Dict], fallback_summary: str = "") -> bool:
-    key = _repo_key(repo)
-    if not key:
-        return True
-    summary = get_summary_from_json(summary_store, key) or fallback_summary
-    return not is_valid_summary(summary)
-
-
-def build_repo_entry(repo: Dict, summary: str) -> Dict:
-    entry = {
-        "full_name": repo.get("full_name"),
-        "Repository Name": repo.get("full_name"),
-        "Repository URL": repo.get("html_url"),
-        "description": repo.get("description"),
-        "language": repo.get("language"),
-        "stargazers_count": repo.get("stargazers_count"),
-        "forks_count": repo.get("forks_count"),
-        "updated_at": repo.get("updated_at"),
-        "summary": summary or "",
-    }
-    return entry
-
-
-def merge_summary_store(existing_store: Dict[str, Dict], updates: Dict[str, Dict]) -> Dict[str, Dict]:
-    merged = dict(existing_store or {})
-    for key, value in (updates or {}).items():
-        if not key:
-            continue
-        merged[key] = value
-    return merged
-
-
-def select_repos_for_update(
-    classified: Dict[str, List[Dict]],
-    summary_store: Dict[str, Dict],
-    old_summaries: Dict[str, str],
-    mode: str,
-) -> Dict[str, List[Dict]]:
-    if mode != "missing_only":
-        return classified
-    filtered: Dict[str, List[Dict]] = {}
-    for lang, repos in classified.items():
-        needs_update = []
-        for repo in repos:
-            key = _repo_key(repo)
-            fallback = old_summaries.get(key, "")
-            if should_update_repo(repo, summary_store, fallback):
-                needs_update.append(repo)
-        if needs_update:
-            filtered[lang] = needs_update
-    return filtered
 
 config = load_config()
 
-DEBUG_API = env_truthy("DEBUG_API") or bool(config.get('test_first_repo', False))
+DEBUG_API = env_truthy("DEBUG_API") or bool(config.get("test_first_repo", False))
 
 GITHUB_TOKEN, OPENROUTER_API_KEY, GEMINI_API_KEY = load_api_keys(config)
 
 update_mode = resolve_update_mode(config)
 
-# 从配置文件加载参数
 github_username = config.get("github_username")
-github_token_env = config.get("github_token_env")
-openrouter_api_key_env = config.get("openrouter_api_key_env")
 model_choice = config.get("model_choice", "copilot")
 
 default_copilot_model = config.get("default_copilot_model")
 default_openrouter_model = config.get("default_openrouter_model")
 default_gemini_model = config.get("default_gemini_model", "gemini-pro")
-# 使用安全读取，确保为正确类型
+
 max_workers = get_int_config(config, "max_workers", 5)
 batch_size = get_int_config(config, "batch_size", 1)
 request_timeout = get_float_config(config, "request_timeout", 10.0)
@@ -121,8 +61,6 @@ request_retry_delay = get_int_config(config, "request_retry_delay", 5)
 retry_attempts = get_int_config(config, "retry_attempts", 3)
 readme_sum_path = config.get("readme_sum_path")
 
-# 环境变量加载
-# 支持 config.json 配置为 0 时自动获取 workflow 账号
 if github_username == "0" or github_username == 0:
     GITHUB_USERNAME = os.environ.get("GITHUB_ACTOR") or os.environ.get("GITHUB_USERNAME")
     if not GITHUB_USERNAME:
@@ -130,9 +68,8 @@ if github_username == "0" or github_username == 0:
 else:
     GITHUB_USERNAME = github_username
 
-# 限制每次运行处理的最大仓库数：优先使用环境变量 `MAX_REPOS`，若不存在则使用 config 中的 `max_repos`。
-MAX_REPOS = None
-max_repos_env = os.environ.get('MAX_REPOS')
+MAX_REPOS: Optional[int] = None
+max_repos_env = os.environ.get("MAX_REPOS")
 if max_repos_env:
     try:
         mr = int(max_repos_env)
@@ -141,10 +78,9 @@ if max_repos_env:
     except Exception:
         MAX_REPOS = None
 
-# 回退：如果未设置环境变量 MAX_REPOS，则使用 config.yaml 的 max_repos（>0 才生效）
 if MAX_REPOS is None:
     try:
-        cfg_mr = config.get('max_repos') if isinstance(config, dict) else None
+        cfg_mr = config.get("max_repos") if isinstance(config, dict) else None
         if cfg_mr is not None:
             mr = int(cfg_mr)
             if mr > 0:
@@ -152,26 +88,26 @@ if MAX_REPOS is None:
     except Exception:
         pass
 
-# 全局速率限制配置（请求每秒数），默认保守 0.5 req/s（即每 2s 一次）
-GLOBAL_QPS = get_float_config(config, 'global_qps', 0.5)
-
-
-# 全局节流器实例
+GLOBAL_QPS = get_float_config(config, "global_qps", 0.5)
 THROTTLE = SimpleThrottle(GLOBAL_QPS)
 
-# 将 copilot_summarize 和 openrouter_summarize 函数移动到 get_summarize_func 之前
-
-# Copilot API调用计数器
 copilot_api_call_count = 0
-copilot_api_limit = 150  # 默认每日限额
 openrouter_api_call_count = 0
 gemini_api_call_count = 0
 
+
+def _repo_key(repo: Dict) -> str:
+    return str(repo.get("full_name") or repo.get("Repository Name") or "").strip()
+
+
+def _make_request_with_throttle(url: str, headers: Dict, data: Dict, retries: int, retry_delay: float, timeout: float) -> Optional[Dict]:
+    return make_api_request(url, headers, data, retries, retry_delay, timeout, THROTTLE)
+
+
 def copilot_summarize(repo: Dict) -> Optional[str]:
-    """使用 GitHub Copilot API 进行总结"""
     global copilot_api_call_count
     copilot_api_call_count += 1
-    remaining = copilot_api_limit - copilot_api_call_count
+    remaining = 150 - copilot_api_call_count
     print(f"[Copilot API调用] 第 {copilot_api_call_count} 次调用，仓库: {repo['full_name']}，剩余可用: {remaining}")
     if not GITHUB_TOKEN:
         print("缺少 STARRED_GITHUB_TOKEN，无法调用 GitHub Copilot API")
@@ -181,17 +117,24 @@ def copilot_summarize(repo: Dict) -> Optional[str]:
             "Authorization": f"Bearer {GITHUB_TOKEN}",
             "Accept": "application/json",
             "X-GitHub-Api-Version": "2023-07-01",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
         }
-        model_name = os.environ.get("GITHUB_COPILOT_MODEL", DEFAULT_COPILOT_MODEL) or "openai/gpt-4o-mini"
+        model_name = os.environ.get("GITHUB_COPILOT_MODEL", default_copilot_model) or "openai/gpt-4o-mini"
+        prompt = generate_summarize_prompt(repo, LANGUAGE)
         data = {
             "model": model_name,
-            "messages": [{"role": "user", "content": generate_prompt(repo)}],
+            "messages": [{"role": "user", "content": prompt}],
             "max_tokens": 600,
-            "temperature": 0.4
+            "temperature": 0.4,
         }
-        response = make_api_request(API_ENDPOINTS["copilot"], headers, data)
-        # 限额提醒处理
+        response = _make_request_with_throttle(
+            "https://models.github.ai/inference/chat/completions",
+            headers,
+            data,
+            retry_attempts,
+            float(request_retry_delay),
+            request_timeout,
+        )
         if response and isinstance(response, dict) and response.get("error"):
             err = response["error"]
             if err.get("code") == "RateLimitReached":
@@ -200,26 +143,23 @@ def copilot_summarize(repo: Dict) -> Optional[str]:
                 return f"Copilot API限额已用尽：{msg}"
         content = None
         if response:
-            choices = response.get('choices', [{}])
+            choices = response.get("choices", [{}])
             if choices and isinstance(choices[0], dict):
-                message = choices[0].get('message')
+                message = choices[0].get("message")
                 if message and isinstance(message, dict):
-                    content = message.get('content', '')
-                elif 'content' in choices[0]:
-                    content = choices[0]['content']
+                    content = message.get("content", "")
+                elif "content" in choices[0]:
+                    content = choices[0]["content"]
             if content is not None:
                 content = str(content).strip()
         print(f"Copilot内容: {content!r}")
-        if not content:
-            print("大模型输出为空 (Copilot)")
-        return content
+        return content if content else None
     except Exception as e:
         print(f"Copilot总结异常: {e}")
         return None
 
 
 def openrouter_summarize(repo: Dict) -> Optional[str]:
-    """使用 OpenRouter API 进行总结"""
     global openrouter_api_call_count
     openrouter_api_call_count += 1
     if not OPENROUTER_API_KEY:
@@ -228,72 +168,67 @@ def openrouter_summarize(repo: Dict) -> Optional[str]:
     try:
         headers = {
             "Authorization": f"Bearer {OPENROUTER_API_KEY}",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
         }
+        prompt = generate_summarize_prompt(repo, LANGUAGE)
         data = {
-            "model": DEFAULT_OPENROUTER_MODEL,
-            "messages": [{"role": "user", "content": generate_prompt(repo)}]
+            "model": default_openrouter_model,
+            "messages": [{"role": "user", "content": prompt}],
         }
-        response = make_api_request(API_ENDPOINTS["openrouter"], headers, data)
+        response = _make_request_with_throttle(
+            "https://openrouter.ai/api/v1/chat/completions",
+            headers,
+            data,
+            retry_attempts,
+            float(request_retry_delay),
+            request_timeout,
+        )
         content = None
         if response:
-            # OpenRouter API返回结构兼容性处理
-            choices = response.get('choices', [{}])
+            choices = response.get("choices", [{}])
             if choices and isinstance(choices[0], dict):
-                message = choices[0].get('message')
+                message = choices[0].get("message")
                 if message and isinstance(message, dict):
-                    content = message.get('content', '')
-                elif 'content' in choices[0]:
-                    content = choices[0]['content']
+                    content = message.get("content", "")
+                elif "content" in choices[0]:
+                    content = choices[0]["content"]
             if content is not None:
                 content = str(content).strip()
         print(f"OpenRouter内容: {content!r}")
-        if not content:
-            print("大模型输出为空 (OpenRouter)")
-        return content
+        return content if content else None
     except Exception as e:
         print(f"OpenRouter总结异常: {e}")
         return None
 
 
 def gemini_summarize(repo: Dict) -> Optional[str]:
-    """使用 Gemini API 进行总结（优化版）"""
     global gemini_api_call_count
     gemini_api_call_count += 1
-    # 1. 前置参数验证
     if not GEMINI_API_KEY:
         print("缺少 GEMINI_API_KEY，无法调用 Gemini API")
         return None
-    
-    prompt = generate_prompt(repo)
+    prompt = generate_summarize_prompt(repo, LANGUAGE)
     if not prompt.strip():
         print(f"[Gemini] 仓库 {repo.get('full_name')} 的生成提示为空，跳过请求")
         return None
-
     try:
-        # 2. 模型名称标准化（兼容 Gemini 1.0/1.5 全系列模型）
         model_name = os.environ.get("GEMINI_MODEL", default_gemini_model) or "gemini-pro"
-        # 严格处理模型路径：移除多余的 models/ 前缀（注意：str.lstrip 会按字符集移除，不能用于前缀）
         model_path = str(model_name).strip()
         if model_path.startswith("models/"):
             model_path = model_path[len("models/"):]
         model_path = model_path.strip()
-        # 补充官方模型前缀（确保 URL 符合规范）
         if not model_path.startswith("gemini-"):
             print(f"[Gemini] 模型名称 {model_name} 非标准格式，建议使用 gemini-pro/gemini-1.5-pro 等")
 
-        # 3. 构造符合官方最新规范的请求 URL
         api_url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_path}:generateContent"
-        
-        # 4. 优化请求头（添加 User-Agent、明确 Content-Type）
+        request_url = f"{api_url}?key={GEMINI_API_KEY}"
+
         headers = {
             "Content-Type": "application/json; charset=utf-8",
-            "User-Agent": "GitHub Star Summary Bot/1.0",  # 标识请求来源
-            "X-Goog-Api-Key": GEMINI_API_KEY  # 部分场景下该 Header 更兼容，同时 URL 仍保留 key 参数
+            "User-Agent": "GitHub Star Summary Bot/1.0",
+            "X-Goog-Api-Key": GEMINI_API_KEY,
         }
 
-        # 5. 优化请求体（符合 Gemini 官方规范，增加可控参数）
-        # 可配置生成参数，提升总结质量
         temperature = config.get("gemini_temperature", 0.4)
         max_output_tokens = config.get("gemini_max_output_tokens", 800)
         payload = {
@@ -301,40 +236,27 @@ def gemini_summarize(repo: Dict) -> Optional[str]:
                 "temperature": temperature,
                 "maxOutputTokens": max_output_tokens,
                 "topP": 0.8,
-                "topK": 40
+                "topK": 40,
             },
-            "contents": [
-                {
-                    "role": "user",
-                    "parts": [
-                        {"text": prompt}
-                    ]
-                }
-            ]
+            "contents": [{"role": "user", "parts": [{"text": prompt}]}],
         }
 
-        # 6. 支持基于内容完整性的重试（例如被截断导致 finishReason == 'MAX_TOKENS'）
-        request_url = f"{api_url}?key={GEMINI_API_KEY}"
-
         gen_retries = int(config.get("gemini_generation_retries", 3))
-        gen_backoff = int(config.get("gemini_retry_backoff", 5))  # seconds, will multiply per attempt
+        gen_backoff = int(config.get("gemini_retry_backoff", 5))
         base_max_tokens = int(config.get("gemini_max_output_tokens", max_output_tokens))
 
         final_content = None
         for attempt in range(1, gen_retries + 1):
-            # adjust max tokens slightly on retry to try to avoid truncation
             attempt_max_tokens = min(base_max_tokens + (attempt - 1) * 200, 2048)
             payload["generationConfig"]["maxOutputTokens"] = attempt_max_tokens
 
-            if DEBUG_API:
-                logger.info(f"[Gemini] 生成尝试 {attempt}/{gen_retries}, maxOutputTokens={attempt_max_tokens}")
-
-            response = make_api_request(
+            response = _make_request_with_throttle(
                 url=request_url,
                 headers=headers,
                 data=payload,
-                retries=get_int_config(config, "gemini_retry_attempts", RETRY_ATTEMPTS),
-                retry_delay=int(get_float_config(config, "gemini_retry_delay", float(REQUEST_RETRY_DELAY)))
+                retries=get_int_config(config, "gemini_retry_attempts", retry_attempts),
+                retry_delay=float(get_float_config(config, "gemini_retry_delay", float(request_retry_delay))),
+                timeout=request_timeout,
             )
 
             if not response or not isinstance(response, dict):
@@ -347,7 +269,6 @@ def gemini_summarize(repo: Dict) -> Optional[str]:
                     print(f"[Gemini] 仓库 {repo.get('full_name')} 响应为空或格式异常，已放弃")
                     return None
 
-            # 处理错误响应（Gemini 官方错误格式）
             if "error" in response:
                 error = response["error"]
                 error_code = error.get("code")
@@ -359,7 +280,6 @@ def gemini_summarize(repo: Dict) -> Optional[str]:
                         print(f"[Gemini] 遇到 {error_code}，等待 {wait} 秒后重试...")
                         time.sleep(wait)
                         continue
-                # 非重试错误或重试用尽
                 if error_code == 401:
                     return "Gemini API Key 无效或无权限"
                 elif error_code == 404:
@@ -369,7 +289,6 @@ def gemini_summarize(repo: Dict) -> Optional[str]:
                 else:
                     return f"Gemini API 错误: {error_msg}"
 
-            # 解析响应并判断是否被截断
             content = ""
             truncated = False
             try:
@@ -383,10 +302,8 @@ def gemini_summarize(repo: Dict) -> Optional[str]:
                             content += part["text"].strip() + "\n"
                     if finish == "MAX_TOKENS":
                         truncated = True
-                    # prefer first candidate
                     break
 
-                # 兜底解析
                 if not content:
                     choices = response.get("choices", [])
                     for choice in choices:
@@ -404,14 +321,12 @@ def gemini_summarize(repo: Dict) -> Optional[str]:
                 final_content = content
                 break
 
-            # 如果为空或被截断，决定是否重试
             if attempt < gen_retries:
                 wait = gen_backoff * attempt
                 print(f"[Gemini] 生成内容为空或被截断 (attempt={attempt})，等待 {wait} 秒后重试...")
                 time.sleep(wait)
                 continue
             else:
-                # 重试用尽，返回当前可能不完整的内容或 None
                 if content:
                     final_content = content
                 else:
@@ -426,56 +341,49 @@ def gemini_summarize(repo: Dict) -> Optional[str]:
     except Exception as e:
         print(f"[Gemini] 总结仓库 {repo.get('full_name')} 异常: {e}")
         return None
-    
-    
-# 根据配置选择总结函数
+
+
 def get_summarize_func():
-    if model_choice == 'copilot':
+    if model_choice == "copilot":
         return copilot_summarize
-    elif model_choice == 'openrouter':
+    elif model_choice == "openrouter":
         return openrouter_summarize
-    elif model_choice == 'gemini':
+    elif model_choice == "gemini":
         return gemini_summarize
     else:
         raise ValueError(f"不支持的模型选择: {model_choice}")
 
+
 summarize_func = get_summarize_func()
 
-# API 配置
-DEFAULT_COPILOT_MODEL = default_copilot_model
-DEFAULT_OPENROUTER_MODEL = default_openrouter_model
-MAX_WORKERS = max_workers
-BATCH_SIZE = batch_size
-REQUEST_TIMEOUT = request_timeout
-RATE_LIMIT_DELAY = rate_limit_delay
-REQUEST_RETRY_DELAY = request_retry_delay
-RETRY_ATTEMPTS = retry_attempts
+API_ENDPOINTS = {
+    "copilot": "https://models.github.ai/inference/chat/completions",
+    "openrouter": "https://openrouter.ai/api/v1/chat/completions",
+    "gemini": "https://generativelanguage.googleapis.com/v1beta/models",
+}
 
-# 输出配置
-README_SUM_PATH = readme_sum_path or os.path.join(os.path.dirname(os.path.dirname(__file__)), 'README-sum.md')
-LANGUAGE = config.get('language', 'zh')
+README_SUM_PATH = readme_sum_path or os.path.join(os.path.dirname(os.path.dirname(__file__)), "README-sum.md")
+LANGUAGE = config.get("language", "zh")
 
-# 日志配置：支持将输出写入文件（可通过 config.log_file 配置路径）
-LOG_FILE = config.get('log_file', os.path.join(os.path.dirname(__file__), 'summarize_stars.log'))
-LOG_MAX_BYTES = get_int_config(config, 'log_max_bytes', 5 * 1024 * 1024)
-LOG_BACKUP_COUNT = get_int_config(config, 'log_backup_count', 3)
+LOG_FILE = config.get("log_file", os.path.join(os.path.dirname(__file__), "summarize_stars.log"))
+LOG_MAX_BYTES = get_int_config(config, "log_max_bytes", 5 * 1024 * 1024)
+LOG_BACKUP_COUNT = get_int_config(config, "log_backup_count", 3)
 
-logger = logging.getLogger('summarize_stars')
+logger = logging.getLogger("summarize_stars")
 logger.setLevel(logging.DEBUG if DEBUG_API else logging.INFO)
-formatter = logging.Formatter('%(asctime)s %(levelname)s: %(message)s')
+formatter = logging.Formatter("%(asctime)s %(levelname)s: %(message)s")
 
-file_handler = RotatingFileHandler(LOG_FILE, maxBytes=LOG_MAX_BYTES, backupCount=LOG_BACKUP_COUNT, encoding='utf-8')
+file_handler = RotatingFileHandler(LOG_FILE, maxBytes=LOG_MAX_BYTES, backupCount=LOG_BACKUP_COUNT, encoding="utf-8")
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
-# 保留控制台输出，同时将控制台输出也记录到日志文件
 console_handler = logging.StreamHandler()
 console_handler.setFormatter(formatter)
 logger.addHandler(console_handler)
 
-# 将 print()/stderr 输出同时写入日志（tee）
 orig_stdout = sys.stdout
 orig_stderr = sys.stderr
+
 
 class TeeStream:
     def __init__(self, orig, lg, level):
@@ -500,10 +408,10 @@ class TeeStream:
         except Exception:
             pass
 
+
 sys.stdout = TeeStream(orig_stdout, logger, logging.INFO)
 sys.stderr = TeeStream(orig_stderr, logger, logging.ERROR)
 
-# 打印 API Key 前缀用于调试
 if OPENROUTER_API_KEY:
     print(f"OpenRouter API Key 前缀: {OPENROUTER_API_KEY[:6]}...")
 if GITHUB_TOKEN:
@@ -512,239 +420,24 @@ if GEMINI_API_KEY:
     try:
         print(f"Gemini API Key 前缀: {GEMINI_API_KEY[:4]}...")
     except Exception:
-        # 防止非字符串或长度不足导致异常
         print("Gemini API Key 前缀: (已设置)")
-
-# 常量定义
-API_ENDPOINTS = {
-    "copilot": "https://models.github.ai/inference/chat/completions",
-    "openrouter": "https://openrouter.ai/api/v1/chat/completions",
-    "gemini": "https://generativelanguage.googleapis.com/v1beta/models"
-}
-
-# 通用函数
-
-def make_api_request(url: str, headers: Dict, data: Dict, retries: int = RETRY_ATTEMPTS, retry_delay: int = REQUEST_RETRY_DELAY) -> Optional[Dict]:
-    """通用的 API 请求函数，支持重试逻辑"""
-    for attempt in range(retries):
-        try:
-            # 全局节流：在所有 POST 请求前做 QPS 限制，减少 429
-            try:
-                THROTTLE.wait()
-            except Exception:
-                pass
-            resp = requests.post(url, headers=headers, data=json.dumps(data), timeout=REQUEST_TIMEOUT)
-            if DEBUG_API:
-                logger.info('[API调试]')
-                logger.info(f"请求URL: {url}")
-                logger.info(f"请求Headers: {headers}")
-                logger.info(f"请求Data: {data}")
-                logger.info(f"响应Status: {resp.status_code}")
-                logger.info(f"响应Text: {resp.text}")
-
-            if resp.status_code == 429:
-                # 优先使用服务器返回的 Retry-After
-                retry_after = None
-                try:
-                    ra = resp.headers.get('Retry-After')
-                    if ra is not None:
-                        retry_after = int(ra)
-                except Exception:
-                    retry_after = None
-
-                if retry_after and attempt < retries - 1:
-                    wait = retry_after
-                    logger.warning(f"遇到 429, 使用 Retry-After 等待 {wait}s 后重试 (尝试 {attempt+1}/{retries})")
-                    time.sleep(wait)
-                    continue
-
-                # 指数回退并带抖动
-                if attempt < retries - 1:
-                    base = int(retry_delay)
-                    wait = base * (2 ** attempt) + random.uniform(0, 1)
-                    logger.warning(f"遇到 429, 等待 {wait:.1f}s 后重试 (尝试 {attempt+1}/{retries})")
-                    time.sleep(wait)
-                    continue
-                else:
-                    logger.error("API 429 Too Many Requests 并且重试用尽")
-                    return {'error': {'code': 429, 'message': 'Too Many Requests'}, 'status_code': 429}
-
-            resp.raise_for_status()
-            try:
-                return resp.json()
-            except Exception:
-                return {'text': resp.text}
-        except requests.HTTPError as e:
-            logger.warning(f"API HTTP 错误: {e}")
-            if attempt < retries - 1:
-                wait = int(retry_delay) * (2 ** attempt)
-                logger.info(f"HTTP 错误，等待 {wait}s 后重试")
-                time.sleep(wait)
-                continue
-            else:
-                logger.error(f"API 调用最终失败: {e}")
-                return None
-        except Exception as e:
-            logger.warning(f"API 调用失败: {e}")
-            if attempt < retries - 1:
-                wait = int(retry_delay) * (2 ** attempt) + random.uniform(0, 1)
-                logger.info(f"请求失败，等待 {wait:.1f}s 后重试: {e}")
-                time.sleep(wait)
-                continue
-            else:
-                logger.error(f"API 调用最终失败: {e}")
-                return None
-
-
-def generate_prompt(repo: Dict) -> str:
-    """生成通用的总结提示"""
-    repo_name = repo["full_name"]
-    desc = repo.get("description") or ""
-    url = repo["html_url"]
-    if LANGUAGE == 'zh':
-        return (
-            f"请对以下 GitHub 仓库进行内容总结，按如下格式输出：\n"
-            f"1. **仓库名称：** {repo_name}\n"
-            f"2. **简要介绍：** （50字以内）\n"
-            f"3. **创新点：** （简述本仓库最有特色的地方）\n"
-            f"4. **简单用法：** （给出最简关键用法或调用示例，如无则略）\n"
-            f"5. **总结：** （一句话总结它的用途/价值）\n"
-            f"**仓库描述：** {desc}\n"
-            f"**仓库地址：** {url}\n"
-        )
-    else:
-        return (
-            f"Please summarize the following GitHub repository in the specified format:\n"
-            f"1. **Repository Name:** {repo_name}\n"
-            f"2. **Brief Introduction:** (within 50 words)\n"
-            f"3. **Innovations:** (Briefly describe the most distinctive features)\n"
-            f"4. **Basic Usage:** (Provide the simplest key usage or example, omit if none)\n"
-            f"5. **Summary:** (One sentence summarizing its purpose/value)\n"
-            f"**Repository Description:** {desc}\n"
-            f"**Repository URL:** {url}\n"
-        )
-
-def get_starred_repos() -> List[Dict]:
-    """获取用户的 GitHub 星标仓库"""
-    if not GITHUB_TOKEN:
-        raise ValueError("缺少 GITHUB_TOKEN 环境变量")
-    
-    print("正在获取星标仓库...")
-    repos = []
-    page = 1
-    per_page = 100
-    headers = {
-        "Authorization": f"Bearer {GITHUB_TOKEN}",
-        "Accept": "application/vnd.github+json"
-    }
-    
-    while True:
-        try:
-            url = f"https://api.github.com/users/{GITHUB_USERNAME}/starred?per_page={per_page}&page={page}"
-            try:
-                THROTTLE.wait()
-            except Exception:
-                pass
-            resp = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT)
-            resp.raise_for_status()
-            data = resp.json()
-            
-            if not data:
-                break
-                
-            repos.extend(data)
-            print(f"已获取 {len(repos)} 个仓库... (第 {page} 页)")
-            page += 1
-            
-            # 避免 GitHub API 限制
-            time.sleep(1)
-            
-        except requests.RequestException as e:
-            print(f"获取星标仓库失败: {e}")
-            break
-    
-    print(f"总共获取到 {len(repos)} 个星标仓库")
-    return repos
-
-
-def load_old_summaries(json_path: str):
-    """优先读取 JSON，总结回退到 README-sum.md。"""
-    json_data = load_json(json_path)
-    json_store = normalize_json_store(json_data)
-    summaries = build_summary_index(json_store)
-    if summaries:
-        print(f"[DEBUG] 优先使用 JSON 旧总结，条目数: {len(summaries)}")
-        return summaries
-
-    if not README_SUM_PATH or not isinstance(README_SUM_PATH, str) or not os.path.exists(README_SUM_PATH):
-        print(f"[DEBUG] {README_SUM_PATH} 不存在，跳过加载旧总结")
-        return {}
-    print(f"[DEBUG] 回退加载 README 旧总结，文件路径: {README_SUM_PATH}")
-    summaries = {}
-    current_repo = None
-    current_lines = []
-    with open(README_SUM_PATH, encoding="utf-8") as f:
-        for line in f:
-            if line.startswith("### 📌 ["):
-                if current_repo and current_lines:
-                    summary_block = ''.join(current_lines)
-                    summary = summary_block.split('---')[0].strip()
-                    summary = re.sub(r"\*\*⭐ Stars:.*更新:.*\n", "", summary)
-                    summary = re.sub(r"\*\*⭐ Stars:.*Updated:.*\n", "", summary)
-                    # 语言一致性判断
-                    if LANGUAGE == 'en':
-                        if re.search(r'[\u4e00-\u9fa5]', summary):
-                            summary = ''
-                    else:
-                        if re.search(r'[A-Za-z]', summary) and not re.search(r'[\u4e00-\u9fa5]', summary):
-                            summary = ''
-                    if summary:
-                        summaries[current_repo] = summary
-                left = line.find('[') + 1
-                right = line.find(']')
-                current_repo = line[left:right]
-                current_lines = []
-            elif current_repo:
-                current_lines.append(line)
-        if current_repo and current_lines:
-            summary_block = ''.join(current_lines)
-            summary = summary_block.split('---')[0].strip()
-            summary = re.sub(r"\*\*⭐ Stars:.*更新:.*\n", "", summary)
-            summary = re.sub(r"\*\*⭐ Stars:.*Updated:.*\n", "", summary)
-            if LANGUAGE == 'en':
-                if re.search(r'[\u4e00-\u9fa5]', summary):
-                    summary = ''
-            else:
-                if re.search(r'[A-Za-z]', summary) and not re.search(r'[\u4e00-\u9fa5]', summary):
-                    summary = ''
-            if summary:
-                summaries[current_repo] = summary
-    print(f"[DEBUG] 加载旧总结完成，仓库名称列表: {list(summaries.keys())}")
-    return summaries
-
-
-# 新增：使用 GitHub Copilot / GitHub Models API 进行总结
-# 需要 STARRED_GITHUB_TOKEN 具备访问 models:read & copilot 范围（一般 PAT 启用 copilot 即可）
-# 可通过环境变量 GITHUB_COPILOT_MODEL 指定模型，默认 gpt-4o-mini（依据 GitHub Models 可用模型自行调整）
 
 
 def is_valid_summary(summary: str) -> bool:
-    """检查给定的总结是否有效（只要包含无效短语或仅为换行都判定为False）"""
     if not summary or not summary.strip():
-        print(f"[DEBUG] is_valid_summary: False (空字符串或仅换行)")
         return False
     invalid_phrases = ["生成失败", "暂无AI总结", "429", "Copilot API限额已用尽", "RateLimitReached"]
     for phrase in invalid_phrases:
         if phrase in summary:
-            print(f"[DEBUG] is_valid_summary: False (包含无效短语: {phrase})")
             return False
-    # 额外检测：若摘要使用了与当前语言不一致的模板关键词，或包含常见的不完整英文/模板开头，则视为无效，触发更新
-    try:
-        lang = config.get('language', 'zh')
-    except Exception:
-        lang = 'zh'
 
-    # 常见的、不完整或占位性质的英文模板短语/关键词
+    import re
+
+    try:
+        lang = config.get("language", "zh")
+    except Exception:
+        lang = "zh"
+
     common_english_templates = [
         r"Here'?s the summary",
         r"Here is the summary",
@@ -756,7 +449,6 @@ def is_valid_summary(summary: str) -> bool:
         r"Please summarize",
     ]
 
-    # 常见的、不完整或占位性质的中文模板短语
     common_chinese_templates = [
         r"仓库名称",
         r"简要介绍",
@@ -767,104 +459,81 @@ def is_valid_summary(summary: str) -> bool:
     ]
 
     s_head = summary.strip()[:200]
-
-    # 如果当前语言为中文，但摘要中出现明显英文模板关键词，则视为不完善（需要更新）
-    if lang != 'en':
+    if lang != "en":
         for p in common_english_templates:
             if re.search(p, s_head, flags=re.IGNORECASE):
-                print(f"[DEBUG] is_valid_summary: False (包含英文模板关键词，需更新: {p})")
                 return False
-    # 如果当前语言为英文，但摘要中出现明显中文模板关键词，则视为不完善（需要更新）
-    if lang == 'en':
+    if lang == "en":
         for p in common_chinese_templates:
             if re.search(p, s_head):
-                print(f"[DEBUG] is_valid_summary: False (包含中文模板关键词，需更新: {p})")
                 return False
-    # 检查是否仅为换行（如 '\n', '\r\n' 等）
-    if summary.strip() == "":
-        print(f"[DEBUG] is_valid_summary: False (仅换行)")
-        return False
-    # 内容完整性检查：根据语言确认摘要包含预期的段落标题或关键字段
-    try:
-        lang = config.get('language', 'zh')
-    except Exception:
-        lang = 'zh'
 
-    # 内容完整性：关键词在全文任意位置出现即可（避免模型加前言导致误判）
     full_text = summary.strip()
-    if lang == 'en':
-        patterns = [r'Summary\s*[:：]', r'Repository Name', r'Brief Introduction', r'Innovations']
+    if lang == "en":
+        patterns = [r"Summary\s*[:：]", r"Repository Name", r"Brief Introduction", r"Innovations"]
     else:
-        patterns = [r'总结\s*[:：]', r'仓库名称', r'简要介绍', r'创新点']
+        patterns = [r"总结\s*[:：]", r"仓库名称", r"简要介绍", r"创新点"]
 
-    # 要求所有关键词都存在；任一缺失都视为不完整，需要更新
     missing = []
     for p in patterns:
         if not re.search(p, full_text, flags=re.IGNORECASE):
             missing.append(p)
-
     if missing:
-        print(f"[DEBUG] is_valid_summary: False (缺少关键词，需更新: {missing})")
         return False
 
-    # 额外检查：若摘要包含明确的“简要介绍/Brief Introduction”字段，但该字段内容非常短或仅为占位字符（如单字'A'），则视为无效
     try:
         s = summary
-        if lang == 'en':
-            m = re.search(r'Brief Introduction\s*[:：]\s*(.+?)(?:\n\s*\d+\.|\n\n|$)', s, flags=re.IGNORECASE | re.S)
+        if lang == "en":
+            m = re.search(r"Brief Introduction\s*[:：]\s*(.+?)(?:\n\s*\d+\.|\n\n|$)", s, flags=re.IGNORECASE | re.S)
             if m:
                 intro = m.group(1).strip()
-                # 去除markdown标记和多余空白
-                intro_text = re.sub(r'\*|\*\*|`|\\n', '', intro).strip()
+                intro_text = re.sub(r"\*|\*\*|`|\\n", "", intro).strip()
                 if len(intro_text) < 20:
-                    print(f"[DEBUG] is_valid_summary: False (英文简要介绍过短或占位: {intro_text!r})")
                     return False
         else:
-            m = re.search(r'简要介绍\s*[:：]\s*(.+?)(?:\n\s*\d+\.|\n\n|$)', s, flags=re.S)
+            m = re.search(r"简要介绍\s*[:：]\s*(.+?)(?:\n\s*\d+\.|\n\n|$)", s, flags=re.S)
             if m:
                 intro = m.group(1).strip()
-                intro_text = re.sub(r'\*|\*\*|`|\\n', '', intro).strip()
+                intro_text = re.sub(r"\*|\*\*|`|\\n", "", intro).strip()
                 if len(intro_text) < 10:
-                    print(f"[DEBUG] is_valid_summary: False (中文简要介绍过短或占位: {intro_text!r})")
                     return False
     except Exception:
         pass
 
-    print(f"[DEBUG] is_valid_summary: True")
     return True
 
 
-def summarize_batch(repos: List[Dict], old_summaries: Dict[str, str], use_copilot: bool = False, use_gemini: bool = False) -> List[str]:
-    """批量总结仓库，支持选择使用 OpenRouter、GitHub Copilot 或 Gemini"""
-    results: List[str] = [""] * len(repos)
+def summarize_batch(
+    repos: List[Dict],
+    old_summaries: Dict[str, str],
+    use_copilot: bool = False,
+    use_gemini: bool = False,
+) -> List[str]:
+    results: List[str] = ["" for _ in repos]
     if use_gemini:
-        summarize_func = gemini_summarize
+        func = gemini_summarize
         api_name = "Gemini"
+    elif use_copilot:
+        func = copilot_summarize
+        api_name = "Copilot"
     else:
-        summarize_func = copilot_summarize if use_copilot else openrouter_summarize
-        api_name = "Copilot" if use_copilot else "OpenRouter"
-    
-    with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        future_to_idx = {
-            executor.submit(summarize_func, repo): idx
-            for idx, repo in enumerate(repos)
-        }
+        func = openrouter_summarize
+        api_name = "OpenRouter"
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+        future_to_idx = {executor.submit(func, repo): idx for idx, repo in enumerate(repos)}
         for future in concurrent.futures.as_completed(future_to_idx):
             idx = future_to_idx[future]
             repo = repos[idx]
             try:
-                # 检查是否已有有效总结
                 existing_summary = old_summaries.get(repo["full_name"], "")
-                # 仅在 missing_only 模式下复用旧总结；all 模式应强制尝试生成新总结
                 reuse_existing = (update_mode == "missing_only") and is_valid_summary(existing_summary)
                 if reuse_existing:
                     summary = existing_summary
                 else:
                     summary = future.result()
                     if summary is None:
-                        # 若生成失败，则回退为旧总结（如果有），避免输出空
                         summary = old_summaries.get(repo["full_name"], f"{api_name} API生成失败或429")
-                # Debug: 输出每个 summary 内容
                 print(f"[DEBUG] repo: {repo['full_name']} | summary: {repr(summary)}")
             except Exception as exc:
                 print(f"{repo['full_name']} 线程异常: {exc}")
@@ -873,81 +542,68 @@ def summarize_batch(repos: List[Dict], old_summaries: Dict[str, str], use_copilo
     return results
 
 
-def copilot_summarize_batch(repos: List[Dict], old_summaries: Dict[str, str]) -> List[str]:
-    """使用 GitHub Copilot 批量总结仓库"""
-    return summarize_batch(repos, old_summaries, use_copilot=True)
+def build_repo_entry(repo: Dict, summary: str) -> Dict:
+    return {
+        "full_name": repo.get("full_name"),
+        "Repository Name": repo.get("full_name"),
+        "Repository URL": repo.get("html_url"),
+        "description": repo.get("description"),
+        "language": repo.get("language"),
+        "stargazers_count": repo.get("stargazers_count"),
+        "forks_count": repo.get("forks_count"),
+        "updated_at": repo.get("updated_at"),
+        "summary": summary or "",
+    }
 
 
-def gemini_summarize_batch(repos: List[Dict], old_summaries: Dict[str, str]) -> List[str]:
-    """使用 Gemini 批量总结仓库"""
-    return summarize_batch(repos, old_summaries, use_gemini=True)
+def select_repos_for_update(
+    classified: Dict[str, List[Dict]],
+    summary_store: Dict[str, Dict],
+    old_summaries: Dict[str, str],
+    mode: str,
+) -> Dict[str, List[Dict]]:
+    if mode != "missing_only":
+        return classified
+    filtered: Dict[str, List[Dict]] = {}
+    for lang, repos in classified.items():
+        needs_update = []
+        for repo in repos:
+            key = _repo_key(repo)
+            fallback = old_summaries.get(key, "")
+            if not is_valid_summary(fallback):
+                needs_update.append(repo)
+        if needs_update:
+            filtered[lang] = needs_update
+    return filtered
 
 
-def classify_by_language(repos):
-    classified = {}
-    for repo in repos:
-        lang = repo.get("language") or "Other"
-        classified.setdefault(lang, []).append(repo)
-    return classified
-
-
-def update_existing_summaries(lines, old_summaries):
-    """更新已有的 README-sum.md 文件中的总结内容"""
-    updated_lines = []
-    current_repo = None
-    for line in lines:
-        if line.startswith("### ["):
-            # 解析仓库名
-            left = line.find('[') + 1
-            right = line.find(']')
-            current_repo = line[left:right]
-            updated_lines.append(line)
-        elif current_repo and current_repo in old_summaries:
-            # Debug: 输出替换内容
-            print(f"[DEBUG] 替换 {current_repo} 的 summary 为: {repr(old_summaries[current_repo])}")
-            updated_lines.append(old_summaries[current_repo] + "\n")
-            current_repo = None
-        else:
-            updated_lines.append(line)
-    return updated_lines
-
-def github_anchor(text):
-    # GitHub锚点规则：小写，空格转-，去除特殊字符，仅保留字母、数字、中文和'-'
-    anchor = text.strip().lower()
-    anchor = re.sub(r'[\s]+', '-', anchor)  # 空格转-
-    anchor = re.sub(r'[^\w\u4e00-\u9fa5-]', '', anchor)  # 去除非字母数字中文和-
-    return anchor
-
-###########################################
 def main():
-    # 通过环境变量控制使用哪种 API，默认使用 Copilot
-    # 通过 config 的 model_choice 优先选择模型；若未设置，则使用环境变量 USE_COPILOT_API
     if model_choice:
         api_choice = model_choice.lower()
     else:
-        api_choice = 'copilot' if os.environ.get("USE_COPILOT_API", "true").lower() == "true" else 'openrouter'
+        api_choice = "copilot" if os.environ.get("USE_COPILOT_API", "true").lower() == "true" else "openrouter"
 
-    if api_choice == 'gemini':
-        api_name = 'Gemini'
-    elif api_choice == 'openrouter':
-        api_name = 'OpenRouter (DeepSeek)'
+    if api_choice == "gemini":
+        api_name = "Gemini"
+    elif api_choice == "openrouter":
+        api_name = "OpenRouter (DeepSeek)"
     else:
-        api_name = 'GitHub Copilot'
+        api_name = "GitHub Copilot"
 
     print(f"开始使用 {api_name} 生成 GitHub Star 项目总结...")
     print(f"[mode] update_mode={update_mode} (missing_only=仅补缺失/新增；all=全量重汇总)")
-    
+
     try:
-        starred = get_starred_repos()
-        # 测试模式：若 config 中启用了 test_first_repo，则只保留第一个仓库以便快速调试
+        starred = get_starred_repos(GITHUB_TOKEN, GITHUB_USERNAME, THROTTLE, request_timeout, MAX_REPOS)
+
         try:
-            test_first_repo = bool(config.get('test_first_repo', False))
+            test_first_repo = bool(config.get("test_first_repo", False))
         except Exception:
             test_first_repo = False
         if test_first_repo and isinstance(starred, list) and len(starred) > 0:
-            print('[TEST MODE] test_first_repo 已启用：仅处理第一个仓库进行调试')
+            print("[TEST MODE] test_first_repo 已启用：仅处理第一个仓库进行调试")
             starred = [starred[0]]
-        # 根据环境变量 MAX_REPOS 限制处理数量，方便在 CI 中避免超时
+
         if MAX_REPOS and isinstance(starred, list):
             try:
                 limit = int(MAX_REPOS)
@@ -956,164 +612,60 @@ def main():
                     starred = starred[:limit]
             except Exception:
                 pass
+
         classified = classify_by_language(starred)
 
-        # 优先从 JSON 读取历史总结（并规范化结构）
         json_path = get_summary_json_path(LANGUAGE)
         summary_store = load_summary_store(json_path)
         old_summaries = build_summary_index(summary_store)
-        if not old_summaries:
-            old_summaries = load_old_summaries(json_path)
-        if not summary_store and old_summaries:
-            # 用 README 旧总结回填 JSON，保证后续 MD 从 JSON 渲染
-            for full_name, summary in old_summaries.items():
-                summary_store[full_name] = {
-                    "full_name": full_name,
-                    "summary": summary,
-                }
 
-        # 根据 update_mode 计算需要更新的仓库集合（missing_only 仅处理缺失/无效）
+        from scripts.core.summary_reader import load_old_summaries
+        if not old_summaries:
+            old_summaries = load_old_summaries(json_path, README_SUM_PATH, LANGUAGE)
+        if not summary_store and old_summaries:
+            for full_name, summary in old_summaries.items():
+                summary_store[full_name] = {"full_name": full_name, "summary": summary}
+
         repos_to_update = select_repos_for_update(classified, summary_store, old_summaries, update_mode)
 
-        # 保留完整仓库列表用于最终输出
         classified_to_process: Dict[str, List[Dict]] = {}
         for lang, repos in classified.items():
             try:
-                # 让缺失/无效总结的仓库优先处理
-                sorted_repos = sorted(repos, key=lambda r: is_valid_summary(old_summaries.get(r.get('full_name', ''), '')))
+                sorted_repos = sorted(repos, key=lambda r: is_valid_summary(old_summaries.get(r.get("full_name", ""), "")))
             except Exception:
                 sorted_repos = repos
             if sorted_repos:
                 classified_to_process[lang] = sorted_repos
 
-        # 更新标题以反映实际使用的 API
         current_time = time.strftime("%Y-%m-%d", time.localtime())
-        if LANGUAGE == 'en':
-            current_account = (GITHUB_USERNAME or "").strip() if isinstance(GITHUB_USERNAME, str) else (str(GITHUB_USERNAME).strip() if GITHUB_USERNAME else "")
-            current_account_html = (
-                f"<a href=\"https://github.com/{current_account}\">{current_account}</a>" if current_account else "Unknown"
-            )
-            readme_links = (
-                "<a href=\"README.md\">README (content classified)</a> | "
-                "<a href=\"README_lang.md\">README classified by language</a> | "
-                "<a href=\"README_lang_cn.md\">README 按语言分类</a>"
-            )
-            guide_links = "<a href=\"GUIDE_en.md\">English GUIDE</a> | <a href=\"GUIDE_zh.md\">中文教程</a>"
-            lines = []
-            lines.append(
-                "<div align=\"center\">\n\n"
-                "<h1>My GitHub Star Project AI Summary</h1>\n\n"
-                "<p><b>Reference Repository:</b> <a href=\"https://github.com/WuXiangM/myGitStar\">WuXiangM/myGitStar</a></p>\n\n"
-                f"<p>{readme_links}</p>\n"
-                f"<p>{guide_links}</p>\n\n"
-                "<hr/>\n\n"
-                f"<p><b>Current account:</b> {current_account_html}</p>\n"
-                f"<p><b>Generated on:</b> {current_time}</p>\n"
-                f"<p><b>AI Model:</b> {api_name}</p>\n"
-                f"<p><b>Total repositories:</b> {len(starred)}</p>\n\n"
-                "</div>\n\n"
-            )
 
+        lines: List[str] = []
+        lines.extend(build_readme_header(LANGUAGE, GITHUB_USERNAME, api_name, len(starred), current_time))
+        lines.extend(build_table_of_contents(classified_to_process, LANGUAGE))
 
-            # 添加目录
-            lines.append("## 📖 Table of Contents\n\n")
-            lang_counts = {}
-            for lang, repos in classified_to_process.items():
-                lang_counts[lang] = len(repos)
-            for lang, count in sorted(lang_counts.items(), key=lambda x: -x[1]):
-                anchor = github_anchor(lang)
-                lines.append(f"- [{lang}](#{anchor}) ({count})\n")
-            lines.append("\n---\n\n")
-        else:
-            current_account = (GITHUB_USERNAME or "").strip() if isinstance(GITHUB_USERNAME, str) else (str(GITHUB_USERNAME).strip() if GITHUB_USERNAME else "")
-            current_account_html = (
-                f"<a href=\"https://github.com/{current_account}\">{current_account}</a>" if current_account else "未知"
-            )
-            readme_links = (
-                "<a href=\"README.md\">README（内容分类）</a> | "
-                "<a href=\"README_lang_cn.md\">README 按语言分类</a> | "
-                "<a href=\"README_lang.md\">README classified by language</a>"
-            )
-            guide_links = "<a href=\"GUIDE_zh.md\">中文教程</a> | <a href=\"GUIDE_en.md\">English GUIDE</a>"
-            lines = []
-            lines.append(
-                "<div align=\"center\">\n\n"
-                "<h1>我的 GitHub Star 项目AI总结</h1>\n\n"
-                "<p><b>参考仓库：</b> <a href=\"https://github.com/WuXiangM/myGitStar\">WuXiangM/myGitStar</a></p>\n\n"
-                f"<p>{readme_links}</p>\n"
-                f"<p>{guide_links}</p>\n\n"
-                "<hr/>\n\n"
-                f"<p><b>当前账号：</b> {current_account_html}</p>\n"
-                f"<p><b>生成时间：</b> {current_time}</p>\n"
-                f"<p><b>AI模型：</b> {api_name}</p>\n"
-                f"<p><b>总仓库数：</b> {len(starred)} 个</p>\n\n"
-                "</div>\n\n"
-            )
-            
-            # 添加目录
-            lines.append("## 📖 目录\n\n")
-            lang_counts = {}
-            for lang, repos in classified_to_process.items():
-                lang_counts[lang] = len(repos)
-            for lang, count in sorted(lang_counts.items(), key=lambda x: -x[1]):
-                anchor = github_anchor(lang)
-                lines.append(f"- [{lang}](#{anchor})（{count}个）\n")
-            lines.append("\n---\n\n")
-        
-        printed_repos = set()
-        printed_langs = set()  # 记录已输出的语言
-        
+        printed_repos: set = set()
+        printed_langs: set = set()
         total_repos = sum(len(repos) for repos in classified_to_process.values())
         processed_repos = 0
-        
-
         repo_summary_map: Dict[str, Dict] = {}
 
         for lang, repos in sorted(classified_to_process.items(), key=lambda x: -len(x[1])):
             if lang in printed_langs:
-                continue  # 跳过已输出的语言标题
-            printed_langs.add(lang)
-            print(f"正在处理 {lang} 类型的仓库（共{len(repos)}个）...")
-            
-            # 添加语言标题和图标
-            if LANGUAGE == 'en':
-                lang_icon = {
-                    "Python": "🐍", "JavaScript": "🟨", "TypeScript": "🔷", 
-                    "Java": "☕", "Go": "🐹", "Rust": "🦀", "C++": "⚡", 
-                    "C": "🔧", "C#": "💜", "PHP": "🐘", "Ruby": "💎", 
-                    "Swift": "🐦", "Kotlin": "🅺", "Dart": "🎯", 
-                    "Shell": "🐚", "HTML": "🌐", "CSS": "🎨", 
-                    "Vue": "💚", "React": "⚛️", "Other": "📦"
-                }.get(lang, "📝")
-                lines.append(f"## {lang_icon} {lang} (Total {len(repos)})\n\n")
-            else:
-                lang_icon = {
-                    "Python": "🐍", "JavaScript": "🟨", "TypeScript": "🔷", 
-                    "Java": "☕", "Go": "🐹", "Rust": "🦀", "C++": "⚡", 
-                    "C": "🔧", "C#": "💜", "PHP": "🐘", "Ruby": "💎", 
-                    "Swift": "🐦", "Kotlin": "🅺", "Dart": "🎯", 
-                    "Shell": "🐚", "HTML": "🌐", "CSS": "🎨", 
-                    "Vue": "💚", "React": "⚛️", "Other": "📦"
-                }.get(lang, "📝")
-                lines.append(f"## {lang_icon} {lang}（共{len(repos)}个）\n\n")
-            
-            # missing_only 模式：只对需要更新的仓库发起请求
+                continue
+
             repos_to_call = repos_to_update.get(lang, []) if update_mode == "missing_only" else repos
 
+            for i in range(0, len(repos_to_call), batch_size):
+                this_batch = repos_to_call[i : i + batch_size]
+                print(f"处理批次 {i // batch_size + 1}，包含 {len(this_batch)} 个仓库...")
 
-            for i in range(0, len(repos_to_call), BATCH_SIZE):
-                this_batch = repos_to_call[i:i+BATCH_SIZE]
-                print(f"处理批次 {i//BATCH_SIZE + 1}，包含 {len(this_batch)} 个仓库...")
-
-                # 根据选择使用不同的总结函数（优先使用 config.model_choice）
-                if api_choice == 'gemini':
-                    summaries = gemini_summarize_batch(this_batch, old_summaries)
-                elif api_choice == 'copilot':
-                    summaries = copilot_summarize_batch(this_batch, old_summaries)
+                if api_choice == "gemini":
+                    summaries = summarize_batch(this_batch, old_summaries, use_gemini=True)
+                elif api_choice == "copilot":
+                    summaries = summarize_batch(this_batch, old_summaries, use_copilot=True)
                 else:
-                    summaries = summarize_batch(this_batch, old_summaries, use_copilot=False)
+                    summaries = summarize_batch(this_batch, old_summaries)
 
-                # 构建更新条目并增量写回 JSON
                 for repo, summary in zip(this_batch, summaries):
                     key = _repo_key(repo)
                     entry = build_repo_entry(repo, summary)
@@ -1123,87 +675,40 @@ def main():
                 summary_store = merge_summary_store(summary_store, repo_summary_map)
                 save_json_atomic(summary_store, json_path)
 
-            # 在写入阶段遍历原始 repos 列表，优先使用更新后的 summary（若存在），否则使用旧的 summary
-            for repo in repos:
-                if repo['full_name'] in printed_repos:
-                    continue  # 跳过已输出的仓库
-                printed_repos.add(repo['full_name'])
+            section_lines, printed_repos, printed_langs, processed_repos = build_repo_section(
+                lang,
+                repos,
+                LANGUAGE,
+                summary_store,
+                old_summaries,
+                rate_limit_delay,
+                printed_repos,
+                printed_langs,
+                processed_repos,
+            )
+            lines.extend(section_lines)
 
-                summary = get_summary_from_json(summary_store, repo['full_name']) or old_summaries.get(repo['full_name'], "")
+        lines.extend(
+            build_readme_footer(
+                processed_repos,
+                len(classified_to_process),
+                current_time,
+                api_name,
+                (copilot_api_call_count, openrouter_api_call_count, gemini_api_call_count),
+                LANGUAGE,
+            )
+        )
 
-                # 获取仓库信息
-                url = repo["html_url"]
-                stars = repo.get("stargazers_count", 0)
-                forks = repo.get("forks_count", 0)
-                language = repo.get("language", "Unknown")
-                updated_at = repo.get("updated_at", "")
-                if updated_at:
-                    try:
-                        # 解析时间并格式化
-                        from datetime import datetime
-                        dt = datetime.fromisoformat(updated_at.replace('Z', '+00:00'))
-                        updated_at = dt.strftime("%Y-%m-%d")
-                    except:
-                        updated_at = updated_at[:10]  # 取前10个字符作为日期
-                
-                # 构建仓库条目
-                lines.append(f"### 📌 [{repo['full_name']}]({url})\n\n")
-
-                # 添加仓库元信息
-                if LANGUAGE == 'en':
-                    lines.append(f"**⭐ Stars:** {stars:,} | **🍴 Forks:** {forks:,} | **📅 Updated:** {updated_at}\n\n")
-                else:
-                    lines.append(f"**⭐ Stars:** {stars:,} | **🍴 Forks:** {forks:,} | **📅 更新:** {updated_at}\n\n")
-
-                # 添加AI总结内容
-                if summary and summary.strip():
-                    print(f"[DEBUG] 写入MD: {repo['full_name']} | 内容: {summary[:60]}...")
-                    lines.append(f"{summary}\n\n")
-                else:
-                    print(f"[DEBUG] 写入MD: {repo['full_name']} | 内容: *暂无AI总结*")
-                    if LANGUAGE == 'en':
-                        lines.append("*No AI summary available*\n\n")
-                    else:
-                        lines.append("*暂无AI总结*\n\n")
-
-                lines.append("---\n\n")
-                processed_repos += 1
-                
-                print(f"已处理 {processed_repos}/{total_repos} 个仓库")
-                time.sleep(RATE_LIMIT_DELAY)  # 避免 API 限流
-        
-        # 添加页脚
-        if LANGUAGE == 'en':
-            lines.append(f"\n## 📊 Statistics\n\n")
-            lines.append(f"- **Total repositories:** {processed_repos}\n")
-            lines.append(f"- **Languages:** {len(classified_to_process)}\n")
-            lines.append(f"- **Generated on:** {current_time}\n")
-            lines.append(f"- **AI Model:** {api_name}\n\n")
-            lines.append(f"- **API Calls:** Copilot={copilot_api_call_count}, OpenRouter={openrouter_api_call_count}, Gemini={gemini_api_call_count}\n")
-            lines.append("---\n\n")
-            lines.append("*This document is generated by AI. For any errors, please refer to the original repository information.*\n")
-        else:
-            lines.append(f"\n## 📊 统计信息\n\n")
-            lines.append(f"- **总仓库数：** {processed_repos} 个\n")
-            lines.append(f"- **编程语言数：** {len(classified_to_process)} 种\n")
-            lines.append(f"- **生成时间：** {current_time}\n")
-            lines.append(f"- **AI模型：** {api_name}\n\n")
-            lines.append(f"- **API 调用次数：** Copilot={copilot_api_call_count}，OpenRouter={openrouter_api_call_count}，Gemini={gemini_api_call_count}\n")
-            lines.append("---\n\n")
-            lines.append("*本文档由AI自动生成，如有错误请以原仓库信息为准。*\n")
-
-        # 始终生成完整的新md内容，直接覆盖写入
         with open(README_SUM_PATH, "w", encoding="utf-8") as f:
-            f.write(''.join(lines))
+            f.write("".join(lines))
         print(f"\n✅ {README_SUM_PATH} 已生成，共处理了 {processed_repos} 个仓库。")
-        
+
     except Exception as e:
         print(f"❌ 程序执行失败: {e}")
         raise
 
 
 if __name__ == "__main__":
-    import sys
     import argparse
 
     parser = argparse.ArgumentParser(description="Generate language-classified README summaries.")
