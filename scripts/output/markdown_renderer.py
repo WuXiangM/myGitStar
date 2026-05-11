@@ -172,6 +172,8 @@ def render_markdown(
     assignment_map: Dict[Any, str],
     config: Dict[str, Any],
     model_choice: str,
+    username: str = "unknown",
+    generated_at: str = None,
 ) -> str:
     categories = {c["id"]: c for c in taxonomy.categories}
     buckets: Dict[str, List[Dict[str, Any]]] = {cid: [] for cid in categories.keys()}
@@ -187,12 +189,19 @@ def render_markdown(
             cid = other_id
         buckets[cid].append(r)
 
+    if generated_at is None:
+        generated_at = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
+
     lines: List[str] = []
-    lines.append("# Repo Content Categories (AI-generated)\n")
-    lines.append(f"**Generated on:** {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%SZ')}\n")
-    lines.append(f"**Model choice:** {model_choice}\n")
-    lines.append(f"**Total repositories:** {len(repos)}\n")
-    lines.append("---\n")
+    lines.append("<div align=\"center\">\n")
+    lines.append("\n<h1>我的 GitHub Star 项目AI总结</h1>\n")
+    lines.append(f"\n<p><b>参考仓库：</b> <a href=\"https://github.com/WuXiangM/myGitStar\">WuXiangM/myGitStar</a></p>\n")
+    lines.append("\n<p><b>当前账号：</b> <a href=\"https://github.com/{username}\">{username}</a></p>\n".format(username=username))
+    lines.append(f"\n<p><b>生成时间：</b> {generated_at}</p>\n")
+    lines.append(f"\n<p><b>AI模型：</b> {model_choice}</p>\n")
+    lines.append(f"\n<p><b>总仓库数：</b> {len(repos)} 个</p>\n")
+    lines.append("\n</div>\n")
+    lines.append("\n---\n")
 
     lines.append("## Table of Contents\n")
     sort_by_count = True
@@ -215,22 +224,52 @@ def render_markdown(
 
     for c in ordered:
         anchor = re.sub(r"[^a-z0-9\- ]", "", c["name"].lower()).strip().replace(" ", "-")
-        lines.append(f"- [{c['name']}](#{anchor}) ({len(buckets.get(c['id'], []))})")
-    lines.append("\n---\n")
+        lines.append(f"- [{c['name']}](#{anchor}) ({len(buckets.get(c['id'], []))})\n")
+    lines.append("---\n")
 
     for c in ordered:
         anchor = re.sub(r"[^a-z0-9\- ]", "", c["name"].lower()).strip().replace(" ", "-")
-        lines.append(f"## {c['name']}\n")
+        lines.append(f"<a id=\"{anchor}\"></a>\n")
+        lines.append(f"## {c['name']} (Total {len(buckets.get(c['id'], []))})\n\n")
         if c.get("description"):
-            lines.append(f"> {c['description']}\n")
+            lines.append(f"> {c['description']}\n\n")
 
         bucket = sorted(buckets.get(c["id"], []), key=lambda x: (x.get("full_name") or ""))
         for r in bucket:
             full_name = r.get("full_name") or ""
-            desc = (r.get("description") or "").strip()
             url = r.get("html_url") or f"https://github.com/{full_name}"
-            lines.append(f"- [{full_name}]({url})" + (f" — {desc}" if desc else ""))
-        lines.append("\n")
+            stars = r.get("stargazers_count", 0)
+            forks = r.get("forks_count", 0)
+            updated_at = r.get("updated_at", "")
+            if updated_at:
+                try:
+                    dt = datetime.fromisoformat(updated_at.replace("Z", "+00:00"))
+                    updated_at_str = dt.strftime("%Y-%m-%d")
+                except Exception:
+                    updated_at_str = updated_at[:10] if len(updated_at) >= 10 else updated_at
+            else:
+                updated_at_str = ""
+
+            lines.append(f"### 📌 [{full_name}]({url})\n\n")
+            lines.append(f"**⭐ Stars:** {stars:,} | **🍴 Forks:** {forks:,} | **📅 Updated:** {updated_at_str}\n\n")
+
+            repo_summary = r.get("summary_data", {})
+            if not isinstance(repo_summary, dict):
+                repo_summary = {}
+
+            repo_name = repo_summary.get("Repository Name", full_name)
+            brief_intro = repo_summary.get("Brief Introduction", "")
+            innovations = repo_summary.get("Innovations", "")
+            basic_usage = repo_summary.get("Basic Usage", "")
+            summary_text = repo_summary.get("Summary", "")
+
+            lines.append("1. **Repository Name:** " + repo_name + "\n")
+            lines.append("2. **Brief Introduction:** " + (brief_intro or "Not specified.") + "\n")
+            lines.append("3. **Innovations:** " + (innovations or "Not specified.") + "\n")
+            lines.append("4. **Basic Usage:** " + (basic_usage or "Not specified.") + "\n")
+            lines.append("5. **Summary:** " + (summary_text or "Not specified.") + "\n")
+
+            lines.append("---\n\n")
 
     return "\n".join(lines).strip() + "\n"
 

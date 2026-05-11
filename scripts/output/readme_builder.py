@@ -164,7 +164,7 @@ def build_repo_section(
     repos: List[Dict[str, Any]],
     language: str,
     summary_store: Dict[str, Dict[str, Any]],
-    old_summaries: Dict[str, str],
+    old_summaries: Dict[str, Any],
     rate_limit_delay: float,
     printed_repos: set,
     printed_langs: set,
@@ -184,7 +184,20 @@ def build_repo_section(
             continue
         printed_repos.add(repo["full_name"])
 
-        summary = (summary_store.get(repo["full_name"], {}) or {}).get("summary") or old_summaries.get(repo["full_name"], "")
+        summary_entry = summary_store.get(repo["full_name"], {}) or old_summaries.get(repo["full_name"], {})
+
+        if isinstance(summary_entry, dict):
+            if summary_entry.get("Summary"):
+                summary = summary_entry.get("Summary", "")
+            else:
+                brief = summary_entry.get("Brief Introduction", "")
+                innovations = summary_entry.get("Innovations", "")
+                basic = summary_entry.get("Basic Usage", "")
+                summary = f"**简要介绍：** {brief}\n\n**创新点：** {innovations}\n\n**简单用法：** {basic}"
+        elif isinstance(summary_entry, str):
+            summary = summary_entry
+        else:
+            summary = ""
 
         url = repo["html_url"]
         stars = repo.get("stargazers_count", 0)

@@ -7,10 +7,9 @@ This project fetches a GitHub account’s starred repositories (Stars), uses AI 
 - 📗 README (content classified): `README.md`
 - 📘 README classified by language (English): `README_lang.md`
 - 📙 README 按语言分类 (Chinese): `README_lang_cn.md`
-- 🧾 Summary JSON (source of truth): `repo_summaries_en.json` / `repo_summaries_zh.json`
+- 🧾 Summary JSON (unified data source): `repo_summaries.json`
 
-> Note: The language-classified output file is controlled by `readme_sum_path` in `config.yaml` or can be overridden via `--out`. The content-classified README is generated separately by `classify_stars_by_content.py` as `README.md`.
-> New logic: summaries are written to JSON first, then MD is rendered from JSON; README is only a legacy fallback source.
+> Note: Summary data is stored in `repo_summaries.json` (no longer en/zh distinction). `summarize_stars.py` writes to this file, and `classify_stars_by_content.py` can read directly from it for content classification without calling GitHub API.
 
 ### 1.1 🔄 Overall Flowchart
 
@@ -29,20 +28,23 @@ This project fetches a GitHub account’s starred repositories (Stars), uses AI 
                                         │
                                         ▼
                     ┌─────────────────────────────────────────────────┐
-                    │  Step 2: Generate AI Summaries (Parallel)      │
+                    │  Step 2: Generate AI Summaries (Combined Batch) │
                     │  summarize_stars.py                            │
                     │  ┌──────────┐ ┌──────────┐ ┌──────────┐       │
                     │  │ Copilot  │ │OpenRouter│ │  Gemini  │       │
                     │  │  (GitHub)│ │ (3rd-party│ │ (Google) │       │
-                    │  └──────────┘ └──────────┘ └──────────┘       │
+                    │  ├──────────┴─┴──────────┴─┴──────────┤       │
+                    │  │      LM Studio / Ollama (Local)     │       │
+                    │  └─────────────────────────────────────┘       │
+                    └─────────────────────────────────────────────────┘
+                                        │
+                                        ▼
+                    ┌─────────────────────────────────────────────────┐
+                    │           repo_summaries.json                     │
+                    │      (Unified summary data for all languages)    │
                     └─────────────────────────────────────────────────┘
                                         │
                          ┌──────────────┴──────────────┐
-                         ▼                              ▼
-              ┌─────────────────────┐    ┌─────────────────────────┐
-              │  repo_summaries_en.json  │    │  repo_summaries_zh.json  │
-              └─────────────────────┘    └─────────────────────────┘
-                         │                              │
                          ▼                              ▼
               ┌─────────────────────┐    ┌─────────────────────────┐
               │  README_lang.md     │    │  README_lang_cn.md       │
@@ -55,13 +57,14 @@ This project fetches a GitHub account’s starred repositories (Stars), uses AI 
                     │  Step 3: Content Classification                │
                     │  (classify_stars_by_content.py)                 │
                     │                                                 │
-                    │  3.1 Parse README ──▶ Extract Repo List       │
+                    │  Method A: Parse from README ──▶ --from-readme │
+                    │  Method B: Read from JSON ──▶ --from-summaries │
                     │       ▼                                        │
-                    │  3.2 LLM Design Taxonomy ──▶ Categories (C1~Cn)│
+                    │  3.1 LLM Design Taxonomy ──▶ Categories (C1~Cn)│
                     │       ▼                                        │
-                    │  3.3 LLM Batch Classify ──▶ Repo→Category Map  │
+                    │  3.2 LLM Batch Classify ──▶ Repo→Category Map  │
                     │       ▼                                        │
-                    │  3.4 Render Output ──▶ README.md               │
+                    │  3.3 Render Output ──▶ README.md               │
                     └─────────────────────────────────────────────────┘
                                         │
                                         ▼
@@ -71,8 +74,24 @@ This project fetches a GitHub account’s starred repositories (Stars), uses AI 
                     │  📘 README_lang.md (by language-En)             │
                     │  📙 README_lang_cn.md (by language-Zh)          │
                     │  🧾 repo_categories.json (classification data)  │
+                    │  🧾 repo_summaries.json (summary data)           │
                     └─────────────────────────────────────────────────┘
 ```
+
+### 1.2 🚀 Local Offline Testing
+
+Test without GitHub Token using local LM Studio / Ollama models:
+
+```powershell
+# Set local model
+$env:LMSTUDIO_MODEL = "qwen/qwen3-4b-2507"
+$env:BATCH_SIZE = "10"
+
+# Run fully local test (20 sample repos)
+python scripts/test/test_local_offline.py
+```
+
+Test output is in `scripts/test/output/` directory.
 
 ## 2) 📂 Project layout (key files)
 
@@ -160,8 +179,14 @@ Common / easy-to-misconfigure fields:
 # Output language: zh or en
 language: en
 
-# AI backend: copilot / openrouter / gemini
+# AI backend: copilot / openrouter / gemini / lmstudio / ollama
 model_choice: copilot
+
+# Local model configuration (used when model_choice is lmstudio/ollama)
+# LM Studio model name
+LMSTUDIO_MODEL: "qwen/qwen3-4b-2507"
+# Ollama model name
+OLLAMA_MODEL: "qwen3.5:4b"
 
 # Output path (language-classified): recommended en->README_lang.md, zh->README_lang_cn.md
 readme_sum_path: README_lang.md
@@ -169,14 +194,18 @@ readme_sum_path: README_lang.md
 # Update mode: all (rewrite all) / missing_only (only fill missing/invalid summaries)
 update_mode: missing_only
 
+# Batch mode: concurrent (parallel) / combined (merge requests, reduces API calls)
+# combined mode merges multiple repos into one request, significantly reducing API calls
+batch_mode: combined
+batch_size: 5
+
 # Concurrency & throttling (if you hit 429, reduce concurrency and increase delays)
-max_workers: 1
-batch_size: 4
+max_workers: 5
 rate_limit_delay: 5
 request_timeout: 30
 
 # Workflow classify-only: when true, GitHub Actions skips summarize_stars.py and only runs classify_stars_by_content.py
-# Note: when enabled, README_lang.md must already exist in the repo (used as --from-readme input)
+# Note: when enabled, repo_summaries.json or README_lang.md must already exist in the repo
 workflow_classify_only: false
 
 # Content-classification category count range (used by Actions; local runs also default to these when CLI flags are omitted)
@@ -199,9 +228,12 @@ The table below summarizes supported `config.yaml` fields and marks whether each
 | `OPENROUTER_API_KEY` | Conditional (openrouter) | `""` | OpenRouter key (needed only when `model_choice: openrouter`) | Use env |
 | `GEMINI_API_KEY` | Conditional (gemini) | `""` | Gemini key (needed only when `model_choice: gemini`) | Use env |
 | `language` | No | `zh` / `en` | Output language | Defaults to `zh` if omitted |
-| `model_choice` | No | `copilot` / `openrouter` / `gemini` | Choose AI backend | Defaults to `copilot` |
+| `model_choice` | No | `copilot` / `openrouter` / `gemini` / `lmstudio` / `ollama` | Choose AI backend | Defaults to `copilot`; use `lmstudio` for local testing |
+| `LMSTUDIO_MODEL` | No | `qwen/qwen3-4b-2507` | LM Studio model name (only when `model_choice: lmstudio`) | Auto-used when set |
+| `OLLAMA_MODEL` | No | `qwen3.5:4b` | Ollama model name (only when `model_choice: ollama`) | Auto-used when set |
 | `readme_sum_path` | No | `README_lang.md` / `README_lang_cn.md` | Language-classified output path | en→`README_lang.md`; zh→`README_lang_cn.md` (if omitted: `README-sum.md`) |
 | `update_mode` | No | `all` / `missing_only` | Summarization update strategy: `missing_only` only fills NEW/missing/invalid summaries; `all` forces full refresh | Workflow still re-runs content classification for ALL repos each run |
+| `batch_mode` | No | `concurrent` / `combined` | Batch mode: `concurrent` parallel, `combined` merges requests | Use `combined` for local models to reduce API calls |
 | `repo_display_language` | No | `true` / `false` | Order of README top language-switch links | `true`: put the language matching `language` first |
 | `default_copilot_model` | No | `openai/gpt-4o-mini` | Default Copilot Models model name | Can be overridden via env (see below) |
 | `default_openrouter_model` | No | `deepseek/deepseek-prover-v2:free` | Default OpenRouter model name | Pick a model available to your account |
@@ -214,7 +246,7 @@ The table below summarizes supported `config.yaml` fields and marks whether each
 | `request_retry_delay` | No | `2` | Delay between network retries (seconds) | 2–10 |
 | `retry_attempts` | No | `1` | Network retry attempts (generic request wrapper) | 1–3 |
 | `global_qps` | No | `0.5` | Global throttling (QPS). Default 0.5 ≈ one request per ~2s | Reduce further if you hit 429 (e.g. 0.2) |
-| `workflow_classify_only` | No | `true` / `false` | Actions: run content-classifier only (skip summarize step) | Before setting `true`, ensure `README_lang.md` exists; keep `false` for normal updates |
+| `workflow_classify_only` | No | `true` / `false` | Actions: run content-classifier only (skip summarize step) | Before setting `true`, ensure `repo_summaries.json` exists; keep `false` for normal updates |
 | `content_min_categories` | No | `5` | Min number of content categories for `classify_stars_by_content.py` | 5–8 is a good start |
 | `content_max_categories` | No | `8` | Max number of content categories for `classify_stars_by_content.py` | Keep it not too large (e.g. 8–12) |
 | `content_min_repos_per_category` | No | `0` / `8` / `10` | Minimum repos per non-`Other` category; tiny categories get merged into `Other` | Use `8–12` if your categories are too fragmented; set `0` to disable |

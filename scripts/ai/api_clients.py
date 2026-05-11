@@ -77,6 +77,13 @@ def make_api_request(
     return None
 
 
+def _extract_prompt(repo: Dict) -> str:
+    if isinstance(repo, dict):
+        if "prompt" in repo:
+            return repo["prompt"]
+    return repo.get("prompt", "") if isinstance(repo, dict) else ""
+
+
 def copilot_summarize(
     repo: Dict[str, Any],
     github_token: str,
@@ -86,6 +93,7 @@ def copilot_summarize(
     if not github_token:
         return None
     try:
+        prompt = _extract_prompt(repo)
         headers = {
             "Authorization": f"Bearer {github_token}",
             "Accept": "application/json",
@@ -95,7 +103,7 @@ def copilot_summarize(
         model_name = os.environ.get("GITHUB_COPILOT_MODEL", default_copilot_model) or "openai/gpt-4o-mini"
         data = {
             "model": model_name,
-            "messages": [{"role": "user", "content": repo.get("prompt", "")}],
+            "messages": [{"role": "user", "content": prompt}],
             "max_tokens": 600,
             "temperature": 0.4,
         }
@@ -129,13 +137,14 @@ def openrouter_summarize(
     if not openrouter_api_key:
         return None
     try:
+        prompt = _extract_prompt(repo)
         headers = {
             "Authorization": f"Bearer {openrouter_api_key}",
             "Content-Type": "application/json",
         }
         data = {
             "model": default_openrouter_model,
-            "messages": [{"role": "user", "content": repo.get("prompt", "")}],
+            "messages": [{"role": "user", "content": prompt}],
         }
         response = api_request_func(API_ENDPOINTS["openrouter"], headers, data)
         content = None
@@ -164,7 +173,7 @@ def gemini_summarize(
     if not gemini_api_key:
         return None
 
-    prompt = repo.get("prompt", "")
+    prompt = _extract_prompt(repo)
     if not prompt.strip():
         return None
 
@@ -326,6 +335,14 @@ def create_summarize_func(
                 config,
                 make_request,
             )
+    elif model_choice == "lmstudio":
+        from scripts.ai.lmstudio_client import create_lmstudio_summarize_func
+        lmstudio_model = os.environ.get("LMSTUDIO_MODEL", "qwen/qwen3-4b-2507")
+        return create_lmstudio_summarize_func(model=lmstudio_model)
+    elif model_choice == "ollama":
+        from scripts.ai.ollama_client import create_ollama_summarize_func
+        ollama_model = os.environ.get("OLLAMA_MODEL", "qwen3.5:4b")
+        return create_ollama_summarize_func(model=ollama_model)
     else:
         raise ValueError(f"不支持的模型选择: {model_choice}")
 

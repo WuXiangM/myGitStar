@@ -1,11 +1,18 @@
 import json
 import time
-from typing import Any, Dict, Optional
+from typing import Any, Dict, Optional, Union
 
 import requests
 
 LM_STUDIO_API_ENDPOINT = "http://localhost:1234/v1/chat/completions"
 MODEL_DEFAULT = "qwen/qwen3-4b-2507"
+
+
+def _extract_prompt(repo: Union[Dict, Any]) -> str:
+    if isinstance(repo, dict):
+        if "prompt" in repo:
+            return repo["prompt"]
+    return repo.get("prompt", "") if isinstance(repo, dict) else ""
 
 
 def lmstudio_make_request(
@@ -44,7 +51,7 @@ def lmstudio_make_request(
 
 
 def lmstudio_summarize(
-    repo: Dict[str, Any],
+    repo: Union[Dict[str, Any], Any],
     model: str = MODEL_DEFAULT,
     api_endpoint: str = LM_STUDIO_API_ENDPOINT,
     timeout: float = 300.0,
@@ -52,16 +59,19 @@ def lmstudio_summarize(
     if not repo:
         return None
 
-    prompt = repo.get("prompt", "")
+    prompt = _extract_prompt(repo)
     if not prompt.strip():
         return None
+
+    is_combined = isinstance(repo, dict) and "repos" in repo
+    max_tokens = 2500 if is_combined else 600
 
     try:
         headers = {"Content-Type": "application/json"}
         payload = {
             "model": model,
             "messages": [{"role": "user", "content": prompt}],
-            "max_tokens": 600,
+            "max_tokens": max_tokens,
             "temperature": 0.4,
         }
 

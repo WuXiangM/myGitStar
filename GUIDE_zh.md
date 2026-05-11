@@ -7,10 +7,9 @@
 - 📗 README（内容分类）：`README.md`
 - 📘 README classified by language（英文）：`README_lang.md`
 - 📙 README 按语言分类（中文）：`README_lang_cn.md`
-- 🧾 总结 JSON（结构化数据源）：`repo_summaries_en.json` / `repo_summaries_zh.json`
+- 🧾 总结 JSON（结构化数据源）：`repo_summaries.json`
 
-> 说明：按语言分类的输出文件名可由 `config.yaml` 的 `readme_sum_path` 或命令行 `--out` 覆盖；内容分类版由 `classify_stars_by_content.py` 生成到 `README.md`。
-> 新逻辑：总结优先写入 JSON，再由 JSON 生成 MD；README 仅作为旧数据回退来源。
+> 说明：总结数据统一存储在 `repo_summaries.json`（不再区分 en/zh）。`summarize_stars.py` 生成摘要后写入此文件，`classify_stars_by_content.py` 可直接从该文件读取进行内容分类，无需调用 GitHub API。
 
 ### 1.1 🔄 整体流程图
 
@@ -29,20 +28,23 @@
                                         │
                                         ▼
                     ┌─────────────────────────────────────────────────┐
-                    │  Step 2: 生成 AI 总结 (并行处理)                │
+                    │  Step 2: 生成 AI 总结 (合并批处理)              │
                     │  summarize_stars.py                            │
                     │  ┌──────────┐ ┌──────────┐ ┌──────────┐       │
                     │  │ Copilot  │ │OpenRouter│ │  Gemini  │       │
                     │  │  (GitHub)│ │ (第三方) │ │ (Google) │       │
-                    │  └──────────┘ └──────────┘ └──────────┘       │
+                    │  ├──────────┴─┴──────────┴─┴──────────┤       │
+                    │  │      LM Studio / Ollama (本地)       │       │
+                    │  └─────────────────────────────────────┘       │
+                    └─────────────────────────────────────────────────┘
+                                        │
+                                        ▼
+                    ┌─────────────────────────────────────────────────┐
+                    │              repo_summaries.json                 │
+                    │         (统一存储所有语言的摘要数据)              │
                     └─────────────────────────────────────────────────┘
                                         │
                          ┌──────────────┴──────────────┐
-                         ▼                              ▼
-              ┌─────────────────────┐    ┌─────────────────────────┐
-              │  repo_summaries_en.json  │    │  repo_summaries_zh.json  │
-              └─────────────────────┘    └─────────────────────────┘
-                         │                              │
                          ▼                              ▼
               ┌─────────────────────┐    ┌─────────────────────────┐
               │  README_lang.md     │    │  README_lang_cn.md       │
@@ -54,13 +56,14 @@
                     ┌─────────────────────────────────────────────────┐
                     │  Step 3: 内容分类 (classify_stars_by_content.py) │
                     │                                                 │
-                    │  3.1 解析 README ──▶ 提取仓库列表                 │
+                    │  方式 A: 从 README 解析 ──▶ --from-readme         │
+                    │  方式 B: 从 JSON 读取 ──▶ --from-summaries       │
                     │       ▼                                        │
-                    │  3.2 LLM 设计 Taxonomy ──▶ 分类体系 (C1~Cn)       │
+                    │  3.1 LLM 设计 Taxonomy ──▶ 分类体系 (C1~Cn)       │
                     │       ▼                                        │
-                    │  3.3 LLM 批量分类 ──▶ 仓库 → 类别映射             │
+                    │  3.2 LLM 批量分类 ──▶ 仓库 → 类别映射             │
                     │       ▼                                        │
-                    │  3.4 渲染输出 ──▶ README.md                      │
+                    │  3.3 渲染输出 ──▶ README.md                      │
                     └─────────────────────────────────────────────────┘
                                         │
                                         ▼
@@ -70,8 +73,24 @@
                     │  📘 README_lang.md (按语言-英文)                 │
                     │  📙 README_lang_cn.md (按语言-中文)              │
                     │  🧾 repo_categories.json (分类数据)              │
+                    │  🧾 repo_summaries.json (摘要数据)                │
                     └─────────────────────────────────────────────────┘
 ```
+
+### 1.2 🚀 本地离线测试
+
+无需 GitHub Token，使用本地 LM Studio / Ollama 模型测试：
+
+```powershell
+# 设置本地模型
+$env:LMSTUDIO_MODEL = "qwen/qwen3-4b-2507"
+$env:BATCH_SIZE = "10"
+
+# 运行完全本地化测试（20个示例仓库）
+python scripts/test/test_local_offline.py
+```
+
+测试输出位于 `scripts/test/output/` 目录。
 
 ## 2) 📂 目录结构（关键文件）
 
@@ -159,24 +178,33 @@ python scripts/classify_stars_by_content.py --from-readme README_lang.md --out-m
 # 输出语言：zh 或 en
 language: en
 
-# 选择 AI 引擎：copilot / openrouter / gemini
+# 选择 AI 引擎：copilot / openrouter / gemini / lmstudio / ollama
 model_choice: copilot
 
+# 本地模型配置（使用 lmstudio/ollama 时）
+# LM Studio 模型名称
+LMSTUDIO_MODEL: "qwen/qwen3-4b-2507"
+# Ollama 模型名称
+OLLAMA_MODEL: "qwen3.5:4b"
+
 # 生成文件路径：建议 en->README.md，zh->README2.md
-# 生成文件路径（按语言分类版）：建议 en->README_lang.md，zh->README_lang_cn.md
 readme_sum_path: README_lang.md
 
 # 更新模式：all（全量重写）/ missing_only（仅补全缺失或无效的总结）
 update_mode: missing_only
 
+# 批处理模式：concurrent（并发）/ combined（合并请求）
+# combined 模式会将多个仓库合并为一个请求，显著减少 API 调用次数
+batch_mode: combined
+batch_size: 5
+
 # 并发与节流（遇到 429 建议调小并发、增大 delay）
-max_workers: 1
-batch_size: 4
+max_workers: 5
 rate_limit_delay: 5
 request_timeout: 30
 
 # Workflow 仅执行内容分类：true 时将跳过 summarize_stars.py，只运行 classify_stars_by_content.py
-# 注意：开启后需要仓库中已存在 README_lang.md（作为 --from-readme 输入）
+# 注意：开启后需要仓库中已存在 repo_summaries.json 或 README_lang.md
 workflow_classify_only: false
 
 # 内容分类的类别数量区间（Actions 会使用；本地运行在未显式传参时也会默认读取这里）
@@ -199,9 +227,12 @@ repo_display_language: true
 | `OPENROUTER_API_KEY`       | 条件（ openrouter 必需） | `""`                                    | OpenRouter Key（仅 `model_choice: openrouter` 时需要）                       | 建议用 env                                                            |
 | `GEMINI_API_KEY`           | 条件（ gemini 必需）     | `""`                                    | Gemini Key（仅 `model_choice: gemini` 时需要）                               | 建议用 env                                                            |
 | `language`                 | 否                       | `zh` / `en`                           | 输出语言                                                                       | 不填默认 `zh`                                                       |
-| `model_choice`             | 否                       | `copilot` / `openrouter` / `gemini` | 选择 AI 引擎                                                                   | 不填默认 `copilot`                                                  |
+| `model_choice`             | 否                       | `copilot` / `openrouter` / `gemini` / `lmstudio` / `ollama` | 选择 AI 引擎 | 不填默认 `copilot`；本地测试用 `lmstudio`                              |
+| `LMSTUDIO_MODEL`           | 否                       | `qwen/qwen3-4b-2507`                   | LM Studio 模型名称（仅 `model_choice: lmstudio` 时使用）                     | 设置后自动使用                                                        |
+| `OLLAMA_MODEL`             | 否                       | `qwen3.5:4b`                           | Ollama 模型名称（仅 `model_choice: ollama` 时使用）                         | 设置后自动使用                                                        |
 | `readme_sum_path`          | 否                       | `README_lang.md` / `README_lang_cn.md` | 按语言分类 README 输出路径                                                     | en→`README_lang.md`；zh→`README_lang_cn.md`（不填则默认 `README-sum.md`） |
 | `update_mode`              | 否                       | `all` / `missing_only`                | 总结更新策略：`missing_only` 仅补“新增/缺失/无效”的仓库总结；`all` 全量重汇总   | 工作流每次仍会对全部仓库重新做“内容分类”                              |
+| `batch_mode`               | 否                       | `concurrent` / `combined`              | 批处理模式：`concurrent` 并发处理，`combined` 合并请求（减少 API 调用）        | 本地模型建议 `combined`，云端 API 建议 `concurrent`                     |
 | `repo_display_language`    | 否                       | `true` / `false`                      | README 顶部中英互跳链接的显示顺序                                              | `true`：与 `language` 一致的链接在前                              |
 | `default_copilot_model`    | 否                       | `openai/gpt-4o-mini`                    | Copilot Models 默认模型名                                                      | 也可用环境变量覆盖（见下）                                            |
 | `default_openrouter_model` | 否                       | `deepseek/deepseek-prover-v2:free`      | OpenRouter 默认模型名                                                          | 选你账号可用的模型                                                    |
@@ -214,7 +245,7 @@ repo_display_language: true
 | `request_retry_delay`      | 否                       | `2`                                     | 网络层失败后的重试间隔（秒）                                                   | 2~10                                                                  |
 | `retry_attempts`           | 否                       | `1`                                     | 网络层重试次数（适用于通用请求封装）                                           | 1~3                                                                   |
 | `global_qps`               | 否                       | `0.5`                                   | 全局节流（QPS），默认 0.5 表示约每 2 秒 1 次请求                               | 429 就降低（如 0.2）                                                  |
-| `workflow_classify_only`   | 否                       | `true` / `false`                        | Actions 是否只跑内容分类（跳过 summarize 步骤）                                | 设 `true` 前先确保仓库里已有 `README_lang.md`；正常更新建议 `false`     |
+| `workflow_classify_only`   | 否                       | `true` / `false`                        | Actions 是否只跑内容分类（跳过 summarize 步骤）                                | 设 `true` 前先确保仓库里已有 `repo_summaries.json`；正常更新建议 `false`     |
 | `content_min_categories`   | 否                       | `5`                                     | 内容分类最少类别数（`classify_stars_by_content.py`）                           | 建议先用 5~8 起步                                                     |
 | `content_max_categories`   | 否                       | `8`                                     | 内容分类最多类别数（`classify_stars_by_content.py`）                           | 不建议太大（如 8~12）                                                 |
 | `content_min_repos_per_category` | 否                 | `0` / `8` / `10`                         | 每个“非 Other”类别的最小仓库数；过小的类别会被合并进 Other                      | 类别太碎就用 `8~12`；不想合并就设 `0`                                   |

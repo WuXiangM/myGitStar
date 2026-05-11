@@ -37,6 +37,141 @@ def generate_summarize_prompt(repo: Dict[str, Any], language: str = "zh") -> str
         )
 
 
+def generate_combined_summarize_prompt(repos: List[Dict[str, Any]], language: str = "zh") -> str:
+    if language == "zh":
+        repo_list = []
+        for i, repo in enumerate(repos, 1):
+            repo_name = repo["full_name"]
+            desc = repo.get("description") or ""
+            url = repo["html_url"]
+            repo_list.append(
+                f"## 仓库 {i}\n"
+                f"- 仓库名称: {repo_name}\n"
+                f"- 描述: {desc}\n"
+                f"- 地址: {url}"
+            )
+
+        return (
+            f"你是一个GitHub仓库总结助手。请对以下 {len(repos)} 个仓库分别进行总结，\n"
+            f"每个仓库按以下固定格式输出（注意：仓库名称必须与输入完全一致）：\n\n"
+            "输出格式（必须是JSON数组）：\n"
+            "```json\n"
+            "[\n"
+            '  {"repo": "owner/repo", "Repository Name": "...", "Repository URL": "...", "Brief Introduction": "...", "Innovations": "...", "Basic Usage": "...", "Summary": "..."},\n'
+            "]\n"
+            "```\n\n"
+            "要求：\n"
+            "- Repository Name: 仓库全名（必须与输入完全一致）\n"
+            "- Repository URL: 仓库地址\n"
+            "- Brief Introduction: 简要介绍（50字以内）\n"
+            "- Innovations: 创新点\n"
+            "- Basic Usage: 简单用法\n"
+            "- Summary: 一句话总结\n"
+            "- 只输出JSON数组，不要输出其他内容\n\n"
+            "## 待总结的仓库：\n"
+            + "\n\n".join(repo_list)
+        )
+    else:
+        repo_list = []
+        for i, repo in enumerate(repos, 1):
+            repo_name = repo["full_name"]
+            desc = repo.get("description") or ""
+            url = repo["html_url"]
+            repo_list.append(
+                f"## Repository {i}\n"
+                f"- Name: {repo_name}\n"
+                f"- Description: {desc}\n"
+                f"- URL: {url}"
+            )
+
+        return (
+            f"You are a GitHub repository summarization assistant. Please summarize the following {len(repos)} repositories.\n"
+            f"Each repository must follow this exact format (note: repository name must match exactly):\n\n"
+            "Output format (must be JSON array):\n"
+            "```json\n"
+            "[\n"
+            '  {"repo": "owner/repo", "Repository Name": "...", "Repository URL": "...", "Brief Introduction": "...", "Innovations": "...", "Basic Usage": "...", "Summary": "..."},\n'
+            "]\n"
+            "```\n\n"
+            "Requirements:\n"
+            "- Repository Name: full repository name (must match exactly)\n"
+            "- Repository URL: repository URL\n"
+            "- Brief Introduction: brief intro (within 50 words)\n"
+            "- Innovations: key innovations\n"
+            "- Basic Usage: basic usage\n"
+            "- Summary: one sentence summary\n"
+            "- Output only JSON array, nothing else\n\n"
+            "## Repositories to summarize:\n"
+            + "\n\n".join(repo_list)
+        )
+
+
+def parse_combined_summaries(response_text: str, repos: List[Dict[str, Any]]) -> Dict[str, Dict]:
+    import json
+
+    results: Dict[str, Dict] = {}
+    for repo in repos:
+        results[repo["full_name"]] = {}
+
+    if not response_text:
+        return results
+
+    text = response_text.strip()
+
+    json_match = None
+    for pattern in [r"```json\s*(\[[\s\S]*?)\s*```", r"(\[[\s\S]*?\])"]:
+        match = re.search(pattern, text, re.IGNORECASE)
+        if match:
+            json_str = match.group(1) if match.lastindex else match.group(0)
+            try:
+                data = json.loads(json_str)
+                if isinstance(data, list):
+                    json_match = data
+                    break
+            except json.JSONDecodeError:
+                continue
+
+    if not json_match:
+        try:
+            arr_start = text.find("[")
+            arr_end = text.rfind("]")
+            if arr_start != -1 and arr_end != -1:
+                json_str = text[arr_start:arr_end+1]
+                json_match = json.loads(json_str)
+        except (json.JSONDecodeError, ValueError):
+            pass
+
+    if json_match and isinstance(json_match, list):
+        for item in json_match:
+            if isinstance(item, dict):
+                repo_name = item.get("repo", "") or item.get("Repository Name", "")
+                if not repo_name:
+                    continue
+
+                brief_intro = item.get("Brief Introduction", "") or item.get("简要介绍", "")
+                innovations = item.get("Innovations", "") or item.get("创新点", "")
+                basic_usage = item.get("Basic Usage", "") or item.get("简单用法", "Not specified.")
+                summary = item.get("Summary", "") or item.get("总结", "")
+
+                full_entry = {
+                    "Repository Name": repo_name,
+                    "Repository URL": item.get("Repository URL", "") or item.get("仓库地址", ""),
+                    "Brief Introduction": brief_intro,
+                    "Innovations": innovations,
+                    "Basic Usage": basic_usage,
+                    "Summary": summary,
+                }
+
+                for existing_repo in repos:
+                    if existing_repo["full_name"] == repo_name:
+                        full_entry["Repository URL"] = existing_repo.get("html_url", full_entry["Repository URL"])
+                        break
+
+                results[repo_name] = full_entry
+
+    return results
+
+
 def is_valid_summary(summary: str, language: str = "zh") -> bool:
     if not summary or not summary.strip():
         return False
@@ -110,17 +245,26 @@ def is_valid_summary(summary: str, language: str = "zh") -> bool:
     return True
 
 
-def build_repo_entry(repo: Dict, summary: str) -> Dict:
+def build_repo_entry(repo: Dict, summary: Any) -> Dict:
+    if isinstance(summary, dict):
+        entry = {
+            "Repository Name": summary.get("Repository Name", repo.get("full_name")),
+            "Repository URL": summary.get("Repository URL", repo.get("html_url")),
+            "Brief Introduction": summary.get("Brief Introduction", ""),
+            "Innovations": summary.get("Innovations", ""),
+            "Basic Usage": summary.get("Basic Usage", "Not specified."),
+            "Summary": summary.get("Summary", ""),
+        }
+        entry["Repository URL"] = repo.get("html_url") or entry.get("Repository URL", "")
+        return entry
+
     return {
-        "full_name": repo.get("full_name"),
         "Repository Name": repo.get("full_name"),
         "Repository URL": repo.get("html_url"),
-        "description": repo.get("description"),
-        "language": repo.get("language"),
-        "stargazers_count": repo.get("stargazers_count"),
-        "forks_count": repo.get("forks_count"),
-        "updated_at": repo.get("updated_at"),
-        "summary": summary or "",
+        "Brief Introduction": "",
+        "Innovations": "",
+        "Basic Usage": "Not specified.",
+        "Summary": summary or "",
     }
 
 
@@ -182,6 +326,77 @@ def summarize_batch(
                 api_name = summarize_func.__name__.replace("_summarize", "").upper()
                 summary = old_summaries.get(repo["full_name"], f"{api_name} API生成失败")
             results[idx] = summary if summary is not None else "*暂无AI总结*"
+    return results
+
+
+def summarize_batch_combined(
+    repos: List[Dict],
+    old_summaries: Dict[str, Any],
+    summarize_func: Callable[[Dict], Optional[str]],
+    update_mode: str,
+    language: str,
+    batch_size: int = 5,
+) -> List[Any]:
+    results: List[Any] = [{} for _ in repos]
+
+    repos_need_call = []
+    repos_indices = []
+
+    for idx, repo in enumerate(repos):
+        existing_summary = old_summaries.get(repo["full_name"], {})
+        if isinstance(existing_summary, dict) and existing_summary.get("Summary"):
+            if update_mode == "missing_only":
+                results[idx] = existing_summary
+                print(f"[REUSE] repo: {repo['full_name']} | existing summary")
+            else:
+                repos_need_call.append(repo)
+                repos_indices.append(idx)
+        elif isinstance(existing_summary, str) and existing_summary:
+            if update_mode == "missing_only":
+                results[idx] = {"Repository Name": repo["full_name"], "Repository URL": repo.get("html_url", ""), "Brief Introduction": "", "Innovations": "", "Basic Usage": "Not specified.", "Summary": existing_summary}
+                print(f"[REUSE] repo: {repo['full_name']} | existing summary (legacy format)")
+            else:
+                repos_need_call.append(repo)
+                repos_indices.append(idx)
+        else:
+            repos_need_call.append(repo)
+            repos_indices.append(idx)
+
+    for i in range(0, len(repos_need_call), batch_size):
+        batch = repos_need_call[i : i + batch_size]
+        indices = repos_indices[i : i + batch_size]
+        print(f"[COMBINED] Processing batch {i // batch_size + 1}, {len(batch)} repos...")
+
+        combined_prompt = generate_combined_summarize_prompt(batch, language)
+        repo_with_prompt = {"prompt": combined_prompt, "repos": [r["full_name"] for r in batch]}
+
+        try:
+            response_text = summarize_func(repo_with_prompt)
+            if response_text:
+                parsed = parse_combined_summaries(response_text, batch)
+                for full_name, summary_dict in parsed.items():
+                    if summary_dict and summary_dict.get("Summary"):
+                        for idx, repo in zip(indices, batch):
+                            if repo["full_name"] == full_name:
+                                results[idx] = summary_dict
+                                print(f"[DEBUG] repo: {full_name} | Summary: {repr(summary_dict.get('Summary', '')[:80])}...")
+                                break
+                    else:
+                        api_name = summarize_func.__name__.replace("_summarize", "").upper()
+                        results[idx] = {"Repository Name": full_name, "Repository URL": "", "Brief Introduction": "", "Innovations": "", "Basic Usage": "Not specified.", "Summary": old_summaries.get(full_name, f"{api_name} 解析失败或为空")}
+                        print(f"[WARN] repo: {full_name} | empty summary from LLM")
+            else:
+                for idx, repo in zip(indices, batch):
+                    api_name = summarize_func.__name__.replace("_summarize", "").upper()
+                    results[idx] = {"Repository Name": repo["full_name"], "Repository URL": repo.get("html_url", ""), "Brief Introduction": "", "Innovations": "", "Basic Usage": "Not specified.", "Summary": old_summaries.get(repo["full_name"], f"{api_name} API返回空")}
+                    print(f"[ERROR] repo: {repo['full_name']} | empty response")
+        except Exception as exc:
+            print(f"[ERROR] Batch {i // batch_size + 1} exception: {exc}")
+            for idx, repo in zip(indices, batch):
+                api_name = summarize_func.__name__.replace("_summarize", "").upper()
+                results[idx] = {"Repository Name": repo["full_name"], "Repository URL": repo.get("html_url", ""), "Brief Introduction": "", "Innovations": "", "Basic Usage": "Not specified.", "Summary": old_summaries.get(repo["full_name"], f"{api_name} API调用失败")}
+                print(f"[ERROR] repo: {repo['full_name']} | {exc}")
+
     return results
 
 

@@ -425,6 +425,16 @@ def call_llm(prompt: str) -> str:
             raise RuntimeError("Gemini returned empty content")
         return text
 
+    if model_choice == "lmstudio":
+        from scripts.ai.lmstudio_client import lmstudio_call_llm
+        lmstudio_model = os.environ.get("LMSTUDIO_MODEL", "qwen/qwen3-4b-2507")
+        return lmstudio_call_llm(prompt, model=lmstudio_model)
+
+    if model_choice == "ollama":
+        from scripts.ai.ollama_client import ollama_call_llm
+        ollama_model = os.environ.get("OLLAMA_MODEL", "qwen3.5:4b")
+        return ollama_call_llm(prompt, model=ollama_model)
+
     raise RuntimeError(f"Unsupported model_choice: {model_choice}")
 
 
@@ -516,6 +526,65 @@ def get_starred_repos(max_repos: Optional[int] = None) -> List[Dict[str, Any]]:
         if max_repos and max_repos > 0 and len(repos) >= max_repos:
             repos = repos[:max_repos]
             break
+
+    return repos
+
+
+def parse_repos_from_summaries(
+    summaries_path: Optional[str] = None,
+    max_repos: Optional[int] = None,
+) -> List[Dict[str, Any]]:
+    """Parse repo list from repo_summaries.json.
+
+    Uses the structured summary data (Brief Introduction, Innovations, etc.)
+    as content description for classification.
+    """
+    if summaries_path is None:
+        summaries_path = os.path.join(REPO_ROOT, "repo_summaries.json")
+    elif not os.path.isabs(summaries_path):
+        summaries_path = os.path.join(REPO_ROOT, summaries_path)
+
+    if not os.path.exists(summaries_path):
+        raise FileNotFoundError(f"summaries file not found: {summaries_path}")
+
+    with open(summaries_path, "r", encoding="utf-8") as f:
+        summaries_data = json.load(f)
+
+    repos: List[Dict[str, Any]] = []
+    for idx, (full_name, data) in enumerate(summaries_data.items()):
+        if max_repos and max_repos > 0 and len(repos) >= max_repos:
+            break
+
+        brief_intro = data.get("Brief Introduction", "")
+        innovations = data.get("Innovations", "")
+        summary = data.get("Summary", "")
+
+        description_parts = []
+        if brief_intro:
+            description_parts.append(brief_intro)
+        if innovations:
+            description_parts.append(f"创新点: {innovations}")
+        if summary:
+            description_parts.append(f"总结: {summary}")
+
+        description = " | ".join(description_parts) if description_parts else ""
+
+        repos.append(
+            {
+                "id": idx + 1,
+                "full_name": full_name,
+                "description": description,
+                "html_url": data.get("Repository URL", f"https://github.com/{full_name}"),
+                "language": data.get("language", ""),
+                "stargazers_count": data.get("stargazers_count", 0),
+                "forks_count": data.get("forks_count", 0),
+                "updated_at": data.get("updated_at", ""),
+                "summary_data": data,
+            }
+        )
+
+    if not repos:
+        raise ValueError(f"No repositories found in summaries file: {summaries_path}")
 
     return repos
 
@@ -926,14 +995,123 @@ def load_existing_categories(path: str) -> Tuple[Optional[Taxonomy], Dict[str, s
     return taxonomy, assignments_map
 
 
+def _looks_like_language_category(cat: Dict[str, Any]) -> bool:
+    name_lower = cat.get("name", "").lower()
+    desc_lower = cat.get("description", "").lower()
+    text = name_lower + " " + desc_lower
+
+    lang_keywords = [
+        "language",
+        "programming language",
+        "语言",
+        "语言实现",
+        "interpreter",
+        "compiler",
+        "runtime",
+    ]
+    return any(kw in text for kw in lang_keywords)
+
+
+def _normalize_taxonomy(raw: Any, min_categories: int, max_categories: int) -> Taxonomy:
+    if not isinstance(raw, dict):
+        raise ValueError("taxonomy JSON must be a dict")
+
+    categories_raw = raw.get("categories")
+    if not isinstance(categories_raw, list):
+        raise ValueError("taxonomy JSON missing 'categories' list")
+
+    categories = []
+    for c in categories_raw:
+        if not isinstance(c, dict):
+            continue
+        cat = {
+            "id": str(c.get("id", "")).strip(),
+            "name": str(c.get("name", "")).strip(),
+            "description": str(c.get("description", "")).strip(),
+        }
+        if cat["id"] and cat["name"]:
+            categories.append(cat)
+
+    filtered = [c for c in categories if not _looks_like_language_category(c)]
+
+    if len(filtered) < min_categories and len(categories) >= min_categories:
+        filtered = categories
+
+    if len(filtered) > max_categories:
+        filtered = filtered[:max_categories]
+
+    if len(filtered) < min_categories:
+        filtered = filtered + [
+            {"id": f"CAT{i+1}", "name": f"Category {i+1}", "description": ""}
+            for i in range(len(filtered), min_categories)
+        ]
+
+    filtered.append({"id": "Other", "name": "Other", "description": "Other repositories"})
+
+    return Taxonomy(categories=filtered)
+
+
+def _parse_assignments(raw: Any) -> List[Dict[str, Any]]:
+    if isinstance(raw, list):
+        return raw
+
+    if not isinstance(raw, dict):
+        return []
+
+    assignments = raw.get("assignments", [])
+    if isinstance(assignments, list):
+        return assignments
+
+    result = []
+    for k, v in raw.items():
+        if k == "assignments":
+            continue
+        if isinstance(v, str):
+            result.append({"id": k, "category_id": v})
+    return result
+
+
+def _apply_min_repos_per_category(
+    taxonomy: Taxonomy,
+    repos: List[Dict[str, Any]],
+    assignment_map: Dict[Any, str],
+    min_repos_per_category: int,
+    min_categories: int,
+) -> Tuple[Taxonomy, Dict[Any, str]]:
+    if min_repos_per_category <= 0:
+        return taxonomy, assignment_map
+
+    buckets: Dict[str, List[Any]] = {c["id"]: [] for c in taxonomy.categories}
+    for r in repos:
+        rid = r.get("id")
+        cid = assignment_map.get(rid)
+        if cid and cid in buckets:
+            buckets[cid].append(rid)
+
+    other_id = next((c["id"] for c in taxonomy.categories if c["name"].lower() == "other"), taxonomy.categories[-1]["id"])
+    if other_id in buckets and len(buckets[other_id]) == 0:
+        del buckets[other_id]
+
+    tiny_ids = [cid for cid, rids in buckets.items() if 0 < len(rids) < min_repos_per_category]
+    if len(tiny_ids) + len(buckets) <= min_categories:
+        tiny_ids = []
+
+    for tid in tiny_ids:
+        for rid in buckets[tid]:
+            assignment_map[rid] = other_id
+        del buckets[tid]
+
+    remaining_cats = [c for c in taxonomy.categories if c["id"] in buckets]
+    return Taxonomy(categories=remaining_cats), assignment_map
+
+
 def chunk_list(items: List[Any], size: int) -> List[List[Any]]:
     if size <= 0:
         return [items]
     return [items[i : i + size] for i in range(0, len(items), size)]
 
 
-def render_markdown(taxonomy: Taxonomy, repos: List[Dict[str, Any]], assignment_map: Dict[Any, str]) -> str:
-    # Build reverse index
+def render_markdown(taxonomy: Taxonomy, repos: List[Dict[str, Any]], assignment_map: Dict[Any, str], cfg: Dict[str, Any], model_ch: str, username: str = "unknown", generated_at: str = None) -> str:
     categories = {c["id"]: c for c in taxonomy.categories}
     buckets: Dict[str, List[Dict[str, Any]]] = {cid: [] for cid in categories.keys()}
     other_id = next((c["id"] for c in taxonomy.categories if c["name"].lower() == "other"), taxonomy.categories[-1]["id"])
@@ -945,20 +1123,25 @@ def render_markdown(taxonomy: Taxonomy, repos: List[Dict[str, Any]], assignment_
             cid = other_id
         buckets[cid].append(r)
 
-    lines: List[str] = []
-    lines.append("# Repo Content Categories (AI-generated)\n")
-    lines.append(f"**Generated on:** {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%SZ')}\n")
-    lines.append(f"**Model choice:** {MODEL_CHOICE}\n")
-    lines.append(f"**Total repositories:** {len(repos)}\n")
-    lines.append("---\n")
+    if generated_at is None:
+        generated_at = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
 
-    # Table of contents
+    lines: List[str] = []
+    lines.append("<div align=\"center\">\n")
+    lines.append("\n<h1>我的 GitHub Star 项目AI总结</h1>\n")
+    lines.append(f"\n<p><b>参考仓库：</b> <a href=\"https://github.com/WuXiangM/myGitStar\">WuXiangM/myGitStar</a></p>\n")
+    lines.append(f"\n<p><b>当前账号：</b> <a href=\"https://github.com/{username}\">{username}</a></p>\n")
+    lines.append(f"\n<p><b>生成时间：</b> {generated_at}</p>\n")
+    lines.append(f"\n<p><b>AI模型：</b> {model_ch}</p>\n")
+    lines.append(f"\n<p><b>总仓库数：</b> {len(repos)} 个</p>\n")
+    lines.append("\n</div>\n")
+    lines.append("\n---\n")
+
     lines.append("## Table of Contents\n")
-    # Sort by bucket size (Other last) for readability
     sort_by_count = True
     try:
-        if isinstance(config, dict) and config.get("content_sort_categories_by_count") is not None:
-            sort_by_count = bool(config.get("content_sort_categories_by_count"))
+        if isinstance(cfg, dict) and cfg.get("content_sort_categories_by_count") is not None:
+            sort_by_count = bool(cfg.get("content_sort_categories_by_count"))
     except Exception:
         sort_by_count = True
 
@@ -975,22 +1158,52 @@ def render_markdown(taxonomy: Taxonomy, repos: List[Dict[str, Any]], assignment_
 
     for c in ordered:
         anchor = re.sub(r"[^a-z0-9\- ]", "", c["name"].lower()).strip().replace(" ", "-")
-        lines.append(f"- [{c['name']}](#{anchor}) ({len(buckets.get(c['id'], []))})")
-    lines.append("\n---\n")
+        lines.append(f"- [{c['name']}](#{anchor}) ({len(buckets.get(c['id'], []))})\n")
+    lines.append("---\n")
 
     for c in ordered:
         anchor = re.sub(r"[^a-z0-9\- ]", "", c["name"].lower()).strip().replace(" ", "-")
-        lines.append(f"## {c['name']}\n")
+        lines.append(f"<a id=\"{anchor}\"></a>\n")
+        lines.append(f"## {c['name']} (Total {len(buckets.get(c['id'], []))})\n\n")
         if c.get("description"):
-            lines.append(f"> {c['description']}\n")
+            lines.append(f"> {c['description']}\n\n")
 
         bucket = sorted(buckets.get(c["id"], []), key=lambda x: (x.get("full_name") or ""))
         for r in bucket:
             full_name = r.get("full_name") or ""
-            desc = (r.get("description") or "").strip()
             url = r.get("html_url") or f"https://github.com/{full_name}"
-            lines.append(f"- [{full_name}]({url})" + (f" — {desc}" if desc else ""))
-        lines.append("\n")
+            stars = r.get("stargazers_count", 0)
+            forks = r.get("forks_count", 0)
+            updated_at = r.get("updated_at", "")
+            if updated_at:
+                try:
+                    dt = datetime.fromisoformat(updated_at.replace("Z", "+00:00"))
+                    updated_at_str = dt.strftime("%Y-%m-%d")
+                except Exception:
+                    updated_at_str = updated_at[:10] if len(updated_at) >= 10 else updated_at
+            else:
+                updated_at_str = ""
+
+            lines.append(f"### 📌 [{full_name}]({url})\n\n")
+            lines.append(f"**⭐ Stars:** {stars:,} | **🍴 Forks:** {forks:,} | **📅 Updated:** {updated_at_str}\n\n")
+
+            repo_summary = r.get("summary_data", {})
+            if not isinstance(repo_summary, dict):
+                repo_summary = {}
+
+            repo_name = repo_summary.get("Repository Name", full_name)
+            brief_intro = repo_summary.get("Brief Introduction", "")
+            innovations = repo_summary.get("Innovations", "")
+            basic_usage = repo_summary.get("Basic Usage", "")
+            summary_text = repo_summary.get("Summary", "")
+
+            lines.append("1. **Repository Name:** " + repo_name + "\n")
+            lines.append("2. **Brief Introduction:** " + (brief_intro or "Not specified.") + "\n")
+            lines.append("3. **Innovations:** " + (innovations or "Not specified.") + "\n")
+            lines.append("4. **Basic Usage:** " + (basic_usage or "Not specified.") + "\n")
+            lines.append("5. **Summary:** " + (summary_text or "Not specified.") + "\n")
+
+            lines.append("---\n\n")
 
     return "\n".join(lines).strip() + "\n"
 
@@ -1002,6 +1215,12 @@ def main() -> int:
         type=str,
         default=None,
         help="Parse repositories from an existing generated README (e.g. README.md) instead of calling GitHub API.",
+    )
+    parser.add_argument(
+        "--from-summaries",
+        action="store_true",
+        default=False,
+        help="Parse repositories from repo_summaries.json. Uses existing AI summaries for classification.",
     )
     parser.add_argument("--max-repos", type=int, default=None, help="Limit number of repos (overrides config/env MAX_REPOS).")
     parser.add_argument("--min-categories", type=int, default=5, help="Min number of categories (default: 5).")
@@ -1130,6 +1349,12 @@ def main() -> int:
             repos = parse_repos_from_readme(args.from_readme, max_repos=max_repos)
         except Exception as e:
             print(f"Failed to parse repos from README: {e}")
+            return 2
+    elif args.from_summaries:
+        try:
+            repos = parse_repos_from_summaries(None, max_repos=max_repos)
+        except Exception as e:
+            print(f"Failed to parse repos from summaries: {e}")
             return 2
     else:
         try:
@@ -1283,7 +1508,8 @@ def main() -> int:
     with open(out_json_path, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
 
-    md = render_classified_readme(taxonomy, repos, assignment_map)
+    generated_at_str = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
+    md = render_markdown(taxonomy, repos, assignment_map, config, MODEL_CHOICE, username, generated_at_str)
     with open(out_md_path, "w", encoding="utf-8") as f:
         f.write(md)
 

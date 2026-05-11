@@ -2,7 +2,8 @@ import logging
 import os
 import sys
 import time
-from logging.handlers import RotatingFileHandler, StreamHandler
+from logging.handlers import RotatingFileHandler
+from logging import StreamHandler
 from typing import Any, Dict, List
 
 from scripts.core.config import (
@@ -35,6 +36,7 @@ from scripts.summary import (
     is_valid_summary,
     select_repos_for_update,
     summarize_batch,
+    summarize_batch_combined,
     get_summarize_func,
 )
 
@@ -56,6 +58,7 @@ default_gemini_model = config.get("default_gemini_model", "gemini-pro")
 
 max_workers = get_int_config(config, "max_workers", 5)
 batch_size = get_int_config(config, "batch_size", 1)
+batch_mode = config.get("batch_mode", "concurrent").lower()
 request_timeout = get_float_config(config, "request_timeout", 10.0)
 rate_limit_delay = get_float_config(config, "rate_limit_delay", 1.0)
 request_retry_delay = get_int_config(config, "request_retry_delay", 5)
@@ -265,16 +268,31 @@ def main():
             api_call_counter=_api_call_counter,
         )
 
-        for lang, repos in sorted(classified_to_process.items(), key=lambda x: -len(x[1])):
-            if lang in printed_langs:
-                continue
-
+        all_repos_to_process: List[Dict] = []
+        for lang, repos in classified_to_process.items():
             repos_to_call = repos_to_update.get(lang, []) if update_mode == "missing_only" else repos
+            all_repos_to_process.extend(repos_to_call)
 
-            for i in range(0, len(repos_to_call), batch_size):
-                this_batch = repos_to_call[i : i + batch_size]
-                print(f"处理批次 {i // batch_size + 1}，包含 {len(this_batch)} 个仓库...")
+        printed_repos: set = set()
+        printed_langs: set = set()
+        total_repos = len(all_repos_to_process)
+        processed_repos = 0
+        repo_summary_map: Dict[str, Dict] = {}
 
+        for i in range(0, len(all_repos_to_process), batch_size):
+            this_batch = all_repos_to_process[i : i + batch_size]
+            print(f"处理批次 {i // batch_size + 1}，包含 {len(this_batch)} 个仓库...")
+
+            if batch_mode == "combined" and batch_size > 1:
+                summaries = summarize_batch_combined(
+                    this_batch,
+                    old_summaries,
+                    summarize_func,
+                    update_mode,
+                    LANGUAGE,
+                    batch_size,
+                )
+            else:
                 summaries = summarize_batch(
                     this_batch,
                     old_summaries,
@@ -284,14 +302,19 @@ def main():
                     max_workers,
                 )
 
-                for repo, summary in zip(this_batch, summaries):
-                    key = _repo_key(repo)
-                    entry = build_repo_entry(repo, summary)
-                    if key:
-                        repo_summary_map[key] = entry
+            for repo, summary in zip(this_batch, summaries):
+                key = _repo_key(repo)
+                entry = build_repo_entry(repo, summary)
+                if key:
+                    repo_summary_map[key] = entry
 
-                summary_store = merge_summary_store(summary_store, repo_summary_map)
-                save_json_atomic(summary_store, json_path)
+            summary_store = merge_summary_store(summary_store, repo_summary_map)
+            save_json_atomic(summary_store, json_path)
+
+        for lang in sorted(classified_to_process.keys(), key=lambda x: -len(classified_to_process[x])):
+            if lang in printed_langs:
+                continue
+            repos = classified_to_process[lang]
 
             section_lines, printed_repos, printed_langs, processed_repos = build_repo_section(
                 lang,
