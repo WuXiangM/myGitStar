@@ -80,10 +80,10 @@ jobs:
           echo "max_categories=${{ steps.cfg.outputs.max_categories }}"
           echo "min_repos_per_category=${{ steps.cfg.outputs.min_repos_per_category }}"
 
-      - name: Ensure README_lang.md exists (classify-only mode)
+      - name: Ensure repo_summaries.json exists (classify-only mode)
         if: steps.cfg.outputs.classify_only == 'true'
         run: |
-          test -f README_lang.md || (echo "README_lang.md not found. Either run summarize first, or commit README_lang.md to the repo." && exit 1)
+          test -f repo_summaries.json || (echo "repo_summaries.json not found. Either run summarize first." && exit 1)
 
       - name: Summarize starred repos with ai
         if: steps.cfg.outputs.classify_only != 'true'
@@ -96,13 +96,12 @@ jobs:
           python scripts/summarize_stars.py --language en --out README_lang.md --update-mode ${{ steps.cfg.outputs.update_mode }}
           python scripts/summarize_stars.py --language zh --out README_lang_cn.md --update-mode ${{ steps.cfg.outputs.update_mode }}
 
-      - name: Classify repos by content from README
+      - name: Classify repos by content from summaries
         env:
           STARRED_GITHUB_TOKEN: ${{ secrets.STARRED_GITHUB_TOKEN }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_ACTOR: ${{ github.actor }}
-          # More conservative settings to reduce 429; and allow fallback if Copilot is rate-limited.
           MYGITSTAR_FALLBACK_ON_429: '1'
           MYGITSTAR_MAX_CONSECUTIVE_429: '5'
           MYGITSTAR_RETRY_ATTEMPTS: '2'
@@ -111,7 +110,7 @@ jobs:
           MYGITSTAR_RATE_LIMIT_DELAY: '2'
         run: |
           python scripts/classify_stars_by_content.py \
-            --from-readme "README_lang.md" \
+            --from-summaries \
             --min-categories ${{ steps.cfg.outputs.min_categories }} \
             --max-categories ${{ steps.cfg.outputs.max_categories }} \
             --min-repos-per-category ${{ steps.cfg.outputs.min_repos_per_category }} \

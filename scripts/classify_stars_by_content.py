@@ -792,8 +792,9 @@ def parse_repos_from_readme(readme_path: str, max_repos: Optional[int] = None) -
 
     # Split by repo heading
     # Example: ### 📌 [open-gigaai/giga-brain-0](https://github.com/open-gigaai/giga-brain-0)
+    # Using re.MULTILINE | re.DOTALL and allowing \r for Windows line endings
     pattern = re.compile(
-        r"^###\s+📌\s+\[(?P<full_name>[^\]]+)\]\((?P<url>https?://[^\)\s]+)\)\s*$",
+        r"^###\s+📌\s+\[(?P<full_name>[^\]]+)\]\((?P<url>https?://[^\)\s]+)\)\s*[\r]?\n",
         re.MULTILINE,
     )
 
