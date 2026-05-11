@@ -80,19 +80,30 @@ myGitStar/
 ├── scripts/
 │   ├── summarize_stars.py          # 主脚本：生成星标仓库的 AI 总结
 │   ├── classify_stars_by_content.py  # 主脚本：按内容分类仓库
-│   ├── api_clients.py              # AI API 客户端（Copilot/OpenRouter/Gemini）
-│   ├── github_api.py               # GitHub API 交互
-│   ├── prompts.py                  # AI 提示词生成
-│   ├── readme_builder.py           # README 生成器
-│   ├── llm_caller.py              # LLM 调用封装
-│   ├── classification_parser.py    # 仓库解析和分类
-│   ├── markdown_renderer.py        # Markdown 渲染
-│   └── core/                      # 核心模块
-│       ├── config.py              # 配置管理
-│       ├── secrets.py             # 密钥管理
-│       ├── json_store.py          # JSON 存储
-│       ├── throttle.py            # 速率限制
-│       └── summary_reader.py      # 摘要读取
+│   ├── core/                      # 核心模块
+│   │   ├── config.py              # 配置管理
+│   │   ├── secrets.py             # 密钥管理
+│   │   ├── json_store.py          # JSON 存储
+│   │   ├── throttle.py            # 速率限制
+│   │   └── summary_reader.py      # 摘要读取
+│   ├── summary/                   # 总结脚本辅助模块
+│   │   ├── __init__.py
+│   │   └── summarize_helpers.py   # 批处理、验证、prompt生成
+│   ├── classification/            # 分类脚本辅助模块
+│   │   ├── __init__.py
+│   │   ├── classify_helpers.py    # 提示词生成、采样
+│   │   └── classification_parser.py  # 仓库解析和分类
+│   ├── ai/                        # AI/LLM 相关模块
+│   │   ├── __init__.py
+│   │   ├── api_clients.py         # API 客户端（Copilot/OpenRouter/Gemini）
+│   │   └── llm_caller.py         # LLM 调用封装
+│   ├── output/                    # 输出生成模块
+│   │   ├── __init__.py
+│   │   ├── readme_builder.py      # README 生成器
+│   │   └── markdown_renderer.py   # Markdown 渲染
+│   └── github/                    # GitHub API 交互
+│       ├── __init__.py
+│       └── github_api.py          # GitHub API 交互
 ├── config.yaml                   # 配置
 ├── requirements.txt              # Python 依赖
 ├── README.md                     # 内容分类输出（主 README）

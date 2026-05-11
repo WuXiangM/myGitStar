@@ -1,0 +1,53 @@
+{
+  "taxonomy": {
+    "categories": [
+      {
+        "id": "C1",
+        "name": "Dev Tools",
+        "description": "Tools that enhance developer productivity, such as IDEs, editors, or developer environments."
+      },
+      {
+        "id": "C2",
+        "name": "Web Frameworks",
+        "description": "Repositories that provide frameworks for building web applications, including frontend and backend frameworks."
+      },
+      {
+        "id": "C3",
+        "name": "System & OS",
+        "description": "Projects related to operating systems, core system software, or low-level infrastructure."
+      },
+      {
+        "id": "C4",
+        "name": "Data & ML",
+        "description": "Repositories focused on data processing, machine learning, or AI-related tools and models."
+      },
+      {
+        "id": "C5",
+        "name": "Other",
+        "description": "Repositories that do not clearly fit into the above categories based on content and domain."
+      }
+    ]
+  },
+  "assignments": [
+    {
+      "repo_id": 1,
+      "category_id": "C1"
+    },
+    {
+      "repo_id": 2,
+      "category_id": "C2"
+    },
+    {
+      "repo_id": 3,
+      "category_id": "C4"
+    },
+    {
+      "repo_id": 4,
+      "category_id": "C3"
+    },
+    {
+      "repo_id": 5,
+      "category_id": "C2"
+    }
+  ]
+}

@@ -2,7 +2,7 @@ import re
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional, Tuple
 
-from scripts.classification_parser import Taxonomy, _clean_inline_md, _strip_leading_symbols, _trim_repo_block_before_language_section
+from scripts.classification.classification_parser import Taxonomy, _clean_inline_md, _strip_leading_symbols, _trim_repo_block_before_language_section
 
 
 def _slugify_heading(text: str) -> str:

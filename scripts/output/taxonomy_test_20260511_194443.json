@@ -1,0 +1,53 @@
+{
+  "taxonomy": {
+    "categories": [
+      {
+        "id": "C1",
+        "name": "Operating Systems",
+        "description": "Core OS kernels, drivers, and system-level infrastructure (e.g., Linux, Windows, macOS)."
+      },
+      {
+        "id": "C2",
+        "name": "Web Frameworks & Tools",
+        "description": "Frontend frameworks, build tools, UI libraries, and web development utilities (e.g., React, Vue, Vite, Bootstrap)."
+      },
+      {
+        "id": "C3",
+        "name": "Programming Languages",
+        "description": "Core language implementations, interpreters, compilers, and standard libraries (e.g., Python, C++, Rust)."
+      },
+      {
+        "id": "C4",
+        "name": "IDEs & Development Environments",
+        "description": "Integrated development environments, code editors, and tooling for software creation (e.g., VS Code, IntelliJ)."
+      },
+      {
+        "id": "C5",
+        "name": "Other",
+        "description": "Repositories that do not fit into the primary technical domains above."
+      }
+    ]
+  },
+  "assignments": [
+    {
+      "repo_id": 1,
+      "category_id": "C5"
+    },
+    {
+      "repo_id": 2,
+      "category_id": "C5"
+    },
+    {
+      "repo_id": 3,
+      "category_id": "C5"
+    },
+    {
+      "repo_id": 4,
+      "category_id": "C5"
+    },
+    {
+      "repo_id": 5,
+      "category_id": "C5"
+    }
+  ]
+}

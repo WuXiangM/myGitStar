@@ -1,10 +1,9 @@
-import concurrent.futures
 import logging
 import os
 import sys
 import time
-from logging.handlers import RotatingFileHandler
-from typing import Any, Dict, List, Optional
+from logging.handlers import RotatingFileHandler, StreamHandler
+from typing import Any, Dict, List
 
 from scripts.core.config import (
     load_config,
@@ -18,23 +17,25 @@ from scripts.core.secrets import load_api_keys
 from scripts.core.throttle import SimpleThrottle
 from scripts.core.json_store import (
     get_summary_json_path,
-    load_json,
-    normalize_json_store,
     build_summary_index,
-    get_summary_from_json,
     save_json_atomic,
     merge_summary_store,
     load_summary_store,
 )
-from scripts.api_clients import make_api_request
-from scripts.github_api import get_starred_repos
-from scripts.prompts import generate_summarize_prompt
-from scripts.readme_builder import (
+from scripts.github import get_starred_repos
+from scripts.output import (
     classify_by_language,
     build_readme_header,
     build_table_of_contents,
     build_repo_section,
     build_readme_footer,
+)
+from scripts.summary import (
+    build_repo_entry,
+    is_valid_summary,
+    select_repos_for_update,
+    summarize_batch,
+    get_summarize_func,
 )
 
 
@@ -68,7 +69,7 @@ if github_username == "0" or github_username == 0:
 else:
     GITHUB_USERNAME = github_username
 
-MAX_REPOS: Optional[int] = None
+MAX_REPOS: int = None
 max_repos_env = os.environ.get("MAX_REPOS")
 if max_repos_env:
     try:
@@ -100,267 +101,19 @@ def _repo_key(repo: Dict) -> str:
     return str(repo.get("full_name") or repo.get("Repository Name") or "").strip()
 
 
-def _make_request_with_throttle(url: str, headers: Dict, data: Dict, retries: int, retry_delay: float, timeout: float) -> Optional[Dict]:
-    return make_api_request(url, headers, data, retries, retry_delay, timeout, THROTTLE)
-
-
-def copilot_summarize(repo: Dict) -> Optional[str]:
-    global copilot_api_call_count
-    copilot_api_call_count += 1
-    remaining = 150 - copilot_api_call_count
-    print(f"[Copilot API调用] 第 {copilot_api_call_count} 次调用，仓库: {repo['full_name']}，剩余可用: {remaining}")
-    if not GITHUB_TOKEN:
-        print("缺少 STARRED_GITHUB_TOKEN，无法调用 GitHub Copilot API")
-        return None
-    try:
-        headers = {
-            "Authorization": f"Bearer {GITHUB_TOKEN}",
-            "Accept": "application/json",
-            "X-GitHub-Api-Version": "2023-07-01",
-            "Content-Type": "application/json",
-        }
-        model_name = os.environ.get("GITHUB_COPILOT_MODEL", default_copilot_model) or "openai/gpt-4o-mini"
-        prompt = generate_summarize_prompt(repo, LANGUAGE)
-        data = {
-            "model": model_name,
-            "messages": [{"role": "user", "content": prompt}],
-            "max_tokens": 600,
-            "temperature": 0.4,
-        }
-        response = _make_request_with_throttle(
-            "https://models.github.ai/inference/chat/completions",
-            headers,
-            data,
-            retry_attempts,
-            float(request_retry_delay),
-            request_timeout,
-        )
-        if response and isinstance(response, dict) and response.get("error"):
-            err = response["error"]
-            if err.get("code") == "RateLimitReached":
-                msg = err.get("message", "Copilot API限额已用尽，请明天再试。")
-                print(f"[Copilot限额] {msg}")
-                return f"Copilot API限额已用尽：{msg}"
-        content = None
-        if response:
-            choices = response.get("choices", [{}])
-            if choices and isinstance(choices[0], dict):
-                message = choices[0].get("message")
-                if message and isinstance(message, dict):
-                    content = message.get("content", "")
-                elif "content" in choices[0]:
-                    content = choices[0]["content"]
-            if content is not None:
-                content = str(content).strip()
-        print(f"Copilot内容: {content!r}")
-        return content if content else None
-    except Exception as e:
-        print(f"Copilot总结异常: {e}")
-        return None
-
-
-def openrouter_summarize(repo: Dict) -> Optional[str]:
-    global openrouter_api_call_count
-    openrouter_api_call_count += 1
-    if not OPENROUTER_API_KEY:
-        print("缺少 OPENROUTER_API_KEY，无法调用 OpenRouter API")
-        return None
-    try:
-        headers = {
-            "Authorization": f"Bearer {OPENROUTER_API_KEY}",
-            "Content-Type": "application/json",
-        }
-        prompt = generate_summarize_prompt(repo, LANGUAGE)
-        data = {
-            "model": default_openrouter_model,
-            "messages": [{"role": "user", "content": prompt}],
-        }
-        response = _make_request_with_throttle(
-            "https://openrouter.ai/api/v1/chat/completions",
-            headers,
-            data,
-            retry_attempts,
-            float(request_retry_delay),
-            request_timeout,
-        )
-        content = None
-        if response:
-            choices = response.get("choices", [{}])
-            if choices and isinstance(choices[0], dict):
-                message = choices[0].get("message")
-                if message and isinstance(message, dict):
-                    content = message.get("content", "")
-                elif "content" in choices[0]:
-                    content = choices[0]["content"]
-            if content is not None:
-                content = str(content).strip()
-        print(f"OpenRouter内容: {content!r}")
-        return content if content else None
-    except Exception as e:
-        print(f"OpenRouter总结异常: {e}")
-        return None
-
-
-def gemini_summarize(repo: Dict) -> Optional[str]:
-    global gemini_api_call_count
-    gemini_api_call_count += 1
-    if not GEMINI_API_KEY:
-        print("缺少 GEMINI_API_KEY，无法调用 Gemini API")
-        return None
-    prompt = generate_summarize_prompt(repo, LANGUAGE)
-    if not prompt.strip():
-        print(f"[Gemini] 仓库 {repo.get('full_name')} 的生成提示为空，跳过请求")
-        return None
-    try:
-        model_name = os.environ.get("GEMINI_MODEL", default_gemini_model) or "gemini-pro"
-        model_path = str(model_name).strip()
-        if model_path.startswith("models/"):
-            model_path = model_path[len("models/"):]
-        model_path = model_path.strip()
-        if not model_path.startswith("gemini-"):
-            print(f"[Gemini] 模型名称 {model_name} 非标准格式，建议使用 gemini-pro/gemini-1.5-pro 等")
-
-        api_url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_path}:generateContent"
-        request_url = f"{api_url}?key={GEMINI_API_KEY}"
-
-        headers = {
-            "Content-Type": "application/json; charset=utf-8",
-            "User-Agent": "GitHub Star Summary Bot/1.0",
-            "X-Goog-Api-Key": GEMINI_API_KEY,
-        }
-
-        temperature = config.get("gemini_temperature", 0.4)
-        max_output_tokens = config.get("gemini_max_output_tokens", 800)
-        payload = {
-            "generationConfig": {
-                "temperature": temperature,
-                "maxOutputTokens": max_output_tokens,
-                "topP": 0.8,
-                "topK": 40,
-            },
-            "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-        }
-
-        gen_retries = int(config.get("gemini_generation_retries", 3))
-        gen_backoff = int(config.get("gemini_retry_backoff", 5))
-        base_max_tokens = int(config.get("gemini_max_output_tokens", max_output_tokens))
-
-        final_content = None
-        for attempt in range(1, gen_retries + 1):
-            attempt_max_tokens = min(base_max_tokens + (attempt - 1) * 200, 2048)
-            payload["generationConfig"]["maxOutputTokens"] = attempt_max_tokens
-
-            response = _make_request_with_throttle(
-                url=request_url,
-                headers=headers,
-                data=payload,
-                retries=get_int_config(config, "gemini_retry_attempts", retry_attempts),
-                retry_delay=float(get_float_config(config, "gemini_retry_delay", float(request_retry_delay))),
-                timeout=request_timeout,
-            )
-
-            if not response or not isinstance(response, dict):
-                if attempt < gen_retries:
-                    wait = gen_backoff * attempt
-                    print(f"[Gemini] 响应异常或为空，等待 {wait} 秒后重试...")
-                    time.sleep(wait)
-                    continue
-                else:
-                    print(f"[Gemini] 仓库 {repo.get('full_name')} 响应为空或格式异常，已放弃")
-                    return None
-
-            if "error" in response:
-                error = response["error"]
-                error_code = error.get("code")
-                error_msg = error.get("message", "未知错误")
-                print(f"[Gemini] API 错误 - 代码: {error_code}, 信息: {error_msg}")
-                if error_code in (429, 503):
-                    if attempt < gen_retries:
-                        wait = gen_backoff * attempt
-                        print(f"[Gemini] 遇到 {error_code}，等待 {wait} 秒后重试...")
-                        time.sleep(wait)
-                        continue
-                if error_code == 401:
-                    return "Gemini API Key 无效或无权限"
-                elif error_code == 404:
-                    return f"Gemini 模型 {model_path} 不存在"
-                elif error_code == 400:
-                    return "Gemini 请求参数格式错误"
-                else:
-                    return f"Gemini API 错误: {error_msg}"
-
-            content = ""
-            truncated = False
-            try:
-                candidates = response.get("candidates", [])
-                for candidate in candidates:
-                    finish = candidate.get("finishReason")
-                    content_obj = candidate.get("content", {})
-                    parts = content_obj.get("parts", [])
-                    for part in parts:
-                        if isinstance(part, dict) and "text" in part:
-                            content += part["text"].strip() + "\n"
-                    if finish == "MAX_TOKENS":
-                        truncated = True
-                    break
-
-                if not content:
-                    choices = response.get("choices", [])
-                    for choice in choices:
-                        if isinstance(choice, dict):
-                            content = choice.get("message", {}).get("content", "") or choice.get("text", "")
-                            if content:
-                                break
-
-                content = content.strip()
-            except Exception as e:
-                print(f"[Gemini] 解析响应异常: {e}")
-                content = ""
-
-            if content and not truncated:
-                final_content = content
-                break
-
-            if attempt < gen_retries:
-                wait = gen_backoff * attempt
-                print(f"[Gemini] 生成内容为空或被截断 (attempt={attempt})，等待 {wait} 秒后重试...")
-                time.sleep(wait)
-                continue
-            else:
-                if content:
-                    final_content = content
-                else:
-                    print(f"[Gemini] 仓库 {repo.get('full_name')} 无有效总结内容，已放弃")
-                    return None
-
-        if final_content:
-            print(f"[Gemini] 仓库 {repo.get('full_name')} 总结内容: {final_content[:50]}...")
-            return final_content
-        return None
-
-    except Exception as e:
-        print(f"[Gemini] 总结仓库 {repo.get('full_name')} 异常: {e}")
-        return None
-
-
-def get_summarize_func():
+def _api_call_counter():
+    global copilot_api_call_count, openrouter_api_call_count, gemini_api_call_count
     if model_choice == "copilot":
-        return copilot_summarize
+        copilot_api_call_count += 1
+        remaining = 150 - copilot_api_call_count
+        print(f"[Copilot API调用] 第 {copilot_api_call_count} 次调用，剩余可用: {remaining}")
     elif model_choice == "openrouter":
-        return openrouter_summarize
+        openrouter_api_call_count += 1
+        print(f"[OpenRouter API调用] 第 {openrouter_api_call_count} 次调用")
     elif model_choice == "gemini":
-        return gemini_summarize
-    else:
-        raise ValueError(f"不支持的模型选择: {model_choice}")
+        gemini_api_call_count += 1
+        print(f"[Gemini API调用] 第 {gemini_api_call_count} 次调用")
 
-
-summarize_func = get_summarize_func()
-
-API_ENDPOINTS = {
-    "copilot": "https://models.github.ai/inference/chat/completions",
-    "openrouter": "https://openrouter.ai/api/v1/chat/completions",
-    "gemini": "https://generativelanguage.googleapis.com/v1beta/models",
-}
 
 README_SUM_PATH = readme_sum_path or os.path.join(os.path.dirname(os.path.dirname(__file__)), "README-sum.md")
 LANGUAGE = config.get("language", "zh")
@@ -377,7 +130,7 @@ file_handler = RotatingFileHandler(LOG_FILE, maxBytes=LOG_MAX_BYTES, backupCount
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
-console_handler = logging.StreamHandler()
+console_handler = StreamHandler()
 console_handler.setFormatter(formatter)
 logger.addHandler(console_handler)
 
@@ -421,160 +174,6 @@ if GEMINI_API_KEY:
         print(f"Gemini API Key 前缀: {GEMINI_API_KEY[:4]}...")
     except Exception:
         print("Gemini API Key 前缀: (已设置)")
-
-
-def is_valid_summary(summary: str) -> bool:
-    if not summary or not summary.strip():
-        return False
-    invalid_phrases = ["生成失败", "暂无AI总结", "429", "Copilot API限额已用尽", "RateLimitReached"]
-    for phrase in invalid_phrases:
-        if phrase in summary:
-            return False
-
-    import re
-
-    try:
-        lang = config.get("language", "zh")
-    except Exception:
-        lang = "zh"
-
-    common_english_templates = [
-        r"Here'?s the summary",
-        r"Here is the summary",
-        r"Repository Name",
-        r"Brief Introduction",
-        r"Innovations",
-        r"Basic Usage",
-        r"Summary\s*:",
-        r"Please summarize",
-    ]
-
-    common_chinese_templates = [
-        r"仓库名称",
-        r"简要介绍",
-        r"创新点",
-        r"简单用法",
-        r"总结\s*[:：]",
-        r"请对以下 GitHub 仓库进行内容总结",
-    ]
-
-    s_head = summary.strip()[:200]
-    if lang != "en":
-        for p in common_english_templates:
-            if re.search(p, s_head, flags=re.IGNORECASE):
-                return False
-    if lang == "en":
-        for p in common_chinese_templates:
-            if re.search(p, s_head):
-                return False
-
-    full_text = summary.strip()
-    if lang == "en":
-        patterns = [r"Summary\s*[:：]", r"Repository Name", r"Brief Introduction", r"Innovations"]
-    else:
-        patterns = [r"总结\s*[:：]", r"仓库名称", r"简要介绍", r"创新点"]
-
-    missing = []
-    for p in patterns:
-        if not re.search(p, full_text, flags=re.IGNORECASE):
-            missing.append(p)
-    if missing:
-        return False
-
-    try:
-        s = summary
-        if lang == "en":
-            m = re.search(r"Brief Introduction\s*[:：]\s*(.+?)(?:\n\s*\d+\.|\n\n|$)", s, flags=re.IGNORECASE | re.S)
-            if m:
-                intro = m.group(1).strip()
-                intro_text = re.sub(r"\*|\*\*|`|\\n", "", intro).strip()
-                if len(intro_text) < 20:
-                    return False
-        else:
-            m = re.search(r"简要介绍\s*[:：]\s*(.+?)(?:\n\s*\d+\.|\n\n|$)", s, flags=re.S)
-            if m:
-                intro = m.group(1).strip()
-                intro_text = re.sub(r"\*|\*\*|`|\\n", "", intro).strip()
-                if len(intro_text) < 10:
-                    return False
-    except Exception:
-        pass
-
-    return True
-
-
-def summarize_batch(
-    repos: List[Dict],
-    old_summaries: Dict[str, str],
-    use_copilot: bool = False,
-    use_gemini: bool = False,
-) -> List[str]:
-    results: List[str] = ["" for _ in repos]
-    if use_gemini:
-        func = gemini_summarize
-        api_name = "Gemini"
-    elif use_copilot:
-        func = copilot_summarize
-        api_name = "Copilot"
-    else:
-        func = openrouter_summarize
-        api_name = "OpenRouter"
-
-    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-        future_to_idx = {executor.submit(func, repo): idx for idx, repo in enumerate(repos)}
-        for future in concurrent.futures.as_completed(future_to_idx):
-            idx = future_to_idx[future]
-            repo = repos[idx]
-            try:
-                existing_summary = old_summaries.get(repo["full_name"], "")
-                reuse_existing = (update_mode == "missing_only") and is_valid_summary(existing_summary)
-                if reuse_existing:
-                    summary = existing_summary
-                else:
-                    summary = future.result()
-                    if summary is None:
-                        summary = old_summaries.get(repo["full_name"], f"{api_name} API生成失败或429")
-                print(f"[DEBUG] repo: {repo['full_name']} | summary: {repr(summary)}")
-            except Exception as exc:
-                print(f"{repo['full_name']} 线程异常: {exc}")
-                summary = old_summaries.get(repo["full_name"], f"{api_name} API生成失败")
-            results[idx] = summary if summary is not None else "*暂无AI总结*"
-    return results
-
-
-def build_repo_entry(repo: Dict, summary: str) -> Dict:
-    return {
-        "full_name": repo.get("full_name"),
-        "Repository Name": repo.get("full_name"),
-        "Repository URL": repo.get("html_url"),
-        "description": repo.get("description"),
-        "language": repo.get("language"),
-        "stargazers_count": repo.get("stargazers_count"),
-        "forks_count": repo.get("forks_count"),
-        "updated_at": repo.get("updated_at"),
-        "summary": summary or "",
-    }
-
-
-def select_repos_for_update(
-    classified: Dict[str, List[Dict]],
-    summary_store: Dict[str, Dict],
-    old_summaries: Dict[str, str],
-    mode: str,
-) -> Dict[str, List[Dict]]:
-    if mode != "missing_only":
-        return classified
-    filtered: Dict[str, List[Dict]] = {}
-    for lang, repos in classified.items():
-        needs_update = []
-        for repo in repos:
-            key = _repo_key(repo)
-            fallback = old_summaries.get(key, "")
-            if not is_valid_summary(fallback):
-                needs_update.append(repo)
-        if needs_update:
-            filtered[lang] = needs_update
-    return filtered
 
 
 def main():
@@ -626,12 +225,12 @@ def main():
             for full_name, summary in old_summaries.items():
                 summary_store[full_name] = {"full_name": full_name, "summary": summary}
 
-        repos_to_update = select_repos_for_update(classified, summary_store, old_summaries, update_mode)
+        repos_to_update = select_repos_for_update(classified, old_summaries, update_mode, LANGUAGE)
 
         classified_to_process: Dict[str, List[Dict]] = {}
         for lang, repos in classified.items():
             try:
-                sorted_repos = sorted(repos, key=lambda r: is_valid_summary(old_summaries.get(r.get("full_name", ""), "")))
+                sorted_repos = sorted(repos, key=lambda r: is_valid_summary(old_summaries.get(r.get("full_name", ""), ""), LANGUAGE))
             except Exception:
                 sorted_repos = repos
             if sorted_repos:
@@ -649,6 +248,23 @@ def main():
         processed_repos = 0
         repo_summary_map: Dict[str, Dict] = {}
 
+        summarize_func = get_summarize_func(
+            model_choice=api_choice,
+            github_token=GITHUB_TOKEN,
+            openrouter_api_key=OPENROUTER_API_KEY,
+            gemini_api_key=GEMINI_API_KEY,
+            default_copilot_model=default_copilot_model,
+            default_openrouter_model=default_openrouter_model,
+            default_gemini_model=default_gemini_model,
+            language=LANGUAGE,
+            config=config,
+            throttle=THROTTLE,
+            request_timeout=request_timeout,
+            request_retry_delay=float(request_retry_delay),
+            retry_attempts=retry_attempts,
+            api_call_counter=_api_call_counter,
+        )
+
         for lang, repos in sorted(classified_to_process.items(), key=lambda x: -len(x[1])):
             if lang in printed_langs:
                 continue
@@ -659,12 +275,14 @@ def main():
                 this_batch = repos_to_call[i : i + batch_size]
                 print(f"处理批次 {i // batch_size + 1}，包含 {len(this_batch)} 个仓库...")
 
-                if api_choice == "gemini":
-                    summaries = summarize_batch(this_batch, old_summaries, use_gemini=True)
-                elif api_choice == "copilot":
-                    summaries = summarize_batch(this_batch, old_summaries, use_copilot=True)
-                else:
-                    summaries = summarize_batch(this_batch, old_summaries)
+                summaries = summarize_batch(
+                    this_batch,
+                    old_summaries,
+                    summarize_func,
+                    update_mode,
+                    LANGUAGE,
+                    max_workers,
+                )
 
                 for repo, summary in zip(this_batch, summaries):
                     key = _repo_key(repo)
@@ -747,4 +365,3 @@ if __name__ == "__main__":
         update_mode = normalize_update_mode(args.update_mode)
 
     main()
-    print(f"Copilot API 总调用次数: {copilot_api_call_count}")

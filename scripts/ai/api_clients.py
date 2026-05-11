@@ -280,3 +280,53 @@ def gemini_summarize(
                 return None
 
     return final_content
+
+
+def create_summarize_func(
+    model_choice: str,
+    github_token: str,
+    openrouter_api_key: str,
+    gemini_api_key: str,
+    default_copilot_model: str,
+    default_openrouter_model: str,
+    default_gemini_model: str,
+    language: str,
+    config: dict,
+    throttle: Any,
+    request_timeout: float,
+    request_retry_delay: float,
+    retry_attempts: int,
+    api_call_counter: callable,
+):
+    def make_request(url, headers, data, retries, retry_delay, timeout):
+        return make_api_request(url, headers, data, retries, retry_delay, timeout, throttle)
+
+    if model_choice == "copilot":
+        def summarize(repo: Dict) -> Optional[str]:
+            return copilot_summarize(
+                repo,
+                github_token,
+                default_copilot_model,
+                make_request,
+            )
+    elif model_choice == "openrouter":
+        def summarize(repo: Dict) -> Optional[str]:
+            return openrouter_summarize(
+                repo,
+                openrouter_api_key,
+                default_openrouter_model,
+                make_request,
+            )
+    elif model_choice == "gemini":
+        def summarize(repo: Dict) -> Optional[str]:
+            return gemini_summarize(
+                repo,
+                gemini_api_key,
+                default_gemini_model,
+                config,
+                make_request,
+            )
+    else:
+        raise ValueError(f"不支持的模型选择: {model_choice}")
+
+    return summarize

@@ -81,19 +81,30 @@ myGitStar/
 ├── scripts/
 │   ├── summarize_stars.py          # main script: generate AI summaries for starred repos
 │   ├── classify_stars_by_content.py  # main script: classify repos by content
-│   ├── api_clients.py              # AI API clients (Copilot/OpenRouter/Gemini)
-│   ├── github_api.py               # GitHub API interactions
-│   ├── prompts.py                  # AI prompt generation
-│   ├── readme_builder.py           # README builder
-│   ├── llm_caller.py              # LLM caller abstraction
-│   ├── classification_parser.py    # repo parsing and classification
-│   ├── markdown_renderer.py        # Markdown rendering
-│   └── core/                      # core modules
-│       ├── config.py              # configuration management
-│       ├── secrets.py             # secrets management
-│       ├── json_store.py          # JSON storage
-│       ├── throttle.py            # rate limiting
-│       └── summary_reader.py      # summary reader
+│   ├── core/                      # core modules
+│   │   ├── config.py              # configuration management
+│   │   ├── secrets.py             # secrets management
+│   │   ├── json_store.py          # JSON storage
+│   │   ├── throttle.py            # rate limiting
+│   │   └── summary_reader.py      # summary reader
+│   ├── summary/                   # summarize script helpers
+│   │   ├── __init__.py
+│   │   └── summarize_helpers.py   # batch processing, validation, prompt generation
+│   ├── classification/            # classify script helpers
+│   │   ├── __init__.py
+│   │   ├── classify_helpers.py    # prompt generation, sampling
+│   │   └── classification_parser.py  # repo parsing and classification
+│   ├── ai/                        # AI/LLM related modules
+│   │   ├── __init__.py
+│   │   ├── api_clients.py         # API clients (Copilot/OpenRouter/Gemini)
+│   │   └── llm_caller.py         # LLM caller abstraction
+│   ├── output/                    # output generation modules
+│   │   ├── __init__.py
+│   │   ├── readme_builder.py      # README builder
+│   │   └── markdown_renderer.py   # Markdown rendering
+│   └── github/                    # GitHub API interactions
+│       ├── __init__.py
+│       └── github_api.py          # GitHub API interactions
 ├── config.yaml                   # configuration
 ├── requirements.txt              # Python dependencies
 ├── README.md                     # content-classified output (main README)

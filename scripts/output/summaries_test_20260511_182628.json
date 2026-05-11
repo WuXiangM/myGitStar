@@ -1,0 +1,22 @@
+{
+  "microsoft/vscode": {
+    "full_name": "microsoft/vscode",
+    "summary": "Ollama 错误: 404 Client Error: Not Found for url: http://localhost:11434/api/generate"
+  },
+  "vitejs/vite": {
+    "full_name": "vitejs/vite",
+    "summary": "Ollama 错误: 404 Client Error: Not Found for url: http://localhost:11434/api/generate"
+  },
+  "twbs/bootstrap": {
+    "full_name": "twbs/bootstrap",
+    "summary": "Ollama 错误: 404 Client Error: Not Found for url: http://localhost:11434/api/generate"
+  },
+  "python/cpython": {
+    "full_name": "python/cpython",
+    "summary": "Ollama 错误: 404 Client Error: Not Found for url: http://localhost:11434/api/generate"
+  },
+  "torvalds/linux": {
+    "full_name": "torvalds/linux",
+    "summary": "Ollama 错误: 404 Client Error: Not Found for url: http://localhost:11434/api/generate"
+  }
+}
