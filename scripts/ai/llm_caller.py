@@ -310,7 +310,7 @@ def call_llm(
         data = {
             "model": model_name,
             "messages": [{"role": "user", "content": prompt}],
-            "max_tokens": 32000,
+            "max_tokens": 5120,
             "temperature": 0.2,
         }
         resp = api_request_func(API_ENDPOINTS["openrouter"], headers, data, retries=3, retry_delay=2.0)
