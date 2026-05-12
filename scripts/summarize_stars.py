@@ -53,6 +53,9 @@ GITHUB_TOKEN, OPENROUTER_API_KEY, GEMINI_API_KEY = load_api_keys(config)
 
 update_mode = resolve_update_mode(config)
 
+print(f"DEBUG: config loaded: github_username={repr(config.get('github_username'))}, model_choice={repr(config.get('model_choice'))}")
+print(f"DEBUG: config keys: {list(config.keys()) if isinstance(config, dict) else 'not a dict'}")
+
 github_username = config.get("github_username")
 model_choice = config.get("model_choice", "copilot")
 
