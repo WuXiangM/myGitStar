@@ -47,6 +47,7 @@ def make_api_request(
     throttle: Optional[SimpleThrottle] = None,
     timeout: float = 30.0,
 ) -> Optional[Dict[str, Any]]:
+    print(f"[DEBUG] make_api_request: ENTERING, url={url}, retries={retries}, timeout={timeout}", flush=True)
     for attempt in range(retries):
         try:
             if throttle:
@@ -54,7 +55,9 @@ def make_api_request(
                     throttle.wait()
                 except Exception:
                     pass
+            print(f"[DEBUG] make_api_request: attempt {attempt + 1}/{retries}, calling requests.post...", flush=True)
             resp = requests.post(url, headers=headers, data=json.dumps(data), timeout=timeout)
+            print(f"[DEBUG] make_api_request: requests.post returned, status_code={resp.status_code}", flush=True)
 
             if resp.status_code == 429:
                 retry_after = None

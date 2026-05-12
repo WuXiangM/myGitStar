@@ -96,6 +96,7 @@ def openrouter_summarize(
         print(f"[DEBUG] openrouter_summarize: api_request_func returned, response={type(response)}", flush=True)
         content = None
         if response:
+            print(f"[DEBUG] openrouter_summarize: response keys={list(response.keys()) if isinstance(response, dict) else 'N/A'}", flush=True)
             choices = response.get("choices", [{}])
             if choices and isinstance(choices[0], dict):
                 message = choices[0].get("message")
@@ -107,6 +108,9 @@ def openrouter_summarize(
                 content = str(content).strip()
         return content if content else None
     except Exception as e:
+        import traceback
+        print(f"[ERROR] openrouter_summarize: Exception: {type(e).__name__}: {e}", flush=True)
+        print(f"[ERROR] openrouter_summarize: Exception traceback: {traceback.format_exc()}", flush=True)
         return None
 
 
