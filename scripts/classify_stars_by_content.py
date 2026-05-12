@@ -1469,8 +1469,10 @@ def main() -> int:
             valid_category_ids = {c["id"] for c in taxonomy.categories}
             other_id = next((c["id"] for c in taxonomy.categories if c["name"].lower() == "other"), taxonomy.categories[-1]["id"])
             for a in assignments:
-                rid = a["id"]
-                cid = a["category_id"]
+                rid = a.get("id")
+                cid = a.get("category_id") or a.get("category") or a.get("categoryId")
+                if not rid or not cid:
+                    continue
                 if cid not in valid_category_ids:
                     cid = other_id
                 assignment_map[rid] = cid
