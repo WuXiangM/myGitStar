@@ -294,6 +294,7 @@ def main():
             print(f"处理批次 {i // batch_size + 1}，包含 {len(this_batch)} 个仓库...")
 
             if batch_mode == "combined" and batch_size > 1:
+                print(f"[DEBUG] Calling summarize_batch_combined for {len(this_batch)} repos, batch_size={batch_size}")
                 summaries = summarize_batch_combined(
                     this_batch,
                     old_summaries,

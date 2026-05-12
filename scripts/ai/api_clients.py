@@ -32,7 +32,9 @@ def make_api_request(
                     throttle.wait()
                 except Exception:
                     pass
+            print(f"[DEBUG] Making request to {url} with timeout={timeout}")
             resp = requests.post(url, headers=headers, data=json.dumps(data), timeout=timeout)
+            print(f"[DEBUG] Request completed, status_code: {resp.status_code}")
             if resp.status_code == 429:
                 retry_after = None
                 try:
@@ -67,13 +69,19 @@ def make_api_request(
                 wait = int(retry_delay) * (2**attempt)
                 time.sleep(wait)
                 continue
+            print(f"[DEBUG] HTTPError after {retries} attempts: {e}, status_code: {e.response.status_code if e.response else 'None'}")
             return None
         except Exception as e:
+            import sys
+            import traceback
             if attempt < retries - 1:
                 wait = int(retry_delay) * (2**attempt) + random.uniform(0, 1)
                 time.sleep(wait)
                 continue
+            print(f"[DEBUG] Exception in make_api_request after {retries} attempts: {type(e).__name__}: {e}")
+            print(f"[DEBUG] Exception traceback: {traceback.format_exc()}")
             return None
+    print(f"[DEBUG] make_api_request returning None after all retries")
     return None
 
 

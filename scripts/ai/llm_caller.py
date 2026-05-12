@@ -306,6 +306,7 @@ def call_llm(
         if not openrouter_api_key:
             raise RuntimeError("Missing OPENROUTER_API_KEY (required for openrouter backend).")
         model_name = default_openrouter_model or "openai/gpt-4o-mini"
+        print(f"[DEBUG] OpenRouter model: {model_name}, API key prefix: {openrouter_api_key[:10]}...")
         headers = {"Authorization": f"Bearer {openrouter_api_key}", "Content-Type": "application/json"}
         data = {
             "model": model_name,
