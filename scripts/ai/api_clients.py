@@ -61,8 +61,8 @@ def copilot_summarize(
         return content if content else None
     except Exception as e:
         import traceback
-        print(f"[DEBUG] openrouter_summarize: Exception: {type(e).__name__}: {e}", flush=True)
-        print(f"[DEBUG] openrouter_summarize: Exception traceback: {traceback.format_exc()}", flush=True)
+        print(f"[ERROR] copilot_summarize: Exception: {type(e).__name__}: {e}", flush=True)
+        print(f"[ERROR] copilot_summarize: Exception traceback: {traceback.format_exc()}", flush=True)
         return None
 
 
@@ -164,13 +164,7 @@ def gemini_summarize(
         attempt_max_tokens = min(base_max_tokens + (attempt - 1) * 200, 2048)
         payload["generationConfig"]["maxOutputTokens"] = attempt_max_tokens
 
-        response = api_request_func(
-            url=request_url,
-            headers=headers,
-            data=payload,
-            retries=int(config.get("gemini_retry_attempts", 3)),
-            retry_delay=float(config.get("gemini_retry_delay", 5.0)),
-        )
+        response = api_request_func(request_url, headers, payload)
 
         if not response or not isinstance(response, dict):
             if attempt < gen_retries:
@@ -258,8 +252,8 @@ def create_summarize_func(
     retry_attempts: int,
     api_call_counter: callable,
 ):
-    def make_request(url, headers, data, retries, retry_delay, timeout):
-        return make_api_request(url, headers, data, retries, retry_delay, timeout, throttle)
+    def make_request(url, headers, data):
+        return make_api_request(url, headers, data, retry_attempts, request_retry_delay, throttle, request_timeout)
 
     if model_choice == "copilot":
         def summarize(repo: Dict) -> Optional[str]:
