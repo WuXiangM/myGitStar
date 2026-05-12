@@ -370,11 +370,12 @@ def summarize_batch_combined(
 
         combined_prompt = generate_combined_summarize_prompt(batch, language)
         repo_with_prompt = {"prompt": combined_prompt, "repos": [r["full_name"] for r in batch]}
-        print(f"[DEBUG] Batch {i // batch_size + 1} prompt length: {len(combined_prompt)} chars, repos: {[r['full_name'] for r in batch]}")
+        print(f"[DEBUG] Batch {i // batch_size + 1} prompt length: {len(combined_prompt)} chars, repos: {[r['full_name'] for r in batch]}", flush=True)
+        print(f"[DEBUG] Batch {i // batch_size + 1} calling summarize_func...", flush=True)
 
         try:
             response_text = summarize_func(repo_with_prompt)
-            print(f"[DEBUG] Batch {i // batch_size + 1} response length: {len(response_text) if response_text else 0} chars, response preview: {repr(response_text[:200]) if response_text else 'None'}")
+            print(f"[DEBUG] Batch {i // batch_size + 1} summarize_func returned, response_text type={type(response_text)}, len={len(response_text) if response_text else 0}", flush=True)
             if response_text:
                 parsed = parse_combined_summaries(response_text, batch)
                 for full_name, summary_dict in parsed.items():

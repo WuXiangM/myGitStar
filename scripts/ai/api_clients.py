@@ -1,12 +1,8 @@
-import json
 import os
-import random
 import time
 from typing import Any, Dict, Optional
 
-import requests
-
-from scripts.core.throttle import SimpleThrottle
+from scripts.ai.llm_caller import make_api_request
 
 
 API_ENDPOINTS = {
@@ -14,75 +10,6 @@ API_ENDPOINTS = {
     "openrouter": "https://openrouter.ai/api/v1/chat/completions",
     "gemini": "https://generativelanguage.googleapis.com/v1beta/models",
 }
-
-
-def make_api_request(
-    url: str,
-    headers: Dict[str, str],
-    data: Dict[str, Any],
-    retries: int = 3,
-    retry_delay: float = 5.0,
-    timeout: float = 30.0,
-    throttle: Optional[SimpleThrottle] = None,
-) -> Optional[Dict[str, Any]]:
-    for attempt in range(retries):
-        try:
-            if throttle:
-                try:
-                    throttle.wait()
-                except Exception:
-                    pass
-            print(f"[DEBUG] Making request to {url} with timeout={timeout}")
-            resp = requests.post(url, headers=headers, data=json.dumps(data), timeout=timeout)
-            print(f"[DEBUG] Request completed, status_code: {resp.status_code}")
-            if resp.status_code == 429:
-                retry_after = None
-                try:
-                    ra = resp.headers.get("Retry-After")
-                    if ra is not None:
-                        retry_after = int(ra)
-                except Exception:
-                    retry_after = None
-
-                if retry_after and attempt < retries - 1:
-                    wait = retry_after
-                    time.sleep(wait)
-                    continue
-
-                if attempt < retries - 1:
-                    wait = int(retry_delay) * (2**attempt) + random.uniform(0, 1)
-                    time.sleep(wait)
-                    continue
-                else:
-                    return {
-                        "error": {"code": 429, "message": "Too Many Requests"},
-                        "status_code": 429,
-                    }
-
-            resp.raise_for_status()
-            try:
-                return resp.json()
-            except Exception:
-                return {"text": resp.text}
-        except requests.HTTPError as e:
-            if attempt < retries - 1:
-                wait = int(retry_delay) * (2**attempt)
-                time.sleep(wait)
-                continue
-            print(f"[DEBUG] HTTPError after {retries} attempts: {e}, status_code: {e.response.status_code if e.response else 'None'}")
-            return None
-        except Exception as e:
-            import sys
-            import traceback
-            if attempt < retries - 1:
-                wait = int(retry_delay) * (2**attempt) + random.uniform(0, 1)
-                time.sleep(wait)
-                continue
-            print(f"[DEBUG] Exception in make_api_request after {retries} attempts: {type(e).__name__}: {e}")
-            print(f"[DEBUG] Exception traceback: {traceback.format_exc()}")
-            return None
-    print(f"[DEBUG] make_api_request returning None after all retries")
-    return None
 
 
 def _extract_prompt(repo: Dict) -> str:
@@ -133,6 +60,9 @@ def copilot_summarize(
                 content = str(content).strip()
         return content if content else None
     except Exception as e:
+        import traceback
+        print(f"[DEBUG] openrouter_summarize: Exception: {type(e).__name__}: {e}", flush=True)
+        print(f"[DEBUG] openrouter_summarize: Exception traceback: {traceback.format_exc()}", flush=True)
         return None
 
 
@@ -142,10 +72,15 @@ def openrouter_summarize(
     default_openrouter_model: str,
     api_request_func: callable,
 ) -> Optional[str]:
+    import sys
+    print("[DEBUG] openrouter_summarize: ENTERING function", flush=True)
+    sys.stdout.flush()
     if not openrouter_api_key:
+        print("[DEBUG] openrouter_summarize: no API key", flush=True)
         return None
     try:
         prompt = _extract_prompt(repo)
+        print(f"[DEBUG] openrouter_summarize: model={default_openrouter_model}, prompt_length={len(prompt)}", flush=True)
         headers = {
             "Authorization": f"Bearer {openrouter_api_key}",
             "Content-Type": "application/json",
@@ -153,8 +88,12 @@ def openrouter_summarize(
         data = {
             "model": default_openrouter_model,
             "messages": [{"role": "user", "content": prompt}],
+            "max_tokens": 5120,
+            "temperature": 0.2,
         }
+        print(f"[DEBUG] openrouter_summarize: calling api_request_func...", flush=True)
         response = api_request_func(API_ENDPOINTS["openrouter"], headers, data)
+        print(f"[DEBUG] openrouter_summarize: api_request_func returned, response={type(response)}", flush=True)
         content = None
         if response:
             choices = response.get("choices", [{}])
@@ -327,6 +266,7 @@ def create_summarize_func(
                 make_request,
             )
     elif model_choice == "openrouter":
+        print(f"[DEBUG] create_summarize_func: openrouter mode, api_key={'set' if openrouter_api_key else 'EMPTY'}, model={default_openrouter_model}", flush=True)
         def summarize(repo: Dict) -> Optional[str]:
             return openrouter_summarize(
                 repo,
