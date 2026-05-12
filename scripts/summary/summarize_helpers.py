@@ -139,6 +139,7 @@ def parse_combined_summaries(response_text: str, repos: List[Dict[str, Any]]) ->
                 json_str = text[arr_start:arr_end+1]
                 json_match = json.loads(json_str)
         except (json.JSONDecodeError, ValueError):
+            print(f"[WARN] JSON parse failed for batch, repos: {[r['full_name'] for r in repos]}")
             pass
 
     if json_match and isinstance(json_match, list):
