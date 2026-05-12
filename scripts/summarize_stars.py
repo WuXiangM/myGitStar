@@ -73,8 +73,11 @@ if github_username == "0" or github_username == 0:
     GITHUB_USERNAME = os.environ.get("GITHUB_ACTOR") or os.environ.get("GITHUB_USERNAME")
     if not GITHUB_USERNAME:
         print("未检测到 workflow 账号环境变量 GITHUB_ACTOR/GITHUB_USERNAME，请检查 workflow 配置！")
+    else:
+        print(f"DEBUG: github_username from config={repr(github_username)}, GITHUB_USERNAME from env={repr(GITHUB_USERNAME)}")
 else:
     GITHUB_USERNAME = github_username
+    print(f"DEBUG: github_username from config={repr(github_username)}, using config value GITHUB_USERNAME={repr(GITHUB_USERNAME)}")
 
 MAX_REPOS: int = None
 max_repos_env = os.environ.get("MAX_REPOS")
