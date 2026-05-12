@@ -1516,6 +1516,7 @@ def main() -> int:
         json.dump(out, f, ensure_ascii=False, indent=2)
 
     generated_at_str = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
+    username = get_current_account_optional()
     md = render_markdown(taxonomy, repos, assignment_map, config, MODEL_CHOICE, username, generated_at_str)
     with open(out_md_path, "w", encoding="utf-8") as f:
         f.write(md)

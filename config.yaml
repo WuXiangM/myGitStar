@@ -41,6 +41,11 @@ max_workers: 1
 # summarize_stars.py 每个批次处理的仓库数量（AI 总结用，推荐 10）
 batch_size: 10
 
+# 批次处理模式：'combined'（批量合并一次LLM调用）或 'concurrent'（并发分别调用）
+# Combined: 一个prompt包含多个仓库，一次LLM调用处理整个batch
+# Concurrent: 每个仓库单独调用LLM（容易触发429限流）
+batch_mode: combined
+
 # classify_stars_by_content.py 每个批次处理的仓库数量（内容分类用，推荐 8~20，独立于 batch_size）
 classify_batch_size: 20
 
