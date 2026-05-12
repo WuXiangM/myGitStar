@@ -320,7 +320,7 @@ def summarize_batch(
                     if summary is None:
                         api_name = summarize_func.__name__.replace("_summarize", "").upper()
                         summary = old_summaries.get(repo["full_name"], f"{api_name} API生成失败或429")
-                print(f"[DEBUG] repo: {repo['full_name']} | summary: {repr(summary)}")
+                print(f"[DEBUG] [repo]: {repo['full_name']} | [AI summary]: {repr(summary.strip())}")
             except Exception as exc:
                 print(f"{repo['full_name']} 线程异常: {exc}")
                 api_name = summarize_func.__name__.replace("_summarize", "").upper()
@@ -379,7 +379,7 @@ def summarize_batch_combined(
                         for idx, repo in zip(indices, batch):
                             if repo["full_name"] == full_name:
                                 results[idx] = summary_dict
-                                print(f"[DEBUG] repo: {full_name} | Summary: {repr(summary_dict.get('Summary', '')[:80])}...")
+                                print(f"[DEBUG] [repo]: {full_name} | [AI summary]: {repr(summary_dict.get('Summary', '').strip()[:80])}...")
                                 break
                     else:
                         api_name = summarize_func.__name__.replace("_summarize", "").upper()
