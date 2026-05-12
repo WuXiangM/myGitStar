@@ -9,24 +9,34 @@ CONFIG_PATH_YAML = os.path.join(os.path.dirname(os.path.dirname(__file__)), "con
 
 
 def load_config() -> Dict[str, Any]:
+    print(f"DEBUG load_config: CONFIG_PATH_YAML={CONFIG_PATH_YAML}")
     try:
         with open(CONFIG_PATH_YAML, "r", encoding="utf-8") as f:
-            data = yaml.safe_load(f)
+            raw = f.read()
+            print(f"DEBUG load_config: raw yaml length={len(raw)}, first 200 chars={repr(raw[:200])}")
+            data = yaml.safe_load(raw)
+            print(f"DEBUG load_config: yaml.safe_load result keys={list(data.keys()) if isinstance(data, dict) else 'not dict'}")
             if isinstance(data, dict):
                 return data
-    except FileNotFoundError:
+    except FileNotFoundError as e:
+        print(f"DEBUG load_config: FileNotFoundError: {e}")
         pass
-    except Exception:
+    except Exception as e:
+        print(f"DEBUG load_config: Exception: {e}")
         pass
 
+    print(f"DEBUG load_config: CONFIG_PATH_JSON={CONFIG_PATH_JSON}")
     try:
         with open(CONFIG_PATH_JSON, "r", encoding="utf-8") as f:
             data = json.load(f)
+            print(f"DEBUG load_config: json.load result keys={list(data.keys()) if isinstance(data, dict) else 'not dict'}")
             if isinstance(data, dict):
                 return data
-    except FileNotFoundError:
+    except FileNotFoundError as e:
+        print(f"DEBUG load_config: FileNotFoundError: {e}")
         pass
-    except Exception:
+    except Exception as e:
+        print(f"DEBUG load_config: Exception: {e}")
         pass
 
     return {"language": "zh"}
