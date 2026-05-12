@@ -4,8 +4,9 @@ from typing import Any, Dict
 
 import yaml
 
-CONFIG_PATH_JSON = os.path.join(os.path.dirname(os.path.dirname(__file__)), "config.json")
-CONFIG_PATH_YAML = os.path.join(os.path.dirname(os.path.dirname(__file__)), "config.yaml")
+_REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+CONFIG_PATH_JSON = os.path.join(_REPO_ROOT, "config.json")
+CONFIG_PATH_YAML = os.path.join(_REPO_ROOT, "config.yaml")
 
 
 def load_config() -> Dict[str, Any]:
