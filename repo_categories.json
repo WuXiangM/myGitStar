@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-12T03:31:38Z",
+  "generated_at": "2026-05-12T06:46:35Z",
   "model_choice": "openrouter",
   "min_categories": 5,
-  "max_categories": 6,
+  "max_categories": 5,
   "min_repos_per_category": 8,
   "taxonomy": {
     "categories": [
@@ -25,11 +25,6 @@
         "id": "C9",
         "name": "3D Modeling",
         "description": "Repositories related to creating and manipulating 3D models and environments."
-      },
-      {
-        "id": "C10",
-        "name": "Swarm Intelligence",
-        "description": "Projects that utilize collective behavior models to solve problems or predict outcomes."
       }
     ]
   },
@@ -183,106 +178,6 @@
       "id": 30,
       "full_name": "nomic-ai/gpt4all",
       "category_id": "C1"
-    },
-    {
-      "id": 31,
-      "full_name": "jingyaogong/minimind",
-      "category_id": "C2"
-    },
-    {
-      "id": 32,
-      "full_name": "Shubhamsaboo/awesome-llm-apps",
-      "category_id": "C2"
-    },
-    {
-      "id": 33,
-      "full_name": "huggingface/transformers",
-      "category_id": "C2"
-    },
-    {
-      "id": 34,
-      "full_name": "AUTOMATIC1111/stable-diffusion-webui",
-      "category_id": "C2"
-    },
-    {
-      "id": 35,
-      "full_name": "forrestchang/andrej-karpathy-skills",
-      "category_id": "C2"
-    },
-    {
-      "id": 36,
-      "full_name": "HqWu-HITCS/Awesome-Chinese-LLM",
-      "category_id": "C2"
-    },
-    {
-      "id": 37,
-      "full_name": "Lordog/dive-into-llms",
-      "category_id": "C2"
-    },
-    {
-      "id": 38,
-      "full_name": "henry-gu/prompt-engineering-for-developers",
-      "category_id": "C2"
-    },
-    {
-      "id": 39,
-      "full_name": "poloclub/transformer-explainer",
-      "category_id": "C2"
-    },
-    {
-      "id": 40,
-      "full_name": "Tencent/WeKnora",
-      "category_id": "C2"
-    },
-    {
-      "id": 41,
-      "full_name": "jingyaogong/minimind-v",
-      "category_id": "C11"
-    },
-    {
-      "id": 42,
-      "full_name": "antvis/Infographic",
-      "category_id": "C11"
-    },
-    {
-      "id": 43,
-      "full_name": "automeris-io/WebPlotDigitizer",
-      "category_id": "C11"
-    },
-    {
-      "id": 44,
-      "full_name": "Henrymachiyu/FIPO",
-      "category_id": "C11"
-    },
-    {
-      "id": 45,
-      "full_name": "roywright/pu_learning",
-      "category_id": "C11"
-    },
-    {
-      "id": 46,
-      "full_name": "phuijse/bagging_pu",
-      "category_id": "C11"
-    },
-    {
-      "id": 47,
-      "full_name": "UniPat-AI/UniScientist",
-      "category_id": "C11"
-    },
-    {
-      "id": 48,
-      "full_name": "wri/global-pasture-watch",
-      "category_id": "C11"
-    },
-    {
-      "id": 49,
-      "full_name": "datawhalechina/every-embodied",
-      "category_id": "C11"
-    },
-    {
-      "id": 50,
-      "full_name": "Anionex/banana-slides",
-      "category_id": "C11"
     }
   ]
 }
