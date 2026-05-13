@@ -1,20 +1,40 @@
 {
-  "generated_at": "2026-05-13T07:01:02Z",
-  "model_choice": "openrouter",
+  "generated_at": "2026-05-13T15:43:55Z",
+  "model_choice": "copilot",
   "min_categories": 5,
-  "max_categories": 5,
-  "min_repos_per_category": 8,
+  "max_categories": 6,
+  "min_repos_per_category": 5,
   "taxonomy": {
     "categories": [
       {
         "id": "C1",
         "name": "AI Agents",
-        "description": "Repositories focused on developing intelligent agents that can interact and perform tasks autonomously."
+        "description": "Repositories focused on developing intelligent agents that can perform tasks autonomously or assist users in various applications."
       },
       {
-        "id": "C2",
-        "name": "Natural Language Processing",
-        "description": "Projects related to processing and understanding human language using AI techniques."
+        "id": "C3",
+        "name": "Scientific Research",
+        "description": "Tools and frameworks aimed at facilitating scientific discovery, research automation, and academic writing."
+      },
+      {
+        "id": "C4",
+        "name": "Productivity Tools",
+        "description": "Applications designed to improve user productivity through task management, automation, and enhanced workflows."
+      },
+      {
+        "id": "C5",
+        "name": "Creative Writing",
+        "description": "Repositories that assist in the creative writing process, including novel writing, story generation, and content creation."
+      },
+      {
+        "id": "C6",
+        "name": "Other",
+        "description": "Repositories that do not fit into the specified categories, encompassing a variety of unique projects."
+      },
+      {
+        "id": "Other",
+        "name": "Other",
+        "description": "Other repositories"
       }
     ]
   },
@@ -22,152 +42,152 @@
     {
       "id": 1,
       "full_name": "NousResearch/hermes-agent",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 2,
       "full_name": "open-gigaai/giga-brain-0",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 3,
       "full_name": "aiming-lab/AutoResearchClaw",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 4,
       "full_name": "anthropics/skills",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 5,
       "full_name": "Usagi-org/ai-goofish-monitor",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 6,
       "full_name": "jimmc414/Kosmos",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 7,
       "full_name": "Fosowl/agenticSeek",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 8,
       "full_name": "langbot-app/LangBot",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 9,
       "full_name": "SamuelSchmidgall/AgentLaboratory",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 10,
       "full_name": "Significant-Gravitas/AutoGPT",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 11,
       "full_name": "heygen-com/hyperframes",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 12,
       "full_name": "multica-ai/multica",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 13,
       "full_name": "ExplosiveCoderflome/AI-Novel-Writing-Assistant",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 14,
       "full_name": "hAcKlyc/MyAgents",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 15,
       "full_name": "Narcooo/inkos",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 16,
       "full_name": "anomalyco/opencode",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 17,
       "full_name": "CherryHQ/cherry-studio",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 18,
       "full_name": "openclaw/openclaw",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 19,
       "full_name": "VoltAgent/awesome-openclaw-skills",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 20,
       "full_name": "microsoft/AI-For-Beginners",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 21,
       "full_name": "microsoft/generative-ai-for-beginners",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 22,
       "full_name": "QwenLM/Qwen3-VL",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 23,
       "full_name": "google/automl",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 24,
       "full_name": "fogsightai/fogsight",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 25,
       "full_name": "DearVa/Everywhere",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 26,
       "full_name": "msitarzewski/agency-agents",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 27,
       "full_name": "obra/superpowers",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 28,
       "full_name": "anthropics/claude-code",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 29,
       "full_name": "vercel-labs/agent-browser",
-      "category_id": "C1"
+      "category_id": "C6"
     },
     {
       "id": 30,
       "full_name": "nomic-ai/gpt4all",
-      "category_id": "C1"
+      "category_id": "C6"
     }
   ]
 }

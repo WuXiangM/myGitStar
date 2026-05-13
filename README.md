@@ -10,10 +10,10 @@
 <p><b>当前账号：</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
 
 
-<p><b>生成时间：</b> 2026-05-13 07:01:02</p>
+<p><b>生成时间：</b> 2026-05-13 15:43:55</p>
 
 
-<p><b>AI模型：</b> openrouter</p>
+<p><b>AI模型：</b> copilot</p>
 
 
 <p><b>总仓库数：</b> 30 个</p>
@@ -26,24 +26,64 @@
 
 ## Table of Contents
 
-- [AI Agents](#ai-agents) (30)
+- [AI Agents](#ai-agents) (0)
 
-- [Natural Language Processing](#natural-language-processing) (0)
+- [Creative Writing](#creative-writing) (0)
+
+- [Productivity Tools](#productivity-tools) (0)
+
+- [Scientific Research](#scientific-research) (0)
+
+- [Other](#other) (30)
+
+- [Other](#other) (0)
 
 ---
 
 <a id="ai-agents"></a>
 
-## AI Agents (Total 30)
+## AI Agents (Total 0)
 
 
-> Repositories focused on developing intelligent agents that can interact and perform tasks autonomously.
+> Repositories focused on developing intelligent agents that can perform tasks autonomously or assist users in various applications.
+
+
+<a id="creative-writing"></a>
+
+## Creative Writing (Total 0)
+
+
+> Repositories that assist in the creative writing process, including novel writing, story generation, and content creation.
+
+
+<a id="productivity-tools"></a>
+
+## Productivity Tools (Total 0)
+
+
+> Applications designed to improve user productivity through task management, automation, and enhanced workflows.
+
+
+<a id="scientific-research"></a>
+
+## Scientific Research (Total 0)
+
+
+> Tools and frameworks aimed at facilitating scientific discovery, research automation, and academic writing.
+
+
+<a id="other"></a>
+
+## Other (Total 30)
+
+
+> Repositories that do not fit into the specified categories, encompassing a variety of unique projects.
 
 
 ### 📌 [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 44,317 | **🍴 Forks:** 4,200 | **📅 Updated:** 2026-04-25
 
 
 1. **Repository Name:** CherryHQ/cherry-studio
@@ -62,7 +102,7 @@
 ### 📌 [DearVa/Everywhere](https://github.com/DearVa/Everywhere)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 5,851 | **🍴 Forks:** 354 | **📅 Updated:** 2026-04-25
 
 
 1. **Repository Name:** DearVa/Everywhere
@@ -81,7 +121,7 @@
 ### 📌 [ExplosiveCoderflome/AI-Novel-Writing-Assistant](https://github.com/ExplosiveCoderflome/AI-Novel-Writing-Assistant)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 735 | **🍴 Forks:** 183 | **📅 Updated:** 2026-04-25
 
 
 1. **Repository Name:** ExplosiveCoderflome/AI-Novel-Writing-Assistant
@@ -100,7 +140,7 @@
 ### 📌 [Fosowl/agenticSeek](https://github.com/Fosowl/agenticSeek)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 26,078 | **🍴 Forks:** 2,916 | **📅 Updated:** 2026-04-25
 
 
 1. **Repository Name:** Fosowl/agenticSeek
@@ -119,7 +159,7 @@
 ### 📌 [Narcooo/inkos](https://github.com/Narcooo/inkos)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 4,914 | **🍴 Forks:** 946 | **📅 Updated:** 2026-04-25
 
 
 1. **Repository Name:** Narcooo/inkos
@@ -138,7 +178,7 @@
 ### 📌 [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 115,516 | **🍴 Forks:** 16,972 | **📅 Updated:** 2026-04-25
 
 
 1. **Repository Name:** NousResearch/hermes-agent
@@ -157,7 +197,7 @@
 ### 📌 [QwenLM/Qwen3-VL](https://github.com/QwenLM/Qwen3-VL)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 19,045 | **🍴 Forks:** 1,738 | **📅 Updated:** 2026-04-24
 
 
 1. **Repository Name:** QwenLM/Qwen3-VL
@@ -176,7 +216,7 @@
 ### 📌 [SamuelSchmidgall/AgentLaboratory](https://github.com/SamuelSchmidgall/AgentLaboratory)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 5,528 | **🍴 Forks:** 777 | **📅 Updated:** 2026-04-24
 
 
 1. **Repository Name:** SamuelSchmidgall/AgentLaboratory
@@ -195,7 +235,7 @@
 ### 📌 [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 183,740 | **🍴 Forks:** 46,225 | **📅 Updated:** 2026-04-25
 
 
 1. **Repository Name:** Significant-Gravitas/AutoGPT
@@ -214,7 +254,7 @@
 ### 📌 [Usagi-org/ai-goofish-monitor](https://github.com/Usagi-org/ai-goofish-monitor)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 11,079 | **🍴 Forks:** 1,586 | **📅 Updated:** 2026-04-25
 
 
 1. **Repository Name:** Usagi-org/ai-goofish-monitor
@@ -233,7 +273,7 @@
 ### 📌 [VoltAgent/awesome-openclaw-skills](https://github.com/VoltAgent/awesome-openclaw-skills)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 47,160 | **🍴 Forks:** 4,632 | **📅 Updated:** 2026-04-25
 
 
 1. **Repository Name:** VoltAgent/awesome-openclaw-skills
@@ -252,7 +292,7 @@
 ### 📌 [aiming-lab/AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 11,608 | **🍴 Forks:** 1,344 | **📅 Updated:** 2026-04-25
 
 
 1. **Repository Name:** aiming-lab/AutoResearchClaw
@@ -271,7 +311,7 @@
 ### 📌 [anomalyco/opencode](https://github.com/anomalyco/opencode)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 149,114 | **🍴 Forks:** 17,097 | **📅 Updated:** 2026-04-25
 
 
 1. **Repository Name:** anomalyco/opencode
@@ -290,7 +330,7 @@
 ### 📌 [anthropics/claude-code](https://github.com/anthropics/claude-code)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 117,715 | **🍴 Forks:** 19,602 | **📅 Updated:** 2026-04-25
 
 
 1. **Repository Name:** anthropics/claude-code
@@ -309,7 +349,7 @@
 ### 📌 [anthropics/skills](https://github.com/anthropics/skills)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 123,524 | **🍴 Forks:** 14,443 | **📅 Updated:** 2026-04-25
 
 
 1. **Repository Name:** anthropics/skills
@@ -328,7 +368,7 @@
 ### 📌 [fogsightai/fogsight](https://github.com/fogsightai/fogsight)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 2,396 | **🍴 Forks:** 366 | **📅 Updated:** 2026-04-25
 
 
 1. **Repository Name:** fogsightai/fogsight
@@ -347,7 +387,7 @@
 ### 📌 [google/automl](https://github.com/google/automl)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 6,469 | **🍴 Forks:** 1,466 | **📅 Updated:** 2026-04-25
 
 
 1. **Repository Name:** google/automl
@@ -366,7 +406,7 @@
 ### 📌 [hAcKlyc/MyAgents](https://github.com/hAcKlyc/MyAgents)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 305 | **🍴 Forks:** 36 | **📅 Updated:** 2026-04-24
 
 
 1. **Repository Name:** hAcKlyc/MyAgents
@@ -385,7 +425,7 @@
 ### 📌 [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 10,413 | **🍴 Forks:** 867 | **📅 Updated:** 2026-04-25
 
 
 1. **Repository Name:** heygen-com/hyperframes
@@ -404,7 +444,7 @@
 ### 📌 [jimmc414/Kosmos](https://github.com/jimmc414/Kosmos)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 507 | **🍴 Forks:** 94 | **📅 Updated:** 2026-04-25
 
 
 1. **Repository Name:** jimmc414/Kosmos
@@ -423,7 +463,7 @@
 ### 📌 [langbot-app/LangBot](https://github.com/langbot-app/LangBot)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 15,868 | **🍴 Forks:** 1,402 | **📅 Updated:** 2026-04-25
 
 
 1. **Repository Name:** langbot-app/LangBot
@@ -442,7 +482,7 @@
 ### 📌 [microsoft/AI-For-Beginners](https://github.com/microsoft/AI-For-Beginners)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 46,873 | **🍴 Forks:** 9,612 | **📅 Updated:** 2026-04-25
 
 
 1. **Repository Name:** microsoft/AI-For-Beginners
@@ -461,7 +501,7 @@
 ### 📌 [microsoft/generative-ai-for-beginners](https://github.com/microsoft/generative-ai-for-beginners)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 109,814 | **🍴 Forks:** 58,894 | **📅 Updated:** 2026-04-25
 
 
 1. **Repository Name:** microsoft/generative-ai-for-beginners
@@ -480,7 +520,7 @@
 ### 📌 [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 86,558 | **🍴 Forks:** 13,909 | **📅 Updated:** 2026-04-25
 
 
 1. **Repository Name:** msitarzewski/agency-agents
@@ -499,7 +539,7 @@
 ### 📌 [multica-ai/multica](https://github.com/multica-ai/multica)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 20,744 | **🍴 Forks:** 2,522 | **📅 Updated:** 2026-04-25
 
 
 1. **Repository Name:** multica-ai/multica
@@ -518,7 +558,7 @@
 ### 📌 [nomic-ai/gpt4all](https://github.com/nomic-ai/gpt4all)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 77,375 | **🍴 Forks:** 8,336 | **📅 Updated:** 2026-04-25
 
 
 1. **Repository Name:** nomic-ai/gpt4all
@@ -537,7 +577,7 @@
 ### 📌 [obra/superpowers](https://github.com/obra/superpowers)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 166,948 | **🍴 Forks:** 14,683 | **📅 Updated:** 2026-04-25
 
 
 1. **Repository Name:** obra/superpowers
@@ -556,7 +596,7 @@
 ### 📌 [open-gigaai/giga-brain-0](https://github.com/open-gigaai/giga-brain-0)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 2,494 | **🍴 Forks:** 193 | **📅 Updated:** 2026-04-25
 
 
 1. **Repository Name:** open-gigaai/giga-brain-0
@@ -575,7 +615,7 @@
 ### 📌 [openclaw/openclaw](https://github.com/openclaw/openclaw)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 363,547 | **🍴 Forks:** 74,378 | **📅 Updated:** 2026-04-25
 
 
 1. **Repository Name:** openclaw/openclaw
@@ -594,7 +634,7 @@
 ### 📌 [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser)
 
 
-**⭐ Stars:** 0 | **🍴 Forks:** 0 | **📅 Updated:** 
+**⭐ Stars:** 30,510 | **🍴 Forks:** 1,864 | **📅 Updated:** 2026-04-25
 
 
 1. **Repository Name:** vercel-labs/agent-browser
@@ -610,9 +650,9 @@
 ---
 
 
-<a id="natural-language-processing"></a>
+<a id="other"></a>
 
-## Natural Language Processing (Total 0)
+## Other (Total 0)
 
 
-> Projects related to processing and understanding human language using AI techniques.
+> Other repositories
