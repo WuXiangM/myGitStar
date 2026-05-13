@@ -10,7 +10,7 @@
 <p><b>当前账号：</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
 
 
-<p><b>生成时间：</b> 2026-05-13 02:36:37</p>
+<p><b>生成时间：</b> 2026-05-13 07:01:02</p>
 
 
 <p><b>AI模型：</b> openrouter</p>
@@ -27,8 +27,6 @@
 ## Table of Contents
 
 - [AI Agents](#ai-agents) (30)
-
-- [Document Processing](#document-processing) (0)
 
 - [Natural Language Processing](#natural-language-processing) (0)
 
@@ -610,14 +608,6 @@
 5. **Summary:** This repository provides a powerful tool for automating browser interactions, enhancing the capabilities of AI agents.
 
 ---
-
-
-<a id="document-processing"></a>
-
-## Document Processing (Total 0)
-
-
-> Projects that focus on translating, summarizing, or otherwise processing documents.
 
 
 <a id="natural-language-processing"></a>
