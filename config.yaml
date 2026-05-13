@@ -6,8 +6,8 @@ language: en
 # 当为 true 时，优先显示与 `language` 对应的语言在前；为 false 则反向显示
 repo_display_language: true
 
-# 模型选择，可选值: 'copilot'、'openrouter' 或 'gemini'
-# Model selection: 'copilot', 'openrouter', 'gemini'
+# 模型选择，可选值: 'copilot'、'openrouter'、'gemini' 或 'modelscope'
+# Model selection: 'copilot', 'openrouter', 'gemini', 'modelscope'
 model_choice: openrouter
 
 
@@ -27,8 +27,16 @@ default_openrouter_model: minimax/minimax-m2.5:free
 # Gemini model name (used when model_choice: gemini)
 default_gemini_model: gemini-2.0-flash
 
-# 输出文件路径（按语言分类版 README，建议：英文 README_lang.md；中文 README_lang_cn.md）
-# Output file path (language-classified README). Recommended: English README_lang.md; Chinese README_lang_cn.md
+# 魔搭社区模型名称（用于 model_choice: modelscope）
+# ModelScope model name (used when model_choice: modelscope)
+default_modelscope_model: deepseek-ai/DeepSeek-V3.2
+
+# 魔搭社区 API 端点（用于 model_choice: modelscope）
+# ModelScope API endpoint (used when model_choice: modelscope)
+modelscope_api_endpoint: https://api-inference.modelscope.cn/v1/chat/completions
+
+# 输出文件路径（按语言分类版 README，建议：英文 README_lang.md；中文 README_lang_zh.md）
+# Output file path (language-classified README). Recommended: English README_lang.md; Chinese README_lang_zh.md
 # Note: The content-classified README is generated separately as README.md.
 readme_sum_path: README_lang.md # default output for summarize_stars.py
 
@@ -39,7 +47,7 @@ max_workers: 1
 
 
 # summarize_stars.py 每个批次处理的仓库数量（AI 总结用，推荐 5，用于 combined 模式）
-batch_size: 5
+batch_size: 10
 
 # 批次处理模式：'combined'（批量合并一次LLM调用）或 'concurrent'（并发分别调用）
 # Combined: 一个prompt包含多个仓库，一次LLM调用处理整个batch
@@ -118,7 +126,7 @@ content_max_categories: 12
 # 说明：当某个类别数量 < X 时，分类脚本会把该类别裁剪并合并到 Other，避免出现大量“只有 1~2 个仓库”的小类。
 # Content classification: minimum repos per non-'Other' category (0 disables).
 # If a category has < X repos, it will be pruned and merged into 'Other' to reduce fragmentation.
-content_min_repos_per_category: 8
+content_min_repos_per_category: 5
 
 # 内容分类：taxonomy 设计时的抽样策略
 # - head: 取前 N 个（旧行为，可能对 README 顺序有偏置）
@@ -159,6 +167,7 @@ workflow_classify_only: false
 STARRED_GITHUB_TOKEN: "" # GitHub Token
 OPENROUTER_API_KEY: ""
 GEMINI_API_KEY: ""
+MODELSCOPE_API_KEY: "" # 魔搭社区 API 密钥
 
 # 测试模式开关：为 true 时只处理第一个星标仓库（便于调试）
 # Test mode switch: when true, process only the first starred repo (for debugging)

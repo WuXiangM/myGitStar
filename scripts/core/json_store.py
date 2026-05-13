@@ -6,6 +6,8 @@ REPO_ROOT = os.path.dirname(os.path.dirname(__file__))
 
 
 def get_summary_json_path(language: str) -> str:
+    if language == "zh":
+        return os.path.join(REPO_ROOT, "repo_summaries_zh.json")
     return os.path.join(REPO_ROOT, "repo_summaries.json")
 
 

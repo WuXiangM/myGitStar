@@ -32,8 +32,9 @@ def get_secret(config: Dict, config_env_key: str, default_env_names: List[str], 
     return ""
 
 
-def load_api_keys(config: Dict) -> Tuple[str, str, str]:
+def load_api_keys(config: Dict) -> Tuple[str, str, str, str]:
     github_token = get_secret(config, "github_token_env", ["STARRED_GITHUB_TOKEN", "GITHUB_TOKEN"], "github_token")
     openrouter_api_key = get_secret(config, "openrouter_api_key_env", ["OPENROUTER_API_KEY"], "openrouter_api_key")
     gemini_api_key = get_secret(config, "gemini_api_key_env", ["GEMINI_API_KEY"], "gemini_api_key")
-    return github_token, openrouter_api_key, gemini_api_key
+    modelscope_api_key = get_secret(config, "modelscope_api_key_env", ["MODELSCOPE_API_KEY"], "modelscope_api_key")
+    return github_token, openrouter_api_key, gemini_api_key, modelscope_api_key

@@ -146,7 +146,7 @@ def extract_json_from_text(text: str) -> Any:
         start = obj_start if obj_start != -1 else arr_start
 
     if start == -1:
-        raise ValueError("no json found")
+        raise ValueError(f"no json found in response: {s[:500]}")
 
     tail = s[start:]
     for end in range(len(tail), 1, -1):
@@ -156,7 +156,7 @@ def extract_json_from_text(text: str) -> Any:
         except Exception:
             continue
 
-    raise ValueError("failed to parse json")
+    raise ValueError(f"failed to parse json. Response preview: {s[:1000]}")
 
 
 def create_lmstudio_summarize_func(model: str = MODEL_DEFAULT):

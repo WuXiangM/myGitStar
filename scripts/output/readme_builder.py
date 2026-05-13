@@ -95,12 +95,12 @@ def build_readme_header(
 
     readme_links = (
         '<a href="README.md">README（内容分类）</a> | '
-        '<a href="README_lang_cn.md">README 按语言分类</a> | '
+        '<a href="README_lang_zh.md">README 按语言分类</a> | '
         '<a href="README_lang.md">README classified by language</a>'
     ) if language != "en" else (
         '<a href="README.md">README (content classified)</a> | '
         '<a href="README_lang.md">README classified by language</a> | '
-        '<a href="README_lang_cn.md">README 按语言分类</a>'
+        '<a href="README_lang_zh.md">README 按语言分类</a>'
     )
 
     guide_links = (
@@ -187,13 +187,32 @@ def build_repo_section(
         summary_entry = summary_store.get(repo["full_name"], {}) or old_summaries.get(repo["full_name"], {})
 
         if isinstance(summary_entry, dict):
-            if summary_entry.get("Summary"):
-                summary = summary_entry.get("Summary", "")
+            brief = summary_entry.get("Brief Introduction", "")
+            innovations = summary_entry.get("Innovations", "")
+            basic = summary_entry.get("Basic Usage", "")
+            summary_text = summary_entry.get("Summary", "")
+            if language == "en":
+                summary_parts = []
+                if brief:
+                    summary_parts.append(f"**Brief Introduction:** {brief}")
+                if innovations:
+                    summary_parts.append(f"**Innovations:** {innovations}")
+                if basic and basic != "Not specified.":
+                    summary_parts.append(f"**Basic Usage:** {basic}")
+                if summary_text:
+                    summary_parts.append(f"**Summary:** {summary_text}")
+                summary = "\n\n".join(summary_parts)
             else:
-                brief = summary_entry.get("Brief Introduction", "")
-                innovations = summary_entry.get("Innovations", "")
-                basic = summary_entry.get("Basic Usage", "")
-                summary = f"**简要介绍：** {brief}\n\n**创新点：** {innovations}\n\n**简单用法：** {basic}"
+                summary_parts = []
+                if brief:
+                    summary_parts.append(f"**简要介绍：** {brief}")
+                if innovations:
+                    summary_parts.append(f"**创新点：** {innovations}")
+                if basic and basic != "Not specified.":
+                    summary_parts.append(f"**简单用法：** {basic}")
+                if summary_text:
+                    summary_parts.append(f"**一句话总结：** {summary_text}")
+                summary = "\n\n".join(summary_parts)
         elif isinstance(summary_entry, str):
             summary = summary_entry
         else:

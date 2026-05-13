@@ -49,7 +49,7 @@ config = load_config()
 
 DEBUG_API = env_truthy("DEBUG_API") or bool(config.get("test_first_repo", False))
 
-GITHUB_TOKEN, OPENROUTER_API_KEY, GEMINI_API_KEY = load_api_keys(config)
+GITHUB_TOKEN, OPENROUTER_API_KEY, GEMINI_API_KEY, MODELSCOPE_API_KEY = load_api_keys(config)
 
 update_mode = resolve_update_mode(config)
 
@@ -62,6 +62,7 @@ model_choice = config.get("model_choice", "copilot")
 default_copilot_model = config.get("default_copilot_model")
 default_openrouter_model = config.get("default_openrouter_model")
 default_gemini_model = config.get("default_gemini_model", "gemini-pro")
+default_modelscope_model = config.get("default_modelscope_model", "deepseek-ai/DeepSeek-V3.2")
 
 max_workers = get_int_config(config, "max_workers", 5)
 batch_size = get_int_config(config, "batch_size", 1)
@@ -108,6 +109,7 @@ THROTTLE = SimpleThrottle(GLOBAL_QPS)
 copilot_api_call_count = 0
 openrouter_api_call_count = 0
 gemini_api_call_count = 0
+modelscope_api_call_count = 0
 
 
 def _repo_key(repo: Dict) -> str:
@@ -115,7 +117,7 @@ def _repo_key(repo: Dict) -> str:
 
 
 def _api_call_counter():
-    global copilot_api_call_count, openrouter_api_call_count, gemini_api_call_count
+    global copilot_api_call_count, openrouter_api_call_count, gemini_api_call_count, modelscope_api_call_count
     if model_choice == "copilot":
         copilot_api_call_count += 1
         remaining = 150 - copilot_api_call_count
@@ -126,6 +128,9 @@ def _api_call_counter():
     elif model_choice == "gemini":
         gemini_api_call_count += 1
         print(f"[Gemini API调用] 第 {gemini_api_call_count} 次调用")
+    elif model_choice == "modelscope":
+        modelscope_api_call_count += 1
+        print(f"[ModelScope API调用] 第 {modelscope_api_call_count} 次调用")
 
 
 README_SUM_PATH = readme_sum_path or os.path.join(os.path.dirname(os.path.dirname(__file__)), "README-sum.md")
@@ -143,8 +148,9 @@ file_handler = RotatingFileHandler(LOG_FILE, maxBytes=LOG_MAX_BYTES, backupCount
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
-console_handler = StreamHandler()
+console_handler = StreamHandler(sys.stderr)
 console_handler.setFormatter(formatter)
+console_handler.setLevel(logging.WARNING)
 logger.addHandler(console_handler)
 
 orig_stdout = sys.stdout
@@ -187,6 +193,8 @@ if GEMINI_API_KEY:
         print(f"Gemini API Key 前缀: {GEMINI_API_KEY[:4]}...")
     except Exception:
         print("Gemini API Key 前缀: (已设置)")
+if MODELSCOPE_API_KEY:
+    print(f"ModelScope API Key 前缀: {MODELSCOPE_API_KEY[:6]}...")
 
 
 def main():
@@ -199,6 +207,8 @@ def main():
         api_name = "Gemini"
     elif api_choice == "openrouter":
         api_name = "OpenRouter (DeepSeek)"
+    elif api_choice == "modelscope":
+        api_name = "ModelScope (DeepSeek-V3.2)"
     else:
         api_name = "GitHub Copilot"
 
@@ -266,9 +276,11 @@ def main():
             github_token=GITHUB_TOKEN,
             openrouter_api_key=OPENROUTER_API_KEY,
             gemini_api_key=GEMINI_API_KEY,
+            modelscope_api_key=MODELSCOPE_API_KEY,
             default_copilot_model=default_copilot_model,
             default_openrouter_model=default_openrouter_model,
             default_gemini_model=default_gemini_model,
+            default_modelscope_model=default_modelscope_model,
             language=LANGUAGE,
             config=config,
             throttle=THROTTLE,
@@ -291,7 +303,8 @@ def main():
 
         for i in range(0, len(all_repos_to_process), batch_size):
             this_batch = all_repos_to_process[i : i + batch_size]
-            print(f"处理批次 {i // batch_size + 1}，包含 {len(this_batch)} 个仓库...")
+            batch_num = i // batch_size + 1
+            print(f"处理批次 {batch_num}，包含 {len(this_batch)} 个仓库...")
 
             if batch_mode == "combined" and batch_size > 1:
                 print(f"[DEBUG] Calling summarize_batch_combined for {len(this_batch)} repos, batch_size={batch_size}")
@@ -302,6 +315,7 @@ def main():
                     update_mode,
                     LANGUAGE,
                     batch_size,
+                    batch_num,
                 )
             else:
                 summaries = summarize_batch(

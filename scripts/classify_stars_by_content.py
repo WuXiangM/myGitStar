@@ -45,7 +45,7 @@ config = load_config()
 REPO_ROOT = os.path.dirname(os.path.dirname(__file__))
 
 
-GITHUB_TOKEN, OPENROUTER_API_KEY, GEMINI_API_KEY = load_api_keys(config)
+GITHUB_TOKEN, OPENROUTER_API_KEY, GEMINI_API_KEY, _ = load_api_keys(config)
 
 MODEL_CHOICE = get_model_choice(config)
 
@@ -580,9 +580,9 @@ def parse_repos_from_summaries(
                 "description": description,
                 "html_url": data.get("Repository URL", f"https://github.com/{full_name}"),
                 "language": data.get("language", ""),
-                "stargazers_count": data.get("stargazers_count", 0),
-                "forks_count": data.get("forks_count", 0),
-                "updated_at": data.get("updated_at", ""),
+                "stargazers_count": data.get("Stars", data.get("stargazers_count", 0)),
+                "forks_count": data.get("Forks", data.get("forks_count", 0)),
+                "updated_at": data.get("updated", data.get("updated_at", "")),
                 "summary_data": data,
             }
         )
@@ -904,7 +904,7 @@ def _looks_like_language_category(name: str) -> bool:
 def _trim_repo_block_before_language_section(block: str) -> str:
     """Trim accidental language section headings inside a per-repo block.
 
-    In README_lang.md / README_lang_cn.md, language buckets are rendered as level-2 headings like:
+    In README_lang.md / README_lang_zh.md, language buckets are rendered as level-2 headings like:
     - "## 📝 Jupyter Notebook (Total 3)"
     - "## 📝 Jupyter Notebook（共3个）"
 
@@ -1399,20 +1399,7 @@ def main() -> int:
     taxonomy: Optional[Taxonomy] = None
     assignment_map: Dict[Any, str] = {}
     all_ids = {r.get("id") for r in repos}
-
-    existing_taxonomy, existing_assignments = (None, {})
-    if update_mode == "missing_only":
-        existing_taxonomy, existing_assignments = load_existing_categories(out_json_path)
-
     repos_to_classify = repos
-    if update_mode == "missing_only" and existing_taxonomy and existing_assignments:
-        taxonomy = existing_taxonomy
-        repos_to_classify = [r for r in repos if str(r.get("full_name") or "").strip() not in existing_assignments]
-        for r in repos:
-            full_name = str(r.get("full_name") or "").strip()
-            cid = existing_assignments.get(full_name)
-            if cid:
-                assignment_map[r.get("id")] = cid
 
     if taxonomy is None:
         # Build taxonomy from a sample
@@ -1450,7 +1437,7 @@ def main() -> int:
         for c in taxonomy.categories:
             print(f"  {c['id']}: {c['name']}")
 
-    # Classify repos in batches (only missing ones in missing_only)
+    # Classify repos in batches
     if repos_to_classify:
         print(f"Classifying {len(repos_to_classify)} repos in batches of {args.batch_size}...")
         for i, batch in enumerate(chunk_list(repos_to_classify, args.batch_size), start=1):

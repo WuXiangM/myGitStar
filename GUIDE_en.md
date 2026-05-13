@@ -6,7 +6,7 @@ This project fetches a GitHub account’s starred repositories (Stars), uses AI 
 
 - 📗 README (content classified): `README.md`
 - 📘 README classified by language (English): `README_lang.md`
-- 📙 README 按语言分类 (Chinese): `README_lang_cn.md`
+- 📙 README 按语言分类 (Chinese): `README_lang_zh.md`
 - 🧾 Summary JSON (unified data source): `repo_summaries.json`
 
 > Note: Summary data is stored in `repo_summaries.json` (no longer en/zh distinction). `summarize_stars.py` writes to this file, and `classify_stars_by_content.py` can read directly from it for content classification without calling GitHub API.
@@ -47,7 +47,7 @@ This project fetches a GitHub account’s starred repositories (Stars), uses AI 
                          ┌──────────────┴──────────────┐
                          ▼                              ▼
               ┌─────────────────────┐    ┌─────────────────────────┐
-              │  README_lang.md     │    │  README_lang_cn.md       │
+              │  README_lang.md     │    │  README_lang_zh.md       │
               │  (by Language-En)   │    │  (by Language-Zh)       │
               └─────────────────────┘    └─────────────────────────┘
                          │                              │
@@ -72,7 +72,7 @@ This project fetches a GitHub account’s starred repositories (Stars), uses AI 
                     │                    Outputs                         │
                     │  📗 README.md (content classified)              │
                     │  📘 README_lang.md (by language-En)             │
-                    │  📙 README_lang_cn.md (by language-Zh)          │
+                    │  📙 README_lang_zh.md (by language-Zh)          │
                     │  🧾 repo_categories.json (classification data)  │
                     │  🧾 repo_summaries.json (summary data)           │
                     └─────────────────────────────────────────────────┘
@@ -128,7 +128,7 @@ myGitStar/
 ├── requirements.txt              # Python dependencies
 ├── README.md                     # content-classified output (main README)
 ├── README_lang.md                # language-classified (English)
-├── README_lang_cn.md             # language-classified (Chinese)
+├── README_lang_zh.md             # language-classified (Chinese)
 ├── GUIDE_en.md                   # English guide (this file)
 └── GUIDE_zh.md                   # Chinese guide
 ```
@@ -163,7 +163,7 @@ $env:STARRED_GITHUB_TOKEN = "ghp_xxx"
 
 ```powershell
 python scripts/summarize_stars.py --language en --out README_lang.md
-python scripts/summarize_stars.py --language zh --out README_lang_cn.md
+python scripts/summarize_stars.py --language zh --out README_lang_zh.md
 
 # Generate the content-classified README (parse repos from the language-classified README)
 python scripts/classify_stars_by_content.py --from-readme README_lang.md --out-md README.md --out-json repo_categories.json
@@ -188,7 +188,7 @@ LMSTUDIO_MODEL: "qwen/qwen3-4b-2507"
 # Ollama model name
 OLLAMA_MODEL: "qwen3.5:4b"
 
-# Output path (language-classified): recommended en->README_lang.md, zh->README_lang_cn.md
+# Output path (language-classified): recommended en->README_lang.md, zh->README_lang_zh.md
 readme_sum_path: README_lang.md
 
 # Update mode: all (rewrite all) / missing_only (only fill missing/invalid summaries)
@@ -231,7 +231,7 @@ The table below summarizes supported `config.yaml` fields and marks whether each
 | `model_choice` | No | `copilot` / `openrouter` / `gemini` / `lmstudio` / `ollama` | Choose AI backend | Defaults to `copilot`; use `lmstudio` for local testing |
 | `LMSTUDIO_MODEL` | No | `qwen/qwen3-4b-2507` | LM Studio model name (only when `model_choice: lmstudio`) | Auto-used when set |
 | `OLLAMA_MODEL` | No | `qwen3.5:4b` | Ollama model name (only when `model_choice: ollama`) | Auto-used when set |
-| `readme_sum_path` | No | `README_lang.md` / `README_lang_cn.md` | Language-classified output path | en→`README_lang.md`; zh→`README_lang_cn.md` (if omitted: `README-sum.md`) |
+| `readme_sum_path` | No | `README_lang.md` / `README_lang_zh.md` | Language-classified output path | en→`README_lang.md`; zh→`README_lang_zh.md` (if omitted: `README-sum.md`) |
 | `update_mode` | No | `all` / `missing_only` | Summarization update strategy: `missing_only` only fills NEW/missing/invalid summaries; `all` forces full refresh | Workflow still re-runs content classification for ALL repos each run |
 | `batch_mode` | No | `concurrent` / `combined` | Batch mode: `concurrent` parallel, `combined` merges requests | Use `combined` for local models to reduce API calls |
 | `repo_display_language` | No | `true` / `false` | Order of README top language-switch links | `true`: put the language matching `language` first |

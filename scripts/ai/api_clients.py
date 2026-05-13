@@ -9,6 +9,7 @@ API_ENDPOINTS = {
     "copilot": "https://models.github.ai/inference/chat/completions",
     "openrouter": "https://openrouter.ai/api/v1/chat/completions",
     "gemini": "https://generativelanguage.googleapis.com/v1beta/models",
+    "modelscope": "https://api-inference.modelscope.cn/v1/chat/completions",
 }
 
 
@@ -236,14 +237,64 @@ def gemini_summarize(
     return final_content
 
 
+def modelscope_summarize(
+    repo: Dict[str, Any],
+    modelscope_api_key: str,
+    default_modelscope_model: str,
+    api_request_func: callable,
+) -> Optional[str]:
+    import sys
+    print("[DEBUG] modelscope_summarize: ENTERING function", flush=True)
+    sys.stdout.flush()
+    if not modelscope_api_key:
+        print("[DEBUG] modelscope_summarize: no API key", flush=True)
+        return None
+    try:
+        prompt = _extract_prompt(repo)
+        print(f"[DEBUG] modelscope_summarize: model={default_modelscope_model}, prompt_length={len(prompt)}", flush=True)
+        headers = {
+            "Authorization": f"Bearer {modelscope_api_key}",
+            "Content-Type": "application/json",
+        }
+        data = {
+            "model": default_modelscope_model,
+            "messages": [{"role": "user", "content": prompt}],
+            "max_tokens": 5120,
+            "temperature": 0.2,
+        }
+        print(f"[DEBUG] modelscope_summarize: calling api_request_func...", flush=True)
+        response = api_request_func(API_ENDPOINTS["modelscope"], headers, data)
+        print(f"[DEBUG] modelscope_summarize: api_request_func returned, response={type(response)}", flush=True)
+        content = None
+        if response:
+            print(f"[DEBUG] modelscope_summarize: response keys={list(response.keys()) if isinstance(response, dict) else 'N/A'}", flush=True)
+            choices = response.get("choices", [{}])
+            if choices and isinstance(choices[0], dict):
+                message = choices[0].get("message")
+                if message and isinstance(message, dict):
+                    content = message.get("content", "")
+                elif "content" in choices[0]:
+                    content = choices[0]["content"]
+            if content is not None:
+                content = str(content).strip()
+        return content if content else None
+    except Exception as e:
+        import traceback
+        print(f"[ERROR] modelscope_summarize: Exception: {type(e).__name__}: {e}", flush=True)
+        print(f"[ERROR] modelscope_summarize: Exception traceback: {traceback.format_exc()}", flush=True)
+        return None
+
+
 def create_summarize_func(
     model_choice: str,
     github_token: str,
     openrouter_api_key: str,
     gemini_api_key: str,
+    modelscope_api_key: str,
     default_copilot_model: str,
     default_openrouter_model: str,
     default_gemini_model: str,
+    default_modelscope_model: str,
     language: str,
     config: dict,
     throttle: Any,
@@ -279,6 +330,15 @@ def create_summarize_func(
                 gemini_api_key,
                 default_gemini_model,
                 config,
+                make_request,
+            )
+    elif model_choice == "modelscope":
+        print(f"[DEBUG] create_summarize_func: modelscope mode, api_key={'set' if modelscope_api_key else 'EMPTY'}, model={default_modelscope_model}", flush=True)
+        def summarize(repo: Dict) -> Optional[str]:
+            return modelscope_summarize(
+                repo,
+                modelscope_api_key,
+                default_modelscope_model,
                 make_request,
             )
     elif model_choice == "lmstudio":

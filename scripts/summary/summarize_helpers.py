@@ -337,6 +337,7 @@ def summarize_batch_combined(
     update_mode: str,
     language: str,
     batch_size: int = 5,
+    batch_num: int = 1,
 ) -> List[Any]:
     results: List[Any] = [{} for _ in repos]
 
@@ -366,16 +367,16 @@ def summarize_batch_combined(
     for i in range(0, len(repos_need_call), batch_size):
         batch = repos_need_call[i : i + batch_size]
         indices = repos_indices[i : i + batch_size]
-        print(f"[COMBINED] Processing batch {i // batch_size + 1}, {len(batch)} repos...")
+        print(f"[COMBINED] Processing batch {batch_num}, {len(batch)} repos...")
 
         combined_prompt = generate_combined_summarize_prompt(batch, language)
         repo_with_prompt = {"prompt": combined_prompt, "repos": [r["full_name"] for r in batch]}
-        print(f"[DEBUG] Batch {i // batch_size + 1} prompt length: {len(combined_prompt)} chars, repos: {[r['full_name'] for r in batch]}", flush=True)
-        print(f"[DEBUG] Batch {i // batch_size + 1} calling summarize_func...", flush=True)
+        print(f"[DEBUG] Batch {batch_num} prompt length: {len(combined_prompt)} chars, repos: {[r['full_name'] for r in batch]}", flush=True)
+        print(f"[DEBUG] Batch {batch_num} calling summarize_func...", flush=True)
 
         try:
             response_text = summarize_func(repo_with_prompt)
-            print(f"[DEBUG] Batch {i // batch_size + 1} summarize_func returned, response_text type={type(response_text)}, len={len(response_text) if response_text else 0}", flush=True)
+            print(f"[DEBUG] Batch {batch_num} summarize_func returned, response_text type={type(response_text)}, len={len(response_text) if response_text else 0}", flush=True)
             if response_text:
                 parsed = parse_combined_summaries(response_text, batch)
                 for full_name, summary_dict in parsed.items():
@@ -390,14 +391,14 @@ def summarize_batch_combined(
                         results[idx] = {"Repository Name": full_name, "Repository URL": "", "Brief Introduction": "", "Innovations": "", "Basic Usage": "Not specified.", "Summary": old_summaries.get(full_name, f"{api_name} 解析失败或为空")}
                         print(f"[WARN] repo: {full_name} | empty summary from LLM")
             else:
-                print(f"[ERROR] Batch {i // batch_size + 1} response is None or empty, repos: {[r['full_name'] for r in batch]}")
+                print(f"[ERROR] Batch {batch_num} response is None or empty, repos: {[r['full_name'] for r in batch]}")
                 for idx, repo in zip(indices, batch):
                     api_name = summarize_func.__name__.replace("_summarize", "").upper()
                     results[idx] = {"Repository Name": repo["full_name"], "Repository URL": repo.get("html_url", ""), "Brief Introduction": "", "Innovations": "", "Basic Usage": "Not specified.", "Summary": old_summaries.get(repo["full_name"], f"{api_name} API返回空")}
                     print(f"[ERROR] repo: {repo['full_name']} | empty response")
         except Exception as exc:
             import traceback
-            print(f"[ERROR] Batch {i // batch_size + 1} exception: {exc}")
+            print(f"[ERROR] Batch {batch_num} exception: {exc}")
             print(f"[ERROR] Exception details: {traceback.format_exc()}")
             for idx, repo in zip(indices, batch):
                 api_name = summarize_func.__name__.replace("_summarize", "").upper()
@@ -423,9 +424,11 @@ def get_summarize_func(
     github_token: str,
     openrouter_api_key: str,
     gemini_api_key: str,
+    modelscope_api_key: str,
     default_copilot_model: str,
     default_openrouter_model: str,
     default_gemini_model: str,
+    default_modelscope_model: str,
     language: str,
     config: Dict[str, Any],
     throttle: Any,
@@ -441,9 +444,11 @@ def get_summarize_func(
         github_token=github_token,
         openrouter_api_key=openrouter_api_key,
         gemini_api_key=gemini_api_key,
+        modelscope_api_key=modelscope_api_key,
         default_copilot_model=default_copilot_model,
         default_openrouter_model=default_openrouter_model,
         default_gemini_model=default_gemini_model,
+        default_modelscope_model=default_modelscope_model,
         language=language,
         config=config,
         throttle=throttle,

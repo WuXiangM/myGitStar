@@ -114,7 +114,7 @@ def render_classified_readme(
         "<p>"
         '<a href="README.md">README (content classified)</a> | '
         '<a href="README_lang.md">README classified by language</a> | '
-        '<a href="README_lang_cn.md">README 按语言分类</a>'
+        '<a href="README_lang_zh.md">README 按语言分类</a>'
         "</p>\n"
         "<p>"
         '<a href="GUIDE_en.md">English GUIDE</a> | '
@@ -174,6 +174,7 @@ def render_markdown(
     model_choice: str,
     username: str = "unknown",
     generated_at: str = None,
+    language: str = "en",
 ) -> str:
     categories = {c["id"]: c for c in taxonomy.categories}
     buckets: Dict[str, List[Dict[str, Any]]] = {cid: [] for cid in categories.keys()}
@@ -192,18 +193,49 @@ def render_markdown(
     if generated_at is None:
         generated_at = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
 
+    is_en = (language == "en")
+
+    readme_links = (
+        '<a href="README.md">README（内容分类）</a> | '
+        '<a href="README_lang_zh.md">README 按语言分类</a> | '
+        '<a href="README_lang.md">README classified by language</a>'
+    ) if not is_en else (
+        '<a href="README.md">README (content classified)</a> | '
+        '<a href="README_lang.md">README classified by language</a> | '
+        '<a href="README_lang_zh.md">README 按语言分类</a>'
+    )
+
+    guide_links = (
+        '<a href="GUIDE_zh.md">中文教程</a> | <a href="GUIDE_en.md">English GUIDE</a>'
+    ) if not is_en else (
+        '<a href="GUIDE_en.md">English GUIDE</a> | <a href="GUIDE_zh.md">中文教程</a>'
+    )
+
     lines: List[str] = []
     lines.append("<div align=\"center\">\n")
-    lines.append("\n<h1>我的 GitHub Star 项目AI总结</h1>\n")
-    lines.append(f"\n<p><b>参考仓库：</b> <a href=\"https://github.com/WuXiangM/myGitStar\">WuXiangM/myGitStar</a></p>\n")
-    lines.append("\n<p><b>当前账号：</b> <a href=\"https://github.com/{username}\">{username}</a></p>\n".format(username=username))
-    lines.append(f"\n<p><b>生成时间：</b> {generated_at}</p>\n")
-    lines.append(f"\n<p><b>AI模型：</b> {model_choice}</p>\n")
-    lines.append(f"\n<p><b>总仓库数：</b> {len(repos)} 个</p>\n")
+    if is_en:
+        lines.append("\n<h1>My GitHub Star Project AI Summary</h1>\n")
+        lines.append(f"\n<p><b>Reference Repository:</b> <a href=\"https://github.com/WuXiangM/myGitStar\">WuXiangM/myGitStar</a></p>\n")
+        lines.append(f"\n<p>{readme_links}</p>\n")
+        lines.append(f"\n<p>{guide_links}</p>\n")
+        lines.append("\n<hr/>\n")
+        lines.append(f"\n<p><b>Current account:</b> <a href=\"https://github.com/{username}\">{username}</a></p>\n")
+        lines.append(f"\n<p><b>Generated on:</b> {generated_at}</p>\n")
+        lines.append(f"\n<p><b>AI Model:</b> {model_choice}</p>\n")
+        lines.append(f"\n<p><b>Total repositories:</b> {len(repos)}</p>\n")
+    else:
+        lines.append("\n<h1>我的 GitHub Star 项目AI总结</h1>\n")
+        lines.append(f"\n<p><b>参考仓库：</b> <a href=\"https://github.com/WuXiangM/myGitStar\">WuXiangM/myGitStar</a></p>\n")
+        lines.append(f"\n<p>{readme_links}</p>\n")
+        lines.append(f"\n<p>{guide_links}</p>\n")
+        lines.append("\n<hr/>\n")
+        lines.append(f"\n<p><b>当前账号：</b> <a href=\"https://github.com/{username}\">{username}</a></p>\n")
+        lines.append(f"\n<p><b>生成时间：</b> {generated_at}</p>\n")
+        lines.append(f"\n<p><b>AI模型：</b> {model_choice}</p>\n")
+        lines.append(f"\n<p><b>总仓库数：</b> {len(repos)} 个</p>\n")
     lines.append("\n</div>\n")
     lines.append("\n---\n")
-
-    lines.append("## Table of Contents\n")
+    lines.append("## Table of Contents\n" if is_en else "## 目录\n")
     sort_by_count = True
     try:
         if isinstance(config, dict) and config.get("content_sort_categories_by_count") is not None:

@@ -6,7 +6,7 @@
 
 - 📗 README（内容分类）：`README.md`
 - 📘 README classified by language（英文）：`README_lang.md`
-- 📙 README 按语言分类（中文）：`README_lang_cn.md`
+- 📙 README 按语言分类（中文）：`README_lang_zh.md`
 - 🧾 总结 JSON（结构化数据源）：`repo_summaries.json`
 
 > 说明：总结数据统一存储在 `repo_summaries.json`（不再区分 en/zh）。`summarize_stars.py` 生成摘要后写入此文件，`classify_stars_by_content.py` 可直接从该文件读取进行内容分类，无需调用 GitHub API。
@@ -47,7 +47,7 @@
                          ┌──────────────┴──────────────┐
                          ▼                              ▼
               ┌─────────────────────┐    ┌─────────────────────────┐
-              │  README_lang.md     │    │  README_lang_cn.md       │
+              │  README_lang.md     │    │  README_lang_zh.md   │
               │  (按语言-英文)        │    │  (按语言-中文)            │
               └─────────────────────┘    └─────────────────────────┘
                          │                              │
@@ -71,7 +71,7 @@
                     │                    输出文件                      │
                     │  📗 README.md (内容分类)                        │
                     │  📘 README_lang.md (按语言-英文)                 │
-                    │  📙 README_lang_cn.md (按语言-中文)              │
+                    │  📙 README_lang_zh.md (按语言-中文)              │
                     │  🧾 repo_categories.json (分类数据)              │
                     │  🧾 repo_summaries.json (摘要数据)                │
                     └─────────────────────────────────────────────────┘
@@ -127,7 +127,7 @@ myGitStar/
 ├── requirements.txt              # Python 依赖
 ├── README.md                     # 内容分类输出（主 README）
 ├── README_lang.md                # 按语言分类（英文）
-├── README_lang_cn.md             # 按语言分类（中文）
+├── README_lang_zh.md             # 按语言分类（中文）
 ├── GUIDE_en.md                   # 英文指南
 └── GUIDE_zh.md                   # 中文指南（本文件）
 ```
@@ -162,7 +162,7 @@ $env:STARRED_GITHUB_TOKEN = "ghp_xxx"
 
 ```powershell
 python scripts/summarize_stars.py --language en --out README_lang.md
-python scripts/summarize_stars.py --language zh --out README_lang_cn.md
+python scripts/summarize_stars.py --language zh --out README_lang_zh.md
 
 # 生成内容分类版（从按语言分类的 README 解析仓库列表）
 python scripts/classify_stars_by_content.py --from-readme README_lang.md --out-md README.md --out-json repo_categories.json
@@ -230,7 +230,7 @@ repo_display_language: true
 | `model_choice`             | 否                       | `copilot` / `openrouter` / `gemini` / `lmstudio` / `ollama` | 选择 AI 引擎 | 不填默认 `copilot`；本地测试用 `lmstudio`                              |
 | `LMSTUDIO_MODEL`           | 否                       | `qwen/qwen3-4b-2507`                   | LM Studio 模型名称（仅 `model_choice: lmstudio` 时使用）                     | 设置后自动使用                                                        |
 | `OLLAMA_MODEL`             | 否                       | `qwen3.5:4b`                           | Ollama 模型名称（仅 `model_choice: ollama` 时使用）                         | 设置后自动使用                                                        |
-| `readme_sum_path`          | 否                       | `README_lang.md` / `README_lang_cn.md` | 按语言分类 README 输出路径                                                     | en→`README_lang.md`；zh→`README_lang_cn.md`（不填则默认 `README-sum.md`） |
+| `readme_sum_path`          | 否                       | `README_lang.md` / `README_lang_zh.md` | 按语言分类 README 输出路径                                                     | en→`README_lang.md`；zh→`README_lang_zh.md`（不填则默认 `README-sum.md`） |
 | `update_mode`              | 否                       | `all` / `missing_only`                | 总结更新策略：`missing_only` 仅补“新增/缺失/无效”的仓库总结；`all` 全量重汇总   | 工作流每次仍会对全部仓库重新做“内容分类”                              |
 | `batch_mode`               | 否                       | `concurrent` / `combined`              | 批处理模式：`concurrent` 并发处理，`combined` 合并请求（减少 API 调用）        | 本地模型建议 `combined`，云端 API 建议 `concurrent`                     |
 | `repo_display_language`    | 否                       | `true` / `false`                      | README 顶部中英互跳链接的显示顺序                                              | `true`：与 `language` 一致的链接在前                              |

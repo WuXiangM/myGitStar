@@ -83,7 +83,7 @@ jobs:
       - name: Ensure repo_summaries.json exists (classify-only mode)
         if: steps.cfg.outputs.classify_only == 'true'
         run: |
-          test -f repo_summaries.json || (echo "repo_summaries.json not found. Either run summarize first." && exit 1)
+          test -f repo_summaries.json || test -f repo_summaries_zh.json || (echo "repo_summaries.json or repo_summaries_zh.json not found. Either run summarize first." && exit 1)
 
       - name: Summarize starred repos with ai
         if: steps.cfg.outputs.classify_only != 'true'
@@ -96,7 +96,7 @@ jobs:
         run: |
           echo "DEBUG: GITHUB_ACTOR=$GITHUB_ACTOR, GITHUB_USERNAME=$GITHUB_USERNAME"
           python scripts/summarize_stars.py --language en --out README_lang.md --update-mode ${{ steps.cfg.outputs.update_mode }}
-          python scripts/summarize_stars.py --language zh --out README_lang_cn.md --update-mode ${{ steps.cfg.outputs.update_mode }}
+          python scripts/summarize_stars.py --language zh --out README_lang_zh.md --update-mode ${{ steps.cfg.outputs.update_mode }}
 
       - name: Classify repos by content from summaries
         env:
@@ -136,9 +136,9 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md repo_categories.json repo_summaries.json
+          git add README.md repo_categories.json repo_summaries.json repo_summaries_zh.json
           test -f README_lang.md && git add README_lang.md || true
-          test -f README_lang_cn.md && git add README_lang_cn.md || true
+          test -f README_lang_zh.md && git add README_lang_zh.md || true
           git commit -m "update AI summarized stars [bot]" || echo "No changes to commit"
           git remote set-url origin https://x-access-token:${STARRED_GITHUB_TOKEN}@github.com/${{ github.repository }}.git
           git pull --rebase origin main || echo "No remote changes to pull"
