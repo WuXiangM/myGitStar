@@ -8,7 +8,7 @@ repo_display_language: true
 
 # 模型选择，可选值: 'copilot'、'openrouter'、'gemini' 或 'modelscope'
 # Model selection: 'copilot', 'openrouter', 'gemini', 'modelscope'
-model_choice: openrouter
+model_choice: copilot
 
 
 # GitHub用户名，设置为0时自动使用 workflow 账号，或填写指定用户名
