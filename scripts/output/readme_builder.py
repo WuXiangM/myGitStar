@@ -187,36 +187,38 @@ def build_repo_section(
         summary_entry = summary_store.get(repo["full_name"], {}) or old_summaries.get(repo["full_name"], {})
 
         if isinstance(summary_entry, dict):
+            repo_name = summary_entry.get("Repository Name", repo["full_name"])
             brief = summary_entry.get("Brief Introduction", "")
             innovations = summary_entry.get("Innovations", "")
             basic = summary_entry.get("Basic Usage", "")
             summary_text = summary_entry.get("Summary", "")
+
             if language == "en":
                 summary_parts = []
-                if brief:
-                    summary_parts.append(f"**Brief Introduction:** {brief}")
-                if innovations:
-                    summary_parts.append(f"**Innovations:** {innovations}")
-                if basic and basic != "Not specified.":
-                    summary_parts.append(f"**Basic Usage:** {basic}")
-                if summary_text:
-                    summary_parts.append(f"**Summary:** {summary_text}")
-                summary = "\n\n".join(summary_parts)
+                summary_parts.append(f"1. **Repository Name:** {repo_name}")
+                summary_parts.append(f"2. **Brief Introduction:** {(brief or 'Not specified.')}")
+                summary_parts.append(f"3. **Innovations:** {(innovations or 'Not specified.')}")
+                summary_parts.append(f"4. **Basic Usage:** {(basic or 'Not specified.')}")
+                summary_parts.append(f"5. **Summary:** {(summary_text or 'Not specified.')}")
+                summary = "\n".join(summary_parts)
             else:
                 summary_parts = []
-                if brief:
-                    summary_parts.append(f"**简要介绍：** {brief}")
-                if innovations:
-                    summary_parts.append(f"**创新点：** {innovations}")
-                if basic and basic != "Not specified.":
-                    summary_parts.append(f"**简单用法：** {basic}")
-                if summary_text:
-                    summary_parts.append(f"**一句话总结：** {summary_text}")
-                summary = "\n\n".join(summary_parts)
+                summary_parts.append(f"1. **仓库名称：** {repo_name}")
+                summary_parts.append(f"2. **简要介绍：** {(brief or '未指定。')}")
+                summary_parts.append(f"3. **创新点：** {(innovations or '未指定。')}")
+                summary_parts.append(f"4. **基本用法：** {(basic or '未指定。')}")
+                summary_parts.append(f"5. **总结：** {(summary_text or '未指定。')}")
+                summary = "\n".join(summary_parts)
         elif isinstance(summary_entry, str):
-            summary = summary_entry
+            if language == "en":
+                summary = f"1. **Repository Name:** {repo['full_name']}\n2. **Brief Introduction:** {summary_entry}\n3. **Innovations:** Not specified.\n4. **Basic Usage:** Not specified.\n5. **Summary:** Not specified."
+            else:
+                summary = f"1. **仓库名称：** {repo['full_name']}\n2. **简要介绍：** {summary_entry}\n3. **创新点：** 未指定。\n4. **基本用法：** 未指定。\n5. **总结：** 未指定。"
         else:
-            summary = ""
+            if language == "en":
+                summary = f"1. **Repository Name:** {repo['full_name']}\n2. **Brief Introduction:** Not specified.\n3. **Innovations:** Not specified.\n4. **Basic Usage:** Not specified.\n5. **Summary:** Not specified."
+            else:
+                summary = f"1. **仓库名称：** {repo['full_name']}\n2. **简要介绍：** 未指定。\n3. **创新点：** 未指定。\n4. **基本用法：** 未指定。\n5. **总结：** 未指定。"
 
         url = repo["html_url"]
         stars = repo.get("stargazers_count", 0)

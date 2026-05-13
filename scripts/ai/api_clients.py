@@ -308,39 +308,47 @@ def create_summarize_func(
 
     if model_choice == "copilot":
         def summarize(repo: Dict) -> Optional[str]:
-            return copilot_summarize(
+            result = copilot_summarize(
                 repo,
                 github_token,
                 default_copilot_model,
                 make_request,
             )
+            api_call_counter()
+            return result
     elif model_choice == "openrouter":
         print(f"[DEBUG] create_summarize_func: openrouter mode, api_key={'set' if openrouter_api_key else 'EMPTY'}, model={default_openrouter_model}", flush=True)
         def summarize(repo: Dict) -> Optional[str]:
-            return openrouter_summarize(
+            result = openrouter_summarize(
                 repo,
                 openrouter_api_key,
                 default_openrouter_model,
                 make_request,
             )
+            api_call_counter()
+            return result
     elif model_choice == "gemini":
         def summarize(repo: Dict) -> Optional[str]:
-            return gemini_summarize(
+            result = gemini_summarize(
                 repo,
                 gemini_api_key,
                 default_gemini_model,
                 config,
                 make_request,
             )
+            api_call_counter()
+            return result
     elif model_choice == "modelscope":
         print(f"[DEBUG] create_summarize_func: modelscope mode, api_key={'set' if modelscope_api_key else 'EMPTY'}, model={default_modelscope_model}", flush=True)
         def summarize(repo: Dict) -> Optional[str]:
-            return modelscope_summarize(
+            result = modelscope_summarize(
                 repo,
                 modelscope_api_key,
                 default_modelscope_model,
                 make_request,
             )
+            api_call_counter()
+            return result
     elif model_choice == "lmstudio":
         from scripts.ai.lmstudio_client import create_lmstudio_summarize_func
         lmstudio_model = os.environ.get("LMSTUDIO_MODEL", "qwen/qwen3-4b-2507")

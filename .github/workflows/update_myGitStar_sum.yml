@@ -96,7 +96,6 @@ jobs:
         run: |
           echo "DEBUG: GITHUB_ACTOR=$GITHUB_ACTOR, GITHUB_USERNAME=$GITHUB_USERNAME"
           python scripts/summarize_stars.py --language en --out README_lang.md --update-mode ${{ steps.cfg.outputs.update_mode }}
-          python scripts/summarize_stars.py --language zh --out README_lang_zh.md --update-mode ${{ steps.cfg.outputs.update_mode }}
 
       - name: Classify repos by content from summaries
         env:

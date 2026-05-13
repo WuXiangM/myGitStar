@@ -100,7 +100,7 @@ max_repos: 30
 
 # 更新模式，可选值：'all'（全部更新）或 'missing_only'（仅更新缺失总结）
 # Update mode: 'all' or 'missing_only'
-update_mode: missing_only
+update_mode: all
 
 
 # 内容分类：类别数量区间（用于 scripts/classify_stars_by_content.py 设计 taxonomy）

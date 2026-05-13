@@ -1116,7 +1116,16 @@ def chunk_list(items: List[Any], size: int) -> List[List[Any]]:
     return [items[i : i + size] for i in range(0, len(items), size)]
 
 
-def render_markdown(taxonomy: Taxonomy, repos: List[Dict[str, Any]], assignment_map: Dict[Any, str], cfg: Dict[str, Any], model_ch: str, username: str = "unknown", generated_at: str = None) -> str:
+def render_markdown(
+    taxonomy: Taxonomy,
+    repos: List[Dict[str, Any]],
+    assignment_map: Dict[Any, str],
+    cfg: Dict[str, Any],
+    model_ch: str,
+    username: str = "unknown",
+    generated_at: str = None,
+    language: str = "en",
+) -> str:
     categories = {c["id"]: c for c in taxonomy.categories}
     buckets: Dict[str, List[Dict[str, Any]]] = {cid: [] for cid in categories.keys()}
     other_id = next((c["id"] for c in taxonomy.categories if c["name"].lower() == "other"), taxonomy.categories[-1]["id"])
@@ -1131,18 +1140,28 @@ def render_markdown(taxonomy: Taxonomy, repos: List[Dict[str, Any]], assignment_
     if generated_at is None:
         generated_at = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
 
+    is_en = (language == "en")
+
     lines: List[str] = []
     lines.append("<div align=\"center\">\n")
-    lines.append("\n<h1>我的 GitHub Star 项目AI总结</h1>\n")
-    lines.append(f"\n<p><b>参考仓库：</b> <a href=\"https://github.com/WuXiangM/myGitStar\">WuXiangM/myGitStar</a></p>\n")
-    lines.append(f"\n<p><b>当前账号：</b> <a href=\"https://github.com/{username}\">{username}</a></p>\n")
-    lines.append(f"\n<p><b>生成时间：</b> {generated_at}</p>\n")
-    lines.append(f"\n<p><b>AI模型：</b> {model_ch}</p>\n")
-    lines.append(f"\n<p><b>总仓库数：</b> {len(repos)} 个</p>\n")
+    if is_en:
+        lines.append("\n<h1>My GitHub Star Project AI Summary</h1>\n")
+        lines.append(f"\n<p><b>Reference Repository:</b> <a href=\"https://github.com/WuXiangM/myGitStar\">WuXiangM/myGitStar</a></p>\n")
+        lines.append(f"\n<p><b>Current account:</b> <a href=\"https://github.com/{username}\">{username}</a></p>\n")
+        lines.append(f"\n<p><b>Generated on:</b> {generated_at}</p>\n")
+        lines.append(f"\n<p><b>AI Model:</b> {model_ch}</p>\n")
+        lines.append(f"\n<p><b>Total repositories:</b> {len(repos)}</p>\n")
+    else:
+        lines.append("\n<h1>我的 GitHub Star 项目AI总结</h1>\n")
+        lines.append(f"\n<p><b>参考仓库：</b> <a href=\"https://github.com/WuXiangM/myGitStar\">WuXiangM/myGitStar</a></p>\n")
+        lines.append(f"\n<p><b>当前账号：</b> <a href=\"https://github.com/{username}\">{username}</a></p>\n")
+        lines.append(f"\n<p><b>生成时间：</b> {generated_at}</p>\n")
+        lines.append(f"\n<p><b>AI模型：</b> {model_ch}</p>\n")
+        lines.append(f"\n<p><b>总仓库数：</b> {len(repos)} 个</p>\n")
     lines.append("\n</div>\n")
     lines.append("\n---\n")
 
-    lines.append("## Table of Contents\n")
+    lines.append("## Table of Contents\n" if is_en else "## 目录\n")
     sort_by_count = True
     try:
         if isinstance(cfg, dict) and cfg.get("content_sort_categories_by_count") is not None:
@@ -1504,7 +1523,8 @@ def main() -> int:
 
     generated_at_str = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
     username = get_current_account_optional()
-    md = render_markdown(taxonomy, repos, assignment_map, config, MODEL_CHOICE, username, generated_at_str)
+    lang = str(config.get("language", "en")).strip().lower()
+    md = render_markdown(taxonomy, repos, assignment_map, config, MODEL_CHOICE, username, generated_at_str, lang)
     with open(out_md_path, "w", encoding="utf-8") as f:
         f.write(md)
 
