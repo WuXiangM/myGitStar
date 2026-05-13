@@ -34,39 +34,47 @@
 
 **⭐ Stars:** 23,989 | **🍴 Forks:** 4,528 | **📅 Updated:** 2026-05-13
 
-**Summary:** 
-
-A repository that makes AI for robotics more accessible through end-to-end learning methodologies.
+1. **Repository Name:** huggingface/lerobot
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Not specified.
 
 ---
 
 ### 📌 [vllm-project/vllm](https://github.com/vllm-project/vllm)
 
-**⭐ Stars:** 79,890 | **🍴 Forks:** 16,746 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 79,893 | **🍴 Forks:** 16,746 | **📅 Updated:** 2026-05-13
 
-**Summary:** 
-
-A high-performance inference engine for efficient LLM deployment and serving.
+1. **Repository Name:** vllm-project/vllm
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Not specified.
 
 ---
 
 ### 📌 [OpenBMB/VoxCPM](https://github.com/OpenBMB/VoxCPM)
 
-**⭐ Stars:** 18,658 | **🍴 Forks:** 2,208 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 18,666 | **🍴 Forks:** 2,210 | **📅 Updated:** 2026-05-13
 
-**Summary:** 
-
-A tokenizer-free text-to-speech system for multilingual speech generation and voice cloning.
+1. **Repository Name:** OpenBMB/VoxCPM
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Not specified.
 
 ---
 
 ### 📌 [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)
 
-**⭐ Stars:** 148,220 | **🍴 Forks:** 23,311 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 148,270 | **🍴 Forks:** 23,319 | **📅 Updated:** 2026-05-13
 
-**Summary:** 
-
-An adaptive AI agent framework designed to evolve and improve with continued usage.
+1. **Repository Name:** NousResearch/hermes-agent
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Not specified.
 
 ---
 
@@ -74,9 +82,11 @@ An adaptive AI agent framework designed to evolve and improve with continued usa
 
 **⭐ Stars:** 3,412 | **🍴 Forks:** 216 | **📅 Updated:** 2026-05-13
 
-**Summary:** 
-
-A scalable latent-memory framework enabling efficient processing of up to 100M token contexts.
+1. **Repository Name:** EverMind-AI/MSA
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Not specified.
 
 ---
 
@@ -84,19 +94,23 @@ A scalable latent-memory framework enabling efficient processing of up to 100M t
 
 **⭐ Stars:** 17 | **🍴 Forks:** 1 | **📅 Updated:** 2026-05-09
 
-**Summary:** 
-
-A value-free RL framework for extracting deeper reasoning from clean base models.
+1. **Repository Name:** Henrymachiyu/FIPO
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Not specified.
 
 ---
 
 ### 📌 [datawhalechina/every-embodied](https://github.com/datawhalechina/every-embodied)
 
-**⭐ Stars:** 1,801 | **🍴 Forks:** 197 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 1,802 | **🍴 Forks:** 197 | **📅 Updated:** 2026-05-13
 
-**Summary:** 
-
-A beginner-friendly course for building embodied intelligence robots and understanding VLA architectures from scratch.
+1. **Repository Name:** datawhalechina/every-embodied
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Not specified.
 
 ---
 
@@ -104,9 +118,11 @@ A beginner-friendly course for building embodied intelligence robots and underst
 
 **⭐ Stars:** 7,885 | **🍴 Forks:** 862 | **📅 Updated:** 2026-05-13
 
-**Summary:** 
-
-A rapid training framework for building 65M parameter VLMs from scratch in just 2 hours.
+1. **Repository Name:** jingyaogong/minimind-v
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Not specified.
 
 ---
 
@@ -114,16 +130,23 @@ A rapid training framework for building 65M parameter VLMs from scratch in just 
 
 **⭐ Stars:** 2,516 | **🍴 Forks:** 195 | **📅 Updated:** 2026-05-13
 
-**Summary:** 
-
-A world model-powered Vision-Language-Action model for embodied intelligence applications.
+1. **Repository Name:** open-gigaai/giga-brain-0
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Not specified.
 
 ---
 
 ### 📌 [jingyaogong/minimind](https://github.com/jingyaogong/minimind)
 
-**⭐ Stars:** 49,693 | **🍴 Forks:** 6,313 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 49,701 | **🍴 Forks:** 6,315 | **📅 Updated:** 2026-05-13
 
+1. **Repository Name:** jingyaogong/minimind
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** 
 **Summary:** 
 
 A rapid training framework for building 64M parameter LLMs from scratch in just 2 hours.
@@ -134,29 +157,35 @@ A rapid training framework for building 64M parameter LLMs from scratch in just 
 
 **⭐ Stars:** 1,628 | **🍴 Forks:** 196 | **📅 Updated:** 2026-05-10
 
-**Summary:** 
-
-A digital watermarking tool that embeds invisible marks in media files to protect intellectual property and enable content tracking.
+1. **Repository Name:** fire-keeper/BlindWatermark
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Not specified.
 
 ---
 
 ### 📌 [aiming-lab/AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw)
 
-**⭐ Stars:** 12,114 | **🍴 Forks:** 1,418 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 12,115 | **🍴 Forks:** 1,418 | **📅 Updated:** 2026-05-13
 
-**Summary:** 
-
-An autonomous AI research assistant that automates the entire scientific research process from idea conception to paper generation.
+1. **Repository Name:** aiming-lab/AutoResearchClaw
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Not specified.
 
 ---
 
 ### 📌 [666ghj/MiroFish](https://github.com/666ghj/MiroFish)
 
-**⭐ Stars:** 60,478 | **🍴 Forks:** 9,440 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 60,484 | **🍴 Forks:** 9,441 | **📅 Updated:** 2026-05-13
 
-**Summary:** 
-
-A universal swarm intelligence engine that leverages collective behavior for making predictions across various domains.
+1. **Repository Name:** 666ghj/MiroFish
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Not specified.
 
 ---
 
@@ -164,9 +193,11 @@ A universal swarm intelligence engine that leverages collective behavior for mak
 
 **⭐ Stars:** 163 | **🍴 Forks:** 12 | **📅 Updated:** 2026-05-12
 
-**Summary:** 
-
-A unified scientific research intelligence platform that standardizes diverse research workflows into a single paradigm.
+1. **Repository Name:** UniPat-AI/UniScientist
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Not specified.
 
 ---
 
@@ -174,18 +205,25 @@ A unified scientific research intelligence platform that standardizes diverse re
 
 ### 📌 [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)
 
-**⭐ Stars:** 17,827 | **🍴 Forks:** 1,660 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 17,838 | **🍴 Forks:** 1,662 | **📅 Updated:** 2026-05-13
 
-**Summary:** 
-
-An agent-native tool that transforms HTML content into video output for automated workflows.
+1. **Repository Name:** heygen-com/hyperframes
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Not specified.
 
 ---
 
 ### 📌 [multica-ai/multica](https://github.com/multica-ai/multica)
 
-**⭐ Stars:** 27,997 | **🍴 Forks:** 3,359 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 28,006 | **🍴 Forks:** 3,362 | **📅 Updated:** 2026-05-13
 
+1. **Repository Name:** multica-ai/multica
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** 
 **Summary:** 
 
 An open-source platform that transforms coding agents into collaborative teammates with task tracking and skill management.
@@ -194,9 +232,13 @@ An open-source platform that transforms coding agents into collaborative teammat
 
 ### 📌 [ExplosiveCoderflome/AI-Novel-Writing-Assistant](https://github.com/ExplosiveCoderflome/AI-Novel-Writing-Assistant)
 
-**⭐ Stars:** 1,222 | **🍴 Forks:** 259 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 1,224 | **🍴 Forks:** 261 | **📅 Updated:** 2026-05-13
 
-*No AI summary available*
+1. **Repository Name:** ExplosiveCoderflome/AI-Novel-Writing-Assistant
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Not specified.
 
 ---
 
@@ -204,23 +246,35 @@ An open-source platform that transforms coding agents into collaborative teammat
 
 **⭐ Stars:** 828 | **🍴 Forks:** 70 | **📅 Updated:** 2026-05-13
 
-*No AI summary available*
+1. **Repository Name:** hAcKlyc/MyAgents
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Not specified.
 
 ---
 
 ### 📌 [Narcooo/inkos](https://github.com/Narcooo/inkos)
 
-**⭐ Stars:** 6,089 | **🍴 Forks:** 1,139 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 6,090 | **🍴 Forks:** 1,140 | **📅 Updated:** 2026-05-13
 
-*No AI summary available*
+1. **Repository Name:** Narcooo/inkos
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Not specified.
 
 ---
 
 ### 📌 [anomalyco/opencode](https://github.com/anomalyco/opencode)
 
-**⭐ Stars:** 159,651 | **🍴 Forks:** 18,691 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 159,659 | **🍴 Forks:** 18,691 | **📅 Updated:** 2026-05-13
 
-*No AI summary available*
+1. **Repository Name:** anomalyco/opencode
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Not specified.
 
 ---
 
@@ -230,23 +284,23 @@ An open-source platform that transforms coding agents into collaborative teammat
 
 **⭐ Stars:** 26,088 | **🍴 Forks:** 4,713 | **📅 Updated:** 2026-05-13
 
-**Summary:** 
-
-A transparency initiative exposing system prompts from leading AI assistants to promote public understanding of AI behavior.
+1. **Repository Name:** elder-plinius/CL4R1T4S
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Not specified.
 
 ---
 
 ### 📌 [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills)
 
-**⭐ Stars:** 128,090 | **🍴 Forks:** 12,998 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 128,124 | **🍴 Forks:** 13,004 | **📅 Updated:** 2026-05-13
 
-**Brief Introduction:** This repository contains a CLAUDE.md file aimed at enhancing Claude Code behavior, based on insights from Andrej Karpathy regarding common LLM coding pitfalls.
-
-**Innovations:** Focuses on improving AI code generation by addressing specific pitfalls identified by an expert in the field.
-
-**Basic Usage:** Refer to the CLAUDE.md file for guidelines and insights on improving code behavior.
-
-**Summary:** A resource for enhancing AI coding practices based on expert observations.
+1. **Repository Name:** multica-ai/andrej-karpathy-skills
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Not specified.
 
 ---
 
@@ -254,19 +308,23 @@ A transparency initiative exposing system prompts from leading AI assistants to 
 
 **⭐ Stars:** 22,566 | **🍴 Forks:** 2,129 | **📅 Updated:** 2026-05-13
 
-**Summary:** 
-
-A comprehensive collection of open-source Chinese large language models optimized for private deployment and efficiency.
+1. **Repository Name:** AiHubCN/Awesome-Chinese-LLM
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Not specified.
 
 ---
 
 ### 📌 [VoltAgent/awesome-openclaw-skills](https://github.com/VoltAgent/awesome-openclaw-skills)
 
-**⭐ Stars:** 48,574 | **🍴 Forks:** 4,755 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 48,573 | **🍴 Forks:** 4,754 | **📅 Updated:** 2026-05-13
 
-**Summary:** 
-
-A massive categorized collection of 5,400+ OpenClaw skills for enhancing AI agent capabilities.
+1. **Repository Name:** VoltAgent/awesome-openclaw-skills
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Not specified.
 
 ---
 
@@ -274,9 +332,13 @@ A massive categorized collection of 5,400+ OpenClaw skills for enhancing AI agen
 
 ### 📌 [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents)
 
-**⭐ Stars:** 96,721 | **🍴 Forks:** 16,051 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 96,727 | **🍴 Forks:** 16,050 | **📅 Updated:** 2026-05-13
 
-*No AI summary available*
+1. **Repository Name:** msitarzewski/agency-agents
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Not specified.
 
 ---
 
@@ -284,9 +346,11 @@ A massive categorized collection of 5,400+ OpenClaw skills for enhancing AI agen
 
 **⭐ Stars:** 3,769 | **🍴 Forks:** 457 | **📅 Updated:** 2026-05-13
 
-**Summary:** 
-
-Docker-based solution for deploying AI bots across multiple Chinese instant messaging platforms.
+1. **Repository Name:** justlovemaki/openclaw-china-docker
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Not specified.
 
 ---
 
@@ -296,9 +360,11 @@ Docker-based solution for deploying AI bots across multiple Chinese instant mess
 
 **⭐ Stars:** 37,786 | **🍴 Forks:** 4,637 | **📅 Updated:** 2026-05-13
 
-**Summary:** 
-
-Hands-on programming tutorial series for learning and building Large Language Models.
+1. **Repository Name:** Lordog/dive-into-llms
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Not specified.
 
 ---
 
@@ -306,9 +372,11 @@ Hands-on programming tutorial series for learning and building Large Language Mo
 
 **⭐ Stars:** 61 | **🍴 Forks:** 8 | **📅 Updated:** 2026-04-29
 
-**Summary:** 
-
-Open data platform for monitoring and visualizing global grassland extent and condition.
+1. **Repository Name:** wri/global-pasture-watch
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Not specified.
 
 ---
 
@@ -318,9 +386,11 @@ Open data platform for monitoring and visualizing global grassland extent and co
 
 **⭐ Stars:** 3,070 | **🍴 Forks:** 430 | **📅 Updated:** 2026-05-10
 
-**Summary:** 
-
-Web-based tool for extracting quantitative data from images of charts and graphs using computer vision.
+1. **Repository Name:** automeris-io/WebPlotDigitizer
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** Not specified.
 
 ---
 
@@ -328,9 +398,13 @@ Web-based tool for extracting quantitative data from images of charts and graphs
 
 ### 📌 [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser)
 
-**⭐ Stars:** 32,883 | **🍴 Forks:** 2,034 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 32,886 | **🍴 Forks:** 2,034 | **📅 Updated:** 2026-05-13
 
-**Summary:** SUMMARIZE 解析失败或为空
+1. **Repository Name:** vercel-labs/agent-browser
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** SUMMARIZE 解析失败或为空
 
 ---
 
@@ -342,7 +416,7 @@ Web-based tool for extracting quantitative data from images of charts and graphs
 - **Generated on:** 2026-05-13
 - **AI Model:** GitHub Copilot
 
-- **API Calls:** Copilot=0, OpenRouter=0, Gemini=0
+- **API Calls:** Copilot=3, OpenRouter=0, Gemini=0
 ---
 
 *This document is generated by AI. For any errors, please refer to the original repository information.*

@@ -1,22 +1,22 @@
 <div align="center">
 
 
-<h1>我的 GitHub Star 项目AI总结</h1>
+<h1>My GitHub Star Project AI Summary</h1>
 
 
-<p><b>参考仓库：</b> <a href="https://github.com/WuXiangM/myGitStar">WuXiangM/myGitStar</a></p>
+<p><b>Reference Repository:</b> <a href="https://github.com/WuXiangM/myGitStar">WuXiangM/myGitStar</a></p>
 
 
-<p><b>当前账号：</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
+<p><b>Current account:</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
 
 
-<p><b>生成时间：</b> 2026-05-13 15:43:55</p>
+<p><b>Generated on:</b> 2026-05-13 16:18:13</p>
 
 
-<p><b>AI模型：</b> copilot</p>
+<p><b>AI Model:</b> copilot</p>
 
 
-<p><b>总仓库数：</b> 30 个</p>
+<p><b>Total repositories:</b> 30</p>
 
 
 </div>
@@ -28,11 +28,11 @@
 
 - [AI Agents](#ai-agents) (0)
 
-- [Creative Writing](#creative-writing) (0)
+- [AI Frameworks](#ai-frameworks) (0)
+
+- [Autonomous Research](#autonomous-research) (0)
 
 - [Productivity Tools](#productivity-tools) (0)
-
-- [Scientific Research](#scientific-research) (0)
 
 - [Other](#other) (30)
 
@@ -45,15 +45,23 @@
 ## AI Agents (Total 0)
 
 
-> Repositories focused on developing intelligent agents that can perform tasks autonomously or assist users in various applications.
+> Repositories focused on developing and enhancing AI agents for various tasks and interactions.
 
 
-<a id="creative-writing"></a>
+<a id="ai-frameworks"></a>
 
-## Creative Writing (Total 0)
+## AI Frameworks (Total 0)
 
 
-> Repositories that assist in the creative writing process, including novel writing, story generation, and content creation.
+> Frameworks and methodologies for building and managing AI systems and agents.
+
+
+<a id="autonomous-research"></a>
+
+## Autonomous Research (Total 0)
+
+
+> Projects that facilitate autonomous research processes, including idea generation and academic writing.
 
 
 <a id="productivity-tools"></a>
@@ -61,15 +69,7 @@
 ## Productivity Tools (Total 0)
 
 
-> Applications designed to improve user productivity through task management, automation, and enhanced workflows.
-
-
-<a id="scientific-research"></a>
-
-## Scientific Research (Total 0)
-
-
-> Tools and frameworks aimed at facilitating scientific discovery, research automation, and academic writing.
+> Tools designed to improve productivity through AI, including task management and content creation.
 
 
 <a id="other"></a>
@@ -77,7 +77,7 @@
 ## Other (Total 30)
 
 
-> Repositories that do not fit into the specified categories, encompassing a variety of unique projects.
+> Repositories that do not fit into the specified categories.
 
 
 ### 📌 [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio)
