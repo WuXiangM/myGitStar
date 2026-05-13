@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-13T02:36:37Z",
+  "generated_at": "2026-05-13T07:01:02Z",
   "model_choice": "openrouter",
   "min_categories": 5,
   "max_categories": 5,
@@ -15,11 +15,6 @@
         "id": "C2",
         "name": "Natural Language Processing",
         "description": "Projects related to processing and understanding human language using AI techniques."
-      },
-      {
-        "id": "C8",
-        "name": "Document Processing",
-        "description": "Projects that focus on translating, summarizing, or otherwise processing documents."
       }
     ]
   },
