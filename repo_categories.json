@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-12T06:46:35Z",
+  "generated_at": "2026-05-13T02:36:37Z",
   "model_choice": "openrouter",
   "min_categories": 5,
   "max_categories": 5,
@@ -20,11 +20,6 @@
         "id": "C8",
         "name": "Document Processing",
         "description": "Projects that focus on translating, summarizing, or otherwise processing documents."
-      },
-      {
-        "id": "C9",
-        "name": "3D Modeling",
-        "description": "Repositories related to creating and manipulating 3D models and environments."
       }
     ]
   },
