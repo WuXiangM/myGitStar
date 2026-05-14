@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-13T16:18:13Z",
+  "generated_at": "2026-05-14T06:53:22Z",
   "model_choice": "copilot",
   "min_categories": 5,
   "max_categories": 6,
@@ -9,27 +9,27 @@
       {
         "id": "C1",
         "name": "AI Agents",
-        "description": "Repositories focused on developing and enhancing AI agents for various tasks and interactions."
+        "description": "Repositories focused on developing intelligent agents capable of performing tasks autonomously or with minimal user intervention."
       },
       {
-        "id": "C2",
-        "name": "Autonomous Research",
-        "description": "Projects that facilitate autonomous research processes, including idea generation and academic writing."
+        "id": "C3",
+        "name": "Scientific Research Tools",
+        "description": "Tools and frameworks designed to facilitate scientific research, including data analysis, hypothesis generation, and automated writing."
       },
       {
         "id": "C4",
-        "name": "Productivity Tools",
-        "description": "Tools designed to improve productivity through AI, including task management and content creation."
+        "name": "Productivity Enhancements",
+        "description": "Repositories aimed at improving user productivity through AI-driven tools, task management systems, and collaborative platforms."
       },
       {
         "id": "C5",
-        "name": "AI Frameworks",
-        "description": "Frameworks and methodologies for building and managing AI systems and agents."
+        "name": "Creative Writing Assistants",
+        "description": "Projects that assist in the writing process, particularly for novels and long-form content, using AI to enhance creativity and structure."
       },
       {
         "id": "C6",
         "name": "Other",
-        "description": "Repositories that do not fit into the specified categories."
+        "description": "Repositories that do not fit into the above categories, covering a variety of miscellaneous topics."
       },
       {
         "id": "Other",

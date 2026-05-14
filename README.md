@@ -10,7 +10,7 @@
 <p><b>Current account:</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
 
 
-<p><b>Generated on:</b> 2026-05-13 16:18:13</p>
+<p><b>Generated on:</b> 2026-05-14 06:53:22</p>
 
 
 <p><b>AI Model:</b> copilot</p>
@@ -28,11 +28,11 @@
 
 - [AI Agents](#ai-agents) (0)
 
-- [AI Frameworks](#ai-frameworks) (0)
+- [Creative Writing Assistants](#creative-writing-assistants) (0)
 
-- [Autonomous Research](#autonomous-research) (0)
+- [Productivity Enhancements](#productivity-enhancements) (0)
 
-- [Productivity Tools](#productivity-tools) (0)
+- [Scientific Research Tools](#scientific-research-tools) (0)
 
 - [Other](#other) (30)
 
@@ -45,31 +45,31 @@
 ## AI Agents (Total 0)
 
 
-> Repositories focused on developing and enhancing AI agents for various tasks and interactions.
+> Repositories focused on developing intelligent agents capable of performing tasks autonomously or with minimal user intervention.
 
 
-<a id="ai-frameworks"></a>
+<a id="creative-writing-assistants"></a>
 
-## AI Frameworks (Total 0)
-
-
-> Frameworks and methodologies for building and managing AI systems and agents.
+## Creative Writing Assistants (Total 0)
 
 
-<a id="autonomous-research"></a>
-
-## Autonomous Research (Total 0)
+> Projects that assist in the writing process, particularly for novels and long-form content, using AI to enhance creativity and structure.
 
 
-> Projects that facilitate autonomous research processes, including idea generation and academic writing.
+<a id="productivity-enhancements"></a>
+
+## Productivity Enhancements (Total 0)
 
 
-<a id="productivity-tools"></a>
-
-## Productivity Tools (Total 0)
+> Repositories aimed at improving user productivity through AI-driven tools, task management systems, and collaborative platforms.
 
 
-> Tools designed to improve productivity through AI, including task management and content creation.
+<a id="scientific-research-tools"></a>
+
+## Scientific Research Tools (Total 0)
+
+
+> Tools and frameworks designed to facilitate scientific research, including data analysis, hypothesis generation, and automated writing.
 
 
 <a id="other"></a>
@@ -77,7 +77,7 @@
 ## Other (Total 30)
 
 
-> Repositories that do not fit into the specified categories.
+> Repositories that do not fit into the above categories, covering a variety of miscellaneous topics.
 
 
 ### 📌 [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio)

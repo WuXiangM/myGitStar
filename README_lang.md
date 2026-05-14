@@ -10,7 +10,7 @@
 <hr/>
 
 <p><b>Current account:</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
-<p><b>Generated on:</b> 2026-05-13</p>
+<p><b>Generated on:</b> 2026-05-14</p>
 <p><b>AI Model:</b> GitHub Copilot</p>
 <p><b>Total repositories:</b> 30</p>
 
@@ -32,7 +32,7 @@
 
 ### 📌 [huggingface/lerobot](https://github.com/huggingface/lerobot)
 
-**⭐ Stars:** 23,989 | **🍴 Forks:** 4,528 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 24,002 | **🍴 Forks:** 4,531 | **📅 Updated:** 2026-05-14
 
 1. **Repository Name:** huggingface/lerobot
 2. **Brief Introduction:** Not specified.
@@ -44,7 +44,7 @@
 
 ### 📌 [vllm-project/vllm](https://github.com/vllm-project/vllm)
 
-**⭐ Stars:** 79,893 | **🍴 Forks:** 16,746 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 79,953 | **🍴 Forks:** 16,781 | **📅 Updated:** 2026-05-14
 
 1. **Repository Name:** vllm-project/vllm
 2. **Brief Introduction:** Not specified.
@@ -56,7 +56,7 @@
 
 ### 📌 [OpenBMB/VoxCPM](https://github.com/OpenBMB/VoxCPM)
 
-**⭐ Stars:** 18,666 | **🍴 Forks:** 2,210 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 18,734 | **🍴 Forks:** 2,219 | **📅 Updated:** 2026-05-14
 
 1. **Repository Name:** OpenBMB/VoxCPM
 2. **Brief Introduction:** Not specified.
@@ -68,7 +68,7 @@
 
 ### 📌 [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)
 
-**⭐ Stars:** 148,270 | **🍴 Forks:** 23,319 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 149,176 | **🍴 Forks:** 23,525 | **📅 Updated:** 2026-05-14
 
 1. **Repository Name:** NousResearch/hermes-agent
 2. **Brief Introduction:** Not specified.
@@ -80,7 +80,7 @@
 
 ### 📌 [EverMind-AI/MSA](https://github.com/EverMind-AI/MSA)
 
-**⭐ Stars:** 3,412 | **🍴 Forks:** 216 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 3,416 | **🍴 Forks:** 217 | **📅 Updated:** 2026-05-14
 
 1. **Repository Name:** EverMind-AI/MSA
 2. **Brief Introduction:** Not specified.
@@ -104,7 +104,7 @@
 
 ### 📌 [datawhalechina/every-embodied](https://github.com/datawhalechina/every-embodied)
 
-**⭐ Stars:** 1,802 | **🍴 Forks:** 197 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 1,814 | **🍴 Forks:** 199 | **📅 Updated:** 2026-05-14
 
 1. **Repository Name:** datawhalechina/every-embodied
 2. **Brief Introduction:** Not specified.
@@ -116,7 +116,7 @@
 
 ### 📌 [jingyaogong/minimind-v](https://github.com/jingyaogong/minimind-v)
 
-**⭐ Stars:** 7,885 | **🍴 Forks:** 862 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 7,889 | **🍴 Forks:** 862 | **📅 Updated:** 2026-05-14
 
 1. **Repository Name:** jingyaogong/minimind-v
 2. **Brief Introduction:** Not specified.
@@ -128,7 +128,7 @@
 
 ### 📌 [open-gigaai/giga-brain-0](https://github.com/open-gigaai/giga-brain-0)
 
-**⭐ Stars:** 2,516 | **🍴 Forks:** 195 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 2,517 | **🍴 Forks:** 195 | **📅 Updated:** 2026-05-14
 
 1. **Repository Name:** open-gigaai/giga-brain-0
 2. **Brief Introduction:** Not specified.
@@ -140,8 +140,13 @@
 
 ### 📌 [jingyaogong/minimind](https://github.com/jingyaogong/minimind)
 
-**⭐ Stars:** 49,701 | **🍴 Forks:** 6,315 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 49,764 | **🍴 Forks:** 6,322 | **📅 Updated:** 2026-05-14
 
+1. **Repository Name:** jingyaogong/minimind
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** 
 1. **Repository Name:** jingyaogong/minimind
 2. **Brief Introduction:** Not specified.
 3. **Innovations:** Not specified.
@@ -167,7 +172,7 @@ A rapid training framework for building 64M parameter LLMs from scratch in just 
 
 ### 📌 [aiming-lab/AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw)
 
-**⭐ Stars:** 12,115 | **🍴 Forks:** 1,418 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 12,138 | **🍴 Forks:** 1,418 | **📅 Updated:** 2026-05-14
 
 1. **Repository Name:** aiming-lab/AutoResearchClaw
 2. **Brief Introduction:** Not specified.
@@ -179,7 +184,7 @@ A rapid training framework for building 64M parameter LLMs from scratch in just 
 
 ### 📌 [666ghj/MiroFish](https://github.com/666ghj/MiroFish)
 
-**⭐ Stars:** 60,484 | **🍴 Forks:** 9,441 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 60,566 | **🍴 Forks:** 9,458 | **📅 Updated:** 2026-05-14
 
 1. **Repository Name:** 666ghj/MiroFish
 2. **Brief Introduction:** Not specified.
@@ -205,7 +210,7 @@ A rapid training framework for building 64M parameter LLMs from scratch in just 
 
 ### 📌 [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)
 
-**⭐ Stars:** 17,838 | **🍴 Forks:** 1,662 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 18,005 | **🍴 Forks:** 1,673 | **📅 Updated:** 2026-05-14
 
 1. **Repository Name:** heygen-com/hyperframes
 2. **Brief Introduction:** Not specified.
@@ -217,8 +222,13 @@ A rapid training framework for building 64M parameter LLMs from scratch in just 
 
 ### 📌 [multica-ai/multica](https://github.com/multica-ai/multica)
 
-**⭐ Stars:** 28,006 | **🍴 Forks:** 3,362 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 28,198 | **🍴 Forks:** 3,398 | **📅 Updated:** 2026-05-14
 
+1. **Repository Name:** multica-ai/multica
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** 
 1. **Repository Name:** multica-ai/multica
 2. **Brief Introduction:** Not specified.
 3. **Innovations:** Not specified.
@@ -232,7 +242,7 @@ An open-source platform that transforms coding agents into collaborative teammat
 
 ### 📌 [ExplosiveCoderflome/AI-Novel-Writing-Assistant](https://github.com/ExplosiveCoderflome/AI-Novel-Writing-Assistant)
 
-**⭐ Stars:** 1,224 | **🍴 Forks:** 261 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 1,232 | **🍴 Forks:** 261 | **📅 Updated:** 2026-05-14
 
 1. **Repository Name:** ExplosiveCoderflome/AI-Novel-Writing-Assistant
 2. **Brief Introduction:** Not specified.
@@ -244,7 +254,7 @@ An open-source platform that transforms coding agents into collaborative teammat
 
 ### 📌 [hAcKlyc/MyAgents](https://github.com/hAcKlyc/MyAgents)
 
-**⭐ Stars:** 828 | **🍴 Forks:** 70 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 832 | **🍴 Forks:** 70 | **📅 Updated:** 2026-05-14
 
 1. **Repository Name:** hAcKlyc/MyAgents
 2. **Brief Introduction:** Not specified.
@@ -256,7 +266,7 @@ An open-source platform that transforms coding agents into collaborative teammat
 
 ### 📌 [Narcooo/inkos](https://github.com/Narcooo/inkos)
 
-**⭐ Stars:** 6,090 | **🍴 Forks:** 1,140 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 6,116 | **🍴 Forks:** 1,145 | **📅 Updated:** 2026-05-14
 
 1. **Repository Name:** Narcooo/inkos
 2. **Brief Introduction:** Not specified.
@@ -268,7 +278,7 @@ An open-source platform that transforms coding agents into collaborative teammat
 
 ### 📌 [anomalyco/opencode](https://github.com/anomalyco/opencode)
 
-**⭐ Stars:** 159,659 | **🍴 Forks:** 18,691 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 159,930 | **🍴 Forks:** 18,736 | **📅 Updated:** 2026-05-14
 
 1. **Repository Name:** anomalyco/opencode
 2. **Brief Introduction:** Not specified.
@@ -282,7 +292,7 @@ An open-source platform that transforms coding agents into collaborative teammat
 
 ### 📌 [elder-plinius/CL4R1T4S](https://github.com/elder-plinius/CL4R1T4S)
 
-**⭐ Stars:** 26,088 | **🍴 Forks:** 4,713 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 26,101 | **🍴 Forks:** 4,715 | **📅 Updated:** 2026-05-14
 
 1. **Repository Name:** elder-plinius/CL4R1T4S
 2. **Brief Introduction:** Not specified.
@@ -294,7 +304,7 @@ An open-source platform that transforms coding agents into collaborative teammat
 
 ### 📌 [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills)
 
-**⭐ Stars:** 128,124 | **🍴 Forks:** 13,004 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 128,810 | **🍴 Forks:** 13,069 | **📅 Updated:** 2026-05-14
 
 1. **Repository Name:** multica-ai/andrej-karpathy-skills
 2. **Brief Introduction:** Not specified.
@@ -306,7 +316,7 @@ An open-source platform that transforms coding agents into collaborative teammat
 
 ### 📌 [AiHubCN/Awesome-Chinese-LLM](https://github.com/AiHubCN/Awesome-Chinese-LLM)
 
-**⭐ Stars:** 22,566 | **🍴 Forks:** 2,129 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 22,566 | **🍴 Forks:** 2,129 | **📅 Updated:** 2026-05-14
 
 1. **Repository Name:** AiHubCN/Awesome-Chinese-LLM
 2. **Brief Introduction:** Not specified.
@@ -318,7 +328,7 @@ An open-source platform that transforms coding agents into collaborative teammat
 
 ### 📌 [VoltAgent/awesome-openclaw-skills](https://github.com/VoltAgent/awesome-openclaw-skills)
 
-**⭐ Stars:** 48,573 | **🍴 Forks:** 4,754 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 48,624 | **🍴 Forks:** 4,756 | **📅 Updated:** 2026-05-14
 
 1. **Repository Name:** VoltAgent/awesome-openclaw-skills
 2. **Brief Introduction:** Not specified.
@@ -332,7 +342,7 @@ An open-source platform that transforms coding agents into collaborative teammat
 
 ### 📌 [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents)
 
-**⭐ Stars:** 96,727 | **🍴 Forks:** 16,050 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 96,951 | **🍴 Forks:** 16,077 | **📅 Updated:** 2026-05-14
 
 1. **Repository Name:** msitarzewski/agency-agents
 2. **Brief Introduction:** Not specified.
@@ -344,7 +354,7 @@ An open-source platform that transforms coding agents into collaborative teammat
 
 ### 📌 [justlovemaki/openclaw-china-docker](https://github.com/justlovemaki/openclaw-china-docker)
 
-**⭐ Stars:** 3,769 | **🍴 Forks:** 457 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 3,768 | **🍴 Forks:** 457 | **📅 Updated:** 2026-05-13
 
 1. **Repository Name:** justlovemaki/openclaw-china-docker
 2. **Brief Introduction:** Not specified.
@@ -358,7 +368,7 @@ An open-source platform that transforms coding agents into collaborative teammat
 
 ### 📌 [Lordog/dive-into-llms](https://github.com/Lordog/dive-into-llms)
 
-**⭐ Stars:** 37,786 | **🍴 Forks:** 4,637 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 37,866 | **🍴 Forks:** 4,646 | **📅 Updated:** 2026-05-14
 
 1. **Repository Name:** Lordog/dive-into-llms
 2. **Brief Introduction:** Not specified.
@@ -398,7 +408,7 @@ An open-source platform that transforms coding agents into collaborative teammat
 
 ### 📌 [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser)
 
-**⭐ Stars:** 32,886 | **🍴 Forks:** 2,034 | **📅 Updated:** 2026-05-13
+**⭐ Stars:** 32,944 | **🍴 Forks:** 2,037 | **📅 Updated:** 2026-05-14
 
 1. **Repository Name:** vercel-labs/agent-browser
 2. **Brief Introduction:** Not specified.
@@ -413,7 +423,7 @@ An open-source platform that transforms coding agents into collaborative teammat
 
 - **Total repositories:** 30
 - **Languages:** 7
-- **Generated on:** 2026-05-13
+- **Generated on:** 2026-05-14
 - **AI Model:** GitHub Copilot
 
 - **API Calls:** Copilot=3, OpenRouter=0, Gemini=0
