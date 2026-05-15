@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-14T06:53:22Z",
+  "generated_at": "2026-05-15T07:32:30Z",
   "model_choice": "copilot",
   "min_categories": 5,
   "max_categories": 6,
@@ -8,28 +8,28 @@
     "categories": [
       {
         "id": "C1",
-        "name": "AI Agents",
-        "description": "Repositories focused on developing intelligent agents capable of performing tasks autonomously or with minimal user intervention."
+        "name": "AI Assistants",
+        "description": "Repositories focused on developing AI systems that assist users in various tasks, enhancing productivity and interaction."
+      },
+      {
+        "id": "C2",
+        "name": "Autonomous Research",
+        "description": "Projects that enable autonomous processes in research, including idea generation, paper writing, and scientific discovery."
       },
       {
         "id": "C3",
-        "name": "Scientific Research Tools",
-        "description": "Tools and frameworks designed to facilitate scientific research, including data analysis, hypothesis generation, and automated writing."
+        "name": "Agent Frameworks",
+        "description": "Frameworks and methodologies for building and managing AI agents, including skills development and collaboration tools."
       },
       {
         "id": "C4",
-        "name": "Productivity Enhancements",
-        "description": "Repositories aimed at improving user productivity through AI-driven tools, task management systems, and collaborative platforms."
-      },
-      {
-        "id": "C5",
-        "name": "Creative Writing Assistants",
-        "description": "Projects that assist in the writing process, particularly for novels and long-form content, using AI to enhance creativity and structure."
+        "name": "Content Creation",
+        "description": "Tools and systems designed for generating and managing content, including writing assistants and multimedia creation."
       },
       {
         "id": "C6",
         "name": "Other",
-        "description": "Repositories that do not fit into the above categories, covering a variety of miscellaneous topics."
+        "description": "Repositories that do not fit into the defined categories, including general-purpose tools and experimental projects."
       },
       {
         "id": "Other",
