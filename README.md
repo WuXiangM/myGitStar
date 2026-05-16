@@ -10,7 +10,7 @@
 <p><b>Current account:</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
 
 
-<p><b>Generated on:</b> 2026-05-15 07:32:30</p>
+<p><b>Generated on:</b> 2026-05-16 06:30:39</p>
 
 
 <p><b>AI Model:</b> copilot</p>
@@ -26,13 +26,13 @@
 
 ## Table of Contents
 
-- [AI Assistants](#ai-assistants) (0)
-
-- [Agent Frameworks](#agent-frameworks) (0)
+- [AI Agents](#ai-agents) (0)
 
 - [Autonomous Research](#autonomous-research) (0)
 
 - [Content Creation](#content-creation) (0)
+
+- [Productivity Tools](#productivity-tools) (0)
 
 - [Other](#other) (30)
 
@@ -40,20 +40,12 @@
 
 ---
 
-<a id="ai-assistants"></a>
+<a id="ai-agents"></a>
 
-## AI Assistants (Total 0)
-
-
-> Repositories focused on developing AI systems that assist users in various tasks, enhancing productivity and interaction.
+## AI Agents (Total 0)
 
 
-<a id="agent-frameworks"></a>
-
-## Agent Frameworks (Total 0)
-
-
-> Frameworks and methodologies for building and managing AI agents, including skills development and collaboration tools.
+> Repositories focused on developing and enhancing AI agents for various tasks, including personal assistants and collaborative coding tools.
 
 
 <a id="autonomous-research"></a>
@@ -61,7 +53,7 @@
 ## Autonomous Research (Total 0)
 
 
-> Projects that enable autonomous processes in research, including idea generation, paper writing, and scientific discovery.
+> Projects that facilitate autonomous research processes, including idea generation, academic writing, and scientific discovery.
 
 
 <a id="content-creation"></a>
@@ -69,7 +61,15 @@
 ## Content Creation (Total 0)
 
 
-> Tools and systems designed for generating and managing content, including writing assistants and multimedia creation.
+> Tools and frameworks designed for creating and managing content, including writing assistants and multimedia generation.
+
+
+<a id="productivity-tools"></a>
+
+## Productivity Tools (Total 0)
+
+
+> Applications and platforms aimed at enhancing productivity through AI, including task management and workflow optimization.
 
 
 <a id="other"></a>
@@ -77,7 +77,7 @@
 ## Other (Total 30)
 
 
-> Repositories that do not fit into the defined categories, including general-purpose tools and experimental projects.
+> Repositories that do not fit into the specified categories.
 
 
 ### 📌 [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio)
