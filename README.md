@@ -10,7 +10,7 @@
 <p><b>Current account:</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
 
 
-<p><b>Generated on:</b> 2026-05-16 06:30:39</p>
+<p><b>Generated on:</b> 2026-05-17 06:52:05</p>
 
 
 <p><b>AI Model:</b> copilot</p>
@@ -26,13 +26,15 @@
 
 ## Table of Contents
 
-- [AI Agents](#ai-agents) (0)
+- [AI Assistants](#ai-assistants) (0)
+
+- [Agent Frameworks](#agent-frameworks) (0)
+
+- [Automation Tools](#automation-tools) (0)
 
 - [Autonomous Research](#autonomous-research) (0)
 
-- [Content Creation](#content-creation) (0)
-
-- [Productivity Tools](#productivity-tools) (0)
+- [Content Generation](#content-generation) (0)
 
 - [Other](#other) (30)
 
@@ -40,12 +42,28 @@
 
 ---
 
-<a id="ai-agents"></a>
+<a id="ai-assistants"></a>
 
-## AI Agents (Total 0)
+## AI Assistants (Total 0)
 
 
-> Repositories focused on developing and enhancing AI agents for various tasks, including personal assistants and collaborative coding tools.
+> Repositories focused on developing AI systems that assist users in various tasks, enhancing productivity and interaction.
+
+
+<a id="agent-frameworks"></a>
+
+## Agent Frameworks (Total 0)
+
+
+> Frameworks and methodologies for building and managing intelligent agents, including skills and collaborative features.
+
+
+<a id="automation-tools"></a>
+
+## Automation Tools (Total 0)
+
+
+> Repositories that provide tools for automating tasks, including browser automation and monitoring systems.
 
 
 <a id="autonomous-research"></a>
@@ -53,23 +71,15 @@
 ## Autonomous Research (Total 0)
 
 
-> Projects that facilitate autonomous research processes, including idea generation, academic writing, and scientific discovery.
+> Projects aimed at automating research processes, including idea generation, paper writing, and scientific discovery.
 
 
-<a id="content-creation"></a>
+<a id="content-generation"></a>
 
-## Content Creation (Total 0)
-
-
-> Tools and frameworks designed for creating and managing content, including writing assistants and multimedia generation.
+## Content Generation (Total 0)
 
 
-<a id="productivity-tools"></a>
-
-## Productivity Tools (Total 0)
-
-
-> Applications and platforms aimed at enhancing productivity through AI, including task management and workflow optimization.
+> Tools and systems designed for generating content, including writing assistants and multimedia content creation.
 
 
 <a id="other"></a>

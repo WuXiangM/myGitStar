@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-16T06:30:39Z",
+  "generated_at": "2026-05-17T06:52:05Z",
   "model_choice": "copilot",
   "min_categories": 5,
   "max_categories": 6,
@@ -8,23 +8,28 @@
     "categories": [
       {
         "id": "C1",
-        "name": "AI Agents",
-        "description": "Repositories focused on developing and enhancing AI agents for various tasks, including personal assistants and collaborative coding tools."
+        "name": "AI Assistants",
+        "description": "Repositories focused on developing AI systems that assist users in various tasks, enhancing productivity and interaction."
       },
       {
         "id": "C2",
         "name": "Autonomous Research",
-        "description": "Projects that facilitate autonomous research processes, including idea generation, academic writing, and scientific discovery."
+        "description": "Projects aimed at automating research processes, including idea generation, paper writing, and scientific discovery."
       },
       {
         "id": "C3",
-        "name": "Content Creation",
-        "description": "Tools and frameworks designed for creating and managing content, including writing assistants and multimedia generation."
+        "name": "Agent Frameworks",
+        "description": "Frameworks and methodologies for building and managing intelligent agents, including skills and collaborative features."
       },
       {
         "id": "C4",
-        "name": "Productivity Tools",
-        "description": "Applications and platforms aimed at enhancing productivity through AI, including task management and workflow optimization."
+        "name": "Content Generation",
+        "description": "Tools and systems designed for generating content, including writing assistants and multimedia content creation."
+      },
+      {
+        "id": "C5",
+        "name": "Automation Tools",
+        "description": "Repositories that provide tools for automating tasks, including browser automation and monitoring systems."
       },
       {
         "id": "C6",
