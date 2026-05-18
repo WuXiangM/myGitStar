@@ -578,6 +578,9 @@ def parse_repos_from_summaries(
                 "id": idx + 1,
                 "full_name": full_name,
                 "description": description,
+                "brief_intro": brief_intro,
+                "innovations": innovations,
+                "summary": summary,
                 "html_url": data.get("Repository URL", f"https://github.com/{full_name}"),
                 "language": data.get("language", ""),
                 "stargazers_count": data.get("Stars", data.get("stargazers_count", 0)),
@@ -694,6 +697,8 @@ def _build_repo_content_text(repo: Dict[str, Any]) -> str:
     parts: List[str] = []
     if title:
         parts.append(title)
+    if full_name:
+        parts.append(f"GitHub repository: {full_name}")
 
     # Prefer structured fields when available.
     for k in ("brief_intro", "innovations", "summary"):
@@ -717,7 +722,11 @@ def _build_repo_content_text(repo: Dict[str, Any]) -> str:
         seen.add(p)
         uniq.append(p)
 
-    return " | ".join(uniq).strip()
+    result = " | ".join(uniq).strip()
+    if not result or result.lower() == title.lower():
+        result = f"GitHub repository {full_name}"
+
+    return result
 
 
 def _extract_description_from_block(block: str) -> str:
@@ -1026,16 +1035,24 @@ def _normalize_taxonomy(raw: Any, min_categories: int, max_categories: int) -> T
         raise ValueError("taxonomy JSON missing 'categories' list")
 
     categories = []
+    seen_ids: set[str] = set()
+    seen_names: set[str] = set()
     for c in categories_raw:
         if not isinstance(c, dict):
             continue
-        cat = {
-            "id": str(c.get("id", "")).strip(),
-            "name": str(c.get("name", "")).strip(),
+        cat_id = str(c.get("id", "")).strip()
+        cat_name = str(c.get("name", "")).strip()
+        if not cat_id or not cat_name:
+            continue
+        if cat_id in seen_ids or cat_name.lower() in {n.lower() for n in seen_names}:
+            continue
+        seen_ids.add(cat_id)
+        seen_names.add(cat_name)
+        categories.append({
+            "id": cat_id,
+            "name": cat_name,
             "description": str(c.get("description", "")).strip(),
-        }
-        if cat["id"] and cat["name"]:
-            categories.append(cat)
+        })
 
     filtered = [c for c in categories if not _looks_like_language_category(c)]
 
@@ -1051,7 +1068,15 @@ def _normalize_taxonomy(raw: Any, min_categories: int, max_categories: int) -> T
             for i in range(len(filtered), min_categories)
         ]
 
-    filtered.append({"id": "Other", "name": "Other", "description": "Other repositories"})
+    has_other_by_id = any(c["id"].lower() == "other" for c in filtered)
+    has_other_by_name = any(c["name"].lower() == "other" for c in filtered)
+    if not has_other_by_id and not has_other_by_name:
+        filtered.append({"id": "Other", "name": "Other", "description": "Repositories that do not fit into the specified categories."})
+    elif has_other_by_name and not has_other_by_id:
+        for c in filtered:
+            if c["name"].lower() == "other":
+                c["id"] = "Other"
+                break
 
     return Taxonomy(categories=filtered)
 
