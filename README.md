@@ -10,7 +10,7 @@
 <p><b>Current account:</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
 
 
-<p><b>Generated on:</b> 2026-05-17 06:52:05</p>
+<p><b>Generated on:</b> 2026-05-18 08:14:32</p>
 
 
 <p><b>AI Model:</b> copilot</p>
@@ -30,11 +30,9 @@
 
 - [Agent Frameworks](#agent-frameworks) (0)
 
-- [Automation Tools](#automation-tools) (0)
-
 - [Autonomous Research](#autonomous-research) (0)
 
-- [Content Generation](#content-generation) (0)
+- [Content Creation](#content-creation) (0)
 
 - [Other](#other) (30)
 
@@ -47,7 +45,7 @@
 ## AI Assistants (Total 0)
 
 
-> Repositories focused on developing AI systems that assist users in various tasks, enhancing productivity and interaction.
+> Repositories focused on developing AI-driven personal assistants and productivity tools that enhance user interaction and task management.
 
 
 <a id="agent-frameworks"></a>
@@ -55,15 +53,7 @@
 ## Agent Frameworks (Total 0)
 
 
-> Frameworks and methodologies for building and managing intelligent agents, including skills and collaborative features.
-
-
-<a id="automation-tools"></a>
-
-## Automation Tools (Total 0)
-
-
-> Repositories that provide tools for automating tasks, including browser automation and monitoring systems.
+> Frameworks and methodologies for building and managing AI agents, including skills development and collaborative functionalities.
 
 
 <a id="autonomous-research"></a>
@@ -71,12 +61,12 @@
 ## Autonomous Research (Total 0)
 
 
-> Projects aimed at automating research processes, including idea generation, paper writing, and scientific discovery.
+> Projects that enable autonomous research processes, including idea generation, academic writing, and scientific discovery.
 
 
-<a id="content-generation"></a>
+<a id="content-creation"></a>
 
-## Content Generation (Total 0)
+## Content Creation (Total 0)
 
 
 > Tools and systems designed for generating content, including writing assistants and multimedia content creation.
