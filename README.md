@@ -10,7 +10,7 @@
 <p><b>Current account:</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
 
 
-<p><b>Generated on:</b> 2026-05-18 08:14:32</p>
+<p><b>Generated on:</b> 2026-05-19 07:56:15</p>
 
 
 <p><b>AI Model:</b> copilot</p>
@@ -26,34 +26,24 @@
 
 ## Table of Contents
 
-- [AI Assistants](#ai-assistants) (0)
-
-- [Agent Frameworks](#agent-frameworks) (0)
+- [AI Agents](#ai-agents) (0)
 
 - [Autonomous Research](#autonomous-research) (0)
 
-- [Content Creation](#content-creation) (0)
+- [Creative Writing Tools](#creative-writing-tools) (0)
+
+- [Productivity Platforms](#productivity-platforms) (0)
 
 - [Other](#other) (30)
 
-- [Other](#other) (0)
-
 ---
 
-<a id="ai-assistants"></a>
+<a id="ai-agents"></a>
 
-## AI Assistants (Total 0)
-
-
-> Repositories focused on developing AI-driven personal assistants and productivity tools that enhance user interaction and task management.
+## AI Agents (Total 0)
 
 
-<a id="agent-frameworks"></a>
-
-## Agent Frameworks (Total 0)
-
-
-> Frameworks and methodologies for building and managing AI agents, including skills development and collaborative functionalities.
+> Repositories focused on developing and enhancing AI agents for various tasks, including automation, interaction, and productivity.
 
 
 <a id="autonomous-research"></a>
@@ -61,15 +51,23 @@
 ## Autonomous Research (Total 0)
 
 
-> Projects that enable autonomous research processes, including idea generation, academic writing, and scientific discovery.
+> Repositories that facilitate autonomous research processes, including idea generation, academic writing, and scientific discovery.
 
 
-<a id="content-creation"></a>
+<a id="creative-writing-tools"></a>
 
-## Content Creation (Total 0)
+## Creative Writing Tools (Total 0)
 
 
-> Tools and systems designed for generating content, including writing assistants and multimedia content creation.
+> Tools and systems designed to assist in creative writing, including novel writing and content generation.
+
+
+<a id="productivity-platforms"></a>
+
+## Productivity Platforms (Total 0)
+
+
+> Platforms that enhance user productivity through AI integration, task management, and collaboration tools.
 
 
 <a id="other"></a>
@@ -648,11 +646,3 @@
 5. **Summary:** This repository provides a powerful tool for automating browser interactions, enhancing the capabilities of AI agents.
 
 ---
-
-
-<a id="other"></a>
-
-## Other (Total 0)
-
-
-> Other repositories
