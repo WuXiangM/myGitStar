@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-19T07:56:15Z",
+  "generated_at": "2026-05-20T07:55:21Z",
   "model_choice": "copilot",
   "min_categories": 5,
   "max_categories": 6,
@@ -8,28 +8,28 @@
     "categories": [
       {
         "id": "C1",
-        "name": "AI Agents",
-        "description": "Repositories focused on developing and enhancing AI agents for various tasks, including automation, interaction, and productivity."
+        "name": "AI Assistants",
+        "description": "Repositories focused on developing AI-driven personal assistants and productivity tools that enhance user interaction and task management."
+      },
+      {
+        "id": "C2",
+        "name": "Autonomous Agents",
+        "description": "Projects that create self-evolving agents capable of performing tasks autonomously, including research, writing, and monitoring."
       },
       {
         "id": "C3",
-        "name": "Autonomous Research",
-        "description": "Repositories that facilitate autonomous research processes, including idea generation, academic writing, and scientific discovery."
+        "name": "Creative Writing Tools",
+        "description": "Repositories that provide tools and frameworks for assisting in creative writing, including novel writing and content generation."
       },
       {
         "id": "C4",
-        "name": "Creative Writing Tools",
-        "description": "Tools and systems designed to assist in creative writing, including novel writing and content generation."
-      },
-      {
-        "id": "C5",
-        "name": "Productivity Platforms",
-        "description": "Platforms that enhance user productivity through AI integration, task management, and collaboration tools."
+        "name": "AI Frameworks",
+        "description": "Frameworks and methodologies designed for building and managing AI agents, focusing on skills, collaboration, and development processes."
       },
       {
         "id": "Other",
         "name": "Other",
-        "description": "Repositories that do not fit into the specified categories."
+        "description": "Repositories that do not fit into the defined categories, including general-purpose tools and miscellaneous projects."
       }
     ]
   },

@@ -10,7 +10,7 @@
 <p><b>Current account:</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
 
 
-<p><b>Generated on:</b> 2026-05-19 07:56:15</p>
+<p><b>Generated on:</b> 2026-05-20 07:55:21</p>
 
 
 <p><b>AI Model:</b> copilot</p>
@@ -26,32 +26,40 @@
 
 ## Table of Contents
 
-- [AI Agents](#ai-agents) (0)
+- [AI Assistants](#ai-assistants) (0)
 
-- [Autonomous Research](#autonomous-research) (0)
+- [AI Frameworks](#ai-frameworks) (0)
+
+- [Autonomous Agents](#autonomous-agents) (0)
 
 - [Creative Writing Tools](#creative-writing-tools) (0)
-
-- [Productivity Platforms](#productivity-platforms) (0)
 
 - [Other](#other) (30)
 
 ---
 
-<a id="ai-agents"></a>
+<a id="ai-assistants"></a>
 
-## AI Agents (Total 0)
-
-
-> Repositories focused on developing and enhancing AI agents for various tasks, including automation, interaction, and productivity.
+## AI Assistants (Total 0)
 
 
-<a id="autonomous-research"></a>
-
-## Autonomous Research (Total 0)
+> Repositories focused on developing AI-driven personal assistants and productivity tools that enhance user interaction and task management.
 
 
-> Repositories that facilitate autonomous research processes, including idea generation, academic writing, and scientific discovery.
+<a id="ai-frameworks"></a>
+
+## AI Frameworks (Total 0)
+
+
+> Frameworks and methodologies designed for building and managing AI agents, focusing on skills, collaboration, and development processes.
+
+
+<a id="autonomous-agents"></a>
+
+## Autonomous Agents (Total 0)
+
+
+> Projects that create self-evolving agents capable of performing tasks autonomously, including research, writing, and monitoring.
 
 
 <a id="creative-writing-tools"></a>
@@ -59,15 +67,7 @@
 ## Creative Writing Tools (Total 0)
 
 
-> Tools and systems designed to assist in creative writing, including novel writing and content generation.
-
-
-<a id="productivity-platforms"></a>
-
-## Productivity Platforms (Total 0)
-
-
-> Platforms that enhance user productivity through AI integration, task management, and collaboration tools.
+> Repositories that provide tools and frameworks for assisting in creative writing, including novel writing and content generation.
 
 
 <a id="other"></a>
@@ -75,7 +75,7 @@
 ## Other (Total 30)
 
 
-> Repositories that do not fit into the specified categories.
+> Repositories that do not fit into the defined categories, including general-purpose tools and miscellaneous projects.
 
 
 ### 📌 [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio)
