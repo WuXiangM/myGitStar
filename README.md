@@ -10,7 +10,7 @@
 <p><b>Current account:</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
 
 
-<p><b>Generated on:</b> 2026-05-20 07:55:21</p>
+<p><b>Generated on:</b> 2026-05-21 08:02:35</p>
 
 
 <p><b>AI Model:</b> copilot</p>
@@ -26,48 +26,48 @@
 
 ## Table of Contents
 
-- [AI Assistants](#ai-assistants) (0)
+- [AI Agents](#ai-agents) (0)
 
-- [AI Frameworks](#ai-frameworks) (0)
+- [Autonomous Research](#autonomous-research) (0)
 
-- [Autonomous Agents](#autonomous-agents) (0)
+- [Content Creation](#content-creation) (0)
 
-- [Creative Writing Tools](#creative-writing-tools) (0)
+- [Monitoring and Analysis](#monitoring-and-analysis) (0)
 
 - [Other](#other) (30)
 
 ---
 
-<a id="ai-assistants"></a>
+<a id="ai-agents"></a>
 
-## AI Assistants (Total 0)
-
-
-> Repositories focused on developing AI-driven personal assistants and productivity tools that enhance user interaction and task management.
+## AI Agents (Total 0)
 
 
-<a id="ai-frameworks"></a>
-
-## AI Frameworks (Total 0)
+> Repositories focused on developing and enhancing AI agents for various applications, including task management, interaction, and productivity.
 
 
-> Frameworks and methodologies designed for building and managing AI agents, focusing on skills, collaboration, and development processes.
+<a id="autonomous-research"></a>
+
+## Autonomous Research (Total 0)
 
 
-<a id="autonomous-agents"></a>
-
-## Autonomous Agents (Total 0)
+> Repositories that facilitate autonomous research processes, including idea generation, academic writing, and scientific discovery.
 
 
-> Projects that create self-evolving agents capable of performing tasks autonomously, including research, writing, and monitoring.
+<a id="content-creation"></a>
+
+## Content Creation (Total 0)
 
 
-<a id="creative-writing-tools"></a>
-
-## Creative Writing Tools (Total 0)
+> Projects aimed at generating or transforming content, such as video creation from HTML or novel writing assistance.
 
 
-> Repositories that provide tools and frameworks for assisting in creative writing, including novel writing and content generation.
+<a id="monitoring-and-analysis"></a>
+
+## Monitoring and Analysis (Total 0)
+
+
+> Tools designed for real-time monitoring and intelligent analysis of data or systems, enhancing decision-making and efficiency.
 
 
 <a id="other"></a>
@@ -75,7 +75,7 @@
 ## Other (Total 30)
 
 
-> Repositories that do not fit into the defined categories, including general-purpose tools and miscellaneous projects.
+> Repositories that do not fit into the specified categories, including miscellaneous projects and tools.
 
 
 ### 📌 [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio)
