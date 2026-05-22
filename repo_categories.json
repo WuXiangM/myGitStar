@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-21T08:02:35Z",
+  "generated_at": "2026-05-22T07:54:34Z",
   "model_choice": "copilot",
   "min_categories": 5,
   "max_categories": 6,
@@ -9,27 +9,27 @@
       {
         "id": "C1",
         "name": "AI Agents",
-        "description": "Repositories focused on developing and enhancing AI agents for various applications, including task management, interaction, and productivity."
+        "description": "Repositories focused on developing and enhancing AI agents for various tasks, including automation, interaction, and productivity."
       },
       {
         "id": "C3",
         "name": "Autonomous Research",
-        "description": "Repositories that facilitate autonomous research processes, including idea generation, academic writing, and scientific discovery."
+        "description": "Repositories that facilitate autonomous research processes, including idea generation, paper writing, and scientific discovery."
       },
       {
         "id": "C4",
-        "name": "Monitoring and Analysis",
-        "description": "Tools designed for real-time monitoring and intelligent analysis of data or systems, enhancing decision-making and efficiency."
+        "name": "Content Creation",
+        "description": "Tools and frameworks designed for content generation, including writing assistants and multimedia content creation."
       },
       {
         "id": "C5",
-        "name": "Content Creation",
-        "description": "Projects aimed at generating or transforming content, such as video creation from HTML or novel writing assistance."
+        "name": "Productivity Tools",
+        "description": "Applications and frameworks aimed at enhancing user productivity through intelligent task management and automation."
       },
       {
         "id": "Other",
         "name": "Other",
-        "description": "Repositories that do not fit into the specified categories, including miscellaneous projects and tools."
+        "description": "Repositories that do not fit into the specified categories."
       }
     ]
   },
