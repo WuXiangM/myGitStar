@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-22T07:54:34Z",
+  "generated_at": "2026-05-23T06:42:47Z",
   "model_choice": "copilot",
   "min_categories": 5,
   "max_categories": 6,
@@ -9,27 +9,27 @@
       {
         "id": "C1",
         "name": "AI Agents",
-        "description": "Repositories focused on developing and enhancing AI agents for various tasks, including automation, interaction, and productivity."
+        "description": "Repositories focused on developing and enhancing AI agents for various applications, including task management, automation, and user interaction."
       },
       {
         "id": "C3",
-        "name": "Autonomous Research",
-        "description": "Repositories that facilitate autonomous research processes, including idea generation, paper writing, and scientific discovery."
+        "name": "Research Automation",
+        "description": "Tools and frameworks designed to automate research processes, including writing, idea generation, and scientific discovery."
       },
       {
         "id": "C4",
-        "name": "Content Creation",
-        "description": "Tools and frameworks designed for content generation, including writing assistants and multimedia content creation."
+        "name": "Creative Writing",
+        "description": "Repositories that assist in creative writing tasks, providing tools for novel writing, story development, and content generation."
       },
       {
         "id": "C5",
-        "name": "Productivity Tools",
-        "description": "Applications and frameworks aimed at enhancing user productivity through intelligent task management and automation."
+        "name": "Web Automation",
+        "description": "Tools and frameworks for automating web interactions, including browser automation and web scraping for various applications."
       },
       {
         "id": "Other",
         "name": "Other",
-        "description": "Repositories that do not fit into the specified categories."
+        "description": "Repositories that do not fit into the specified categories, covering a wide range of miscellaneous projects."
       }
     ]
   },
