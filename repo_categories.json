@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-23T06:42:47Z",
+  "generated_at": "2026-05-24T07:29:30Z",
   "model_choice": "copilot",
   "min_categories": 5,
   "max_categories": 6,
@@ -8,28 +8,33 @@
     "categories": [
       {
         "id": "C1",
-        "name": "AI Agents",
-        "description": "Repositories focused on developing and enhancing AI agents for various applications, including task management, automation, and user interaction."
+        "name": "AI Assistants",
+        "description": "Repositories focused on developing AI systems that assist users in various tasks, enhancing productivity and interaction."
+      },
+      {
+        "id": "C2",
+        "name": "Autonomous Agents",
+        "description": "Projects that create agents capable of performing tasks autonomously, often involving self-learning and adaptation."
       },
       {
         "id": "C3",
-        "name": "Research Automation",
-        "description": "Tools and frameworks designed to automate research processes, including writing, idea generation, and scientific discovery."
+        "name": "Creative Writing Tools",
+        "description": "Tools and frameworks designed to assist with creative writing, including novel writing and content generation."
       },
       {
         "id": "C4",
-        "name": "Creative Writing",
-        "description": "Repositories that assist in creative writing tasks, providing tools for novel writing, story development, and content generation."
+        "name": "Research Automation",
+        "description": "Repositories that automate research processes, from idea generation to publication, enhancing academic productivity."
       },
       {
         "id": "C5",
         "name": "Web Automation",
-        "description": "Tools and frameworks for automating web interactions, including browser automation and web scraping for various applications."
+        "description": "Projects focused on automating web interactions, enabling AI agents to perform tasks within web applications."
       },
       {
         "id": "Other",
         "name": "Other",
-        "description": "Repositories that do not fit into the specified categories, covering a wide range of miscellaneous projects."
+        "description": "Repositories that do not fit into the defined categories, covering a variety of miscellaneous topics."
       }
     ]
   },

@@ -10,7 +10,7 @@
 <p><b>Current account:</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
 
 
-<p><b>Generated on:</b> 2026-05-23 06:42:47</p>
+<p><b>Generated on:</b> 2026-05-24 07:29:30</p>
 
 
 <p><b>AI Model:</b> copilot</p>
@@ -26,9 +26,11 @@
 
 ## Table of Contents
 
-- [AI Agents](#ai-agents) (0)
+- [AI Assistants](#ai-assistants) (0)
 
-- [Creative Writing](#creative-writing) (0)
+- [Autonomous Agents](#autonomous-agents) (0)
+
+- [Creative Writing Tools](#creative-writing-tools) (0)
 
 - [Research Automation](#research-automation) (0)
 
@@ -38,20 +40,28 @@
 
 ---
 
-<a id="ai-agents"></a>
+<a id="ai-assistants"></a>
 
-## AI Agents (Total 0)
-
-
-> Repositories focused on developing and enhancing AI agents for various applications, including task management, automation, and user interaction.
+## AI Assistants (Total 0)
 
 
-<a id="creative-writing"></a>
-
-## Creative Writing (Total 0)
+> Repositories focused on developing AI systems that assist users in various tasks, enhancing productivity and interaction.
 
 
-> Repositories that assist in creative writing tasks, providing tools for novel writing, story development, and content generation.
+<a id="autonomous-agents"></a>
+
+## Autonomous Agents (Total 0)
+
+
+> Projects that create agents capable of performing tasks autonomously, often involving self-learning and adaptation.
+
+
+<a id="creative-writing-tools"></a>
+
+## Creative Writing Tools (Total 0)
+
+
+> Tools and frameworks designed to assist with creative writing, including novel writing and content generation.
 
 
 <a id="research-automation"></a>
@@ -59,7 +69,7 @@
 ## Research Automation (Total 0)
 
 
-> Tools and frameworks designed to automate research processes, including writing, idea generation, and scientific discovery.
+> Repositories that automate research processes, from idea generation to publication, enhancing academic productivity.
 
 
 <a id="web-automation"></a>
@@ -67,7 +77,7 @@
 ## Web Automation (Total 0)
 
 
-> Tools and frameworks for automating web interactions, including browser automation and web scraping for various applications.
+> Projects focused on automating web interactions, enabling AI agents to perform tasks within web applications.
 
 
 <a id="other"></a>
@@ -75,7 +85,7 @@
 ## Other (Total 30)
 
 
-> Repositories that do not fit into the specified categories, covering a wide range of miscellaneous projects.
+> Repositories that do not fit into the defined categories, covering a variety of miscellaneous topics.
 
 
 ### 📌 [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio)
