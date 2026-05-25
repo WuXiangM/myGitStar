@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-24T07:29:30Z",
+  "generated_at": "2026-05-25T08:30:48Z",
   "model_choice": "copilot",
   "min_categories": 5,
   "max_categories": 6,
@@ -8,33 +8,28 @@
     "categories": [
       {
         "id": "C1",
-        "name": "AI Assistants",
-        "description": "Repositories focused on developing AI systems that assist users in various tasks, enhancing productivity and interaction."
-      },
-      {
-        "id": "C2",
-        "name": "Autonomous Agents",
-        "description": "Projects that create agents capable of performing tasks autonomously, often involving self-learning and adaptation."
+        "name": "AI Agents",
+        "description": "Repositories focused on developing and enhancing AI agents for various tasks and interactions."
       },
       {
         "id": "C3",
-        "name": "Creative Writing Tools",
-        "description": "Tools and frameworks designed to assist with creative writing, including novel writing and content generation."
+        "name": "Autonomous Systems",
+        "description": "Repositories that create systems capable of independent operation, including research and scientific discovery."
       },
       {
         "id": "C4",
-        "name": "Research Automation",
-        "description": "Repositories that automate research processes, from idea generation to publication, enhancing academic productivity."
+        "name": "Productivity Tools",
+        "description": "Tools designed to enhance user productivity through automation, task management, and intelligent assistance."
       },
       {
         "id": "C5",
-        "name": "Web Automation",
-        "description": "Projects focused on automating web interactions, enabling AI agents to perform tasks within web applications."
+        "name": "Vision and Action Models",
+        "description": "Projects that integrate visual inputs with decision-making processes for intelligent actions."
       },
       {
         "id": "Other",
         "name": "Other",
-        "description": "Repositories that do not fit into the defined categories, covering a variety of miscellaneous topics."
+        "description": "Repositories that do not fit into the specified categories."
       }
     ]
   },

@@ -10,7 +10,7 @@
 <p><b>Current account:</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
 
 
-<p><b>Generated on:</b> 2026-05-24 07:29:30</p>
+<p><b>Generated on:</b> 2026-05-25 08:30:48</p>
 
 
 <p><b>AI Model:</b> copilot</p>
@@ -26,58 +26,48 @@
 
 ## Table of Contents
 
-- [AI Assistants](#ai-assistants) (0)
+- [AI Agents](#ai-agents) (0)
 
-- [Autonomous Agents](#autonomous-agents) (0)
+- [Autonomous Systems](#autonomous-systems) (0)
 
-- [Creative Writing Tools](#creative-writing-tools) (0)
+- [Productivity Tools](#productivity-tools) (0)
 
-- [Research Automation](#research-automation) (0)
-
-- [Web Automation](#web-automation) (0)
+- [Vision and Action Models](#vision-and-action-models) (0)
 
 - [Other](#other) (30)
 
 ---
 
-<a id="ai-assistants"></a>
+<a id="ai-agents"></a>
 
-## AI Assistants (Total 0)
-
-
-> Repositories focused on developing AI systems that assist users in various tasks, enhancing productivity and interaction.
+## AI Agents (Total 0)
 
 
-<a id="autonomous-agents"></a>
-
-## Autonomous Agents (Total 0)
+> Repositories focused on developing and enhancing AI agents for various tasks and interactions.
 
 
-> Projects that create agents capable of performing tasks autonomously, often involving self-learning and adaptation.
+<a id="autonomous-systems"></a>
+
+## Autonomous Systems (Total 0)
 
 
-<a id="creative-writing-tools"></a>
-
-## Creative Writing Tools (Total 0)
+> Repositories that create systems capable of independent operation, including research and scientific discovery.
 
 
-> Tools and frameworks designed to assist with creative writing, including novel writing and content generation.
+<a id="productivity-tools"></a>
+
+## Productivity Tools (Total 0)
 
 
-<a id="research-automation"></a>
-
-## Research Automation (Total 0)
+> Tools designed to enhance user productivity through automation, task management, and intelligent assistance.
 
 
-> Repositories that automate research processes, from idea generation to publication, enhancing academic productivity.
+<a id="vision-and-action-models"></a>
+
+## Vision and Action Models (Total 0)
 
 
-<a id="web-automation"></a>
-
-## Web Automation (Total 0)
-
-
-> Projects focused on automating web interactions, enabling AI agents to perform tasks within web applications.
+> Projects that integrate visual inputs with decision-making processes for intelligent actions.
 
 
 <a id="other"></a>
@@ -85,7 +75,7 @@
 ## Other (Total 30)
 
 
-> Repositories that do not fit into the defined categories, covering a variety of miscellaneous topics.
+> Repositories that do not fit into the specified categories.
 
 
 ### 📌 [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio)
