@@ -66,7 +66,9 @@ def build_classification_prompt(taxonomy: Taxonomy, repos: List[Dict[str, Any]])
         "You are a classifier.\n"
         "Classify each GitHub repository into exactly ONE category from the provided taxonomy.\n"
         "Use the repository title + content text (ignore stars/forks/updated).\n"
-        "Pick the BEST matching category; use 'Other' only if none of the categories fit.\n"
+        "Pick the BEST matching category; use 'Other' ONLY if the repository genuinely does not relate to any category's domain.\n"
+        "IMPORTANT: Avoid overusing 'Other'. If a repo mentions AI, agents, automation, LLMs, or similar topics, it almost certainly belongs in one of the specific categories, not 'Other'.\n"
+        "When a repo could fit multiple categories, choose the ONE most central theme.\n\n"
         "Return STRICT JSON only.\n\n"
         "Taxonomy JSON:\n"
         + json.dumps({"categories": taxonomy.categories}, ensure_ascii=False, indent=2)

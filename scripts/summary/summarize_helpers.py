@@ -151,7 +151,7 @@ def parse_combined_summaries(response_text: str, repos: List[Dict[str, Any]]) ->
 
                 brief_intro = item.get("Brief Introduction", "") or item.get("简要介绍", "")
                 innovations = item.get("Innovations", "") or item.get("创新点", "")
-                basic_usage = item.get("Basic Usage", "") or item.get("简单用法", "Not specified.")
+                basic_usage = item.get("Basic Usage", "") or item.get("简单用法", "")
                 summary = item.get("Summary", "") or item.get("总结", "")
 
                 full_entry = {
@@ -176,7 +176,7 @@ def parse_combined_summaries(response_text: str, repos: List[Dict[str, Any]]) ->
 def is_valid_summary(summary: str, language: str = "zh") -> bool:
     if not summary or not summary.strip():
         return False
-    invalid_phrases = ["生成失败", "暂无AI总结", "429", "Copilot API限额已用尽", "RateLimitReached"]
+    invalid_phrases = ["生成失败", "暂无AI总结", "429", "Copilot API限额已用尽", "RateLimitReached", "Not specified"]
     for phrase in invalid_phrases:
         if phrase in summary:
             return False
@@ -253,7 +253,7 @@ def build_repo_entry(repo: Dict, summary: Any) -> Dict:
             "Repository URL": summary.get("Repository URL", repo.get("html_url")),
             "Brief Introduction": summary.get("Brief Introduction", ""),
             "Innovations": summary.get("Innovations", ""),
-            "Basic Usage": summary.get("Basic Usage", "Not specified."),
+            "Basic Usage": summary.get("Basic Usage", ""),
             "Summary": summary.get("Summary", ""),
         }
         entry["Repository URL"] = repo.get("html_url") or entry.get("Repository URL", "")
@@ -264,7 +264,7 @@ def build_repo_entry(repo: Dict, summary: Any) -> Dict:
         "Repository URL": repo.get("html_url"),
         "Brief Introduction": "",
         "Innovations": "",
-        "Basic Usage": "Not specified.",
+        "Basic Usage": "",
         "Summary": summary or "",
     }
 
@@ -355,7 +355,7 @@ def summarize_batch_combined(
                 repos_indices.append(idx)
         elif isinstance(existing_summary, str) and existing_summary:
             if update_mode == "missing_only":
-                results[idx] = {"Repository Name": repo["full_name"], "Repository URL": repo.get("html_url", ""), "Brief Introduction": "", "Innovations": "", "Basic Usage": "Not specified.", "Summary": existing_summary}
+                results[idx] = {"Repository Name": repo["full_name"], "Repository URL": repo.get("html_url", ""), "Brief Introduction": "", "Innovations": "", "Basic Usage": "", "Summary": existing_summary}
                 print(f"[REUSE] repo: {repo['full_name']} | existing summary (legacy format)")
             else:
                 repos_need_call.append(repo)
@@ -388,13 +388,13 @@ def summarize_batch_combined(
                                 break
                     else:
                         api_name = summarize_func.__name__.replace("_summarize", "").upper()
-                        results[idx] = {"Repository Name": full_name, "Repository URL": "", "Brief Introduction": "", "Innovations": "", "Basic Usage": "Not specified.", "Summary": old_summaries.get(full_name, f"{api_name} 解析失败或为空")}
+                        results[idx] = {"Repository Name": full_name, "Repository URL": "", "Brief Introduction": "", "Innovations": "", "Basic Usage": "", "Summary": old_summaries.get(full_name, f"{api_name} 解析失败或为空")}
                         print(f"[WARN] repo: {full_name} | empty summary from LLM")
             else:
                 print(f"[ERROR] Batch {batch_num} response is None or empty, repos: {[r['full_name'] for r in batch]}")
                 for idx, repo in zip(indices, batch):
                     api_name = summarize_func.__name__.replace("_summarize", "").upper()
-                    results[idx] = {"Repository Name": repo["full_name"], "Repository URL": repo.get("html_url", ""), "Brief Introduction": "", "Innovations": "", "Basic Usage": "Not specified.", "Summary": old_summaries.get(repo["full_name"], f"{api_name} API返回空")}
+                    results[idx] = {"Repository Name": repo["full_name"], "Repository URL": repo.get("html_url", ""), "Brief Introduction": "", "Innovations": "", "Basic Usage": "", "Summary": old_summaries.get(repo["full_name"], f"{api_name} API返回空")}
                     print(f"[ERROR] repo: {repo['full_name']} | empty response")
         except Exception as exc:
             import traceback
@@ -402,7 +402,7 @@ def summarize_batch_combined(
             print(f"[ERROR] Exception details: {traceback.format_exc()}")
             for idx, repo in zip(indices, batch):
                 api_name = summarize_func.__name__.replace("_summarize", "").upper()
-                results[idx] = {"Repository Name": repo["full_name"], "Repository URL": repo.get("html_url", ""), "Brief Introduction": "", "Innovations": "", "Basic Usage": "Not specified.", "Summary": old_summaries.get(repo["full_name"], f"{api_name} API调用失败")}
+                results[idx] = {"Repository Name": repo["full_name"], "Repository URL": repo.get("html_url", ""), "Brief Introduction": "", "Innovations": "", "Basic Usage": "", "Summary": old_summaries.get(repo["full_name"], f"{api_name} API调用失败")}
                 print(f"[ERROR] repo: {repo['full_name']} | {exc}")
 
     return results

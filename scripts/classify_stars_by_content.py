@@ -689,6 +689,62 @@ def _extract_structured_fields_from_block(block: str) -> Dict[str, str]:
     return out
 
 
+def _enrich_repos_from_summaries(repos: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Merge enriched summary fields from repo_summaries.json into repos.
+
+    This ensures that even when loading repos from GitHub API (default mode),
+    we still get the rich brief_intro/innovations/summary content for classification.
+    """
+    summaries_path = os.path.join(REPO_ROOT, "repo_summaries.json")
+    if not os.path.exists(summaries_path):
+        return repos
+
+    try:
+        with open(summaries_path, "r", encoding="utf-8") as f:
+            summaries_data = json.load(f)
+    except Exception:
+        return repos
+
+    summaries_by_name = {str(k).strip(): v for k, v in summaries_data.items()}
+    enriched = 0
+    for r in repos:
+        full_name = str(r.get("full_name") or "").strip()
+        data = summaries_by_name.get(full_name)
+        if not data:
+            continue
+        # Only enrich if repo doesn't already have these fields populated
+        if not str(r.get("brief_intro") or "").strip():
+            bi = data.get("Brief Introduction", "")
+            if bi and bi != "Not specified.":
+                r["brief_intro"] = bi
+                enriched += 1
+        if not str(r.get("innovations") or "").strip():
+            inn = data.get("Innovations", "")
+            if inn and inn != "Not specified.":
+                r["innovations"] = inn
+        if not str(r.get("summary") or "").strip():
+            sm = data.get("Summary", "")
+            if sm and sm != "Not specified.":
+                r["summary"] = sm
+        if not str(r.get("description") or "").strip():
+            # Build description from summary fields
+            parts = []
+            for field_key, label in [
+                ("brief_intro", ""),
+                ("innovations", "创新点: "),
+                ("summary", "总结: "),
+            ]:
+                v = r.get(field_key, "")
+                if v and v != "Not specified.":
+                    parts.append(f"{label}{v}" if label else v)
+            if parts:
+                r["description"] = " | ".join(parts)
+
+    if enriched > 0:
+        print(f"[info] Enriched {enriched} repos from existing repo_summaries.json")
+    return repos
+
+
 def _build_repo_content_text(repo: Dict[str, Any]) -> str:
     """Create a stable, content-focused text blob for taxonomy + classification."""
     full_name = _clean_inline_md(str(repo.get("full_name") or ""))
@@ -1418,6 +1474,9 @@ def main() -> int:
     if not repos:
         print("No repos fetched.")
         return 2
+
+    # Auto-enrich repos with existing summary data if available
+    repos = _enrich_repos_from_summaries(repos)
 
     # Ensure a consistent content text field exists for both API-fetched repos and README-parsed repos.
     for r in repos:
