@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-25T08:30:48Z",
+  "generated_at": "2026-05-26T08:02:47Z",
   "model_choice": "copilot",
   "min_categories": 5,
   "max_categories": 6,
@@ -8,28 +8,33 @@
     "categories": [
       {
         "id": "C1",
-        "name": "AI Agents",
-        "description": "Repositories focused on developing and enhancing AI agents for various tasks and interactions."
+        "name": "AI Assistants",
+        "description": "Repositories focused on developing AI systems that assist users in various tasks, enhancing productivity and interaction."
+      },
+      {
+        "id": "C2",
+        "name": "Autonomous Agents",
+        "description": "Projects that create autonomous agents capable of performing tasks independently, often involving learning and adaptation."
       },
       {
         "id": "C3",
-        "name": "Autonomous Systems",
-        "description": "Repositories that create systems capable of independent operation, including research and scientific discovery."
+        "name": "Creative Writing Tools",
+        "description": "Repositories that provide tools and frameworks for aiding in creative writing processes, including novel writing and content generation."
       },
       {
         "id": "C4",
-        "name": "Productivity Tools",
-        "description": "Tools designed to enhance user productivity through automation, task management, and intelligent assistance."
+        "name": "Research Automation",
+        "description": "Projects aimed at automating research processes, from idea generation to publication, often utilizing AI methodologies."
       },
       {
         "id": "C5",
-        "name": "Vision and Action Models",
-        "description": "Projects that integrate visual inputs with decision-making processes for intelligent actions."
+        "name": "Web Automation",
+        "description": "Repositories that focus on automating web interactions, enabling AI agents to perform tasks within web applications."
       },
       {
         "id": "Other",
         "name": "Other",
-        "description": "Repositories that do not fit into the specified categories."
+        "description": "Repositories that do not fit into the specified categories, encompassing a variety of unique projects."
       }
     ]
   },
