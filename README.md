@@ -10,7 +10,7 @@
 <p><b>Current account:</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
 
 
-<p><b>Generated on:</b> 2026-05-27 08:14:04</p>
+<p><b>Generated on:</b> 2026-05-28 08:09:46</p>
 
 
 <p><b>AI Model:</b> copilot</p>
@@ -26,58 +26,48 @@
 
 ## Table of Contents
 
-- [AI Assistants](#ai-assistants) (0)
+- [AI Agents](#ai-agents) (0)
 
-- [Agent Frameworks](#agent-frameworks) (0)
+- [Autonomous Research](#autonomous-research) (0)
 
-- [Autonomous Agents](#autonomous-agents) (0)
+- [Creative Writing Tools](#creative-writing-tools) (0)
 
-- [Content Creation](#content-creation) (0)
-
-- [Research Tools](#research-tools) (0)
+- [Productivity Platforms](#productivity-platforms) (0)
 
 - [Other](#other) (30)
 
 ---
 
-<a id="ai-assistants"></a>
+<a id="ai-agents"></a>
 
-## AI Assistants (Total 0)
-
-
-> Repositories focused on developing AI systems that assist users in various tasks, enhancing productivity and user experience.
+## AI Agents (Total 0)
 
 
-<a id="agent-frameworks"></a>
-
-## Agent Frameworks (Total 0)
+> Repositories focused on developing and enhancing AI agents for various tasks, including automation, interaction, and productivity.
 
 
-> Frameworks and methodologies for building and managing AI agents, focusing on skill development and task management.
+<a id="autonomous-research"></a>
+
+## Autonomous Research (Total 0)
 
 
-<a id="autonomous-agents"></a>
-
-## Autonomous Agents (Total 0)
+> Repositories aimed at automating research processes, including idea generation, paper writing, and scientific discovery.
 
 
-> Projects that create agents capable of performing tasks autonomously, often with self-learning or adaptive capabilities.
+<a id="creative-writing-tools"></a>
+
+## Creative Writing Tools (Total 0)
 
 
-<a id="content-creation"></a>
-
-## Content Creation (Total 0)
+> Tools and frameworks designed to assist in creative writing, including novel writing and content generation.
 
 
-> Projects aimed at facilitating content generation, including writing, video creation, and multimedia production.
+<a id="productivity-platforms"></a>
+
+## Productivity Platforms (Total 0)
 
 
-<a id="research-tools"></a>
-
-## Research Tools (Total 0)
-
-
-> Repositories that provide tools for academic research, including systems for writing, idea generation, and data analysis.
+> Platforms that integrate AI capabilities to enhance user productivity through task management and intelligent assistance.
 
 
 <a id="other"></a>
