@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-28T08:09:46Z",
+  "generated_at": "2026-05-29T08:07:53Z",
   "model_choice": "copilot",
   "min_categories": 5,
   "max_categories": 6,
@@ -9,22 +9,22 @@
       {
         "id": "C1",
         "name": "AI Agents",
-        "description": "Repositories focused on developing and enhancing AI agents for various tasks, including automation, interaction, and productivity."
+        "description": "Repositories focused on developing and enhancing AI agents for various tasks and interactions."
+      },
+      {
+        "id": "C2",
+        "name": "Autonomous Research",
+        "description": "Projects that facilitate autonomous research processes, including idea generation and academic writing."
       },
       {
         "id": "C3",
-        "name": "Autonomous Research",
-        "description": "Repositories aimed at automating research processes, including idea generation, paper writing, and scientific discovery."
-      },
-      {
-        "id": "C4",
-        "name": "Creative Writing Tools",
-        "description": "Tools and frameworks designed to assist in creative writing, including novel writing and content generation."
+        "name": "Productivity Tools",
+        "description": "Tools designed to enhance productivity through AI, including task management and content creation."
       },
       {
         "id": "C5",
-        "name": "Productivity Platforms",
-        "description": "Platforms that integrate AI capabilities to enhance user productivity through task management and intelligent assistance."
+        "name": "Novel Writing Assistants",
+        "description": "AI-driven tools specifically designed to assist in the writing and structuring of novels."
       },
       {
         "id": "Other",
