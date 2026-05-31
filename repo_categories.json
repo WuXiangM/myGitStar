@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-30T06:54:55Z",
+  "generated_at": "2026-05-31T07:52:47Z",
   "model_choice": "copilot",
   "min_categories": 5,
   "max_categories": 6,
@@ -8,33 +8,28 @@
     "categories": [
       {
         "id": "C1",
-        "name": "AI Assistants",
-        "description": "Repositories focused on developing AI systems that assist users in various tasks, enhancing productivity and user interaction."
+        "name": "AI Agents",
+        "description": "Repositories focused on developing and enhancing AI agents for various tasks and interactions."
       },
       {
         "id": "C2",
-        "name": "Autonomous Agents",
-        "description": "Projects that involve autonomous agents capable of performing tasks independently, often utilizing AI for decision-making and adaptability."
+        "name": "Autonomous Research",
+        "description": "Projects that facilitate autonomous research processes, including idea generation and academic writing."
       },
       {
         "id": "C3",
-        "name": "Research Tools",
-        "description": "Tools and frameworks designed to facilitate research processes, including idea generation, writing, and scientific discovery."
+        "name": "Content Creation",
+        "description": "Tools and frameworks designed for creating and managing content, including writing and multimedia production."
       },
       {
         "id": "C4",
-        "name": "Content Creation",
-        "description": "Repositories focused on tools for generating and managing content, including writing assistants and multimedia content creation."
-      },
-      {
-        "id": "C5",
-        "name": "Agent Frameworks",
-        "description": "Frameworks and methodologies for building and managing AI agents, including skills development and task management."
+        "name": "Productivity Tools",
+        "description": "Applications and systems aimed at improving productivity through task management and intelligent assistance."
       },
       {
         "id": "Other",
         "name": "Other",
-        "description": "Repositories that do not fit into the above categories."
+        "description": "Repositories that do not fit into the specified categories."
       }
     ]
   },

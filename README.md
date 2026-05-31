@@ -10,7 +10,7 @@
 <p><b>Current account:</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
 
 
-<p><b>Generated on:</b> 2026-05-30 06:54:55</p>
+<p><b>Generated on:</b> 2026-05-31 07:52:47</p>
 
 
 <p><b>AI Model:</b> copilot</p>
@@ -26,42 +26,32 @@
 
 ## Table of Contents
 
-- [AI Assistants](#ai-assistants) (0)
+- [AI Agents](#ai-agents) (0)
 
-- [Agent Frameworks](#agent-frameworks) (0)
-
-- [Autonomous Agents](#autonomous-agents) (0)
+- [Autonomous Research](#autonomous-research) (0)
 
 - [Content Creation](#content-creation) (0)
 
-- [Research Tools](#research-tools) (0)
+- [Productivity Tools](#productivity-tools) (0)
 
 - [Other](#other) (30)
 
 ---
 
-<a id="ai-assistants"></a>
+<a id="ai-agents"></a>
 
-## AI Assistants (Total 0)
-
-
-> Repositories focused on developing AI systems that assist users in various tasks, enhancing productivity and user interaction.
+## AI Agents (Total 0)
 
 
-<a id="agent-frameworks"></a>
-
-## Agent Frameworks (Total 0)
+> Repositories focused on developing and enhancing AI agents for various tasks and interactions.
 
 
-> Frameworks and methodologies for building and managing AI agents, including skills development and task management.
+<a id="autonomous-research"></a>
+
+## Autonomous Research (Total 0)
 
 
-<a id="autonomous-agents"></a>
-
-## Autonomous Agents (Total 0)
-
-
-> Projects that involve autonomous agents capable of performing tasks independently, often utilizing AI for decision-making and adaptability.
+> Projects that facilitate autonomous research processes, including idea generation and academic writing.
 
 
 <a id="content-creation"></a>
@@ -69,15 +59,15 @@
 ## Content Creation (Total 0)
 
 
-> Repositories focused on tools for generating and managing content, including writing assistants and multimedia content creation.
+> Tools and frameworks designed for creating and managing content, including writing and multimedia production.
 
 
-<a id="research-tools"></a>
+<a id="productivity-tools"></a>
 
-## Research Tools (Total 0)
+## Productivity Tools (Total 0)
 
 
-> Tools and frameworks designed to facilitate research processes, including idea generation, writing, and scientific discovery.
+> Applications and systems aimed at improving productivity through task management and intelligent assistance.
 
 
 <a id="other"></a>
@@ -85,7 +75,7 @@
 ## Other (Total 30)
 
 
-> Repositories that do not fit into the above categories.
+> Repositories that do not fit into the specified categories.
 
 
 ### 📌 [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio)
