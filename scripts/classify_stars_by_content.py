@@ -544,7 +544,14 @@ def parse_repos_from_summaries(
     as content description for classification.
     """
     if summaries_path is None:
-        summaries_path = os.path.join(REPO_ROOT, "repo_summaries.json")
+        en_path = os.path.join(REPO_ROOT, "repo_summaries_en.json")
+        zh_path = os.path.join(REPO_ROOT, "repo_summaries_zh.json")
+        if os.path.exists(en_path):
+            summaries_path = en_path
+        elif os.path.exists(zh_path):
+            summaries_path = zh_path
+        else:
+            summaries_path = os.path.join(REPO_ROOT, "repo_summaries.json")
     elif not os.path.isabs(summaries_path):
         summaries_path = os.path.join(REPO_ROOT, summaries_path)
 
@@ -695,7 +702,11 @@ def _enrich_repos_from_summaries(repos: List[Dict[str, Any]]) -> List[Dict[str, 
     This ensures that even when loading repos from GitHub API (default mode),
     we still get the rich brief_intro/innovations/summary content for classification.
     """
-    summaries_path = os.path.join(REPO_ROOT, "repo_summaries.json")
+    summaries_path = os.path.join(REPO_ROOT, "repo_summaries_en.json")
+    if not os.path.exists(summaries_path):
+        summaries_path = os.path.join(REPO_ROOT, "repo_summaries_zh.json")
+    if not os.path.exists(summaries_path):
+        summaries_path = os.path.join(REPO_ROOT, "repo_summaries.json")
     if not os.path.exists(summaries_path):
         return repos
 
@@ -1557,15 +1568,31 @@ def main() -> int:
 
             # validate and fill
             valid_category_ids = {c["id"] for c in taxonomy.categories}
-            other_id = next((c["id"] for c in taxonomy.categories if c["name"].lower() == "other"), taxonomy.categories[-1]["id"])
+            name_to_id = {
+                str(c.get("name", "")).strip().lower(): str(c.get("id"))
+                for c in taxonomy.categories
+                if str(c.get("name", "")).strip()
+            }
+            other_id = next(
+                (c["id"] for c in taxonomy.categories if str(c["name"]).strip().lower() == "other"),
+                taxonomy.categories[-1]["id"],
+            )
             for a in assignments:
                 rid = a.get("id")
                 cid = a.get("category_id") or a.get("category") or a.get("categoryId")
                 if not rid or not cid:
                     continue
-                if cid not in valid_category_ids:
-                    cid = other_id
-                assignment_map[rid] = cid
+                cid_str = str(cid).strip()
+                if cid_str not in valid_category_ids:
+                    cid_name = cid_str.strip().lower()
+                    mapped = name_to_id.get(cid_name)
+                    if mapped:
+                        cid_str = mapped
+                    elif cid_str.isdigit() and f"C{cid_str}" in valid_category_ids:
+                        cid_str = f"C{cid_str}"
+                    else:
+                        cid_str = other_id
+                assignment_map[rid] = cid_str
 
             # Fill missing in this batch as Other
             batch_ids = {r.get("id") for r in batch}
