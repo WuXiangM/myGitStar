@@ -10,7 +10,7 @@
 <p><b>Current account:</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
 
 
-<p><b>Generated on:</b> 2026-06-02 08:44:52</p>
+<p><b>Generated on:</b> 2026-06-03 09:02:32</p>
 
 
 <p><b>AI Model:</b> copilot</p>
@@ -26,58 +26,48 @@
 
 ## Table of Contents
 
-- [AI Assistants](#ai-assistants) (0)
+- [AI Agents](#ai-agents) (0)
 
-- [Autonomous Agents](#autonomous-agents) (0)
+- [Autonomous Research](#autonomous-research) (0)
 
-- [Creative Writing Tools](#creative-writing-tools) (0)
+- [Novel Writing Assistants](#novel-writing-assistants) (0)
 
-- [Research Automation](#research-automation) (0)
-
-- [Web Automation](#web-automation) (0)
+- [Productivity Tools](#productivity-tools) (0)
 
 - [Other](#other) (30)
 
 ---
 
-<a id="ai-assistants"></a>
+<a id="ai-agents"></a>
 
-## AI Assistants (Total 0)
-
-
-> Repositories focused on developing AI systems that assist users in various tasks, enhancing productivity and user interaction.
+## AI Agents (Total 0)
 
 
-<a id="autonomous-agents"></a>
-
-## Autonomous Agents (Total 0)
+> Repositories focused on developing and enhancing AI agents for various tasks and interactions.
 
 
-> Projects that create autonomous agents capable of performing tasks independently, often utilizing AI for decision-making and adaptability.
+<a id="autonomous-research"></a>
+
+## Autonomous Research (Total 0)
 
 
-<a id="creative-writing-tools"></a>
-
-## Creative Writing Tools (Total 0)
+> Projects that facilitate autonomous research processes, including idea generation and academic writing.
 
 
-> Tools and systems designed to assist in the creative writing process, including novel writing and content generation.
+<a id="novel-writing-assistants"></a>
+
+## Novel Writing Assistants (Total 0)
 
 
-<a id="research-automation"></a>
-
-## Research Automation (Total 0)
+> AI-driven tools specifically designed to assist in the process of writing novels and long-form content.
 
 
-> Repositories that focus on automating research processes, including idea generation, paper writing, and scientific discovery.
+<a id="productivity-tools"></a>
+
+## Productivity Tools (Total 0)
 
 
-<a id="web-automation"></a>
-
-## Web Automation (Total 0)
-
-
-> Tools designed for automating web interactions, enhancing the capabilities of agents in web-based environments.
+> Tools designed to enhance productivity through AI, including task management and content creation.
 
 
 <a id="other"></a>
@@ -85,7 +75,7 @@
 ## Other (Total 30)
 
 
-> Repositories that do not fit into the above categories.
+> Repositories that do not fit into the specified categories.
 
 
 ### 📌 [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio)
