@@ -10,7 +10,7 @@
 <p><b>Current account:</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
 
 
-<p><b>Generated on:</b> 2026-06-03 09:02:32</p>
+<p><b>Generated on:</b> 2026-06-04 08:27:14</p>
 
 
 <p><b>AI Model:</b> copilot</p>
@@ -26,24 +26,32 @@
 
 ## Table of Contents
 
-- [AI Agents](#ai-agents) (0)
+- [AI Assistants](#ai-assistants) (0)
+
+- [Agent Frameworks](#agent-frameworks) (0)
 
 - [Autonomous Research](#autonomous-research) (0)
 
-- [Novel Writing Assistants](#novel-writing-assistants) (0)
-
-- [Productivity Tools](#productivity-tools) (0)
+- [Content Creation](#content-creation) (0)
 
 - [Other](#other) (30)
 
 ---
 
-<a id="ai-agents"></a>
+<a id="ai-assistants"></a>
 
-## AI Agents (Total 0)
+## AI Assistants (Total 0)
 
 
-> Repositories focused on developing and enhancing AI agents for various tasks and interactions.
+> Repositories focused on creating intelligent personal assistants that enhance user productivity and interaction.
+
+
+<a id="agent-frameworks"></a>
+
+## Agent Frameworks (Total 0)
+
+
+> Frameworks and methodologies for developing and managing AI agents with specialized skills and functionalities.
 
 
 <a id="autonomous-research"></a>
@@ -51,23 +59,15 @@
 ## Autonomous Research (Total 0)
 
 
-> Projects that facilitate autonomous research processes, including idea generation and academic writing.
+> Projects that facilitate autonomous research processes, including idea generation, writing, and scientific discovery.
 
 
-<a id="novel-writing-assistants"></a>
+<a id="content-creation"></a>
 
-## Novel Writing Assistants (Total 0)
-
-
-> AI-driven tools specifically designed to assist in the process of writing novels and long-form content.
+## Content Creation (Total 0)
 
 
-<a id="productivity-tools"></a>
-
-## Productivity Tools (Total 0)
-
-
-> Tools designed to enhance productivity through AI, including task management and content creation.
+> Tools and systems designed to assist in content creation, including writing, video production, and multimedia generation.
 
 
 <a id="other"></a>
@@ -75,7 +75,7 @@
 ## Other (Total 30)
 
 
-> Repositories that do not fit into the specified categories.
+> Repositories that do not fit into the above categories.
 
 
 ### 📌 [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio)
