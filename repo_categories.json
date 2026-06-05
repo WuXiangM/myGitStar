@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-04T08:27:14Z",
+  "generated_at": "2026-06-05T08:15:11Z",
   "model_choice": "copilot",
   "min_categories": 5,
   "max_categories": 6,
@@ -8,28 +8,28 @@
     "categories": [
       {
         "id": "C1",
-        "name": "AI Assistants",
-        "description": "Repositories focused on creating intelligent personal assistants that enhance user productivity and interaction."
+        "name": "AI Agents",
+        "description": "Repositories focused on developing and enhancing AI agents for various tasks and functionalities."
       },
       {
         "id": "C2",
         "name": "Autonomous Research",
-        "description": "Projects that facilitate autonomous research processes, including idea generation, writing, and scientific discovery."
+        "description": "Projects that facilitate autonomous research processes, including idea generation and academic writing."
       },
       {
         "id": "C3",
-        "name": "Agent Frameworks",
-        "description": "Frameworks and methodologies for developing and managing AI agents with specialized skills and functionalities."
+        "name": "Content Creation",
+        "description": "Tools and frameworks designed for creating and managing content, including writing and multimedia generation."
       },
       {
         "id": "C4",
-        "name": "Content Creation",
-        "description": "Tools and systems designed to assist in content creation, including writing, video production, and multimedia generation."
+        "name": "Productivity Tools",
+        "description": "Applications and systems aimed at enhancing user productivity through AI integration and task management."
       },
       {
         "id": "Other",
         "name": "Other",
-        "description": "Repositories that do not fit into the above categories."
+        "description": "Repositories that do not fit into the specified categories."
       }
     ]
   },

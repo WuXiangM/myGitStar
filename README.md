@@ -10,7 +10,7 @@
 <p><b>Current account:</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
 
 
-<p><b>Generated on:</b> 2026-06-04 08:27:14</p>
+<p><b>Generated on:</b> 2026-06-05 08:15:11</p>
 
 
 <p><b>AI Model:</b> copilot</p>
@@ -26,32 +26,24 @@
 
 ## Table of Contents
 
-- [AI Assistants](#ai-assistants) (0)
-
-- [Agent Frameworks](#agent-frameworks) (0)
+- [AI Agents](#ai-agents) (0)
 
 - [Autonomous Research](#autonomous-research) (0)
 
 - [Content Creation](#content-creation) (0)
 
+- [Productivity Tools](#productivity-tools) (0)
+
 - [Other](#other) (30)
 
 ---
 
-<a id="ai-assistants"></a>
+<a id="ai-agents"></a>
 
-## AI Assistants (Total 0)
-
-
-> Repositories focused on creating intelligent personal assistants that enhance user productivity and interaction.
+## AI Agents (Total 0)
 
 
-<a id="agent-frameworks"></a>
-
-## Agent Frameworks (Total 0)
-
-
-> Frameworks and methodologies for developing and managing AI agents with specialized skills and functionalities.
+> Repositories focused on developing and enhancing AI agents for various tasks and functionalities.
 
 
 <a id="autonomous-research"></a>
@@ -59,7 +51,7 @@
 ## Autonomous Research (Total 0)
 
 
-> Projects that facilitate autonomous research processes, including idea generation, writing, and scientific discovery.
+> Projects that facilitate autonomous research processes, including idea generation and academic writing.
 
 
 <a id="content-creation"></a>
@@ -67,7 +59,15 @@
 ## Content Creation (Total 0)
 
 
-> Tools and systems designed to assist in content creation, including writing, video production, and multimedia generation.
+> Tools and frameworks designed for creating and managing content, including writing and multimedia generation.
+
+
+<a id="productivity-tools"></a>
+
+## Productivity Tools (Total 0)
+
+
+> Applications and systems aimed at enhancing user productivity through AI integration and task management.
 
 
 <a id="other"></a>
@@ -75,7 +75,7 @@
 ## Other (Total 30)
 
 
-> Repositories that do not fit into the above categories.
+> Repositories that do not fit into the specified categories.
 
 
 ### 📌 [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio)
