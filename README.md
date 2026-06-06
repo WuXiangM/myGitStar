@@ -10,7 +10,7 @@
 <p><b>Current account:</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
 
 
-<p><b>Generated on:</b> 2026-06-05 08:15:11</p>
+<p><b>Generated on:</b> 2026-06-06 07:23:19</p>
 
 
 <p><b>AI Model:</b> copilot</p>
@@ -26,48 +26,48 @@
 
 ## Table of Contents
 
-- [AI Agents](#ai-agents) (0)
+- [AI Assistants](#ai-assistants) (0)
 
-- [Autonomous Research](#autonomous-research) (0)
+- [AI Frameworks](#ai-frameworks) (0)
 
-- [Content Creation](#content-creation) (0)
+- [Autonomous Agents](#autonomous-agents) (0)
 
-- [Productivity Tools](#productivity-tools) (0)
+- [Content Generation](#content-generation) (0)
 
 - [Other](#other) (30)
 
 ---
 
-<a id="ai-agents"></a>
+<a id="ai-assistants"></a>
 
-## AI Agents (Total 0)
-
-
-> Repositories focused on developing and enhancing AI agents for various tasks and functionalities.
+## AI Assistants (Total 0)
 
 
-<a id="autonomous-research"></a>
-
-## Autonomous Research (Total 0)
+> Repositories focused on developing AI systems that assist users in various tasks, enhancing productivity and interaction.
 
 
-> Projects that facilitate autonomous research processes, including idea generation and academic writing.
+<a id="ai-frameworks"></a>
+
+## AI Frameworks (Total 0)
 
 
-<a id="content-creation"></a>
-
-## Content Creation (Total 0)
+> Frameworks and methodologies for building and managing AI agents, including skills development and collaborative environments.
 
 
-> Tools and frameworks designed for creating and managing content, including writing and multimedia generation.
+<a id="autonomous-agents"></a>
+
+## Autonomous Agents (Total 0)
 
 
-<a id="productivity-tools"></a>
-
-## Productivity Tools (Total 0)
+> Projects that create self-evolving agents capable of performing tasks autonomously, often in research or creative domains.
 
 
-> Applications and systems aimed at enhancing user productivity through AI integration and task management.
+<a id="content-generation"></a>
+
+## Content Generation (Total 0)
+
+
+> Repositories dedicated to generating content, including writing tools, novel creation, and multimedia content production.
 
 
 <a id="other"></a>
@@ -75,7 +75,7 @@
 ## Other (Total 30)
 
 
-> Repositories that do not fit into the specified categories.
+> Repositories that do not fit into the specified categories, including general-purpose tools and educational resources.
 
 
 ### 📌 [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio)
