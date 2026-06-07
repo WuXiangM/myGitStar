@@ -10,7 +10,7 @@
 <p><b>Current account:</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
 
 
-<p><b>Generated on:</b> 2026-06-06 07:23:19</p>
+<p><b>Generated on:</b> 2026-06-07 08:01:18</p>
 
 
 <p><b>AI Model:</b> copilot</p>
@@ -28,11 +28,13 @@
 
 - [AI Assistants](#ai-assistants) (0)
 
-- [AI Frameworks](#ai-frameworks) (0)
+- [Agent Frameworks](#agent-frameworks) (0)
 
 - [Autonomous Agents](#autonomous-agents) (0)
 
-- [Content Generation](#content-generation) (0)
+- [Content Creation](#content-creation) (0)
+
+- [Research Automation](#research-automation) (0)
 
 - [Other](#other) (30)
 
@@ -43,15 +45,15 @@
 ## AI Assistants (Total 0)
 
 
-> Repositories focused on developing AI systems that assist users in various tasks, enhancing productivity and interaction.
+> Repositories focused on developing AI systems that assist users in various tasks, enhancing productivity and user interaction.
 
 
-<a id="ai-frameworks"></a>
+<a id="agent-frameworks"></a>
 
-## AI Frameworks (Total 0)
+## Agent Frameworks (Total 0)
 
 
-> Frameworks and methodologies for building and managing AI agents, including skills development and collaborative environments.
+> Frameworks and methodologies for building and managing AI agents, focusing on their development, skills, and collaborative capabilities.
 
 
 <a id="autonomous-agents"></a>
@@ -59,15 +61,23 @@
 ## Autonomous Agents (Total 0)
 
 
-> Projects that create self-evolving agents capable of performing tasks autonomously, often in research or creative domains.
+> Projects that involve autonomous agents capable of performing tasks independently, often utilizing AI for decision-making and task execution.
 
 
-<a id="content-generation"></a>
+<a id="content-creation"></a>
 
-## Content Generation (Total 0)
+## Content Creation (Total 0)
 
 
-> Repositories dedicated to generating content, including writing tools, novel creation, and multimedia content production.
+> Tools and frameworks designed for generating various forms of content, including writing novels, creating videos, and other media.
+
+
+<a id="research-automation"></a>
+
+## Research Automation (Total 0)
+
+
+> Repositories aimed at automating research processes, including idea generation, paper writing, and scientific discovery.
 
 
 <a id="other"></a>
@@ -75,7 +85,7 @@
 ## Other (Total 30)
 
 
-> Repositories that do not fit into the specified categories, including general-purpose tools and educational resources.
+> Repositories that do not fit into the specified categories, encompassing a variety of unrelated projects.
 
 
 ### 📌 [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio)
