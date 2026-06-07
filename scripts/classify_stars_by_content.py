@@ -534,6 +534,76 @@ def get_starred_repos(max_repos: Optional[int] = None) -> List[Dict[str, Any]]:
     return repos
 
 
+_KEYWORD_MAP = {
+    "agent": "AI Agent Autonomous",
+    "agents": "AI Agent Autonomous",
+    "autonomous": "Autonomous Agent",
+    "auto": "Automation",
+    "gpt": "LLM GPT Language Model",
+    "llm": "LLM Language Model",
+    "claude": "LLM Claude",
+    "chat": "Chatbot Assistant",
+    "bot": "Bot Assistant",
+    "assistant": "AI Assistant",
+    "research": "Research Automation",
+    "lab": "Research Laboratory",
+    "laboratory": "Research Laboratory",
+    "write": "Writing Content Creation",
+    "writing": "Writing Content Creation",
+    "novel": "Novel Writing Content Creation",
+    "video": "Video Content Creation",
+    "image": "Image Vision",
+    "vision": "Computer Vision",
+    "cv": "Computer Vision",
+    "audio": "Audio Speech",
+    "speech": "Speech Audio",
+    "code": "Coding Developer",
+    "coding": "Coding Developer",
+    "dev": "Developer Tools",
+    "skill": "Agent Skills",
+    "skills": "Agent Skills",
+    "mcp": "MCP Tool Integration",
+    "tool": "Tool Utility",
+    "framework": "Framework Platform",
+    "open": "Open Source",
+    "awesome": "Awesome List Collection",
+    "learn": "Learning Education",
+    "tutorial": "Learning Tutorial",
+    "beginner": "Beginner Learning",
+    "mini": "Mini Lightweight",
+    "small": "Small Lightweight",
+    "fast": "Fast Performance",
+    "efficient": "Efficient Optimization",
+    "smart": "Smart AI",
+    "ai": "Artificial Intelligence",
+    "machine": "Machine Learning",
+    "ml": "Machine Learning",
+    "deep": "Deep Learning",
+    "neural": "Neural Network Deep Learning",
+    "data": "Data Science",
+    "kosmos": "Kosmos AI System",
+    "hyperframes": "Hyperframes Video Agent",
+    "inkos": "Inkos Novel Writing Agent",
+    "multica": "Multica Agent Platform",
+    "hyperframes": "Hyperframes Video Generation",
+}
+
+
+def _extract_keywords_from_name(name: str) -> str:
+    """Extract meaningful keywords from a repository name for classification context."""
+    if not name:
+        return ""
+    name_lower = name.lower()
+    found_keywords: set[str] = set()
+    for keyword, context in _KEYWORD_MAP.items():
+        if keyword in name_lower:
+            for kw in context.split():
+                found_keywords.add(kw)
+    if found_keywords:
+        return ", ".join(sorted(found_keywords))
+    return ""
+
+
 def parse_repos_from_summaries(
     summaries_path: Optional[str] = None,
     max_repos: Optional[int] = None,
@@ -570,15 +640,32 @@ def parse_repos_from_summaries(
         innovations = data.get("Innovations", "")
         summary = data.get("Summary", "")
 
-        description_parts = []
-        if brief_intro:
-            description_parts.append(brief_intro)
-        if innovations:
-            description_parts.append(f"创新点: {innovations}")
-        if summary:
-            description_parts.append(f"总结: {summary}")
+        bi_empty = not brief_intro or brief_intro in ("Not specified.", "")
+        in_empty = not innovations or innovations in ("Not specified.", "")
+        su_empty = not summary or summary in ("Not specified.", "")
+        is_unknown = bi_empty and in_empty and su_empty
 
-        description = " | ".join(description_parts) if description_parts else ""
+        description_parts = []
+        if not is_unknown:
+            if brief_intro and brief_intro not in ("Not specified.", ""):
+                description_parts.append(brief_intro)
+            if innovations and innovations not in ("Not specified.", ""):
+                description_parts.append(f"创新点: {innovations}")
+            if summary and summary not in ("Not specified.", ""):
+                description_parts.append(f"总结: {summary}")
+
+        repo_title = full_name.split("/")[-1] if "/" in full_name else full_name
+        if is_unknown:
+            keywords = _extract_keywords_from_name(repo_title)
+            if keywords:
+                brief_intro = f"Repository: {repo_title} ({keywords})"
+            else:
+                brief_intro = f"Repository: {repo_title}"
+            description = brief_intro
+        else:
+            description = " | ".join(description_parts) if description_parts else ""
+
+        description = " | ".join(description_parts) if description_parts and not is_unknown else description
 
         repos.append(
             {
@@ -588,6 +675,7 @@ def parse_repos_from_summaries(
                 "brief_intro": brief_intro,
                 "innovations": innovations,
                 "summary": summary,
+                "is_unknown": is_unknown,
                 "html_url": data.get("Repository URL", f"https://github.com/{full_name}"),
                 "language": data.get("language", ""),
                 "stargazers_count": data.get("Stars", data.get("stargazers_count", 0)),
@@ -1186,10 +1274,11 @@ def _apply_min_repos_per_category(
             buckets[cid].append(rid)
 
     other_id = next((c["id"] for c in taxonomy.categories if c["name"].lower() == "other"), taxonomy.categories[-1]["id"])
+    unknown_id = next((c["id"] for c in taxonomy.categories if c["name"].lower() == "unknown"), None)
     if other_id in buckets and len(buckets[other_id]) == 0:
         del buckets[other_id]
 
-    tiny_ids = [cid for cid, rids in buckets.items() if 0 < len(rids) < min_repos_per_category]
+    tiny_ids = [cid for cid, rids in buckets.items() if 0 < len(rids) < min_repos_per_category and cid != unknown_id]
     if len(tiny_ids) + len(buckets) <= min_categories:
         tiny_ids = []
 
@@ -1516,9 +1605,10 @@ def main() -> int:
     repos_to_classify = repos
 
     if taxonomy is None:
-        # Build taxonomy from a sample
-        sample_size = max(5, min(args.sample_size, len(repos)))
-        sample = _sample_repos_for_taxonomy(repos, sample_size)
+        known_repos = [r for r in repos if not r.get("is_unknown")]
+        unknown_repos = [r for r in repos if r.get("is_unknown")]
+        sample_size = max(5, min(args.sample_size, len(known_repos)))
+        sample = _sample_repos_for_taxonomy(known_repos, sample_size)
         taxonomy_prompt = build_taxonomy_prompt(sample, min_categories=args.min_categories, max_categories=args.max_categories)
         print(
             f"Designing taxonomy from {len(sample)} sample repos (min_categories={args.min_categories}, max_categories={args.max_categories})..."
@@ -1550,6 +1640,21 @@ def main() -> int:
         print("Taxonomy:")
         for c in taxonomy.categories:
             print(f"  {c['id']}: {c['name']}")
+
+    unknown_id = "Unknown"
+    unknown_cat_exists = any(c.get("id", "").lower() == "unknown" or c.get("name", "").lower() == "unknown" for c in taxonomy.categories)
+    if not unknown_cat_exists:
+        taxonomy.categories.append({
+            "id": unknown_id,
+            "name": "Unknown",
+            "description": "Repositories with insufficient summary data (empty Brief Introduction, Innovations, and Summary)."
+        })
+        print(f"Added 'Unknown' category for {len(unknown_repos)} repos with missing summaries.")
+
+    for r in unknown_repos:
+        rid = r.get("id")
+        if rid:
+            assignment_map[rid] = unknown_id
 
     # Classify repos in batches
     if repos_to_classify:

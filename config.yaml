@@ -122,11 +122,11 @@ content_min_categories: 5
 content_max_categories: 12
 
 
-# 内容分类：每个“非 Other”类别的最小仓库数（0 表示不启用）
-# 说明：当某个类别数量 < X 时，分类脚本会把该类别裁剪并合并到 Other，避免出现大量“只有 1~2 个仓库”的小类。
+# 内容分类：每个"非 Other"类别的最小仓库数（0 表示不启用）
+# 说明：当某个类别数量 < X 时，分类脚本会把该类别裁剪并合并到 Other，避免出现大量"只有 1~2 个仓库"的小类。
 # Content classification: minimum repos per non-'Other' category (0 disables).
 # If a category has < X repos, it will be pruned and merged into 'Other' to reduce fragmentation.
-content_min_repos_per_category: 5
+content_min_repos_per_category: 3
 
 # 内容分类：taxonomy 设计时的抽样策略
 # - head: 取前 N 个（旧行为，可能对 README 顺序有偏置）
