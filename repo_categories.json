@@ -1,40 +1,55 @@
 {
-  "generated_at": "2026-06-07T08:01:18Z",
+  "generated_at": "2026-06-08T09:02:39Z",
   "model_choice": "copilot",
   "min_categories": 5,
-  "max_categories": 6,
-  "min_repos_per_category": 5,
+  "max_categories": 10,
+  "min_repos_per_category": 3,
   "taxonomy": {
     "categories": [
       {
         "id": "C1",
         "name": "AI Assistants",
-        "description": "Repositories focused on developing AI systems that assist users in various tasks, enhancing productivity and user interaction."
+        "description": "Repositories focused on creating intelligent personal assistants that enhance user interaction and productivity."
       },
       {
         "id": "C2",
-        "name": "Autonomous Agents",
-        "description": "Projects that involve autonomous agents capable of performing tasks independently, often utilizing AI for decision-making and task execution."
-      },
-      {
-        "id": "C3",
         "name": "Research Automation",
-        "description": "Repositories aimed at automating research processes, including idea generation, paper writing, and scientific discovery."
+        "description": "Projects that automate or enhance research processes, including idea generation and academic writing."
       },
       {
         "id": "C4",
-        "name": "Content Creation",
-        "description": "Tools and frameworks designed for generating various forms of content, including writing novels, creating videos, and other media."
+        "name": "Agent Frameworks",
+        "description": "Frameworks and platforms for developing and managing AI agents with specialized skills and functionalities."
       },
       {
         "id": "C5",
-        "name": "Agent Frameworks",
-        "description": "Frameworks and methodologies for building and managing AI agents, focusing on their development, skills, and collaborative capabilities."
+        "name": "Content Creation Tools",
+        "description": "Tools designed for generating and managing content, including novel writing and multimedia production."
+      },
+      {
+        "id": "C6",
+        "name": "Monitoring & Analysis",
+        "description": "Repositories focused on monitoring systems and intelligent analysis for various applications."
+      },
+      {
+        "id": "C7",
+        "name": "Collaboration Tools",
+        "description": "Projects that facilitate collaboration among coding agents or enhance teamwork in software development."
+      },
+      {
+        "id": "C8",
+        "name": "Browser Automation",
+        "description": "Tools that automate web interactions, enabling AI agents to perform tasks in web applications."
       },
       {
         "id": "Other",
         "name": "Other",
-        "description": "Repositories that do not fit into the specified categories, encompassing a variety of unrelated projects."
+        "description": "Repositories that do not fit into the specified categories."
+      },
+      {
+        "id": "Unknown",
+        "name": "Unknown",
+        "description": "Repositories with insufficient summary data (empty Brief Introduction, Innovations, and Summary)."
       }
     ]
   },
@@ -72,22 +87,22 @@
     {
       "id": 7,
       "full_name": "Fosowl/agenticSeek",
-      "category_id": "Other"
+      "category_id": "Unknown"
     },
     {
       "id": 8,
       "full_name": "langbot-app/LangBot",
-      "category_id": "Other"
+      "category_id": "Unknown"
     },
     {
       "id": 9,
       "full_name": "SamuelSchmidgall/AgentLaboratory",
-      "category_id": "Other"
+      "category_id": "Unknown"
     },
     {
       "id": 10,
       "full_name": "Significant-Gravitas/AutoGPT",
-      "category_id": "Other"
+      "category_id": "Unknown"
     },
     {
       "id": 11,
@@ -137,27 +152,27 @@
     {
       "id": 20,
       "full_name": "microsoft/AI-For-Beginners",
-      "category_id": "Other"
+      "category_id": "Unknown"
     },
     {
       "id": 21,
       "full_name": "microsoft/generative-ai-for-beginners",
-      "category_id": "Other"
+      "category_id": "Unknown"
     },
     {
       "id": 22,
       "full_name": "QwenLM/Qwen3-VL",
-      "category_id": "Other"
+      "category_id": "Unknown"
     },
     {
       "id": 23,
       "full_name": "google/automl",
-      "category_id": "Other"
+      "category_id": "Unknown"
     },
     {
       "id": 24,
       "full_name": "fogsightai/fogsight",
-      "category_id": "Other"
+      "category_id": "Unknown"
     },
     {
       "id": 25,
@@ -177,7 +192,7 @@
     {
       "id": 28,
       "full_name": "anthropics/claude-code",
-      "category_id": "Other"
+      "category_id": "Unknown"
     },
     {
       "id": 29,
@@ -187,7 +202,7 @@
     {
       "id": 30,
       "full_name": "nomic-ai/gpt4all",
-      "category_id": "Other"
+      "category_id": "Unknown"
     }
   ]
 }

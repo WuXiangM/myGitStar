@@ -10,7 +10,7 @@
 <hr/>
 
 <p><b>Current account:</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
-<p><b>Generated on:</b> 2026-06-07</p>
+<p><b>Generated on:</b> 2026-06-08</p>
 <p><b>AI Model:</b> GitHub Copilot</p>
 <p><b>Total repositories:</b> 30</p>
 
@@ -31,7 +31,7 @@
 
 ### 📌 [rohitg00/ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch)
 
-**⭐ Stars:** 29,547 | **🍴 Forks:** 4,816 | **📅 Updated:** 2026-06-07
+**⭐ Stars:** 30,074 | **🍴 Forks:** 4,907 | **📅 Updated:** 2026-06-08
 
 1. **Repository Name:** rohitg00/ai-engineering-from-scratch
 2. **Brief Introduction:** Not specified.
@@ -43,7 +43,7 @@
 
 ### 📌 [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills)
 
-**⭐ Stars:** 28,249 | **🍴 Forks:** 2,336 | **📅 Updated:** 2026-06-07
+**⭐ Stars:** 28,751 | **🍴 Forks:** 2,390 | **📅 Updated:** 2026-06-08
 
 1. **Repository Name:** Imbad0202/academic-research-skills
 2. **Brief Introduction:** Not specified.
@@ -67,7 +67,7 @@
 
 ### 📌 [HKUDS/CLI-Anything](https://github.com/HKUDS/CLI-Anything)
 
-**⭐ Stars:** 42,223 | **🍴 Forks:** 3,990 | **📅 Updated:** 2026-06-07
+**⭐ Stars:** 42,317 | **🍴 Forks:** 3,991 | **📅 Updated:** 2026-06-08
 
 1. **Repository Name:** HKUDS/CLI-Anything
 2. **Brief Introduction:** Not specified.
@@ -79,7 +79,7 @@
 
 ### 📌 [CloakHQ/CloakBrowser](https://github.com/CloakHQ/CloakBrowser)
 
-**⭐ Stars:** 24,531 | **🍴 Forks:** 1,952 | **📅 Updated:** 2026-06-07
+**⭐ Stars:** 24,802 | **🍴 Forks:** 1,977 | **📅 Updated:** 2026-06-08
 
 1. **Repository Name:** CloakHQ/CloakBrowser
 2. **Brief Introduction:** Not specified.
@@ -91,7 +91,7 @@
 
 ### 📌 [huggingface/lerobot](https://github.com/huggingface/lerobot)
 
-**⭐ Stars:** 24,750 | **🍴 Forks:** 4,737 | **📅 Updated:** 2026-06-07
+**⭐ Stars:** 24,785 | **🍴 Forks:** 4,747 | **📅 Updated:** 2026-06-08
 
 1. **Repository Name:** huggingface/lerobot
 2. **Brief Introduction:** Not specified.
@@ -103,7 +103,7 @@
 
 ### 📌 [vllm-project/vllm](https://github.com/vllm-project/vllm)
 
-**⭐ Stars:** 82,105 | **🍴 Forks:** 17,735 | **📅 Updated:** 2026-06-07
+**⭐ Stars:** 82,202 | **🍴 Forks:** 17,787 | **📅 Updated:** 2026-06-08
 
 1. **Repository Name:** vllm-project/vllm
 2. **Brief Introduction:** Not specified.
@@ -115,7 +115,7 @@
 
 ### 📌 [OpenBMB/VoxCPM](https://github.com/OpenBMB/VoxCPM)
 
-**⭐ Stars:** 27,327 | **🍴 Forks:** 3,088 | **📅 Updated:** 2026-06-07
+**⭐ Stars:** 27,602 | **🍴 Forks:** 3,124 | **📅 Updated:** 2026-06-08
 
 1. **Repository Name:** OpenBMB/VoxCPM
 2. **Brief Introduction:** Not specified.
@@ -127,7 +127,7 @@
 
 ### 📌 [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)
 
-**⭐ Stars:** 185,074 | **🍴 Forks:** 31,794 | **📅 Updated:** 2026-06-07
+**⭐ Stars:** 186,589 | **🍴 Forks:** 32,095 | **📅 Updated:** 2026-06-08
 
 1. **Repository Name:** NousResearch/hermes-agent
 2. **Brief Introduction:** Not specified.
@@ -139,8 +139,13 @@
 
 ### 📌 [EverMind-AI/MSA](https://github.com/EverMind-AI/MSA)
 
-**⭐ Stars:** 3,463 | **🍴 Forks:** 220 | **📅 Updated:** 2026-06-06
+**⭐ Stars:** 3,463 | **🍴 Forks:** 221 | **📅 Updated:** 2026-06-08
 
+1. **Repository Name:** EverMind-AI/MSA
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** 
 1. **Repository Name:** EverMind-AI/MSA
 2. **Brief Introduction:** Not specified.
 3. **Innovations:** Not specified.
@@ -178,7 +183,7 @@
 
 ### 📌 [datawhalechina/every-embodied](https://github.com/datawhalechina/every-embodied)
 
-**⭐ Stars:** 2,181 | **🍴 Forks:** 223 | **📅 Updated:** 2026-06-07
+**⭐ Stars:** 2,199 | **🍴 Forks:** 225 | **📅 Updated:** 2026-06-08
 
 1. **Repository Name:** datawhalechina/every-embodied
 2. **Brief Introduction:** Not specified.
@@ -190,7 +195,7 @@
 
 ### 📌 [jingyaogong/minimind-v](https://github.com/jingyaogong/minimind-v)
 
-**⭐ Stars:** 8,095 | **🍴 Forks:** 890 | **📅 Updated:** 2026-06-07
+**⭐ Stars:** 8,098 | **🍴 Forks:** 891 | **📅 Updated:** 2026-06-08
 
 1. **Repository Name:** jingyaogong/minimind-v
 2. **Brief Introduction:** Not specified.
@@ -202,7 +207,7 @@
 
 ### 📌 [open-gigaai/giga-brain-0](https://github.com/open-gigaai/giga-brain-0)
 
-**⭐ Stars:** 2,537 | **🍴 Forks:** 197 | **📅 Updated:** 2026-06-05
+**⭐ Stars:** 2,538 | **🍴 Forks:** 197 | **📅 Updated:** 2026-06-07
 
 1. **Repository Name:** open-gigaai/giga-brain-0
 2. **Brief Introduction:** Not specified.
@@ -214,7 +219,7 @@
 
 ### 📌 [jingyaogong/minimind](https://github.com/jingyaogong/minimind)
 
-**⭐ Stars:** 51,264 | **🍴 Forks:** 6,584 | **📅 Updated:** 2026-06-07
+**⭐ Stars:** 51,340 | **🍴 Forks:** 6,597 | **📅 Updated:** 2026-06-08
 
 1. **Repository Name:** jingyaogong/minimind
 2. **Brief Introduction:** Not specified.
@@ -240,7 +245,7 @@
 
 ### 📌 [colbymchenry/codegraph](https://github.com/colbymchenry/codegraph)
 
-**⭐ Stars:** 43,322 | **🍴 Forks:** 2,659 | **📅 Updated:** 2026-06-07
+**⭐ Stars:** 44,409 | **🍴 Forks:** 2,734 | **📅 Updated:** 2026-06-08
 
 1. **Repository Name:** colbymchenry/codegraph
 2. **Brief Introduction:** Not specified.
@@ -252,7 +257,7 @@
 
 ### 📌 [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)
 
-**⭐ Stars:** 25,129 | **🍴 Forks:** 2,349 | **📅 Updated:** 2026-06-07
+**⭐ Stars:** 25,536 | **🍴 Forks:** 2,400 | **📅 Updated:** 2026-06-08
 
 1. **Repository Name:** heygen-com/hyperframes
 2. **Brief Introduction:** Not specified.
@@ -264,7 +269,7 @@
 
 ### 📌 [ExplosiveCoderflome/AI-Novel-Writing-Assistant](https://github.com/ExplosiveCoderflome/AI-Novel-Writing-Assistant)
 
-**⭐ Stars:** 1,548 | **🍴 Forks:** 323 | **📅 Updated:** 2026-06-07
+**⭐ Stars:** 1,561 | **🍴 Forks:** 327 | **📅 Updated:** 2026-06-08
 
 1. **Repository Name:** ExplosiveCoderflome/AI-Novel-Writing-Assistant
 2. **Brief Introduction:** Not specified.
@@ -276,8 +281,13 @@
 
 ### 📌 [hAcKlyc/MyAgents](https://github.com/hAcKlyc/MyAgents)
 
-**⭐ Stars:** 862 | **🍴 Forks:** 90 | **📅 Updated:** 2026-06-07
+**⭐ Stars:** 864 | **🍴 Forks:** 89 | **📅 Updated:** 2026-06-08
 
+1. **Repository Name:** hAcKlyc/MyAgents
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
+5. **Summary:** 
 1. **Repository Name:** hAcKlyc/MyAgents
 2. **Brief Introduction:** Not specified.
 3. **Innovations:** Not specified.
@@ -303,7 +313,7 @@
 
 ### 📌 [Narcooo/inkos](https://github.com/Narcooo/inkos)
 
-**⭐ Stars:** 6,965 | **🍴 Forks:** 1,317 | **📅 Updated:** 2026-06-07
+**⭐ Stars:** 7,000 | **🍴 Forks:** 1,323 | **📅 Updated:** 2026-06-08
 
 1. **Repository Name:** Narcooo/inkos
 2. **Brief Introduction:** Not specified.
@@ -317,7 +327,7 @@
 
 ### 📌 [elder-plinius/CL4R1T4S](https://github.com/elder-plinius/CL4R1T4S)
 
-**⭐ Stars:** 26,421 | **🍴 Forks:** 4,741 | **📅 Updated:** 2026-06-07
+**⭐ Stars:** 26,431 | **🍴 Forks:** 4,739 | **📅 Updated:** 2026-06-08
 
 1. **Repository Name:** elder-plinius/CL4R1T4S
 2. **Brief Introduction:** Not specified.
@@ -329,7 +339,7 @@
 
 ### 📌 [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills)
 
-**⭐ Stars:** 169,729 | **🍴 Forks:** 17,340 | **📅 Updated:** 2026-06-07
+**⭐ Stars:** 170,835 | **🍴 Forks:** 17,448 | **📅 Updated:** 2026-06-08
 
 1. **Repository Name:** multica-ai/andrej-karpathy-skills
 2. **Brief Introduction:** Not specified.
@@ -341,7 +351,7 @@
 
 ### 📌 [AiHubCN/Awesome-Chinese-LLM](https://github.com/AiHubCN/Awesome-Chinese-LLM)
 
-**⭐ Stars:** 22,594 | **🍴 Forks:** 2,130 | **📅 Updated:** 2026-06-07
+**⭐ Stars:** 22,597 | **🍴 Forks:** 2,130 | **📅 Updated:** 2026-06-08
 
 1. **Repository Name:** AiHubCN/Awesome-Chinese-LLM
 2. **Brief Introduction:** Not specified.
@@ -355,7 +365,7 @@
 
 ### 📌 [mattpocock/skills](https://github.com/mattpocock/skills)
 
-**⭐ Stars:** 119,725 | **🍴 Forks:** 10,497 | **📅 Updated:** 2026-06-07
+**⭐ Stars:** 120,932 | **🍴 Forks:** 10,599 | **📅 Updated:** 2026-06-08
 
 1. **Repository Name:** mattpocock/skills
 2. **Brief Introduction:** Not specified.
@@ -367,7 +377,7 @@
 
 ### 📌 [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents)
 
-**⭐ Stars:** 108,003 | **🍴 Forks:** 17,793 | **📅 Updated:** 2026-06-07
+**⭐ Stars:** 108,212 | **🍴 Forks:** 17,833 | **📅 Updated:** 2026-06-08
 
 1. **Repository Name:** msitarzewski/agency-agents
 2. **Brief Introduction:** Not specified.
@@ -381,7 +391,7 @@
 
 ### 📌 [router-for-me/CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI)
 
-**⭐ Stars:** 36,317 | **🍴 Forks:** 6,026 | **📅 Updated:** 2026-06-07
+**⭐ Stars:** 36,530 | **🍴 Forks:** 6,066 | **📅 Updated:** 2026-06-08
 
 1. **Repository Name:** router-for-me/CLIProxyAPI
 2. **Brief Introduction:** Not specified.
@@ -393,7 +403,7 @@
 
 ### 📌 [multica-ai/multica](https://github.com/multica-ai/multica)
 
-**⭐ Stars:** 35,616 | **🍴 Forks:** 4,335 | **📅 Updated:** 2026-06-07
+**⭐ Stars:** 35,785 | **🍴 Forks:** 4,356 | **📅 Updated:** 2026-06-08
 
 1. **Repository Name:** multica-ai/multica
 2. **Brief Introduction:** Not specified.
@@ -407,7 +417,7 @@
 
 ### 📌 [Lordog/dive-into-llms](https://github.com/Lordog/dive-into-llms)
 
-**⭐ Stars:** 40,387 | **🍴 Forks:** 4,920 | **📅 Updated:** 2026-06-07
+**⭐ Stars:** 40,503 | **🍴 Forks:** 4,938 | **📅 Updated:** 2026-06-08
 
 1. **Repository Name:** Lordog/dive-into-llms
 2. **Brief Introduction:** Not specified.
@@ -440,6 +450,11 @@
 2. **Brief Introduction:** Not specified.
 3. **Innovations:** Not specified.
 4. **Basic Usage:** Not specified.
+5. **Summary:** 
+1. **Repository Name:** wri/global-pasture-watch
+2. **Brief Introduction:** Not specified.
+3. **Innovations:** Not specified.
+4. **Basic Usage:** Not specified.
 5. **Summary:** Not specified.
 
 ---
@@ -449,7 +464,7 @@
 
 - **Total repositories:** 30
 - **Languages:** 6
-- **Generated on:** 2026-06-07
+- **Generated on:** 2026-06-08
 - **AI Model:** GitHub Copilot
 
 - **API Calls:** Copilot=3, OpenRouter=0, Gemini=0
