@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-08T09:02:39Z",
+  "generated_at": "2026-06-09T07:59:46Z",
   "model_choice": "copilot",
   "min_categories": 5,
   "max_categories": 10,
@@ -9,37 +9,37 @@
       {
         "id": "C1",
         "name": "AI Assistants",
-        "description": "Repositories focused on creating intelligent personal assistants that enhance user interaction and productivity."
+        "description": "Repositories focused on developing AI-driven personal assistants that enhance user productivity and interaction."
       },
       {
         "id": "C2",
-        "name": "Research Automation",
-        "description": "Projects that automate or enhance research processes, including idea generation and academic writing."
+        "name": "Autonomous Research",
+        "description": "Projects that facilitate autonomous research processes, including idea generation and academic writing."
       },
       {
         "id": "C4",
-        "name": "Agent Frameworks",
-        "description": "Frameworks and platforms for developing and managing AI agents with specialized skills and functionalities."
+        "name": "Collaborative Agents",
+        "description": "Platforms that enable collaboration among coding agents, enhancing teamwork and productivity in software development."
       },
       {
         "id": "C5",
-        "name": "Content Creation Tools",
-        "description": "Tools designed for generating and managing content, including novel writing and multimedia production."
+        "name": "Content Creation",
+        "description": "Tools designed for generating and managing content, including novel writing and video rendering."
       },
       {
         "id": "C6",
-        "name": "Monitoring & Analysis",
-        "description": "Repositories focused on monitoring systems and intelligent analysis for various applications."
+        "name": "Agent Frameworks",
+        "description": "Comprehensive frameworks for building and managing specialized AI agents for various tasks."
       },
       {
         "id": "C7",
-        "name": "Collaboration Tools",
-        "description": "Projects that facilitate collaboration among coding agents or enhance teamwork in software development."
+        "name": "Automation Tools",
+        "description": "Repositories that provide tools for automating tasks, including browser interactions and monitoring systems."
       },
       {
         "id": "C8",
-        "name": "Browser Automation",
-        "description": "Tools that automate web interactions, enabling AI agents to perform tasks in web applications."
+        "name": "Productivity Platforms",
+        "description": "AI-driven platforms that integrate multiple tools and assistants to enhance user productivity."
       },
       {
         "id": "Other",
