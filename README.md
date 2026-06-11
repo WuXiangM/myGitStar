@@ -10,7 +10,7 @@
 <p><b>Current account:</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
 
 
-<p><b>Generated on:</b> 2026-06-10 08:15:52</p>
+<p><b>Generated on:</b> 2026-06-11 08:53:40</p>
 
 
 <p><b>AI Model:</b> copilot</p>
@@ -28,19 +28,17 @@
 
 - [Unknown](#unknown) (11)
 
-- [AI Assistants](#ai-assistants) (0)
+- [AI Agents](#ai-agents) (0)
 
-- [Autonomous Agents](#autonomous-agents) (0)
-
-- [Collaboration Tools](#collaboration-tools) (0)
+- [Collaborative Development](#collaborative-development) (0)
 
 - [Content Creation](#content-creation) (0)
 
-- [Monitoring Systems](#monitoring-systems) (0)
+- [Productivity Tools](#productivity-tools) (0)
 
 - [Research Automation](#research-automation) (0)
 
-- [Skills Frameworks](#skills-frameworks) (0)
+- [Scientific Discovery](#scientific-discovery) (0)
 
 - [Web Automation](#web-automation) (0)
 
@@ -265,28 +263,20 @@
 ---
 
 
-<a id="ai-assistants"></a>
+<a id="ai-agents"></a>
 
-## AI Assistants (Total 0)
-
-
-> Repositories focused on developing AI systems that assist users in various tasks, enhancing productivity and user interaction.
+## AI Agents (Total 0)
 
 
-<a id="autonomous-agents"></a>
-
-## Autonomous Agents (Total 0)
+> Repositories focused on developing intelligent agents that can perform tasks autonomously or assist users.
 
 
-> Projects that create self-evolving agents capable of performing tasks autonomously, often incorporating learning and adaptability.
+<a id="collaborative-development"></a>
+
+## Collaborative Development (Total 0)
 
 
-<a id="collaboration-tools"></a>
-
-## Collaboration Tools (Total 0)
-
-
-> Platforms that enhance collaboration among users or agents, focusing on task management and teamwork.
+> Platforms that enable collaboration among developers, enhancing teamwork and project management.
 
 
 <a id="content-creation"></a>
@@ -294,15 +284,15 @@
 ## Content Creation (Total 0)
 
 
-> Repositories that facilitate the creation of content, including writing tools and multimedia generation.
+> Projects that facilitate the creation of various forms of content, including writing, video production, and interactive media.
 
 
-<a id="monitoring-systems"></a>
+<a id="productivity-tools"></a>
 
-## Monitoring Systems (Total 0)
+## Productivity Tools (Total 0)
 
 
-> Tools designed for real-time monitoring and analysis of data or activities, often integrating AI for intelligent insights.
+> Applications and frameworks aimed at improving user productivity through task management and intelligent assistance.
 
 
 <a id="research-automation"></a>
@@ -310,15 +300,15 @@
 ## Research Automation (Total 0)
 
 
-> Tools and frameworks designed to automate research processes, from idea generation to publication.
+> Tools and frameworks designed to automate and enhance the research process, from idea generation to publication.
 
 
-<a id="skills-frameworks"></a>
+<a id="scientific-discovery"></a>
 
-## Skills Frameworks (Total 0)
+## Scientific Discovery (Total 0)
 
 
-> Repositories that provide frameworks for developing and managing skills for AI agents, enhancing their capabilities.
+> AI systems and methodologies designed to facilitate autonomous scientific exploration and hypothesis testing.
 
 
 <a id="web-automation"></a>
@@ -326,7 +316,7 @@
 ## Web Automation (Total 0)
 
 
-> Tools that enable automation of web interactions, allowing agents to perform tasks within web applications.
+> Tools that automate interactions with web applications, enhancing the capabilities of AI agents in browser environments.
 
 
 <a id="other"></a>
@@ -334,7 +324,7 @@
 ## Other (Total 19)
 
 
-> Repositories that do not fit into the specified categories, encompassing a variety of unique projects.
+> Repositories that do not fit into the specified categories.
 
 
 ### 📌 [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio)
