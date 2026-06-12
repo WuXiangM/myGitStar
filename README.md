@@ -10,7 +10,7 @@
 <p><b>Current account:</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
 
 
-<p><b>Generated on:</b> 2026-06-11 08:53:40</p>
+<p><b>Generated on:</b> 2026-06-12 08:41:06</p>
 
 
 <p><b>AI Model:</b> copilot</p>
@@ -28,17 +28,17 @@
 
 - [Unknown](#unknown) (11)
 
-- [AI Agents](#ai-agents) (0)
+- [AI Assistants](#ai-assistants) (0)
 
-- [Collaborative Development](#collaborative-development) (0)
+- [Agent Frameworks](#agent-frameworks) (0)
+
+- [Autonomous Research](#autonomous-research) (0)
+
+- [Collaboration Tools](#collaboration-tools) (0)
 
 - [Content Creation](#content-creation) (0)
 
-- [Productivity Tools](#productivity-tools) (0)
-
-- [Research Automation](#research-automation) (0)
-
-- [Scientific Discovery](#scientific-discovery) (0)
+- [Monitoring & Analysis](#monitoring--analysis) (0)
 
 - [Web Automation](#web-automation) (0)
 
@@ -263,20 +263,36 @@
 ---
 
 
-<a id="ai-agents"></a>
+<a id="ai-assistants"></a>
 
-## AI Agents (Total 0)
-
-
-> Repositories focused on developing intelligent agents that can perform tasks autonomously or assist users.
+## AI Assistants (Total 0)
 
 
-<a id="collaborative-development"></a>
-
-## Collaborative Development (Total 0)
+> Repositories focused on creating intelligent personal assistants that enhance user productivity and interaction.
 
 
-> Platforms that enable collaboration among developers, enhancing teamwork and project management.
+<a id="agent-frameworks"></a>
+
+## Agent Frameworks (Total 0)
+
+
+> Frameworks and methodologies for developing and managing AI agents with specialized skills and functionalities.
+
+
+<a id="autonomous-research"></a>
+
+## Autonomous Research (Total 0)
+
+
+> Projects that automate research processes, including idea generation, paper writing, and scientific discovery.
+
+
+<a id="collaboration-tools"></a>
+
+## Collaboration Tools (Total 0)
+
+
+> Platforms that facilitate collaboration among coding agents or teams, enhancing productivity and teamwork.
 
 
 <a id="content-creation"></a>
@@ -284,31 +300,15 @@
 ## Content Creation (Total 0)
 
 
-> Projects that facilitate the creation of various forms of content, including writing, video production, and interactive media.
+> Tools and systems designed for generating and managing creative content, including writing and multimedia.
 
 
-<a id="productivity-tools"></a>
+<a id="monitoring--analysis"></a>
 
-## Productivity Tools (Total 0)
-
-
-> Applications and frameworks aimed at improving user productivity through task management and intelligent assistance.
+## Monitoring & Analysis (Total 0)
 
 
-<a id="research-automation"></a>
-
-## Research Automation (Total 0)
-
-
-> Tools and frameworks designed to automate and enhance the research process, from idea generation to publication.
-
-
-<a id="scientific-discovery"></a>
-
-## Scientific Discovery (Total 0)
-
-
-> AI systems and methodologies designed to facilitate autonomous scientific exploration and hypothesis testing.
+> Repositories that provide monitoring solutions and intelligent analysis tools for various applications.
 
 
 <a id="web-automation"></a>
@@ -316,7 +316,7 @@
 ## Web Automation (Total 0)
 
 
-> Tools that automate interactions with web applications, enhancing the capabilities of AI agents in browser environments.
+> Tools designed for automating web interactions and browser tasks, enhancing the capabilities of AI agents.
 
 
 <a id="other"></a>
