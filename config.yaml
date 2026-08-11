@@ -21,7 +21,7 @@ default_copilot_model: openai/gpt-4o-mini
 
 # OpenRouter 模型名称（用于 model_choice: openrouter）
 # OpenRouter model name (used when model_choice: openrouter)
-default_openrouter_model: nvidia/nemotron-3-ultra-550b-a55b:free
+default_openrouter_model: openrouter/free
 
 # Gemini 模型名称（用于 model_choice: gemini）
 # Gemini model name (used when model_choice: gemini)

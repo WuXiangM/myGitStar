@@ -105,6 +105,23 @@ def make_api_request(
                     "status_code": 410,
                 }
 
+            # HTTP 404 = model not found or endpoint unavailable; retrying is pointless.
+            if resp.status_code == 404:
+                body_preview = ""
+                try:
+                    body_preview = (resp.text or "").strip()[:2000]
+                except Exception:
+                    body_preview = ""
+                print(f"[404] Model or endpoint not found, not retrying.", flush=True)
+                return {
+                    "error": {
+                        "code": 404,
+                        "message": "Not Found",
+                        "body_preview": body_preview,
+                    },
+                    "status_code": 404,
+                }
+
             if not (200 <= int(resp.status_code) < 300):
                 body_preview = ""
                 try:
