@@ -88,6 +88,23 @@ def make_api_request(
                     continue
                 return {"error": {"code": 429, "message": "Too Many Requests"}, "status_code": 429}
 
+            # HTTP 410 = service retired/unavailable; retrying is pointless.
+            if resp.status_code == 410:
+                body_preview = ""
+                try:
+                    body_preview = (resp.text or "").strip()[:2000]
+                except Exception:
+                    body_preview = ""
+                print(f"[410] Service unavailable (retired), not retrying.", flush=True)
+                return {
+                    "error": {
+                        "code": 410,
+                        "message": "Service Unavailable (Gone)",
+                        "body_preview": body_preview,
+                    },
+                    "status_code": 410,
+                }
+
             if not (200 <= int(resp.status_code) < 300):
                 body_preview = ""
                 try:
@@ -214,7 +231,7 @@ def call_llm(
     default_openrouter_model: str,
     default_gemini_model: str,
     api_request_func: callable,
-    fallback_on_429: bool = False,
+    fallback_on_429: bool = True,
 ) -> str:
     model_choice = config.get("model_choice", "copilot")
     if not model_choice:
@@ -238,13 +255,19 @@ def call_llm(
         }
         resp = api_request_func(API_ENDPOINTS["copilot"], headers, data, retries=3, retry_delay=2.0)
 
+        # Fallback when Copilot is rate-limited (HTTP 429) or unavailable (HTTP 410).
+        # HTTP 410 occurs during GitHub Models retirement brownout periods.
+        error_code = None
+        if isinstance(resp, dict) and isinstance(resp.get("error"), dict):
+            error_code = resp.get("error", {}).get("code")
+        
         if (
             fallback_on_429
             and isinstance(resp, dict)
             and isinstance(resp.get("error"), dict)
-            and resp.get("error", {}).get("code") == 429
+            and error_code in (429, 410)
         ):
-            print("[WARN] Copilot rate-limited (429). Trying fallback backend...")
+            print(f"[WARN] Copilot unavailable (code={error_code}). Trying fallback backend...")
             if openrouter_api_key:
                 model_name2 = default_openrouter_model or "openai/gpt-4o-mini"
                 headers2 = {"Authorization": f"Bearer {openrouter_api_key}", "Content-Type": "application/json"}
@@ -400,7 +423,7 @@ def call_llm_json(
     default_openrouter_model: str,
     default_gemini_model: str,
     api_request_func: callable,
-    fallback_on_429: bool = False,
+    fallback_on_429: bool = True,
     attempts: int = 2,
 ) -> Any:
     last_error: Optional[Exception] = None

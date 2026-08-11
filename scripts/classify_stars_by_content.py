@@ -62,7 +62,7 @@ RETRY_ATTEMPTS = int(os.environ.get("MYGITSTAR_RETRY_ATTEMPTS", get_int_config(c
 RATE_LIMIT_DELAY = float(os.environ.get("MYGITSTAR_RATE_LIMIT_DELAY", get_float_config(config, "rate_limit_delay", 3.0)))
 GLOBAL_QPS = float(os.environ.get("MYGITSTAR_GLOBAL_QPS", get_float_config(config, "global_qps", 0.5)))
 
-FALLBACK_ON_429 = env_truthy("MYGITSTAR_FALLBACK_ON_429")
+FALLBACK_ON_429 = os.environ.get("MYGITSTAR_FALLBACK_ON_429", "true").strip().lower() in {"1", "true", "yes", "y", "on"}
 
 DEBUG_API = env_truthy("DEBUG_API")
 
@@ -135,6 +135,23 @@ def make_api_request(url: str, headers: Dict[str, str], data: Dict[str, Any], re
                     time.sleep(wait)
                     continue
                 return {"error": {"code": 429, "message": "Too Many Requests"}, "status_code": 429}
+
+            # HTTP 410 = service retired/unavailable; retrying is pointless.
+            if resp.status_code == 410:
+                body_preview = ""
+                try:
+                    body_preview = (resp.text or "").strip()[:2000]
+                except Exception:
+                    body_preview = ""
+                print("[410] Service unavailable (retired), not retrying.", flush=True)
+                return {
+                    "error": {
+                        "code": 410,
+                        "message": "Service Unavailable (Gone)",
+                        "body_preview": body_preview,
+                    },
+                    "status_code": 410,
+                }
 
             # For non-2xx, return a structured error payload instead of raising.
             if not (200 <= int(resp.status_code) < 300):
@@ -282,14 +299,19 @@ def call_llm(prompt: str) -> str:
         }
         resp = make_api_request(API_ENDPOINTS["copilot"], headers, data, retries=RETRY_ATTEMPTS, retry_delay=REQUEST_RETRY_DELAY)
 
-        # Optional fallback when Copilot is rate-limited (HTTP 429).
+        # Optional fallback when Copilot is rate-limited (HTTP 429) or unavailable (HTTP 410).
+        # HTTP 410 occurs during GitHub Models retirement brownout periods.
+        error_code = None
+        if isinstance(resp, dict) and isinstance(resp.get("error"), dict):
+            error_code = resp.get("error", {}).get("code")
+        
         if (
             FALLBACK_ON_429
             and isinstance(resp, dict)
             and isinstance(resp.get("error"), dict)
-            and resp.get("error", {}).get("code") == 429
+            and error_code in (429, 410)
         ):
-            print("[WARN] Copilot rate-limited (429). Trying fallback backend...")
+            print(f"[WARN] Copilot unavailable (code={error_code}). Trying fallback backend...")
             if OPENROUTER_API_KEY:
                 # Call OpenRouter directly (avoid recursion + static globals)
                 model_name2 = DEFAULT_OPENROUTER_MODEL or "openai/gpt-4o-mini"
