@@ -383,13 +383,6 @@ def main():
             repos_to_call = repos_to_update.get(lang, [])
             all_repos_to_process.extend(repos_to_call)
 
-        # Limit repos to process based on max_api_calls_per_run budget.
-        # Each repo needs at least 1 API call, so limit repos to available budget.
-        if max_api_calls > 0 and len(all_repos_to_process) > max_api_calls:
-            print(f"[LIMIT] max_api_calls={max_api_calls}，"
-                  f"本次仅更新 {max_api_calls}/{len(all_repos_to_process)} 个仓库（跳过其余 {len(all_repos_to_process) - max_api_calls} 个）")
-            all_repos_to_process = all_repos_to_process[:max_api_calls]
-
         # Fetch README content for repos that need summarization (token control)
         if all_repos_to_process:
             print(f"\n[README] 抓取 {len(all_repos_to_process)} 个仓库的 README...")

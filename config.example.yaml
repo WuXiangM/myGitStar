@@ -106,12 +106,12 @@ max_repos: 0
 update_mode: missing_only
 
 
-# 每次运行允许的最大 LLM 调用次数（0 = 不限制）
-# 配合 missing_only + description_hash，一般 workflow 一次只需 0~3 次调用
+# 每次运行允许的最大 LLM API 调用次数（0 = 不限制）
+# 仅用于限制 summarize 阶段的 API 调用次数，不影响分类阶段
+# 配合 missing_only + description_hash，一般 workflow 一次只需少量调用
 # 也可由环境变量 MAX_API_CALLS 覆盖
-# 同时也限制本次实际更新的仓库数（每个仓库至少需要 1 次 API 调用）
-# Max LLM calls per run (0 = unlimited). Env MAX_API_CALLS overrides.
-# Also limits the number of repos actually updated (each repo needs at least 1 API call).
+# Max LLM API calls per run for summarize (0 = unlimited). Does not limit classify.
+# Env MAX_API_CALLS overrides.
 max_api_calls_per_run: 30
 
 
