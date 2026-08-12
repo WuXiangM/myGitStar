@@ -82,7 +82,13 @@ def make_api_request(
                     }
 
                 if attempt < retries - 1:
-                    wait = retry_after if retry_after else (retry_delay * (2**attempt) + random.uniform(0, 1))
+                    # 使用 Retry-After 值，但设置最小等待时间（默认 30 秒）
+                    # OpenRouter 免费模型限速 20次/分钟，Retry-After 头可能返回很短的值
+                    min_429_wait = float(os.environ.get("MYGITSTAR_MIN_429_WAIT", "30") or "30")
+                    if retry_after is not None:
+                        wait = max(retry_after, min_429_wait)
+                    else:
+                        wait = max(retry_delay * (2 ** attempt) + random.uniform(0, 1), min_429_wait)
                     print(f"[429] Rate limited, sleep {wait:.1f}s then retry ({attempt + 1}/{retries})")
                     time.sleep(wait)
                     continue
