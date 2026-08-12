@@ -25,12 +25,11 @@ def copilot_summarize(
     github_token: str,
     default_copilot_model: str,
     api_request_func: callable,
-    openrouter_api_key: str = "",
-    default_openrouter_model: str = "",
-    gemini_api_key: str = "",
-    default_gemini_model: str = "",
-    config: dict = None,
 ) -> Optional[str]:
+    """Copilot summarize. No automatic fallback to other backends.
+    If Copilot is unavailable (410), returns None. Configure fallback_models
+    in config.yaml to enable ordered fallback.
+    """
     if not github_token:
         return None
     try:
@@ -52,17 +51,13 @@ def copilot_summarize(
         if response and isinstance(response, dict) and response.get("error"):
             err = response["error"]
             error_code = err.get("code")
-            if error_code == "RateLimitReached":
-                return f"Copilot API限额已用尽：{err.get('message', 'RateLimitReached')}"
-            # HTTP 410 = GitHub Models retired/unavailable → fallback to another backend
+            # Check for 429 or rate limit errors
+            if error_code == 429 or str(error_code) == "429" or error_code == "RateLimitReached":
+                print(f"[WARN] Copilot returned 429 rate limit error", flush=True)
+                return {"__error__": "429", "__message__": err.get("message", "Rate limit exceeded")}
             if error_code in (410, "410"):
-                print(f"[WARN] Copilot unavailable (code={error_code}). Trying fallback for summarize...", flush=True)
-                return _copilot_fallback_summarize(
-                    prompt, api_request_func,
-                    openrouter_api_key, default_openrouter_model,
-                    gemini_api_key, default_gemini_model,
-                    config,
-                )
+                print(f"[WARN] Copilot unavailable (code={error_code}). Configure fallback_models in config.yaml to enable fallback.", flush=True)
+                return None
         content = None
         if response:
             choices = response.get("choices", [{}])
@@ -76,85 +71,12 @@ def copilot_summarize(
                 content = str(content).strip()
         return content if content else None
     except RateLimitAbort:
-        # Let rate limit abort propagate to caller
         raise
     except Exception as e:
         import traceback
         print(f"[ERROR] copilot_summarize: Exception: {type(e).__name__}: {e}", flush=True)
         print(f"[ERROR] copilot_summarize: Exception traceback: {traceback.format_exc()}", flush=True)
         return None
-
-
-def _copilot_fallback_summarize(
-    prompt: str,
-    api_request_func: callable,
-    openrouter_api_key: str,
-    default_openrouter_model: str,
-    gemini_api_key: str,
-    default_gemini_model: str,
-    config: dict = None,
-) -> Optional[str]:
-    """Fallback summarize when Copilot is unavailable (410). Tries OpenRouter then Gemini."""
-    config = config or {}
-
-    # Try OpenRouter first
-    if openrouter_api_key:
-        try:
-            model_name = default_openrouter_model or "openai/gpt-4o-mini"
-            headers = {"Authorization": f"Bearer {openrouter_api_key}", "Content-Type": "application/json"}
-            data = {"model": model_name, "messages": [{"role": "user", "content": prompt}], "max_tokens": 600, "temperature": 0.4}
-            print(f"[FALLBACK] Trying OpenRouter (model={model_name})...", flush=True)
-            response = api_request_func(API_ENDPOINTS["openrouter"], headers, data)
-            if response and isinstance(response, dict) and not response.get("error"):
-                choices = response.get("choices", [{}])
-                if choices and isinstance(choices[0], dict):
-                    msg = choices[0].get("message")
-                    if msg and isinstance(msg, dict):
-                        content = str(msg.get("content", "")).strip()
-                        if content:
-                            print("[FALLBACK] OpenRouter succeeded", flush=True)
-                            return content
-            print("[FALLBACK] OpenRouter failed, trying next...", flush=True)
-        except Exception as e:
-            print(f"[FALLBACK] OpenRouter exception: {e}", flush=True)
-
-    # Try Gemini
-    if gemini_api_key:
-        try:
-            model_name = os.environ.get("GEMINI_MODEL", default_gemini_model) or "gemini-2.0-flash"
-            model_path = str(model_name).strip()
-            if model_path.startswith("models/"):
-                model_path = model_path[len("models/"):]
-            api_url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_path}:generateContent"
-            request_url = f"{api_url}?key={gemini_api_key}"
-            headers = {
-                "Content-Type": "application/json; charset=utf-8",
-                "User-Agent": "GitHub Star Summarizer/1.0",
-                "X-Goog-Api-Key": gemini_api_key,
-            }
-            temperature = config.get("gemini_temperature", 0.4)
-            max_output_tokens = int(config.get("gemini_max_output_tokens", 2000))
-            payload = {
-                "generationConfig": {"temperature": temperature, "maxOutputTokens": max_output_tokens, "topP": 0.8, "topK": 40},
-                "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-            }
-            print(f"[FALLBACK] Trying Gemini (model={model_path})...", flush=True)
-            response = api_request_func(request_url, headers, payload)
-            if response and isinstance(response, dict) and not response.get("error"):
-                candidates = response.get("candidates") or []
-                if candidates and isinstance(candidates[0], dict):
-                    content_obj = candidates[0].get("content") or {}
-                    parts = content_obj.get("parts") or []
-                    text = "".join(str(p.get("text", "")) for p in parts if isinstance(p, dict)).strip()
-                    if text:
-                        print("[FALLBACK] Gemini succeeded", flush=True)
-                        return text
-            print("[FALLBACK] Gemini failed", flush=True)
-        except Exception as e:
-            print(f"[FALLBACK] Gemini exception: {e}", flush=True)
-
-    print("[FALLBACK] All fallback backends failed for this repo", flush=True)
-    return None
 
 
 def openrouter_summarize(
@@ -185,6 +107,16 @@ def openrouter_summarize(
         print(f"[DEBUG] openrouter_summarize: calling api_request_func...", flush=True)
         response = api_request_func(API_ENDPOINTS["openrouter"], headers, data)
         print(f"[DEBUG] openrouter_summarize: api_request_func returned, response={type(response)}", flush=True)
+
+        # Check for 429 error and return special marker
+        if isinstance(response, dict) and response.get("error"):
+            error = response.get("error", {})
+            error_code = error.get("code")
+            if error_code == 429 or str(error_code) == "429":
+                print(f"[WARN] OpenRouter returned 429 rate limit error", flush=True)
+                # Return special dict to indicate 429 error
+                return {"__error__": "429", "__message__": error.get("message", "Rate limit exceeded")}
+
         content = None
         if response:
             print(f"[DEBUG] openrouter_summarize: response keys={list(response.keys()) if isinstance(response, dict) else 'N/A'}", flush=True)
@@ -274,6 +206,10 @@ def gemini_summarize(
                     wait = gen_backoff * attempt
                     time.sleep(wait)
                     continue
+                else:
+                    # 重试耗尽后返回 429 错误标记
+                    print(f"[WARN] Gemini returned 429 rate limit error after {gen_retries} retries", flush=True)
+                    return {"__error__": "429", "__message__": error_msg}
             if error_code == 401:
                 return "Gemini API Key 无效或无权限"
             elif error_code == 404:
@@ -355,6 +291,15 @@ def modelscope_summarize(
         print(f"[DEBUG] modelscope_summarize: calling api_request_func...", flush=True)
         response = api_request_func(API_ENDPOINTS["modelscope"], headers, data)
         print(f"[DEBUG] modelscope_summarize: api_request_func returned, response={type(response)}", flush=True)
+
+        # Check for 429 error and return special marker
+        if isinstance(response, dict) and response.get("error"):
+            error = response.get("error", {})
+            error_code = error.get("code")
+            if error_code == 429 or str(error_code) == "429":
+                print(f"[WARN] ModelScope returned 429 rate limit error", flush=True)
+                return {"__error__": "429", "__message__": error.get("message", "Rate limit exceeded")}
+
         content = None
         if response:
             print(f"[DEBUG] modelscope_summarize: response keys={list(response.keys()) if isinstance(response, dict) else 'N/A'}", flush=True)
@@ -396,53 +341,96 @@ def create_summarize_func(
     def make_request(url, headers, data):
         return make_api_request(url, headers, data, retry_attempts, request_retry_delay, throttle, request_timeout)
 
+    # Get fallback models from config (empty list = no fallback)
+    fallback_models = config.get("fallback_models", []) or []
+    if not isinstance(fallback_models, list):
+        fallback_models = []
+
+    def _call_model(model_name: str, repo: Dict) -> Optional[str]:
+        """Call a specific model and return result. Returns None on failure."""
+        if model_name == "copilot":
+            return copilot_summarize(repo, github_token, default_copilot_model, make_request)
+        elif model_name == "openrouter":
+            return openrouter_summarize(repo, openrouter_api_key, default_openrouter_model, make_request)
+        elif model_name == "gemini":
+            return gemini_summarize(repo, gemini_api_key, default_gemini_model, config, make_request)
+        elif model_name == "modelscope":
+            return modelscope_summarize(repo, modelscope_api_key, default_modelscope_model, make_request)
+        else:
+            print(f"[WARN] Unknown model in fallback list: {model_name}", flush=True)
+            return None
+
+    def _is_failure(result: Optional[str]) -> bool:
+        """Check if result indicates a failure that should trigger fallback."""
+        if result is None:
+            return True
+        # 429 errors should NOT trigger fallback (they are rate limit, not model failure)
+        if isinstance(result, dict) and result.get("__error__") == "429":
+            return False
+        return False
+
     if model_choice == "copilot":
         def summarize(repo: Dict) -> Optional[str]:
-            result = copilot_summarize(
-                repo,
-                github_token,
-                default_copilot_model,
-                make_request,
-                openrouter_api_key=openrouter_api_key,
-                default_openrouter_model=default_openrouter_model,
-                gemini_api_key=gemini_api_key,
-                default_gemini_model=default_gemini_model,
-                config=config,
-            )
+            result = copilot_summarize(repo, github_token, default_copilot_model, make_request)
             api_call_counter()
+            # Try fallback if primary failed (but not 429)
+            if _is_failure(result) and fallback_models:
+                for fallback_model in fallback_models:
+                    if fallback_model == model_choice:
+                        continue
+                    print(f"[FALLBACK] Trying {fallback_model} after {model_choice} failure...", flush=True)
+                    fallback_result = _call_model(fallback_model, repo)
+                    api_call_counter()
+                    if not _is_failure(fallback_result):
+                        print(f"[FALLBACK] {fallback_model} succeeded", flush=True)
+                        return fallback_result
             return result
     elif model_choice == "openrouter":
         print(f"[DEBUG] create_summarize_func: openrouter mode, api_key={'set' if openrouter_api_key else 'EMPTY'}, model={default_openrouter_model}", flush=True)
         def summarize(repo: Dict) -> Optional[str]:
-            result = openrouter_summarize(
-                repo,
-                openrouter_api_key,
-                default_openrouter_model,
-                make_request,
-            )
+            result = openrouter_summarize(repo, openrouter_api_key, default_openrouter_model, make_request)
             api_call_counter()
+            if _is_failure(result) and fallback_models:
+                for fallback_model in fallback_models:
+                    if fallback_model == model_choice:
+                        continue
+                    print(f"[FALLBACK] Trying {fallback_model} after {model_choice} failure...", flush=True)
+                    fallback_result = _call_model(fallback_model, repo)
+                    api_call_counter()
+                    if not _is_failure(fallback_result):
+                        print(f"[FALLBACK] {fallback_model} succeeded", flush=True)
+                        return fallback_result
             return result
     elif model_choice == "gemini":
         def summarize(repo: Dict) -> Optional[str]:
-            result = gemini_summarize(
-                repo,
-                gemini_api_key,
-                default_gemini_model,
-                config,
-                make_request,
-            )
+            result = gemini_summarize(repo, gemini_api_key, default_gemini_model, config, make_request)
             api_call_counter()
+            if _is_failure(result) and fallback_models:
+                for fallback_model in fallback_models:
+                    if fallback_model == model_choice:
+                        continue
+                    print(f"[FALLBACK] Trying {fallback_model} after {model_choice} failure...", flush=True)
+                    fallback_result = _call_model(fallback_model, repo)
+                    api_call_counter()
+                    if not _is_failure(fallback_result):
+                        print(f"[FALLBACK] {fallback_model} succeeded", flush=True)
+                        return fallback_result
             return result
     elif model_choice == "modelscope":
         print(f"[DEBUG] create_summarize_func: modelscope mode, api_key={'set' if modelscope_api_key else 'EMPTY'}, model={default_modelscope_model}", flush=True)
         def summarize(repo: Dict) -> Optional[str]:
-            result = modelscope_summarize(
-                repo,
-                modelscope_api_key,
-                default_modelscope_model,
-                make_request,
-            )
+            result = modelscope_summarize(repo, modelscope_api_key, default_modelscope_model, make_request)
             api_call_counter()
+            if _is_failure(result) and fallback_models:
+                for fallback_model in fallback_models:
+                    if fallback_model == model_choice:
+                        continue
+                    print(f"[FALLBACK] Trying {fallback_model} after {model_choice} failure...", flush=True)
+                    fallback_result = _call_model(fallback_model, repo)
+                    api_call_counter()
+                    if not _is_failure(fallback_result):
+                        print(f"[FALLBACK] {fallback_model} succeeded", flush=True)
+                        return fallback_result
             return result
     elif model_choice == "lmstudio":
         from scripts.ai.lmstudio_client import create_lmstudio_summarize_func

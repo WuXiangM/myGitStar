@@ -323,6 +323,8 @@ def main():
 
         # Wrap summarize_func so we can also count API calls in the budget
         # (the per-call counter in _api_call_counter stays unchanged).
+        # 429 errors are not counted against the budget since they don't
+        # actually consume API quota.
         _orig_summarize_func = None
         def _budgeted_summarize_func(repo_dict):
             if not _budget_tracker():
@@ -330,7 +332,27 @@ def main():
                 print(f"[BUDGET] skipping call, would exceed {max_api_calls} limit")
                 return None
             result = _orig_summarize_func(repo_dict)
-            _api_calls_used["n"] += 1
+            # Only count successful calls (not 429 rate limit errors)
+            # Check if result indicates a 429 error
+            is_429 = False
+            if result is None:
+                # None could mean 429 or other error, but we can't distinguish here
+                # The api_call_counter will track all calls, so we rely on that
+                pass
+            elif isinstance(result, dict):
+                # Check for special 429 error marker from openrouter_summarize
+                if result.get("__error__") == "429":
+                    is_429 = True
+                    print(f"[BUDGET] 429 error detected, not counting against budget")
+                elif result.get("__last_error__"):
+                    error = result.get("__last_error__", "")
+                    if "429" in str(error) or "rate limit" in str(error).lower():
+                        is_429 = True
+            elif isinstance(result, str) and ("429" in result or "rate limit" in result.lower()):
+                is_429 = True
+
+            if not is_429:
+                _api_calls_used["n"] += 1
             return result
 
         classified_to_process: Dict[str, List[Dict]] = {}

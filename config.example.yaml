@@ -10,6 +10,22 @@ repo_display_language: true
 # Model selection: 'copilot', 'openrouter', 'gemini', 'modelscope'
 model_choice: copilot
 
+# 可选：按顺序 fallback 的模型列表（留空或不配置则不启用 fallback）
+# Optional: ordered list of fallback models (leave empty or omit to disable fallback)
+# 仅当主模型不可用时（如 410 服务退役）才会按顺序尝试此列表中的模型
+# Only tried when primary model is unavailable (e.g. 410 service retired)
+# 可选值 / Available values: 'copilot', 'openrouter', 'gemini', 'modelscope'
+# 示例 / Examples:
+#   1. 主模型 openrouter，fallback 到 gemini 和 modelscope：
+#      fallback_models: [gemini, modelscope]
+#   2. 主模型 copilot，fallback 到 openrouter：
+#      fallback_models: [openrouter]
+#   3. 不启用 fallback（默认）：
+#      fallback_models: []
+# 注意：429 限速错误不会触发 fallback，仅 410 等服务不可用错误才会触发
+# Note: 429 rate limit errors do NOT trigger fallback; only 410 etc. service unavailable errors do
+fallback_models: []
+
 
 # GitHub用户名，设置为0时自动使用 workflow 账号，或填写指定用户名
 # GitHub username, set 0 to use workflow account or specify username
@@ -69,8 +85,11 @@ request_retry_delay: 2
 # 网络层重试次数
 retry_attempts: 2
 
-# 全局 QPS 限制（每秒最多几次请求，推荐 1）
-global_qps: 1
+# 全局 QPS 限制（每秒最多几次请求）
+# 推荐值：OpenRouter free 模型 20/min → 0.3；Gemini free 60/min → 1.0；付费模型可设更高
+# Global QPS limit (max requests per second)
+# Recommended: OpenRouter free 20/min → 0.3; Gemini free 60/min → 1.0; paid models can be higher
+global_qps: 0.3
 
 # Gemini 特定的保守配置
 

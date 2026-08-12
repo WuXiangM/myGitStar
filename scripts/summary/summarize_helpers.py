@@ -754,8 +754,13 @@ def summarize_batch_combined(
                 missing.append((idx, repo, 1))
 
         if missing:
-            print(f"[FALLBACK] Combined parse missed {len(missing)}/{len(batch)} repos, retrying individually...")
-            for idx, repo, attempt in missing:
+            print(f"[FALLBACK] Combined parse missed {len(missing)}/{len(batch)} repos, retrying individually with delay...")
+            for i_missing, (idx, repo, attempt) in enumerate(missing):
+                # 非首个重试时，增加缓冲时间避免连续请求触发 429
+                if i_missing > 0:
+                    fallback_delay = 3.0  # 每个单独重试之间间隔 3 秒
+                    print(f"[FALLBACK] Waiting {fallback_delay}s before next single-repo retry...")
+                    time.sleep(fallback_delay)
                 if api_budget_tracker is not None and not api_budget_tracker():
                     print(f"[BUDGET] skipping single-repo retry for {repo['full_name']}")
                     results[idx] = _placeholder_entry(repo, old_summaries, "API budget exhausted")

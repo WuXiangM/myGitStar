@@ -316,81 +316,14 @@ def call_llm(prompt: str) -> str:
         }
         resp = make_api_request(API_ENDPOINTS["copilot"], headers, data, retries=RETRY_ATTEMPTS, retry_delay=REQUEST_RETRY_DELAY)
 
-        # Optional fallback when Copilot is rate-limited (HTTP 429) or unavailable (HTTP 410).
-        # HTTP 410 occurs during GitHub Models retirement brownout periods.
+        # No automatic fallback to other backends.
+        # If Copilot is unavailable (410) or rate-limited (429), raise error.
+        # Configure fallback_models in config.yaml to enable ordered fallback.
         error_code = None
         if isinstance(resp, dict) and isinstance(resp.get("error"), dict):
             error_code = resp.get("error", {}).get("code")
-        
-        if (
-            FALLBACK_ON_429
-            and isinstance(resp, dict)
-            and isinstance(resp.get("error"), dict)
-            and error_code in (429, 410)
-        ):
-            print(f"[WARN] Copilot unavailable (code={error_code}). Trying fallback backend...")
-            if OPENROUTER_API_KEY:
-                # Call OpenRouter directly (avoid recursion + static globals)
-                model_name2 = DEFAULT_OPENROUTER_MODEL or "openai/gpt-4o-mini"
-                headers2 = {"Authorization": f"Bearer {OPENROUTER_API_KEY}", "Content-Type": "application/json"}
-                data2 = {"model": model_name2, "messages": [{"role": "user", "content": prompt}]}
-                resp2 = make_api_request(API_ENDPOINTS["openrouter"], headers2, data2, retries=RETRY_ATTEMPTS, retry_delay=REQUEST_RETRY_DELAY)
-                _raise_if_error_response(resp2, backend="OpenRouter")
-                text2 = _get_llm_text(resp2)
-                if not str(text2).strip():
-                    raise RuntimeError("OpenRouter returned empty content")
-                return text2
-
-            if GEMINI_API_KEY:
-                # Call Gemini directly
-                model_name2 = os.environ.get("GEMINI_MODEL", DEFAULT_GEMINI_MODEL) or "gemini-2.0-flash"
-                model_path2 = str(model_name2).strip()
-                if model_path2.startswith("models/"):
-                    model_path2 = model_path2[len("models/"):]
-
-                api_url2 = f"https://generativelanguage.googleapis.com/v1beta/models/{model_path2}:generateContent"
-                request_url2 = f"{api_url2}?key={GEMINI_API_KEY}"
-                headers2 = {
-                    "Content-Type": "application/json; charset=utf-8",
-                    "User-Agent": "GitHub Star Content Classifier/1.0",
-                    "X-Goog-Api-Key": GEMINI_API_KEY,
-                }
-                temperature2 = config.get("gemini_temperature", 0.2)
-                max_output_tokens2 = int(config.get("gemini_max_output_tokens", 2000))
-                payload2 = {
-                    "generationConfig": {
-                        "temperature": temperature2,
-                        "maxOutputTokens": max_output_tokens2,
-                        "topP": 0.8,
-                        "topK": 40,
-                    },
-                    "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-                }
-                resp2 = make_api_request(
-                    request_url2,
-                    headers2,
-                    payload2,
-                    retries=get_int_config(config, "gemini_retry_attempts", RETRY_ATTEMPTS),
-                    retry_delay=get_float_config(config, "gemini_retry_delay", REQUEST_RETRY_DELAY),
-                )
-                _raise_if_error_response(resp2, backend="Gemini")
-                if not isinstance(resp2, dict):
-                    raise RuntimeError("Gemini request failed: invalid response type")
-                text2 = ""
-                try:
-                    candidates = resp2.get("candidates") or []
-                    if candidates and isinstance(candidates[0], dict):
-                        content = candidates[0].get("content") or {}
-                        parts = content.get("parts") or []
-                        for part in parts:
-                            if isinstance(part, dict) and "text" in part:
-                                text2 += str(part.get("text") or "")
-                except Exception:
-                    pass
-                text2 = text2.strip()
-                if not text2:
-                    raise RuntimeError("Gemini returned empty content")
-                return text2
+            if error_code in (429, 410):
+                print(f"[WARN] Copilot unavailable (code={error_code}). Configure fallback_models in config.yaml to enable fallback.", flush=True)
 
         _raise_if_error_response(resp, backend="Copilot")
         text = _get_llm_text(resp)
