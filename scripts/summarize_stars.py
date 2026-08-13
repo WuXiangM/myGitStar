@@ -50,10 +50,14 @@ from scripts.summary import (
     summarize_batch_combined,
     get_summarize_func,
 )
-from scripts.ai.llm_caller import RateLimitAbort
+from scripts.ai.llm_caller import RateLimitAbort, set_max_consecutive_429
+from scripts.core import daily_counter
 
 
 config = load_config()
+
+# Apply max_consecutive_429 from config to llm_caller module
+set_max_consecutive_429(get_int_config(config, "max_consecutive_429", 3))
 
 DEBUG_API = env_truthy("DEBUG_API") or bool(config.get("test_first_repo", False))
 
@@ -143,7 +147,15 @@ def _api_call_counter():
             print(f"[Copilot API调用] 第 {copilot_api_call_count} 次调用（无上限）")
     elif model_choice == "openrouter":
         openrouter_api_call_count += 1
-        print(f"[OpenRouter API调用] 第 {openrouter_api_call_count} 次调用")
+        # Check RPD limit using shared daily counter
+        rpd_limit = get_int_config(config, "openrouter_rpd", 50)
+        allowed, current = daily_counter.increment_and_check(rpd_limit)
+        if not allowed:
+            raise RateLimitAbort(
+                f"OpenRouter RPD limit reached: {current}/{rpd_limit} calls today. "
+                "Stopping to avoid further rate limit errors. Results will be saved."
+            )
+        print(f"[OpenRouter API调用] 第 {openrouter_api_call_count} 次调用，今日已用: {current}/{rpd_limit}")
     elif model_choice == "gemini":
         gemini_api_call_count += 1
         print(f"[Gemini API调用] 第 {gemini_api_call_count} 次调用")

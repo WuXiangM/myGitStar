@@ -716,6 +716,14 @@ def summarize_batch_combined(
         parsed_results: Dict[str, Dict] = {}
         try:
             response_text = summarize_func(repo_with_prompt)
+            # Check if response is a 429 error marker (dict with __error__ = "429")
+            if isinstance(response_text, dict):
+                if response_text.get("__error__") == "429":
+                    print(f"[RATE_LIMIT] Batch {batch_num}: received 429 error marker", flush=True)
+                    raise RateLimitAbort(f"Batch {batch_num} received 429 rate limit error")
+                else:
+                    print(f"[DEBUG] Batch {batch_num}: summarize_func returned unexpected dict", flush=True)
+                    response_text = None
             if response_text:
                 parsed_results = parse_combined_summaries(response_text, batch)
             else:

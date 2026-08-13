@@ -105,6 +105,7 @@ myGitStar/
 │   │   ├── secrets.py             # secrets management
 │   │   ├── json_store.py          # JSON storage
 │   │   ├── throttle.py            # rate limiting
+│   │   ├── daily_counter.py       # daily API call counter (RPD rate limit)
 │   │   └── summary_reader.py      # summary reader
 │   ├── summary/                   # summarize script helpers
 │   │   ├── __init__.py
@@ -246,6 +247,9 @@ The table below summarizes supported `config.yaml` fields and marks whether each
 | `request_retry_delay` | No | `2` | Delay between network retries (seconds) | 2–10 |
 | `retry_attempts` | No | `1` | Network retry attempts (generic request wrapper) | 1–3 |
 | `global_qps` | No | `0.5` | Global throttling (QPS). Default 0.5 ≈ one request per ~2s | Reduce further if you hit 429 (e.g. 0.2) |
+| `openrouter_rpd` | No | `50` | OpenRouter daily request limit (RPD), shared between summarize and classify. Free users: 50, paid users (≥$10): 1000 | Keep 50 for free users, increase to 1000 after top-up |
+| `openrouter_rpm` | No | `20` | OpenRouter per-minute request limit (RPM). Both free and paid users: 20 | Use with `global_qps: 0.3` |
+| `max_consecutive_429` | No | `3` | Max consecutive 429 errors before aborting current stage and saving progress. Summarize and classify count independently | 3 is conservative, prevents rapid quota exhaustion |
 | `workflow_classify_only` | No | `true` / `false` | Actions: run content-classifier only (skip summarize step) | Before setting `true`, ensure `repo_summaries.json` exists; keep `false` for normal updates |
 | `content_min_categories` | No | `5` | Min number of content categories for `classify_stars_by_content.py` | 5–8 is a good start |
 | `content_max_categories` | No | `8` | Max number of content categories for `classify_stars_by_content.py` | Keep it not too large (e.g. 8–12) |

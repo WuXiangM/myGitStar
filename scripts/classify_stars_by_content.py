@@ -26,6 +26,8 @@ from scripts.core.config import (
 )
 from scripts.core.secrets import load_api_keys
 from scripts.core.throttle import SimpleThrottle
+from scripts.core import daily_counter
+from scripts.core.json_store import save_json_atomic
 from scripts.classification import (
     init_classify_helpers,
     build_taxonomy_prompt,
@@ -73,7 +75,8 @@ class RateLimitAbort(RuntimeError):
     """Raised when too many consecutive 429 responses occur."""
 
 
-MAX_CONSECUTIVE_429 = int(os.environ.get("MYGITSTAR_MAX_CONSECUTIVE_429", "5") or "5")
+# Read max_consecutive_429 from config (default 3)
+MAX_CONSECUTIVE_429 = int(os.environ.get("MYGITSTAR_MAX_CONSECUTIVE_429", get_int_config(config, "max_consecutive_429", 3)) or "3")
 _CONSECUTIVE_429 = 0
 
 
@@ -106,6 +109,14 @@ def _safe_print_debug(msg: str) -> None:
 
 
 def make_api_request(url: str, headers: Dict[str, str], data: Dict[str, Any], retries: int, retry_delay: float) -> Optional[Dict[str, Any]]:
+    # Check RPD limit before making the request (for OpenRouter)
+    if MODEL_CHOICE == "openrouter":
+        rpd_limit = get_int_config(config, "openrouter_rpd", 50)
+        allowed, current = daily_counter.increment_and_check(rpd_limit)
+        if not allowed:
+            print(f"[RATE_LIMIT] OpenRouter RPD limit reached: {current}/{rpd_limit} calls today. Aborting classify stage.")
+            raise RateLimitAbort(f"OpenRouter RPD limit reached: {current}/{rpd_limit} calls today.")
+
     for attempt in range(retries):
         try:
             THROTTLE.wait()
@@ -130,9 +141,9 @@ def make_api_request(url: str, headers: Dict[str, str], data: Dict[str, Any], re
                     return {"error": {"code": 429, "message": f"Too Many Requests, Retry-After={retry_after}s, skipped batch."}, "status_code": 429}
 
                 if attempt < retries - 1:
-                    # 使用 Retry-After 值，但设置最小等待时间（默认 30 秒）
+                    # 使用 Retry-After 值，但设置最小等待时间（默认 5 秒）
                     # OpenRouter 免费模型限速 20次/分钟，Retry-After 头可能返回很短的值
-                    min_429_wait = float(os.environ.get("MYGITSTAR_MIN_429_WAIT", "30") or "30")
+                    min_429_wait = float(os.environ.get("MYGITSTAR_MIN_429_WAIT", "5") or "5")
                     if retry_after is not None:
                         wait = max(retry_after, min_429_wait)
                     else:
@@ -1233,6 +1244,88 @@ def _should_refresh_taxonomy(
     return False, ""
 
 
+def _save_partial_progress(
+    repos: List[Dict[str, Any]],
+    assignment_map: Dict[Any, str],
+    taxonomy: Optional[Taxonomy],
+    out_json_path: str,
+    out_md_path: str,
+    min_categories: int,
+    max_categories: int,
+    min_repos_per_category: int,
+    reused_count: int,
+    unknown_repos: List[Dict[str, Any]],
+    repos_to_classify: List[Dict[str, Any]],
+) -> None:
+    """Save partial classification progress to disk when rate-limited.
+
+    This ensures that even if we abort mid-batch due to rate limits,
+    the already-classified repos are persisted and won't need re-classification
+    on the next run (assuming taxonomy cache is enabled).
+    """
+    if taxonomy is None:
+        print("[SAVE_PARTIAL] No taxonomy designed yet; cannot save partial progress")
+        return
+
+    try:
+        # Build output structure (same as final output)
+        other_id = next(
+            (c["id"] for c in taxonomy.categories if c.get("name", "").lower() == "other"),
+            taxonomy.categories[-1]["id"] if taxonomy.categories else "Other"
+        )
+
+        # Build set of repos that need classification (for determining source)
+        repos_to_classify_ids = {r.get("id") for r in repos_to_classify}
+        
+        # Build set of unknown repo ids for reliable lookup
+        unknown_repo_ids = {r.get("id") for r in unknown_repos}
+
+        # Ensure all repos have an assignment (use Other for unassigned)
+        for r in repos:
+            rid = r.get("id")
+            if rid and rid not in assignment_map:
+                assignment_map[rid] = other_id
+
+        out = {
+            "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "model_choice": MODEL_CHOICE,
+            "min_categories": min_categories,
+            "max_categories": max_categories,
+            "min_repos_per_category": min_repos_per_category,
+            "taxonomy": {"categories": taxonomy.categories},
+            "assignments": [
+                {
+                    "id": r.get("id"),
+                    "full_name": r.get("full_name"),
+                    "category_id": assignment_map.get(r.get("id"), other_id),
+                    "classification_source": (
+                        "reused" if r.get("id") not in repos_to_classify_ids
+                        else ("unknown" if r.get("id") in unknown_repo_ids else "ai")
+                    ),
+                    "summary": (
+                        (r.get("summary") or "").strip()
+                        if assignment_map.get(r.get("id"), other_id).lower() in ("other", "unknown")
+                        else None
+                    ),
+                }
+                for r in repos
+            ],
+            "stats": {
+                "total_repos": len(repos),
+                "reused": reused_count,
+                "llm_classified": len(repos) - reused_count - len(unknown_repos),
+                "unknown": len(unknown_repos),
+                "partial_save": True,  # Mark as partial save
+            },
+        }
+
+        save_json_atomic(out, out_json_path)
+        print(f"[SAVE_PARTIAL] Saved partial progress to {out_json_path}")
+        print(f"[SAVE_PARTIAL] {len(assignment_map)} repos classified, {len(repos) - len(assignment_map)} remaining")
+    except Exception as e:
+        print(f"[SAVE_PARTIAL] Failed to save partial progress: {e}")
+
+
 def _check_taxonomy_quality(
     taxonomy: Taxonomy,
     assignment_map: Dict[Any, str],
@@ -1900,6 +1993,14 @@ def main() -> int:
                 assignments = _parse_assignments(raw)
             except RateLimitAbort as e:
                 print(f"[FATAL] {e}")
+                # Save partial progress before aborting
+                _save_partial_progress(
+                    repos, assignment_map, taxonomy,
+                    out_json_path, out_md_path,
+                    args.min_categories, args.max_categories,
+                    min_repos_per_category, reused_count, unknown_repos,
+                    repos_to_classify,
+                )
                 return 4
             except Exception as e:
                 print(f"[Batch {i}] failed to parse assignments: {e}")

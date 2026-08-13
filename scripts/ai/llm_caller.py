@@ -27,8 +27,17 @@ class RateLimitAbort(RuntimeError):
         self.results = results
 
 
-MAX_CONSECUTIVE_429 = 5
+# Default max consecutive 429 errors before aborting.
+# Can be overridden via config.yaml (max_consecutive_429) or env var MYGITSTAR_MAX_CONSECUTIVE_429.
+MAX_CONSECUTIVE_429 = int(os.environ.get("MYGITSTAR_MAX_CONSECUTIVE_429", "3") or "3")
 _CONSECUTIVE_429 = 0
+
+
+def set_max_consecutive_429(value: int) -> None:
+    """Override the max consecutive 429 threshold at runtime (from config)."""
+    global MAX_CONSECUTIVE_429
+    if value > 0:
+        MAX_CONSECUTIVE_429 = value
 
 
 def _reset_consecutive_429() -> None:
@@ -82,9 +91,9 @@ def make_api_request(
                     }
 
                 if attempt < retries - 1:
-                    # 使用 Retry-After 值，但设置最小等待时间（默认 30 秒）
+                    # 使用 Retry-After 值，但设置最小等待时间（默认 5 秒）
                     # OpenRouter 免费模型限速 20次/分钟，Retry-After 头可能返回很短的值
-                    min_429_wait = float(os.environ.get("MYGITSTAR_MIN_429_WAIT", "30") or "30")
+                    min_429_wait = float(os.environ.get("MYGITSTAR_MIN_429_WAIT", "5") or "5")
                     if retry_after is not None:
                         wait = max(retry_after, min_429_wait)
                     else:

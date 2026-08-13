@@ -91,6 +91,22 @@ retry_attempts: 2
 # Recommended: OpenRouter free 20/min → 0.3; Gemini free 60/min → 1.0; paid models can be higher
 global_qps: 0.3
 
+# OpenRouter 限速参数（仅对 OpenRouter 免费模型生效）
+# OpenRouter rate limit parameters (only applies to OpenRouter free models)
+#
+# RPD (Requests Per Day): 每日请求总数上限（总结 + 分类共享）
+# RPM (Requests Per Minute): 每分钟请求数上限
+# 未充值用户：RPD=50, RPM=20；充值≥$10 用户：RPD=1000, RPM=20
+# Free users: RPD=50, RPM=20; After $10 top-up: RPD=1000, RPM=20
+openrouter_rpd: 50
+openrouter_rpm: 20
+
+# 连续 429 错误最大次数（超过则终止当前阶段，保存已运行内容）
+# Max consecutive 429 errors before aborting current stage (saves progress)
+# 总结阶段和分类阶段各自独立计数
+# Summarize and classify stages count independently
+max_consecutive_429: 3
+
 # Gemini 特定的保守配置
 
 # 生成层重试次数（例如：内容不完整、解析失败时）

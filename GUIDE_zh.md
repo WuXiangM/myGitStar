@@ -104,6 +104,7 @@ myGitStar/
 │   │   ├── secrets.py             # 密钥管理
 │   │   ├── json_store.py          # JSON 存储
 │   │   ├── throttle.py            # 速率限制
+│   │   ├── daily_counter.py       # 每日 API 调用计数器（RPD 限速）
 │   │   └── summary_reader.py      # 摘要读取
 │   ├── summary/                   # 总结脚本辅助模块
 │   │   ├── __init__.py
@@ -245,6 +246,9 @@ repo_display_language: true
 | `request_retry_delay`      | 否                       | `2`                                     | 网络层失败后的重试间隔（秒）                                                   | 2~10                                                                  |
 | `retry_attempts`           | 否                       | `1`                                     | 网络层重试次数（适用于通用请求封装）                                           | 1~3                                                                   |
 | `global_qps`               | 否                       | `0.5`                                   | 全局节流（QPS），默认 0.5 表示约每 2 秒 1 次请求                               | 429 就降低（如 0.2）                                                  |
+| `openrouter_rpd`           | 否                       | `50`                                    | OpenRouter 每日请求上限（RPD），总结+分类共享配额。免费用户 50，充值≥$10 用户 1000 | 免费用户保持 50，充值后可调高至 1000                                   |
+| `openrouter_rpm`           | 否                       | `20`                                    | OpenRouter 每分钟请求上限（RPM）。免费和付费用户均为 20                          | 配合 `global_qps: 0.3` 使用                                           |
+| `max_consecutive_429`      | 否                       | `3`                                     | 连续 429 错误最大次数，超过则终止当前阶段并保存进度。总结和分类独立计数            | 3 次较保守，可避免快速耗尽配额                                          |
 | `workflow_classify_only`   | 否                       | `true` / `false`                        | Actions 是否只跑内容分类（跳过 summarize 步骤）                                | 设 `true` 前先确保仓库里已有 `repo_summaries.json`；正常更新建议 `false`     |
 | `content_min_categories`   | 否                       | `5`                                     | 内容分类最少类别数（`classify_stars_by_content.py`）                           | 建议先用 5~8 起步                                                     |
 | `content_max_categories`   | 否                       | `8`                                     | 内容分类最多类别数（`classify_stars_by_content.py`）                           | 不建议太大（如 8~12）                                                 |
