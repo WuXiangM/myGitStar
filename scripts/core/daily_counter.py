@@ -6,7 +6,6 @@ Persists to a local JSON file so summarize and classify stages share the same co
 """
 import json
 import os
-import time
 from datetime import datetime, timezone
 
 
@@ -49,15 +48,16 @@ def save_counter(data: dict) -> None:
         pass
 
 
-def increment_and_check(rpd_limit: int) -> tuple[bool, int]:
+def check_and_reserve(rpd_limit: int) -> tuple[bool, int]:
     """
-    Increment the daily counter and check if RPD limit is exceeded.
-
+    Check RPD limit and reserve a slot (increment counter) before making the call.
+    
     Returns (allowed, current_count).
-    If allowed is False, the call should be skipped.
+    If allowed is False, the counter is NOT incremented.
+    
+    Note: 429 errors from OpenRouter DO consume quota, so we don't rollback.
     """
     if rpd_limit <= 0:
-        # No limit configured
         data = load_counter()
         data["count"] = data.get("count", 0) + 1
         save_counter(data)
@@ -69,9 +69,45 @@ def increment_and_check(rpd_limit: int) -> tuple[bool, int]:
     if current >= rpd_limit:
         return False, current
 
+    # Reserve the slot by incrementing
     data["count"] = current + 1
     save_counter(data)
     return True, data["count"]
+
+
+def check_limit(rpd_limit: int) -> tuple[bool, int]:
+    """
+    Only check RPD limit without incrementing.
+
+    Used for pre-check before API call to avoid exceeding limit.
+
+    Returns (allowed, current_count).
+    """
+    if rpd_limit <= 0:
+        data = load_counter()
+        return True, data.get("count", 0)
+
+    data = load_counter()
+    current = data.get("count", 0)
+
+    if current >= rpd_limit:
+        return False, current
+
+    return True, current
+
+
+def increment() -> int:
+    """
+    Only increment counter without checking limit.
+
+    Used after successful API call.
+
+    Returns new count.
+    """
+    data = load_counter()
+    data["count"] = data.get("count", 0) + 1
+    save_counter(data)
+    return data["count"]
 
 
 def get_remaining(rpd_limit: int) -> int:
@@ -85,4 +121,21 @@ def get_remaining(rpd_limit: int) -> int:
 def get_count() -> int:
     """Return current day's call count."""
     data = load_counter()
+    return data.get("count", 0)
+
+
+def rollback_increment() -> int:
+    """
+    Rollback the counter by 1 (decrement).
+    
+    Used when a 429 error occurs - the reserved quota should be released
+    since 429 errors don't consume actual quota.
+    
+    Returns new count after rollback.
+    """
+    data = load_counter()
+    current = data.get("count", 0)
+    if current > 0:
+        data["count"] = current - 1
+        save_counter(data)
     return data.get("count", 0)

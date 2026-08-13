@@ -50,7 +50,7 @@ from scripts.summary import (
     summarize_batch_combined,
     get_summarize_func,
 )
-from scripts.ai.llm_caller import RateLimitAbort, set_max_consecutive_429
+from scripts.ai.llm_caller import RateLimitAbort, set_max_consecutive_429, _reset_consecutive_429, _note_429_and_maybe_abort
 from scripts.core import daily_counter
 
 
@@ -147,9 +147,9 @@ def _api_call_counter():
             print(f"[Copilot API调用] 第 {copilot_api_call_count} 次调用（无上限）")
     elif model_choice == "openrouter":
         openrouter_api_call_count += 1
-        # Check RPD limit using shared daily counter
+        # Check RPD limit BEFORE the call (increment is done in openrouter_summarize via check_and_reserve)
         rpd_limit = get_int_config(config, "openrouter_rpd", 50)
-        allowed, current = daily_counter.increment_and_check(rpd_limit)
+        allowed, current = daily_counter.check_limit(rpd_limit)
         if not allowed:
             raise RateLimitAbort(
                 f"OpenRouter RPD limit reached: {current}/{rpd_limit} calls today. "

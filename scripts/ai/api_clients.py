@@ -84,6 +84,7 @@ def openrouter_summarize(
     openrouter_api_key: str,
     default_openrouter_model: str,
     api_request_func: callable,
+    config: Dict[str, Any] = None,
 ) -> Optional[str]:
     import sys
     print("[DEBUG] openrouter_summarize: ENTERING function", flush=True)
@@ -92,6 +93,16 @@ def openrouter_summarize(
         print("[DEBUG] openrouter_summarize: no API key", flush=True)
         return None
     try:
+        # Check RPD limit BEFORE making the call
+        if config:
+            from scripts.core import daily_counter
+            from scripts.core.config import get_int_config
+            rpd_limit = get_int_config(config, "openrouter_rpd", 50)
+            allowed, current = daily_counter.check_and_reserve(rpd_limit)
+            if not allowed:
+                print(f"[RPD] Limit reached before call: {current}/{rpd_limit}", flush=True)
+                return {"__error__": "429", "__message__": f"RPD limit reached: {current}/{rpd_limit}"}
+        
         prompt = _extract_prompt(repo)
         print(f"[DEBUG] openrouter_summarize: model={default_openrouter_model}, prompt_length={len(prompt)}", flush=True)
         headers = {
@@ -114,6 +125,7 @@ def openrouter_summarize(
             error_code = error.get("code")
             if error_code == 429 or str(error_code) == "429":
                 print(f"[WARN] OpenRouter returned 429 rate limit error", flush=True)
+                # Note: 429 errors DO consume quota, so we don't rollback
                 # Return special dict to indicate 429 error
                 return {"__error__": "429", "__message__": error.get("message", "Rate limit exceeded")}
 
@@ -351,7 +363,7 @@ def create_summarize_func(
         if model_name == "copilot":
             return copilot_summarize(repo, github_token, default_copilot_model, make_request)
         elif model_name == "openrouter":
-            return openrouter_summarize(repo, openrouter_api_key, default_openrouter_model, make_request)
+            return openrouter_summarize(repo, openrouter_api_key, default_openrouter_model, make_request, config)
         elif model_name == "gemini":
             return gemini_summarize(repo, gemini_api_key, default_gemini_model, config, make_request)
         elif model_name == "modelscope":
@@ -388,7 +400,7 @@ def create_summarize_func(
     elif model_choice == "openrouter":
         print(f"[DEBUG] create_summarize_func: openrouter mode, api_key={'set' if openrouter_api_key else 'EMPTY'}, model={default_openrouter_model}", flush=True)
         def summarize(repo: Dict) -> Optional[str]:
-            result = openrouter_summarize(repo, openrouter_api_key, default_openrouter_model, make_request)
+            result = openrouter_summarize(repo, openrouter_api_key, default_openrouter_model, make_request, config)
             api_call_counter()
             if _is_failure(result) and fallback_models:
                 for fallback_model in fallback_models:

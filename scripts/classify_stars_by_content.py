@@ -109,10 +109,10 @@ def _safe_print_debug(msg: str) -> None:
 
 
 def make_api_request(url: str, headers: Dict[str, str], data: Dict[str, Any], retries: int, retry_delay: float) -> Optional[Dict[str, Any]]:
-    # Check RPD limit before making the request (for OpenRouter)
+    # Check and reserve RPD limit before making the request (for OpenRouter)
     if MODEL_CHOICE == "openrouter":
         rpd_limit = get_int_config(config, "openrouter_rpd", 50)
-        allowed, current = daily_counter.increment_and_check(rpd_limit)
+        allowed, current = daily_counter.check_and_reserve(rpd_limit)
         if not allowed:
             print(f"[RATE_LIMIT] OpenRouter RPD limit reached: {current}/{rpd_limit} calls today. Aborting classify stage.")
             raise RateLimitAbort(f"OpenRouter RPD limit reached: {current}/{rpd_limit} calls today.")
@@ -127,6 +127,8 @@ def make_api_request(url: str, headers: Dict[str, str], data: Dict[str, Any], re
 
 
             if resp.status_code == 429:
+                # Note: 429 errors DO consume quota, so we don't rollback
+                
                 retry_after = None
                 try:
                     ra = resp.headers.get("Retry-After")
