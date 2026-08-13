@@ -125,6 +125,7 @@ jobs:
           python scripts/summarize_stars.py --language en --out README_lang.md --update-mode ${{ steps.mode.outputs.effective_update_mode }}
 
       - name: Classify repos by content from summaries
+        id: classify
         env:
           STARRED_GITHUB_TOKEN: ${{ secrets.STARRED_GITHUB_TOKEN }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
@@ -132,11 +133,12 @@ jobs:
           GITHUB_ACTOR: ${{ github.actor }}
           MAX_API_CALLS: ${{ steps.cfg.outputs.max_api_calls }}
           MYGITSTAR_FALLBACK_ON_429: '1'
-          MYGITSTAR_MAX_CONSECUTIVE_429: '5'
+          MYGITSTAR_MAX_CONSECUTIVE_429: '3'
           MYGITSTAR_RETRY_ATTEMPTS: '2'
           MYGITSTAR_REQUEST_RETRY_DELAY: '2'
           MYGITSTAR_GLOBAL_QPS: '1'
           MYGITSTAR_RATE_LIMIT_DELAY: '2'
+        continue-on-error: true
         run: |
           python scripts/classify_stars_by_content.py \
             --from-summaries \
@@ -147,6 +149,7 @@ jobs:
             --batch-size 20 \
             --out-md README.md \
             --out-json repo_categories.json
+          echo "classify_exit_code=$?" >> $GITHUB_OUTPUT
 
       - name: Print Copilot API call count
         if: steps.cfg.outputs.classify_only != 'true'

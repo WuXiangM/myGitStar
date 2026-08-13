@@ -1324,6 +1324,18 @@ def _save_partial_progress(
         save_json_atomic(out, out_json_path)
         print(f"[SAVE_PARTIAL] Saved partial progress to {out_json_path}")
         print(f"[SAVE_PARTIAL] {len(assignment_map)} repos classified, {len(repos) - len(assignment_map)} remaining")
+        
+        # Also generate README.md from partial progress
+        try:
+            generated_at_str = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
+            username = get_current_account_optional()
+            lang = str(config.get("language", "en")).strip().lower()
+            md = render_markdown(taxonomy, repos, assignment_map, config, MODEL_CHOICE, username, generated_at_str, lang)
+            with open(out_md_path, "w", encoding="utf-8") as f:
+                f.write(md)
+            print(f"[SAVE_PARTIAL] Generated README to {out_md_path}")
+        except Exception as e:
+            print(f"[SAVE_PARTIAL] Failed to generate README: {e}")
     except Exception as e:
         print(f"[SAVE_PARTIAL] Failed to save partial progress: {e}")
 
