@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-11T09:34:59Z",
+  "generated_at": "2026-08-19T02:37:18Z",
   "model_choice": "openrouter",
   "min_categories": 5,
   "max_categories": 12,
@@ -86,7 +86,7 @@
       "id": 5,
       "full_name": "Usagi-org/ai-goofish-monitor",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "ai",
       "summary": "This repository provides a powerful tool for users to efficiently discover desired products from the vast selection on Xianyu."
     },
     {
@@ -100,28 +100,28 @@
       "id": 7,
       "full_name": "Fosowl/agenticSeek",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 8,
       "full_name": "langbot-app/LangBot",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 9,
       "full_name": "SamuelSchmidgall/AgentLaboratory",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 10,
       "full_name": "Significant-Gravitas/AutoGPT",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
@@ -191,28 +191,28 @@
       "id": 20,
       "full_name": "microsoft/AI-For-Beginners",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 21,
       "full_name": "microsoft/generative-ai-for-beginners",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 22,
       "full_name": "QwenLM/Qwen3-VL",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 23,
       "full_name": "google/automl",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
@@ -247,21 +247,21 @@
       "id": 28,
       "full_name": "anthropics/claude-code",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 29,
       "full_name": "vercel-labs/agent-browser",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "ai",
       "summary": "This repository provides a powerful tool for automating browser interactions, enhancing the capabilities of AI agents."
     },
     {
       "id": 30,
       "full_name": "nomic-ai/gpt4all",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
@@ -275,21 +275,21 @@
       "id": 32,
       "full_name": "Shubhamsaboo/awesome-llm-apps",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 33,
       "full_name": "huggingface/transformers",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 34,
       "full_name": "AUTOMATIC1111/stable-diffusion-webui",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
@@ -317,14 +317,14 @@
       "id": 38,
       "full_name": "henry-gu/prompt-engineering-for-developers",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 39,
       "full_name": "poloclub/transformer-explainer",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
@@ -366,14 +366,14 @@
       "id": 45,
       "full_name": "roywright/pu_learning",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 46,
       "full_name": "phuijse/bagging_pu",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
@@ -443,7 +443,7 @@
       "id": 56,
       "full_name": "mrdoob/three.js",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
@@ -457,7 +457,7 @@
       "id": 58,
       "full_name": "vllm-project/vllm",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
@@ -534,7 +534,7 @@
       "id": 69,
       "full_name": "jianchang512/pyvideotrans",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
@@ -548,7 +548,7 @@
       "id": 71,
       "full_name": "YILING0013/AI_NovelGenerator",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
@@ -569,7 +569,7 @@
       "id": 74,
       "full_name": "tadata-org/fastapi_mcp",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
@@ -583,7 +583,7 @@
       "id": 76,
       "full_name": "roboflow/supervision",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
@@ -625,77 +625,77 @@
       "id": 82,
       "full_name": "Zie619/n8n-workflows",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 83,
       "full_name": "hpcaitech/Open-Sora",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 84,
       "full_name": "1Panel-dev/MaxKB",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 85,
       "full_name": "Peterande/D-FINE",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 86,
       "full_name": "robert-mcdermott/ai-knowledge-graph",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 87,
       "full_name": "harry0703/MoneyPrinterTurbo",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 88,
       "full_name": "kijai/ComfyUI-FramePackWrapper",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 89,
       "full_name": "xming521/WeClone",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 90,
       "full_name": "happycola233/tchMaterial-parser",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 91,
       "full_name": "0xsline/GeminiImageApp",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 92,
       "full_name": "public-apis/public-apis",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
@@ -709,217 +709,217 @@
       "id": 94,
       "full_name": "microsoft/markitdown",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 95,
       "full_name": "subframe7536/maple-font",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 96,
       "full_name": "nvbn/thefuck",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 97,
       "full_name": "aws/aws-cli",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 98,
       "full_name": "jonathanwilton/PUExtraTrees",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 99,
       "full_name": "bilibili/Index-1.9B",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 100,
       "full_name": "EvanLi/Github-Ranking",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 101,
       "full_name": "Lydorn/Polygonization-by-Frame-Field-Learning",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 102,
       "full_name": "bubbliiiing/unet-keras",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 103,
       "full_name": "zorzi-s/PolyWorldPretrainedNetwork",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 104,
       "full_name": "lfnovo/open-notebook",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 105,
       "full_name": "CapSoftware/Cap",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 106,
       "full_name": "027xiguapi/code-box",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 107,
       "full_name": "iptv-org/iptv",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 108,
       "full_name": "crocofied/PortNote",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 109,
       "full_name": "hanydd/BilibiliSponsorBlock",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 110,
       "full_name": "umami-software/umami",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 111,
       "full_name": "xyTom/snippai",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 112,
       "full_name": "Snouzy/workout-cool",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 113,
       "full_name": "imsyy/DailyHotApi",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 114,
       "full_name": "cline/cline",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 115,
       "full_name": "google-gemini/gemini-cli",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 116,
       "full_name": "RSSNext/Folo",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 117,
       "full_name": "antvis/mcp-server-chart",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 118,
       "full_name": "firecrawl/firecrawl",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 119,
       "full_name": "langgenius/dify",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 120,
       "full_name": "n8n-io/n8n",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 121,
       "full_name": "linshenkx/prompt-optimizer",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 122,
       "full_name": "kamranahmedse/developer-roadmap",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 123,
       "full_name": "Yuiffy/BiliGPT",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 124,
       "full_name": "ahmedkhaleel2004/gitdiagram",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
@@ -933,7 +933,7 @@
       "id": 126,
       "full_name": "teableio/teable",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
@@ -947,42 +947,42 @@
       "id": 128,
       "full_name": "lukasmasuch/best-of-ml-python",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 129,
       "full_name": "ashishpatel26/500-AI-Agents-Projects",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 130,
       "full_name": "svcvit/Awesome-Dify-Workflow",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 131,
       "full_name": "zijie0/HumanSystemOptimization",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 132,
       "full_name": "holyshell/AppsForMac",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 133,
       "full_name": "punkpeye/awesome-mcp-servers",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
@@ -996,7 +996,7 @@
       "id": 135,
       "full_name": "datawhalechina/so-large-lm",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
@@ -1010,14 +1010,14 @@
       "id": 137,
       "full_name": "roboflow/notebooks",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 138,
       "full_name": "patchy631/ai-engineering-hub",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
@@ -1031,7 +1031,7 @@
       "id": 140,
       "full_name": "glidea/banana-prompt-quicker",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
@@ -1045,28 +1045,28 @@
       "id": 142,
       "full_name": "xanderfrangos/twinkle-tray",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 143,
       "full_name": "wordshub/free-font",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 144,
       "full_name": "SheepChef/Abracadabra",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 145,
       "full_name": "yitong2333/Bionic-Reading",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
@@ -1087,28 +1087,28 @@
       "id": 148,
       "full_name": "ZyperWave/ZyperWinOptimize",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 149,
       "full_name": "randyrants/sharpkeys",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 150,
       "full_name": "microsoft/PowerToys",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 151,
       "full_name": "zetaloop/OFGB",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
@@ -1129,35 +1129,35 @@
       "id": 154,
       "full_name": "BtbN/FFmpeg-Builds",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 155,
       "full_name": "cjpais/Handy",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 156,
       "full_name": "astral-sh/uv",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 157,
       "full_name": "btjawa/BiliTools",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 158,
       "full_name": "tw93/Pake",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
@@ -1171,14 +1171,14 @@
       "id": 160,
       "full_name": "microsoft/WSL",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 161,
       "full_name": "hluk/CopyQ",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
@@ -1192,161 +1192,162 @@
       "id": 163,
       "full_name": "Chuyu-Team/Dism-Multi-language",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 164,
       "full_name": "ripienaar/free-for-dev",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 165,
       "full_name": "Sjj1024/PakePlus",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 166,
       "full_name": "OpenListTeam/OpenList",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 167,
       "full_name": "ollama/ollama",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 168,
       "full_name": "fatedier/frp",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 169,
       "full_name": "zetaloop/ExplorerPatcher",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 170,
       "full_name": "ventoy/Ventoy",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 171,
       "full_name": "RamonUnch/AltSnap",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 172,
       "full_name": "Tosencen/XMSLEEP",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 173,
       "full_name": "gkd-kit/gkd",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 174,
       "full_name": "kknifer7/FreeBox",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 175,
       "full_name": "ZCShou/GoGoGo",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 176,
       "full_name": "easychen/opc-methodology",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 177,
       "full_name": "tldr-pages/tldr",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 178,
       "full_name": "dair-ai/Prompt-Engineering-Guide",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 179,
       "full_name": "x-cmd/x-cmd",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 180,
       "full_name": "TapXWorld/ChinaTextbook",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 181,
       "full_name": "ayangweb/BongoCat",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 182,
       "full_name": "jgm/pandoc",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 183,
       "full_name": "MadMaxChow/VLOOK",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     },
     {
       "id": 184,
       "full_name": "penpot/penpot",
       "category_id": "Unknown",
-      "classification_source": "reused",
+      "classification_source": "unknown",
       "summary": ""
     }
   ],
   "stats": {
     "total_repos": 184,
-    "reused": 163,
-    "llm_classified": -113,
-    "unknown": 134
+    "reused": 48,
+    "llm_classified": 2,
+    "unknown": 134,
+    "partial_save": true
   }
 }
