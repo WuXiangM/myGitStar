@@ -236,25 +236,22 @@ def _raise_if_error_response(resp: Optional[Dict[str, Any]], backend: str) -> No
     if not err:
         _reset_consecutive_429()
         return
-    try:
-        code = err.get("code")
 
-        # Track consecutive 429 responses and abort if it persists.
-        if str(code) == "429" or resp.get("status_code") == 429:
-            _note_429_and_maybe_abort(backend)
-        else:
-            _reset_consecutive_429()
+    code = err.get("code")
 
-        msg = err.get("message") or ""
-        body_preview = err.get("body_preview") or ""
-        details = f"{msg}".strip()
-        if body_preview:
-            details = (details + "\n" if details else "") + f"body_preview: {body_preview}"
-        raise RuntimeError(f"{backend} request failed (code={code})\n{details}".rstrip())
-    except RateLimitAbort:
-        raise
-    except Exception as e:
-        raise RuntimeError(f"{backend} request failed (unparseable error payload): {e}")
+    # Track consecutive 429 responses and abort if it persists.
+    # RateLimitAbort must propagate directly — do NOT wrap it in RuntimeError.
+    if str(code) == "429" or resp.get("status_code") == 429:
+        _note_429_and_maybe_abort(backend)
+    else:
+        _reset_consecutive_429()
+
+    msg = err.get("message") or ""
+    body_preview = err.get("body_preview") or ""
+    details = f"{msg}".strip()
+    if body_preview:
+        details = (details + "\n" if details else "") + f"body_preview: {body_preview}"
+    raise RuntimeError(f"{backend} request failed (code={code})\n{details}".rstrip())
 
 
 def _extract_json_from_text(text: str) -> Any:
@@ -1957,8 +1954,9 @@ def main() -> int:
         try:
             raw_tax = call_llm_json(taxonomy_prompt, attempts=2)
         except RateLimitAbort as e:
-            print(f"[FATAL] {e}")
-            return 4
+            print(f"[RATE_LIMIT_ABORT] {e}")
+            print("[RATE_LIMIT_ABORT] Taxonomy stage rate limited. Exiting gracefully (code 0) so workflow can commit existing files.")
+            return 0
         except Exception as e:
             print(f"Failed to call LLM for taxonomy: {e}")
             print("\nChecklist:")
@@ -2006,7 +2004,7 @@ def main() -> int:
                 raw = call_llm_json(prompt, attempts=2)
                 assignments = _parse_assignments(raw)
             except RateLimitAbort as e:
-                print(f"[FATAL] {e}")
+                print(f"[RATE_LIMIT_ABORT] {e}")
                 # Save partial progress before aborting
                 _save_partial_progress(
                     repos, assignment_map, taxonomy,
@@ -2015,7 +2013,8 @@ def main() -> int:
                     min_repos_per_category, reused_count, unknown_repos,
                     repos_to_classify,
                 )
-                return 4
+                print("[RATE_LIMIT_ABORT] Partial progress saved. Exiting gracefully (code 0) so workflow can commit.")
+                return 0
             except Exception as e:
                 print(f"[Batch {i}] failed to parse assignments: {e}")
                 assignments = []
