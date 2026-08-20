@@ -628,18 +628,31 @@ def parse_repos_from_summaries(
         innovations = data.get("Innovations", "")
         summary = data.get("Summary", "")
 
-        bi_empty = not brief_intro or brief_intro in ("Not specified.", "")
-        in_empty = not innovations or innovations in ("Not specified.", "")
-        su_empty = not summary or summary in ("Not specified.", "")
+        # Use _is_not_specified helper (consistent with other parts of the codebase)
+        bi_empty = not brief_intro or _is_not_specified(brief_intro)
+        in_empty = not innovations or _is_not_specified(innovations)
+        su_empty = not summary or _is_not_specified(summary)
         is_unknown = bi_empty and in_empty and su_empty
+
+        # Distinguish LEGITIMATE unknown from ABNORMAL LLM failure:
+        #   LEGITIMATE: all fields are "Not specified" (LLM correctly
+        #     identified that the repo has no README / content).
+        #   ABNORMAL: all fields are empty strings (LLM call failed,
+        #     no content was generated at all).
+        all_empty_no_placeholder = (
+            not str(brief_intro or "").strip()
+            and not str(innovations or "").strip()
+            and not str(summary or "").strip()
+        )
+        is_llm_failure = is_unknown and all_empty_no_placeholder
 
         description_parts = []
         if not is_unknown:
-            if brief_intro and brief_intro not in ("Not specified.", ""):
+            if brief_intro and not _is_not_specified(brief_intro):
                 description_parts.append(brief_intro)
-            if innovations and innovations not in ("Not specified.", ""):
+            if innovations and not _is_not_specified(innovations):
                 description_parts.append(f"创新点: {innovations}")
-            if summary and summary not in ("Not specified.", ""):
+            if summary and not _is_not_specified(summary):
                 description_parts.append(f"总结: {summary}")
 
         repo_title = full_name.split("/")[-1] if "/" in full_name else full_name
@@ -664,6 +677,7 @@ def parse_repos_from_summaries(
                 "innovations": innovations,
                 "summary": summary,
                 "is_unknown": is_unknown,
+                "is_llm_failure": is_llm_failure,  # True = LLM totally failed, needs re-summary
                 "html_url": data.get("Repository URL", f"https://github.com/{full_name}"),
                 "language": data.get("language", ""),
                 "stargazers_count": data.get("Stars", data.get("stargazers_count", 0)),
@@ -686,6 +700,31 @@ def _clean_inline_md(text: str) -> str:
     # collapse internal whitespace
     s = re.sub(r"\s+", " ", s).strip()
     return s
+
+
+def _is_not_specified(value: Any) -> bool:
+    """Check if a field value is the 'Not specified' placeholder.
+
+    This is a LEGITIMATE placeholder when the repo genuinely has no content
+    (no README, no usage examples, no innovations).  We use it to decide
+    how to display the field in the generated README.
+    """
+    if isinstance(value, str):
+        return value.strip().lower() in ("not specified.", "not specified")
+    return False
+
+
+def _display_field(value: Any, empty_label: str = "N/A") -> str:
+    """Return a display string for a summary field.
+
+    Replaces the 'Not specified' placeholder (which is a valid LLM output
+    meaning 'this repo genuinely has no such content') with a cleaner
+    display label.
+    """
+    text = str(value or "").strip()
+    if not text or _is_not_specified(text):
+        return f"_{empty_label}_"
+    return text
 
 
 def _is_repo_stats_or_meta_line(line: str) -> bool:
@@ -730,6 +769,12 @@ def _is_repo_stats_or_meta_line(line: str) -> bool:
     if "生成失败" in s or "rate limit" in lower or "ratelimit" in lower:
         return True
     if re.search(r"\b429\b", s):
+        return True
+
+    # "Not specified" placeholder — not real repo content, filter it out.
+    # This is the LEGITIMATE empty-content placeholder set by the LLM when
+    # the repo genuinely has no README / usage / innovations.
+    if s.strip().lower() in ("not specified.", "not specified"):
         return True
 
     return False
@@ -802,16 +847,16 @@ def _enrich_repos_from_summaries(repos: List[Dict[str, Any]]) -> List[Dict[str, 
         # Only enrich if repo doesn't already have these fields populated
         if not str(r.get("brief_intro") or "").strip():
             bi = data.get("Brief Introduction", "")
-            if bi and bi != "Not specified.":
+            if bi and not _is_not_specified(bi):
                 r["brief_intro"] = bi
                 enriched += 1
         if not str(r.get("innovations") or "").strip():
             inn = data.get("Innovations", "")
-            if inn and inn != "Not specified.":
+            if inn and not _is_not_specified(inn):
                 r["innovations"] = inn
         if not str(r.get("summary") or "").strip():
             sm = data.get("Summary", "")
-            if sm and sm != "Not specified.":
+            if sm and not _is_not_specified(sm):
                 r["summary"] = sm
         if not str(r.get("description") or "").strip():
             # Build description from summary fields
@@ -822,7 +867,7 @@ def _enrich_repos_from_summaries(repos: List[Dict[str, Any]]) -> List[Dict[str, 
                 ("summary", "总结: "),
             ]:
                 v = r.get(field_key, "")
-                if v and v != "Not specified.":
+                if v and not _is_not_specified(v):
                     parts.append(f"{label}{v}" if label else v)
             if parts:
                 r["description"] = " | ".join(parts)
@@ -1680,10 +1725,10 @@ def render_markdown(
             summary_text = repo_summary.get("Summary", "")
 
             lines.append("1. **Repository Name:** " + repo_name + "\n")
-            lines.append("2. **Brief Introduction:** " + (brief_intro or "Not specified.") + "\n")
-            lines.append("3. **Innovations:** " + (innovations or "Not specified.") + "\n")
-            lines.append("4. **Basic Usage:** " + (basic_usage or "Not specified.") + "\n")
-            lines.append("5. **Summary:** " + (summary_text or "Not specified.") + "\n")
+            lines.append("2. **Brief Introduction:** " + _display_field(brief_intro, "No description") + "\n")
+            lines.append("3. **Innovations:** " + _display_field(innovations, "N/A") + "\n")
+            lines.append("4. **Basic Usage:** " + _display_field(basic_usage, "N/A") + "\n")
+            lines.append("5. **Summary:** " + _display_field(summary_text, "N/A") + "\n")
 
             lines.append("---\n\n")
 
@@ -1988,7 +2033,22 @@ def main() -> int:
             "name": "Unknown",
             "description": "Repositories with insufficient summary data (empty Brief Introduction, Innovations, and Summary)."
         })
-        print(f"Added 'Unknown' category for {len(unknown_repos)} repos with missing summaries.")
+        # Separate LEGITIMATE unknown (repo genuinely has no content) from
+        # ABNORMAL unknown (LLM call failed, needs re-summary).
+        llm_failures = [r for r in unknown_repos if r.get("is_llm_failure")]
+        legit_unknowns = [r for r in unknown_repos if not r.get("is_llm_failure")]
+        print(
+            f"Added 'Unknown' category for {len(unknown_repos)} repos with missing summaries "
+            f"({len(legit_unknowns)} legitimate empty, {len(llm_failures)} LLM failures)."
+        )
+        if llm_failures:
+            llm_failure_names = [r.get("full_name", "?") for r in llm_failures[:10]]
+            extra = "..." if len(llm_failures) > 10 else ""
+            print(
+                f"[LLM_FAILURE] {len(llm_failures)} repos have empty summaries (LLM call failed): "
+                f"{', '.join(llm_failure_names)}{extra}"
+            )
+            print("[LLM_FAILURE] These repos will be re-summarized in the next run.")
 
     for r in unknown_repos:
         rid = r.get("id")

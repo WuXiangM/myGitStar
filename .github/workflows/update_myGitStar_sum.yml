@@ -172,5 +172,6 @@ jobs:
           test -f README_lang_zh.md && git add README_lang_zh.md || true
           git commit -m "update AI summarized stars [bot]" || echo "No changes to commit"
           git remote set-url origin https://x-access-token:${STARRED_GITHUB_TOKEN}@github.com/${{ github.repository }}.git
-          git pull --rebase origin main || echo "No remote changes to pull"
-          git push origin HEAD:main
+          # GitHub Actions checkout is always based on latest main;
+          # skip pull --rebase (which may conflict) and force-push the new state.
+          git push origin HEAD:main --force

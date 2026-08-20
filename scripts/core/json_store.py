@@ -1,7 +1,7 @@
 import hashlib
 import json
 import os
-from typing import Any, Dict, Optional
+from typing import Any, Dict, Optional, Tuple
 
 REPO_ROOT = os.path.dirname(os.path.dirname(__file__))
 
@@ -85,6 +85,35 @@ def make_metadata(
     }
 
 
+def _is_not_specified(value: Any) -> bool:
+    """Check if a field value is the 'Not specified' placeholder.
+
+    This is a LEGITIMATE placeholder when the repo genuinely has no content
+    (e.g. no README, no usage examples, no innovations).  It should only be
+    treated as INVALID when *all* key fields are "Not specified" (indicating
+    a total LLM failure).
+    """
+    if isinstance(value, str):
+        return value.strip().lower() in ("not specified.", "not specified")
+    return False
+
+
+def _is_all_not_specified(entry: Dict[str, Any], fields: Tuple[str, ...]) -> bool:
+    """Return True when *all* given fields are empty or 'Not specified'.
+
+    This distinguishes between:
+      - LEGITIMATE partial emptiness: some fields are "Not specified" because
+        the repo genuinely lacks that content (e.g. no Basic Usage for a lib
+        without examples)
+      - INVALID total failure: ALL key fields are "Not specified", which
+        indicates the LLM call completely failed to produce useful content.
+    """
+    return all(
+        _is_not_specified(entry.get(f)) or not str(entry.get(f) or "").strip()
+        for f in fields
+    )
+
+
 def is_entry_fresh(
     entry: Optional[Dict[str, Any]],
     full_name: str,
@@ -96,6 +125,10 @@ def is_entry_fresh(
     "Fresh" means:
       - has the 4 user-visible content fields populated (Repository URL is
         always re-derivable from full_name, so we don't require it), AND
+      - if *all* key fields are "Not specified" -> LLM totally failed,
+        mark as stale (needs re-summarization);
+      - if *some* fields are "Not specified" -> LEGITIMATE placeholder
+        (repo genuinely has no such content), do NOT re-summarize;
       - description_hash matches the current upstream description, AND
       - if refresh_after_days > 0, last_summarized_at is within that window.
 
@@ -112,23 +145,30 @@ def is_entry_fresh(
         "Innovations",
         "Summary",
     )
+
+    # Total LLM failure: ALL key fields are "Not specified" or empty.
+    # This must be re-summarized.
+    if _is_all_not_specified(entry, required_fields):
+        return False
+
+    # Individual fields: "Not specified" is a LEGITIMATE placeholder.
+    # Only truly missing (None / empty string) fields invalidate the entry.
     for f in required_fields:
         v = entry.get(f)
         if v is None or (isinstance(v, str) and not v.strip()):
             return False
-        # Treat "Not specified." as invalid - it means LLM failed to generate content
-        if isinstance(v, str) and v.strip().lower() in ("not specified.", "not specified"):
-            return False
+        # "Not specified" is valid per-field — do NOT invalidate here.
 
-    # `Basic Usage` is allowed to be empty - some repos genuinely have no
-    # usage snippet (e.g. libraries without examples).
-    # However, "Not specified." is treated as invalid and will trigger re-summarization.
+    # `Basic Usage` is allowed to be empty or "Not specified".
+    # Some repos genuinely have no usage snippet (e.g. libraries without examples).
+    # We no longer treat "Not specified" on Basic Usage as invalid.
     basic = entry.get("Basic Usage")
-    if basic is not None and isinstance(basic, str) and not basic.strip():
-        pass  # ok - empty is acceptable
-    # But "Basic Usage" with "Not specified." is considered invalid
-    if isinstance(basic, str) and basic.strip().lower() in ("not specified.", "not specified"):
-        return False
+    if basic is not None:
+        if isinstance(basic, str) and not basic.strip():
+            pass  # ok - empty is acceptable
+        # "Not specified." on Basic Usage is now LEGAL — the repo has no usage.
+        # If the LLM totally failed, the check above (_is_all_not_specified)
+        # would have caught it already.
 
     current_hash = compute_description_hash(full_name, description)
     meta = entry.get("__meta__") if isinstance(entry.get("__meta__"), dict) else {}

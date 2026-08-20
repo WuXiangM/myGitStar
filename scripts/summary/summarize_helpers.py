@@ -233,13 +233,53 @@ def parse_combined_summaries(response_text: str, repos: List[Dict[str, Any]]) ->
 
 
 def is_valid_summary(summary: str, language: str = "zh") -> bool:
+    """Check whether a raw LLM summary string is structurally valid.
+
+    The key change (2026-08-20): 'Not specified' is now a LEGITIMATE
+    placeholder (the repo genuinely has no such content), NOT a signal
+    that the LLM failed.  We only invalidate when *all* key fields are
+    'Not specified' (total LLM failure) or when severe error signals are
+    present.
+    """
     if not summary or not summary.strip():
         return False
-    invalid_phrases = ["生成失败", "暂无AI总结", "429", "Copilot API限额已用尽", "RateLimitReached", "Not specified"]
-    for phrase in invalid_phrases:
+
+    # Severe error signals — these always indicate an LLM/API failure.
+    severe_error_phrases = [
+        "生成失败", "暂无AI总结", "429",
+        "Copilot API限额已用尽", "RateLimitReached",
+    ]
+    for phrase in severe_error_phrases:
         if phrase in summary:
             return False
 
+    # ---- Structured check 1: JSON-formatted summary ----
+    # If the LLM returned a JSON string, check if ALL key fields are
+    # 'Not specified' (total failure) vs. partial placeholders (valid).
+    try:
+        import json
+        parsed = json.loads(summary.strip())
+        if isinstance(parsed, dict):
+            required = ["Brief Introduction", "Innovations", "Summary"]
+            all_not_specified = True
+            has_any_content = False
+            for f in required:
+                v = str(parsed.get(f, "") or "").strip()
+                if not v:
+                    continue
+                if v.lower() not in ("not specified.", "not specified"):
+                    has_any_content = True
+                    all_not_specified = False
+            # If every required field is either empty or "Not specified",
+            # the LLM totally failed — mark as invalid.
+            if all_not_specified and not has_any_content:
+                return False
+            # JSON parsed successfully and has some valid content — accept.
+            return True
+    except (json.JSONDecodeError, TypeError):
+        pass  # Not a JSON string, fall through to text-based checks.
+
+    # ---- Text-based template checks (non-JSON summaries) ----
     common_english_templates = [
         r"Here'?s the summary",
         r"Here is the summary",
@@ -283,21 +323,75 @@ def is_valid_summary(summary: str, language: str = "zh") -> bool:
     if missing:
         return False
 
+    # Length check: ensure the generated content has enough text
+    # (not just a list of "Not specified" placeholders).
+    # Use flexible field-end patterns that match:
+    #   - numbered list items (\n 1. or \n 2.)
+    #   - double newlines (\n\n)
+    #   - next field label (e.g. "\nInnovations:")
+    #   - end of string ($)
     try:
         s = summary
         if language == "en":
-            m = re.search(r"Brief Introduction\s*[:：]\s*(.+?)(?:\n\s*\d+\.|\n\n|$)", s, flags=re.IGNORECASE | re.S)
+            # Build flexible field-end pattern for English
+            next_labels = r"(?:Repository Name|Brief Introduction|Innovations|Basic Usage|Summary)"
+            field_end = rf"(?:\n\s*\d+\.|\n\n|\n\s*{next_labels}\s*[:：]|$)"
+
+            m = re.search(
+                rf"Brief Introduction\s*[:：]\s*(.+?){field_end}",
+                s, flags=re.IGNORECASE | re.S
+            )
             if m:
                 intro = m.group(1).strip()
                 intro_text = re.sub(r"\*|\*\*|`|\\n", "", intro).strip()
-                if len(intro_text) < 20:
+                # Check if intro is ALL "Not specified" — total failure
+                if intro_text.lower() in ("not specified.", "not specified", ""):
+                    # Check other fields too
+                    all_fields_empty = True
+                    for field_name in ["Innovations", "Summary"]:
+                        fm = re.search(
+                            rf"{field_name}\s*[:：]\s*(.+?){field_end}",
+                            s, flags=re.IGNORECASE | re.S
+                        )
+                        if fm:
+                            ft = fm.group(1).strip()
+                            ft_clean = re.sub(r"\*|\*\*|`|\\n", "", ft).strip()
+                            if ft_clean.lower() not in ("not specified.", "not specified", ""):
+                                all_fields_empty = False
+                                break
+                    if all_fields_empty:
+                        return False  # All fields are "Not specified" — LLM failed
+                # If intro has real content but < 20 chars, still reject
+                elif len(intro_text) < 20:
                     return False
         else:
-            m = re.search(r"简要介绍\s*[:：]\s*(.+?)(?:\n\s*\d+\.|\n\n|$)", s, flags=re.S)
+            # Build flexible field-end pattern for Chinese
+            next_labels_zh = r"(?:仓库名称|简要介绍|创新点|简单用法|总结)"
+            field_end_zh = rf"(?:\n\s*\d+\.|\n\n|\n\s*{next_labels_zh}\s*[:：]|$)"
+
+            m = re.search(
+                rf"简要介绍\s*[:：]\s*(.+?){field_end_zh}",
+                s, flags=re.S
+            )
             if m:
                 intro = m.group(1).strip()
                 intro_text = re.sub(r"\*|\*\*|`|\\n", "", intro).strip()
-                if len(intro_text) < 10:
+                if intro_text.lower() in ("not specified.", "not specified", ""):
+                    all_fields_empty = True
+                    for field_name in ["创新点", "总结"]:
+                        fm = re.search(
+                            rf"{field_name}\s*[:：]\s*(.+?){field_end_zh}",
+                            s, flags=re.S
+                        )
+                        if fm:
+                            ft = fm.group(1).strip()
+                            ft_clean = re.sub(r"\*|\*\*|`|\\n", "", ft).strip()
+                            if ft_clean.lower() not in ("not specified.", "not specified", ""):
+                                all_fields_empty = False
+                                break
+                    if all_fields_empty:
+                        return False
+                elif len(intro_text) < 10:
                     return False
     except Exception:
         pass

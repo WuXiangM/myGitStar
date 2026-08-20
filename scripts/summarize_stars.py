@@ -484,6 +484,12 @@ def main():
                 if partial:
                     summary_store = merge_summary_store(summary_store, repo_summary_map)
                     save_json_atomic(summary_store, json_path)
+                    print(f"[SAVE_PARTIAL] Saved {len(partial)} repos from interrupted batch")
+                else:
+                    # Even if this batch has no partial results, previous
+                    # batches have been saved. Log the state for clarity.
+                    print(f"[SAVE_PARTIAL] No partial results in this batch; "
+                          f"{processed_repos}/{total_repos} repos already saved from prior batches")
                 break
 
             for repo, summary in zip(this_batch, summaries):
@@ -494,6 +500,11 @@ def main():
 
             summary_store = merge_summary_store(summary_store, repo_summary_map)
             save_json_atomic(summary_store, json_path)
+            processed_repos += len(this_batch)
+            print(
+                f"[SAVE] Batch {batch_num} saved: {len(this_batch)} repos "
+                f"({processed_repos}/{total_repos} total processed)"
+            )
 
         # Final diagnostic: count budget spent, still-unknown repos, and
         # last-errors so the workflow log makes it obvious what to do next.
