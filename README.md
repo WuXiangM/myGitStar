@@ -10,7 +10,7 @@
 <p><b>Current account:</b> <a href="https://github.com/Nanxzi">Nanxzi</a></p>
 
 
-<p><b>Generated on:</b> 2026-08-19 02:37:18</p>
+<p><b>Generated on:</b> 2026-08-21 15:20:13</p>
 
 
 <p><b>AI Model:</b> openrouter</p>
@@ -62,13 +62,13 @@
 
 1. **Repository Name:** 027xiguapi/code-box
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -81,13 +81,13 @@
 
 1. **Repository Name:** 0xsline/GeminiImageApp
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -100,13 +100,13 @@
 
 1. **Repository Name:** 1Panel-dev/MaxKB
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -119,13 +119,13 @@
 
 1. **Repository Name:** 666ghj/BettaFish
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -138,13 +138,13 @@
 
 1. **Repository Name:** AUTOMATIC1111/stable-diffusion-webui
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -157,13 +157,13 @@
 
 1. **Repository Name:** BtbN/FFmpeg-Builds
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -176,13 +176,13 @@
 
 1. **Repository Name:** CapSoftware/Cap
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -195,13 +195,13 @@
 
 1. **Repository Name:** CharlesKeeling65/ManureCouplingStrategies
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -214,13 +214,13 @@
 
 1. **Repository Name:** Chuyu-Team/Dism-Multi-language
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -233,13 +233,13 @@
 
 1. **Repository Name:** EvanLi/Github-Ranking
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -252,13 +252,13 @@
 
 1. **Repository Name:** Fosowl/agenticSeek
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -271,13 +271,13 @@
 
 1. **Repository Name:** HisMax/RedInk
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -290,13 +290,13 @@
 
 1. **Repository Name:** Lydorn/Polygonization-by-Frame-Field-Learning
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -309,13 +309,13 @@
 
 1. **Repository Name:** MadMaxChow/VLOOK
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -328,13 +328,13 @@
 
 1. **Repository Name:** NanmiCoder/MediaCrawler
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -347,13 +347,13 @@
 
 1. **Repository Name:** OpenBMB/VoxCPM
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -366,13 +366,13 @@
 
 1. **Repository Name:** OpenListTeam/OpenList
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -385,13 +385,13 @@
 
 1. **Repository Name:** Peterande/D-FINE
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -404,13 +404,13 @@
 
 1. **Repository Name:** QwenLM/Qwen3-VL
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -423,13 +423,13 @@
 
 1. **Repository Name:** RSSNext/Folo
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -442,13 +442,13 @@
 
 1. **Repository Name:** RamonUnch/AltSnap
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -461,13 +461,13 @@
 
 1. **Repository Name:** SamuelSchmidgall/AgentLaboratory
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -480,13 +480,13 @@
 
 1. **Repository Name:** SheepChef/Abracadabra
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -499,13 +499,13 @@
 
 1. **Repository Name:** Shubhamsaboo/awesome-llm-apps
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -518,13 +518,13 @@
 
 1. **Repository Name:** Significant-Gravitas/AutoGPT
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -537,13 +537,13 @@
 
 1. **Repository Name:** Sjj1024/PakePlus
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -556,13 +556,13 @@
 
 1. **Repository Name:** Snouzy/workout-cool
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -575,13 +575,13 @@
 
 1. **Repository Name:** TapXWorld/ChinaTextbook
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -594,13 +594,13 @@
 
 1. **Repository Name:** Tosencen/XMSLEEP
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -617,7 +617,7 @@
 
 3. **Innovations:** Distinctive features include automated monitoring of Xianyu products, intelligent analysis capabilities, and a user-friendly backend UI for efficient management.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** This repository provides a powerful tool for users to efficiently discover desired products from the vast selection on Xianyu.
 
@@ -632,13 +632,13 @@
 
 1. **Repository Name:** VisionXLab/CrossEarth
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -651,13 +651,13 @@
 
 1. **Repository Name:** YILING0013/AI_NovelGenerator
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -670,13 +670,13 @@
 
 1. **Repository Name:** Yuiffy/BiliGPT
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -689,13 +689,13 @@
 
 1. **Repository Name:** ZCShou/GoGoGo
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -708,13 +708,13 @@
 
 1. **Repository Name:** Zie619/n8n-workflows
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -727,13 +727,13 @@
 
 1. **Repository Name:** ZyperWave/ZyperWinOptimize
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -746,13 +746,13 @@
 
 1. **Repository Name:** ahmedkhaleel2004/gitdiagram
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -765,13 +765,13 @@
 
 1. **Repository Name:** anthropics/claude-code
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -784,13 +784,13 @@
 
 1. **Repository Name:** antvis/mcp-server-chart
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -803,13 +803,13 @@
 
 1. **Repository Name:** arcee-ai/mergekit
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -822,13 +822,13 @@
 
 1. **Repository Name:** ashishpatel26/500-AI-Agents-Projects
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -841,13 +841,13 @@
 
 1. **Repository Name:** astral-sh/uv
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -860,13 +860,13 @@
 
 1. **Repository Name:** aws/aws-cli
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -879,13 +879,13 @@
 
 1. **Repository Name:** ayangweb/BongoCat
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -898,13 +898,13 @@
 
 1. **Repository Name:** bilibili/Index-1.9B
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -917,13 +917,13 @@
 
 1. **Repository Name:** btjawa/BiliTools
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -936,13 +936,13 @@
 
 1. **Repository Name:** bubbliiiing/unet-keras
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -955,13 +955,13 @@
 
 1. **Repository Name:** cjpais/Handy
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -974,13 +974,13 @@
 
 1. **Repository Name:** cline/cline
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -993,13 +993,13 @@
 
 1. **Repository Name:** crocofied/PortNote
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1012,13 +1012,13 @@
 
 1. **Repository Name:** dair-ai/Prompt-Engineering-Guide
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1031,13 +1031,13 @@
 
 1. **Repository Name:** datawhalechina/so-large-lm
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1050,13 +1050,13 @@
 
 1. **Repository Name:** easychen/opc-methodology
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1069,13 +1069,13 @@
 
 1. **Repository Name:** elder-plinius/CL4R1T4S
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1088,13 +1088,13 @@
 
 1. **Repository Name:** facebookresearch/sam-3d-body
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1107,13 +1107,13 @@
 
 1. **Repository Name:** facebookresearch/sam-3d-objects
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1126,13 +1126,13 @@
 
 1. **Repository Name:** fatedier/frp
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1145,13 +1145,13 @@
 
 1. **Repository Name:** firecrawl/firecrawl
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1164,13 +1164,13 @@
 
 1. **Repository Name:** fogsightai/fogsight
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1183,13 +1183,13 @@
 
 1. **Repository Name:** gkd-kit/gkd
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1202,13 +1202,13 @@
 
 1. **Repository Name:** glidea/banana-prompt-quicker
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1221,13 +1221,13 @@
 
 1. **Repository Name:** google-gemini/gemini-cli
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1240,13 +1240,13 @@
 
 1. **Repository Name:** google/automl
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1259,13 +1259,13 @@
 
 1. **Repository Name:** guofei9987/blind_watermark
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1278,13 +1278,13 @@
 
 1. **Repository Name:** hanydd/BilibiliSponsorBlock
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1297,13 +1297,13 @@
 
 1. **Repository Name:** happycola233/tchMaterial-parser
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1316,13 +1316,13 @@
 
 1. **Repository Name:** harry0703/MoneyPrinterTurbo
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1335,13 +1335,13 @@
 
 1. **Repository Name:** henry-gu/prompt-engineering-for-developers
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1354,13 +1354,13 @@
 
 1. **Repository Name:** hluk/CopyQ
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1373,13 +1373,13 @@
 
 1. **Repository Name:** holyshell/AppsForMac
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1392,13 +1392,13 @@
 
 1. **Repository Name:** hpcaitech/Open-Sora
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1411,13 +1411,13 @@
 
 1. **Repository Name:** huggingface/transformers
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1430,13 +1430,13 @@
 
 1. **Repository Name:** imsyy/DailyHotApi
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1449,13 +1449,13 @@
 
 1. **Repository Name:** iptv-org/iptv
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1468,13 +1468,13 @@
 
 1. **Repository Name:** jgm/pandoc
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1487,13 +1487,13 @@
 
 1. **Repository Name:** jianchang512/pyvideotrans
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1506,13 +1506,13 @@
 
 1. **Repository Name:** jonathanwilton/PUExtraTrees
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1525,13 +1525,13 @@
 
 1. **Repository Name:** kamranahmedse/developer-roadmap
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1544,13 +1544,13 @@
 
 1. **Repository Name:** kevmo314/magic-copy
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1563,13 +1563,13 @@
 
 1. **Repository Name:** kijai/ComfyUI-FramePackWrapper
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1582,13 +1582,13 @@
 
 1. **Repository Name:** kkeenee/TG-Twilight-AWAvenue-Ads-Rule
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1601,13 +1601,13 @@
 
 1. **Repository Name:** kknifer7/FreeBox
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1620,13 +1620,13 @@
 
 1. **Repository Name:** langbot-app/LangBot
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1639,13 +1639,13 @@
 
 1. **Repository Name:** langgenius/dify
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1658,13 +1658,13 @@
 
 1. **Repository Name:** lfnovo/open-notebook
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1677,13 +1677,13 @@
 
 1. **Repository Name:** linshenkx/prompt-optimizer
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1696,13 +1696,13 @@
 
 1. **Repository Name:** lllyasviel/FramePack
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1715,13 +1715,13 @@
 
 1. **Repository Name:** lukasmasuch/best-of-ml-python
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1734,13 +1734,13 @@
 
 1. **Repository Name:** microsoft/AI-For-Beginners
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1753,13 +1753,13 @@
 
 1. **Repository Name:** microsoft/PowerToys
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1772,13 +1772,13 @@
 
 1. **Repository Name:** microsoft/WSL
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1791,13 +1791,13 @@
 
 1. **Repository Name:** microsoft/generative-ai-for-beginners
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1810,13 +1810,13 @@
 
 1. **Repository Name:** microsoft/markitdown
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1829,13 +1829,13 @@
 
 1. **Repository Name:** mikf/gallery-dl
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1848,13 +1848,13 @@
 
 1. **Repository Name:** mrdoob/three.js
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1867,13 +1867,13 @@
 
 1. **Repository Name:** n8n-io/n8n
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1886,13 +1886,13 @@
 
 1. **Repository Name:** nomic-ai/gpt4all
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1905,13 +1905,13 @@
 
 1. **Repository Name:** nunchaku-ai/nunchaku
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1924,13 +1924,13 @@
 
 1. **Repository Name:** nvbn/thefuck
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1943,13 +1943,13 @@
 
 1. **Repository Name:** ollama/ollama
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1962,13 +1962,13 @@
 
 1. **Repository Name:** opendatalab/MinerU
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -1981,13 +1981,13 @@
 
 1. **Repository Name:** patchy631/ai-engineering-hub
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2000,13 +2000,13 @@
 
 1. **Repository Name:** penpot/penpot
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2019,13 +2019,13 @@
 
 1. **Repository Name:** phuijse/bagging_pu
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2038,13 +2038,13 @@
 
 1. **Repository Name:** playcanvas/engine
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2057,13 +2057,13 @@
 
 1. **Repository Name:** poloclub/transformer-explainer
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2076,13 +2076,13 @@
 
 1. **Repository Name:** public-apis/public-apis
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2095,13 +2095,13 @@
 
 1. **Repository Name:** punkpeye/awesome-mcp-servers
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2114,13 +2114,13 @@
 
 1. **Repository Name:** randyrants/sharpkeys
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2133,13 +2133,13 @@
 
 1. **Repository Name:** ripienaar/free-for-dev
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2152,13 +2152,13 @@
 
 1. **Repository Name:** robert-mcdermott/ai-knowledge-graph
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2171,13 +2171,13 @@
 
 1. **Repository Name:** roboflow/notebooks
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2190,13 +2190,13 @@
 
 1. **Repository Name:** roboflow/supervision
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2209,13 +2209,13 @@
 
 1. **Repository Name:** roywright/pu_learning
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2228,13 +2228,13 @@
 
 1. **Repository Name:** ruanyf/weekly
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2247,13 +2247,13 @@
 
 1. **Repository Name:** sansan0/TrendRadar
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2266,13 +2266,13 @@
 
 1. **Repository Name:** subframe7536/maple-font
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2285,13 +2285,13 @@
 
 1. **Repository Name:** svcvit/Awesome-Dify-Workflow
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2304,13 +2304,13 @@
 
 1. **Repository Name:** tadata-org/fastapi_mcp
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2323,13 +2323,13 @@
 
 1. **Repository Name:** teableio/teable
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2342,13 +2342,13 @@
 
 1. **Repository Name:** tldr-pages/tldr
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2361,13 +2361,13 @@
 
 1. **Repository Name:** tw93/Pake
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2380,13 +2380,13 @@
 
 1. **Repository Name:** umami-software/umami
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2399,13 +2399,13 @@
 
 1. **Repository Name:** ventoy/Ventoy
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2422,7 +2422,7 @@
 
 3. **Innovations:** Features include easy integration with AI agents, support for various browser actions, and a user-friendly CLI for automating complex web tasks.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** This repository provides a powerful tool for automating browser interactions, enhancing the capabilities of AI agents.
 
@@ -2437,13 +2437,13 @@
 
 1. **Repository Name:** vllm-project/vllm
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2456,13 +2456,13 @@
 
 1. **Repository Name:** wordshub/free-font
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2475,13 +2475,13 @@
 
 1. **Repository Name:** x-cmd/x-cmd
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2494,13 +2494,13 @@
 
 1. **Repository Name:** xanderfrangos/twinkle-tray
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2513,13 +2513,13 @@
 
 1. **Repository Name:** xming521/WeClone
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2532,13 +2532,13 @@
 
 1. **Repository Name:** xyTom/snippai
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2551,13 +2551,13 @@
 
 1. **Repository Name:** yitong2333/Bionic-Reading
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2570,13 +2570,13 @@
 
 1. **Repository Name:** zetaloop/ExplorerPatcher
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2589,13 +2589,13 @@
 
 1. **Repository Name:** zetaloop/OFGB
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2608,13 +2608,13 @@
 
 1. **Repository Name:** zijie0/HumanSystemOptimization
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2627,13 +2627,13 @@
 
 1. **Repository Name:** zorzi-s/PolyWorldPretrainedNetwork
 
-2. **Brief Introduction:** Not specified.
+2. **Brief Introduction:** _No description_
 
-3. **Innovations:** Not specified.
+3. **Innovations:** _N/A_
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
-5. **Summary:** Not specified.
+5. **Summary:** _N/A_
 
 ---
 
@@ -2658,7 +2658,7 @@
 
 3. **Innovations:** The repository features a novel latent-memory architecture that enhances attention mechanisms, allowing for significantly larger context sizes while maintaining computational efficiency.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** This repository provides a cutting-edge solution for managing extensive contexts in machine learning applications through its innovative memory architecture.
 
@@ -2677,7 +2677,7 @@
 
 3. **Innovations:** The repository features a novel approach to reinforcement learning that prioritizes reasoning without bias, allowing for more generalized and adaptable learning outcomes.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** FIPO aims to improve reasoning in AI models by implementing a unique, value-free reinforcement learning strategy.
 
@@ -2715,7 +2715,7 @@
 
 3. **Innovations:** It uniquely integrates large language models with advanced document processing techniques to enhance information retrieval and contextual response generation.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** WeKnora aims to improve the efficiency and accuracy of information retrieval and understanding through advanced AI techniques.
 
@@ -2772,7 +2772,7 @@
 
 3. **Innovations:** The repository features an AI-driven approach to scientific exploration, enabling autonomous hypothesis generation and testing, and integrates with Claude for enhanced computational capabilities.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** Kosmos serves as a platform for advancing autonomous scientific research through AI-driven methodologies.
 
@@ -2791,7 +2791,7 @@
 
 3. **Innovations:** Key features include detailed mapping tools, data visualization capabilities, and integration of various datasets to assess grassland health and management practices.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** The project aims to enhance understanding and management of grasslands worldwide for better environmental stewardship.
 
@@ -2810,7 +2810,7 @@
 
 3. **Innovations:** Features a complete and standardized dataset of building geometries and heights, enabling advanced urban modeling, planning, and analysis across various geographical regions.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** The repository serves as a valuable resource for researchers and developers in urban studies, offering detailed building data for enhanced spatial analysis.
 
@@ -2856,7 +2856,7 @@
 
 3. **Innovations:** The repository features a multilingual translation capability that maintains the layout of documents, supports multiple translation services (Google, DeepL, Ollama, OpenAI), and provides various interfaces including CLI, GUI, MCP, Docker, and Zotero integration.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** This repository provides a comprehensive solution for bilingual translation of PDF documents, ensuring format preservation and compatibility with popular translation services.
 
@@ -2913,7 +2913,7 @@
 
 3. **Innovations:** The project features advanced algorithms for embedding and extracting watermarks without altering the perceptual quality of the original content, ensuring robust protection against unauthorized use.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** BlindWatermark provides a solution for creators to safeguard their intellectual property through invisible watermarking technology.
 
@@ -2951,7 +2951,7 @@
 
 3. **Innovations:** Features include a variety of styles and weights tailored for different coding environments, improved character recognition, and support for multiple programming languages.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** Monaspace aims to improve the coding experience through thoughtfully designed typography.
 
@@ -2997,7 +2997,7 @@
 
 3. **Innovations:** Key features include personalized learning capabilities, real-time adaptability, and integration with multiple platforms to streamline user experiences.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** Hermes Agent aims to provide a customizable and evolving assistant that improves user productivity and engagement.
 
@@ -3016,7 +3016,7 @@
 
 3. **Innovations:** The project emphasizes efficiency in training large models with minimal parameters, enabling rapid prototyping and exploration of GPT architecture.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** Minimind offers a streamlined approach to training a compact GPT model, facilitating quick experimentation in natural language processing.
 
@@ -3054,7 +3054,7 @@
 
 3. **Innovations:** Distinctive features include seamless integration of multiple Chinese IM platforms, pre-installed plugins, and simplified deployment for AI bot gateways.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** The repository facilitates quick deployment of an AI bot gateway that supports various Chinese IM platforms.
 
@@ -3073,7 +3073,7 @@
 
 3. **Innovations:** Distinctive features include customizable agents with unique personalities, specialized workflows, and the ability to deliver tailored outputs for diverse applications.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** This repository offers a versatile platform for deploying AI agents tailored to specific tasks and personalities, enhancing productivity and creativity.
 
@@ -3157,7 +3157,7 @@
 
 3. **Innovations:** Key features include a diverse array of autonomous agents, a smart chat interface, and seamless integration with multiple advanced LLMs, enhancing productivity and user experience.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** Cherry Studio aims to enhance productivity through innovative AI tools and assistants, streamlining user interactions with advanced language models.
 
@@ -3233,7 +3233,7 @@
 
 3. **Innovations:** The repository features an elegant design, ease of use, and integrates both an AI workspace and a proactive agent system, enhancing productivity and task management.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** MyAgents serves as a versatile task center that merges AI capabilities with proactive agent functionalities for efficient desktop management.
 
@@ -3252,7 +3252,7 @@
 
 3. **Innovations:** Distinctive features include cross-platform compatibility, a customizable interface, and an intuitive design that simplifies user interaction with AI technologies.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** OpenClaw serves as a flexible AI assistant, adaptable to various environments and user needs.
 
@@ -3279,7 +3279,7 @@
 
 3. **Innovations:** Supports uploading custom template images and materials, intelligently parses content, auto-generates slides from outlines or descriptions, allows verbal modifications of specific areas, and enables one-click export of editable PPT files.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** This repository offers a unique solution for generating personalized presentations using AI technology, streamlining the creation process for users.
 
@@ -3298,7 +3298,7 @@
 
 3. **Innovations:** Features include an agent-driven approach, worldbuilding tools, a writing engine, retrieval-augmented generation (RAG), and a comprehensive workflow for producing entire books.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** This repository provides a comprehensive toolset for novice writers to develop their ideas into fully realized novels.
 
@@ -3336,7 +3336,7 @@
 
 3. **Innovations:** The repository features AI-driven writing capabilities, automated auditing, and revision processes, along with integration of human feedback to enhance the quality of novel writing.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** The project aims to streamline the novel writing process by leveraging AI while ensuring quality through human oversight.
 
@@ -3374,7 +3374,7 @@
 
 3. **Innovations:** Key features include seamless HTML rendering into video format, user-friendly interface for content creation, and optimized performance for agent applications.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** Hyperframes enables agents to efficiently create and render engaging video content from HTML.
 
@@ -3420,7 +3420,7 @@
 
 3. **Innovations:** This repository features a comprehensive list of innovative skills and resources that enable users to tailor their interactions with Claude AI, improving functionality and user experience.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** This repository serves as a valuable resource for anyone looking to optimize their use of Claude AI through curated skills and tools.
 
@@ -3458,7 +3458,7 @@
 
 3. **Innovations:** Features include automated watermark adjustments, user-friendly interface, and compatibility with multiple Gemini models, enhancing the watermarking process.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** This repository provides a specialized tool for managing watermarks on Gemini devices, improving user experience and efficiency.
 
@@ -3477,7 +3477,7 @@
 
 3. **Innovations:** The repository features modular skills that can be easily integrated into AI systems, promoting adaptability and efficiency in task execution.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** The repository serves as a resource for developing and implementing advanced skills in AI agents to improve their functionality and user interaction.
 
@@ -3523,7 +3523,7 @@
 
 3. **Innovations:** The repository features hands-on coding examples, comprehensive explanations of LLM concepts, and interactive exercises to facilitate learning and experimentation with LLMs.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** This repository serves as a valuable resource for anyone looking to learn about and work with large language models through practical implementation.
 
@@ -3542,7 +3542,7 @@
 
 3. **Innovations:** The repository offers a step-by-step approach to constructing embodied intelligence systems, making advanced concepts accessible to those with basic Python knowledge.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** This repository serves as a comprehensive guide for building embodied intelligent robots, enhancing understanding of the underlying technologies.
 
@@ -3569,7 +3569,7 @@
 
 3. **Innovations:** Features include intelligent code suggestions, real-time collaboration tools, and seamless integration with popular development environments to enhance productivity.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** This repository aims to streamline the coding process by providing innovative tools for developers.
 
@@ -3588,7 +3588,7 @@
 
 3. **Innovations:** The repository uniquely compiles observations and strategies to mitigate coding errors in LLMs, specifically tailored for improving Claude Code's behavior.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** The repository serves as a resource for refining the coding capabilities of Claude Code by leveraging expert insights on LLM challenges.
 
@@ -3607,7 +3607,7 @@
 
 3. **Innovations:** Distinctive features include the ability to manage multiple coding agents, facilitate real-time collaboration, and enhance agent capabilities through skill compounding.
 
-4. **Basic Usage:** Not specified.
+4. **Basic Usage:** _N/A_
 
 5. **Summary:** This repository provides a framework for creating and managing collaborative coding agents to improve productivity and teamwork in software development.
 
