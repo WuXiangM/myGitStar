@@ -111,9 +111,42 @@ openrouter_rpm: 20
 
 # 连续 429 错误最大次数（超过则终止当前阶段，保存已运行内容）
 # Max consecutive 429 errors before aborting current stage (saves progress)
-# 总结阶段和分类阶段各自独立计数
-# Summarize and classify stages count independently
+# 总结阶段：主模型 + fallback 链全部 429 才计 1 次，任何一次成功即清零
+# Summarize: counts only full-chain 429s (primary + fallbacks); any success resets
 max_consecutive_429: 3
+
+# 批次级 429 重试：fallback 链全部 429 后等待重试同一批的次数（0 = 立即终止）
+# Batch-level 429 retries after the fallback chain fails (0 = abort immediately)
+rate_limit_batch_retries: 2
+
+# 每次批次级 429 重试的等待秒数（线性递增：60s、120s...）
+# Wait seconds per batch-level 429 retry (linear: 60s, 120s...)
+rate_limit_retry_wait: 60
+
+# ===== 优先级轮询更新（priority round-robin）相关配置 =====
+
+# 分类阶段 RPD 预留：总结阶段最多可用 openrouter_rpd - 此值 个调用，
+# 保证分类阶段永远有配额可用（仅 openrouter 生效）
+# RPD reserve held back for the classify stage (openrouter only)
+classify_rpd_reserve: 5
+
+# 连续无产出批次上限：连续 N 个批次的 LLM 调用都没有产生有效内容时，
+# 提前收工保存退出，把剩余 RPD 留给明天（浪费账本；进度预算见 max_api_calls_per_run）
+# Max consecutive batches with no usable output before aborting early
+max_consecutive_failures: 5
+
+# 失败退避基数（天）：next_retry = now + base * 2^(attempts-1)，封顶见下
+# Failure backoff base in days (exponential, capped)
+retry_backoff_base_days: 1
+
+# 失败退避封顶（天）
+# Failure backoff cap in days
+retry_backoff_max_days: 8
+
+# taxonomy 重设计的 Unknown 改善触发阈值（0~1）：缓存分类体系的 Unknown 占比
+# 相比设计时下降超过此值则重新设计（旧体系多是在空数据上设计的）
+# Redesign taxonomy when cached Unknown ratio improves by more than this
+taxonomy_unknown_improvement_trigger: 0.2
 
 # Gemini 特定的保守配置
 

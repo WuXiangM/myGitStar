@@ -48,15 +48,23 @@ def save_counter(data: dict) -> None:
         pass
 
 
-def check_and_reserve(rpd_limit: int) -> tuple[bool, int]:
+def check_and_reserve(rpd_limit: int, reserve: int = 0) -> tuple[bool, int]:
     """
     Check RPD limit and reserve a slot (increment counter) before making the call.
-    
+
+    `reserve` holds back that many calls for a later stage (e.g. classify),
+    so the summarize stage can never consume the whole daily quota.
+
     Returns (allowed, current_count).
     If allowed is False, the counter is NOT incremented.
-    
-    Note: 429 errors from OpenRouter DO consume quota, so we don't rollback.
+
+    Note: requests rejected with 429 never reached the model, so the caller
+    (api_clients.openrouter_summarize) releases the reserved slot via
+    rollback_increment() to keep the counter tracking accepted requests.
     """
+    if rpd_limit > 0 and reserve > 0:
+        rpd_limit = max(1, rpd_limit - reserve)
+
     if rpd_limit <= 0:
         data = load_counter()
         data["count"] = data.get("count", 0) + 1
@@ -75,14 +83,20 @@ def check_and_reserve(rpd_limit: int) -> tuple[bool, int]:
     return True, data["count"]
 
 
-def check_limit(rpd_limit: int) -> tuple[bool, int]:
+def check_limit(rpd_limit: int, reserve: int = 0) -> tuple[bool, int]:
     """
     Only check RPD limit without incrementing.
+
+    `reserve` holds back that many calls for a later stage, mirroring
+    check_and_reserve().
 
     Used for pre-check before API call to avoid exceeding limit.
 
     Returns (allowed, current_count).
     """
+    if rpd_limit > 0 and reserve > 0:
+        rpd_limit = max(1, rpd_limit - reserve)
+
     if rpd_limit <= 0:
         data = load_counter()
         return True, data.get("count", 0)
@@ -127,10 +141,11 @@ def get_count() -> int:
 def rollback_increment() -> int:
     """
     Rollback the counter by 1 (decrement).
-    
-    Used when a 429 error occurs - the reserved quota should be released
-    since 429 errors don't consume actual quota.
-    
+
+    Used when a request is rejected with 429 — the reserved slot is
+    released because the request never reached the model and consumed
+    no daily quota.
+
     Returns new count after rollback.
     """
     data = load_counter()

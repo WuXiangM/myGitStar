@@ -2,8 +2,8 @@ name: Update myGitStar Summaries
 
 on:
   schedule:
-    # 每 3 天跑一次（节省 API 配额 + 及时发现描述变化）
-    - cron: '0 0 */3 * *'
+    # 每天跑一次（提高 RPD 利用率，加快消除 N/A 积压；429 已有优雅退出）
+    - cron: '0 0 * * *'
   workflow_dispatch:
     inputs:
       update_mode:
@@ -124,8 +124,28 @@ jobs:
           echo "DEBUG: GITHUB_ACTOR=$GITHUB_ACTOR, GITHUB_USERNAME=$GITHUB_USERNAME"
           python scripts/summarize_stars.py --language en --out README_lang.md --update-mode ${{ steps.mode.outputs.effective_update_mode }}
 
+      - name: Read summarize progress report
+        id: progress
+        if: steps.cfg.outputs.classify_only != 'true'
+        run: |
+          python - <<'PY'
+          import os, json
+          new_valid = 1  # default: run classify (first run / missing report)
+          if os.path.exists('summarize_run_report.json'):
+              try:
+                  new_valid = int(json.load(open('summarize_run_report.json', encoding='utf-8')).get('new_valid_entries', 1))
+              except Exception:
+                  new_valid = 1
+          out = os.environ.get('GITHUB_OUTPUT')
+          if out:
+              with open(out, 'a', encoding='utf-8') as f:
+                  f.write(f'new_valid={new_valid}\n')
+          print(f'new_valid={new_valid}')
+          PY
+
       - name: Classify repos by content from summaries
         id: classify
+        if: steps.cfg.outputs.classify_only == 'true' || steps.progress.outputs.new_valid != '0'
         env:
           STARRED_GITHUB_TOKEN: ${{ secrets.STARRED_GITHUB_TOKEN }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
@@ -170,6 +190,8 @@ jobs:
           test -f repo_summaries_zh.json && git add repo_summaries_zh.json || true
           test -f README_lang.md && git add README_lang.md || true
           test -f README_lang_zh.md && git add README_lang_zh.md || true
+          test -f queue_state.json && git add queue_state.json || true
+          test -f summarize_run_report.json && git add summarize_run_report.json || true
           git commit -m "update AI summarized stars [bot]" || echo "No changes to commit"
           git remote set-url origin https://x-access-token:${STARRED_GITHUB_TOKEN}@github.com/${{ github.repository }}.git
           # GitHub Actions checkout is always based on latest main;

@@ -3,7 +3,11 @@ import json
 import os
 from typing import Any, Dict, Optional, Tuple
 
-REPO_ROOT = os.path.dirname(os.path.dirname(__file__))
+# json_store.py lives at <repo>/scripts/core/, so THREE dirnames are needed
+# to reach the repo root. (Two only reached <repo>/scripts/, which made
+# get_summary_json_path() point at a non-existent scripts/repo_summaries.json
+# and silently discarded all incremental progress in CI.)
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 # ============================================================================
@@ -27,6 +31,17 @@ SUMMARY_META_FIELDS = (
     "summary_source",           # "ai" | "reused" | "backfill" | "manual"
     "summary_attempts",         # number of LLM attempts that produced this entry
 )
+
+# Error/backoff metadata (written when an LLM attempt fails, consumed by the
+# priority queue so failed repos back off instead of being retried every run).
+ERROR_META_FIELDS = (
+    "last_attempt_at",          # ISO8601 UTC timestamp of the last (failed) attempt
+    "last_error",               # short machine-readable failure reason
+    "next_retry_at",            # earliest ISO8601 UTC time this repo may be retried
+    "source_absent",            # True = upstream has no README/description; terminal state
+)
+
+QUEUE_STATE_FILE = os.path.join(REPO_ROOT, "queue_state.json")
 
 
 def compute_description_hash(full_name: str, description: str) -> str:
@@ -85,6 +100,121 @@ def make_metadata(
     }
 
 
+def make_error_meta(
+    full_name: str,
+    description: str,
+    model: str,
+    reason: str,
+    attempts: int = 1,
+    backoff_base_days: float = 1.0,
+    backoff_max_days: float = 8.0,
+) -> Dict[str, Any]:
+    """Build metadata for a FAILED summarization attempt.
+
+    Unlike make_metadata(), this does NOT set last_summarized_at (the entry
+    was not successfully summarized) and instead records the failure reason,
+    the attempt count and an exponential backoff window (2^attempts days,
+    capped) so the priority queue can defer the next retry.
+    """
+    from datetime import datetime, timedelta, timezone
+    now = datetime.now(timezone.utc)
+    attempts = max(1, int(attempts or 1))
+    delay_days = min(backoff_base_days * (2 ** (attempts - 1)), backoff_max_days)
+    next_retry = now + timedelta(days=delay_days)
+    return {
+        "description_hash": compute_description_hash(full_name, description),
+        "summary_model": model or "unknown",
+        "summary_source": "error",
+        "summary_attempts": attempts,
+        "last_attempt_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "last_error": str(reason or "unknown_error")[:200],
+        "next_retry_at": next_retry.strftime("%Y-%m-%dT%H:%M:%SZ"),
+    }
+
+
+# Fields considered when scoring how much useful content an entry has.
+QUALITY_FIELDS = ("Brief Introduction", "Innovations", "Basic Usage", "Summary")
+
+
+def count_invalid_fields(entry: Optional[Dict[str, Any]]) -> int:
+    """Return how many of the 4 content fields lack useful text (0~4).
+
+    A field is 'invalid' when it is missing, empty, or the 'Not specified'
+    placeholder. Repos with a HIGHER count are summarised first.
+    """
+    if not isinstance(entry, dict):
+        return len(QUALITY_FIELDS)
+    n = 0
+    for f in QUALITY_FIELDS:
+        v = str(entry.get(f) or "").strip()
+        if not v or v.strip().lower() in ("not specified.", "not specified"):
+            n += 1
+    return n
+
+
+def _entry_meta(entry: Optional[Dict[str, Any]]) -> Dict[str, Any]:
+    if isinstance(entry, dict) and isinstance(entry.get("__meta__"), dict):
+        return entry["__meta__"]
+    return {}
+
+
+def entry_attempts(entry: Optional[Dict[str, Any]]) -> int:
+    """Number of recorded LLM attempts for this entry (0 = never attempted)."""
+    try:
+        return int(_entry_meta(entry).get("summary_attempts") or 0)
+    except Exception:
+        return 0
+
+
+def _parse_iso(ts: Optional[str]):
+    from datetime import datetime, timezone
+    if not ts or not isinstance(ts, str):
+        return None
+    try:
+        return datetime.strptime(ts.strip(), "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+    except Exception:
+        return None
+
+
+def is_retry_due(entry: Optional[Dict[str, Any]], now=None) -> bool:
+    """True when the entry may be retried now (backoff expired / never failed)."""
+    from datetime import datetime, timezone
+    meta = _entry_meta(entry)
+    if not meta.get("next_retry_at"):
+        return True
+    nxt = _parse_iso(meta.get("next_retry_at"))
+    if nxt is None:
+        return True
+    if now is None:
+        now = datetime.now(timezone.utc)
+    return now >= nxt
+
+
+def is_source_absent(entry: Optional[Dict[str, Any]]) -> bool:
+    """True when upstream has no README and no description (terminal state)."""
+    return bool(_entry_meta(entry).get("source_absent"))
+
+
+def load_queue_state() -> Dict[str, Any]:
+    """Load the round-robin cursor state (survives across runs via git)."""
+    state = load_json(QUEUE_STATE_FILE)
+    if not isinstance(state, dict):
+        state = {}
+    try:
+        state["cursor"] = max(0, int(state.get("cursor") or 0))
+    except Exception:
+        state["cursor"] = 0
+    return state
+
+
+def save_queue_state(state: Dict[str, Any]) -> None:
+    from datetime import datetime, timezone
+    if not isinstance(state, dict):
+        state = {}
+    state["updated_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    save_json_atomic(state, QUEUE_STATE_FILE)
+
+
 def _is_not_specified(value: Any) -> bool:
     """Check if a field value is the 'Not specified' placeholder.
 
@@ -137,6 +267,12 @@ def is_entry_fresh(
     GitHub Actions workflow since we want to minimise API calls.
     """
     if not isinstance(entry, dict):
+        return False
+
+    # Legacy poison string written by old budget-exhaustion code. It must be
+    # re-summarised, never reused as a valid summary.
+    summary_text = str(entry.get("Summary") or "").strip()
+    if summary_text.startswith("(deferred"):
         return False
 
     required_fields = (

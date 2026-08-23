@@ -127,8 +127,11 @@ def make_api_request(url: str, headers: Dict[str, str], data: Dict[str, Any], re
 
 
             if resp.status_code == 429:
-                # Note: 429 errors DO consume quota, so we don't rollback
-                
+                # Release the slot reserved before the request: a rejected
+                # request never reached the model and consumes no daily quota.
+                if MODEL_CHOICE == "openrouter":
+                    daily_counter.rollback_increment()
+
                 retry_after = None
                 try:
                     ra = resp.headers.get("Retry-After")
@@ -877,6 +880,47 @@ def _enrich_repos_from_summaries(repos: List[Dict[str, Any]]) -> List[Dict[str, 
     return repos
 
 
+def _backfill_github_metadata(repos: List[Dict[str, Any]]) -> int:
+    """Zero-cost backfill (P0-3): fetch starred repos from the GitHub API
+    (no LLM quota) and store each repo's upstream description in
+    `github_description` so the README can show it while the LLM summary is
+    still pending. Returns how many repos gained a description."""
+    try:
+        starred = get_starred_repos(max_repos=None)
+    except Exception as e:
+        print(f"[BACKFILL] GitHub API unavailable, skipping description backfill: {e}")
+        return 0
+    if not starred:
+        return 0
+
+    lookup: Dict[str, Dict[str, Any]] = {}
+    for gh in starred:
+        full_name = str(gh.get("full_name") or "").strip()
+        if full_name:
+            lookup[full_name] = gh
+
+    count = 0
+    for r in repos:
+        full_name = str(r.get("full_name") or "").strip()
+        gh = lookup.get(full_name) or {}
+        desc = str(gh.get("description") or "").strip()
+        if desc:
+            r["github_description"] = desc
+            # Fill display stats that summary-only parsing could not provide.
+            if not r.get("stargazers_count"):
+                r["stargazers_count"] = gh.get("stargazers_count", 0)
+            if not r.get("forks_count"):
+                r["forks_count"] = gh.get("forks_count", 0)
+            if not str(r.get("updated_at") or "").strip():
+                r["updated_at"] = gh.get("updated_at", "")
+            if not str(r.get("html_url") or "").strip():
+                r["html_url"] = gh.get("html_url", "")
+            count += 1
+    if count:
+        print(f"[BACKFILL] {count} repos have a GitHub description available as display fallback (no LLM cost)")
+    return count
+
+
 def _build_repo_content_text(repo: Dict[str, Any]) -> str:
     """Create a stable, content-focused text blob for taxonomy + classification."""
     full_name = _clean_inline_md(str(repo.get("full_name") or ""))
@@ -1284,6 +1328,34 @@ def _should_refresh_taxonomy(
         if len(undersized) > 2:
             names = [f"{cid}({c})" for cid, c in undersized[:3]]
             return True, f"multiple undersized categories: {', '.join(names)}"
+
+    # Unknown-ratio improvement (P2-1): when a large share of previously
+    # Unknown repos now have valid summaries, the cached taxonomy (designed
+    # mostly on empty data) no longer fits — redesign it.
+    unknown_trigger = 0.2
+    try:
+        if isinstance(config, dict):
+            unknown_trigger = float(config.get("taxonomy_unknown_improvement_trigger", 0.2) or 0.2)
+    except Exception:
+        unknown_trigger = 0.2
+    if unknown_trigger > 0 and cached_assigns and current_repos:
+        # Only trust the check when the repo dicts actually carry the
+        # is_unknown flag (summary/readme parsing modes always do).
+        flagged = sum(1 for r in current_repos if "is_unknown" in r)
+        if flagged >= len(current_repos) / 2:
+            cached_total = len(cached_assigns)
+            cached_unknown = sum(
+                1 for cid in cached_assigns.values()
+                if str(cid).strip().lower() in ("other", "unknown")
+            )
+            cached_unknown_ratio = (cached_unknown / cached_total) if cached_total else 0.0
+            current_unknown = sum(1 for r in current_repos if r.get("is_unknown"))
+            current_unknown_ratio = current_unknown / len(current_repos)
+            if cached_unknown_ratio - current_unknown_ratio >= unknown_trigger:
+                return True, (
+                    f"unknown ratio improved {cached_unknown_ratio:.0%} -> {current_unknown_ratio:.0%} "
+                    f"(threshold {unknown_trigger:.0%}); taxonomy was designed on mostly-empty data"
+                )
 
     return False, ""
 
@@ -1719,10 +1791,14 @@ def render_markdown(
                 repo_summary = {}
 
             repo_name = repo_summary.get("Repository Name", full_name)
-            brief_intro = repo_summary.get("Brief Introduction", "")
-            innovations = repo_summary.get("Innovations", "")
+            # Fall back to the enriched repo fields, then to the upstream
+            # GitHub description (P0-3) before giving up with a placeholder.
+            brief_intro = repo_summary.get("Brief Introduction", "") or str(r.get("brief_intro") or "")
+            innovations = repo_summary.get("Innovations", "") or str(r.get("innovations") or "")
             basic_usage = repo_summary.get("Basic Usage", "")
-            summary_text = repo_summary.get("Summary", "")
+            summary_text = repo_summary.get("Summary", "") or str(r.get("summary") or "")
+            if not str(brief_intro).strip() or _is_not_specified(brief_intro):
+                brief_intro = str(r.get("github_description") or "").strip()
 
             lines.append("1. **Repository Name:** " + repo_name + "\n")
             lines.append("2. **Brief Introduction:** " + _display_field(brief_intro, "No description") + "\n")
@@ -1899,6 +1975,11 @@ def main() -> int:
 
     # Auto-enrich repos with existing summary data if available
     repos = _enrich_repos_from_summaries(repos)
+
+    # Zero-cost GitHub metadata backfill (P0-3): descriptions for repos whose
+    # LLM summary is still empty, so "No description" lines disappear without
+    # spending any LLM quota.
+    github_desc_count = _backfill_github_metadata(repos)
 
     # Ensure a consistent content text field exists for both API-fetched repos and README-parsed repos.
     for r in repos:
@@ -2156,6 +2237,29 @@ def main() -> int:
         print(f"\n[WARNING] Classification stability is low: {reuse_ratio:.1%} (threshold: {stability_threshold:.1%})")
         print("This may indicate taxonomy drift. Consider redesigning taxonomy by setting taxonomy_cache_max_age_days: 0\n")
 
+    # Convergence report (P2-2): compare against the previous run's stats.
+    prev_unknown = None
+    try:
+        if os.path.exists(out_json_path):
+            with open(out_json_path, "r", encoding="utf-8") as f:
+                prev_stats = (json.load(f) or {}).get("stats") or {}
+            prev_unknown = prev_stats.get("unknown")
+    except Exception:
+        prev_unknown = None
+    if isinstance(prev_unknown, int):
+        print(f"[CONVERGENCE] unknown: {prev_unknown} -> {len(unknown_repos)} "
+              f"({len(unknown_repos) - prev_unknown:+d})")
+
+    invalid_field_repos = 0
+    try:
+        from scripts.core.json_store import count_invalid_fields
+        invalid_field_repos = sum(
+            1 for r in repos
+            if count_invalid_fields(r.get("summary_data") if isinstance(r.get("summary_data"), dict) else None) > 0
+        )
+    except Exception:
+        invalid_field_repos = len(unknown_repos)
+
     out = {
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "model_choice": MODEL_CHOICE,
@@ -2188,6 +2292,8 @@ def main() -> int:
             "reused": reused_count,
             "llm_classified": len(repos) - reused_count - len(unknown_repos),
             "unknown": len(unknown_repos),
+            "github_description_backfilled": github_desc_count,
+            "invalid_field_repos": invalid_field_repos,
         },
     }
 

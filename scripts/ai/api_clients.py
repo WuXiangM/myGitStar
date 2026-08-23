@@ -2,7 +2,12 @@ import os
 import time
 from typing import Any, Dict, Optional
 
-from scripts.ai.llm_caller import make_api_request, RateLimitAbort
+from scripts.ai.llm_caller import (
+    make_api_request,
+    RateLimitAbort,
+    _note_429_and_maybe_abort,
+    _reset_consecutive_429,
+)
 
 
 API_ENDPOINTS = {
@@ -98,7 +103,9 @@ def openrouter_summarize(
             from scripts.core import daily_counter
             from scripts.core.config import get_int_config
             rpd_limit = get_int_config(config, "openrouter_rpd", 50)
-            allowed, current = daily_counter.check_and_reserve(rpd_limit)
+            # Hold back some calls for the classify stage (P1-5).
+            rpd_reserve = get_int_config(config, "classify_rpd_reserve", 5)
+            allowed, current = daily_counter.check_and_reserve(rpd_limit, reserve=rpd_reserve)
             if not allowed:
                 print(f"[RPD] Limit reached before call: {current}/{rpd_limit}", flush=True)
                 return {"__error__": "429", "__message__": f"RPD limit reached: {current}/{rpd_limit}"}
@@ -125,7 +132,21 @@ def openrouter_summarize(
             error_code = error.get("code")
             if error_code == 429 or str(error_code) == "429":
                 print(f"[WARN] OpenRouter returned 429 rate limit error", flush=True)
-                # Note: 429 errors DO consume quota, so we don't rollback
+                # A rejected request does not consume the daily quota:
+                # release the slot reserved before the call so a rate-limit
+                # burst cannot burn the whole RPD budget without producing
+                # any output.
+                if config:
+                    try:
+                        from scripts.core import daily_counter
+                        daily_counter.rollback_increment()
+                        print(
+                            f"[RPD] Rolled back reserved slot after upstream 429 "
+                            f"(count={daily_counter.get_count()})",
+                            flush=True,
+                        )
+                    except Exception as rollback_exc:
+                        print(f"[RPD] Rollback failed: {rollback_exc}", flush=True)
                 # Return special dict to indicate 429 error
                 return {"__error__": "429", "__message__": error.get("message", "Rate limit exceeded")}
 
@@ -142,6 +163,8 @@ def openrouter_summarize(
             if content is not None:
                 content = str(content).strip()
         return content if content else None
+    except RateLimitAbort:
+        raise
     except Exception as e:
         import traceback
         print(f"[ERROR] openrouter_summarize: Exception: {type(e).__name__}: {e}", flush=True)
@@ -373,77 +396,72 @@ def create_summarize_func(
             return None
 
     def _is_failure(result: Optional[str]) -> bool:
-        """Check if result indicates a failure that should trigger fallback."""
+        """Check if a result should trigger fallback to the next model.
+
+        None (backend unavailable/exception) and 429 markers both qualify:
+        a rate-limited provider is exactly when switching providers saves
+        the run. This includes the local RPD-exhaustion marker — falling
+        back to a provider with an independent quota keeps the run going.
+        """
         if result is None:
             return True
-        # 429 errors should NOT trigger fallback (they are rate limit, not model failure)
-        if isinstance(result, dict) and result.get("__error__") == "429":
-            return False
+        if isinstance(result, dict) and result.get("__error__"):
+            return True
         return False
 
-    if model_choice == "copilot":
+    def _is_rate_limited(result) -> bool:
+        return isinstance(result, dict) and result.get("__error__") == "429"
+
+    def _run_with_fallback(primary_call, primary_name: str):
         def summarize(repo: Dict) -> Optional[str]:
-            result = copilot_summarize(repo, github_token, default_copilot_model, make_request)
+            result = primary_call(repo)
             api_call_counter()
-            # Try fallback if primary failed (but not 429)
             if _is_failure(result) and fallback_models:
                 for fallback_model in fallback_models:
-                    if fallback_model == model_choice:
+                    if fallback_model == primary_name:
                         continue
-                    print(f"[FALLBACK] Trying {fallback_model} after {model_choice} failure...", flush=True)
+                    print(f"[FALLBACK] Trying {fallback_model} after {primary_name} failure...", flush=True)
                     fallback_result = _call_model(fallback_model, repo)
-                    api_call_counter()
+                    # Served by the fallback provider: does not consume the
+                    # primary provider's per-run / RPD quota.
+                    api_call_counter(primary=False)
                     if not _is_failure(fallback_result):
                         print(f"[FALLBACK] {fallback_model} succeeded", flush=True)
+                        _reset_consecutive_429()
                         return fallback_result
+            if isinstance(result, str) and result.strip():
+                _reset_consecutive_429()
+            elif _is_rate_limited(result):
+                # Count only full-chain rate limits (primary AND every
+                # fallback all returned 429). Each count therefore
+                # corresponds to one call that produced nothing, which is
+                # what max_consecutive_429 guards against.
+                _note_429_and_maybe_abort(primary_name)
             return result
+        return summarize
+
+    if model_choice == "copilot":
+        summarize = _run_with_fallback(
+            lambda repo: copilot_summarize(repo, github_token, default_copilot_model, make_request),
+            "copilot",
+        )
     elif model_choice == "openrouter":
         print(f"[DEBUG] create_summarize_func: openrouter mode, api_key={'set' if openrouter_api_key else 'EMPTY'}, model={default_openrouter_model}", flush=True)
-        def summarize(repo: Dict) -> Optional[str]:
-            result = openrouter_summarize(repo, openrouter_api_key, default_openrouter_model, make_request, config)
-            api_call_counter()
-            if _is_failure(result) and fallback_models:
-                for fallback_model in fallback_models:
-                    if fallback_model == model_choice:
-                        continue
-                    print(f"[FALLBACK] Trying {fallback_model} after {model_choice} failure...", flush=True)
-                    fallback_result = _call_model(fallback_model, repo)
-                    api_call_counter()
-                    if not _is_failure(fallback_result):
-                        print(f"[FALLBACK] {fallback_model} succeeded", flush=True)
-                        return fallback_result
-            return result
+        summarize = _run_with_fallback(
+            lambda repo: openrouter_summarize(repo, openrouter_api_key, default_openrouter_model, make_request, config),
+            "openrouter",
+        )
     elif model_choice == "gemini":
-        def summarize(repo: Dict) -> Optional[str]:
-            result = gemini_summarize(repo, gemini_api_key, default_gemini_model, config, make_request)
-            api_call_counter()
-            if _is_failure(result) and fallback_models:
-                for fallback_model in fallback_models:
-                    if fallback_model == model_choice:
-                        continue
-                    print(f"[FALLBACK] Trying {fallback_model} after {model_choice} failure...", flush=True)
-                    fallback_result = _call_model(fallback_model, repo)
-                    api_call_counter()
-                    if not _is_failure(fallback_result):
-                        print(f"[FALLBACK] {fallback_model} succeeded", flush=True)
-                        return fallback_result
-            return result
+        summarize = _run_with_fallback(
+            lambda repo: gemini_summarize(repo, gemini_api_key, default_gemini_model, config, make_request),
+            "gemini",
+        )
     elif model_choice == "modelscope":
         print(f"[DEBUG] create_summarize_func: modelscope mode, api_key={'set' if modelscope_api_key else 'EMPTY'}, model={default_modelscope_model}", flush=True)
-        def summarize(repo: Dict) -> Optional[str]:
-            result = modelscope_summarize(repo, modelscope_api_key, default_modelscope_model, make_request)
-            api_call_counter()
-            if _is_failure(result) and fallback_models:
-                for fallback_model in fallback_models:
-                    if fallback_model == model_choice:
-                        continue
-                    print(f"[FALLBACK] Trying {fallback_model} after {model_choice} failure...", flush=True)
-                    fallback_result = _call_model(fallback_model, repo)
-                    api_call_counter()
-                    if not _is_failure(fallback_result):
-                        print(f"[FALLBACK] {fallback_model} succeeded", flush=True)
-                        return fallback_result
-            return result
+        summarize = _run_with_fallback(
+            lambda repo: modelscope_summarize(repo, modelscope_api_key, default_modelscope_model, make_request),
+            "modelscope",
+        )
     elif model_choice == "lmstudio":
         from scripts.ai.lmstudio_client import create_lmstudio_summarize_func
         lmstudio_model = os.environ.get("LMSTUDIO_MODEL", "qwen/qwen3-4b-2507")

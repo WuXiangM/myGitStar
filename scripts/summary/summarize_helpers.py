@@ -248,6 +248,7 @@ def is_valid_summary(summary: str, language: str = "zh") -> bool:
     severe_error_phrases = [
         "生成失败", "暂无AI总结", "429",
         "Copilot API限额已用尽", "RateLimitReached",
+        "(deferred",
     ]
     for phrase in severe_error_phrases:
         if phrase in summary:
@@ -620,14 +621,15 @@ def summarize_batch(
                     summary_text = summary.get("Summary", "") if isinstance(summary, dict) else str(summary)
                     print(f"[DEBUG] [repo]: {repo['full_name']} | [AI summary]: {repr(summary_text)}")
             except RateLimitAbort as exc:
-                # Fill placeholder for the repo that triggered the rate limit,
-                # cancel remaining futures, then re-raise so the caller (main
-                # loop in summarize_stars.py) can break out of subsequent
-                # batches instead of retrying the same rate-limited API.
+                # Fill placeholder for the repo that triggered the rate limit
+                # and cancel queued (not yet started) futures, but keep
+                # draining in-flight ones so their completed work is still
+                # persisted instead of being thrown away.
                 print(f"[RATE_LIMIT] {repo['full_name']} 触发速率限制: {exc}")
-                print(f"[RATE_LIMIT] 主动停止后续请求，保存已有结果")
+                print(f"[RATE_LIMIT] 取消排队请求，等待进行中的请求完成后保存结果")
                 rate_limit_hit = True
-                rate_limit_exc = exc
+                if rate_limit_exc is None:
+                    rate_limit_exc = exc
                 # Preserve old summary for this repo
                 existing = old_summaries.get(repo["full_name"], {})
                 if isinstance(existing, dict) and existing.get("Summary"):
@@ -641,10 +643,15 @@ def summarize_batch(
                         "Basic Usage": "",
                         "Summary": "(deferred: rate limit reached)",
                     }
-                # Cancel remaining futures
+                # Cancel queued futures only; running ones finish and their
+                # results are harvested by the loop below.
                 for f in future_to_idx:
                     f.cancel()
-                break
+                continue
+            except concurrent.futures.CancelledError:
+                # Cancelled while queued after the rate limit; the post-loop
+                # block fills its placeholder from the old summary.
+                continue
             except Exception as exc:
                 print(f"{repo['full_name']} 线程异常: {exc}")
                 api_name = summarize_func.__name__.replace("_summarize", "").upper()
@@ -691,6 +698,10 @@ def summarize_batch_combined(
     api_budget_tracker: Optional[Callable[[], bool]] = None,
     description_lookup: Optional[Dict[str, str]] = None,
     model_name: str = "unknown",
+    backoff_base_days: float = 1.0,
+    backoff_max_days: float = 8.0,
+    rate_limit_batch_retries: int = 2,
+    rate_limit_retry_wait: float = 60.0,
 ) -> List[Any]:
     """Summarise a batch of repos with per-repo fallback and budget control.
 
@@ -752,11 +763,15 @@ def summarize_batch_combined(
                 continue
 
         # Legacy compatibility: legacy string summary without metadata.
+        # NOTE: entries whose Summary is the legacy "(deferred ...)" poison
+        # string must NOT be reused — they need a real LLM call.
         if isinstance(existing_summary, dict) and existing_summary.get("Summary"):
-            if update_mode == "missing_only":
-                results[idx] = existing_summary
-                print(f"[REUSE] repo: {key} | existing summary (dict)")
-                continue
+            summary_txt = str(existing_summary.get("Summary") or "").strip()
+            if not summary_txt.startswith("(deferred"):
+                if update_mode == "missing_only":
+                    results[idx] = existing_summary
+                    print(f"[REUSE] repo: {key} | existing summary (dict)")
+                    continue
         elif isinstance(existing_summary, str) and existing_summary:
             if update_mode == "missing_only":
                 results[idx] = {
@@ -782,20 +797,10 @@ def summarize_batch_combined(
             print(f"[BUDGET] API budget exhausted, preserving {len(repos_need_call) - i} repos for next run")
             for j, repo in enumerate(repos_need_call[i:]):
                 idx = repos_indices[i + j]
-                key = repo["full_name"]
-                # Preserve any legacy summary we already have.
-                existing = old_summaries.get(key, {})
-                if isinstance(existing, dict) and existing.get("Summary"):
-                    results[idx] = existing
-                else:
-                    results[idx] = {
-                        "Repository Name": key,
-                        "Repository URL": repo.get("html_url") or "",
-                        "Brief Introduction": "",
-                        "Innovations": "",
-                        "Basic Usage": "",
-                        "Summary": "(deferred: API budget exhausted)",
-                    }
+                # Record the deferral in __last_error__ (NOT in Summary —
+                # writing it into Summary used to poison the reuse check
+                # and starve these repos forever).
+                results[idx] = _placeholder_entry(repo, old_summaries, "deferred: API budget exhausted")
             break
 
         batch = repos_need_call[i : i + batch_size]
@@ -809,15 +814,32 @@ def summarize_batch_combined(
 
         parsed_results: Dict[str, Dict] = {}
         try:
-            response_text = summarize_func(repo_with_prompt)
-            # Check if response is a 429 error marker (dict with __error__ = "429")
-            if isinstance(response_text, dict):
-                if response_text.get("__error__") == "429":
+            # Transient rate limits (e.g. per-minute caps) often clear within
+            # a minute, so before aborting the whole run we retry the same
+            # batch a bounded number of times with a linearly increasing
+            # wait. RateLimitAbort raised *inside* summarize_func (RPD
+            # exhaustion, consecutive-429 threshold) bypasses these retries.
+            response_text = None
+            for rate_limit_attempt in range(rate_limit_batch_retries + 1):
+                response_text = summarize_func(repo_with_prompt)
+                # Check if response is a 429 error marker (dict with __error__ = "429")
+                if isinstance(response_text, dict) and response_text.get("__error__") == "429":
+                    if rate_limit_attempt < rate_limit_batch_retries:
+                        wait = rate_limit_retry_wait * (rate_limit_attempt + 1)
+                        print(
+                            f"[RATE_LIMIT] Batch {batch_num}: 429 after fallback chain; "
+                            f"sleeping {wait:.0f}s then retrying batch "
+                            f"({rate_limit_attempt + 1}/{rate_limit_batch_retries})",
+                            flush=True,
+                        )
+                        time.sleep(wait)
+                        continue
                     print(f"[RATE_LIMIT] Batch {batch_num}: received 429 error marker", flush=True)
                     raise RateLimitAbort(f"Batch {batch_num} received 429 rate limit error")
-                else:
+                if isinstance(response_text, dict):
                     print(f"[DEBUG] Batch {batch_num}: summarize_func returned unexpected dict", flush=True)
                     response_text = None
+                break
             if response_text:
                 parsed_results = parse_combined_summaries(response_text, batch)
             else:
@@ -870,6 +892,12 @@ def summarize_batch_combined(
                 try:
                     single_prompt = generate_summarize_prompt(repo, language)
                     single_text = summarize_func({"prompt": single_prompt, "full_name": repo["full_name"]})
+                    if isinstance(single_text, dict) and single_text.get("__error__") == "429":
+                        # Rate-limit marker: stop the retry loop instead of
+                        # letting the dict flow into the string parser below.
+                        raise RateLimitAbort(
+                            f"Single-repo retry for {repo['full_name']} received 429 rate limit error"
+                        )
                     if single_text:
                         single_dict = _parse_single_repo_summary(single_text, repo)
                         if single_dict.get("Summary") and single_dict.get("Summary") != "Not specified.":
@@ -893,7 +921,7 @@ def summarize_batch_combined(
 
         # Stamp metadata and finalise results.
         from datetime import datetime, timezone
-        from scripts.core.json_store import make_metadata
+        from scripts.core.json_store import make_metadata, make_error_meta
         for idx, repo in zip(indices, batch):
             key = repo["full_name"]
             entry = parsed_results.get(key) or {}
@@ -903,13 +931,34 @@ def summarize_batch_combined(
             desc = (description_lookup or {}).get(key, repo.get("description") or "")
             entry.setdefault("Repository Name", key)
             entry.setdefault("Repository URL", repo.get("html_url") or "")
-            entry["__meta__"] = make_metadata(
-                full_name=key,
-                description=desc,
-                model=model_name,
-                source="ai",
-                attempts=1,
-            )
+            failed = bool(entry.get("__last_error__")) or not (entry.get("Summary") or "").strip()
+            if failed:
+                # Failed attempt: record error metadata with an exponential
+                # backoff window instead of stamping a fake success.
+                prev_attempts = 0
+                prev_meta = entry.get("__meta__") if isinstance(entry.get("__meta__"), dict) else None
+                if isinstance(prev_meta, dict):
+                    try:
+                        prev_attempts = int(prev_meta.get("summary_attempts") or 0)
+                    except Exception:
+                        prev_attempts = 0
+                entry["__meta__"] = make_error_meta(
+                    full_name=key,
+                    description=desc,
+                    model=model_name,
+                    reason=entry.get("__last_error__") or "llm_empty",
+                    attempts=prev_attempts + 1,
+                    backoff_base_days=backoff_base_days,
+                    backoff_max_days=backoff_max_days,
+                )
+            else:
+                entry["__meta__"] = make_metadata(
+                    full_name=key,
+                    description=desc,
+                    model=model_name,
+                    source="ai",
+                    attempts=1,
+                )
             results[idx] = entry
 
     return results
@@ -928,7 +977,7 @@ def _placeholder_entry(repo: Dict, old_summaries: Dict[str, Any], reason: str) -
         out = dict(existing)
         out["__last_error__"] = reason
         return out
-    return {
+    out = {
         "Repository Name": key,
         "Repository URL": repo.get("html_url") or "",
         "Brief Introduction": "",
@@ -937,6 +986,11 @@ def _placeholder_entry(repo: Dict, old_summaries: Dict[str, Any], reason: str) -
         "Summary": "",
         "__last_error__": reason,
     }
+    # Preserve the attempt history even when content fields are empty, so
+    # the error-meta stamping can increment summary_attempts across runs.
+    if isinstance(existing, dict) and isinstance(existing.get("__meta__"), dict):
+        out["__meta__"] = existing["__meta__"]
+    return out
 
 
 def _parse_single_repo_summary(text: str, repo: Dict) -> Dict[str, Any]:

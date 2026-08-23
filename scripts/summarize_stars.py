@@ -1,3 +1,4 @@
+import json
 import logging
 import os
 import sys
@@ -29,6 +30,12 @@ from scripts.core.json_store import (
     compute_description_hash,
     make_metadata,
     is_entry_fresh,
+    count_invalid_fields,
+    entry_attempts,
+    is_retry_due,
+    is_source_absent,
+    load_queue_state,
+    save_queue_state,
 )
 from scripts.github import get_starred_repos, fetch_repo_readme
 from scripts.output import (
@@ -128,8 +135,74 @@ def _repo_key(repo: Dict) -> str:
     return str(repo.get("full_name") or repo.get("Repository Name") or "").strip()
 
 
-def _api_call_counter():
+def _priority_key(repo: Dict, summary_store: Dict[str, Dict]):
+    """Sort key for the summarization work queue.
+
+    Lower tuple = processed earlier:
+      1. repos whose failure backoff has expired come first;
+      2. among those, repos with MORE invalid content fields first
+         (core requirement: multi-empty-field repos get the budget first);
+      3. fewer recorded attempts first (fairness across runs);
+      4. full_name as a deterministic tiebreaker.
+    """
+    key = _repo_key(repo)
+    entry = summary_store.get(key) or {}
+    if not isinstance(entry, dict):
+        entry = {}
+    return (
+        0 if is_retry_due(entry) else 1,
+        -count_invalid_fields(entry),
+        entry_attempts(entry),
+        key,
+    )
+
+
+def _cohort_tier(repo: Dict, summary_store: Dict[str, Dict]):
+    """Priority tier used to group repos for round-robin rotation."""
+    key = _repo_key(repo)
+    entry = summary_store.get(key) or {}
+    if not isinstance(entry, dict):
+        entry = {}
+    return (-count_invalid_fields(entry), entry_attempts(entry))
+
+
+def _rotate_cohorts(work_list: List[Dict], summary_store: Dict[str, Dict], cursor: int) -> List[Dict]:
+    """Round-robin within each equal-priority cohort (P1-4).
+
+    Repos in the same tier (same invalid-field count and attempt count) are
+    rotated by `cursor % cohort_size` so consecutive runs spend the budget on
+    different slices of the cohort instead of always the alphabetical head.
+    """
+    if not work_list:
+        return work_list
+    out: List[Dict] = []
+    i = 0
+    while i < len(work_list):
+        tier = _cohort_tier(work_list[i], summary_store)
+        j = i
+        while j < len(work_list) and _cohort_tier(work_list[j], summary_store) == tier:
+            j += 1
+        cohort = work_list[i:j]
+        if len(cohort) > 1 and cursor > 0:
+            k = cursor % len(cohort)
+            out.extend(cohort[k:] + cohort[:k])
+        else:
+            out.extend(cohort)
+        i = j
+    return out
+
+
+def _api_call_counter(primary: bool = True):
+    """Count a summarize call against the primary provider's quotas.
+
+    `primary=False` marks a call served by a fallback provider: it does not
+    consume the primary's per-run / RPD quota, so a run whose primary is
+    rate-limited can keep making progress via fallbacks without tripping
+    the abort below on every call.
+    """
     global copilot_api_call_count, openrouter_api_call_count, gemini_api_call_count, modelscope_api_call_count
+    if not primary:
+        return
     if model_choice == "copilot":
         copilot_api_call_count += 1
         # 从 config 读取 max_api_calls_per_run（0 = 不限制）
@@ -149,10 +222,14 @@ def _api_call_counter():
         openrouter_api_call_count += 1
         # Check RPD limit BEFORE the call (increment is done in openrouter_summarize via check_and_reserve)
         rpd_limit = get_int_config(config, "openrouter_rpd", 50)
-        allowed, current = daily_counter.check_limit(rpd_limit)
+        # Reserve some RPD for the classify stage so summarize can never
+        # starve it on a shared free-tier quota (P1-5).
+        rpd_reserve = get_int_config(config, "classify_rpd_reserve", 5)
+        allowed, current = daily_counter.check_limit(rpd_limit, reserve=rpd_reserve)
         if not allowed:
             raise RateLimitAbort(
-                f"OpenRouter RPD limit reached: {current}/{rpd_limit} calls today. "
+                f"OpenRouter RPD limit reached: {current}/{rpd_limit} calls today "
+                f"(with {rpd_reserve} reserved for classify). "
                 "Stopping to avoid further rate limit errors. Results will be saved."
             )
         print(f"[OpenRouter API调用] 第 {openrouter_api_call_count} 次调用，今日已用: {current}/{rpd_limit}")
@@ -226,6 +303,56 @@ if GEMINI_API_KEY:
         print("Gemini API Key 前缀: (已设置)")
 if MODELSCOPE_API_KEY:
     print(f"ModelScope API Key 前缀: {MODELSCOPE_API_KEY[:6]}...")
+
+
+def _run_plan_only() -> int:
+    """Offline priority-queue preview (P2-3): no API calls, no file writes."""
+    json_path = get_summary_json_path(LANGUAGE)
+    store = load_summary_store(json_path)
+    if not store:
+        print(f"[PLAN] {json_path} is empty or missing — nothing to plan.")
+        return 0
+
+    work: List[Dict] = []
+    backing_off = 0
+    absent = 0
+    for full_name, entry in store.items():
+        if not isinstance(entry, dict):
+            entry = {}
+        if is_source_absent(entry):
+            absent += 1
+            continue
+        if not is_retry_due(entry):
+            backing_off += 1
+            continue
+        if count_invalid_fields(entry) > 0:
+            work.append({"full_name": full_name})
+
+    store_for_sort = dict(store)
+    work.sort(key=lambda r: _priority_key(r, store_for_sort))
+
+    total = len(store)
+    invalid = sum(1 for e in store.values() if isinstance(e, dict) and count_invalid_fields(e) > 0)
+    empty = sum(1 for e in store.values() if not (isinstance(e, dict) and (e.get("Summary") or "").strip()))
+    queue_state = load_queue_state()
+
+    print(f"[PLAN] store={json_path}")
+    print(f"[PLAN] entries={total} | invalid-field={invalid} | empty-summary={empty}")
+    print(f"[PLAN] queue depth={len(work)} | backing off={backing_off} | source_absent={absent} | cursor={queue_state.get('cursor', 0)}")
+
+    bs = get_int_config(config, "batch_size", 5)
+    budget = get_int_config(config, "max_api_calls_per_run", 0)
+    if work and bs > 0:
+        capacity = (budget if budget > 0 else len(work)) * bs
+        print(f"[PLAN] suggested coverage this run: ~{min(capacity, len(work))}/{len(work)} repos "
+              f"(budget={budget or 'unlimited'} calls x batch_size={bs}, combined mode)")
+    if work:
+        print("[PLAN] top 20 by priority (invalid_fields, attempts, name):")
+        for r in work[:20]:
+            key = r["full_name"]
+            entry = store.get(key) or {}
+            print(f"  - {key}: invalid={count_invalid_fields(entry)}, attempts={entry_attempts(entry)}")
+    return 0
 
 
 def main():
@@ -308,6 +435,19 @@ def main():
               f"{len(stale_unknown)} still unknown: {stale_unknown[:5]}"
               f"{'...' if len(stale_unknown) > 5 else ''}")
 
+        # Convergence baseline (P2-2): snapshot before the run so we can
+        # report how many invalid-field repos this run actually fixed.
+        _invalid_before = sum(
+            1 for e in (summary_store or {}).values()
+            if isinstance(e, dict) and count_invalid_fields(e) > 0
+        )
+        _empty_summary_before = sum(
+            1 for e in (summary_store or {}).values()
+            if not (isinstance(e, dict) and (e.get("Summary") or "").strip())
+        )
+        print(f"[CONVERGENCE] before run: {_invalid_before} repos with >=1 invalid field, "
+              f"{_empty_summary_before} with empty Summary")
+
         repos_to_update = select_repos_for_update(
             classified,
             summary_store,
@@ -335,8 +475,12 @@ def main():
 
         # Wrap summarize_func so we can also count API calls in the budget
         # (the per-call counter in _api_call_counter stays unchanged).
-        # 429 errors are not counted against the budget since they don't
-        # actually consume API quota.
+        # Double ledger (P1-5):
+        #   - progress budget (max_api_calls): ONLY calls that returned usable
+        #     text are counted; failures burn the consecutive-failure budget
+        #     instead, so a bad API day doesn't waste the whole quota;
+        #   - hard quotas (Copilot per-run cap / OpenRouter RPD) still count
+        #     every attempt inside _api_call_counter / daily_counter.
         _orig_summarize_func = None
         def _budgeted_summarize_func(repo_dict):
             if not _budget_tracker():
@@ -344,33 +488,22 @@ def main():
                 print(f"[BUDGET] skipping call, would exceed {max_api_calls} limit")
                 return None
             result = _orig_summarize_func(repo_dict)
-            # Only count successful calls (not 429 rate limit errors)
-            # Check if result indicates a 429 error
-            is_429 = False
-            if result is None:
-                # None could mean 429 or other error, but we can't distinguish here
-                # The api_call_counter will track all calls, so we rely on that
-                pass
-            elif isinstance(result, dict):
-                # Check for special 429 error marker from openrouter_summarize
-                if result.get("__error__") == "429":
-                    is_429 = True
-                    print(f"[BUDGET] 429 error detected, not counting against budget")
-                elif result.get("__last_error__"):
-                    error = result.get("__last_error__", "")
-                    if "429" in str(error) or "rate limit" in str(error).lower():
-                        is_429 = True
-            elif isinstance(result, str) and ("429" in result or "rate limit" in result.lower()):
-                is_429 = True
-
-            if not is_429:
-                _api_calls_used["n"] += 1
+            # Only calls that produced usable text count against the budget.
+            produced_output = isinstance(result, str) and bool(result.strip())
+            if not produced_output:
+                if result is not None:
+                    print(f"[BUDGET] call produced no usable output, not counting against budget")
+                return result
+            _api_calls_used["n"] += 1
             return result
 
         classified_to_process: Dict[str, List[Dict]] = {}
         for lang, repos in classified.items():
             try:
-                sorted_repos = sorted(repos, key=lambda r: is_valid_summary(old_summaries.get(r.get("full_name") or "", ""), LANGUAGE))
+                # Priority ordering (P1-2): most-invalid-first, then fairness.
+                # Key: (backoff due first, more invalid fields first, fewer
+                # attempts first, deterministic name tiebreaker).
+                sorted_repos = sorted(repos, key=lambda r: _priority_key(r, summary_store))
             except Exception:
                 sorted_repos = repos
             if sorted_repos:
@@ -417,6 +550,37 @@ def main():
             repos_to_call = repos_to_update.get(lang, [])
             all_repos_to_process.extend(repos_to_call)
 
+        # --- Priority queue filtering (P1-3) ---
+        # Terminal-state and still-backing-off repos do not consume budget.
+        queue_state = load_queue_state()
+        queue_cursor = int(queue_state.get("cursor") or 0)
+        filtered_out_backoff = 0
+        filtered_out_absent = 0
+        work_queue: List[Dict] = []
+        for repo in all_repos_to_process:
+            key = _repo_key(repo)
+            entry = summary_store.get(key) or {}
+            if not isinstance(entry, dict):
+                entry = {}
+            if is_source_absent(entry):
+                filtered_out_absent += 1
+                continue
+            if not is_retry_due(entry):
+                filtered_out_backoff += 1
+                continue
+            work_queue.append(repo)
+        if filtered_out_absent or filtered_out_backoff:
+            print(
+                f"[QUEUE] filtered {len(all_repos_to_process)} selected repos -> "
+                f"{len(work_queue)} workable (backoff: {filtered_out_backoff}, source_absent: {filtered_out_absent})"
+            )
+
+        # --- Round-robin rotation within equal-priority cohorts (P1-4) ---
+        if work_queue:
+            work_queue = _rotate_cohorts(work_queue, summary_store, queue_cursor)
+
+        all_repos_to_process = work_queue
+
         # Fetch README content for repos that need summarization (token control)
         if all_repos_to_process:
             print(f"\n[README] 抓取 {len(all_repos_to_process)} 个仓库的 README...")
@@ -438,6 +602,12 @@ def main():
         printed_langs: set = set()
         total_repos = len(all_repos_to_process)
         processed_repos = 0
+        consecutive_failed_batches = 0
+        max_consecutive_failures = get_int_config(config, "max_consecutive_failures", 5)
+        backoff_base_days = get_float_config(config, "retry_backoff_base_days", 1.0)
+        backoff_max_days = get_float_config(config, "retry_backoff_max_days", 8.0)
+        rate_limit_batch_retries = get_int_config(config, "rate_limit_batch_retries", 2)
+        rate_limit_retry_wait = get_float_config(config, "rate_limit_retry_wait", 60.0)
 
         for i in range(0, len(all_repos_to_process), batch_size):
             this_batch = all_repos_to_process[i : i + batch_size]
@@ -458,6 +628,10 @@ def main():
                         api_budget_tracker=_budget_tracker,
                         description_lookup=description_lookup,
                         model_name=_model_name_for_meta,
+                        backoff_base_days=backoff_base_days,
+                        backoff_max_days=backoff_max_days,
+                        rate_limit_batch_retries=rate_limit_batch_retries,
+                        rate_limit_retry_wait=rate_limit_retry_wait,
                     )
                 else:
                     summaries = summarize_batch(
@@ -506,6 +680,43 @@ def main():
                 f"({processed_repos}/{total_repos} total processed)"
             )
 
+            # Waste ledger (P1-5): a batch where every entry carries an error
+            # counts as a failed call. Too many in a row -> stop early and
+            # keep the remaining RPD for tomorrow instead of burning it all.
+            # (Budget-deferred batches are skipped here: they made no API
+            # call, so they are neither progress nor waste.)
+            batch_all_failed = bool(summaries) and all(
+                isinstance(s, dict) and s.get("__last_error__") for s in summaries
+            )
+            batch_all_deferred = bool(summaries) and all(
+                isinstance(s, dict)
+                and str(s.get("__last_error__") or "").startswith("deferred")
+                for s in summaries
+            )
+            if batch_all_deferred:
+                print(f"[BUDGET] Batch {batch_num} fully deferred by budget; skipping remaining batches")
+                break
+            if batch_all_failed:
+                consecutive_failed_batches += 1
+                print(
+                    f"[FAIL_STREAK] {consecutive_failed_batches}/{max_consecutive_failures} "
+                    f"consecutive batches produced no content"
+                )
+                if 0 < max_consecutive_failures <= consecutive_failed_batches:
+                    print(
+                        f"[FAIL_STREAK] Aborting remaining batches after {consecutive_failed_batches} "
+                        f"consecutive failures; progress is saved and failed repos will back off."
+                    )
+                    break
+            else:
+                consecutive_failed_batches = 0
+
+        # Advance the round-robin cursor so the next run rotates cohorts.
+        try:
+            save_queue_state({"cursor": queue_cursor + 1})
+        except Exception as exc:
+            print(f"[QUEUE] failed to save queue state: {exc}")
+
         # Final diagnostic: count budget spent, still-unknown repos, and
         # last-errors so the workflow log makes it obvious what to do next.
         if max_api_calls and max_api_calls > 0:
@@ -525,6 +736,41 @@ def main():
             print(f"[DIAG] {len(still_unknown)} repos still unknown after this run:")
             for k in still_unknown[:20]:
                 print(f"  - {k}: {reasons.get(k, '?')}")
+
+        # Convergence report (P2-2) + run report consumed by the workflow
+        # to decide whether the classify stage should run (P1-6).
+        _invalid_after = sum(
+            1 for e in (summary_store or {}).values()
+            if isinstance(e, dict) and count_invalid_fields(e) > 0
+        )
+        _empty_summary_after = sum(
+            1 for e in (summary_store or {}).values()
+            if not (isinstance(e, dict) and (e.get("Summary") or "").strip())
+        )
+        new_valid_entries = max(0, _empty_summary_before - _empty_summary_after)
+        print(
+            f"[CONVERGENCE] after run: {_invalid_after} repos with >=1 invalid field "
+            f"(was {_invalid_before}, fixed {_invalid_before - _invalid_after}), "
+            f"{_empty_summary_after} with empty Summary (was {_empty_summary_before})"
+        )
+        try:
+            repo_root_for_report = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            with open(os.path.join(repo_root_for_report, "summarize_run_report.json"), "w", encoding="utf-8") as _rf:
+                json.dump(
+                    {
+                        "generated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                        "new_valid_entries": new_valid_entries,
+                        "invalid_field_repos_before": _invalid_before,
+                        "invalid_field_repos_after": _invalid_after,
+                        "empty_summary_before": _empty_summary_before,
+                        "empty_summary_after": _empty_summary_after,
+                    },
+                    _rf,
+                    ensure_ascii=False,
+                    indent=2,
+                )
+        except Exception as exc:
+            print(f"[CONVERGENCE] failed to write run report: {exc}")
 
         # === Generate READMEs ===
         # 1. Content-classified README (README.md) - default
@@ -663,6 +909,11 @@ if __name__ == "__main__":
         help="Override update mode: missing_only or all (also supports env MYGITSTAR_UPDATE_MODE).",
     )
     parser.add_argument("--copilot-count", action="store_true", help="Print Copilot API call count (for this run) and exit.")
+    parser.add_argument(
+        "--plan-only",
+        action="store_true",
+        help="Print the priority-queue preview (no API calls, no writes) and exit.",
+    )
     args = parser.parse_args()
 
     if args.copilot_count or (len(sys.argv) > 1 and sys.argv[1] == "--copilot-count"):
@@ -687,5 +938,8 @@ if __name__ == "__main__":
 
     if args.update_mode is not None:
         update_mode = normalize_update_mode(args.update_mode)
+
+    if args.plan_only or (len(sys.argv) > 1 and sys.argv[1] == "--plan-only"):
+        raise SystemExit(_run_plan_only())
 
     main()
