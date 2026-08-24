@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-22T02:25:14Z",
+  "generated_at": "2026-08-24T02:40:17Z",
   "model_choice": "openrouter",
   "min_categories": 5,
   "max_categories": 12,
@@ -9,42 +9,62 @@
       {
         "id": "C1",
         "name": "AI Agents & Frameworks",
-        "description": "Comprehensive frameworks and platforms for building, managing, and deploying AI agents with specialized functionalities"
+        "description": "Repositories focused on building or utilizing AI agents, frameworks, or tools for autonomous tasks, including LLM-based systems."
       },
       {
         "id": "C2",
-        "name": "Agent Skills & Capabilities",
-        "description": "Modular skills, tools, and capabilities that extend AI agent functionalities and performance"
+        "name": "Video Generation & Editing",
+        "description": "Tools for creating, editing, or rendering video content, including AI-driven or automated solutions."
       },
       {
         "id": "C3",
-        "name": "Content Creation & Writing",
-        "description": "AI-powered tools for generating creative content, novels, presentations, and long-form written material"
+        "name": "Data Analytics & Monitoring",
+        "description": "Repositories that analyze data, monitor trends, or provide insights, including public opinion or system monitoring."
       },
       {
         "id": "C4",
-        "name": "Research & Knowledge Tools",
-        "description": "AI systems for scientific research, academic paper generation, and knowledge discovery and analysis"
+        "name": "Documentation & Translation Tools",
+        "description": "Tools for translating documents, converting formats, or managing documentation with AI assistance."
+      },
+      {
+        "id": "C5",
+        "name": "Robotics & Embodied AI",
+        "description": "Projects related to robotics, embodied AI, or physical AI systems."
       },
       {
         "id": "C6",
-        "name": "Development & Coding Assistants",
-        "description": "AI agents and tools specifically designed to assist developers with coding, programming, and software development tasks"
+        "name": "Developer Tools & APIs",
+        "description": "Utilities, libraries, or frameworks that enhance development workflows, including APIs or code generation tools."
       },
       {
         "id": "C7",
-        "name": "Productivity & Desktop AI",
-        "description": "Cross-platform AI assistants, workspace tools, and desktop applications that enhance productivity and task management"
+        "name": "Agriculture & Sustainability",
+        "description": "Repositories focused on agricultural practices, resource management, or sustainability solutions."
+      },
+      {
+        "id": "C8",
+        "name": "Game Engines & Graphics",
+        "description": "Tools for developing 3D games or graphics applications, including engines or rendering frameworks."
       },
       {
         "id": "C9",
-        "name": "AI Education & Learning",
-        "description": "Educational resources, tutorials, and learning materials for understanding and implementing AI technologies"
+        "name": "CLI Tools & Customization",
+        "description": "Command-line interface tools or customized solutions for specific tasks."
       },
       {
         "id": "C10",
-        "name": "Infrastructure & Productivity Tools",
-        "description": "Utilities, fonts, launchers, and supporting tools that enhance the development and usage experience of AI systems"
+        "name": "Education & Learning Resources",
+        "description": "Tutorials, courses, or materials aimed at teaching or learning specific technologies or concepts."
+      },
+      {
+        "id": "C11",
+        "name": "Security & Privacy",
+        "description": "Tools or projects focused on data security, privacy, or digital rights management."
+      },
+      {
+        "id": "Other",
+        "name": "Other",
+        "description": "Repositories that don't fit into the above categories."
       },
       {
         "id": "Unknown",
@@ -58,148 +78,148 @@
       "id": 1,
       "full_name": "NousResearch/hermes-agent",
       "category_id": "C1",
-      "classification_source": "reused",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 2,
       "full_name": "open-gigaai/giga-brain-0",
-      "category_id": "C1",
-      "classification_source": "reused",
+      "category_id": "C5",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 3,
       "full_name": "aiming-lab/AutoResearchClaw",
-      "category_id": "C4",
-      "classification_source": "reused",
+      "category_id": "C1",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 4,
       "full_name": "anthropics/skills",
-      "category_id": "C2",
-      "classification_source": "reused",
+      "category_id": "C1",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 5,
       "full_name": "Usagi-org/ai-goofish-monitor",
-      "category_id": "Unknown",
+      "category_id": "C3",
       "classification_source": "ai",
-      "summary": "This repository provides a powerful tool for users to efficiently discover desired products from the vast selection on Xianyu."
+      "summary": null
     },
     {
       "id": 6,
       "full_name": "jimmc414/Kosmos",
-      "category_id": "C4",
-      "classification_source": "reused",
+      "category_id": "C1",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 7,
       "full_name": "Fosowl/agenticSeek",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "C1",
+      "classification_source": "ai",
+      "summary": null
     },
     {
       "id": 8,
       "full_name": "langbot-app/LangBot",
-      "category_id": "Unknown",
+      "category_id": "C1",
       "classification_source": "unknown",
-      "summary": ""
+      "summary": null
     },
     {
       "id": 9,
       "full_name": "SamuelSchmidgall/AgentLaboratory",
-      "category_id": "Unknown",
+      "category_id": "C1",
       "classification_source": "unknown",
-      "summary": ""
+      "summary": null
     },
     {
       "id": 10,
       "full_name": "Significant-Gravitas/AutoGPT",
-      "category_id": "Unknown",
+      "category_id": "C1",
       "classification_source": "unknown",
-      "summary": ""
+      "summary": null
     },
     {
       "id": 11,
       "full_name": "heygen-com/hyperframes",
-      "category_id": "C3",
-      "classification_source": "reused",
+      "category_id": "C2",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 12,
       "full_name": "multica-ai/multica",
       "category_id": "C6",
-      "classification_source": "reused",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 13,
       "full_name": "ExplosiveCoderflome/AI-Novel-Writing-Assistant",
-      "category_id": "C3",
-      "classification_source": "reused",
+      "category_id": "C1",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 14,
       "full_name": "hAcKlyc/MyAgents",
-      "category_id": "C7",
-      "classification_source": "reused",
+      "category_id": "C1",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 15,
       "full_name": "Narcooo/inkos",
-      "category_id": "C3",
-      "classification_source": "reused",
+      "category_id": "C1",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 16,
       "full_name": "anomalyco/opencode",
       "category_id": "C6",
-      "classification_source": "reused",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 17,
       "full_name": "CherryHQ/cherry-studio",
-      "category_id": "C7",
-      "classification_source": "reused",
+      "category_id": "C1",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 18,
       "full_name": "openclaw/openclaw",
-      "category_id": "C7",
-      "classification_source": "reused",
+      "category_id": "C1",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 19,
       "full_name": "VoltAgent/awesome-openclaw-skills",
-      "category_id": "C2",
-      "classification_source": "reused",
+      "category_id": "C1",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 20,
       "full_name": "microsoft/AI-For-Beginners",
-      "category_id": "Unknown",
+      "category_id": "C10",
       "classification_source": "unknown",
-      "summary": ""
+      "summary": null
     },
     {
       "id": 21,
       "full_name": "microsoft/generative-ai-for-beginners",
-      "category_id": "Unknown",
+      "category_id": "C10",
       "classification_source": "unknown",
-      "summary": ""
+      "summary": null
     },
     {
       "id": 22,
@@ -211,163 +231,163 @@
     {
       "id": 23,
       "full_name": "google/automl",
-      "category_id": "Unknown",
+      "category_id": "C1",
       "classification_source": "unknown",
-      "summary": ""
+      "summary": null
     },
     {
       "id": 24,
       "full_name": "fogsightai/fogsight",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "C2",
+      "classification_source": "ai",
+      "summary": null
     },
     {
       "id": 25,
       "full_name": "DearVa/Everywhere",
-      "category_id": "C7",
-      "classification_source": "reused",
+      "category_id": "C1",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 26,
       "full_name": "msitarzewski/agency-agents",
       "category_id": "C1",
-      "classification_source": "reused",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 27,
       "full_name": "obra/superpowers",
       "category_id": "C1",
-      "classification_source": "reused",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 28,
       "full_name": "anthropics/claude-code",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "C1",
+      "classification_source": "ai",
+      "summary": null
     },
     {
       "id": 29,
       "full_name": "vercel-labs/agent-browser",
-      "category_id": "Unknown",
+      "category_id": "C9",
       "classification_source": "ai",
-      "summary": "This repository provides a powerful tool for automating browser interactions, enhancing the capabilities of AI agents."
+      "summary": null
     },
     {
       "id": 30,
       "full_name": "nomic-ai/gpt4all",
-      "category_id": "Unknown",
+      "category_id": "C1",
       "classification_source": "unknown",
-      "summary": ""
+      "summary": null
     },
     {
       "id": 31,
       "full_name": "jingyaogong/minimind",
       "category_id": "C1",
-      "classification_source": "reused",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 32,
       "full_name": "Shubhamsaboo/awesome-llm-apps",
-      "category_id": "Unknown",
+      "category_id": "C10",
       "classification_source": "unknown",
-      "summary": ""
+      "summary": null
     },
     {
       "id": 33,
       "full_name": "huggingface/transformers",
-      "category_id": "Unknown",
+      "category_id": "C6",
       "classification_source": "unknown",
-      "summary": ""
+      "summary": null
     },
     {
       "id": 34,
       "full_name": "AUTOMATIC1111/stable-diffusion-webui",
-      "category_id": "Unknown",
+      "category_id": "C1",
       "classification_source": "unknown",
-      "summary": ""
+      "summary": null
     },
     {
       "id": 35,
       "full_name": "forrestchang/andrej-karpathy-skills",
       "category_id": "C6",
-      "classification_source": "reused",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 36,
       "full_name": "HqWu-HITCS/Awesome-Chinese-LLM",
-      "category_id": "C9",
-      "classification_source": "reused",
+      "category_id": "C10",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 37,
       "full_name": "Lordog/dive-into-llms",
-      "category_id": "C9",
-      "classification_source": "reused",
+      "category_id": "C10",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 38,
       "full_name": "henry-gu/prompt-engineering-for-developers",
-      "category_id": "Unknown",
+      "category_id": "C6",
       "classification_source": "unknown",
-      "summary": ""
+      "summary": null
     },
     {
       "id": 39,
       "full_name": "poloclub/transformer-explainer",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "C10",
+      "classification_source": "ai",
+      "summary": null
     },
     {
       "id": 40,
       "full_name": "Tencent/WeKnora",
-      "category_id": "C4",
-      "classification_source": "reused",
+      "category_id": "C1",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 41,
       "full_name": "jingyaogong/minimind-v",
       "category_id": "C1",
-      "classification_source": "reused",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 42,
       "full_name": "antvis/Infographic",
-      "category_id": "C3",
-      "classification_source": "reused",
+      "category_id": "C2",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 43,
       "full_name": "automeris-io/WebPlotDigitizer",
-      "category_id": "C10",
-      "classification_source": "reused",
+      "category_id": "C3",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 44,
       "full_name": "Henrymachiyu/FIPO",
-      "category_id": "C4",
-      "classification_source": "reused",
+      "category_id": "C1",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 45,
       "full_name": "roywright/pu_learning",
-      "category_id": "Unknown",
+      "category_id": "C10",
       "classification_source": "unknown",
-      "summary": ""
+      "summary": null
     },
     {
       "id": 46,
@@ -379,288 +399,288 @@
     {
       "id": 47,
       "full_name": "UniPat-AI/UniScientist",
-      "category_id": "C4",
-      "classification_source": "reused",
+      "category_id": "C3",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 48,
       "full_name": "wri/global-pasture-watch",
-      "category_id": "C4",
-      "classification_source": "reused",
+      "category_id": "C7",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 49,
       "full_name": "datawhalechina/every-embodied",
-      "category_id": "C9",
-      "classification_source": "reused",
+      "category_id": "C5",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 50,
       "full_name": "Anionex/banana-slides",
-      "category_id": "C3",
-      "classification_source": "reused",
+      "category_id": "C2",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 51,
       "full_name": "HKUDS/Paper2Slides",
-      "category_id": "C3",
-      "classification_source": "reused",
+      "category_id": "C2",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 52,
       "full_name": "Kevin-thu/StoryMem",
-      "category_id": "C4",
-      "classification_source": "reused",
+      "category_id": "C2",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 53,
       "full_name": "funstory-ai/BabelDOC",
-      "category_id": "C10",
-      "classification_source": "reused",
+      "category_id": "C4",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 54,
       "full_name": "PDFMathTranslate/PDFMathTranslate",
-      "category_id": "C10",
-      "classification_source": "reused",
+      "category_id": "C4",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 55,
       "full_name": "zhu-xlab/GlobalBuildingAtlas",
-      "category_id": "C4",
-      "classification_source": "reused",
+      "category_id": "C7",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 56,
       "full_name": "mrdoob/three.js",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "C8",
+      "classification_source": "ai",
+      "summary": null
     },
     {
       "id": 57,
       "full_name": "666ghj/MiroFish",
-      "category_id": "C2",
-      "classification_source": "reused",
+      "category_id": "C1",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 58,
       "full_name": "vllm-project/vllm",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "C6",
+      "classification_source": "ai",
+      "summary": null
     },
     {
       "id": 59,
       "full_name": "OpenBMB/VoxCPM",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "C2",
+      "classification_source": "ai",
+      "summary": null
     },
     {
       "id": 60,
       "full_name": "EverMind-AI/MSA",
-      "category_id": "C4",
-      "classification_source": "reused",
+      "category_id": "C1",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 61,
       "full_name": "fire-keeper/BlindWatermark",
-      "category_id": "C10",
-      "classification_source": "reused",
+      "category_id": "C11",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 62,
       "full_name": "ComposioHQ/awesome-claude-skills",
-      "category_id": "C2",
-      "classification_source": "reused",
+      "category_id": "C1",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 63,
       "full_name": "cheahjs/free-llm-api-resources",
-      "category_id": "C10",
-      "classification_source": "reused",
+      "category_id": "C6",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 64,
       "full_name": "Anjok07/ultimatevocalremovergui",
-      "category_id": "C7",
-      "classification_source": "reused",
+      "category_id": "C1",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 65,
       "full_name": "HisMax/RedInk",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "C1",
+      "classification_source": "ai",
+      "summary": null
     },
     {
       "id": 66,
       "full_name": "facebookresearch/sam-3d-body",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "C5",
+      "classification_source": "ai",
+      "summary": null
     },
     {
       "id": 67,
       "full_name": "facebookresearch/sam-3d-objects",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "C5",
+      "classification_source": "ai",
+      "summary": null
     },
     {
       "id": 68,
       "full_name": "sansan0/TrendRadar",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "C3",
+      "classification_source": "ai",
+      "summary": null
     },
     {
       "id": 69,
       "full_name": "jianchang512/pyvideotrans",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "C2",
+      "classification_source": "ai",
+      "summary": null
     },
     {
       "id": 70,
       "full_name": "666ghj/BettaFish",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "C1",
+      "classification_source": "ai",
+      "summary": null
     },
     {
       "id": 71,
       "full_name": "YILING0013/AI_NovelGenerator",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "C1",
+      "classification_source": "ai",
+      "summary": null
     },
     {
       "id": 72,
       "full_name": "guofei9987/blind_watermark",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "C11",
+      "classification_source": "ai",
+      "summary": null
     },
     {
       "id": 73,
       "full_name": "CharlesKeeling65/ManureCouplingStrategies",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "C7",
+      "classification_source": "ai",
+      "summary": null
     },
     {
       "id": 74,
       "full_name": "tadata-org/fastapi_mcp",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "C6",
+      "classification_source": "ai",
+      "summary": null
     },
     {
       "id": 75,
       "full_name": "mikf/gallery-dl",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "C9",
+      "classification_source": "ai",
+      "summary": null
     },
     {
       "id": 76,
       "full_name": "roboflow/supervision",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "C6",
+      "classification_source": "ai",
+      "summary": null
     },
     {
       "id": 77,
       "full_name": "lllyasviel/FramePack",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "C2",
+      "classification_source": "ai",
+      "summary": null
     },
     {
       "id": 78,
       "full_name": "nunchaku-ai/nunchaku",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "C1",
+      "classification_source": "ai",
+      "summary": null
     },
     {
       "id": 79,
       "full_name": "NanmiCoder/MediaCrawler",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "C3",
+      "classification_source": "ai",
+      "summary": null
     },
     {
       "id": 80,
       "full_name": "arcee-ai/mergekit",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "C1",
+      "classification_source": "ai",
+      "summary": null
     },
     {
       "id": 81,
       "full_name": "opendatalab/MinerU",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "An open-source document parsing engine that converts various file types into structured formats for agentic workflows with multilingual support."
     },
     {
       "id": 82,
       "full_name": "Zie619/n8n-workflows",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "A curated collection of n8n automation workflows offering thousands of production-ready templates with extensive integrations."
     },
     {
       "id": 83,
       "full_name": "hpcaitech/Open-Sora",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "An open-source initiative for efficient video production featuring multiple model versions and tools for creating high-quality video content."
     },
     {
       "id": 84,
       "full_name": "1Panel-dev/MaxKB",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
+      "category_id": "Other",
+      "classification_source": "ai",
       "summary": ""
     },
     {
       "id": 85,
       "full_name": "Peterande/D-FINE",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
+      "category_id": "Other",
+      "classification_source": "ai",
       "summary": ""
     },
     {
       "id": 86,
       "full_name": "robert-mcdermott/ai-knowledge-graph",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
+      "category_id": "Other",
+      "classification_source": "ai",
       "summary": ""
     },
     {
       "id": 87,
       "full_name": "harry0703/MoneyPrinterTurbo",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
+      "category_id": "Other",
+      "classification_source": "ai",
       "summary": ""
     },
     {
@@ -953,9 +973,9 @@
     {
       "id": 129,
       "full_name": "ashishpatel26/500-AI-Agents-Projects",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "A comprehensive resource hub showcasing 500 practical AI agent use cases across multiple industries, designed to inspire and guide developers in implementing real-world AI solutions."
     },
     {
       "id": 130,
@@ -1023,65 +1043,65 @@
     {
       "id": 139,
       "full_name": "hmjz100/LinkSwift",
-      "category_id": "C10",
-      "classification_source": "reused",
-      "summary": null
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "LinkSwift simplifies the process of downloading files from eight major cloud storage services by generating direct download links."
     },
     {
       "id": 140,
       "full_name": "glidea/banana-prompt-quicker",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "A Chrome extension that streamlines AI art creation by providing quick access to curated prompts across multiple AI platforms with one-click insertion."
     },
     {
       "id": 141,
       "full_name": "playcanvas/engine",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "A powerful open-source game engine enabling cross-platform 3D apps and games with WebGL2/WebGPU/WebXR support and first-class Gaussian Splatting rendering."
     },
     {
       "id": 142,
       "full_name": "xanderfrangos/twinkle-tray",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "A Windows system tray application that provides comprehensive brightness control for external monitors with automatic scheduling and hotkey support."
     },
     {
       "id": 143,
       "full_name": "wordshub/free-font",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "A curated, up-to-date repository of free, commercially usable fonts with clear licensing, making it easy for designers to find and legally use high-quality typefaces."
     },
     {
       "id": 144,
       "full_name": "SheepChef/Abracadabra",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
+      "category_id": "Other",
+      "classification_source": "ai",
       "summary": ""
     },
     {
       "id": 145,
       "full_name": "yitong2333/Bionic-Reading",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "This userscript enhances reading efficiency and comprehension by visually emphasizing key portions of text using bionic reading techniques."
     },
     {
       "id": 146,
       "full_name": "Diorser/LiteMonitor",
-      "category_id": "C7",
-      "classification_source": "reused",
-      "summary": null
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "LiteMonitor provides a lightweight, highly customizable, and comprehensive solution for monitoring Windows hardware performance directly on the desktop or taskbar."
     },
     {
       "id": 147,
       "full_name": "Flow-Launcher/Flow.Launcher",
-      "category_id": "C7",
-      "classification_source": "reused",
-      "summary": null
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "Flow Launcher is an essential Windows productivity tool that streamlines file and application access, enhanced by a powerful, community-driven plugin system."
     },
     {
       "id": 148,
@@ -1114,16 +1134,16 @@
     {
       "id": 152,
       "full_name": "justlovemaki/openclaw-china-docker",
-      "category_id": "C1",
-      "classification_source": "reused",
-      "summary": null
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "The repository facilitates quick deployment of an AI bot gateway that supports various Chinese IM platforms."
     },
     {
       "id": 153,
       "full_name": "githubnext/monaspace",
-      "category_id": "C10",
-      "classification_source": "reused",
-      "summary": null
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "Monaspace aims to improve the coding experience through thoughtfully designed typography."
     },
     {
       "id": 154,
@@ -1163,9 +1183,9 @@
     {
       "id": 159,
       "full_name": "allenk/GeminiWatermarkTool",
-      "category_id": "C2",
-      "classification_source": "reused",
-      "summary": null
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "This repository provides a specialized tool for managing watermarks on Gemini devices, improving user experience and efficiency."
     },
     {
       "id": 160,
@@ -1184,9 +1204,9 @@
     {
       "id": 162,
       "full_name": "DigitalPlatDev/FreeDomain",
-      "category_id": "C10",
-      "classification_source": "reused",
-      "summary": null
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "FreeDomain democratizes web presence by providing free domain registration and management tools for all users."
     },
     {
       "id": 163,
@@ -1341,13 +1361,104 @@
       "category_id": "Unknown",
       "classification_source": "unknown",
       "summary": ""
+    },
+    {
+      "id": 185,
+      "full_name": "decolua/9router",
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "A smart AI router that saves 20-40% tokens via RTK compression and provides auto-fallback to free providers, enabling unlimited FREE AI coding across 40+ providers."
+    },
+    {
+      "id": 186,
+      "full_name": "Rimagination/scansci-pdf",
+      "category_id": "Unknown",
+      "classification_source": "unknown",
+      "summary": ""
+    },
+    {
+      "id": 187,
+      "full_name": "1c7/chinese-independent-developer",
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "A community‑curated catalog of Chinese independent developers’ projects, helping discover and share innovative software across various domains."
+    },
+    {
+      "id": 188,
+      "full_name": "ATH-MaaS/Pixelle-Video",
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "A fully automated AI engine designed to generate short videos with minimal to no manual intervention."
+    },
+    {
+      "id": 189,
+      "full_name": "headroomlabs-ai/headroom",
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "Headroom cuts token consumption of LLM inputs by up to 95% without sacrificing output quality, enabling cheaper and faster AI interactions."
+    },
+    {
+      "id": 190,
+      "full_name": "Yuan1z0825/nature-skills",
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "A resource hub offering practical skills and tools to streamline academic writing for *Nature* journals and create professional scientific visualizations."
+    },
+    {
+      "id": 191,
+      "full_name": "zhouxiaoka/autoclip",
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "AutoClip streamlines video editing by automatically generating highlights and clips using AI."
+    },
+    {
+      "id": 192,
+      "full_name": "rohitg00/ai-engineering-from-scratch",
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "This repository offers a hands-on, project-driven approach to learning AI engineering by building systems from the ground up, ideal for learners and practitioners."
+    },
+    {
+      "id": 193,
+      "full_name": "Imbad0202/academic-research-skills",
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "A reusable Claude Code template that streamlines the academic research process from initial inquiry to final manuscript, improving efficiency and quality."
+    },
+    {
+      "id": 194,
+      "full_name": "Nibir088/PRISM-CAFO",
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "Unable to summarize purpose or value without access to the repository's README or source code."
+    },
+    {
+      "id": 195,
+      "full_name": "HKUDS/CLI-Anything",
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "CLI‑Anything enables any software to be accessed as an agent‑native command‑line tool, simplifying AI automation and integration across diverse applications."
+    },
+    {
+      "id": 196,
+      "full_name": "CloakHQ/CloakBrowser",
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": ""
+    },
+    {
+      "id": 197,
+      "full_name": "huggingface/lerobot",
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "LeRobot democratizes robotics AI by offering an integrated, Hugging Face‑friendly platform for end‑to‑end robot learning, reducing complexity and accelerating research."
     }
   ],
   "stats": {
-    "total_repos": 184,
-    "reused": 48,
-    "llm_classified": 2,
-    "unknown": 134,
+    "total_repos": 197,
+    "reused": 0,
+    "llm_classified": 99,
+    "unknown": 98,
     "partial_save": true
   }
 }
