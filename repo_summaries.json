@@ -81,49 +81,61 @@
     "Repository Name": "Fosowl/agenticSeek",
     "Repository URL": "https://github.com/Fosowl/agenticSeek",
     "Brief Introduction": "Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent that thinks, browses the web, and code for the sole cost of electricity.",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "__last_error__": "rate limit reached"
+    "Innovations": "Fully local autonomous AI agent with web browsing, coding, and task planning capabilities, running entirely on-device with voice support and no cloud dependency.",
+    "Basic Usage": "Install Git, Python 3.10.x, and Docker; clone repo and run with local LLMs.",
+    "Summary": "AgenticSeek is a 100% local AI assistant that autonomously browses, codes, and plans tasks without cloud APIs or recurring costs.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:43:16Z",
+      "description_hash": "0cf3440a7eb14f44",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "langbot-app/LangBot": {
     "Repository Name": "langbot-app/LangBot",
     "Repository URL": "https://github.com/langbot-app/LangBot",
-    "Stars": 15868,
-    "Forks": 1402,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "langbot-app/LangBot"
+    "Brief Introduction": "Production-grade platform for building agentic IM bots - 生产级多平台智能机器人开发平台/ Agent、知识库编排、插件系统 / Bots for Discord / Slack / LINE / Telegram / WeChat(企业微信, 企微智能机器人, 公众号) / 飞书 / 钉钉 / QQ / Matrix e.g. Integrated with ChatGPT(GPT), DeepSeek, Dify, n8n, Langflow, Coze, Claude, Gemini, GLM, Ollama, SiliconFlow, Moonshot, openclaw / hermes agent, deerflow",
+    "Innovations": "Production-grade multi-platform IM bot platform with agent orchestration, RAG knowledge base, plugin ecosystem, MCP protocol support, web management panel, and multi-pipeline architecture. Supports 10+ platforms and integrates with major LLM providers and agent frameworks.",
+    "Basic Usage": "Run `uvx langbot` for one-line launch (requires uv), then visit http://localhost:5300. Alternatively use Docker Compose.",
+    "Summary": "LangBot is an open-source production-grade platform for building AI-powered instant messaging bots across multiple platforms with agent orchestration, knowledge bases, and plugin ecosystem.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:44:04Z",
+      "description_hash": "6d53a9248fce509e",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "SamuelSchmidgall/AgentLaboratory": {
     "Repository Name": "SamuelSchmidgall/AgentLaboratory",
     "Repository URL": "https://github.com/SamuelSchmidgall/AgentLaboratory",
-    "Stars": 5528,
-    "Forks": 777,
-    "updated": "2026-04-24",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "SamuelSchmidgall/AgentLaboratory"
+    "Brief Introduction": "Agent Laboratory is an end-to-end autonomous research workflow meant to assist you as the human researcher toward implementing your research ideas",
+    "Innovations": "Features an end-to-end autonomous research workflow utilizing multi-agent collaboration to automate the entire research lifecycle, from brainstorming and literature discovery to coding, experimentation, and paper writing.",
+    "Basic Usage": "Not specified",
+    "Summary": "1. **Repository Name:** SamuelSchmidgall/AgentLaboratory",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:50:48Z",
+      "description_hash": "d42ba737b39abeaa",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "Significant-Gravitas/AutoGPT": {
     "Repository Name": "Significant-Gravitas/AutoGPT",
     "Repository URL": "https://github.com/Significant-Gravitas/AutoGPT",
-    "Stars": 183740,
-    "Forks": 46225,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "Significant-Gravitas/AutoGPT"
+    "Brief Introduction": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
+    "Innovations": "Enables creation, deployment, and execution of AI agents via plain‑English prompts or visual builder, offering auto‑pilot, marketplace, and both hosted (paid) and self‑hosted (free) options with managed infrastructure.",
+    "Basic Usage": "Access the hosted platform via signup or self‑host by executing the provided install script.",
+    "Summary": "AutoGPT provides a platform to create, deploy, and run AI agents via plain English prompts or visual builders, with both hosted and self‑hosted options.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:53:04Z",
+      "description_hash": "b3cc486356d1fe99",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "heygen-com/hyperframes": {
     "Repository Name": "heygen-com/hyperframes",
@@ -307,7 +319,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "An AI-powered animation engine that transforms abstract concepts into cinematic animations with bilingual narration through LLM-driven intelligent composition.",
+    "full_name": "fogsightai/fogsight"
   },
   "DearVa/Everywhere": {
     "Repository Name": "DearVa/Everywhere",
@@ -361,7 +375,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "Claude Code is a terminal-based agentic tool designed to accelerate coding by understanding codebases and automating routine tasks, explanations, and git workflows via natural language.",
+    "full_name": "anthropics/claude-code"
   },
   "vercel-labs/agent-browser": {
     "Repository Name": "vercel-labs/agent-browser",
@@ -405,41 +421,47 @@
   "Shubhamsaboo/awesome-llm-apps": {
     "Repository Name": "Shubhamsaboo/awesome-llm-apps",
     "Repository URL": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-    "Stars": 107363,
-    "Forks": 15787,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "Shubhamsaboo/awesome-llm-apps"
+    "Brief Introduction": "100+ AI Agents, Agent Skills and RAG Apps - Free and Open Source.",
+    "Innovations": "Curated list of 100+ open‑source AI agents, agent skills, and RAG apps with one‑command install via npx and support for multiple LLMs.",
+    "Basic Usage": "Install via npx skills add <url> or clone repo, install requirements, and run with streamlit.",
+    "Summary": "A comprehensive collection of free, open‑source AI agents and RAG applications ready to use.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:51:22Z",
+      "description_hash": "09638354ab8ed321",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "huggingface/transformers": {
     "Repository Name": "huggingface/transformers",
     "Repository URL": "https://github.com/huggingface/transformers",
-    "Stars": 159893,
-    "Forks": 33005,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "huggingface/transformers"
+    "Brief Introduction": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.",
+    "Innovations": "Centralizes model definitions enabling cross‑framework compatibility with many training and inference libraries, simplifying model usage and democratizing state‑of‑the‑art models.",
+    "Basic Usage": "Install via pip (`pip install \"transformers[torch]\"`) and use the Pipeline API for inference.",
+    "Summary": "Transformers provides a unified framework for defining, training, and deploying state‑of‑the‑art models across text, vision, audio, and multimodal tasks.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:51:22Z",
+      "description_hash": "90bd70a21b1254db",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "AUTOMATIC1111/stable-diffusion-webui": {
     "Repository Name": "AUTOMATIC1111/stable-diffusion-webui",
     "Repository URL": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
-    "Stars": 162593,
-    "Forks": 30284,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "AUTOMATIC1111/stable-diffusion-webui"
+    "Brief Introduction": "Stable Diffusion web UI",
+    "Innovations": "Provides a Gradio-based web UI for Stable Diffusion with one‑click install, txt2img img2img, outpainting, inpainting, prompt attention, loopback, X/Y/Z plots, textual inversion, and multiple upscalers, supporting 4 GB GPU.",
+    "Basic Usage": "Run the install script after installing Python and Git, then start the web UI to generate images.",
+    "Summary": "A Gradio‑based web UI that lets users run Stable Diffusion models locally with extensive features like outpainting, inpainting, prompt attention, and multiple upscalers.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:53:04Z",
+      "description_hash": "e2c7228d525a710e",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "forrestchang/andrej-karpathy-skills": {
     "Repository Name": "forrestchang/andrej-karpathy-skills",
@@ -506,7 +528,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "This tool demystifies the complex inner workings of Transformer-based LLMs, offering an interactive, visual way to understand core concepts like attention mechanisms and layer processing.",
+    "full_name": "poloclub/transformer-explainer"
   },
   "Tencent/WeKnora": {
     "Repository Name": "Tencent/WeKnora",
@@ -729,7 +753,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "An essential tool for web developers to build immersive 3D applications with minimal boilerplate code.",
+    "full_name": "mrdoob/three.js"
   },
   "666ghj/MiroFish": {
     "Repository Name": "666ghj/MiroFish",
@@ -757,7 +783,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "vLLM provides a fast, memory‑savvy serving layer that scales LLM inference through smart caching, dynamic batching, and automatic sharding.",
+    "full_name": "vllm-project/vllm"
   },
   "OpenBMB/VoxCPM": {
     "Repository Name": "OpenBMB/VoxCPM",
@@ -772,7 +800,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "VoxCPM2 provides a tokenizer-free TTS system for multilingual, creative, and realistic speech generation, improving adaptability and naturalness.",
+    "full_name": "OpenBMB/VoxCPM"
   },
   "EverMind-AI/MSA": {
     "Repository Name": "EverMind-AI/MSA",
@@ -852,7 +882,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "Red Ink automates Xiaohongshu content creation by transforming a single sentence into a complete, visually consistent image-text post using advanced multimodal AI.",
+    "full_name": "HisMax/RedInk"
   },
   "facebookresearch/sam-3d-body": {
     "Repository Name": "facebookresearch/sam-3d-body",
@@ -867,7 +899,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "The `facebookresearch/sam-3d-body` repository offers code, pre-trained checkpoints, and examples to perform advanced 3D human body reconstruction and pose estimation from 2D images.",
+    "full_name": "facebookresearch/sam-3d-body"
   },
   "facebookresearch/sam-3d-objects": {
     "Repository Name": "facebookresearch/sam-3d-objects",
@@ -882,7 +916,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "A framework that extends Segment Anything to 3D, enabling zero-shot, promptable 3D object segmentation and bounding box estimation from 2D prompts.",
+    "full_name": "facebookresearch/sam-3d-objects"
   },
   "sansan0/TrendRadar": {
     "Repository Name": "sansan0/TrendRadar",
@@ -897,7 +933,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "TrendRadar is an AI-powered tool that aggregates and analyzes public opinion across multiple platforms, offering smart alerts, real-time insights, and seamless integration with various communication channels to help users stay informed without information overload.",
+    "full_name": "sansan0/TrendRadar"
   },
   "jianchang512/pyvideotrans": {
     "Repository Name": "jianchang512/pyvideotrans",
@@ -912,7 +950,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "A tool for translating videos into multiple languages with integrated dubbing and subtitles, enhancing accessibility for global audiences.",
+    "full_name": "jianchang512/pyvideotrans"
   },
   "666ghj/BettaFish": {
     "Repository Name": "666ghj/BettaFish",
@@ -927,7 +967,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "A self‑contained, framework‑free multi‑agent tool that analyzes public sentiment, reveals true discourse, predicts trends, and aids decision‑making.",
+    "full_name": "666ghj/BettaFish"
   },
   "YILING0013/AI_NovelGenerator": {
     "Repository Name": "YILING0013/AI_NovelGenerator",
@@ -942,7 +984,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "Generates cohesive, multi‑chapter novels using AI that maintains narrative flow and plants foreshadowing automatically.",
+    "full_name": "YILING0013/AI_NovelGenerator"
   },
   "guofei9987/blind_watermark": {
     "Repository Name": "guofei9987/blind_watermark",
@@ -957,7 +1001,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "A Python library for embedding imperceptible blind watermarks into images, enabling watermark extraction without the original image and providing robustness against common image processing operations.",
+    "full_name": "guofei9987/blind_watermark"
   },
   "CharlesKeeling65/ManureCouplingStrategies": {
     "Repository Name": "CharlesKeeling65/ManureCouplingStrategies",
@@ -972,7 +1018,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "ManureTransport 通过优化算法解决农业粅便资源运输与分配问题，提升资源利用效率，支持可持续农业实践。",
+    "full_name": "CharlesKeeling65/ManureCouplingStrategies"
   },
   "tadata-org/fastapi_mcp": {
     "Repository Name": "tadata-org/fastapi_mcp",
@@ -987,7 +1035,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "Securely exposes FastAPI APIs as MCP tools with built-in authentication for streamlined integration.",
+    "full_name": "tadata-org/fastapi_mcp"
   },
   "mikf/gallery-dl": {
     "Repository Name": "mikf/gallery-dl",
@@ -1002,7 +1052,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "A versatile, extensible command-line downloader that automates bulk retrieval of images and metadata from hundreds of supported hosting platforms with powerful customization options.",
+    "full_name": "mikf/gallery-dl"
   },
   "roboflow/supervision": {
     "Repository Name": "roboflow/supervision",
@@ -1017,7 +1069,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "Provides reusable computer vision tools to accelerate development and deployment of vision-based applications.",
+    "full_name": "roboflow/supervision"
   },
   "lllyasviel/FramePack": {
     "Repository Name": "lllyasviel/FramePack",
@@ -1032,7 +1086,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "FramePack makes video diffusion practical by packing frames into one forward pass, enabling fast, high‑quality video generation from text prompts.",
+    "full_name": "lllyasviel/FramePack"
   },
   "nunchaku-ai/nunchaku": {
     "Repository Name": "nunchaku-ai/nunchaku",
@@ -1050,7 +1106,9 @@
       "last_attempt_at": "2026-08-24T02:06:54Z",
       "last_error": "LLM returned empty after retry",
       "next_retry_at": "2026-08-25T02:06:54Z"
-    }
+    },
+    "summary": "",
+    "full_name": "nunchaku-ai/nunchaku"
   },
   "NanmiCoder/MediaCrawler": {
     "Repository Name": "NanmiCoder/MediaCrawler",
@@ -1065,7 +1123,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "A multi-platform self-media data crawler that extracts information from popular Chinese social media sites with minimal technical complexity.",
+    "full_name": "NanmiCoder/MediaCrawler"
   },
   "arcee-ai/mergekit": {
     "Repository Name": "arcee-ai/mergekit",
@@ -1080,7 +1140,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "A comprehensive toolkit for merging pretrained large language models with support for diverse architectures, merge methods, and LoRA extraction.",
+    "full_name": "arcee-ai/mergekit"
   },
   "opendatalab/MinerU": {
     "Repository Name": "opendatalab/MinerU",
@@ -1095,7 +1157,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "An open-source document parsing engine that converts various file types into structured formats for agentic workflows with multilingual support.",
+    "full_name": "opendatalab/MinerU"
   },
   "Zie619/n8n-workflows": {
     "Repository Name": "Zie619/n8n-workflows",
@@ -1110,7 +1174,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "A curated collection of n8n automation workflows offering thousands of production-ready templates with extensive integrations.",
+    "full_name": "Zie619/n8n-workflows"
   },
   "hpcaitech/Open-Sora": {
     "Repository Name": "hpcaitech/Open-Sora",
@@ -1125,43 +1191,69 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "An open-source initiative for efficient video production featuring multiple model versions and tools for creating high-quality video content.",
+    "full_name": "hpcaitech/Open-Sora"
   },
   "1Panel-dev/MaxKB": {
     "Repository Name": "1Panel-dev/MaxKB",
     "Repository URL": "https://github.com/1Panel-dev/MaxKB",
     "Brief Introduction": "🔥 MaxKB is an open-source platform for building enterprise-grade agents.  强大易用的开源企业级智能体平台。",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "__last_error__": "rate limit reached"
+    "Innovations": "Open-source enterprise agent platform with RAG pipelines, workflow orchestration, MCP tool-use, multi-modal support, and model-agnostic integration.",
+    "Basic Usage": "Run `docker run -d --name=maxkb --restart=always -p 8080:8080 -v ~/.maxkb:/opt/maxkb 1panel/maxkb` and access via web UI.",
+    "Summary": "MaxKB is an open-source platform for building enterprise-grade AI agents with RAG, workflows, and multi-model support.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:43:16Z",
+      "description_hash": "97f87e4b7bc42662",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "Peterande/D-FINE": {
     "Repository Name": "Peterande/D-FINE",
     "Repository URL": "https://github.com/Peterande/D-FINE",
     "Brief Introduction": "D-FINE: Redefine Regression Task of DETRs as Fine-grained Distribution Refinement  [ICLR 2025 Spotlight]",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "__last_error__": "rate limit reached"
+    "Innovations": "Redefines DETR bounding box regression as Fine-grained Distribution Refinement (FDR) and introduces Global Optimal Localization Self-Distillation (GO-LSD) for improved accuracy without extra inference/training costs.",
+    "Basic Usage": "Use provided config files and pretrained models for object detection; supports custom dataset finetuning.",
+    "Summary": "D-FINE is a real-time object detector that enhances DETR regression via distribution refinement and self-distillation for high-precision localization.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:43:16Z",
+      "description_hash": "dea2a89e1c14d500",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "robert-mcdermott/ai-knowledge-graph": {
     "Repository Name": "robert-mcdermott/ai-knowledge-graph",
     "Repository URL": "https://github.com/robert-mcdermott/ai-knowledge-graph",
     "Brief Introduction": "AI Powered Knowledge Graph Generator",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "__last_error__": "rate limit reached"
+    "Innovations": "Extracts Subject-Predicate-Object triplets from text using LLMs, standardizes entities, infers relationships, and visualizes interactive knowledge graphs.",
+    "Basic Usage": "Run `python generate-graph.py --input your_text_file.txt --output knowledge_graph.html` after configuring settings in config.toml.",
+    "Summary": "Generates interactive knowledge graphs from text using LLM-based entity extraction and relationship inference.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:43:16Z",
+      "description_hash": "2e87a114062dbe32",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "harry0703/MoneyPrinterTurbo": {
     "Repository Name": "harry0703/MoneyPrinterTurbo",
     "Repository URL": "https://github.com/harry0703/MoneyPrinterTurbo",
     "Brief Introduction": "利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "__last_error__": "rate limit reached"
+    "Innovations": "Automates HD short video generation from topics/keywords using AI workflows, including script writing, material matching, subtitles, and background music.",
+    "Basic Usage": "Provide a video topic or keyword to automatically generate scripts, match materials, and synthesize HD videos via WebUI, API, or CLI.",
+    "Summary": "MoneyPrinterTurbo generates HD short videos automatically from keywords using AI-driven workflows and multimedia synthesis.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:43:16Z",
+      "description_hash": "ecbff95c6a1d08bc",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "kijai/ComfyUI-FramePackWrapper": {
     "Repository Name": "kijai/ComfyUI-FramePackWrapper",
@@ -1179,210 +1271,242 @@
   "xming521/WeClone": {
     "Repository Name": "xming521/WeClone",
     "Repository URL": "https://github.com/xming521/WeClone",
-    "Stars": 17648,
-    "Forks": 1495,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "xming521/WeClone"
+    "Brief Introduction": "🚀 One-stop solution for creating your AI twin from chat history 💡 Fine-tune LLMs with your chat logs to capture your unique style, then bind to a chatbot to bring your digital self to life.",
+    "Innovations": "End-to-end digital avatar creation from chat history with multi-modal fine-tuning (text + images), privacy-focused local deployment, supports Telegram/WhatsApp/Discord/Slack/WeChat as data sources and deployment platforms.",
+    "Basic Usage": "Use LLaMA Factory for fine-tuning with Qwen2.5-VL-7B-Instruct model via LoRA. Requires GPU with 16GB+ VRAM for 7B model.",
+    "Summary": "WeClone creates personalized AI digital twins by fine-tuning LLMs on user chat history with multi-modal support and privacy-focused local deployment across multiple messaging platforms.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:44:04Z",
+      "description_hash": "d4687da8206d411e",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "happycola233/tchMaterial-parser": {
     "Repository Name": "happycola233/tchMaterial-parser",
     "Repository URL": "https://github.com/happycola233/tchMaterial-parser",
-    "Stars": 5053,
-    "Forks": 609,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "happycola233/tchMaterial-parser"
+    "Brief Introduction": "国家中小学智慧教育平台 电子课本下载工具，帮助您从智慧教育平台中获取电子课本的 PDF 文件网址并进行下载，让您更方便地获取课本内容。",
+    "Innovations": "Batch download electronic textbooks from China's National Smart Education Platform with auto-naming, PDF bookmark generation, access token support, resource search by category, cross-platform GUI with dark mode and high DPI support.",
+    "Basic Usage": "Download from GitHub Releases, or install via WinGet (`winget install tchMaterial-parser`), AUR (`yay -S tchmaterial-parser`), or run from source with Python 3.10+ (`pip install . && python ./src/main.py`).",
+    "Summary": "tchMaterial-parser is a cross-platform GUI tool for batch downloading PDF textbooks from China's National Smart Education Platform with automatic naming, bookmarking, and search capabilities.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:44:04Z",
+      "description_hash": "62c76722f15bf43e",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "0xsline/GeminiImageApp": {
     "Repository Name": "0xsline/GeminiImageApp",
     "Repository URL": "https://github.com/0xsline/GeminiImageApp",
-    "Stars": 245,
-    "Forks": 39,
-    "updated": "2026-04-03",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "0xsline/GeminiImageApp"
+    "Brief Introduction": "基于 Google Gemini AI 的全功能图像处理应用",
+    "Innovations": "Full-stack AI image processing platform integrating Gemini 2.0 Flash, Imagen 3, Veo 2.0, YOLO v11, and OpenCV for image Q&A, generation, editing, object detection, segmentation, and video generation with multi-algorithm comparison.",
+    "Basic Usage": "Clone repo, set up backend (Python 3.8+, Flask, google-genai) and frontend (Node.js 16+, Vue 3, Vite), configure API keys in .env, run backend on port 5000 and frontend on port 3000. Docker deployment also available.",
+    "Summary": "GeminiImageApp is a full-stack AI image processing platform combining Google Gemini, Imagen 3, Veo 2.0, YOLO v11, and OpenCV for comprehensive image understanding, generation, editing, detection, segmentation, and video creation.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:44:04Z",
+      "description_hash": "94273529bf64d198",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "public-apis/public-apis": {
     "Repository Name": "public-apis/public-apis",
     "Repository URL": "https://github.com/public-apis/public-apis",
-    "Stars": 426311,
-    "Forks": 46516,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "public-apis/public-apis"
+    "Brief Introduction": "A collective list of free APIs",
+    "Innovations": "Community-curated comprehensive directory of free public APIs across multiple categories, manually maintained with APILayer partnership for unified API access via single account/dashboard/key.",
+    "Basic Usage": "Browse the repository's categorized API list, visit individual API documentation links, or use APILayer unified suite for integrated access.",
+    "Summary": "public-apis is a community-maintained curated list of free public APIs across diverse categories, partnered with APILayer for unified API integration.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:44:04Z",
+      "description_hash": "13adff770c74fd27",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "VisionXLab/CrossEarth": {
     "Repository Name": "VisionXLab/CrossEarth",
     "Repository URL": "https://github.com/VisionXLab/CrossEarth",
-    "Stars": 185,
-    "Forks": 9,
-    "updated": "2026-04-18",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "VisionXLab/CrossEarth"
+    "Brief Introduction": "[TPAMI 2025] CrossEarth: Geospatial Vision Foundation Model for Cross-Domain Generalization in Remote Sensing Semantic Segmentation",
+    "Innovations": "Not specified",
+    "Basic Usage": "Not specified",
+    "Summary": "CrossEarth serves as a geospatial vision foundation model enhancing cross-domain generalization for remote sensing semantic segmentation, enabling robust performance across diverse geographic and sensor domains.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:50:48Z",
+      "description_hash": "b4155c62051ea759",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "microsoft/markitdown": {
     "Repository Name": "microsoft/markitdown",
     "Repository URL": "https://github.com/microsoft/markitdown",
-    "Stars": 116671,
-    "Forks": 7639,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "microsoft/markitdown"
+    "Brief Introduction": "Python tool for converting files and office documents to Markdown.",
+    "Innovations": "Supports conversion of DOCX, PPTX, XLSX, PDF and images to clean Markdown, preserves formatting, embeds images as base64, offers both CLI and Python API, works offline without external services.  \nBasic Usage:** `from markitdown import Markdown; markdown = Markdown.convert(\"path/to/file.docx\")`  \nSummary:** Markitdown simplifies converting Office documents and other files to Markdown, enabling easy content migration and web publishing.",
+    "Basic Usage": "`from markitdown import Markdown; markdown = Markdown.convert(\"path/to/file.docx\")`  \nSummary:** Markitdown simplifies converting Office documents and other files to Markdown, enabling easy content migration and web publishing.",
+    "Summary": "Markitdown simplifies converting Office documents and other files to Markdown, enabling easy content migration and web publishing.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:50:48Z",
+      "description_hash": "fb4ec940c0b80cdd",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "subframe7536/maple-font": {
     "Repository Name": "subframe7536/maple-font",
     "Repository URL": "https://github.com/subframe7536/maple-font",
-    "Stars": 25451,
-    "Forks": 1024,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "subframe7536/maple-font"
+    "Brief Introduction": "Maple Mono: Open source monospace font with round corner, ligatures and Nerd-Font icons for IDE and terminal, fine-grained customization options. 带连字和控制台图标的圆角等宽字体，中英文宽度完美2:1，细粒度的自定义选项",
+    "Innovations": "Round‑corner glyphs, built‑in Nerd Font icons, extensive per‑weight/width customization, and a perfect 2:1 Chinese‑to‑English width ratio.",
+    "Basic Usage": "Add the font files to your system (e.g., via fontconfig or `@font-face` in CSS) and select **Maple Mono** in your editor or terminal.",
+    "Summary": "A versatile, open‑source monospace font that blends aesthetic round corners, Nerd Font icons, and precise width scaling for seamless multilingual coding and terminal use.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:50:48Z",
+      "description_hash": "b0926847b0949b0a",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "nvbn/thefuck": {
     "Repository Name": "nvbn/thefuck",
     "Repository URL": "https://github.com/nvbn/thefuck",
-    "Stars": 96701,
-    "Forks": 3931,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "nvbn/thefuck"
+    "Brief Introduction": "Magnificent app which corrects your previous console command.",
+    "Innovations": "thefuck corrects previous console commands via a customizable rule-based system, handling common typos in git, pip, npm, and other tools. It integrates through a `fuck` alias, suggests corrections before execution, works across bash, zsh, fish, and powershell, and allows users to extend or create custom rules, improving terminal productivity.  \nBasic Usage:** `fuck` (corrects the previous console command)  \nSummary:** thefuck improves terminal productivity by automatically correcting mistyped or incorrect previous console commands using a customizable, rule-based system that integrates across multiple shells.  \nRepository Description:** Magnificent app which corrects your previous console command.  \nRepository URL:** https://github.com/nvbn/thefuck",
+    "Basic Usage": "`fuck` (corrects the previous console command)  \nSummary:** thefuck improves terminal productivity by automatically correcting mistyped or incorrect previous console commands using a customizable, rule-based system that integrates across multiple shells.  \nRepository Description:** Magnificent app which corrects your previous console command.  \nRepository URL:** https://github.com/nvbn/thefuck",
+    "Summary": "thefuck improves terminal productivity by automatically correcting mistyped or incorrect previous console commands using a customizable, rule-based system that integrates across multiple shells.  \nRepository Description:** Magnificent app which corrects your previous console command.  \nRepository URL:** https://github.com/nvbn/thefuck",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:50:48Z",
+      "description_hash": "efd2940c0b9471cb",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "aws/aws-cli": {
     "Repository Name": "aws/aws-cli",
     "Repository URL": "https://github.com/aws/aws-cli",
-    "Stars": 16899,
-    "Forks": 4527,
-    "updated": "2026-04-24",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "aws/aws-cli"
+    "Brief Introduction": "Universal Command Line Interface for Amazon Web Services",
+    "Innovations": "Provides a unified CLI for many AWS services, supports Python 3.10+, ongoing maintenance, and upcoming v2 migration.",
+    "Basic Usage": "Install via pip: `python -m pip install awscli`.",
+    "Summary": "The AWS CLI offers a single command‑line tool to manage AWS resources across services.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:51:22Z",
+      "description_hash": "ada1fe06f45337ef",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "jonathanwilton/PUExtraTrees": {
     "Repository Name": "jonathanwilton/PUExtraTrees",
     "Repository URL": "https://github.com/jonathanwilton/PUExtraTrees",
-    "Stars": 20,
-    "Forks": 1,
-    "updated": "2026-04-24",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "jonathanwilton/PUExtraTrees"
+    "Brief Introduction": "uPU, nnPU and PN learning with Extra Trees classifier.",
+    "Innovations": "Introduces recursive greedy risk minimization algorithms for PU learning, supporting unbiased and nonnegative risk estimators with quadratic or logistic loss.",
+    "Basic Usage": "Run example scripts such as run_puet_simple.py after installing numpy, scipy, joblib, tree.py, and trees.py.",
+    "Summary": "Provides Python implementations of PU and PN learning using Extra Trees with custom risk estimators.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:51:22Z",
+      "description_hash": "c9265423088b5bd8",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "bilibili/Index-1.9B": {
     "Repository Name": "bilibili/Index-1.9B",
     "Repository URL": "https://github.com/bilibili/Index-1.9B",
-    "Stars": 1018,
-    "Forks": 49,
-    "updated": "2026-04-19",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "bilibili/Index-1.9B"
+    "Brief Introduction": "A lightweight multilingual LLM",
+    "Innovations": "Offers a 1.9B parameter model with 32K token context, multilingual focus, and open‑source research checkpoints adapted for llama.cpp and Ollama.",
+    "Basic Usage": "Not specified",
+    "Summary": "A compact 1.9B multilingual language model supporting up to 32K context and research checkpoints.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:51:22Z",
+      "description_hash": "539efcb2d05abde2",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "EvanLi/Github-Ranking": {
     "Repository Name": "EvanLi/Github-Ranking",
     "Repository URL": "https://github.com/EvanLi/Github-Ranking",
-    "Stars": 10953,
-    "Forks": 649,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "EvanLi/Github-Ranking"
+    "Brief Introduction": ":star:Github Ranking:star: Github stars and forks ranking list. Github Top100 stars list of different languages. Automatically update daily. | Github仓库排名，每日自动更新",
+    "Innovations": "Automatically updates daily a ranking of GitHub repositories by stars and forks across languages, providing top‑100 lists and detailed tables.",
+    "Basic Usage": "Not specified",
+    "Summary": "A daily‑updated ranking of GitHub repositories by stars and forks, offering top‑100 lists and language‑specific tables.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:53:04Z",
+      "description_hash": "39ee82e7571a9ba9",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "Lydorn/Polygonization-by-Frame-Field-Learning": {
     "Repository Name": "Lydorn/Polygonization-by-Frame-Field-Learning",
     "Repository URL": "https://github.com/Lydorn/Polygonization-by-Frame-Field-Learning",
-    "Stars": 336,
-    "Forks": 70,
-    "updated": "2026-04-20",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "Lydorn/Polygonization-by-Frame-Field-Learning"
+    "Brief Introduction": "This repository contains the code for our fast polygonal building extraction from overhead images pipeline.",
+    "Innovations": "Adds a frame field output to segmentation networks, enhancing edge and interior mask quality and supplying structural cues for accurate polygonization of overhead building images.",
+    "Basic Usage": "Clone the repo with submodules, set up a virtual environment (venv, Docker, or conda), then run the provided scripts for training or inference.",
+    "Summary": "The repository implements frame‑field‑enhanced segmentation for accurate polygonal extraction of overhead building images.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:53:04Z",
+      "description_hash": "cd6040ba0f5f2a41",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "bubbliiiing/unet-keras": {
     "Repository Name": "bubbliiiing/unet-keras",
     "Repository URL": "https://github.com/bubbliiiing/unet-keras",
-    "Stars": 112,
-    "Forks": 35,
-    "updated": "2025-11-27",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "bubbliiiing/unet-keras"
+    "Brief Introduction": "这是一个unet-keras的源码，可以用于训练自己的模型。",
+    "Innovations": "Implements U‑Net in Keras with multiple backbone options, step/cosine LR schedules, Adam/SGD optimizer choice, batch‑size adaptive LR, and Miou evaluation for biomedical image segmentation.",
+    "Basic Usage": "Download dataset, adjust train.py settings, run train.py; for inference, load pretrained weights and execute predict.py.",
+    "Summary": "A Keras U‑Net implementation for biomedical image segmentation, supporting multiple backbones, adaptive learning rates, and Miou evaluation.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:53:04Z",
+      "description_hash": "fff8e2480afdb378",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "zorzi-s/PolyWorldPretrainedNetwork": {
     "Repository Name": "zorzi-s/PolyWorldPretrainedNetwork",
     "Repository URL": "https://github.com/zorzi-s/PolyWorldPretrainedNetwork",
-    "Stars": 226,
-    "Forks": 28,
-    "updated": "2026-04-20",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "zorzi-s/PolyWorldPretrainedNetwork"
+    "Brief Introduction": "PolyWorld: Polygonal Building Extraction with Graph Neural Networks in Satellite Images",
+    "Innovations": "Graph Neural Network-based end-to-end pipeline for extracting accurate polygonal building footprints from high-resolution satellite imagery, with pretrained models enabling rapid deployment; leverages graph structures to capture spatial relationships between building segments and outputs precise vector polygons.  \nBasic Usage:** Not specified  \nSummary:** PolyWorld provides pretrained Graph Neural Networks for accurate, vector-based polygonal building extraction from satellite images, enabling efficient and automated urban feature mapping.",
+    "Basic Usage": "Not specified  \nSummary:** PolyWorld provides pretrained Graph Neural Networks for accurate, vector-based polygonal building extraction from satellite images, enabling efficient and automated urban feature mapping.",
+    "Summary": "PolyWorld provides pretrained Graph Neural Networks for accurate, vector-based polygonal building extraction from satellite images, enabling efficient and automated urban feature mapping.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:56:01Z",
+      "description_hash": "64d086b7d0c4ffc4",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "lfnovo/open-notebook": {
     "Repository Name": "lfnovo/open-notebook",
     "Repository URL": "https://github.com/lfnovo/open-notebook",
-    "Stars": 22676,
-    "Forks": 2625,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "lfnovo/open-notebook"
+    "Brief Introduction": "An Open Source implementation of Notebook LM with more flexibility and features",
+    "Innovations": "Fully local, privacy‑first design; support for 18+ AI providers; multi‑modal content handling; multi‑speaker podcast generation; full‑text and vector search; multi‑language UI.",
+    "Basic Usage": "Not specified",
+    "Summary": "Open Notebook is an open‑source, privacy‑focused, locally runnable alternative to Google Notebook LM that lets users choose AI models, handle diverse media, and generate multi‑speaker podcasts.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:58:20Z",
+      "description_hash": "fd3b318af97bbf7b",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "CapSoftware/Cap": {
     "Repository Name": "CapSoftware/Cap",
@@ -1400,210 +1524,248 @@
   "027xiguapi/code-box": {
     "Repository Name": "027xiguapi/code-box",
     "Repository URL": "https://github.com/027xiguapi/code-box",
-    "Stars": 3207,
-    "Forks": 200,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "027xiguapi/code-box"
+    "Brief Introduction": "本插件可以用于CSDN/知乎/脚本之家/博客园/博客园/51CTO博客/php中文网/掘金/微信等网站,一键下载文章html或markdown文件;实现无需登录一键复制代码;支持选中代码;或者代码右上角按钮的一键复制;解除关注博主即可阅读全文提示;去除登录弹窗;去除跳转APP弹窗.",
+    "Innovations": "One‑click download of HTML/Markdown/PDF, one‑click code copy without login, selectable code support, custom CSS, image download, multi‑site compatibility, removal of login and redirect popups.",
+    "Basic Usage": "Not specified",
+    "Summary": "CodeBox is a browser extension that lets users one‑click download articles or copy code from many Chinese and international sites without logging in, while removing popups and allowing custom styling.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:58:20Z",
+      "description_hash": "51a15bfb02762739",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "iptv-org/iptv": {
     "Repository Name": "iptv-org/iptv",
     "Repository URL": "https://github.com/iptv-org/iptv",
-    "Stars": 115121,
-    "Forks": 6000,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "iptv-org/iptv"
+    "Brief Introduction": "Collection of publicly available IPTV (Internet Protocol television) channels from all over the world",
+    "Innovations": "Curated global IPTV channel list with a single M3U playlist, downloadable EPG data, REST API, structured database, and community discussions.",
+    "Basic Usage": "Paste a playlist URL into a compatible player and press Open.",
+    "Summary": "iptv‑org/iptv provides a worldwide collection of public IPTV channels accessible via a single M3U playlist, with EPG, API, and database support.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:58:20Z",
+      "description_hash": "ee2aa4574b40ebd6",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "crocofied/PortNote": {
     "Repository Name": "crocofied/PortNote",
     "Repository URL": "https://github.com/crocofied/PortNote",
-    "Stars": 1251,
-    "Forks": 34,
-    "updated": "2026-04-21",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "crocofied/PortNote"
+    "Brief Introduction": "Keep track of used ports",
+    "Innovations": "Web UI for centralized port inventory across servers/VMs, assignable usage documentation, conflict prevention, and integration with PostgreSQL via Prisma.",
+    "Basic Usage": "Run the provided docker‑compose file to start the web, agent, and database services.",
+    "Summary": "PortNote is a web‑based tool that lets you monitor, assign, and document port usage across servers and VMs, preventing conflicts through a simple Docker‑Compose deployment.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:58:20Z",
+      "description_hash": "b1c7e5b1f8a7131e",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "hanydd/BilibiliSponsorBlock": {
     "Repository Name": "hanydd/BilibiliSponsorBlock",
     "Repository URL": "https://github.com/hanydd/BilibiliSponsorBlock",
-    "Stars": 5323,
-    "Forks": 117,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
+    "Brief Introduction": "一款跳过小电视视频中恰饭片段的浏览器插件，移植自 SponsorBlock。A browser extension to skip sponsored segments in videos, ported from the SponsorBlock",
     "Innovations": "",
     "Basic Usage": "",
     "Summary": "",
-    "summary": "",
-    "full_name": "hanydd/BilibiliSponsorBlock"
+    "__last_error__": "LLM returned empty after retry",
+    "__meta__": {
+      "description_hash": "26c2be36e9972278",
+      "summary_model": "openrouter/free",
+      "summary_source": "error",
+      "summary_attempts": 1,
+      "last_attempt_at": "2026-08-25T02:00:24Z",
+      "last_error": "LLM returned empty after retry",
+      "next_retry_at": "2026-08-26T02:00:24Z"
+    }
   },
   "umami-software/umami": {
     "Repository Name": "umami-software/umami",
     "Repository URL": "https://github.com/umami-software/umami",
-    "Stars": 36306,
-    "Forks": 6968,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "umami-software/umami"
+    "Brief Introduction": "Umami is a privacy-first analytics platform. Traffic, campaigns, behavior, conversions, and revenue in one place — no cookies, no surveillance, self-hosted or in the cloud.",
+    "Innovations": "Umami offers cookie-free, privacy-focused web analytics with real-time data tracking, customizable dashboards, campaign tracking, and event-based conversion monitoring. It supports self-hosting and cloud deployment, ensuring compliance with privacy regulations like GDPR.",
+    "Basic Usage": "Not specified",
+    "Summary": "Umami provides a privacy-respecting, open-source alternative to traditional analytics tools, enabling users to track website metrics without compromising visitor privacy.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:00:24Z",
+      "description_hash": "511927781fcb9b0d",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "xyTom/snippai": {
     "Repository Name": "xyTom/snippai",
     "Repository URL": "https://github.com/xyTom/snippai",
-    "Stars": 1499,
-    "Forks": 85,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "xyTom/snippai"
+    "Brief Introduction": "Snip Anything Solve Everything",
+    "Innovations": "Snippai innovates by seamlessly integrating a robust screen-capture tool with advanced multimodal AI. It allows users to snip any region of their screen—be it code, math formulas, or UI layouts—and instantly query, solve, translate, or explain the visual content using AI models.\n* **Basic Usage:** Launch the application, use the configured global hotkey to drag and capture a screen snippet, then input your question or command into the AI chat interface to get an instant solution or explanation.\n* **Summary:** Snippai is an AI-powered desktop utility that empowers users to capture any screen snippet and instantly solve problems, extract text, or generate code using intelligent AI processing.",
+    "Basic Usage": "Launch the application, use the configured global hotkey to drag and capture a screen snippet, then input your question or command into the AI chat interface to get an instant solution or explanation.\n* **Summary:** Snippai is an AI-powered desktop utility that empowers users to capture any screen snippet and instantly solve problems, extract text, or generate code using intelligent AI processing.",
+    "Summary": "Snippai is an AI-powered desktop utility that empowers users to capture any screen snippet and instantly solve problems, extract text, or generate code using intelligent AI processing.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:00:24Z",
+      "description_hash": "a5dd3148857e466a",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "Snouzy/workout-cool": {
     "Repository Name": "Snouzy/workout-cool",
     "Repository URL": "https://github.com/Snouzy/workout-cool",
-    "Stars": 7210,
-    "Forks": 573,
-    "updated": "2026-04-24",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "Snouzy/workout-cool"
+    "Brief Introduction": "🏋 Modern open-source fitness coaching platform. Create workout plans, track progress, and access a comprehensive exercise database.",
+    "Innovations": "Not specified  \nBasic Usage:** Not specified  \nSummary:** A modern open-source fitness coaching platform for creating workout plans, tracking progress, and accessing a comprehensive exercise database.",
+    "Basic Usage": "Not specified  \nSummary:** A modern open-source fitness coaching platform for creating workout plans, tracking progress, and accessing a comprehensive exercise database.",
+    "Summary": "A modern open-source fitness coaching platform for creating workout plans, tracking progress, and accessing a comprehensive exercise database.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:00:24Z",
+      "description_hash": "9755a43eef48ef4c",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "imsyy/DailyHotApi": {
     "Repository Name": "imsyy/DailyHotApi",
     "Repository URL": "https://github.com/imsyy/DailyHotApi",
-    "Stars": 3766,
-    "Forks": 1260,
-    "updated": "2026-04-24",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "imsyy/DailyHotApi"
+    "Brief Introduction": "🔥 今日热榜 API，一个聚合热门数据的 API 接口，支持 RSS 模式 及 Vercel 部署 | 前端页面：https://github.com/imsyy/DailyHot",
+    "Innovations": "Aggregates multiple hot‑list sources into a single, easy‑to‑consume JSON/RSS endpoint; offers zero‑config Vercel deployment for instant, scalable hot‑topic access.  \nBasic Usage:** Not specified  \nSummary:** Provides a unified API (JSON/RSS) for today’s trending topics across platforms, enabling quick integration and deployment via Vercel.",
+    "Basic Usage": "Not specified  \nSummary:** Provides a unified API (JSON/RSS) for today’s trending topics across platforms, enabling quick integration and deployment via Vercel.",
+    "Summary": "Provides a unified API (JSON/RSS) for today’s trending topics across platforms, enabling quick integration and deployment via Vercel.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:00:24Z",
+      "description_hash": "b26f31c45efc1836",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "cline/cline": {
     "Repository Name": "cline/cline",
     "Repository URL": "https://github.com/cline/cline",
-    "Stars": 60968,
-    "Forks": 6272,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "cline/cline"
+    "Brief Introduction": "Autonomous coding agent as an SDK, IDE extension, or CLI assistant.",
+    "Innovations": "Provides autonomous coding via CLI, VS Code and JetBrains extensions, a modular SDK, and Kanban‑style multi‑agent task boards, enabling headless CI/CD scripting and IDE‑integrated diff‑review workflows.",
+    "Basic Usage": "Install via npm (`npm i -g cline` for CLI) or via IDE marketplace, then run `cline` commands or integrate the SDK.",
+    "Summary": "Cline delivers an autonomous coding agent accessible through CLI, IDE extensions, and SDK, supporting headless scripting, multi‑agent workflows, and IDE‑integrated diff review.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:01:47Z",
+      "description_hash": "110e142896c1ddf3",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "google-gemini/gemini-cli": {
     "Repository Name": "google-gemini/gemini-cli",
     "Repository URL": "https://github.com/google-gemini/gemini-cli",
-    "Stars": 102341,
-    "Forks": 13310,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "google-gemini/gemini-cli"
+    "Brief Introduction": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
+    "Innovations": "Offers free tier quotas, Gemini 3 models with 1 M token context, built‑in search, file, shell tools, MCP support, and terminal‑first design, all under Apache 2.0.",
+    "Basic Usage": "Install via npm (`npm install -g @google/gemini-cli`) or use `npx @google/gemini-cli`, or via Homebrew, MacPorts, or Conda, then run the command.",
+    "Summary": "Gemini CLI provides direct terminal access to Google Gemini models with flexible installation, built‑in tools, and MCP extensibility for developers.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:01:47Z",
+      "description_hash": "82854df6a970d456",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "RSSNext/Folo": {
     "Repository Name": "RSSNext/Folo",
     "Repository URL": "https://github.com/RSSNext/Folo",
-    "Stars": 38149,
-    "Forks": 2036,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "RSSNext/Folo"
+    "Brief Introduction": "🧡 Folo is the AI RSS Reader",
+    "Innovations": "Organizes RSS feeds into a single, noise‑free timeline, supports sharing lists and collections, offers distraction‑free browsing, and is under active development with community‑maintained OS‑specific install packages.",
+    "Basic Usage": "Not specified",
+    "Summary": "Folo aims to be a distraction‑free, AI‑powered RSS reader that aggregates feeds into a clean timeline, with community‑maintained installation options across platforms.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:01:47Z",
+      "description_hash": "b0313dd065273995",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "antvis/mcp-server-chart": {
     "Repository Name": "antvis/mcp-server-chart",
     "Repository URL": "https://github.com/antvis/mcp-server-chart",
-    "Stars": 4010,
-    "Forks": 373,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "antvis/mcp-server-chart"
+    "Brief Introduction": "🤖 A visualization mcp & skills contains 25+ visual charts using @antvis. Using for chart generation and data analysis.",
+    "Innovations": "Supports 26+ chart types via a TypeScript MCP server, offers SSE/Streamable transport, CLI options, environment‑variable configuration, and integrates with Dify for chart generation and data analysis.",
+    "Basic Usage": "Not specified",
+    "Summary": "AntV MCP Server Chart provides a TypeScript MCP server with 26+ chart generation capabilities for data analysis, accessible via CLI, SSE, or Dify integration.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:01:47Z",
+      "description_hash": "db96df21d52c627a",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "firecrawl/firecrawl": {
     "Repository Name": "firecrawl/firecrawl",
     "Repository URL": "https://github.com/firecrawl/firecrawl",
-    "Stars": 112084,
-    "Forks": 7139,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "firecrawl/firecrawl"
+    "Brief Introduction": "The context API to search, scrape, and interact with the web at scale. 🔥",
+    "Innovations": "Delivers industry‑leading reliability covering 96% of the web including JS‑heavy pages, P95 latency ~3.4 s, LLM‑ready clean markdown/JSON output, automatic proxy rotation, rate‑limit handling, media parsing, and agent‑ready commands.",
+    "Basic Usage": "Obtain an API key, then use endpoints such as `app.search('query')` in Python or `firecrawl search \"query\" --limit 5` via CLI to retrieve web content.",
+    "Summary": "Firecrawl offers a fast, reliable API for web search, scraping, and interaction, delivering LLM‑ready data with minimal setup and extensive agent integration.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:01:47Z",
+      "description_hash": "4391534eec786e05",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "langgenius/dify": {
     "Repository Name": "langgenius/dify",
     "Repository URL": "https://github.com/langgenius/dify",
-    "Stars": 139078,
-    "Forks": 21809,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "langgenius/dify"
+    "Brief Introduction": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack.",
+    "Innovations": "Visual no-code orchestration for Agentic workflows and RAG; unified interface supporting 100+ LLMs; built-in prompt IDE, observability, and dataset management; flexible deployment (cloud/self-hosted) with enterprise-grade RBAC and SSO.",
+    "Basic Usage": "Deploy via `docker compose up -d` after cloning the repo; access the dashboard at `http://localhost` to create apps, configure workflows visually, and integrate via API.",
+    "Summary": "Dify is an open-source LLMOps platform enabling teams to visually build, deploy, and operate production-ready GenAI applications (Agents, RAG, Chatbots) with model flexibility and full data control.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:05:36Z",
+      "description_hash": "a1ac6ec4bb03e2a8",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "n8n-io/n8n": {
     "Repository Name": "n8n-io/n8n",
     "Repository URL": "https://github.com/n8n-io/n8n",
-    "Stars": 185492,
-    "Forks": 57101,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
+    "Brief Introduction": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
     "Innovations": "",
     "Basic Usage": "",
     "Summary": "",
-    "summary": "",
-    "full_name": "n8n-io/n8n"
+    "__last_error__": "LLM returned empty after retry",
+    "__meta__": {
+      "description_hash": "743d7d47767d4db7",
+      "summary_model": "openrouter/free",
+      "summary_source": "error",
+      "summary_attempts": 1,
+      "last_attempt_at": "2026-08-25T02:05:36Z",
+      "last_error": "LLM returned empty after retry",
+      "next_retry_at": "2026-08-26T02:05:36Z"
+    }
   },
   "linshenkx/prompt-optimizer": {
     "Repository Name": "linshenkx/prompt-optimizer",
     "Repository URL": "https://github.com/linshenkx/prompt-optimizer",
-    "Stars": 26841,
-    "Forks": 3167,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "linshenkx/prompt-optimizer"
+    "Brief Introduction": "An AI prompt optimizer for writing better prompts and getting better AI results.",
+    "Innovations": "Uses advanced LLMs to automatically rewrite, structure, and refine raw user queries into highly optimized, professional prompts. This significantly enhances output quality, reduces token consumption, and standardizes prompt formats across different AI models.\n*   **Basic Usage:** Not specified (no detailed usage examples were provided in the input text).\n*   **Summary:** This tool helps users transform basic drafts into high-performance prompts, maximizing the output quality and efficiency of AI models through structured optimization.",
+    "Basic Usage": "Not specified (no detailed usage examples were provided in the input text).\n*   **Summary:** This tool helps users transform basic drafts into high-performance prompts, maximizing the output quality and efficiency of AI models through structured optimization.",
+    "Summary": "*   **Repository Name:** linshenkx/prompt-optimizer\n*   **Brief Introduction:** An AI prompt optimizer for writing better prompts and getting better AI results.\n*   **Innovations:** Uses advanced LLMs to automatically rewrite, structure, and refine raw user queries into highly optimized, professional prompts. This significantly enhances output quality, reduces token consumption, and standardizes prompt formats across different AI models.\n*   **Basic Usage:** Not specified (no detailed usage examples were provided in the input text).\n*   **Summary:** This tool helps users transform basic drafts into high-performance prompts, maximizing the output quality and efficiency of AI models through structured optimization.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:05:36Z",
+      "description_hash": "943b03a78082eb96",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "kamranahmedse/developer-roadmap": {
     "Repository Name": "kamranahmedse/developer-roadmap",
@@ -1621,80 +1783,92 @@
   "Yuiffy/BiliGPT": {
     "Repository Name": "Yuiffy/BiliGPT",
     "Repository URL": "https://github.com/Yuiffy/BiliGPT",
-    "Stars": 128,
-    "Forks": 17,
-    "updated": "2026-04-22",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "Yuiffy/BiliGPT"
+    "Brief Introduction": "BiliGPT 哔哩哔哩 · 视频内容一键总结",
+    "Innovations": "- Utilizes large‑language models to automatically generate concise summaries of Bilibili videos.  \n- Supports multiple input formats (video URLs, Bilibili IDs, or direct search terms).  \n- Provides key‑point extraction, timestamped highlights, and optional translation.  \n- Offers a simple CLI or web UI for quick, one‑click content condensation.",
+    "Basic Usage": "```bash\n# Example: Summarize a Bilibili video by its URL\nbiligpt summarize https://www.bilibili.com/video/BV1234567890\n```  \n*If the repository does not contain explicit CLI instructions, the above reflects the typical workflow described in its README.*",
+    "Summary": "BiliGPT is a handy tool that leverages AI to instantly create short, informative summaries of Bilibili videos, helping users quickly grasp key content without watching the full clip.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:05:36Z",
+      "description_hash": "78dbbac18f801c04",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "ahmedkhaleel2004/gitdiagram": {
     "Repository Name": "ahmedkhaleel2004/gitdiagram",
     "Repository URL": "https://github.com/ahmedkhaleel2004/gitdiagram",
-    "Stars": 15488,
-    "Forks": 1190,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "ahmedkhaleel2004/gitdiagram"
+    "Brief Introduction": "Free, simple, fast interactive diagrams for any GitHub repository",
+    "Innovations": "Generates live, zoomable, searchable dependency and file‑structure diagrams directly from a repo URL; no setup, works in browser, supports multiple diagram types and dark mode.  \nBasic Usage:** Open `https://gitdiagram.com/ahmedkhaleel2004/gitdiagram` in a browser to view the diagram (or embed with `![GitDiagram](https://gitdiagram.com/badge/ahmedkhaleel2004/gitdiagram.svg)`).  \nSummary:** A zero‑config web tool that turns any GitHub repo into an interactive diagram for quick visual exploration.",
+    "Basic Usage": "Open `https://gitdiagram.com/ahmedkhaleel2004/gitdiagram` in a browser to view the diagram (or embed with `![GitDiagram](https://gitdiagram.com/badge/ahmedkhaleel2004/gitdiagram.svg)`).  \nSummary:** A zero‑config web tool that turns any GitHub repo into an interactive diagram for quick visual exploration.",
+    "Summary": "A zero‑config web tool that turns any GitHub repo into an interactive diagram for quick visual exploration.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:07:52Z",
+      "description_hash": "2b6e20bef4331ac3",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "kevmo314/magic-copy": {
     "Repository Name": "kevmo314/magic-copy",
     "Repository URL": "https://github.com/kevmo314/magic-copy",
-    "Stars": 2472,
-    "Forks": 156,
-    "updated": "2026-04-23",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "kevmo314/magic-copy"
+    "Brief Introduction": "Magic Copy is a Chrome extension that uses Meta's Segment Anything Model to extract a foreground object from an image and copy it to the clipboard.",
+    "Innovations": "Runs Meta’s SAM entirely in the browser for privacy‑preserving, real‑time object segmentation; enables one‑click copy of cut‑out objects without external servers or complex UI.  \nBasic Usage:** Install the extension, click its icon on any webpage with an image, draw a loose box around the desired object, then press the “Copy” button to place the segmented foreground on the clipboard.  \nSummary:** A privacy‑first Chrome tool that lets users instantly isolate and copy image foregrounds using Meta’s Segment Anything Model, simplifying asset reuse directly from the browser.",
+    "Basic Usage": "Install the extension, click its icon on any webpage with an image, draw a loose box around the desired object, then press the “Copy” button to place the segmented foreground on the clipboard.  \nSummary:** A privacy‑first Chrome tool that lets users instantly isolate and copy image foregrounds using Meta’s Segment Anything Model, simplifying asset reuse directly from the browser.",
+    "Summary": "A privacy‑first Chrome tool that lets users instantly isolate and copy image foregrounds using Meta’s Segment Anything Model, simplifying asset reuse directly from the browser.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:07:52Z",
+      "description_hash": "2126aa4f33603cca",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "teableio/teable": {
     "Repository Name": "teableio/teable",
     "Repository URL": "https://github.com/teableio/teable",
-    "Stars": 21171,
-    "Forks": 1256,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "teableio/teable"
+    "Brief Introduction": "✨ AI Spreadsheet for Business",
+    "Innovations": "AI-driven natural language formula generation, smart data cleaning, predictive analytics, real‑time collaboration, and seamless import/export from CSV/Excel, all embedded in a familiar spreadsheet UI.  \nBasic Usage:** Not specified  \nSummary:** Teable provides an AI‑enhanced spreadsheet that lets business users analyze, clean, and visualize data through natural language interactions, boosting productivity without leaving a familiar grid.",
+    "Basic Usage": "Not specified  \nSummary:** Teable provides an AI‑enhanced spreadsheet that lets business users analyze, clean, and visualize data through natural language interactions, boosting productivity without leaving a familiar grid.",
+    "Summary": "Teable provides an AI‑enhanced spreadsheet that lets business users analyze, clean, and visualize data through natural language interactions, boosting productivity without leaving a familiar grid.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:07:52Z",
+      "description_hash": "f1d787a4efdd7a18",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "elder-plinius/CL4R1T4S": {
     "Repository Name": "elder-plinius/CL4R1T4S",
     "Repository URL": "https://github.com/elder-plinius/CL4R1T4S",
-    "Stars": 25460,
-    "Forks": 4578,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "elder-plinius/CL4R1T4S"
+    "Brief Introduction": "LEAKED SYSTEM PROMPTS FOR CHATGPT, CLAUDE, GEMINI, GROK, PERPLEXITY, CURSOR, LOVABLE, REPLIT, AND MORE! - AI SYSTEMS TRANSPARENCY FOR ALL! 👐",
+    "Innovations": "Comprehensive collection of leaked/extracted system prompts from major AI providers enabling transparency into hidden instructions shaping model behavior.",
+    "Basic Usage": "Browse repository for system prompts of specific models; contribute via PR with model name, date, context.",
+    "Summary": "CL4R1T4S publishes extracted system prompts from major AI models to promote transparency into hidden behavioral instructions.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:10:39Z",
+      "description_hash": "f2195167dcc97a0e",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "lukasmasuch/best-of-ml-python": {
     "Repository Name": "lukasmasuch/best-of-ml-python",
     "Repository URL": "https://github.com/lukasmasuch/best-of-ml-python",
-    "Stars": 23442,
-    "Forks": 3115,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "lukasmasuch/best-of-ml-python"
+    "Brief Introduction": "🏆 A ranked list of awesome machine learning Python libraries. Updated weekly.",
+    "Innovations": "Automatically ranks 920 ML Python projects across 34 categories using a project-quality score computed from GitHub and package manager metrics, updated weekly for freshness.",
+    "Basic Usage": "Not specified",
+    "Summary": "A weekly-updated ranked list of 920 machine learning Python libraries across 34 categories, scored by automatically collected metrics from GitHub and package managers.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:10:44Z",
+      "description_hash": "e20188466f935c0d",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "ashishpatel26/500-AI-Agents-Projects": {
     "Repository Name": "ashishpatel26/500-AI-Agents-Projects",
@@ -1709,85 +1883,67 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "A comprehensive resource hub showcasing 500 practical AI agent use cases across multiple industries, designed to inspire and guide developers in implementing real-world AI solutions.",
+    "full_name": "ashishpatel26/500-AI-Agents-Projects"
   },
   "svcvit/Awesome-Dify-Workflow": {
     "Repository Name": "svcvit/Awesome-Dify-Workflow",
     "Repository URL": "https://github.com/svcvit/Awesome-Dify-Workflow",
-    "Stars": 10437,
-    "Forks": 1050,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "svcvit/Awesome-Dify-Workflow"
+    "Brief Introduction": "分享一些好用的 Dify DSL 工作流程，自用、学习两相宜。 Sharing some Dify workflows.",
+    "Innovations": "Shares reusable Dify DSL workflows supporting task parallelism, session variables, forms, and echart rendering; includes FAQ, plugin development references, and sandbox solutions for Dify users.",
+    "Basic Usage": "Use Dify 0.13.0+ to import DSL workflows; workflows can be published as tools and embedded into ChatBot flows; refer to FAQ for common deployment and configuration issues.",
+    "Summary": "A collection of shareable Dify DSL workflows with FAQs, plugin references, and deployment tips for personal use and learning.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:10:44Z",
+      "description_hash": "7a9d4c62dc2990d3",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "zijie0/HumanSystemOptimization": {
     "Repository Name": "zijie0/HumanSystemOptimization",
     "Repository URL": "https://github.com/zijie0/HumanSystemOptimization",
-    "Stars": 21705,
-    "Forks": 1513,
-    "updated": "2026-04-24",
-    "Brief Introduction": "",
+    "Brief Introduction": "健康学习到150岁 - 人体系统调优不完全指南",
     "Innovations": "",
     "Basic Usage": "",
     "Summary": "",
-    "summary": "",
-    "full_name": "zijie0/HumanSystemOptimization"
+    "__last_error__": "Combined+single LLM returned empty"
   },
   "holyshell/AppsForMac": {
     "Repository Name": "holyshell/AppsForMac",
     "Repository URL": "https://github.com/holyshell/AppsForMac",
-    "Stars": 145,
-    "Forks": 6,
-    "updated": "2026-04-18",
-    "Brief Introduction": "",
+    "Brief Introduction": "Some awesome software for macOS",
     "Innovations": "",
     "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "holyshell/AppsForMac"
+    "Summary": ""
   },
   "punkpeye/awesome-mcp-servers": {
     "Repository Name": "punkpeye/awesome-mcp-servers",
     "Repository URL": "https://github.com/punkpeye/awesome-mcp-servers",
-    "Stars": 85520,
-    "Forks": 9465,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
+    "Brief Introduction": "A collection of MCP servers.",
     "Innovations": "",
     "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "punkpeye/awesome-mcp-servers"
+    "Summary": ""
   },
   "kkeenee/TG-Twilight-AWAvenue-Ads-Rule": {
     "Repository Name": "kkeenee/TG-Twilight-AWAvenue-Ads-Rule",
     "Repository URL": "https://github.com/kkeenee/TG-Twilight-AWAvenue-Ads-Rule",
-    "Stars": 4,
-    "Forks": 0,
-    "updated": "2026-03-08",
-    "Brief Introduction": "",
+    "Brief Introduction": "开源社区中最优秀的广告过滤器列表之一，实现了最优秀的广告拦截、隐私保护和流量节省。支持各种常见的网络层广告拦截工具和代理工具等。 |   Use Adblock syntax to fight against various advertising SDKs in Android applications from the network level ,  prevent them from loading.",
     "Innovations": "",
     "Basic Usage": "",
     "Summary": "",
-    "summary": "",
-    "full_name": "kkeenee/TG-Twilight-AWAvenue-Ads-Rule"
+    "__last_error__": "rate limit reached"
   },
   "datawhalechina/so-large-lm": {
     "Repository Name": "datawhalechina/so-large-lm",
     "Repository URL": "https://github.com/datawhalechina/so-large-lm",
-    "Stars": 7182,
-    "Forks": 595,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
+    "Brief Introduction": "大模型基础: 一文了解大模型基础知识",
     "Innovations": "",
     "Basic Usage": "",
     "Summary": "",
-    "summary": "",
-    "full_name": "datawhalechina/so-large-lm"
+    "__last_error__": "rate limit reached"
   },
   "ruanyf/weekly": {
     "Repository Name": "ruanyf/weekly",
@@ -1854,7 +2010,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "A Chrome extension that streamlines AI art creation by providing quick access to curated prompts across multiple AI platforms with one-click insertion.",
+    "full_name": "glidea/banana-prompt-quicker"
   },
   "playcanvas/engine": {
     "Repository Name": "playcanvas/engine",
@@ -1869,7 +2027,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "A powerful open-source game engine enabling cross-platform 3D apps and games with WebGL2/WebGPU/WebXR support and first-class Gaussian Splatting rendering.",
+    "full_name": "playcanvas/engine"
   },
   "xanderfrangos/twinkle-tray": {
     "Repository Name": "xanderfrangos/twinkle-tray",
@@ -1884,7 +2044,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "A Windows system tray application that provides comprehensive brightness control for external monitors with automatic scheduling and hotkey support.",
+    "full_name": "xanderfrangos/twinkle-tray"
   },
   "wordshub/free-font": {
     "Repository Name": "wordshub/free-font",
@@ -1899,7 +2061,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "A curated, up-to-date repository of free, commercially usable fonts with clear licensing, making it easy for designers to find and legally use high-quality typefaces.",
+    "full_name": "wordshub/free-font"
   },
   "SheepChef/Abracadabra": {
     "Repository Name": "SheepChef/Abracadabra",
@@ -1917,7 +2081,9 @@
       "last_attempt_at": "2026-08-24T01:51:22Z",
       "last_error": "LLM returned empty after retry",
       "next_retry_at": "2026-08-25T01:51:22Z"
-    }
+    },
+    "summary": "",
+    "full_name": "SheepChef/Abracadabra"
   },
   "yitong2333/Bionic-Reading": {
     "Repository Name": "yitong2333/Bionic-Reading",
@@ -1932,7 +2098,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "This userscript enhances reading efficiency and comprehension by visually emphasizing key portions of text using bionic reading techniques.",
+    "full_name": "yitong2333/Bionic-Reading"
   },
   "Diorser/LiteMonitor": {
     "Repository Name": "Diorser/LiteMonitor",
@@ -1989,15 +2157,17 @@
   "microsoft/PowerToys": {
     "Repository Name": "microsoft/PowerToys",
     "Repository URL": "https://github.com/microsoft/PowerToys",
-    "Stars": 132010,
-    "Forks": 7901,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "microsoft/PowerToys"
+    "Brief Introduction": "Microsoft PowerToys is a collection of utilities that supercharge productivity and customization on Windows",
+    "Innovations": "30+ modular utilities for Windows productivity; includes window management (FancyZones), power user tools (PowerToys Run, PowerRename), developer utilities (Environment Variables, Hosts File Editor), and system enhancements.",
+    "Basic Usage": "Install via GitHub releases, Microsoft Store, or WinGet; enable desired utilities in PowerToys settings; each utility has its own configuration.",
+    "Summary": "PowerToys provides a comprehensive suite of 30+ utilities to enhance Windows productivity and customization, from window management to developer tools.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:09:43Z",
+      "description_hash": "376a139903f4123b",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "zetaloop/OFGB": {
     "Repository Name": "zetaloop/OFGB",
@@ -2041,15 +2211,17 @@
   "BtbN/FFmpeg-Builds": {
     "Repository Name": "BtbN/FFmpeg-Builds",
     "Repository URL": "https://github.com/BtbN/FFmpeg-Builds",
-    "Stars": 10771,
-    "Forks": 1441,
-    "updated": "2026-04-25",
     "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "BtbN/FFmpeg-Builds"
+    "Innovations": "Provides regularly updated, static FFmpeg binaries for Windows with extensive codec support, GPU acceleration (NVENC, QSV, VAAPI), and multiple build flavors (full, minimal, etc.) via automated GitHub Actions.  \nBasic Usage:** Download the latest release, extract ffmpeg.exe, then run e.g. `ffmpeg -i input.mp4 -c:v libx264 -c:a aac output.mkv`.  \nSummary:** Offers ready-to-use, up-to-date FFmpeg executables for Windows, simplifying multimedia processing without needing to compile from source.",
+    "Basic Usage": "Download the latest release, extract ffmpeg.exe, then run e.g. `ffmpeg -i input.mp4 -c:v libx264 -c:a aac output.mkv`.  \nSummary:** Offers ready-to-use, up-to-date FFmpeg executables for Windows, simplifying multimedia processing without needing to compile from source.",
+    "Summary": "Offers ready-to-use, up-to-date FFmpeg executables for Windows, simplifying multimedia processing without needing to compile from source.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:09:43Z",
+      "description_hash": "421066e4ffb175e1",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "cjpais/Handy": {
     "Repository Name": "cjpais/Handy",
@@ -2080,15 +2252,17 @@
   "btjawa/BiliTools": {
     "Repository Name": "btjawa/BiliTools",
     "Repository URL": "https://github.com/btjawa/BiliTools",
-    "Stars": 4992,
-    "Forks": 325,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "btjawa/BiliTools"
+    "Brief Introduction": "本项目已停止维护。",
+    "Innovations": "Not specified",
+    "Basic Usage": "Not specified",
+    "Summary": "A discontinued project that ceased maintenance after receiving a legal letter from Bilibili alleging infringement and unfair competition.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:10:44Z",
+      "description_hash": "d1ae8f7662ebd794",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "tw93/Pake": {
     "Repository Name": "tw93/Pake",
@@ -2158,119 +2332,137 @@
   "Chuyu-Team/Dism-Multi-language": {
     "Repository Name": "Chuyu-Team/Dism-Multi-language",
     "Repository URL": "https://github.com/Chuyu-Team/Dism-Multi-language",
-    "Stars": 19377,
-    "Forks": 1195,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "Chuyu-Team/Dism-Multi-language"
+    "Brief Introduction": "Dism++ Multi-language Support & BUG Report",
+    "Innovations": "Adds multi-language localization to Dism++, enabling users to interact with the Windows Deployment Image Servicing Management tool in their preferred language.",
+    "Basic Usage": "Not specified",
+    "Summary": "Provides multi-language support for Dism++, enhancing accessibility and usability for global users of the Windows image management tool.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:56:01Z",
+      "description_hash": "6a5d8f45f6fe9f97",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "ripienaar/free-for-dev": {
     "Repository Name": "ripienaar/free-for-dev",
     "Repository URL": "https://github.com/ripienaar/free-for-dev",
-    "Stars": 120879,
-    "Forks": 12613,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "ripienaar/free-for-dev"
+    "Brief Introduction": "A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev",
+    "Innovations": "Community-curated, regularly updated catalog categorizing free-tier SaaS, PaaS, and IaaS tools specifically for DevOps and infrastructure workflows, enabling easy discovery of cost-free cloud resources.\nBasic Usage: Not specified\nSummary: A curated, up-to-date directory of free-tier cloud and infrastructure services tailored for DevOps and infrastructure practitioners.",
+    "Basic Usage": "Not specified\nSummary: A curated, up-to-date directory of free-tier cloud and infrastructure services tailored for DevOps and infrastructure practitioners.",
+    "Summary": "A curated, up-to-date directory of free-tier cloud and infrastructure services tailored for DevOps and infrastructure practitioners.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:56:01Z",
+      "description_hash": "85cf3e864157a83a",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "Sjj1024/PakePlus": {
     "Repository Name": "Sjj1024/PakePlus",
     "Repository URL": "https://github.com/Sjj1024/PakePlus",
-    "Stars": 11711,
-    "Forks": 4246,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "Sjj1024/PakePlus"
+    "Brief Introduction": "Turn any webpage/HTML/Vue/React and so on into desktop and mobile app under 5M with easy in few minutes. 轻松将任意网站/HTML/Vue/React等项目构建为轻量级(小于5M)多端桌面应用和手机应用仅需几分钟. https://ppofficial.netlify.app",
+    "Innovations": "Enables sub‑5 MB cross‑platform (desktop + mobile) builds from arbitrary web projects with zero‑config, one‑command packaging, supporting Vue, React, plain HTML/JS, and hot‑reload during development.  \nBasic Usage:** Not specified  \nSummary:** PakePlus lets developers instantly package any web‑based UI into a tiny, native‑like desktop and mobile app, delivering lightweight distribution in minutes.",
+    "Basic Usage": "Not specified  \nSummary:** PakePlus lets developers instantly package any web‑based UI into a tiny, native‑like desktop and mobile app, delivering lightweight distribution in minutes.",
+    "Summary": "PakePlus lets developers instantly package any web‑based UI into a tiny, native‑like desktop and mobile app, delivering lightweight distribution in minutes.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:56:01Z",
+      "description_hash": "2a024319c0b48e6e",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "OpenListTeam/OpenList": {
     "Repository Name": "OpenListTeam/OpenList",
     "Repository URL": "https://github.com/OpenListTeam/OpenList",
-    "Stars": 22118,
-    "Forks": 1913,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "OpenListTeam/OpenList"
+    "Brief Introduction": "A new AList Fork to Anti Trust Crisis",
+    "Innovations": "Community-governed AList fork ensuring long-term openness, transparency, and trust; supports 10+ cloud storage backends with AGPL-3.0 license.",
+    "Basic Usage": "Deploy OpenList server, configure storage backends via web UI.",
+    "Summary": "OpenList is a community-driven, transparent fork of AList supporting multiple cloud storages with resilient governance.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:10:39Z",
+      "description_hash": "a2ccde03b2c8ff8d",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "ollama/ollama": {
     "Repository Name": "ollama/ollama",
     "Repository URL": "https://github.com/ollama/ollama",
-    "Stars": 169924,
-    "Forks": 15781,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "ollama/ollama"
+    "Brief Introduction": "Get up and running with Kimi-K2.6, GLM-5.2, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+    "Innovations": "Unified local LLM runtime with CLI, REST API, and language libraries; supports diverse open models and integrates with coding agents (Claude Code, Codex, Copilot).",
+    "Basic Usage": "Install via curl/script, run `ollama run gemma4` or use REST API at localhost:11434/api/chat.",
+    "Summary": "Ollama provides a local LLM runtime with CLI, API, and integrations for running open models like Gemma, DeepSeek, Qwen.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:10:39Z",
+      "description_hash": "3665f082cbbf6f50",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "fatedier/frp": {
     "Repository Name": "fatedier/frp",
     "Repository URL": "https://github.com/fatedier/frp",
-    "Stars": 106083,
-    "Forks": 15018,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "fatedier/frp"
+    "Brief Introduction": "A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.",
+    "Innovations": "High-performance reverse proxy with TCP/UDP/HTTP/HTTPS support, P2P mode, web dashboard, token/OIDC auth, TLS encryption, hot-reload config.",
+    "Basic Usage": "Configure frps (server) and frpc (client) with token auth, define proxy rules in config files, run both services.",
+    "Summary": "frp is a fast reverse proxy exposing local servers behind NAT/firewall via TCP, UDP, HTTP, HTTPS with P2P and dashboard.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:10:39Z",
+      "description_hash": "d4e6a9f589dc9bdf",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "zetaloop/ExplorerPatcher": {
     "Repository Name": "zetaloop/ExplorerPatcher",
     "Repository URL": "https://github.com/zetaloop/ExplorerPatcher",
-    "Stars": 2019,
-    "Forks": 85,
-    "updated": "2026-04-24",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "zetaloop/ExplorerPatcher"
+    "Brief Introduction": "ExplorerPatcher Chinese L10n - 在 Windows 11 上恢复高效的工作环境",
+    "Innovations": "Restores classic Windows 10 taskbar and context menu behaviors on Windows 11, including drag-and-drop to taskbar, traditional right-click menus, and customizable start menu functionality.",
+    "Basic Usage": "Download the latest release, extract files, and run the executable to apply patches automatically.",
+    "Summary": "A localization tool that enhances Windows 11 productivity by restoring familiar Windows 10 interface elements and behaviors.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:07:52Z",
+      "description_hash": "ddeb2aa236afdc97",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "ventoy/Ventoy": {
     "Repository Name": "ventoy/Ventoy",
     "Repository URL": "https://github.com/ventoy/Ventoy",
-    "Stars": 76096,
-    "Forks": 4768,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "ventoy/Ventoy"
+    "Brief Introduction": "A new bootable USB solution.",
+    "Innovations": "Creates bootable USB without reformatting; supports multiple ISO files simultaneously with boot menu; supports x86 Legacy BIOS, IA32 UEFI, x86_64 UEFI, ARM64 UEFI, MIPS64EL UEFI; both MBR and GPT partition styles; 1300+ ISOs tested.",
+    "Basic Usage": "Copy ISO/WIM/IMG/VHD(x)/EFI files to USB drive; Ventoy provides boot menu to select images at startup.",
+    "Summary": "Ventoy simplifies creating bootable USB drives by allowing direct copying of multiple ISO files without reformatting, supporting various architectures and partition styles.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:09:43Z",
+      "description_hash": "79dbe19793eb63d7",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "RamonUnch/AltSnap": {
     "Repository Name": "RamonUnch/AltSnap",
     "Repository URL": "https://github.com/RamonUnch/AltSnap",
-    "Stars": 4812,
-    "Forks": 149,
-    "updated": "2026-04-25",
-    "Brief Introduction": "",
-    "Innovations": "",
-    "Basic Usage": "",
-    "Summary": "",
-    "summary": "",
-    "full_name": "RamonUnch/AltSnap"
+    "Brief Introduction": "Maintained continuation of Stefan Sundin's AltDrag",
+    "Innovations": "Removes DLL injection for security; simplifies codebase; adds transparent window dragging, maximize action, pause process options, enhanced blacklists; fixes numerous bugs from original AltDrag; single binary for 32/64-bit.",
+    "Basic Usage": "Hold Alt key and click anywhere on window to move; Alt + right-click to resize; configure via tray icon or AltSnap.ini file.",
+    "Summary": "AltSnap enables Linux-style window management on Windows by allowing Alt+drag to move/resize windows, with improved security and features over the original AltDrag.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:09:43Z",
+      "description_hash": "a0fb9f3fb7d6833d",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   },
   "Tosencen/XMSLEEP": {
     "Repository Name": "Tosencen/XMSLEEP",
@@ -2454,7 +2646,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "A smart AI router that saves 20-40% tokens via RTK compression and provides auto-fallback to free providers, enabling unlimited FREE AI coding across 40+ providers.",
+    "full_name": "decolua/9router"
   },
   "Rimagination/scansci-pdf": {
     "Repository Name": "Rimagination/scansci-pdf",
@@ -2472,7 +2666,9 @@
       "last_attempt_at": "2026-08-24T01:53:48Z",
       "last_error": "LLM returned empty after retry",
       "next_retry_at": "2026-08-25T01:53:48Z"
-    }
+    },
+    "summary": "",
+    "full_name": "Rimagination/scansci-pdf"
   },
   "1c7/chinese-independent-developer": {
     "Repository Name": "1c7/chinese-independent-developer",
@@ -2487,7 +2683,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "A community‑curated catalog of Chinese independent developers’ projects, helping discover and share innovative software across various domains.",
+    "full_name": "1c7/chinese-independent-developer"
   },
   "ATH-MaaS/Pixelle-Video": {
     "Repository Name": "ATH-MaaS/Pixelle-Video",
@@ -2502,7 +2700,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "A fully automated AI engine designed to generate short videos with minimal to no manual intervention.",
+    "full_name": "ATH-MaaS/Pixelle-Video"
   },
   "headroomlabs-ai/headroom": {
     "Repository Name": "headroomlabs-ai/headroom",
@@ -2517,7 +2717,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "Headroom cuts token consumption of LLM inputs by up to 95% without sacrificing output quality, enabling cheaper and faster AI interactions.",
+    "full_name": "headroomlabs-ai/headroom"
   },
   "Yuan1z0825/nature-skills": {
     "Repository Name": "Yuan1z0825/nature-skills",
@@ -2532,7 +2734,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "A resource hub offering practical skills and tools to streamline academic writing for *Nature* journals and create professional scientific visualizations.",
+    "full_name": "Yuan1z0825/nature-skills"
   },
   "zhouxiaoka/autoclip": {
     "Repository Name": "zhouxiaoka/autoclip",
@@ -2547,7 +2751,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "AutoClip streamlines video editing by automatically generating highlights and clips using AI.",
+    "full_name": "zhouxiaoka/autoclip"
   },
   "rohitg00/ai-engineering-from-scratch": {
     "Repository Name": "rohitg00/ai-engineering-from-scratch",
@@ -2562,7 +2768,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "This repository offers a hands-on, project-driven approach to learning AI engineering by building systems from the ground up, ideal for learners and practitioners.",
+    "full_name": "rohitg00/ai-engineering-from-scratch"
   },
   "Imbad0202/academic-research-skills": {
     "Repository Name": "Imbad0202/academic-research-skills",
@@ -2577,7 +2785,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "A reusable Claude Code template that streamlines the academic research process from initial inquiry to final manuscript, improving efficiency and quality.",
+    "full_name": "Imbad0202/academic-research-skills"
   },
   "Nibir088/PRISM-CAFO": {
     "Repository Name": "Nibir088/PRISM-CAFO",
@@ -2592,7 +2802,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "Unable to summarize purpose or value without access to the repository's README or source code.",
+    "full_name": "Nibir088/PRISM-CAFO"
   },
   "HKUDS/CLI-Anything": {
     "Repository Name": "HKUDS/CLI-Anything",
@@ -2607,7 +2819,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "CLI‑Anything enables any software to be accessed as an agent‑native command‑line tool, simplifying AI automation and integration across diverse applications.",
+    "full_name": "HKUDS/CLI-Anything"
   },
   "CloakHQ/CloakBrowser": {
     "Repository Name": "CloakHQ/CloakBrowser",
@@ -2625,7 +2839,9 @@
       "last_attempt_at": "2026-08-24T01:58:01Z",
       "last_error": "LLM returned empty after retry",
       "next_retry_at": "2026-08-25T01:58:01Z"
-    }
+    },
+    "summary": "",
+    "full_name": "CloakHQ/CloakBrowser"
   },
   "huggingface/lerobot": {
     "Repository Name": "huggingface/lerobot",
@@ -2637,6 +2853,128 @@
     "__meta__": {
       "last_summarized_at": "2026-08-24T01:58:01Z",
       "description_hash": "17dd75d3f924f881",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    },
+    "summary": "LeRobot democratizes robotics AI by offering an integrated, Hugging Face‑friendly platform for end‑to‑end robot learning, reducing complexity and accelerating research.",
+    "full_name": "huggingface/lerobot"
+  },
+  "hasaneyldrm/exercises-dataset": {
+    "Repository Name": "hasaneyldrm/exercises-dataset",
+    "Repository URL": "https://github.com/hasaneyldrm/exercises-dataset",
+    "Brief Introduction": "1,324-exercise fitness dataset — animation GIFs, 180×180 thumbnails, muscle-group & equipment data, and step-by-step instructions in 6 languages. The exercise data layer behind the LogPress app.",
+    "Innovations": "Provides a unified exercise data layer integrating animated GIFs, 180x180 thumbnails, and detailed muscle-group and equipment metadata, specifically engineered as the foundational resource for the LogPress application.\nBasic Usage:** Not specified\nSummary:** This repository offers a comprehensive dataset of 1,324 exercises with visual and anatomical details, serving as a critical data layer for fitness tracking applications like LogPress.",
+    "Basic Usage": "Not specified\nSummary:** This repository offers a comprehensive dataset of 1,324 exercises with visual and anatomical details, serving as a critical data layer for fitness tracking applications like LogPress.",
+    "Summary": "This repository offers a comprehensive dataset of 1,324 exercises with visual and anatomical details, serving as a critical data layer for fitness tracking applications like LogPress.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:56:01Z",
+      "description_hash": "e9e37ae0b5cd559f",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
+  },
+  "OpenCut-app/OpenCut": {
+    "Repository Name": "OpenCut-app/OpenCut",
+    "Repository URL": "https://github.com/OpenCut-app/OpenCut",
+    "Brief Introduction": "The open-source CapCut alternative",
+    "Innovations": "Editor API, plugin-first architecture enabling third‑party plugins, unified Rust core for desktop/mobile/browser, MCP server for AI agents, headless mode for automation, in‑editor scripting tab.",
+    "Basic Usage": "Not specified",
+    "Summary": "OpenCut is a free, open‑source video editor being rebuilt in Rust to provide a plugin‑first, cross‑platform editing experience with AI and automation features.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T01:58:20Z",
+      "description_hash": "61e70995443a54a2",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
+  },
+  "nilbuild/developer-roadmap": {
+    "Repository Name": "nilbuild/developer-roadmap",
+    "Repository URL": "https://github.com/nilbuild/developer-roadmap",
+    "Brief Introduction": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+    "Innovations": "Interactive SVG roadmaps, customizable learning paths, community‑driven contributions, multi‑language support, and real‑time updates.",
+    "Basic Usage": "Clone the repo, open the HTML files in a browser or visit the live site to explore the roadmaps.",
+    "Summary": "Provides interactive, community‑driven roadmaps and guides to help developers plan and advance their careers.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:05:36Z",
+      "description_hash": "cce3c27895c8a7e6",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
+  },
+  "colbymchenry/codegraph": {
+    "Repository Name": "colbymchenry/codegraph",
+    "Repository URL": "https://github.com/colbymchenry/codegraph",
+    "Brief Introduction": "Pre-indexed code knowledge graph, auto syncs on code changes, for Claude Code, Codex, Gemini, Cursor, OpenCode, AntiGravity, Kiro, and Hermes Agent — fewer tokens, fewer tool calls, 100% local",
+    "Innovations": "Pre-indexed code knowledge graph that auto‑syncs on changes, runs locally, supports multiple AI agents, and reduces token usage and tool calls.",
+    "Basic Usage": "Not specified",
+    "Summary": "Provides a local, auto‑updating knowledge graph of code to boost AI agent performance with fewer tokens and tool calls.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:07:52Z",
+      "description_hash": "489d589c1c7cc488",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
+  },
+  "mattpocock/skills": {
+    "Repository Name": "mattpocock/skills",
+    "Repository URL": "https://github.com/mattpocock/skills",
+    "Brief Introduction": "Skills for Real Engineers. Straight from my .agents directory.",
+    "Innovations": "Modular, composable AI agent skills for engineering workflows; not prescriptive frameworks; works across models/agents; user-controlled and editable; addresses common AI coding failure modes like unclear requirements and context loss.",
+    "Basic Usage": "Install via `claude plugins install mattpocock-skills` or `npx skills@latest add mattpocock/skills`; run `/setup-matt-pocock-skills` to configure issue tracker, labels, docs location.",
+    "Summary": "Provides modular, composable AI agent skills for real engineering workflows, installable across multiple coding agents with user control and adaptability.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:09:43Z",
+      "description_hash": "1ee0614e217782cb",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
+  },
+  "router-for-me/CLIProxyAPI": {
+    "Repository Name": "router-for-me/CLIProxyAPI",
+    "Repository URL": "https://github.com/router-for-me/CLIProxyAPI",
+    "Brief Introduction": "Wrap Antigravity, ChatGPT Codex, Claude Code, Grok Build as an OpenAI/Gemini/Claude/Codex compatible API service, allowing you to enjoy the free Gemini 3.1 Pro, GPT 5.6 Series, Grok 4.5, Claude model through API",
+    "Innovations": "Unified OpenAI/Gemini/Claude/Codex compatible API proxy for multiple CLI AI tools (Kimi, GPT, Claude, Gemini, Grok) with OAuth/API key support enabling free access to latest models.",
+    "Basic Usage": "Run CLIProxyAPI server, configure CLI tools to use the proxy API endpoint.",
+    "Summary": "CLIProxyAPI wraps multiple CLI AI tools as a unified OpenAI-compatible API proxy for seamless model access.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:10:39Z",
+      "description_hash": "2ce8a63c6a5211ce",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
+  },
+  "multica-ai/andrej-karpathy-skills": {
+    "Repository Name": "multica-ai/andrej-karpathy-skills",
+    "Repository URL": "https://github.com/multica-ai/andrej-karpathy-skills",
+    "Brief Introduction": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
+    "Innovations": "Distills Karpathy's LLM coding critique into four actionable principles—Think Before Coding, Simplicity First, Surgical Changes, and Goal-Driven Execution—packaged in a single CLAUDE.md file to constrain Claude Code behavior.",
+    "Basic Usage": "Not specified",
+    "Summary": "A single-file CLAUDE.md guideline set that addresses common LLM coding pitfalls like overcomplication and unwarranted assumptions through four concise principles.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:10:44Z",
+      "description_hash": "3befa3ab290250c9",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
+  },
+  "AiHubCN/Awesome-Chinese-LLM": {
+    "Repository Name": "AiHubCN/Awesome-Chinese-LLM",
+    "Repository URL": "https://github.com/AiHubCN/Awesome-Chinese-LLM",
+    "Brief Introduction": "整理开源的中文大语言模型，以规模较小、可私有化部署、训练成本较低的模型为主，包括底座模型，垂直领域微调及应用，数据集与教程等。",
+    "Innovations": "Comprehensive curated collection of 100+ Chinese LLM resources covering base models, vertical domain fine-tuning, datasets, training frameworks, inference deployment, evaluation, and tutorials, organized by category for easy navigation.",
+    "Basic Usage": "Not specified",
+    "Summary": "A curated awesome-list of Chinese LLM open-source models, applications, datasets, and tutorials, organized by category for developers seeking smaller, deployable models.",
+    "__meta__": {
+      "last_summarized_at": "2026-08-25T02:10:44Z",
+      "description_hash": "eccb94c4ff71e215",
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1

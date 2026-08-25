@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T02:40:17Z",
+  "generated_at": "2026-08-25T02:49:32Z",
   "model_choice": "openrouter",
   "min_categories": 5,
   "max_categories": 12,
@@ -8,63 +8,53 @@
     "categories": [
       {
         "id": "C1",
-        "name": "AI Agents & Frameworks",
-        "description": "Repositories focused on building or utilizing AI agents, frameworks, or tools for autonomous tasks, including LLM-based systems."
+        "name": "AI Agents & Workflow Automation",
+        "description": "Platforms, frameworks, and tools for building, orchestrating, and managing autonomous AI agents and automated workflows."
       },
       {
         "id": "C2",
-        "name": "Video Generation & Editing",
-        "description": "Tools for creating, editing, or rendering video content, including AI-driven or automated solutions."
+        "name": "AI Coding & Developer Assistants",
+        "description": "Terminal-based tools, coding agents, and utilities designed to assist software developers in writing, reviewing, and optimizing code."
       },
       {
         "id": "C3",
-        "name": "Data Analytics & Monitoring",
-        "description": "Repositories that analyze data, monitor trends, or provide insights, including public opinion or system monitoring."
+        "name": "Generative AI for Media & Creative Content",
+        "description": "Applications and engines for generative text, audio, image, video, and social media content creation."
       },
       {
         "id": "C4",
-        "name": "Documentation & Translation Tools",
-        "description": "Tools for translating documents, converting formats, or managing documentation with AI assistance."
+        "name": "Computer Vision & 3D Reconstruction",
+        "description": "Models, libraries, and tools for image/video segmentation, 3D object/body reconstruction, and visual data processing."
       },
       {
         "id": "C5",
-        "name": "Robotics & Embodied AI",
-        "description": "Projects related to robotics, embodied AI, or physical AI systems."
+        "name": "Robotics & Geospatial Intelligence",
+        "description": "Frameworks and datasets for robotics, embodied AI, satellite imagery analysis, and environmental mapping."
       },
       {
         "id": "C6",
-        "name": "Developer Tools & APIs",
-        "description": "Utilities, libraries, or frameworks that enhance development workflows, including APIs or code generation tools."
+        "name": "Web Scraping & Data Extraction",
+        "description": "Crawlers, APIs, and automation tools for searching, scraping, and interacting with web data at scale."
       },
       {
         "id": "C7",
-        "name": "Agriculture & Sustainability",
-        "description": "Repositories focused on agricultural practices, resource management, or sustainability solutions."
+        "name": "Cloud, System & Network Utilities",
+        "description": "Tools for managing cloud storage, domains, ports, server hardware performance, and system administration."
       },
       {
         "id": "C8",
-        "name": "Game Engines & Graphics",
-        "description": "Tools for developing 3D games or graphics applications, including engines or rendering frameworks."
+        "name": "Data Science, ML Research & Datasets",
+        "description": "Libraries, algorithms, datasets, and visualization tools for machine learning, scientific writing, and data analysis."
       },
       {
         "id": "C9",
-        "name": "CLI Tools & Customization",
-        "description": "Command-line interface tools or customized solutions for specific tasks."
-      },
-      {
-        "id": "C10",
-        "name": "Education & Learning Resources",
-        "description": "Tutorials, courses, or materials aimed at teaching or learning specific technologies or concepts."
-      },
-      {
-        "id": "C11",
-        "name": "Security & Privacy",
-        "description": "Tools or projects focused on data security, privacy, or digital rights management."
+        "name": "Developer Learning & Community Resources",
+        "description": "Educational roadmaps, curated lists of projects, ranking trackers, and community-driven learning guides for developers."
       },
       {
         "id": "Other",
         "name": "Other",
-        "description": "Repositories that don't fit into the above categories."
+        "description": "Repositories that do not fit into any of the above categories."
       },
       {
         "id": "Unknown",
@@ -84,7 +74,7 @@
     {
       "id": 2,
       "full_name": "open-gigaai/giga-brain-0",
-      "category_id": "C5",
+      "category_id": "C1",
       "classification_source": "ai",
       "summary": null
     },
@@ -105,7 +95,7 @@
     {
       "id": 5,
       "full_name": "Usagi-org/ai-goofish-monitor",
-      "category_id": "C3",
+      "category_id": "C6",
       "classification_source": "ai",
       "summary": null
     },
@@ -127,41 +117,41 @@
       "id": 8,
       "full_name": "langbot-app/LangBot",
       "category_id": "C1",
-      "classification_source": "unknown",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 9,
       "full_name": "SamuelSchmidgall/AgentLaboratory",
       "category_id": "C1",
-      "classification_source": "unknown",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 10,
       "full_name": "Significant-Gravitas/AutoGPT",
       "category_id": "C1",
-      "classification_source": "unknown",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 11,
       "full_name": "heygen-com/hyperframes",
-      "category_id": "C2",
+      "category_id": "C3",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 12,
       "full_name": "multica-ai/multica",
-      "category_id": "C6",
+      "category_id": "C1",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 13,
       "full_name": "ExplosiveCoderflome/AI-Novel-Writing-Assistant",
-      "category_id": "C1",
+      "category_id": "C3",
       "classification_source": "ai",
       "summary": null
     },
@@ -182,7 +172,7 @@
     {
       "id": 16,
       "full_name": "anomalyco/opencode",
-      "category_id": "C6",
+      "category_id": "C2",
       "classification_source": "ai",
       "summary": null
     },
@@ -210,35 +200,35 @@
     {
       "id": 20,
       "full_name": "microsoft/AI-For-Beginners",
-      "category_id": "C10",
+      "category_id": "C9",
       "classification_source": "unknown",
       "summary": null
     },
     {
       "id": 21,
       "full_name": "microsoft/generative-ai-for-beginners",
-      "category_id": "C10",
+      "category_id": "C9",
       "classification_source": "unknown",
       "summary": null
     },
     {
       "id": 22,
       "full_name": "QwenLM/Qwen3-VL",
-      "category_id": "Unknown",
+      "category_id": "C3",
       "classification_source": "unknown",
-      "summary": ""
+      "summary": null
     },
     {
       "id": 23,
       "full_name": "google/automl",
-      "category_id": "C1",
+      "category_id": "C8",
       "classification_source": "unknown",
       "summary": null
     },
     {
       "id": 24,
       "full_name": "fogsightai/fogsight",
-      "category_id": "C2",
+      "category_id": "C1",
       "classification_source": "ai",
       "summary": null
     },
@@ -266,147 +256,147 @@
     {
       "id": 28,
       "full_name": "anthropics/claude-code",
-      "category_id": "C1",
+      "category_id": "C2",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 29,
       "full_name": "vercel-labs/agent-browser",
-      "category_id": "C9",
+      "category_id": "C1",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 30,
       "full_name": "nomic-ai/gpt4all",
-      "category_id": "C1",
+      "category_id": "C8",
       "classification_source": "unknown",
       "summary": null
     },
     {
       "id": 31,
       "full_name": "jingyaogong/minimind",
-      "category_id": "C1",
+      "category_id": "C8",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 32,
       "full_name": "Shubhamsaboo/awesome-llm-apps",
-      "category_id": "C10",
-      "classification_source": "unknown",
+      "category_id": "C9",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 33,
       "full_name": "huggingface/transformers",
-      "category_id": "C6",
-      "classification_source": "unknown",
+      "category_id": "C8",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 34,
       "full_name": "AUTOMATIC1111/stable-diffusion-webui",
-      "category_id": "C1",
-      "classification_source": "unknown",
+      "category_id": "C3",
+      "classification_source": "ai",
       "summary": null
     },
     {
       "id": 35,
       "full_name": "forrestchang/andrej-karpathy-skills",
-      "category_id": "C6",
+      "category_id": "C2",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 36,
       "full_name": "HqWu-HITCS/Awesome-Chinese-LLM",
-      "category_id": "C10",
+      "category_id": "C9",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 37,
       "full_name": "Lordog/dive-into-llms",
-      "category_id": "C10",
+      "category_id": "C9",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 38,
       "full_name": "henry-gu/prompt-engineering-for-developers",
-      "category_id": "C6",
+      "category_id": "C2",
       "classification_source": "unknown",
       "summary": null
     },
     {
       "id": 39,
       "full_name": "poloclub/transformer-explainer",
-      "category_id": "C10",
+      "category_id": "C9",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 40,
       "full_name": "Tencent/WeKnora",
-      "category_id": "C1",
+      "category_id": "C3",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 41,
       "full_name": "jingyaogong/minimind-v",
-      "category_id": "C1",
+      "category_id": "C4",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 42,
       "full_name": "antvis/Infographic",
-      "category_id": "C2",
+      "category_id": "C3",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 43,
       "full_name": "automeris-io/WebPlotDigitizer",
-      "category_id": "C3",
+      "category_id": "C4",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 44,
       "full_name": "Henrymachiyu/FIPO",
-      "category_id": "C1",
+      "category_id": "C8",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 45,
       "full_name": "roywright/pu_learning",
-      "category_id": "C10",
+      "category_id": "C8",
       "classification_source": "unknown",
       "summary": null
     },
     {
       "id": 46,
       "full_name": "phuijse/bagging_pu",
-      "category_id": "Unknown",
+      "category_id": "C8",
       "classification_source": "unknown",
-      "summary": ""
+      "summary": null
     },
     {
       "id": 47,
       "full_name": "UniPat-AI/UniScientist",
-      "category_id": "C3",
+      "category_id": "C8",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 48,
       "full_name": "wri/global-pasture-watch",
-      "category_id": "C7",
+      "category_id": "C5",
       "classification_source": "ai",
       "summary": null
     },
@@ -420,70 +410,70 @@
     {
       "id": 50,
       "full_name": "Anionex/banana-slides",
-      "category_id": "C2",
+      "category_id": "C3",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 51,
       "full_name": "HKUDS/Paper2Slides",
-      "category_id": "C2",
+      "category_id": "C3",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 52,
       "full_name": "Kevin-thu/StoryMem",
-      "category_id": "C2",
+      "category_id": "C4",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 53,
       "full_name": "funstory-ai/BabelDOC",
-      "category_id": "C4",
+      "category_id": "C3",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 54,
       "full_name": "PDFMathTranslate/PDFMathTranslate",
-      "category_id": "C4",
+      "category_id": "C3",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 55,
       "full_name": "zhu-xlab/GlobalBuildingAtlas",
-      "category_id": "C7",
+      "category_id": "C5",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 56,
       "full_name": "mrdoob/three.js",
-      "category_id": "C8",
+      "category_id": "C4",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 57,
       "full_name": "666ghj/MiroFish",
-      "category_id": "C1",
+      "category_id": "C8",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 58,
       "full_name": "vllm-project/vllm",
-      "category_id": "C6",
+      "category_id": "C1",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 59,
       "full_name": "OpenBMB/VoxCPM",
-      "category_id": "C2",
+      "category_id": "C3",
       "classification_source": "ai",
       "summary": null
     },
@@ -497,63 +487,63 @@
     {
       "id": 61,
       "full_name": "fire-keeper/BlindWatermark",
-      "category_id": "C11",
+      "category_id": "C4",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 62,
       "full_name": "ComposioHQ/awesome-claude-skills",
-      "category_id": "C1",
+      "category_id": "C9",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 63,
       "full_name": "cheahjs/free-llm-api-resources",
-      "category_id": "C6",
+      "category_id": "C9",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 64,
       "full_name": "Anjok07/ultimatevocalremovergui",
-      "category_id": "C1",
+      "category_id": "C3",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 65,
       "full_name": "HisMax/RedInk",
-      "category_id": "C1",
+      "category_id": "C3",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 66,
       "full_name": "facebookresearch/sam-3d-body",
-      "category_id": "C5",
+      "category_id": "C4",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 67,
       "full_name": "facebookresearch/sam-3d-objects",
-      "category_id": "C5",
+      "category_id": "C4",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 68,
       "full_name": "sansan0/TrendRadar",
-      "category_id": "C3",
+      "category_id": "C1",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 69,
       "full_name": "jianchang512/pyvideotrans",
-      "category_id": "C2",
+      "category_id": "C3",
       "classification_source": "ai",
       "summary": null
     },
@@ -567,70 +557,70 @@
     {
       "id": 71,
       "full_name": "YILING0013/AI_NovelGenerator",
-      "category_id": "C1",
+      "category_id": "C3",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 72,
       "full_name": "guofei9987/blind_watermark",
-      "category_id": "C11",
+      "category_id": "C4",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 73,
       "full_name": "CharlesKeeling65/ManureCouplingStrategies",
-      "category_id": "C7",
+      "category_id": "C8",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 74,
       "full_name": "tadata-org/fastapi_mcp",
-      "category_id": "C6",
+      "category_id": "C2",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 75,
       "full_name": "mikf/gallery-dl",
-      "category_id": "C9",
+      "category_id": "C6",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 76,
       "full_name": "roboflow/supervision",
-      "category_id": "C6",
+      "category_id": "C4",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 77,
       "full_name": "lllyasviel/FramePack",
-      "category_id": "C2",
+      "category_id": "C3",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 78,
       "full_name": "nunchaku-ai/nunchaku",
-      "category_id": "C1",
+      "category_id": "C8",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 79,
       "full_name": "NanmiCoder/MediaCrawler",
-      "category_id": "C3",
+      "category_id": "C6",
       "classification_source": "ai",
       "summary": null
     },
     {
       "id": 80,
       "full_name": "arcee-ai/mergekit",
-      "category_id": "C1",
+      "category_id": "C8",
       "classification_source": "ai",
       "summary": null
     },
@@ -660,28 +650,28 @@
       "full_name": "1Panel-dev/MaxKB",
       "category_id": "Other",
       "classification_source": "ai",
-      "summary": ""
+      "summary": "MaxKB is an open-source platform for building enterprise-grade AI agents with RAG, workflows, and multi-model support."
     },
     {
       "id": 85,
       "full_name": "Peterande/D-FINE",
       "category_id": "Other",
       "classification_source": "ai",
-      "summary": ""
+      "summary": "D-FINE is a real-time object detector that enhances DETR regression via distribution refinement and self-distillation for high-precision localization."
     },
     {
       "id": 86,
       "full_name": "robert-mcdermott/ai-knowledge-graph",
       "category_id": "Other",
       "classification_source": "ai",
-      "summary": ""
+      "summary": "Generates interactive knowledge graphs from text using LLM-based entity extraction and relationship inference."
     },
     {
       "id": 87,
       "full_name": "harry0703/MoneyPrinterTurbo",
       "category_id": "Other",
       "classification_source": "ai",
-      "summary": ""
+      "summary": "MoneyPrinterTurbo generates HD short videos automatically from keywords using AI-driven workflows and multimedia synthesis."
     },
     {
       "id": 88,
@@ -693,114 +683,114 @@
     {
       "id": 89,
       "full_name": "xming521/WeClone",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "WeClone creates personalized AI digital twins by fine-tuning LLMs on user chat history with multi-modal support and privacy-focused local deployment across multiple messaging platforms."
     },
     {
       "id": 90,
       "full_name": "happycola233/tchMaterial-parser",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "tchMaterial-parser is a cross-platform GUI tool for batch downloading PDF textbooks from China's National Smart Education Platform with automatic naming, bookmarking, and search capabilities."
     },
     {
       "id": 91,
       "full_name": "0xsline/GeminiImageApp",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "GeminiImageApp is a full-stack AI image processing platform combining Google Gemini, Imagen 3, Veo 2.0, YOLO v11, and OpenCV for comprehensive image understanding, generation, editing, detection, segmentation, and video creation."
     },
     {
       "id": 92,
       "full_name": "public-apis/public-apis",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "public-apis is a community-maintained curated list of free public APIs across diverse categories, partnered with APILayer for unified API integration."
     },
     {
       "id": 93,
       "full_name": "VisionXLab/CrossEarth",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "CrossEarth serves as a geospatial vision foundation model enhancing cross-domain generalization for remote sensing semantic segmentation, enabling robust performance across diverse geographic and sensor domains."
     },
     {
       "id": 94,
       "full_name": "microsoft/markitdown",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "Markitdown simplifies converting Office documents and other files to Markdown, enabling easy content migration and web publishing."
     },
     {
       "id": 95,
       "full_name": "subframe7536/maple-font",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "A versatile, open‑source monospace font that blends aesthetic round corners, Nerd Font icons, and precise width scaling for seamless multilingual coding and terminal use."
     },
     {
       "id": 96,
       "full_name": "nvbn/thefuck",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "thefuck improves terminal productivity by automatically correcting mistyped or incorrect previous console commands using a customizable, rule-based system that integrates across multiple shells.  \nRepository Description:** Magnificent app which corrects your previous console command.  \nRepository URL:** https://github.com/nvbn/thefuck"
     },
     {
       "id": 97,
       "full_name": "aws/aws-cli",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "The AWS CLI offers a single command‑line tool to manage AWS resources across services."
     },
     {
       "id": 98,
       "full_name": "jonathanwilton/PUExtraTrees",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "Provides Python implementations of PU and PN learning using Extra Trees with custom risk estimators."
     },
     {
       "id": 99,
       "full_name": "bilibili/Index-1.9B",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "A compact 1.9B multilingual language model supporting up to 32K context and research checkpoints."
     },
     {
       "id": 100,
       "full_name": "EvanLi/Github-Ranking",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "A daily‑updated ranking of GitHub repositories by stars and forks, offering top‑100 lists and language‑specific tables."
     },
     {
       "id": 101,
       "full_name": "Lydorn/Polygonization-by-Frame-Field-Learning",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "The repository implements frame‑field‑enhanced segmentation for accurate polygonal extraction of overhead building images."
     },
     {
       "id": 102,
       "full_name": "bubbliiiing/unet-keras",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "A Keras U‑Net implementation for biomedical image segmentation, supporting multiple backbones, adaptive learning rates, and Miou evaluation."
     },
     {
       "id": 103,
       "full_name": "zorzi-s/PolyWorldPretrainedNetwork",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "PolyWorld provides pretrained Graph Neural Networks for accurate, vector-based polygonal building extraction from satellite images, enabling efficient and automated urban feature mapping."
     },
     {
       "id": 104,
       "full_name": "lfnovo/open-notebook",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "Open Notebook is an open‑source, privacy‑focused, locally runnable alternative to Google Notebook LM that lets users choose AI models, handle diverse media, and generate multi‑speaker podcasts."
     },
     {
       "id": 105,
@@ -812,114 +802,114 @@
     {
       "id": 106,
       "full_name": "027xiguapi/code-box",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "CodeBox is a browser extension that lets users one‑click download articles or copy code from many Chinese and international sites without logging in, while removing popups and allowing custom styling."
     },
     {
       "id": 107,
       "full_name": "iptv-org/iptv",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "iptv‑org/iptv provides a worldwide collection of public IPTV channels accessible via a single M3U playlist, with EPG, API, and database support."
     },
     {
       "id": 108,
       "full_name": "crocofied/PortNote",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "PortNote is a web‑based tool that lets you monitor, assign, and document port usage across servers and VMs, preventing conflicts through a simple Docker‑Compose deployment."
     },
     {
       "id": 109,
       "full_name": "hanydd/BilibiliSponsorBlock",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
+      "category_id": "Other",
+      "classification_source": "ai",
       "summary": ""
     },
     {
       "id": 110,
       "full_name": "umami-software/umami",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "Umami provides a privacy-respecting, open-source alternative to traditional analytics tools, enabling users to track website metrics without compromising visitor privacy."
     },
     {
       "id": 111,
       "full_name": "xyTom/snippai",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "Snippai is an AI-powered desktop utility that empowers users to capture any screen snippet and instantly solve problems, extract text, or generate code using intelligent AI processing."
     },
     {
       "id": 112,
       "full_name": "Snouzy/workout-cool",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "A modern open-source fitness coaching platform for creating workout plans, tracking progress, and accessing a comprehensive exercise database."
     },
     {
       "id": 113,
       "full_name": "imsyy/DailyHotApi",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "Provides a unified API (JSON/RSS) for today’s trending topics across platforms, enabling quick integration and deployment via Vercel."
     },
     {
       "id": 114,
       "full_name": "cline/cline",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "Cline delivers an autonomous coding agent accessible through CLI, IDE extensions, and SDK, supporting headless scripting, multi‑agent workflows, and IDE‑integrated diff review."
     },
     {
       "id": 115,
       "full_name": "google-gemini/gemini-cli",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "Gemini CLI provides direct terminal access to Google Gemini models with flexible installation, built‑in tools, and MCP extensibility for developers."
     },
     {
       "id": 116,
       "full_name": "RSSNext/Folo",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "Folo aims to be a distraction‑free, AI‑powered RSS reader that aggregates feeds into a clean timeline, with community‑maintained installation options across platforms."
     },
     {
       "id": 117,
       "full_name": "antvis/mcp-server-chart",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "AntV MCP Server Chart provides a TypeScript MCP server with 26+ chart generation capabilities for data analysis, accessible via CLI, SSE, or Dify integration."
     },
     {
       "id": 118,
       "full_name": "firecrawl/firecrawl",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "Firecrawl offers a fast, reliable API for web search, scraping, and interaction, delivering LLM‑ready data with minimal setup and extensive agent integration."
     },
     {
       "id": 119,
       "full_name": "langgenius/dify",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "Dify is an open-source LLMOps platform enabling teams to visually build, deploy, and operate production-ready GenAI applications (Agents, RAG, Chatbots) with model flexibility and full data control."
     },
     {
       "id": 120,
       "full_name": "n8n-io/n8n",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
+      "category_id": "Other",
+      "classification_source": "ai",
       "summary": ""
     },
     {
       "id": 121,
       "full_name": "linshenkx/prompt-optimizer",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "*   **Repository Name:** linshenkx/prompt-optimizer\n*   **Brief Introduction:** An AI prompt optimizer for writing better prompts and getting better AI results.\n*   **Innovations:** Uses advanced LLMs to automatically rewrite, structure, and refine raw user queries into highly optimized, professional prompts. This significantly enhances output quality, reduces token consumption, and standardizes prompt formats across different AI models.\n*   **Basic Usage:** Not specified (no detailed usage examples were provided in the input text).\n*   **Summary:** This tool helps users transform basic drafts into high-performance prompts, maximizing the output quality and efficiency of AI models through structured optimization."
     },
     {
       "id": 122,
@@ -931,44 +921,44 @@
     {
       "id": 123,
       "full_name": "Yuiffy/BiliGPT",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "BiliGPT is a handy tool that leverages AI to instantly create short, informative summaries of Bilibili videos, helping users quickly grasp key content without watching the full clip."
     },
     {
       "id": 124,
       "full_name": "ahmedkhaleel2004/gitdiagram",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "A zero‑config web tool that turns any GitHub repo into an interactive diagram for quick visual exploration."
     },
     {
       "id": 125,
       "full_name": "kevmo314/magic-copy",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "A privacy‑first Chrome tool that lets users instantly isolate and copy image foregrounds using Meta’s Segment Anything Model, simplifying asset reuse directly from the browser."
     },
     {
       "id": 126,
       "full_name": "teableio/teable",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "Teable provides an AI‑enhanced spreadsheet that lets business users analyze, clean, and visualize data through natural language interactions, boosting productivity without leaving a familiar grid."
     },
     {
       "id": 127,
       "full_name": "elder-plinius/CL4R1T4S",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "CL4R1T4S publishes extracted system prompts from major AI models to promote transparency into hidden behavioral instructions."
     },
     {
       "id": 128,
       "full_name": "lukasmasuch/best-of-ml-python",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "A weekly-updated ranked list of 920 machine learning Python libraries across 34 categories, scored by automatically collected metrics from GitHub and package managers."
     },
     {
       "id": 129,
@@ -980,43 +970,43 @@
     {
       "id": 130,
       "full_name": "svcvit/Awesome-Dify-Workflow",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "A collection of shareable Dify DSL workflows with FAQs, plugin references, and deployment tips for personal use and learning."
     },
     {
       "id": 131,
       "full_name": "zijie0/HumanSystemOptimization",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
+      "category_id": "Other",
+      "classification_source": "ai",
       "summary": ""
     },
     {
       "id": 132,
       "full_name": "holyshell/AppsForMac",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
+      "category_id": "Other",
+      "classification_source": "ai",
       "summary": ""
     },
     {
       "id": 133,
       "full_name": "punkpeye/awesome-mcp-servers",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
+      "category_id": "Other",
+      "classification_source": "ai",
       "summary": ""
     },
     {
       "id": 134,
       "full_name": "kkeenee/TG-Twilight-AWAvenue-Ads-Rule",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
+      "category_id": "Other",
+      "classification_source": "ai",
       "summary": ""
     },
     {
       "id": 135,
       "full_name": "datawhalechina/so-large-lm",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
+      "category_id": "Other",
+      "classification_source": "ai",
       "summary": ""
     },
     {
@@ -1120,9 +1110,9 @@
     {
       "id": 150,
       "full_name": "microsoft/PowerToys",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "PowerToys provides a comprehensive suite of 30+ utilities to enhance Windows productivity and customization, from window management to developer tools."
     },
     {
       "id": 151,
@@ -1148,9 +1138,9 @@
     {
       "id": 154,
       "full_name": "BtbN/FFmpeg-Builds",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "Offers ready-to-use, up-to-date FFmpeg executables for Windows, simplifying multimedia processing without needing to compile from source."
     },
     {
       "id": 155,
@@ -1169,9 +1159,9 @@
     {
       "id": 157,
       "full_name": "btjawa/BiliTools",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "A discontinued project that ceased maintenance after receiving a legal letter from Bilibili alleging infringement and unfair competition."
     },
     {
       "id": 158,
@@ -1211,65 +1201,65 @@
     {
       "id": 163,
       "full_name": "Chuyu-Team/Dism-Multi-language",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "Provides multi-language support for Dism++, enhancing accessibility and usability for global users of the Windows image management tool."
     },
     {
       "id": 164,
       "full_name": "ripienaar/free-for-dev",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "A curated, up-to-date directory of free-tier cloud and infrastructure services tailored for DevOps and infrastructure practitioners."
     },
     {
       "id": 165,
       "full_name": "Sjj1024/PakePlus",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "PakePlus lets developers instantly package any web‑based UI into a tiny, native‑like desktop and mobile app, delivering lightweight distribution in minutes."
     },
     {
       "id": 166,
       "full_name": "OpenListTeam/OpenList",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "OpenList is a community-driven, transparent fork of AList supporting multiple cloud storages with resilient governance."
     },
     {
       "id": 167,
       "full_name": "ollama/ollama",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "Ollama provides a local LLM runtime with CLI, API, and integrations for running open models like Gemma, DeepSeek, Qwen."
     },
     {
       "id": 168,
       "full_name": "fatedier/frp",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "frp is a fast reverse proxy exposing local servers behind NAT/firewall via TCP, UDP, HTTP, HTTPS with P2P and dashboard."
     },
     {
       "id": 169,
       "full_name": "zetaloop/ExplorerPatcher",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "A localization tool that enhances Windows 11 productivity by restoring familiar Windows 10 interface elements and behaviors."
     },
     {
       "id": 170,
       "full_name": "ventoy/Ventoy",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "Ventoy simplifies creating bootable USB drives by allowing direct copying of multiple ISO files without reformatting, supporting various architectures and partition styles."
     },
     {
       "id": 171,
       "full_name": "RamonUnch/AltSnap",
-      "category_id": "Unknown",
-      "classification_source": "unknown",
-      "summary": ""
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "AltSnap enables Linux-style window management on Windows by allowing Alt+drag to move/resize windows, with improved security and features over the original AltDrag."
     },
     {
       "id": 172,
@@ -1452,13 +1442,69 @@
       "category_id": "Other",
       "classification_source": "ai",
       "summary": "LeRobot democratizes robotics AI by offering an integrated, Hugging Face‑friendly platform for end‑to‑end robot learning, reducing complexity and accelerating research."
+    },
+    {
+      "id": 198,
+      "full_name": "hasaneyldrm/exercises-dataset",
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "This repository offers a comprehensive dataset of 1,324 exercises with visual and anatomical details, serving as a critical data layer for fitness tracking applications like LogPress."
+    },
+    {
+      "id": 199,
+      "full_name": "OpenCut-app/OpenCut",
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "OpenCut is a free, open‑source video editor being rebuilt in Rust to provide a plugin‑first, cross‑platform editing experience with AI and automation features."
+    },
+    {
+      "id": 200,
+      "full_name": "nilbuild/developer-roadmap",
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "Provides interactive, community‑driven roadmaps and guides to help developers plan and advance their careers."
+    },
+    {
+      "id": 201,
+      "full_name": "colbymchenry/codegraph",
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "Provides a local, auto‑updating knowledge graph of code to boost AI agent performance with fewer tokens and tool calls."
+    },
+    {
+      "id": 202,
+      "full_name": "mattpocock/skills",
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "Provides modular, composable AI agent skills for real engineering workflows, installable across multiple coding agents with user control and adaptability."
+    },
+    {
+      "id": 203,
+      "full_name": "router-for-me/CLIProxyAPI",
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "CLIProxyAPI wraps multiple CLI AI tools as a unified OpenAI-compatible API proxy for seamless model access."
+    },
+    {
+      "id": 204,
+      "full_name": "multica-ai/andrej-karpathy-skills",
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "A single-file CLAUDE.md guideline set that addresses common LLM coding pitfalls like overcomplication and unwarranted assumptions through four concise principles."
+    },
+    {
+      "id": 205,
+      "full_name": "AiHubCN/Awesome-Chinese-LLM",
+      "category_id": "Other",
+      "classification_source": "ai",
+      "summary": "A curated awesome-list of Chinese LLM open-source models, applications, datasets, and tutorials, organized by category for developers seeking smaller, deployable models."
     }
   ],
   "stats": {
-    "total_repos": 197,
+    "total_repos": 205,
     "reused": 0,
-    "llm_classified": 99,
-    "unknown": 98,
+    "llm_classified": 169,
+    "unknown": 36,
     "partial_save": true
   }
 }
