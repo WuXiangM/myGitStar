@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-25T02:12:54Z",
-  "new_valid_entries": 60,
-  "invalid_field_repos_before": 147,
-  "invalid_field_repos_after": 104,
-  "empty_summary_before": 106,
-  "empty_summary_after": 46
+  "generated_at": "2026-08-26T01:56:54Z",
+  "new_valid_entries": 40,
+  "invalid_field_repos_before": 104,
+  "invalid_field_repos_after": 72,
+  "empty_summary_before": 46,
+  "empty_summary_after": 6
 }
