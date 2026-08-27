@@ -119,7 +119,7 @@ def build_readme_header(
         lines.append(
             "<div align=\"center\">\n\n"
             "<h1>My GitHub Star Project AI Summary</h1>\n\n"
-            "<p><b>Reference Repository:</b> <a href=\"https://github.com/WuXiangM/myGitStar\">WuXiangM/myGitStar</a></p>\n\n"
+            "<p><b>Reference Repository:</b> <a href=\"https://github.com/Nanxzi/myGitStar\">Nanxzi/myGitStar</a></p>\n\n"
             f"<p>{readme_links}</p>\n"
             f"<p>{guide_links}</p>\n\n"
             "<hr/>\n\n"
@@ -133,7 +133,7 @@ def build_readme_header(
         lines.append(
             "<div align=\"center\">\n\n"
             "<h1>我的 GitHub Star 项目AI总结</h1>\n\n"
-            "<p><b>参考仓库：</b> <a href=\"https://github.com/WuXiangM/myGitStar\">WuXiangM/myGitStar</a></p>\n\n"
+            "<p><b>参考仓库：</b> <a href=\"https://github.com/Nanxzi/myGitStar\">Nanxzi/myGitStar</a></p>\n\n"
             f"<p>{readme_links}</p>\n"
             f"<p>{guide_links}</p>\n\n"
             "<hr/>\n\n"

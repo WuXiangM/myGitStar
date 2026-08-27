@@ -1722,14 +1722,14 @@ def render_markdown(
     lines.append("<div align=\"center\">\n")
     if is_en:
         lines.append("\n<h1>My GitHub Star Project AI Summary</h1>\n")
-        lines.append(f"\n<p><b>Reference Repository:</b> <a href=\"https://github.com/WuXiangM/myGitStar\">WuXiangM/myGitStar</a></p>\n")
+        lines.append(f"\n<p><b>Reference Repository:</b> <a href=\"https://github.com/Nanxzi/myGitStar\">Nanxzi/myGitStar</a></p>\n")
         lines.append(f"\n<p><b>Current account:</b> <a href=\"https://github.com/{username}\">{username}</a></p>\n")
         lines.append(f"\n<p><b>Generated on:</b> {generated_at}</p>\n")
         lines.append(f"\n<p><b>AI Model:</b> {model_ch}</p>\n")
         lines.append(f"\n<p><b>Total repositories:</b> {len(repos)}</p>\n")
     else:
         lines.append("\n<h1>我的 GitHub Star 项目AI总结</h1>\n")
-        lines.append(f"\n<p><b>参考仓库：</b> <a href=\"https://github.com/WuXiangM/myGitStar\">WuXiangM/myGitStar</a></p>\n")
+        lines.append(f"\n<p><b>参考仓库：</b> <a href=\"https://github.com/Nanxzi/myGitStar\">Nanxzi/myGitStar</a></p>\n")
         lines.append(f"\n<p><b>当前账号：</b> <a href=\"https://github.com/{username}\">{username}</a></p>\n")
         lines.append(f"\n<p><b>生成时间：</b> {generated_at}</p>\n")
         lines.append(f"\n<p><b>AI模型：</b> {model_ch}</p>\n")

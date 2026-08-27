@@ -2,7 +2,7 @@
 
 <h1>My GitHub Star Project AI Summary</h1>
 
-<p><b>Reference Repository:</b> <a href="https://github.com/WuXiangM/myGitStar">WuXiangM/myGitStar</a></p>
+<p><b>Reference Repository:</b> <a href="https://github.com/Nanxzi/myGitStar">Nanxzi/myGitStar</a></p>
 
 <p><a href="README.md">README (content classified)</a> | <a href="README_lang.md">README classified by language</a> | <a href="README_lang_zh.md">README 按语言分类</a></p>
 <p><a href="GUIDE_en.md">English GUIDE</a> | <a href="GUIDE_zh.md">中文教程</a></p>

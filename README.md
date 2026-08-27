@@ -4,7 +4,7 @@
 <h1>My GitHub Star Project AI Summary</h1>
 
 
-<p><b>Reference Repository:</b> <a href="https://github.com/WuXiangM/myGitStar">WuXiangM/myGitStar</a></p>
+<p><b>Reference Repository:</b> <a href="https://github.com/Nanxzi/myGitStar">Nanxzi/myGitStar</a></p>
 
 
 <p><b>Current account:</b> <a href="https://github.com/Nanxzi">Nanxzi</a></p>
@@ -796,9 +796,7 @@ Summary:** This repository offers a comprehensive dataset of 1,324 exercises wit
 - Includes ethical considerations and responsible AI practices
 - Real-world project-based learning with code examples
 
-4. **Basic Usage:** ```bash
-# Clone the repository
-git clone https://github.com/microsoft/generative-ai-for-beginners.git
+4. **Basic Usage:** git clone https://github.com/microsoft/generative-ai-for-beginners.git
 
 5. **Summary:** This Microsoft-provided course offers a beginner-friendly pathway into generative AI development through 21 hands-on lessons, teaching foundational concepts, API usage, prompt engineering, and ethical practices needed to build real-world AI applications.
 
@@ -1318,11 +1316,7 @@ Summary:** Generates cohesive, multi‑chapter novels using AI that maintains na
 - Provides key‑point extraction, timestamped highlights, and optional translation.  
 - Offers a simple CLI or web UI for quick, one‑click content condensation.
 
-4. **Basic Usage:** ```bash
-# Example: Summarize a Bilibili video by its URL
-biligpt summarize https://www.bilibili.com/video/BV1234567890
-```  
-*If the repository does not contain explicit CLI instructions, the above reflects the typical workflow described in its README.*
+4. **Basic Usage:** Example: Summarize a Bilibili video by its URL (biligpt summarize https://www.bilibili.com/video/BV1234567890) If the repository does not contain explicit CLI instructions, the above reflects the typical workflow described in its README.
 
 5. **Summary:** BiliGPT is a handy tool that leverages AI to instantly create short, informative summaries of Bilibili videos, helping users quickly grasp key content without watching the full clip.
 
@@ -2303,30 +2297,11 @@ Summary:** A self‑contained, framework‑free multi‑agent tool that analyzes
 2. **Brief Introduction:** Blind&Invisible Watermark ，图片盲水印，提取水印无须原图！
 
 3. **Innovations:** Blind extraction without original image; robust to noise, JPEG compression, cropping, rotation; supports text and image watermarks; uses DWT‑SVD algorithm; simple API; works with PIL/OpenCV; cross‑platform.  
-Basic Usage:**  
-```python
-from blind_watermark import WaterMark
-bwm = WaterMark(password_img=1, password_wm=1)
-bwm.read_img('input.jpg')
-bwm.read_wm('secret.txt', mode='str')
-bwm.embed('output.jpg')
-wm_extracted = bwm.extract('output.jpg', wm_shape=len('secret.txt'), mode='str')
-print(wm_extracted)
-```  
-Summary:** A Python library for embedding imperceptible blind watermarks into images, enabling watermark extraction without the original image and providing robustness against common image processing operations.
 
-4. **Basic Usage:** ```python
-from blind_watermark import WaterMark
-bwm = WaterMark(password_img=1, password_wm=1)
-bwm.read_img('input.jpg')
-bwm.read_wm('secret.txt', mode='str')
-bwm.embed('output.jpg')
-wm_extracted = bwm.extract('output.jpg', wm_shape=len('secret.txt'), mode='str')
-print(wm_extracted)
-```  
-Summary:** A Python library for embedding imperceptible blind watermarks into images, enabling watermark extraction without the original image and providing robustness against common image processing operations.
+4. **Basic Usage:** from blind_watermark import WaterMark
 
 5. **Summary:** A Python library for embedding imperceptible blind watermarks into images, enabling watermark extraction without the original image and providing robustness against common image processing operations.
+
 
 ---
 

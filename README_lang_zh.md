@@ -2,7 +2,7 @@
 
 <h1>我的 GitHub Star 项目AI总结</h1>
 
-<p><b>参考仓库：</b> <a href="https://github.com/WuXiangM/myGitStar">WuXiangM/myGitStar</a></p>
+<p><b>参考仓库：</b> <a href="https://github.com/Nanxzi/myGitStar">Nanxzi/myGitStar</a></p>
 
 <p><a href="README.md">README（内容分类）</a> | <a href="README_lang_zh.md">README 按语言分类</a> | <a href="README_lang.md">README classified by language</a></p>
 <p><a href="GUIDE_zh.md">中文教程</a> | <a href="GUIDE_en.md">English GUIDE</a></p>
