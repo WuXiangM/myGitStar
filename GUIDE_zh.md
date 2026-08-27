@@ -223,7 +223,7 @@ repo_display_language: true
 
 | 字段                         | 必需修改                 | 类型/示例                                 | 作用                                                                           | 建议                                                                  |
 | ---------------------------- | ------------------------ | ----------------------------------------- | ------------------------------------------------------------------------------ | --------------------------------------------------------------------- |
-| `github_username`          | 是（账号名）             | `0` / `WuXiangM`                      | 拉取谁的 Stars。`0` 表示用 Actions 的 `GITHUB_ACTOR`；本地建议直接填用户名 | CI 用 `0`；本地填固定用户名更稳定                                   |
+| `github_username`          | 是（账号名）             | `0` / `Nanxzi`                      | 拉取谁的 Stars。`0` 表示用 Actions 的 `GITHUB_ACTOR`；本地建议直接填用户名 | CI 用 `0`；本地填固定用户名更稳定                                   |
 | `STARRED_GITHUB_TOKEN`     | 是（必需，建议用 env）   | `""`                                    | GitHub Token（拉取 Stars + Copilot Models 会用到）                             | 不建议写入 config，改用 Actions Secrets / 环境变量                    |
 | `OPENROUTER_API_KEY`       | 条件（ openrouter 必需） | `""`                                    | OpenRouter Key（仅 `model_choice: openrouter` 时需要）                       | 建议用 env                                                            |
 | `GEMINI_API_KEY`           | 条件（ gemini 必需）     | `""`                                    | Gemini Key（仅 `model_choice: gemini` 时需要）                               | 建议用 env                                                            |

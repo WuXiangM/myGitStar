@@ -224,7 +224,7 @@ The table below summarizes supported `config.yaml` fields and marks whether each
 
 | Field | Required | Type/Example | Purpose | Recommendation |
 | --- | --- | --- | --- | --- |
-| `github_username` | Yes (account) | `0` / `WuXiangM` | Which account’s Stars to fetch. `0` means use Actions `GITHUB_ACTOR`; locally it’s better to set a fixed username | CI: `0`; Local: set a fixed username |
+| `github_username` | Yes (account) | `0` / `Nanxzi` | Which account’s Stars to fetch. `0` means use Actions `GITHUB_ACTOR`; locally it’s better to set a fixed username | CI: `0`; Local: set a fixed username |
 | `STARRED_GITHUB_TOKEN` | Yes (runtime; prefer env) | `""` | GitHub token (used for fetching Stars and Copilot Models) | Keep empty in config; use Actions Secrets / environment variables |
 | `OPENROUTER_API_KEY` | Conditional (openrouter) | `""` | OpenRouter key (needed only when `model_choice: openrouter`) | Use env |
 | `GEMINI_API_KEY` | Conditional (gemini) | `""` | Gemini key (needed only when `model_choice: gemini`) | Use env |

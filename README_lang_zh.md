@@ -9,7 +9,7 @@
 
 <hr/>
 
-<p><b>当前账号：</b> <a href="https://github.com/WuXiangM">WuXiangM</a></p>
+<p><b>当前账号：</b> <a href="https://github.com/Nanxzi">Nanxzi</a></p>
 <p><b>生成时间：</b> 2026-05-13</p>
 <p><b>AI模型：</b> GitHub Copilot</p>
 <p><b>总仓库数：</b> 30 个</p>
