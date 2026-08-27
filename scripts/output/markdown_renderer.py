@@ -3,7 +3,7 @@ from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional, Tuple
 
 from scripts.classification.classification_parser import Taxonomy, _clean_inline_md, _strip_leading_symbols, _trim_repo_block_before_language_section
-from scripts.summary.summarize_helpers import _clean_prompt_leak
+from scripts.summary.summarize_helpers import _clean_field_value
 
 
 def _slugify_heading(text: str) -> str:
@@ -291,13 +291,13 @@ def render_markdown(
                 repo_summary = {}
 
             repo_name = repo_summary.get("Repository Name") or full_name
-            brief_intro = _clean_prompt_leak(repo_summary.get("Brief Introduction") or "")
+            brief_intro = _clean_field_value(repo_summary.get("Brief Introduction") or "")
             # Truncate brief to first paragraph to avoid Markdown layout issues
             if brief_intro and ("\n" in brief_intro or "\r" in brief_intro):
                 brief_intro = brief_intro.split("\n\n")[0].split("\n")[0].strip()
-            innovations = _clean_prompt_leak(repo_summary.get("Innovations") or "")
-            basic_usage = _clean_prompt_leak(repo_summary.get("Basic Usage") or "")
-            summary_text = _clean_prompt_leak(repo_summary.get("Summary") or "")
+            innovations = _clean_field_value(repo_summary.get("Innovations") or "")
+            basic_usage = _clean_field_value(repo_summary.get("Basic Usage") or "")
+            summary_text = _clean_field_value(repo_summary.get("Summary") or "")
 
             lines.append("1. **Repository Name:** " + repo_name + "\n")
             lines.append("2. **Brief Introduction:** " + (brief_intro or "Not specified.") + "\n")

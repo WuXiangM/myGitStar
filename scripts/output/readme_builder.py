@@ -3,7 +3,9 @@ import time
 from datetime import datetime
 from typing import Any, Dict, List, Optional, Tuple
 
-from scripts.summary.summarize_helpers import _clean_prompt_leak
+# Route legacy call sites through the newer cleaner (also unwraps ``` fences
+# and strips editorial commentary) so existing dirty summaries render clean.
+from scripts.summary.summarize_helpers import _clean_field_value as _clean_prompt_leak
 
 
 LANG_ICONS = {

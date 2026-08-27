@@ -36,6 +36,7 @@ from scripts.classification import (
     _compute_effective_max_categories,
     _sample_repos_for_taxonomy,
 )
+from scripts.summary.summarize_helpers import _clean_field_value
 
 # NOTE:
 # - This script reuses the same config + env secret strategy as scripts/summarize_stars.py
@@ -1797,6 +1798,12 @@ def render_markdown(
             innovations = repo_summary.get("Innovations", "") or str(r.get("innovations") or "")
             basic_usage = repo_summary.get("Basic Usage", "")
             summary_text = repo_summary.get("Summary", "") or str(r.get("summary") or "")
+            # Clean any stray ``` fences / editorial notes carried from summaries
+            # so a dirty repo_summaries.json still renders a valid README.
+            brief_intro = _clean_field_value(brief_intro)
+            innovations = _clean_field_value(innovations)
+            basic_usage = _clean_field_value(basic_usage)
+            summary_text = _clean_field_value(summary_text)
             if not str(brief_intro).strip() or _is_not_specified(brief_intro):
                 brief_intro = str(r.get("github_description") or "").strip()
 

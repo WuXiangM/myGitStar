@@ -36,6 +36,66 @@ def _clean_prompt_leak(text: str) -> str:
     return text.strip()
 
 
+# Editorial commentary the LLM sometimes appends after a field value,
+# e.g. "*If the repository does not contain explicit CLI instructions...*".
+_EDITORIAL_PATTERNS = [
+    r"^\s*\*?\s*If (?:the|a) repository",
+    r"^\s*\*?\s*If none",
+    r"^\s*\*?\s*Note[s]?:",
+    r"^\s*\*?\s*Note that",
+    r"^\s*\*?\s*Please note",
+    r"^\s*\*?This (?:reflects|is|summar)",
+    r"^\s*\*?\(?As (?:an |the )?(?:AI|assistant|model)",
+]
+
+
+def _strip_code_fences(text: str) -> str:
+    """Unwrap markdown ```...``` fences LLMs sometimes wrap a value in.
+
+    A fenced value (notably Basic Usage) breaks the README's list structure
+    once embedded, so we drop the opening/closing fence lines and any stray
+    triple-backticks. Single-backtick inline code is preserved.
+    """
+    if not text:
+        return text
+    s = text.strip()
+    # Drop an opening fence line (``` optionally followed by a language tag).
+    s = re.sub(r"^```[^\n]*\n", "", s)
+    # Drop any closing fence lines (with optional trailing whitespace).
+    s = re.sub(r"\n```[ \t]*", "\n", s)
+    s = re.sub(r"[ \t]*```$", "", s)
+    s = re.sub(r"^```[ \t]*", "", s)
+    # Remove any leftover stray triple-backticks anywhere.
+    s = s.replace("```", "")
+    return s.strip()
+
+
+def _strip_editorial_commentary(text: str) -> str:
+    """Drop standalone/ trailing editorial notes the LLM adds after a value."""
+    if not text:
+        return text
+    kept = []
+    for line in text.split("\n"):
+        if any(re.match(p, line, flags=re.IGNORECASE) for p in _EDITORIAL_PATTERNS):
+            continue
+        kept.append(line)
+    return "\n".join(kept).strip()
+
+
+def _clean_field_value(text: str) -> str:
+    """Full cleaning for a single summary field value.
+
+    Combines prompt-leak removal with code-fence unwrapping and editorial
+    commentary stripping so stored/rendered values never break markdown.
+    """
+    if not text:
+        return text
+    text = _clean_prompt_leak(text)
+    text = _strip_code_fences(text)
+    text = _strip_editorial_commentary(text)
+    return text
+
+
 def _repo_key(repo: Dict) -> str:
     return str(repo.get("full_name") or repo.get("Repository Name") or "").strip()
 
@@ -58,7 +118,7 @@ def generate_summarize_prompt(repo: Dict[str, Any], language: str = "zh", readme
             f"1. **仓库名称：** {repo_name}\n"
             f"2. **简要介绍：** {brief_intro}\n"
             f"3. **创新点：** （基于 README 内容，简述本仓库最有特色的地方，50字以内）\n"
-            f"4. **简单用法：** （基于 README 内容，给出最简关键用法或调用示例，如无则写 Not specified）\n"
+            f"4. **简单用法：** （基于 README 内容，给出最简关键用法或调用示例，如无则写 Not specified。不要把内容包进 ``` 代码围栏，直接以纯文本给出具体命令。）\n"
             f"5. **总结：** （一句话总结它的用途/价值，50字以内）\n"
             f"**仓库描述：** {desc}\n"
             f"**仓库地址：** {url}\n"
@@ -74,7 +134,7 @@ def generate_summarize_prompt(repo: Dict[str, Any], language: str = "zh", readme
             f"1. **Repository Name:** {repo_name}\n"
             f"2. **Brief Introduction:** {brief_intro}\n"
             f"3. **Innovations:** (Based on README, briefly describe the most distinctive features, within 50 words)\n"
-            f"4. **Basic Usage:** (Based on README, provide the simplest key usage or example, write 'Not specified' if none)\n"
+            f"4. **Basic Usage:** (Based on README, provide the simplest key usage or example, write 'Not specified' if none. Do NOT wrap the answer in ``` code fences; output the command directly as plain text. Be specific.)\n"
             f"5. **Summary:** (One sentence summarizing its purpose/value, within 50 words)\n"
             f"**Repository Description:** {desc}\n"
             f"**Repository URL:** {url}\n"
@@ -114,7 +174,7 @@ def generate_combined_summarize_prompt(repos: List[Dict[str, Any]], language: st
             "- Repository URL: 仓库地址\n"
             "- Brief Introduction: 直接使用仓库的原始描述（不要改写）\n"
             "- Innovations: 基于 README 内容，创新点（50字以内）\n"
-            "- Basic Usage: 基于 README 内容，简单用法（如无则写 Not specified）\n"
+            "- Basic Usage: 基于 README 内容，简单用法（如无则写 Not specified）。不要把内容包进 ``` 代码围栏，直接以纯文本给出具体命令\n"
             "- Summary: 一句话总结（50字以内）\n"
             "- 只输出JSON数组，不要输出其他内容\n\n"
             "## 待总结的仓库：\n"
@@ -151,7 +211,7 @@ def generate_combined_summarize_prompt(repos: List[Dict[str, Any]], language: st
             "- Repository URL: repository URL\n"
             "- Brief Introduction: use the original description verbatim (do NOT rewrite)\n"
             "- Innovations: based on README, key innovations (within 50 words)\n"
-            "- Basic Usage: based on README, basic usage (write 'Not specified' if none)\n"
+            "- Basic Usage: based on README, basic usage (write 'Not specified' if none). Do NOT wrap in ``` code fences; output the command directly as plain text\n"
             "- Summary: one sentence summary (within 50 words)\n"
             "- Output only JSON array, nothing else\n\n"
             "## Repositories to summarize:\n"
@@ -207,11 +267,11 @@ def parse_combined_summaries(response_text: str, repos: List[Dict[str, Any]]) ->
                 basic_usage = (item.get("Basic Usage") or item.get("简单用法") or "")
                 summary = (item.get("Summary") or item.get("总结") or "")
 
-                # Clean prompt leak artifacts from all fields
-                brief_intro = _clean_prompt_leak(brief_intro)
-                innovations = _clean_prompt_leak(innovations)
-                basic_usage = _clean_prompt_leak(basic_usage)
-                summary = _clean_prompt_leak(summary)
+                # Clean prompt leak artifacts, code fences and editorial notes
+                brief_intro = _clean_field_value(brief_intro)
+                innovations = _clean_field_value(innovations)
+                basic_usage = _clean_field_value(basic_usage)
+                summary = _clean_field_value(summary)
 
                 full_entry = {
                     "Repository Name": repo_name,
@@ -418,10 +478,10 @@ def build_repo_entry(repo: Dict, summary: Any) -> Dict:
         entry = {
             "Repository Name": summary.get("Repository Name", repo.get("full_name")),
             "Repository URL": summary.get("Repository URL", repo.get("html_url")),
-            "Brief Introduction": _clean_prompt_leak(brief),
-            "Innovations": _clean_prompt_leak(summary.get("Innovations", "")),
-            "Basic Usage": _clean_prompt_leak(summary.get("Basic Usage", "")),
-            "Summary": _clean_prompt_leak(summary.get("Summary", "")),
+            "Brief Introduction": _clean_field_value(brief),
+            "Innovations": _clean_field_value(summary.get("Innovations", "")),
+            "Basic Usage": _clean_field_value(summary.get("Basic Usage", "")),
+            "Summary": _clean_field_value(summary.get("Summary", "")),
         }
         entry["Repository URL"] = repo.get("html_url") or entry.get("Repository URL", "")
         # Preserve fields not surfaced to README but useful for next run:
@@ -1016,7 +1076,7 @@ def _parse_single_repo_summary(text: str, repo: Dict) -> Dict[str, Any]:
     for pat, field in pairs:
         m = re.search(pat, text, flags=re.IGNORECASE | re.DOTALL)
         if m:
-            val = m.group(1).strip()
+            val = _clean_field_value(m.group(1))
             # Avoid overwriting a populated field with a short junk match.
             if val and val != "Not specified.":
                 out[field] = val
