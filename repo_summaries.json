@@ -292,7 +292,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "This Microsoft-provided course offers a beginner-friendly pathway into generative AI development through 21 hands-on lessons, teaching foundational concepts, API usage, prompt engineering, and ethical practices needed to build real-world AI applications.",
+    "full_name": "microsoft/generative-ai-for-beginners"
   },
   "QwenLM/Qwen3-VL": {
     "Repository Name": "QwenLM/Qwen3-VL",
@@ -307,7 +309,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "Qwen3-VL is Alibaba Cloud's advanced multimodal large language model series featuring enhanced vision-language capabilities, scalable Dense and MoE architectures, and state-of-the-art visual reasoning and agent interaction.",
+    "full_name": "QwenLM/Qwen3-VL"
   },
   "google/automl": {
     "Repository Name": "google/automl",
@@ -1672,7 +1676,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "BilibiliSponsorBlock automatically removes sponsored video segments, enhancing viewing experience by skipping unwanted ads.",
+    "full_name": "hanydd/BilibiliSponsorBlock"
   },
   "umami-software/umami": {
     "Repository Name": "umami-software/umami",
@@ -1857,7 +1863,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "n8n provides a flexible, open-source platform for building visual automations with AI, supporting self‑hosted or cloud deployment and over 400 integrations.",
+    "full_name": "n8n-io/n8n"
   },
   "linshenkx/prompt-optimizer": {
     "Repository Name": "linshenkx/prompt-optimizer",
@@ -2939,7 +2947,9 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "This repository provides tools for efficiently transforming scanned documents into clean, searchable PDF formats.",
+    "full_name": "Rimagination/scansci-pdf"
   },
   "1c7/chinese-independent-developer": {
     "Repository Name": "1c7/chinese-independent-developer",
