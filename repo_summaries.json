@@ -2195,9 +2195,7 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    },
-    "summary": "A Chrome extension that streamlines AI art creation by providing quick access to curated prompts across multiple AI platforms with one-click insertion.",
-    "full_name": "glidea/banana-prompt-quicker"
+    }
   },
   "playcanvas/engine": {
     "Repository Name": "playcanvas/engine",
