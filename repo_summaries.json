@@ -3286,5 +3286,20 @@
     },
     "summary": "A context-aware desktop AI assistant that reads your active screen content, supports multiple LLMs and MCP tools to help users take actions seamlessly across different applications.",
     "full_name": "Sylinko/Everywhere"
+  },
+  "Hisn00w/ASu-skills": {
+    "Repository Name": "Hisn00w/ASu-skills",
+    "Repository URL": "https://github.com/Hisn00w/ASu-skills",
+    "Brief Introduction": "简历包装",
+    "Innovations": "A Chinese job-seeking workflow plugin with nine modular skills covering open-source contributions, AI conversation evidence chains, resume creation/cloning, interview prep, and campus recruitment tracking, supporting Codex, Claude Code, and TraeWork platforms.",
+    "Basic Usage": "/plugin marketplace add Hisn00w/ASu-skills",
+    "Summary": "A Chinese job-seeking workflow plugin providing nine modular skills for resume building, interview preparation, open-source contributions, and campus recruitment tracking across multiple AI coding platforms.",
+    "__meta__": {
+      "last_summarized_at": "2026-09-03T04:05:28Z",
+      "description_hash": "34814b3d0aac5a8d",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   }
 }
