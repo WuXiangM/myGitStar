@@ -3301,5 +3301,20 @@
       "summary_source": "ai",
       "summary_attempts": 1
     }
+  },
+  "nunchux-ai/nunchaku": {
+    "Repository Name": "nunchux-ai/nunchaku",
+    "Repository URL": "https://github.com/nunchux-ai/nunchaku",
+    "Brief Introduction": "[ICLR2025 Spotlight] SVDQuant: Absorbing Outliers by Low-Rank Components for 4-Bit Diffusion Models",
+    "Innovations": "SVDQuant uses low-rank components to absorb outliers for 4‑bit diffusion models, enabling high‑performance inference with asynchronous offloading, LoRA support, and reduced VRAM usage down to 3 GiB.",
+    "Basic Usage": "Not specified",
+    "Summary": "Nunchaku is a high-performance inference engine for 4‑bit neural networks that uses SVDQuant low‑rank quantization to achieve efficient diffusion model inference with minimal VRAM and LoRA support.",
+    "__meta__": {
+      "last_summarized_at": "2026-09-05T04:07:20Z",
+      "description_hash": "6307a24befaee5bc",
+      "summary_model": "openrouter/free",
+      "summary_source": "ai",
+      "summary_attempts": 1
+    }
   }
 }
