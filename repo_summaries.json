@@ -3315,6 +3315,8 @@
       "summary_model": "openrouter/free",
       "summary_source": "ai",
       "summary_attempts": 1
-    }
+    },
+    "summary": "Nunchaku is a high-performance inference engine for 4‑bit neural networks that uses SVDQuant low‑rank quantization to achieve efficient diffusion model inference with minimal VRAM and LoRA support.",
+    "full_name": "nunchux-ai/nunchaku"
   }
 }
